@@ -485,7 +485,7 @@ function renderHeader(activeNav = 'wissen', relativeRoot = '.') {
   <header class="site-header">
     <div class="container navbar">
       <a href="${relativeRoot}/index.html" class="brand-link" title="DKSchV Schweiz Startseite">
-        <img src="${relativeRoot}/assets/images/dkschv_logo.png" alt="DKSchV Schweiz Logo" class="brand-logo-img">
+        <img src="${relativeRoot}/assets/images/dkschv_logo.svg" alt="DKSchV Schweiz Logo" class="brand-logo-img">
       </a>
       <nav>
         <ul class="nav-menu" id="navMenu">
@@ -520,7 +520,7 @@ function renderFooter(relativeRoot = '.') {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="${relativeRoot}/assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 38px; filter: brightness(0) invert(1);">
+          <img src="${relativeRoot}/assets/images/dkschv_logo_dark.svg" alt="DKSchV Schweiz" style="height: 42px;">
           <p>DKSchV Dini ist Ihr spezialisierter Schweizer Partner für Cyber-Security, Sicherheitsanalysen, IT-Notfallplanung und Datenschutz nach Schweizer Standard.</p>
         </div>
         <div class="footer-col">
@@ -885,7 +885,7 @@ Object.values(resourcesByPrefix).forEach(res => {
               ${res.frontmatter.version || res.frontmatter.stand || 'Stand: November 2026'} · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
             </p>
           </div>
-          <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+          <img src="../../assets/images/dkschv_logo.svg" alt="DKSchV Schweiz" style="height: 34px;">
         </div>
 
         <div class="article-content" style="font-size: 15px;">
@@ -1285,6 +1285,23 @@ ROOT_PAGES.forEach(filename => {
       html = html.replace('</body>', '  <script src="assets/js/portal-auth.js"></script>\n</body>');
       changed = true;
     }
+  }
+
+  // Update header and footer logos to vector SVG for razor sharpness
+  if (html.includes('assets/images/dkschv_logo.png') || html.includes('style="height: 42px;">>')) {
+    html = html.replace(/<img src="assets\/images\/dkschv_logo\.png" alt="DKSchV Schweiz[^"]*" class="brand-logo-img">/g, '<img src="assets/images/dkschv_logo.svg" alt="DKSchV Schweiz Logo" class="brand-logo-img">');
+    html = html.replace(/<img src="assets\/images\/dkschv_logo\.png" alt="DKSchV Schweiz"[^>]*>/g, '<img src="assets/images/dkschv_logo_dark.svg" alt="DKSchV Schweiz Logo" style="height: 42px;">');
+    html = html.replace(/style="height:\s*42px;">>/g, 'style="height: 42px;">');
+    changed = true;
+  }
+
+  // Update favicon in <head> to SVG + fallback
+  if (html.includes('rel="icon" type="image/png" href="assets/images/dkschv_icon.png"')) {
+    html = html.replace(
+      '<link rel="icon" type="image/png" href="assets/images/dkschv_icon.png">',
+      '<link rel="icon" type="image/svg+xml" href="assets/images/dkschv_icon.svg">\n  <link rel="alternate icon" type="image/png" href="assets/images/dkschv_icon.png">'
+    );
+    changed = true;
   }
 
   if (changed) {
