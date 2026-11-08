@@ -1,0 +1,25 @@
+Datei,Originalfelder unverändert,Fachmarker vorher,Fachmarker nachher,Geändert
+articles/01-ransomware-erste-60-minuten.md,ja,4,4,False
+articles/02-ceo-betrug-business-email-compromise.md,ja,2,2,False
+articles/03-datenpanne-melden-schweiz.md,ja,4,4,False
+articles/04-ransomware-resistente-backups.md,ja,2,2,False
+articles/05-microsoft-365-mfa-passkeys.md,ja,3,3,False
+articles/06-microsoft-365-sicherheit-kmu.md,ja,5,5,False
+articles/07-backup-wiederherstellung-testen.md,ja,3,3,False
+articles/08-it-sicherheitscheck-kmu.md,ja,3,3,False
+articles/09-schatten-ki-kmu.md,ja,5,5,False
+articles/10-cyberangriff-kommunikation.md,ja,3,3,False
+articles/11-lieferantenrisiken-cybersecurity.md,ja,4,4,False
+articles/12-nis2-dora-schweiz.md,ja,5,5,True
+resources/01-60-minuten-checkliste.md,ja,2,2,False
+resources/02-zahlungspruefprotokoll.md,ja,2,2,False
+resources/03-datenpanne-entscheidungsbaum.md,ja,6,6,False
+resources/04-backup-selbstcheck.md,ja,2,2,False
+resources/05-passkey-rollout-checkliste.md,ja,4,4,False
+resources/06-m365-tenant-pruefliste.md,ja,5,5,False
+resources/07-restore-testprotokoll.md,ja,3,3,False
+resources/08-risikoregister-vorlage.md,ja,3,3,False
+resources/09-ki-nutzungsregel.md,ja,3,3,False
+resources/10-holding-statement-vorlage.md,ja,4,4,False
+resources/11-lieferantenfragebogen.md,ja,4,4,False
+resources/12-nis2-dora-relevanzmatrix.md,ja,4,4,True

@@ -1,0 +1,148 @@
+# Artikel 11 – Quellenprüfung und Änderungen
+
+**Prüfdatum:** 1. November 2026, ISO-KW 44  
+**Tatsächliche Abrufzeit:** 1. November 2026, 09:05:10–09:10:12 CET, Europe/Zurich. Die einzelnen stateless Abrufe sind unten je Quelle angegeben. Der Beginn des Newsfensters um 09:00 ist keine behauptete Abschluss- oder Abrufzeit.  
+**Gegenstand:** Artikel 11 «Lieferantenrisiken im Griff: BACS-Kreislauf für Cloud-, IT- und kritische Dienstleister in Schweizer KMU» und das Arbeitsmittel «Lieferantenfragebogen und Priorisierungsmatrix».  
+**Autor:** Manus AI  
+**Paketstatus:** Artikel und Arbeitsmittel bleiben Entwürfe und sind nicht freigegeben. Diese Quellenpflege ersetzt keine Rechts-, Datenschutz-, Vertrags-, Tenant-, Incident-Response-, Forensik- oder organisationsspezifische Fachprüfung.
+
+## Ergebnis
+
+Der Artikelverbund enthält nach der Pflege **zwölf eindeutige externe Quellen**. Im Artikel sind alle zwölf und im Arbeitsmittel neun dieser Quellen referenziert. Alle zwölf Quellen wurden als Originalquellen inhaltlich geprüft. Die gesetzliche Grundlage wurde nicht bloss über die JavaScript-gestützten Fedlex-Anzeigen gelesen: DSG und DSV wurden jeweils über die aktuelle ELI-Fassung, Chronologie, Änderungsübersicht und die amtliche XML-Fassung geprüft.[4] [5] [6] [7] [8] [9] [10] [11]
+
+Die amtlichen Chronologien belegen für den Prüfzeitpunkt den geltenden Konsolidierungsstand des DSG vom 7. Juli 2025 und der DSV vom 1. Dezember 2025. Die Änderungsübersichten weisen keine aktuell in Kraft stehende Änderung der für dieses Paket herangezogenen DSG-Artikel 8, 9 oder 16 beziehungsweise der DSV-Artikel 1, 2, 3 oder 7 seit der letzten Quellenpflege vom 18. Oktober 2026 aus.[5] [6] [9] [10] Ein neues Feld `rechtsstand` wurde nicht angelegt, weil keines vorhanden war und der fachliche Rechtsbezug weiterhin die vorhandenen Fachprüfungsmarker erfordert.
+
+Seit dem 18. Oktober wurden vier kontextbezogene, belegte Prüfpunkte ergänzt: Komponenteninventar mit tatsächlichem Fixnachweis, Rollen und Vorfallkontakte bei Datenbearbeitern, hochberechtigte SaaS-Integrationen sowie KI-Quoten und Notbetrieb. Die Ergänzungen leiten keine pauschale Schweizer Rechts-, Vertrags- oder Tenantpflicht ab. Insbesondere sind sie keine Aussage, dass ein konkretes Unternehmen von den beschriebenen PHP-, ConnectWise- oder PK-Softech-Ereignissen betroffen sei.[15] [16] [17] [18]
+
+`news_items=[]`: Im Newsfenster vom 25. Oktober 09:00 bis 1. November 09:00 CET ergab die geprüfte BACS-Übersicht keine neue, materielle Originalmeldung für die Lieferanten-, Vertrags- oder Datenbearbeiteranforderungen dieses Artikels. Die Meldung vom 27. Oktober betrifft die Übernahme von WhatsApp-Konten und wurde nicht in den Artikel übernommen.[19] [20] Die vier aufgenommenen Kontextquellen liegen vor dem Newsfenster, wurden aber gemäss Vormerkung vom 25. Oktober und dem erweiterten Pflegeauftrag seit dem 18. Oktober geprüft.
+
+## Geprüfte Originalquellen und Quellenreichweite
+
+### Bestehende Artikel- und Arbeitsmittelquellen
+
+1. **BACS – Cybersicherheit in der Lieferkette.** Original-URL: [https://www.bacs.admin.ch/de/supply-chain-de](https://www.bacs.admin.ch/de/supply-chain-de). Abruf am 1. November um 09:05 CET: erreichbar, stateless Inhaltsabruf erfolgreich; separater HTTP-Abruf ergab 200. Die Seite hat kein eigenes Veröffentlichungs- oder Änderungsdatum. Sie weist die verlinkten Word-Arbeitsmittel mit 18. März 2025 aus. Bestätigt sind C-SCRM, die fortlaufende Lieferkettentransparenz, Priorisierung nach Business Impact, Abhängigkeit und geteilten Informationen, die drei Lieferantentypen sowie der Kreislauf von Bestandesaufnahme bis Vertragsanpassung.[1] Mangels veröffentlichter Seitenhistorie ist kein Wortlautvergleich zu einem bestimmten früheren Zeitpunkt belegbar.
+
+2. **BACS – Lieferantenverträge: Best Practice.** Original-URL: [https://www.bacs.admin.ch/dam/de/sd-web/iXNmDC-pccRC/best_practice_lieferantenvertrag_de.docx](https://www.bacs.admin.ch/dam/de/sd-web/iXNmDC-pccRC/best_practice_lieferantenvertrag_de.docx). Direkter Abruf am 1. November um 09:07 CET: erreichbar, HTTP 200, Word-Datei mit 145’124 Bytes; SHA-256 `00af669d445acddb68938792fd323a1cf84e794cc4d1bf41089ea0801057da2a`. Auf der BACS-Lieferkettenseite ist die Unterlage mit 18. März 2025 ausgewiesen. Sie nennt als mögliche Vertragsthemen risikogerechten Schutz nach Stand der Technik, Verschlüsselung, Zugriffstransparenz, Meldung von Cyberangriffen, Datenschutzverletzungen und Schwachstellen, Patchen, Unterlieferanten, Nachweise und Incident Response.[1] [2] Die bestehenden Vertragsausführungen bleiben damit belegt; konkrete Fristen oder Haftungsfolgen wurden weiterhin nicht als allgemeine Vorgabe formuliert.
+
+3. **BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz.** Original-URL: [https://www.bacs.admin.ch/de/notfallkonzept](https://www.bacs.admin.ch/de/notfallkonzept). Abruf am 1. November um 09:05 CET: erreichbar, HTTP 200. Die Seite ist selbst undatiert; das verlinkte KMU-Template ist mit 18. Mai 2026 ausgewiesen. Bestätigt sind die vier Phasen Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung, der Blick auf die Lieferkette, zentrale Notfallkontakte, klar zugeordnete Verantwortlichkeiten und Debriefing.[3] Eine genaue historische Wortlautgarantie ist ohne Seitengeschichte nicht möglich.
+
+4. **Fedlex – DSG, SR 235.1.** ELI-Original-URL: [https://www.fedlex.admin.ch/eli/cc/2022/491/de](https://www.fedlex.admin.ch/eli/cc/2022/491/de). Abruf am 1. November um 09:05 CET: erreichbar, HTTP 200; die Anzeige nennt den Text als in Kraft und die aktuelle Fassung vom 7. Juli 2025.[4] Die direkt geprüfte Chronologie unter [https://www.fedlex.admin.ch/eli/cc/2022/491/de/history](https://www.fedlex.admin.ch/eli/cc/2022/491/de/history) war um 09:06 CET erreichbar und führt als letzte Fassung die Berichtigung vom 7. Juli 2025.[5] Die Änderungsübersicht unter [https://www.fedlex.admin.ch/eli/cc/2022/491/de/changes](https://www.fedlex.admin.ch/eli/cc/2022/491/de/changes) war um 09:06 CET erreichbar; sie nennt für die aktuell berücksichtigten Änderungen nicht die Artikel 8, 9 oder 16.[6]
+
+   Die amtliche XML-Originalfassung unter [https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/491/20250707/de/xml/fedlex-data-admin-ch-eli-cc-2022-491-20250707-de-xml-1.xml](https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/491/20250707/de/xml/fedlex-data-admin-ch-eli-cc-2022-491-20250707-de-xml-1.xml) war um 09:06 CET erreichbar. Sie bestätigt: Art. 8 verlangt angemessene Datensicherheit; Art. 9 erlaubt Auftragsbearbeitung nur unter seinen Voraussetzungen, verlangt die Vergewisserung über Datensicherheit und die vorgängige Genehmigung für eine Übertragung an Dritte; Art. 16 enthält die Voraussetzungen für Auslandbekanntgaben.[7] Ein technischer JavaScript-Hinweis auf den Fedlex-Seiten wurde daher nicht als fehlende Rechtsfassung behandelt.
+
+5. **Fedlex – DSV, SR 235.11.** ELI-Original-URL: [https://www.fedlex.admin.ch/eli/cc/2022/568/de](https://www.fedlex.admin.ch/eli/cc/2022/568/de). Abruf am 1. November um 09:05 CET: erreichbar, HTTP 200; angezeigt ist die geltende Fassung mit Stand 1. Dezember 2025.[8] Die Chronologie unter [https://www.fedlex.admin.ch/eli/cc/2022/568/de/history](https://www.fedlex.admin.ch/eli/cc/2022/568/de/history) war um 09:06 CET erreichbar und nennt als letzte Fassung die Änderung vom 1. Dezember 2025.[9] Die Änderungsübersicht unter [https://www.fedlex.admin.ch/eli/cc/2022/568/de/changes](https://www.fedlex.admin.ch/eli/cc/2022/568/de/changes) war um 09:10 CET erreichbar; dort sind die Artikel 1, 2, 3 und 7 nicht unter den aktuell berücksichtigten Änderungen aufgeführt.[10]
+
+   Die amtliche XML-Originalfassung unter [https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/568/20251201/de/xml/fedlex-data-admin-ch-eli-cc-2022-568-20251201-de-xml-2.xml](https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/568/20251201/de/xml/fedlex-data-admin-ch-eli-cc-2022-568-20251201-de-xml-2.xml) war um 09:06 CET erreichbar. Sie bestätigt die Ermittlung und laufende Überprüfung von Schutzbedarf, Risiko und Massnahmen in Art. 1, die Schutzziele in Art. 2, unter anderem Systemsicherheit und Wiederherstellung in Art. 3, sowie Information und Widerspruch bei allgemeiner Genehmigung einer Unterauftragsbearbeitung in Art. 7.[11]
+
+6. **EDÖB – Cloud-Computing.** Original-URL: [https://www.edoeb.admin.ch/de/datenbearbeitungen-in-der-cloud](https://www.edoeb.admin.ch/de/datenbearbeitungen-in-der-cloud). Abruf am 1. November um 09:05 CET: erreichbar, HTTP 200. Die Seite führt kein Versionierungs- oder Veröffentlichungsdatum. Sie bestätigt insbesondere die Rollenlage bei Cloud-Diensten, die Verantwortung des Verantwortlichen, Auftrags- und Unterauftragsbearbeitung, Datensicherheit, Auslandbekanntgabe, Weisungen, Rückgabe oder Löschung, Mitwirkung und Audits.[12] Sie trägt die vorhandenen und erweiterten Fragebogenfelder; eine rückwirkende, minutengenaue Wortlautgleichheit ist nicht belegt.
+
+7. **EDÖB – Outsourcing, Auftragsdatenbearbeitung.** Original-URL: [https://www.edoeb.admin.ch/de/outsourcing-auftragsdatenbearbeitung](https://www.edoeb.admin.ch/de/outsourcing-auftragsdatenbearbeitung). Abruf am 1. November um 09:05 CET: erreichbar, HTTP 200. Die Seite ist undatiert und hat keine veröffentlichte Änderungshistorie. Sie bestätigt, dass Verantwortliche bei der Auftragsbearbeitung verantwortlich bleiben sowie Auftragsbearbeiter sorgfältig auswählen, instruieren und soweit nötig überwachen müssen. Sie behandelt zudem Weisungen, Geheimhaltung, Datensicherheit, Genehmigung und Information bei Unterbeauftragung, Mitwirkung und Auslandbekanntgaben.[13]
+
+8. **NIST – SP 800-161 Rev. 1, Update 1.** Original-URL: [https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final](https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final). Abruf am 1. November um 09:05 CET: erreichbar, HTTP 200. Der Quellenstand lautet «May 2022, includes updates as of 11-01-2024»; die Dokumenthistorie zeigt den 1. November 2024. Eine Planungsnotiz vom 2. Dezember 2025 verweist auf einen ausfüllbaren SCRM-Assessment-Fragebogen.[14] Der Inhalt stützt weiterhin die Einordnung von C-SCRM als Identifikation, Bewertung und Minderung von Lieferkettenrisiken im Risikomanagement.
+
+### Neue, in Artikel und Arbeitsmittel zitierte Kontextquellen
+
+9. **BACS – Kritische Schwachstellen in PHP: Sicherheitsupdates sofort einspielen.** Original-URL: [https://www.bacs.admin.ch/de/warnung-php-de](https://www.bacs.admin.ch/de/warnung-php-de). Abruf am 1. November um 09:06 CET: erreichbar, HTTP 200. Die Originalmeldung ist vom 21. Oktober 2026. Sie nennt die korrigierten PHP-Versionen 8.5.12, 8.4.27, 8.3.36 und 8.2.35, verlangt die Erfassung auch integrierter Komponenten und extern betriebener Anwendungen und erklärt bei zurückportierten Korrekturen die Bedeutung der konkreten Paketversion sowie der Anbieter-Sicherheitsinformation. Sie weist ausserdem darauf hin, dass ein Update keine bereits erfolgte Kompromittierung beseitigt.[15] Daraus wurde kein künstlicher CVE-Einschub abgeleitet, sondern ein dauerhafter, risikobasierter Nachweis für kritische Komponenten.
+
+10. **EDÖB – Abklärungen nach Cyberangriff auf Softwarelieferant.** Original-URL: [https://www.edoeb.admin.ch/de/edoeb-leitete-nach-cyberangriff-auf-softwarelieferant-abklaerungen-ein](https://www.edoeb.admin.ch/de/edoeb-leitete-nach-cyberangriff-auf-softwarelieferant-abklaerungen-ein). Abruf am 1. November um 09:06 CET: erreichbar, HTTP 200. Die Mitteilung wurde am 23. Oktober 2026 veröffentlicht. Der EDÖB meldet die formelle Untersuchung gegen PK Softech AG als hängiges Verfahren; zu klären sind übermittelte Personendaten, rechtliche Rahmenbedingungen, tatsächliche Datenübertragungen und Umfang abgeflossener Informationen.[16] Der Fall ist weder ein abschliessender Datenschutzverstossbefund noch ein Befund gegen andere Lieferanten. Er begründet die Ergänzung eines klaren Rollen- und Kontaktprüfpunkts, nicht eine neue Meldefrist.
+
+11. **Microsoft – AI-driven large-scale nation-state campaign using ARTEX enables supply chain compromise.** Original-URL: [https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/](https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/). Abruf am 1. November um 09:06 CET: erreichbar, HTTP 200. Der Bericht ist vom 21. Oktober 2026. Seine Sofortmassnahmen richten sich an bestimmte ConnectWise-Anwendungen: Anbindungen bis zu formellen Wiederherstellungsanweisungen deaktiviert halten, Konfiguration und Beweise vor irreversiblen Änderungen sichern, Anwendungskennungen und Dienstprinzipale inventarisieren sowie Berechtigungen, Credential-Ergänzungen und anwendungsbasierte Aktivitäten prüfen.[17] Der Artikel und die Vorlage verallgemeinern diese operativen Schritte nicht, sondern verwenden sie ausschliesslich als Anlass, hochberechtigte Integrationen im konkreten Lieferantendossier sichtbar zu halten.
+
+12. **Canadian Centre for Cyber Security – Managing AI token consumption for operational resilience.** Original-URL: [https://www.cyber.gc.ca/en/guidance/managing-ai-token-consumption-operational-resilience-itsm00125](https://www.cyber.gc.ca/en/guidance/managing-ai-token-consumption-operational-resilience-itsm00125). Inhaltsabruf am 1. November um 09:06 CET: erfolgreich; die Seite war lesbar und weist «Date modified: 2026-10-22» aus.[18] Ein separater generischer HTTP-Abruf um etwa 09:07 CET erhielt für dieselbe URL HTTP 403. Das ist ein zugriffsprofilabhängiger technischer Befund, nicht das Fehlen der Originalquelle oder deren Inhalt. Die Orientierung behandelt Quoten- und Tokenerschöpfung, Monitoring, Warnschwellen, Drittanbieterlimiten, Tool- und Connectorrisiken sowie manuelle oder anders unterstützte Ausweichabläufe.[18] Sie ist als freiwillige ausländische Orientierung markiert und nicht als Schweizer Rechtsvorgabe dargestellt.
+
+### Zusätzlich abgegrenzte Originalmeldungen
+
+13. **BACS – Im Fokus.** Original-URL: [https://www.bacs.admin.ch/de/im-fokus](https://www.bacs.admin.ch/de/im-fokus). Abruf am 1. November um 09:07 CET: erreichbar, HTTP 200. Die aktuelle Übersicht führte unter anderem die BACS-Meldungen vom 19., 21., 22., 23. und 27. Oktober auf.[19] Sie diente nur der Auffindung und Abgrenzung einschlägiger Originalmeldungen.
+
+14. **BACS – Woche 43: Betrüger kapern erneut WhatsApp-Konten mit gefälschten Abstimmungen.** Original-URL: [https://www.bacs.admin.ch/de/26w43-de](https://www.bacs.admin.ch/de/26w43-de). Abruf am 1. November um 09:07 CET: erreichbar, HTTP 200; veröffentlicht am 27. Oktober 2026.[20] Die Meldung betrifft Messenger-Phishing und die Übernahme von WhatsApp-Konten. Sie enthält keine neue Anforderung zum C-SCRM-Kreislauf, Lieferantenvertrag, Datenbearbeiterrollen oder Komponentennachweis und wurde daher nicht zitiert.
+
+15. **BACS – Technologiebetrachtung: Sicher authentifizieren – Fünf Stufen für mehr Orientierung.** Original-URL: [https://www.bacs.admin.ch/de/26-tb-authentifizierung-de](https://www.bacs.admin.ch/de/26-tb-authentifizierung-de). Abruf am 1. November um 09:09 CET: erreichbar, HTTP 200; veröffentlicht am 19. Oktober 2026.[21] Die Orientierung beschreibt eine nicht zertifizierende Klassifikation von Authentifikationsverfahren. Sie bestätigt keinen zusätzlichen, spezifischen Lieferanten- oder Vertragsprüfpunkt und wurde nicht als neue Referenz hinzugefügt.
+
+16. **BACS – KMU Cybersicherheit 2026: Cyberkriminalität wird zum Geschäftsrisiko für Schweizer KMU.** Original-URL: [https://www.bacs.admin.ch/de/26-kmustudie-de](https://www.bacs.admin.ch/de/26-kmustudie-de). Abruf am 1. November um 09:09 CET: erreichbar, HTTP 200; veröffentlicht am 22. Oktober 2026.[22] Die Mitteilung berichtet von Lücken bei organisatorischer Vorbereitung, Inventarisierung, Notfallplänen und Lieferantenprüfungen. Sie ist eine Studienmitteilung und keine neue normative Vorgabe. Die bestehenden BACS-Primärquellen belegen den Artikel genauer, daher keine zusätzliche Zitation.
+
+Die Abgrenzung dieser Quellen ist keine Vollständigkeitszusage für das gesamte Internet oder für nicht gefundene Veröffentlichungen. Sie belegt den tatsächlich geprüften Quellenraum für den angegebenen Abrufzeitpunkt.
+
+## Materielle Änderungen am Artikel
+
+1. **Frontmatter `stand`.** Vorher: `18. Oktober 2026`. Nachher: `1. November 2026`. Der Wert bezeichnet ausschliesslich den aktuellen Quellenprüfstand.
+
+2. **Frontmatter `quellenpruefung_umfang`.** Vorher: acht eindeutige Quellenreferenzen in Artikel und Arbeitsmittel, ergänzende BACS-Meldungen seit 4. Oktober 2026. Nachher: zwölf eindeutige externe Quellenreferenzen im Verbund, davon acht bestehende und vier neu aufgenommene, sowie einschlägige BACS-Originalmeldungen seit 18. Oktober 2026. Interne Paketlinks bleiben ausdrücklich nur erhalten und nicht live geprüft.
+
+3. **Frontmatter `quellenpruefung_status`.** Vorher: alle externen Quellen geprüft; keine seit 4. Oktober belegte materielle Änderung. Nachher: alle externen Quellen als Originalquellen geprüft; Fedlex zusätzlich über Chronologie, Änderungen und amtliche XML-Fassungen. Die vier Ergänzungen sind als kontextbezogene Prüfpunkte und nicht als neue pauschale Rechts-, Vertrags- oder Technikpflicht abgegrenzt.
+
+4. **Sichtbarer Standhinweis.** Vorher: kein sichtbarer Quellenstand direkt nach der H1. Nachher: `Quellenstand: 1. November 2026.` Damit stimmen sichtbarer Hinweis und Frontmatter überein.
+
+5. **Abschnitt «Partner mit privilegiertem Zugriff».** Vorher: allgemeine Prüfung des Zugangswegs, berechtigter Personen, MFA, Protokollierung und Sperrbarkeit. Nachher zusätzlich: Für hochberechtigte SaaS-Integrationen ist, soweit anwendbar, die Erfassung von Mandanten- oder Anwendungskennung, Dienstprinzipal, Berechtigungen, Zustimmungen, Eigentümerschaft, benötigten Protokollen und letztem Review vorgesehen. Der neue Absatz grenzt den Microsoft-Fall auf bestimmte ConnectWise-Anwendungen ein und verlangt vor irreversiblen Änderungen Beweissicherung.[17]
+
+6. **Abschnitt «Anbieter von Hardware oder Software».** Vorher: allgemeine Fragen nach Sicherheitsmeldungen, Updates und Notfallinformationen. Nachher zusätzlich: ein nachprüfbarer Komponentennachweis mit Produkt oder Komponente, Einsatzort, Betreiber, genauer laufender Paket- oder Produktversion, zugesagtem Fixstand, Bestätigungsdatum und Kontrollnachweis. Der Text erläutert begrenzt, weshalb bei zurückportierten Korrekturen nicht die Hauptversion allein genügt, und dass ein Update keine vorangegangene Kompromittierung beseitigt.[15]
+
+7. **Abschnitt «Risikobasiert prüfen».** Vorher: allgemeine Prüfdossier- und Leitfragen. Nachher zusätzlich: Zuordnung der verantwortlichen Stelle, Auftragsbearbeiter und bekannten Unterauftragsbearbeiter sowie fachlicher, Sicherheits- und Vorfallkontakte mit Stellvertretung. Der neue Absatz nennt den EDÖB-Fall ausschliesslich als hängige Untersuchung und beschreibt den dortigen Klärungsgegenstand ohne Übertragung eines Einzelfallbefunds.[16]
+
+8. **Abschnitt «Notfallwege mit dem Lieferanten planen und üben».** Vorher: Lieferantenkontakte, Tabletop und allgemeiner Notfallweg. Nachher zusätzlich: Bei einem KI-gestützten Angebot in einem kritischen Prozess sollen Verbrauchs- oder Ratenlimiten, Kosten- und Warnschwellen, Connector- und Toolrechte sowie manueller oder anders unterstützter Notbetrieb kontextbezogen geprüft werden. Die Quelle wird ausdrücklich als freiwillige kanadische Orientierung und nicht als Schweizer Rechtsvorgabe bezeichnet.[18]
+
+9. **Quellenverzeichnis.** Vorher: Quellen [1] bis [8]. Nachher: die Quellen [1] bis [8] unverändert erhalten; vier neue, verwendete Definitionen [9] bis [12] ergänzt. Jede neue Quelle hat eine passende numerische Inlinezitation. Alle zwölf Zitationen und Definitionen wurden lokal abgeglichen; keine Definition ist ungenutzt und keine im Text verwendete Definition fehlt.
+
+## Materielle Änderungen am Arbeitsmittel
+
+1. **Version und sichtbarer Stand.** Vorher: Frontmatter `version: "1.1"`, `stand: "18. Oktober 2026"` und kein sichtbarer Versionshinweis unter der H1. Nachher: `version: "1.2"`, `stand: "1. November 2026"` sowie `Version 1.2 · Quellenstand: 1. November 2026 · Arbeitsvorlage – nicht freigegeben`. Damit sind Arbeitsmittelversion, sichtbarer Hinweis und Quellenprüfstand konsistent.
+
+2. **Frontmatter zur Quellenprüfung.** Vorher: fünf Arbeitsmittelquellen und korrespondierende Artikelquellen; Prüfung seit 4. Oktober 2026. Nachher: neun Arbeitsmittelquellen, fünf bestehende und vier neue, sowie die korrespondierenden Originalquellen des Artikels; Fedlex-Korrespondenz zusätzlich über Chronologie, Änderungen und XML geprüft. Der Status hält fest, dass keine automatische Freigabe, Rechts- oder Tenantentscheidung erfolgt.
+
+3. **Teil A – Lieferantenprofil und Landkarte.** Vorher: Datenorte, Unterauftragsbearbeiter, allgemeine Ansprechpartner und interne Notfallkontakte. Nachher zusätzlich: Feld für die einzelfallfachlich zu prüfende Rolle bei Datenbearbeitung, getrennte fachliche, Sicherheits-, Datenschutz-Datenbearbeitungs- und Notfallkontakte mit Stellvertretung, Inventar kritischer Komponenten, hochberechtigte SaaS-Integration sowie ein bedingtes KI-Dienstprofil mit Connectoren, Toolrechten und bekannten Limiten.
+
+4. **Teil B – BACS-Lieferantentyp und Abhängigkeit.** Vorher: drei BACS-Typen, Konzentration, Ausfall, Ersatzweg und Sperrbarkeit. Nachher zusätzlich: zwei nicht automatische Kontextfragen zu weitreichenden Rechten einer SaaS-Integration beziehungsweise eines Dienstprinzipals und zur Auswirkung eines KI-gestützten Dienstes auf Verfügbarkeit, Kosten oder Wiederanlauf.
+
+5. **Teil D1 – Zugänge, Schutz und Betrieb.** Vorher: allgemeine Fragen zu Vertraulichkeit, Fernzugang, Nachvollziehbarkeit, Wirksamkeitsprüfung, Meldungen und Sperrbarkeit. Nachher zusätzlich: kurze, auf BACS-PHP und Microsoft begrenzte Erläuterungen sowie drei Nachweisfragen zu kritischen Komponenten, tatsächlichem Fixstand und hochberechtigten SaaS-Integrationen.[15] [17]
+
+6. **Teil D2 – Daten, Unterauftragsbearbeiter und Datenschutz.** Vorher: EDÖB-Cloud-Prüffelder und vorhandene Fragen zu Weisungen, Datenorten, Unterauftragsbearbeitung, Mitwirkung, Löschung und Auslandbekanntgaben. Nachher zusätzlich: klar abgegrenzter Hinweis auf den hängigen EDÖB-Fall und eine Frage, ob die Rollen von verantwortlicher Stelle, Auftragsbearbeiter und bekannten Unterauftragsbearbeitern nachvollziehbar dokumentiert sind.[16]
+
+7. **Teil D4 – KI-gestützte Dienste, Quoten und Notbetrieb.** Vorher: nicht vorhanden. Nachher: ein nur bei relevanten KI-Angeboten zu verwendender Teil mit fünf Fragen zu Datenquellen, Connectoren, Toolrechten, Limiten, Warnungen und kontextbezogenem manuellen oder anders unterstützten Notbetrieb. Er bezeichnet die kanadische Quelle ausdrücklich als freiwillige ausländische Orientierung.[18]
+
+8. **Quellenverzeichnis.** Vorher: Quellen [1] bis [5]. Nachher: die Quellen [1] bis [5] unverändert erhalten und die neuen, jeweils verwendeten Quellen [6] bis [9] ergänzt. Zitationen und Definitionen sind vollständig und ohne unkodierte Klammern in URLs abgeglichen.
+
+## Erhaltene Metadaten und Inhalte
+
+Im Artikel unverändert erhalten: Status `Entwurf`, Slug `/wissen/lieferantenrisiken-cybersecurity`, Veröffentlichungsdatum `10.12.2026`, H1, bestehende Quellen [1] bis [8], sämtliche internen relativen Slugs, `fachprüfung_status` und alle drei sichtbaren **[FACHPRÜFUNG ERFORDERLICH]**-Marker. Zusammen mit dem Frontmatter-Marker bestehen weiterhin vier Marker. Der Artikel umfasst weiterhin deutlich mehr als 1’400 Wörter.
+
+`meta_title` und `meta_description` wurden nicht geändert. Es gab keine konkrete quellenbelegte SEO-Korrektur; die Felder `meta_title_vorschlag` und `meta_description_vorschlag` wurden deshalb nicht angelegt. Ebenso wurde kein `fachlich_geprueft_am` angelegt.
+
+Im Arbeitsmittel unverändert erhalten: Titel, passender Artikel-Slug, Status «Arbeitsvorlage – nicht freigegeben», Slug `/resources/11-lieferantenfragebogen`, `fachprüfung_status`, die drei sichtbaren **[FACHPRÜFUNG ERFORDERLICH]**-Marker sowie der Frontmatter-Marker, alle bisherigen Tabellen, die vorhandene Risiko- und Freigabeabgrenzung und die bestehenden Quellen [1] bis [5]. Die einzige Versionsänderung ist die fachlich begründete Anhebung von 1.1 auf 1.2.
+
+## Verbleibende genaue Blocker und Grenzen
+
+1. **Datenschutz- und Rechtsfachprüfung bleibt offen.** Die erhaltenen Marker müssen vor einer Verwendung im konkreten Fall geklärt werden. Insbesondere sind Auftragsbearbeitung, Unterauftragsbearbeitung, Geheimhaltungspflichten, Auslandbekanntgaben, Weisungs- und Löschregelungen, Vertragsklauseln sowie Rollen im konkreten Datenfluss fachlich und rechtlich zu beurteilen.
+
+2. **Keine organisations- oder tenantbezogene Prüfung.** Es wurden keine Verträge, Auftragsbearbeitungsvereinbarungen, Daten- und Speicherorte, Unterauftragsbearbeiterlisten, Integrationskennungen, Dienstprinzipale, Rechte, Zustimmungen, Protokolle, laufenden Komponentenstände, Fixnachweise, KI-Limiten, Budgets, Notbetriebskonzepte, Notfallkontakte oder Incidentbeweise einer Organisation geprüft. Die neuen Fragen sind keine Freigabe dieser Sachverhalte.
+
+3. **Keine historische Wortlautgarantie bei undatierten Webseiten.** Bei den unversionierten BACS- und EDÖB-Webseiten ist nur die am 1. November erreichte Fassung dokumentiert. Sie beweist nicht den exakten Wortlaut am 18. Oktober, am 25. Oktober oder am Ende des Newsfensters. Die Rechtsfassungen sind davon getrennt über Fedlex-Primärmaterial verifiziert.[4] [5] [6] [7] [8] [9] [10] [11]
+
+4. **Technische Zugriffsbesonderheit der kanadischen Quelle.** Der inhaltliche stateless Abruf war erfolgreich, während ein zweiter generischer HTTP-Abruf 403 meldete. Vor einer weitergehenden automatisierten Nutzung wäre die Erreichbarkeit im konkreten Abrufprofil erneut zu prüfen. Der Zugriffsbefund ändert nicht die im geprüften Inhalt belegt dargestellte Orientierung.[18]
+
+5. **Interne relative Slugs und Livebetrieb bleiben ungeprüft.** Die internen Links wurden auftragsgemäss nur erhalten. Diese Prüfung testete keine öffentliche URL und erzeugte keine Aussage zur aktuellen Erreichbarkeit. Der Laufstatus vom 25. Oktober dokumentiert frühere 404-Befunde für die vorgesehenen Artikel- und Arbeitsmittelziele; dieser historische Befund wurde heute nicht erneut gemessen. Vor einem Go-live sind Zielseiten, CMS-Zugang und Fachfreigaben aktuell zu prüfen.
+
+6. **Keine Liveänderung.** Es gab keine Browserbedienung, keine CMS-Anmeldung, keinen Import und keine Veröffentlichung. Geändert wurden ausschliesslich die zulässigen lokalen Dateien `blog-paket/articles/11-lieferantenrisiken-cybersecurity.md` und `blog-paket/resources/11-lieferantenfragebogen.md`; dieser Prüfbericht wurde neu angelegt. Globale Manifeste, QA-Skripte und sonstige Paketdateien blieben unberührt.
+
+## Quellen
+
+[1]: https://www.bacs.admin.ch/de/supply-chain-de "BACS – Cybersicherheit in der Lieferkette"
+[2]: https://www.bacs.admin.ch/dam/de/sd-web/iXNmDC-pccRC/best_practice_lieferantenvertrag_de.docx "BACS – Lieferantenverträge Best Practice"
+[3]: https://www.bacs.admin.ch/de/notfallkonzept "BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz"
+[4]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Datenschutzgesetz DSG"
+[5]: https://www.fedlex.admin.ch/eli/cc/2022/491/de/history "Fedlex – Chronologie Datenschutzgesetz DSG"
+[6]: https://www.fedlex.admin.ch/eli/cc/2022/491/de/changes "Fedlex – Änderungen Datenschutzgesetz DSG"
+[7]: https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/491/20250707/de/xml/fedlex-data-admin-ch-eli-cc-2022-491-20250707-de-xml-1.xml "Fedlex – Amtliche XML-Fassung Datenschutzgesetz DSG"
+[8]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Datenschutzverordnung DSV"
+[9]: https://www.fedlex.admin.ch/eli/cc/2022/568/de/history "Fedlex – Chronologie Datenschutzverordnung DSV"
+[10]: https://www.fedlex.admin.ch/eli/cc/2022/568/de/changes "Fedlex – Änderungen Datenschutzverordnung DSV"
+[11]: https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/568/20251201/de/xml/fedlex-data-admin-ch-eli-cc-2022-568-20251201-de-xml-2.xml "Fedlex – Amtliche XML-Fassung Datenschutzverordnung DSV"
+[12]: https://www.edoeb.admin.ch/de/datenbearbeitungen-in-der-cloud "EDÖB – Cloud-Computing"
+[13]: https://www.edoeb.admin.ch/de/outsourcing-auftragsdatenbearbeitung "EDÖB – Outsourcing Auftragsdatenbearbeitung"
+[14]: https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final "NIST – SP 800-161 Rev. 1 Update 1"
+[15]: https://www.bacs.admin.ch/de/warnung-php-de "BACS – Kritische Schwachstellen in PHP"
+[16]: https://www.edoeb.admin.ch/de/edoeb-leitete-nach-cyberangriff-auf-softwarelieferant-abklaerungen-ein "EDÖB – Abklärungen nach Cyberangriff auf Softwarelieferant"
+[17]: https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/ "Microsoft – ARTEX und ConnectWise Lieferkettenkompromittierung"
+[18]: https://www.cyber.gc.ca/en/guidance/managing-ai-token-consumption-operational-resilience-itsm00125 "Canadian Centre for Cyber Security – KI-Tokenverbrauch und Betriebsresilienz"
+[19]: https://www.bacs.admin.ch/de/im-fokus "BACS – Im Fokus"
+[20]: https://www.bacs.admin.ch/de/26w43-de "BACS – Woche 43 WhatsApp-Konten"
+[21]: https://www.bacs.admin.ch/de/26-tb-authentifizierung-de "BACS – Sicher authentifizieren"
+[22]: https://www.bacs.admin.ch/de/26-kmustudie-de "BACS – KMU Cybersicherheit 2026"

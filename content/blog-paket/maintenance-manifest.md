@@ -1,0 +1,87 @@
+# DKSchV-Blogpaket – Wartungsmanifest
+
+> **Geltungsbereich:** Ein Eintrag pro Artikel; keine Veröffentlichungsfreigabe. Letzte vollständige Referenzpflege: **01.11.2026 (KW44)**, je Artikel und Arbeitsmittel in zwölf Einzelberichten dokumentiert. Der unterbrochene Abschluss hinterliess ein veraltetes CMS-Manifest. Der lokale Metadaten- und Fassungsabgleich wird am **08.11.2026 (KW45)** nachgeholt; dies ist keine neue Vollpflege und keine Fachfreigabe. Nächster vollständiger Pflegezyklus: **15.11.2026 (KW46)**.
+
+| Titel | Slug | Veröffentlichungsdatum | Letzte Quellenprüfung | Primäre offizielle Quellen | Konkreter Aktualisierungsauslöser | Review-Risikostufe | Status |
+|---|---|---:|---:|---|---|---|---|
+| Ransomware im KMU: Die ersten 60 Minuten richtig handeln | `/wissen/ransomware-erste-60-minuten` | 01.10.2026 | 01.11.2026 | BACS – Ransomware: Was nun?; BACS – Informationen zur Meldepflicht für Cyberangriffe auf kritische Infrastrukturen; Fedlex – Bundesgesetz über den Datenschutz, Art. 24 Meldung von Verletzungen der Datensicherheit; EDÖB – Leitfaden zur Meldung von Datensicherheitsverletzungen und Information Betroffener nach Art. 24 DSG | Bei Änderungen von BACS-/EDÖB-Meldewegen, DSG/DSV, Sanktionslage oder Incident-Response-Leitlinien; vor jedem konkreten Ransomware-Bezug. | Kritisch | Entwurf – nicht freigegeben |
+| CEO-Betrug und Business Email Compromise: So schützen Schweizer KMU Zahlungen und E-Mail-Konten | `/wissen/ceo-betrug-business-email-compromise` | 08.10.2026 | 01.11.2026 | BACS – Business E-Mail Compromise (Rechnungsmanipulationsbetrug); BACS – CEO-Betrug; BACS – Konto gehackt oder Daten abgeflossen: Was nun?; CISA – Teach Employees to Avoid Phishing (aktuelle KMU-Quelle) | Bei Änderungen von BACS-Empfehlungen zu Rechnungsmanipulation oder bei Änderungen an Zahlungsprozessen; vor Bezug auf einen konkreten Mailbox- oder Personendatenvorfall. | Hoch | Entwurf – nicht freigegeben |
+| Datenpanne in der Schweiz: DSG-Entscheidungsbaum für EDÖB-Meldung und BACS-Pflicht | `/wissen/datenpanne-melden-schweiz` | 15.10.2026 | 01.11.2026 | Fedlex – Bundesgesetz über den Datenschutz (DSG), insbesondere Art. 5 und Art. 24; Fedlex – Verordnung über den Datenschutz (DSV), Art. 15 zur Meldung von Datensicherheitsverletzungen; EDÖB – DataBreach: Meldung von Datensicherheitsverletzungen durch Verantwortliche; EDÖB – Leitfaden zur Meldung von Datensicherheitsverletzungen und Information der Betroffenen nach Art. 24 DSG, Version 1.2 | Bei Änderungen von DSG, DSV, EDÖB- oder BACS-Meldeverfahren beziehungsweise bei sektorspezifischen Vorgaben; vor jedem konkreten Meldefall. | Kritisch | Entwurf – nicht freigegeben |
+| 3-2-1-Backups für Schweizer KMU: So werden Sicherungen ransomware-resistent | `/wissen/ransomware-resistente-backups` | 22.10.2026 | 01.11.2026 | BACS – Erste Schritte für Unternehmen und Behörden: Backup nicht dauerhaft verbunden; BACS – Grundschutz für Unternehmen und Behörden; BACS – Ransomware: Was nun?; BACS – Zusammenarbeit mit IT-Dienstleistern: 3-2-1 und Wiederherstellungstest | Bei Änderungen der Backup- oder Ransomware-Leitlinien, der Aufbewahrungs-/Löschvorgaben oder der Zielarchitektur; vor organisationsspezifischer Nutzung. | Hoch | Entwurf – nicht freigegeben |
+| Microsoft 365 MFA und Passkeys für Schweizer KMU: Rollout zu den Microsoft-Terminen 2027 | `/wissen/microsoft-365-mfa-passkeys` | 29.10.2026 | 01.11.2026 | Microsoft Learn – Passkeys by default and retirement of Microsoft-provided SMS and voice authentication; Microsoft Learn – Authentication methods in Microsoft Entra ID: passkeys (FIDO2); Microsoft Learn – Frequently asked questions about SMS and voice retirement; Microsoft Learn – Conditional Access authentication strengths; Microsoft Learn – CYOT-FAQ und Setup: dokumentierte allgemeine Verfügbarkeit seit 30.10.2026 für Workforce-Tenants in global Azure; konkrete Tenant-/Schweiz-Eignung offen | Bei Änderungen der Microsoft-Entra-Dokumentation zu Passkeys, SMS/Voice, Lizenzen oder Rollout-Fristen sowie vor jeder Produktivsetzung im Tenant. | Hoch | Entwurf – nicht freigegeben |
+| Microsoft 365 sicher konfigurieren: Der Praxis-Check für Schweizer KMU | `/wissen/microsoft-365-sicherheit-kmu` | 05.11.2026 | 01.11.2026 | EDÖB – Cloud-Computing: Datenschutzpflichten bei Cloud-Diensten; Fedlex – Bundesgesetz über den Datenschutz (DSG), insbesondere Art. 7–9; Microsoft Learn – Mandatory multifactor authentication for Azure and admin portals; Microsoft Learn – Manage emergency access accounts in Microsoft Entra ID | Bei Änderungen der Microsoft-365-/Entra-Sicherheitsdokumentation oder der Datenschutzvorgaben zu Cloud und Auslandbekanntgaben; vor Tenant-Änderungen. | Hoch | Entwurf – nicht freigegeben |
+| Ransomware-Wiederherstellung testen: Leitfaden für Schweizer KMU mit IT-Notfallplan | `/wissen/backup-wiederherstellung-testen` | 12.11.2026 | 01.11.2026 | BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz; BACS – Ransomware: Was nun?; CISA – StopRansomware Guide; BACS – Meldepflicht für Cyberangriffe auf kritische Infrastrukturen | Bei Änderungen von BACS-/CISA-Wiederanlaufleitlinien oder der Backup-Architektur; vor einem Restore-Test oder einem realen Vorfall. | Hoch | Entwurf – nicht freigegeben |
+| IT-Sicherheitscheck für Schweizer KMU: So wird aus Befunden ein priorisiertes Cyber-Risikoregister | `/wissen/it-sicherheitscheck-kmu` | 19.11.2026 | 01.11.2026 | BACS – Cybersicherheits- und Resilienzmethode (CSRM); Fedlex – Bundesgesetz über den Datenschutz (DSG), Art. 8; Fedlex – Verordnung über den Datenschutz (DSV), Art. 1–3; Fedlex – Bundesgesetz über den Datenschutz (DSG), Art. 24 | Bei Änderungen der Risikobewertung, DSG/DSV, sektoralen Anforderungen oder der organisationsspezifischen Eskalationskriterien. | Hoch | Entwurf – nicht freigegeben |
+| Schatten-KI im Schweizer KMU: Generative KI sicher nutzen, ohne vertrauliche Daten preiszugeben | `/wissen/schatten-ki-kmu` | 26.11.2026 | 01.11.2026 | EDÖB – Update: Geltendes Datenschutzgesetz ist auf KI direkt anwendbar; Fedlex – Bundesgesetz über den Datenschutz (DSG), insbesondere Art. 5–9, 16, 19, 21, 22 und 24; EDÖB – Datenschutztag 2026: Einsatz generativer KI und Herausforderungen für den Datenschutz; Fedlex – Verordnung über den Datenschutz (DSV), insbesondere Art. 1–4 | Bei Änderungen von DSG/DSV/EDÖB-Vorgaben, KI-Anbieter-Datenflüssen oder eingesetzten KI-Funktionen; vor Freigabe neuer KI-Anwendungsfälle. | Kritisch | Entwurf – nicht freigegeben |
+| Nach einem Cyberangriff kommunizieren: Notfallkommunikation für Schweizer KMU vorbereiten und üben | `/wissen/cyberangriff-kommunikation` | 03.12.2026 | 01.11.2026 | BACS – Cyberangriff: wie kommunizieren?; BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz; Fedlex – Bundesgesetz über den Datenschutz (DSG), Art. 24; EDÖB – DataBreach: Meldung von Datensicherheitsverletzungen | Bei Änderungen von BACS-Kommunikationsleitlinien, DSG/EDÖB-/BACS-Meldewegen oder Kommunikationsrollen; vor Einsatz in einem konkreten Vorfall. | Kritisch | Entwurf – nicht freigegeben |
+| Lieferantenrisiken im Griff: BACS-Kreislauf für Cloud-, IT- und kritische Dienstleister in Schweizer KMU | `/wissen/lieferantenrisiken-cybersecurity` | 10.12.2026 | 01.11.2026 | BACS – Cybersicherheit in der Lieferkette; BACS – Lieferantenverträge: Best Practice; BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz; Fedlex – Bundesgesetz über den Datenschutz (DSG), insbesondere Artikel 8, 9 und 16 | Bei Änderungen von Lieferantenstruktur, Auftrags-/Unterauftragsbearbeitung, Auslandbekanntgaben, Verträgen oder BACS-Leitlinien zur Lieferkette. | Kritisch | Entwurf – nicht freigegeben |
+| NIS2 und DORA: Relevanzcheck für Schweizer IT-Dienstleister und KMU-Zulieferer | `/wissen/nis2-dora-schweiz` | 17.12.2026 | 01.11.2026 | Fedlex – Informationssicherheitsgesetz: Meldepflicht für Cyberangriffe auf kritische Infrastrukturen; Europäische Kommission – NIS2-Richtlinie: Cybersicherheit von Netz- und Informationssystemen; Europäische Kommission – Stand der NIS2-Umsetzung in den EU-Mitgliedstaaten; EUR-Lex – Verordnung (EU) 2022/2554 über die digitale operationale Resilienz im Finanzsektor (DORA) | Bei Änderungen des NIS2-Umsetzungsstands, von DORA, der EU-Territorialität, Kundenverträgen oder der eigenen EU-Präsenz; vor jeder Einzelfall-Einordnung. | Kritisch | Entwurf – nicht freigegeben |
+
+
+**Risikostufen:** **Kritisch** bezeichnet Beiträge, in denen aktuelle rechtliche, regulatorische oder meldepflichtbezogene Einordnungen eine individuelle Fachbeurteilung voraussetzen. **Hoch** bezeichnet Beiträge, in denen eine technische, operative oder produktbezogene Aussage vor Verwendung organisations- und versionsspezifisch geprüft werden muss. Keine Stufe ist eine Publikationsfreigabe.
+
+## Turnusprüfung am 04.10.2026 – ISO-Woche 40
+
+Das Prüfzeitfenster endete um **09:00 Europe/Zurich**; die Abrufe fanden danach statt. Bei Quellen ohne versionierte Änderungshistorie ist kein minutengenauer Rückschluss auf den exakten Wortlaut um 09:00 möglich. Die folgenden Einzelberichte nennen je Artikel die tatsächlich geprüften Original-URLs, Quellenstände, geänderten Abschnitte, unbestätigten Aussagen und Veröffentlichungshürden. Die Standangabe in den Entwürfen bezeichnet nur die gezielte Quellenprüfung, **keine Vollprüfung aller Zusatzquellen**.
+
+| Artikel | Ergebnis der lokalen Pflege | Einzelbericht |
+|---|---|---|
+| 01 – Ransomware-Erstreaktion | Quellenstand und Checklistenstand erneuert; keine materielle Änderung belegt; **seit 01.10. terminlich fällig, aber nicht freigegeben**. | [Prüfung 01](../reviews/2026-10-04/artikel-01-quellen-und-aenderungen.md) |
+| 02 – CEO-Betrug | CISA-Archivlink gegen aktuelle KMU-Primärquelle ersetzt; Handlung zur unabhängigen Verifizierung präzisiert. | [Prüfung 02](../reviews/2026-10-04/artikel-02-quellen-und-aenderungen.md) |
+| 03 – Datenpanne | Stand und Rechtsstand aktualisiert; geltende Meldepflicht laut geprüften Quellen nicht geändert. | [Prüfung 03](../reviews/2026-10-04/artikel-03-quellen-und-aenderungen.md) |
+| 04 – Ransomware-resistente Backups | Quellen- und Vorlagenstand erneuert; keine materielle Änderung belegt. | [Prüfung 04](../reviews/2026-10-04/artikel-04-quellen-und-aenderungen.md) |
+| 05 – MFA und Passkeys | Herstellerhinweis ergänzt: Providerkonfiguration laut Microsoft erst **ab 30.10.2026**; Artikel und Checkliste angepasst. | [Prüfung 05](../reviews/2026-10-04/artikel-05-quellen-und-aenderungen.md) |
+| 06 – Microsoft 365 | Quellen- und Vorlagenstand erneuert; keine materielle Änderung belegt; Tenantprüfung offen. | [Prüfung 06](../reviews/2026-10-04/artikel-06-quellen-und-aenderungen.md) |
+| 07 – Wiederherstellung | Quellen- und Vorlagenstand erneuert; keine materielle Änderung belegt. | [Prüfung 07](../reviews/2026-10-04/artikel-07-quellen-und-aenderungen.md) |
+| 08 – Sicherheitscheck | Quellenstand aktualisiert; sichtbare Versionsnummer der Vorlage redaktionell an Frontmatter 1.1 angeglichen. | [Prüfung 08](../reviews/2026-10-04/artikel-08-quellen-und-aenderungen.md) |
+| 09 – Schatten-KI | Quellen- und Vorlagenstand erneuert; keine materielle Änderung belegt; Anbieter-/Datenschutzprüfung offen. | [Prüfung 09](../reviews/2026-10-04/artikel-09-quellen-und-aenderungen.md) |
+| 10 – Krisenkommunikation | Quellen- und Vorlagenstand erneuert; keine materielle Änderung belegt. | [Prüfung 10](../reviews/2026-10-04/artikel-10-quellen-und-aenderungen.md) |
+| 11 – Lieferantenrisiken | Quellen- und Vorlagenstand erneuert; keine materielle Änderung belegt. | [Prüfung 11](../reviews/2026-10-04/artikel-11-quellen-und-aenderungen.md) |
+| 12 – NIS2/DORA | Quellen- und Vorlagenstand erneuert; keine materielle Rechtsänderung belegt; EU-Einzelfallprüfung offen. | [Prüfung 12](../reviews/2026-10-04/artikel-12-quellen-und-aenderungen.md) |
+
+**Nächste Sonntagsnews:** 11.10.2026 (ISO-Woche 41). **Nächste zweiwöchentliche Artikelprüfung:** 18.10.2026 (ISO-Woche 42). Alle zwölf Artikel bleiben Entwürfe mit offenen Fachprüfungsmarkern. Weil kein authentifizierter CMS-Zugang für diese Ausführung vorliegt und normale Webador-Editoränderungen unmittelbar live gehen, ist die **Live-Synchronisierung blockiert**. Für die erste vorgesehene Artikel-URL wurde am 04.10.2026 HTTP **404** gemessen; weder der ursprüngliche Termin noch die lokale Prüfung begründen eine Freigabe. Jeder öffentlich beabsichtigte interne Artikel-/Ressourcenlink ist vor Go-live erneut live zu testen.
+
+## Turnusprüfung am 18.10.2026 – ISO-Woche42
+
+Die zwölf Artikel und zwölf Arbeitsmittel sind lokal aktualisiert. [Pflegebericht](../reviews/2026-10-18/DKSchV_Pflegebericht_KW42.md) und [CMS-Manifest](cms-import-manifest.csv) dokumentieren den aktuellen Stand. **Keine Live-Änderung:** Der aktuelle Sandbox-Browser zeigt den Webador-Login; alle ursprünglichen Fachmarker bleiben offen. Öffentlicher Linktest: vier bestehende Service-/Kontaktziele HTTP 200, alle 24  geplanten Artikel-/Arbeitsmittelziele HTTP 404. Validator: **0 Fehler, 0 Warnungen**; keine Fachfreigabe.
+
+**Artikel 01:** BACS-Malwareverdacht und Meldemöglichkeit aktualisiert. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-01-quellen-und-aenderungen.md).
+
+**Artikel 02:** Fedlex-Konsolidierungen und BACS-Oversharing-Kontext aktualisiert. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-02-quellen-und-aenderungen.md).
+
+**Artikel 03:** BACS-Ergänzungsfrist/CSV-Zitate präzisiert; konkrete Meldefragen bleiben offen. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-03-quellen-und-aenderungen.md).
+
+**Artikel 04:** Backup-Selbstcheck um begrenzten Malwareverdacht-Kontext ergänzt. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-04-quellen-und-aenderungen.md).
+
+**Artikel 05:** CISA-PDF-Link und Standhinweise korrigiert; Fedlex Art.8 per amtlichem XML/History verifiziert; Telefonieprovider weiterhin erst ab 30.10. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-05-quellen-und-aenderungen.md).
+
+**Artikel 06:** Administrative MFA, Notfallzugänge und BACS-KI-Eingaben konkretisiert; Vorlage ergänzt. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-06-quellen-und-aenderungen.md).
+
+**Artikel 07:** Restore-Test von Malware-Untersuchung abgegrenzt; BACS-Quelle ergänzt. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-07-quellen-und-aenderungen.md).
+
+**Artikel 08:** Befundstatus ergänzt; Risikoregister-Vorlage Version 1.2. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-08-quellen-und-aenderungen.md).
+
+**Artikel 09:** EDÖB/BACS-Kampagne vom 16.10. und Trainings-/Opt-out-Nachweis ergänzt; KI-Vorlage Version 1.2. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-09-quellen-und-aenderungen.md).
+
+**Artikel 10:** Quellenstand aktualisiert; keine materielle Textänderung erforderlich. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-10-quellen-und-aenderungen.md).
+
+**Artikel 11:** DSG-Fachbegriff und NIST-Quellenbezeichnung präzisiert. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-11-quellen-und-aenderungen.md).
+
+**Artikel 12:** DORA-/IKT-Abgrenzung und konsolidierte ISG-Quelle präzisiert; Matrix Version 1.2. [Quellen und Passagenänderungen](../reviews/2026-10-18/artikel-12-quellen-und-aenderungen.md).
+
+**Nächste News:** 25.10.2026 (KW 43). **Nächste Turnuspflege:** 01.11.2026 (KW 44). Quellen und öffentliche Ziele vor jedem Go-live erneut prüfen; die bereits terminierten Artikel 01, 02 und 03 bleiben nicht freigegeben.
+
+## Abschlussnachtrag am 08.11.2026 – ISO-Woche 45
+
+Die vollständige Referenzpflege vom **01.11.2026 (KW44)** ist in [zwölf Einzelberichten](../reviews/2026-11-01/DKSchV_Pflegebericht_KW44.md) dokumentiert. Der unterbrochene Abschluss hinterliess zwölf veraltete Quellenstand-Einträge im CMS-Manifest. Sie sind am 08.11. lokal abgeglichen. Die Datumswerte der oberen Artikeltabelle und der Entwürfe bleiben auf dem tatsächlich geprüften Quellenstand **01.11.2026**; keine neue Vollpflege in KW45.
+
+Die bereits belegte ISG-Fassungskorrektur bei Artikel 12/Matrix ist jetzt eingearbeitet; [Nachtrag und Originalabruf](../news/qa/2026-11-08/kw44-isg-nachtrag.md) bleiben nachvollziehbar. Originale SEO-Felder, Slugs, Termine, Entwurfsstatus und Fachmarker sind erhalten. Der [Paketvalidator](../news/qa/2026-11-08/validator-ergebnis.txt) bestätigt **0 Fehler und 0 Warnungen**. Dies ist keine Fach- oder Veröffentlichungserlaubnis.
+
+[Heutiger Laufstatus und genaue Blocker](../news/2026-11-08_DKSchV_Laufstatus.md): Webador-Zugang nicht authentifiziert, kein Import oder Live-Änderung; HTTP-Linkchecker 28 × 403 einschliesslich bestehender Ziele, somit kein aktueller 404-Nachweis. Erfolgreiche Artikel-/Arbeitsmittel-Erreichbarkeit bleibt offen. Beiträge 01–06 sind terminlich fällig, aber weiterhin nicht freigegeben. Bei Artikel 11 ist die am 01.11. gemessene unterschiedliche Erreichbarkeit der kanadischen KI-Quelle vor Go-live zu klären.
+
+**Nächste Sonntagsnews und nächste vollständige Turnuspflege: 15.11.2026, ISO-KW46.** Die neuen Hinweise aus KW45 und der noch abzugleichende NIST-Agentenidentitätsbeitrag vom 27.10. liegen als Vormerkungen im Laufstatus; keine simulierte neue Fachfreigabe.
+
+## Referenzen
+
+[1]: qa/qa-artikel-01-bis-06.md "QA-Bericht: Artikel und Arbeitsmittel 01–06, Stand 20. September 2026"
+[2]: qa/qa-artikel-07-bis-12.md "QA-Bericht: Artikel und Arbeitsmittel 07–12, Prüfdatum 20. September 2026"

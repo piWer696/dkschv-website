@@ -1,0 +1,18 @@
+Artikel: 12
+Arbeitsmittel: 12
+Artikel-Slugs: 12
+Arbeitsmittel-Slugs: 12
+Fehler: 12
+Warnungen: 0
+ERROR: articles/01-ransomware-erste-60-minuten.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/02-ceo-betrug-business-email-compromise.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/03-datenpanne-melden-schweiz.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/04-ransomware-resistente-backups.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/05-microsoft-365-mfa-passkeys.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/06-microsoft-365-sicherheit-kmu.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/07-backup-wiederherstellung-testen.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/08-it-sicherheitscheck-kmu.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/09-schatten-ki-kmu.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/10-cyberangriff-kommunikation.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/11-lieferantenrisiken-cybersecurity.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab
+ERROR: articles/12-nis2-dora-schweiz.md: CMS-Manifest Letzte gezielte Quellenprüfung weicht von Artikel ab

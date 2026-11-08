@@ -1,0 +1,6 @@
+Artikel: 12
+Arbeitsmittel: 12
+Artikel-Slugs: 12
+Arbeitsmittel-Slugs: 12
+Fehler: 0
+Warnungen: 0

@@ -1,0 +1,44 @@
+--- vorher/articles/12-nis2-dora-schweiz.md
++++ nachher/articles/12-nis2-dora-schweiz.md
+@@ -9,8 +9,8 @@
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "17.12.2026"
+ stand: "1. November 2026"
+-quellenpruefung_umfang: "Alle 15 Quellenreferenzen dieses Artikels und die sieben im verknüpften Arbeitsmittel verwendeten Quellen-URLs; amtliche ISG-Fassung zusätzlich über datierte Fedlex-XML/PDF-Fassung, ISG-Änderungsakt und CSV geprüft; einschlägige Originalmeldungen seit 18. Oktober 2026 sowie Vormerkungen vom 25. Oktober geprüft. Interne Paketziele nur lokal geprüft."
+-quellenpruefung_status: "vollständig verifiziert am 1. November 2026 nach 09:00 Europe/Zurich, tatsächliche Abrufe ca. 09:05–09:12 CET; keine Fach-, Rechts-, Vertrags- oder Veröffentlichungsfreigabe"
++quellenpruefung_umfang: "Quellenpflegedurchgang vom 1. November 2026: alle 15 Quellenreferenzen dieses Artikels und die sieben im verknüpften Arbeitsmittel verwendeten Quellen-URLs; datierte Fedlex-XML/PDF-Fassung, ISG-Änderungsakt und CSV sowie einschlägige Originalmeldungen seit 18. Oktober 2026 und Vormerkungen vom 25. Oktober geprüft. Ergänzender ISG-Fassungsabgleich anhand Fedlex-History und XML-Fassung vom 1. Oktober 2025 am 1. November 2026 gegen 09:18 CET dokumentiert. Am 8. November 2026 ausschliesslich Fassungskorrektur von Referenz [1] auf dieser bereits geprüften Quelle; keine erneute vollständige Quellenpflege. Interne Paketziele nur lokal geprüft."
++quellenpruefung_status: "Quellenprüfung vom 1. November 2026 dokumentiert: Erstabrufe ca. 09:05–09:12 CET, ergänzender ISG-Fassungsabgleich gegen 09:18 CET (Europe/Zurich). Fassungskorrektur am 8. November 2026 auf bereits am 1. November geprüfter Quelle; kein neuer Quellenabruf und keine erneute vollständige Quellenprüfung. Stand bleibt 1. November 2026; keine Fach-, Rechts-, Vertrags- oder Veröffentlichungsfreigabe"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -112,7 +112,7 @@
+ 
+ ## Quellen
+ 
+-[1]: https://fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/232/20250401/de/pdf-a/fedlex-data-admin-ch-eli-cc-2022-232-20250401-de-pdf-a.pdf "Fedlex – Informationssicherheitsgesetz, Stand 1. April 2025"
++[1]: https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/232/20251001/de/xml/fedlex-data-admin-ch-eli-cc-2022-232-20251001-de-xml-1.xml "Fedlex – Informationssicherheitsgesetz, Fassung 1. Oktober 2025"
+ [2]: https://digital-strategy.ec.europa.eu/en/policies/nis2-directive "Europäische Kommission – NIS2-Richtlinie: Cybersicherheit von Netz- und Informationssystemen"
+ [3]: https://digital-strategy.ec.europa.eu/en/policies/nis-transposition "Europäische Kommission – Stand der NIS2-Umsetzung in den EU-Mitgliedstaaten"
+ [4]: https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32022R2554 "EUR-Lex – Verordnung (EU) 2022/2554 über die digitale operationale Resilienz im Finanzsektor (DORA)"
+--- vorher/resources/12-nis2-dora-relevanzmatrix.md
++++ nachher/resources/12-nis2-dora-relevanzmatrix.md
+@@ -6,8 +6,8 @@
+ slug: "/resources/12-nis2-dora-relevanzmatrix"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ stand: "1. November 2026"
+-quellenpruefung_umfang: "Alle sieben Quellenreferenzen dieses Arbeitsmittels und alle 15 Quellenreferenzen des verknüpften Artikels; amtliche ISG-Fassung zusätzlich über datierte Fedlex-XML/PDF-Fassung, ISG-Änderungsakt und CSV geprüft; einschlägige Originalmeldungen seit 18. Oktober 2026 sowie Vormerkungen vom 25. Oktober geprüft. Der Artikelbezug und interne Paketziele wurden nur lokal geprüft."
+-quellenpruefung_status: "vollständig verifiziert am 1. November 2026 nach 09:00 Europe/Zurich, tatsächliche Abrufe ca. 09:05–09:12 CET; keine Fach-, Vertrags-, Rechts- oder Veröffentlichungsfreigabe"
++quellenpruefung_umfang: "Quellenpflegedurchgang vom 1. November 2026: alle sieben Quellenreferenzen dieses Arbeitsmittels und alle 15 Quellenreferenzen des verknüpften Artikels; datierte Fedlex-XML/PDF-Fassung, ISG-Änderungsakt und CSV sowie einschlägige Originalmeldungen seit 18. Oktober 2026 und Vormerkungen vom 25. Oktober geprüft. Ergänzender ISG-Fassungsabgleich anhand Fedlex-History und XML-Fassung vom 1. Oktober 2025 am 1. November 2026 gegen 09:18 CET dokumentiert. Am 8. November 2026 ausschliesslich Fassungskorrektur von Referenz [1] auf dieser bereits geprüften Quelle; keine erneute vollständige Quellenpflege. Der Artikelbezug und interne Paketziele wurden nur lokal geprüft."
++quellenpruefung_status: "Quellenprüfung vom 1. November 2026 dokumentiert: Erstabrufe ca. 09:05–09:12 CET, ergänzender ISG-Fassungsabgleich gegen 09:18 CET (Europe/Zurich). Fassungskorrektur am 8. November 2026 auf bereits am 1. November geprüfter Quelle; kein neuer Quellenabruf und keine erneute vollständige Quellenprüfung. Stand bleibt 1. November 2026; keine Fach-, Vertrags-, Rechts- oder Veröffentlichungsfreigabe"
+ ---
+ 
+ # NIS2-/DORA-Relevanzmatrix für Schweizer IT-Dienstleister und KMU-Zulieferer
+@@ -177,7 +177,7 @@
+ 
+ ## Quellen
+ 
+-[1]: https://fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/232/20250401/de/pdf-a/fedlex-data-admin-ch-eli-cc-2022-232-20250401-de-pdf-a.pdf "Fedlex – Informationssicherheitsgesetz, Stand 1. April 2025"
++[1]: https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/232/20251001/de/xml/fedlex-data-admin-ch-eli-cc-2022-232-20251001-de-xml-1.xml "Fedlex – Informationssicherheitsgesetz, Fassung 1. Oktober 2025"
+ [2]: https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32022L2555 "EUR-Lex – Richtlinie (EU) 2022/2555 (NIS2)"
+ [3]: https://digital-strategy.ec.europa.eu/en/policies/nis-transposition "Europäische Kommission – Stand der NIS2-Umsetzung in den EU-Mitgliedstaaten"
+ [4]: https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32022R2554 "EUR-Lex – Verordnung (EU) 2022/2554 über die digitale operationale Resilienz im Finanzsektor (DORA)"
