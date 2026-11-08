@@ -1239,11 +1239,16 @@ ROOT_PAGES.forEach(filename => {
 
   // Replace wissen.html or update link text to 🔒 Kundenbereich
   if (html.includes('href="wissen.html"')) {
-    html = html.replace(/href="wissen\.html">Wissen &amp; Ratgeber<\/a>/g, 'href="wissen/"><span style="margin-right:3px;">🔒</span> Kundenbereich</a>');
+    html = html.replace(/href="wissen\.html"[^>]*>Wissen &amp; Ratgeber<\/a>/g, 'href="wissen/" class="nav-link"><span style="margin-right:3px;">🔒</span> Kundenbereich</a>');
     html = html.replace(/href="wissen\.html"/g, 'href="wissen/"');
     changed = true;
-  } else if (html.includes('href="wissen/">Wissen &amp; Ratgeber</a>')) {
-    html = html.replace(/href="wissen\/">Wissen &amp; Ratgeber<\/a>/g, 'href="wissen/"><span style="margin-right:3px;">🔒</span> Kundenbereich</a>');
+  }
+  if (html.includes('href="wissen/" class="nav-link">Wissen &amp; Ratgeber</a>')) {
+    html = html.replace('href="wissen/" class="nav-link">Wissen &amp; Ratgeber</a>', 'href="wissen/" class="nav-link"><span style="margin-right:3px;">🔒</span> Kundenbereich</a>');
+    changed = true;
+  }
+  if (html.includes('<li><a href="wissen/">Wissen &amp; Ratgeber</a></li>')) {
+    html = html.replace('<li><a href="wissen/">Wissen &amp; Ratgeber</a></li>', '<li><a href="wissen/">🔒 Mandantenbereich</a></li>');
     changed = true;
   }
 
