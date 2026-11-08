@@ -470,9 +470,9 @@ function renderHeader(activeNav = 'wissen', relativeRoot = '.') {
         <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
         <span class="top-trust-tag">📍 Naters / Wallis</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 14px;">
-        <a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700;">
-          🔑 Kunden-Login
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="top-bar-login-btn">
+          <span>🔒</span> <strong>Kunden-Login</strong>
         </a>
         <a href="${relativeRoot}/kontakt.html#notfall" class="emergency-quicklink">
           🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
@@ -834,8 +834,11 @@ Object.values(resourcesByPrefix).forEach(res => {
         ${parentArticle ? `<a href="../${parentArticle.slug}.html" style="color: #cbd5e1; text-decoration: none; font-size: 13.5px; font-weight: 500;">&larr; Zurück zum Fachleitfaden</a>` : '<a href="../../wissen.html" style="color: #cbd5e1; text-decoration: none; font-size: 13.5px;">&larr; Zum Wissensportal</a>'}
       </div>
       <div style="display: flex; gap: 12px; align-items: center;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="top-bar-login-btn">
+          <span>🔒</span> <strong>Kunden-Login</strong>
+        </a>
         <span style="font-size: 12.5px; color: #94a3b8;">Format: DIN A4 Druckvorlage</span>
-        <button onclick="window.print()" class="btn-print">
+        <button onclick="if(window.DKSchVPortal.isLoggedIn()){ window.print(); } else { window.DKSchVPortal.openModal('login'); }" class="btn-print">
           <span>🖨️ Arbeitsblatt drucken / PDF</span>
         </button>
       </div>
@@ -1262,12 +1265,9 @@ ROOT_PAGES.forEach(filename => {
   }
 
   // Add Kunden-Login link to top emergency bar if not present
-  if (!html.includes('openPortalLoginModal(event)')) {
-    const topBarMatch = /<div class="container top-bar-inner">[\s\S]*?<div>\s*<a href="[^"]*#notfall"/;
-    if (topBarMatch.test(html)) {
-      html = html.replace(/(<a href="[^"]*#notfall"[^>]*>)/, `<a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700; margin-right: 14px;">🔑 Kunden-Login</a>\n        $1`);
-      changed = true;
-    }
+  if (!html.includes('top-bar-login-btn')) {
+    html = html.replace(/<div>\s*<a href="([^"]*#notfall)" class="emergency-quicklink">/g, `<div style="display: flex; align-items: center; gap: 12px;">\n        <a href="#" onclick="openPortalLoginModal(event)" class="top-bar-login-btn"><span>🔒</span> <strong>Kunden-Login</strong></a>\n        <a href="$1" class="emergency-quicklink">`);
+    changed = true;
   }
 
   // Add portal-auth.js script before </body>
