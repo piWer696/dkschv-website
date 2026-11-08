@@ -1264,10 +1264,16 @@ ROOT_PAGES.forEach(filename => {
     }
   }
 
-  // Add Kunden-Login link to top emergency bar if not present
-  if (!html.includes('top-bar-login-btn')) {
-    html = html.replace(/<div>\s*<a href="([^"]*#notfall)" class="emergency-quicklink">/g, `<div style="display: flex; align-items: center; gap: 12px;">\n        <a href="#" onclick="openPortalLoginModal(event)" class="top-bar-login-btn"><span>🔒</span> <strong>Kunden-Login</strong></a>\n        <a href="$1" class="emergency-quicklink">`);
-    changed = true;
+  // Add or standardize Kunden-Login button in top emergency bar
+  if (!html.includes('class="top-bar-login-btn"')) {
+    if (html.includes('openPortalLoginModal(event)')) {
+      // Replace old emergency-quicklink style login with top-bar-login-btn
+      html = html.replace(/<a href="#" onclick="openPortalLoginModal\(event\)"[^>]*>.*?<\/a>\s*<a href="([^"]*#notfall)" class="emergency-quicklink">/g, `<a href="#" onclick="openPortalLoginModal(event)" class="top-bar-login-btn"><span>🔒</span> <strong>Kunden-Login</strong></a>\n        <a href="$1" class="emergency-quicklink">`);
+      changed = true;
+    } else {
+      html = html.replace(/<div>\s*<a href="([^"]*#notfall)" class="emergency-quicklink">/g, `<div style="display: flex; align-items: center; gap: 12px;">\n        <a href="#" onclick="openPortalLoginModal(event)" class="top-bar-login-btn"><span>🔒</span> <strong>Kunden-Login</strong></a>\n        <a href="$1" class="emergency-quicklink">`);
+      changed = true;
+    }
   }
 
   // Add portal-auth.js script before </body>
