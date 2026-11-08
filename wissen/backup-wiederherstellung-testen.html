@@ -55,7 +55,10 @@
         <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
         <span class="top-trust-tag">📍 Naters / Wallis</span>
       </div>
-      <div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700;">
+          🔑 Kunden-Login
+        </a>
         <a href="../kontakt.html#notfall" class="emergency-quicklink">
           🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
         </a>
@@ -75,9 +78,14 @@
           <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
           <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
           <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
-          <li><a href="./" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="./" class="nav-link active"><span style="margin-right:3px;">🔒</span> Kundenbereich</a></li>
           <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
           <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li>
+            <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
+              <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
+            </a>
+          </li>
           <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
         </ul>
       </nav>
@@ -94,7 +102,7 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="../index.html">Home</a>
         <span class="sep">/</span>
-        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <a href="./index.html">🔒 Kundenbereich</a>
         <span class="sep">/</span>
         <span style="color:#ffffff;">Backup & Resilienz</span>
       </nav>
@@ -106,7 +114,7 @@
         <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
         <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 14 Min.</strong></span>
         <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
-        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+        <span class="article-meta-item">🔒 Status: <strong>Mandanten-Bereich</strong></span>
       </div>
     </div>
   </header>
@@ -115,7 +123,40 @@
   <main class="container">
     <div class="article-container">
       <article class="article-content">
-        
+        <p><em>Quellenstand: 1. November 2026. Die Standangabe bezeichnet die Quellenpflege und keine Fach-, Rechts- oder Veröffentlichungsfreigabe.</em></p>
+<div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die technischen Wiederanlaufannahmen sowie die rechtlichen Hinweise zu einem tatsächlichen Vorfall müssen vor Veröffentlichung durch zuständige Fachpersonen geprüft werden.</div></div>
+<div class="article-lead"><strong>Kurzantwort:</strong> Ein Wiederherstellungstest zeigt nicht bloss, ob sich einzelne Dateien zurückspielen lassen. Er zeigt, ob Ihr Unternehmen nach einem Ransomware-Vorfall einen kritischen Geschäftsprozess mit sauberen Systemen, nutzbaren Daten, klaren Rollen und innerhalb der vereinbarten Zeit wieder aufnehmen kann. Beginnen Sie deshalb bei den Geschäftsprozessen und deren Abhängigkeiten. Legen Sie für jeden kritischen Prozess ein <strong>RTO</strong> (zulässige Wiederanlaufzeit) und ein <strong>RPO</strong> (vertretbarer Datenverlust in Zeit) fest. Üben Sie anschliessend ein abgegrenztes, realitätsnahes Szenario in einer isolierten Umgebung, messen Sie Soll gegen Ist und behandeln Sie Abweichungen als konkrete Verbesserungsaufträge. Ein Debriefing und ein Nachtest schliessen den Kreislauf.</div>
+<p>Ein Backup ist erst dann ein belastbarer Teil der Cyberresilienz, wenn seine Wiederherstellung unter realistischen Bedingungen funktioniert. Das Bundesamt für Cybersicherheit (BACS) ordnet das Notfallkonzept in die vier Phasen Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung ein. Für Schweizer KMU steht seit dem 18. Mai 2026 zudem eine angepasste Vorlage für einen IT-Notfall- und Krisenplan bereit.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Ein Restore-Test macht diese Phasen für den Wiederanlauf überprüfbar.</p>
+<p>Der Test ist kein Nachweis dafür, dass jeder künftige Angriff folgenlos bleibt. Er beantwortet eine engere, aber geschäftskritische Frage: <strong>Können Sie einen fest definierten Prozess nach einem angenommenen Ransomware-Ereignis mit der vorgesehenen Qualität und in der vereinbarten Zeit wieder betreiben?</strong></p>
+
+        <!-- Client Portal Login Gate (Visible when not logged in) -->
+        <div class="client-portal-gate" id="clientPortalGate">
+          <span class="gate-badge">🔒 Exklusiver Mandanteninhalt</span>
+          <h2 class="gate-title">Kunden-Login erforderlich</h2>
+          <p class="gate-desc">
+            Dieser vollständige Fachleitfaden und das druckbare Arbeitsmittel <strong>«Checkliste»</strong> sind für DKSchV-Mandanten und registrierte Kunden freigeschaltet.
+          </p>
+          <div class="gate-actions">
+            <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+              <span>🔑 Als Mandant anmelden</span>
+            </button>
+            <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+              <span>📋 Zugang anfordern</span>
+            </button>
+          </div>
+          <div class="gate-fast-login">
+            <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+            <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+              <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+              <button type="submit" class="gate-inline-btn">Freischalten</button>
+            </form>
+            <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+          </div>
+        </div>
+
+        <!-- Gated Content: Full Guide, Resources, Tables & References -->
+        <div class="gated-content" id="gatedArticleContent">
+          
       <div class="article-resource-box">
         <div class="resource-box-content">
           <h4>📥 Passendes Arbeitsmittel: Arbeitsvorlage & Notfall-Checkliste</h4>
@@ -127,12 +168,7 @@
         </a>
       </div>
     
-        <p><em>Quellenstand: 1. November 2026. Die Standangabe bezeichnet die Quellenpflege und keine Fach-, Rechts- oder Veröffentlichungsfreigabe.</em></p>
-<div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die technischen Wiederanlaufannahmen sowie die rechtlichen Hinweise zu einem tatsächlichen Vorfall müssen vor Veröffentlichung durch zuständige Fachpersonen geprüft werden.</div></div>
-<div class="article-lead"><strong>Kurzantwort:</strong> Ein Wiederherstellungstest zeigt nicht bloss, ob sich einzelne Dateien zurückspielen lassen. Er zeigt, ob Ihr Unternehmen nach einem Ransomware-Vorfall einen kritischen Geschäftsprozess mit sauberen Systemen, nutzbaren Daten, klaren Rollen und innerhalb der vereinbarten Zeit wieder aufnehmen kann. Beginnen Sie deshalb bei den Geschäftsprozessen und deren Abhängigkeiten. Legen Sie für jeden kritischen Prozess ein <strong>RTO</strong> (zulässige Wiederanlaufzeit) und ein <strong>RPO</strong> (vertretbarer Datenverlust in Zeit) fest. Üben Sie anschliessend ein abgegrenztes, realitätsnahes Szenario in einer isolierten Umgebung, messen Sie Soll gegen Ist und behandeln Sie Abweichungen als konkrete Verbesserungsaufträge. Ein Debriefing und ein Nachtest schliessen den Kreislauf.</div>
-<p>Ein Backup ist erst dann ein belastbarer Teil der Cyberresilienz, wenn seine Wiederherstellung unter realistischen Bedingungen funktioniert. Das Bundesamt für Cybersicherheit (BACS) ordnet das Notfallkonzept in die vier Phasen Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung ein. Für Schweizer KMU steht seit dem 18. Mai 2026 zudem eine angepasste Vorlage für einen IT-Notfall- und Krisenplan bereit.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Ein Restore-Test macht diese Phasen für den Wiederanlauf überprüfbar.</p>
-<p>Der Test ist kein Nachweis dafür, dass jeder künftige Angriff folgenlos bleibt. Er beantwortet eine engere, aber geschäftskritische Frage: <strong>Können Sie einen fest definierten Prozess nach einem angenommenen Ransomware-Ereignis mit der vorgesehenen Qualität und in der vereinbarten Zeit wieder betreiben?</strong></p>
-<h2 id="der-startpunkt-sind-geschaeftsprozesse-nicht-sicherungsjobs">Der Startpunkt sind Geschäftsprozesse, nicht Sicherungsjobs</h2>
+          <h2 id="der-startpunkt-sind-geschaeftsprozesse-nicht-sicherungsjobs">Der Startpunkt sind Geschäftsprozesse, nicht Sicherungsjobs</h2>
 <p>Viele Unternehmen wissen, dass ihre Sicherung über Nacht gelaufen ist. Weniger klar ist oft, welche Kombination aus Anwendung, Identität, Netzwerk, Schnittstelle, Lieferant und Daten ein Prozess tatsächlich braucht. Genau dort beginnt die Vorbereitung.</p>
 <p>Erstellen Sie mit den Prozessverantwortlichen eine kurze Liste der geschäftskritischen Abläufe. Das können beispielsweise Auftragsannahme, Produktion, Leistungserbringung, Versand, Fakturierung oder Lohnlauf sein. Beschreiben Sie bei jedem Ablauf nicht nur die führende Anwendung. Halten Sie auch fest, welche Vorbedingungen erforderlich sind: Benutzerkonten und Mehrfaktor-Authentisierung, Namensauflösung, Netzwerkzugang, Datenbank, Dateifreigaben, Druck, externe Schnittstellen, Cloud-Mandanten, Lizenzserver und die erreichbaren Ansprechpartner von Dienstleistern.</p>
 <p>Diese Sicht verhindert einen typischen Irrtum: Ein Server kann technisch wieder laufen, während der Geschäftsprozess wegen einer fehlenden Identität, einer nicht erreichbaren Schnittstelle oder einer nicht geprüften Datenbasis trotzdem stillsteht. CISA empfiehlt ebenfalls, kritische Systeme nach ihrer Bedeutung für Sicherheit, Umsatz oder andere kritische Leistungen sowie nach ihren Abhängigkeiten zu erfassen; diese Übersicht dient der Wiederherstellungspriorisierung.<sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
@@ -187,7 +223,7 @@
 <p><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Diese Hinweise sind keine individuelle Rechtsberatung. Wenn ein Test Hinweise auf einen tatsächlichen Datenabfluss, eine unbefugte Offenlegung oder eine reale Kompromittierung ergibt, müssen Melde- und Informationspflichten anhand der konkreten Tatsachen durch Datenschutz- und Rechtsfachpersonen geprüft werden. Die Dokumentation kann die Sachverhaltsklärung unterstützen, ersetzt diese Prüfung aber nicht.</p>
 <div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body">Für eine organisationsspezifische Einordnung Ihres Wiederherstellungstests können Sie <a href="../kontakt.html">DKSchV kontaktieren</a>. Eine Kontaktaufnahme ersetzt keine technische, rechtliche oder forensische Fachprüfung.</div></div>
 <h2 id="quellen">Quellen</h2>
-        
+          
       <div class="references-section">
         <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
           Geprüfte Primärquellen &amp; Rechtsreferenzen
@@ -272,6 +308,7 @@
         </ul>
       </div>
     
+        </div>
         
         <!-- Post-article consultation box -->
         <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
@@ -322,7 +359,7 @@
             <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
             <li><a href="../risikomanagement.html">Risikomanagement</a></li>
             <li><a href="../notfallplanung.html">Notfallplanung</a></li>
-            <li><a href="./">Wissen &amp; Ratgeber</a></li>
+            <li><a href="./">🔒 Mandantenbereich</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -348,6 +385,7 @@
       <div class="footer-bottom">
         <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
         <div class="footer-legal-links">
+          <a href="#" onclick="openPortalLoginModal(event)" style="color: #2dd4bf; font-weight: 600;">🔒 Mandanten-Login</a>
           <a href="../impressum.html">Impressum</a>
           <a href="../datenschutz.html">Datenschutz</a>
         </div>
@@ -355,6 +393,7 @@
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/portal-auth.js"></script>
   
 </body>
 </html>

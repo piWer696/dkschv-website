@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wissen &amp; Ratgeber: Cyber-Security &amp; Datenschutz für Schweizer KMU | DKSchV</title>
-  <meta name="description" content="Verifizierte Leitfäden, Notfall-Checklisten, Microsoft 365 Best Practices und nDSG/BACS-Entscheidungshilfen für Geschäftsführer und IT-Verantwortliche in der Schweiz.">
-  <link rel="canonical" href="https://www.dkschv.ch/wissen.html">
+  <title>Mandantenbereich: Cyber-Security Leitfäden &amp; Vorlagen | DKSchV Schweiz</title>
+  <meta name="description" content="Exklusiver Mandantenbereich: Verifizierte Leitfäden, Notfall-Checklisten, Microsoft 365 Best Practices und nDSG/BACS-Entscheidungshilfen für Kunden und Mandanten.">
+  <link rel="canonical" href="https://www.dkschv.ch/wissen/">
   <link rel="icon" type="image/png" href="../assets/images/dkschv_icon.png">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -19,7 +19,10 @@
         <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
         <span class="top-trust-tag">📍 Naters / Wallis</span>
       </div>
-      <div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700;">
+          🔑 Kunden-Login
+        </a>
         <a href="../kontakt.html#notfall" class="emergency-quicklink">
           🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
         </a>
@@ -39,9 +42,14 @@
           <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
           <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
           <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
-          <li><a href="./" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="./" class="nav-link active"><span style="margin-right:3px;">🔒</span> Kundenbereich</a></li>
           <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
           <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li>
+            <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
+              <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
+            </a>
+          </li>
           <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
         </ul>
       </nav>
@@ -56,14 +64,14 @@
   <section class="hub-hero">
     <div class="container">
       <div class="hub-hero-badge">
-        <span>🇨🇭</span>
-        <span>Praxiswissen für Schweizer KMU &amp; Verwaltungsräte</span>
+        <span>🔒</span>
+        <span>Exklusiver Mandantenbereich für Schweizer Unternehmen</span>
       </div>
       <h1 class="hub-hero-title">
-        Wissen &amp; Ratgeber: Cyber-Security &amp; Datenschutz
+        DKSchV Mandantenbereich: Fachwissen &amp; Vorlagen
       </h1>
       <p class="hub-hero-lead">
-        Klare Handlungsanleitungen, verifizierte Rechtsgrundlagen nach neuem Schweizer Datenschutzgesetz (nDSG) und BACS-Meldepflicht sowie sofort einsetzbare Notfall-Checklisten für Ihre Organisation.
+        Klare Handlungsanleitungen, verifizierte Rechtsgrundlagen nach neuem Schweizer Datenschutzgesetz (nDSG) und BACS-Meldepflicht sowie sofort einsetzbare Notfall-Checklisten. Melden Sie sich an, um alle Inhalte vollständig freizuschalten.
       </p>
 
       <!-- Search & Filters -->
@@ -89,6 +97,9 @@
   <!-- Main Content Area -->
   <main class="section" style="padding-top: 48px;">
     <div class="container">
+
+      <!-- Client Portal Status Banner -->
+      <div id="catalogPortalStatus"></div>
 
       <!-- Sunday News Highlight -->
       <div class="news-highlight-card">
@@ -706,7 +717,7 @@
             <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
             <li><a href="../risikomanagement.html">Risikomanagement</a></li>
             <li><a href="../notfallplanung.html">Notfallplanung</a></li>
-            <li><a href="./">Wissen &amp; Ratgeber</a></li>
+            <li><a href="./">🔒 Mandantenbereich</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -732,6 +743,7 @@
       <div class="footer-bottom">
         <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
         <div class="footer-legal-links">
+          <a href="#" onclick="openPortalLoginModal(event)" style="color: #2dd4bf; font-weight: 600;">🔒 Mandanten-Login</a>
           <a href="../impressum.html">Impressum</a>
           <a href="../datenschutz.html">Datenschutz</a>
         </div>
@@ -739,6 +751,7 @@
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/portal-auth.js"></script>
   
 </body>
 </html>

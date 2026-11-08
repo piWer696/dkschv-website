@@ -30,24 +30,50 @@
   </div>
 
   <div class="container">
-    <div class="resource-sheet">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
-        <div>
-          <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
-            DKSchV Schweiz · Dokumentiertes Arbeitsmittel
-          </span>
-          <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
-            Zahlungsprüfprotokoll: Bankverbindung und aussergewöhnliche Zahlungsaufträge
-          </h1>
-          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
-            Stand 1. November 2026 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
-          </p>
-        </div>
-        <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+    <!-- Client Portal Gate for Printable Worksheets -->
+    <div class="client-portal-gate no-print" id="clientPortalGate" style="max-width: 900px; margin: 32px auto 0;">
+      <span class="gate-badge">🔒 Exklusives Arbeitsmittel</span>
+      <h2 class="gate-title">Mandanten-Login erforderlich</h2>
+      <p class="gate-desc">
+        Dieses druckfertige Arbeitsmittel steht Kunden und Mandanten der DKSchV zur Verfügung. Melden Sie sich an, um das Arbeitsblatt zu nutzen, zu drucken oder als PDF zu speichern.
+      </p>
+      <div class="gate-actions">
+        <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+          <span>🔑 Als Mandant anmelden</span>
+        </button>
+        <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+          <span>📋 Zugang anfordern</span>
+        </button>
       </div>
+      <div class="gate-fast-login">
+        <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+        <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+          <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+          <button type="submit" class="gate-inline-btn">Freischalten</button>
+        </form>
+        <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+      </div>
+    </div>
 
-      <div class="article-content" style="font-size: 15px;">
-        <p><strong>Zweck:</strong> Dieses Arbeitsmittel unterstützt Schweizer KMU dabei, Änderungen von Lieferanten-Bankverbindungen sowie aussergewöhnliche Zahlungsaufträge vor der Ausführung unabhängig zu prüfen und nachvollziehbar zu dokumentieren. Es dient der Prävention von CEO-Betrug und Business Email Compromise (BEC). Ein BEC kann aus einem kompromittierten geschäftlichen Postfach erfolgen und echte Korrespondenz oder Rechnungen ausnutzen. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+    <div class="gated-content" id="gatedArticleContent">
+      <div class="resource-sheet">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
+          <div>
+            <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
+              DKSchV Schweiz · Dokumentiertes Arbeitsmittel
+            </span>
+            <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
+              Zahlungsprüfprotokoll: Bankverbindung und aussergewöhnliche Zahlungsaufträge
+            </h1>
+            <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
+              Stand 1. November 2026 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+            </p>
+          </div>
+          <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+        </div>
+
+        <div class="article-content" style="font-size: 15px;">
+          <p><strong>Zweck:</strong> Dieses Arbeitsmittel unterstützt Schweizer KMU dabei, Änderungen von Lieferanten-Bankverbindungen sowie aussergewöhnliche Zahlungsaufträge vor der Ausführung unabhängig zu prüfen und nachvollziehbar zu dokumentieren. Es dient der Prävention von CEO-Betrug und Business Email Compromise (BEC). Ein BEC kann aus einem kompromittierten geschäftlichen Postfach erfolgen und echte Korrespondenz oder Rechnungen ausnutzen. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
 <p><strong>Anwendung:</strong> Füllen Sie dieses Protokoll aus, bevor eine neue oder geänderte IBAN im Lieferantenstamm hinterlegt, eine Zahlung an ein abweichendes Konto ausgeführt oder ein ungewöhnlicher Auftrag freigegeben wird. Die Rückbestätigung muss über einen bereits geprüften, <strong>unabhängigen Kanal</strong> erfolgen. Verwenden Sie dafür nie eine Telefonnummer, E-Mail-Adresse oder einen Link aus der verdächtigen Nachricht. Bei einem bestätigten oder wahrscheinlichen Betrugsverdacht: Zahlung anhalten, die festgelegte Eskalationsstelle informieren und bei bereits überwiesenem Geld unverzüglich die Bank kontaktieren. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
 <p><strong>Aktuelle Phishing-Orientierung:</strong> Eine Aufforderung, im Rahmen einer angeblichen Rückerstattung oder Verifizierung einen Code einzugeben, einen QR-Code zu scannen oder eine Freigabe zu bestätigen, ist ein Stoppsignal. Öffnen Sie die bekannte App oder Website selbst oder rufen Sie die unabhängig ermittelte offizielle Nummer an. Geben Sie angeforderte Codes nicht weiter. Diese Kontrolle beschreibt keinen Eingriff in ein bestimmtes Bank- oder Zahlungsprodukt. <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
 <hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
@@ -69,14 +95,16 @@
 <p>Bei einem bereits ausgeführten mutmasslich betrügerischen Auftrag soll die Bank unverzüglich kontaktiert werden; das BACS weist darauf hin, dass sie eine Zahlung <strong>unter Umständen</strong> noch stoppen kann. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> Ein vermutetes kompromittiertes E-Mail-Konto sollte nach dem etablierten Incident-Response-Prozess technisch abgeklärt werden; bei fehlender eigener Kompetenz ist Fachunterstützung beizuziehen. Das BACS empfiehlt unter anderem, unbefugte Weiterleitungsregeln zu prüfen und zu entfernen. <sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
 <p>Prüfen Sie die Rollen, Kontaktdaten, Freigabegrenzen und den Ablauf mindestens nach wesentlichen Prozess-, Banken-, Lieferanten- oder Systemänderungen sowie nach jedem relevanten Vorfall. Wenn der Vorfall Personendaten betreffen kann, ist <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>; die Datenschutzverordnung verlangt die Dokumentation der Tatsachen, Auswirkungen und Massnahmen. <sup class="ref-link"><a href="#ref-3">[3]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
 <h2 id="quellen">Quellen</h2>
-      </div>
+        </div>
 
-      <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
-        <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
-        <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+        <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+          <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
+          <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+        </div>
       </div>
     </div>
   </div>
 
+  <script src="../../assets/js/portal-auth.js"></script>
 </body>
 </html>

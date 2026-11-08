@@ -55,7 +55,10 @@
         <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
         <span class="top-trust-tag">📍 Naters / Wallis</span>
       </div>
-      <div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700;">
+          🔑 Kunden-Login
+        </a>
         <a href="../kontakt.html#notfall" class="emergency-quicklink">
           🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
         </a>
@@ -75,9 +78,14 @@
           <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
           <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
           <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
-          <li><a href="./" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="./" class="nav-link active"><span style="margin-right:3px;">🔒</span> Kundenbereich</a></li>
           <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
           <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li>
+            <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
+              <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
+            </a>
+          </li>
           <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
         </ul>
       </nav>
@@ -94,7 +102,7 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="../index.html">Home</a>
         <span class="sep">/</span>
-        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <a href="./index.html">🔒 Kundenbereich</a>
         <span class="sep">/</span>
         <span style="color:#ffffff;">E-Mail & Betrug</span>
       </nav>
@@ -106,7 +114,7 @@
         <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
         <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 14 Min.</strong></span>
         <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
-        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+        <span class="article-meta-item">🔒 Status: <strong>Mandanten-Bereich</strong></span>
       </div>
     </div>
   </header>
@@ -115,7 +123,37 @@
   <main class="container">
     <div class="article-container">
       <article class="article-content">
-        
+        <div class="article-lead"><strong>Kurzantwort:</strong> CEO-Betrug imitiert häufig eine Führungsperson, um eine dringende Zahlung auszulösen. <strong>Business Email Compromise (BEC)</strong> beziehungsweise Rechnungsmanipulationsbetrug kann echte Korrespondenz ausnutzen; dabei kann ein eigenes oder ein fremdes Geschäftspostfach kompromittiert sein, die Absenderadresse aber auch nur täuschend echt wirken. Entscheidend ist deshalb nicht die Etikette, sondern ein separater Zahlungsprüfprozess: Rückruf über eine unabhängig bekannte Nummer, dokumentierte Rückbestätigung und eine zur Organisation passende Freigabe. Bei einer verdächtigen Zahlung halten Sie Ausführung und Stammdatenänderung an und klären über den etablierten Kanal. Ist Geld bereits überwiesen, kontaktieren Sie unverzüglich die Bank. Bei Anzeichen für ein kompromittiertes eigenes Postfach sichern Sie die Kontrolle über Konto und Identitäten, prüfen Weiterleitungen und informieren betroffene Kontakte über einen vertrauenswürdigen Kanal. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup></div>
+<p><strong>Stand der Quellenprüfung: 1. November 2026.</strong> Diese Standangabe dokumentiert den gezielten Abgleich der unten genannten Quellen. Sie ist keine Fach-, Rechts-, Forensik-, Tenant- oder Veröffentlichungsfreigabe.</p>
+
+        <!-- Client Portal Login Gate (Visible when not logged in) -->
+        <div class="client-portal-gate" id="clientPortalGate">
+          <span class="gate-badge">🔒 Exklusiver Mandanteninhalt</span>
+          <h2 class="gate-title">Kunden-Login erforderlich</h2>
+          <p class="gate-desc">
+            Dieser vollständige Fachleitfaden und das druckbare Arbeitsmittel <strong>«Zahlungsprüfprotokoll: Bankverbindung und aussergewöhnliche Zahlungsaufträge»</strong> sind für DKSchV-Mandanten und registrierte Kunden freigeschaltet.
+          </p>
+          <div class="gate-actions">
+            <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+              <span>🔑 Als Mandant anmelden</span>
+            </button>
+            <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+              <span>📋 Zugang anfordern</span>
+            </button>
+          </div>
+          <div class="gate-fast-login">
+            <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+            <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+              <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+              <button type="submit" class="gate-inline-btn">Freischalten</button>
+            </form>
+            <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+          </div>
+        </div>
+
+        <!-- Gated Content: Full Guide, Resources, Tables & References -->
+        <div class="gated-content" id="gatedArticleContent">
+          
       <div class="article-resource-box">
         <div class="resource-box-content">
           <h4>📥 Passendes Arbeitsmittel: Zahlungsprüfprotokoll: Bankverbindung und aussergewöhnliche Zahlungsaufträge</h4>
@@ -127,9 +165,7 @@
         </a>
       </div>
     
-        <div class="article-lead"><strong>Kurzantwort:</strong> CEO-Betrug imitiert häufig eine Führungsperson, um eine dringende Zahlung auszulösen. <strong>Business Email Compromise (BEC)</strong> beziehungsweise Rechnungsmanipulationsbetrug kann echte Korrespondenz ausnutzen; dabei kann ein eigenes oder ein fremdes Geschäftspostfach kompromittiert sein, die Absenderadresse aber auch nur täuschend echt wirken. Entscheidend ist deshalb nicht die Etikette, sondern ein separater Zahlungsprüfprozess: Rückruf über eine unabhängig bekannte Nummer, dokumentierte Rückbestätigung und eine zur Organisation passende Freigabe. Bei einer verdächtigen Zahlung halten Sie Ausführung und Stammdatenänderung an und klären über den etablierten Kanal. Ist Geld bereits überwiesen, kontaktieren Sie unverzüglich die Bank. Bei Anzeichen für ein kompromittiertes eigenes Postfach sichern Sie die Kontrolle über Konto und Identitäten, prüfen Weiterleitungen und informieren betroffene Kontakte über einen vertrauenswürdigen Kanal. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup></div>
-<p><strong>Stand der Quellenprüfung: 1. November 2026.</strong> Diese Standangabe dokumentiert den gezielten Abgleich der unten genannten Quellen. Sie ist keine Fach-, Rechts-, Forensik-, Tenant- oder Veröffentlichungsfreigabe.</p>
-<h2 id="die-entscheidende-abgrenzung-taeuschung-oder-kompromittiertes-postfach">Die entscheidende Abgrenzung: Täuschung oder kompromittiertes Postfach?</h2>
+          <h2 id="die-entscheidende-abgrenzung-taeuschung-oder-kompromittiertes-postfach">Die entscheidende Abgrenzung: Täuschung oder kompromittiertes Postfach?</h2>
 <p>Für die erste Reaktion ist nicht entscheidend, wie überzeugend eine Nachricht aussieht. Entscheidend ist, ob lediglich der <strong>Absender vorgetäuscht</strong> wurde oder ob jemand unbefugt Zugriff auf ein echtes Firmenpostfach hat. Beides kann zu Zahlungsbetrug führen. Die technischen und organisatorischen Folgen sind jedoch unterschiedlich.</p>
 <p>Beim <strong>CEO-Betrug</strong> wird eine Führungsperson imitiert. Häufig erhält die Buchhaltung eine angeblich vertrauliche, eilige Anweisung, Geld zu überweisen oder Geschenkkarten zu kaufen. Die Angreifer können Namen, Funktionen und E-Mail-Adressen aus öffentlich verfügbaren Quellen ableiten. Das BACS warnt ausdrücklich davor, Geld zu überweisen oder Geschenkkarten zu kaufen, ohne vorher Rücksprache zu halten. <sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
 <p>BACS weist seit der vorangehenden Quellenprüfung zudem darauf hin, dass einzeln harmlos wirkende, kombinierte Informationen personalisiertes Phishing, Identitätsdiebstahl oder gezielten Betrug erleichtern können. Zusammen mit öffentlich zugänglichen Angaben zu Namen, Funktionen und E-Mail-Adressen können solche Informationen die Vorbereitung einer glaubwürdigen Täuschung erleichtern. <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
@@ -203,7 +239,7 @@
 <p>Prüfen Sie danach kritische E-Mail-Konten: MFA, Berechtigungen, Wiederherstellungswege, Protokollierung, Weiterleitungsregeln und Domain-Authentisierung. Ordnen Sie Befunde nach Geschäftsrisiko und üben Sie die Erstreaktion. Halten Sie offene Punkte im Notfallplan fest.</p>
 <div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body"><strong>Nächster Schritt:</strong> Dokumentieren Sie kritische Zahlungsänderungen mit dem <a href="./resources/02-zahlungspruefprotokoll.html">Zahlungsprüfprotokoll</a>. Für eine Anfrage zur <a href="../sicherheitsanalyse.html">DKSchV-Sicherheitsanalyse</a> steht die Seite <a href="../kontakt.html">Kontakt</a> zur Verfügung. Eine Analyse ersetzt weder Bankvorgaben noch die Prüfung eines konkreten Betrugs- oder Rechtsfalls.</div></div>
 <h2 id="quellen">Quellen</h2>
-        
+          
       <div class="references-section">
         <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
           Geprüfte Primärquellen &amp; Rechtsreferenzen
@@ -320,6 +356,7 @@
         </ul>
       </div>
     
+        </div>
         
         <!-- Post-article consultation box -->
         <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
@@ -370,7 +407,7 @@
             <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
             <li><a href="../risikomanagement.html">Risikomanagement</a></li>
             <li><a href="../notfallplanung.html">Notfallplanung</a></li>
-            <li><a href="./">Wissen &amp; Ratgeber</a></li>
+            <li><a href="./">🔒 Mandantenbereich</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -396,6 +433,7 @@
       <div class="footer-bottom">
         <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
         <div class="footer-legal-links">
+          <a href="#" onclick="openPortalLoginModal(event)" style="color: #2dd4bf; font-weight: 600;">🔒 Mandanten-Login</a>
           <a href="../impressum.html">Impressum</a>
           <a href="../datenschutz.html">Datenschutz</a>
         </div>
@@ -403,6 +441,7 @@
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/portal-auth.js"></script>
   
 </body>
 </html>

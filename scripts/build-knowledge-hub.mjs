@@ -1237,28 +1237,41 @@ ROOT_PAGES.forEach(filename => {
   let html = fs.readFileSync(filePath, 'utf-8');
   let changed = false;
 
-  // Replace wissen.html with clean directory wissen/
+  // Replace wissen.html or update link text to 🔒 Kundenbereich
   if (html.includes('href="wissen.html"')) {
+    html = html.replace(/href="wissen\.html">Wissen &amp; Ratgeber<\/a>/g, 'href="wissen/"><span style="margin-right:3px;">🔒</span> Kundenbereich</a>');
     html = html.replace(/href="wissen\.html"/g, 'href="wissen/"');
+    changed = true;
+  } else if (html.includes('href="wissen/">Wissen &amp; Ratgeber</a>')) {
+    html = html.replace(/href="wissen\/">Wissen &amp; Ratgeber<\/a>/g, 'href="wissen/"><span style="margin-right:3px;">🔒</span> Kundenbereich</a>');
     changed = true;
   }
 
-  // If missing entirely, insert after notfallplanung
-  if (!html.includes('href="wissen/"')) {
-    const targetTag = '<li><a href="notfallplanung.html" class="nav-link">Notfallplanung</a></li>';
-    const targetTagActive = '<li><a href="notfallplanung.html" class="nav-link active">Notfallplanung</a></li>';
-
-    if (html.includes(targetTag)) {
-      html = html.replace(targetTag, `${targetTag}\n          <li><a href="wissen/" class="nav-link">Wissen &amp; Ratgeber</a></li>`);
-      changed = true;
-    } else if (html.includes(targetTagActive)) {
-      html = html.replace(targetTagActive, `${targetTagActive}\n          <li><a href="wissen/" class="nav-link">Wissen &amp; Ratgeber</a></li>`);
+  // Add Kunden-Login button to nav if not present
+  if (!html.includes('id="headerPortalBtn"')) {
+    const navCtaMatch = /<li>\s*<a href="[^"]*" class="nav-cta-btn">/i;
+    if (navCtaMatch.test(html)) {
+      html = html.replace(navCtaMatch, `<li><a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)"><span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span></a></li>\n          $&`);
       changed = true;
     }
+  }
 
-    const footerTarget = '<li><a href="notfallplanung.html">Notfallplanung</a></li>';
-    if (html.includes(footerTarget)) {
-      html = html.replace(footerTarget, `${footerTarget}\n            <li><a href="wissen/">Wissen &amp; Ratgeber</a></li>`);
+  // Add Kunden-Login link to top emergency bar if not present
+  if (!html.includes('openPortalLoginModal(event)')) {
+    const topBarMatch = /<div class="container top-bar-inner">[\s\S]*?<div>\s*<a href="[^"]*#notfall"/;
+    if (topBarMatch.test(html)) {
+      html = html.replace(/(<a href="[^"]*#notfall"[^>]*>)/, `<a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700; margin-right: 14px;">🔑 Kunden-Login</a>\n        $1`);
+      changed = true;
+    }
+  }
+
+  // Add portal-auth.js script before </body>
+  if (!html.includes('portal-auth.js')) {
+    if (html.includes('<script src="assets/js/main.js"></script>')) {
+      html = html.replace('<script src="assets/js/main.js"></script>', '<script src="assets/js/main.js"></script>\n  <script src="assets/js/portal-auth.js"></script>');
+      changed = true;
+    } else if (html.includes('</body>')) {
+      html = html.replace('</body>', '  <script src="assets/js/portal-auth.js"></script>\n</body>');
       changed = true;
     }
   }

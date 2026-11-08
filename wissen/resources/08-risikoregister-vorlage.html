@@ -30,24 +30,50 @@
   </div>
 
   <div class="container">
-    <div class="resource-sheet">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
-        <div>
-          <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
-            DKSchV Schweiz · Dokumentiertes Arbeitsmittel
-          </span>
-          <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
-            Arbeitsvorlage
-          </h1>
-          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
-            1.3 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
-          </p>
-        </div>
-        <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+    <!-- Client Portal Gate for Printable Worksheets -->
+    <div class="client-portal-gate no-print" id="clientPortalGate" style="max-width: 900px; margin: 32px auto 0;">
+      <span class="gate-badge">🔒 Exklusives Arbeitsmittel</span>
+      <h2 class="gate-title">Mandanten-Login erforderlich</h2>
+      <p class="gate-desc">
+        Dieses druckfertige Arbeitsmittel steht Kunden und Mandanten der DKSchV zur Verfügung. Melden Sie sich an, um das Arbeitsblatt zu nutzen, zu drucken oder als PDF zu speichern.
+      </p>
+      <div class="gate-actions">
+        <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+          <span>🔑 Als Mandant anmelden</span>
+        </button>
+        <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+          <span>📋 Zugang anfordern</span>
+        </button>
       </div>
+      <div class="gate-fast-login">
+        <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+        <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+          <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+          <button type="submit" class="gate-inline-btn">Freischalten</button>
+        </form>
+        <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+      </div>
+    </div>
 
-      <div class="article-content" style="font-size: 15px;">
-        <div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Datenschutz-, Vertrags- und sektorale Anforderungen sowie die Risikokriterien müssen vor Verwendung durch zuständige Fachpersonen geprüft werden.</div></div>
+    <div class="gated-content" id="gatedArticleContent">
+      <div class="resource-sheet">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
+          <div>
+            <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
+              DKSchV Schweiz · Dokumentiertes Arbeitsmittel
+            </span>
+            <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
+              Arbeitsvorlage
+            </h1>
+            <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
+              1.3 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+            </p>
+          </div>
+          <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+        </div>
+
+        <div class="article-content" style="font-size: 15px;">
+          <div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Datenschutz-, Vertrags- und sektorale Anforderungen sowie die Risikokriterien müssen vor Verwendung durch zuständige Fachpersonen geprüft werden.</div></div>
 <p><strong>Arbeitsmittel zu:</strong> <a href="../it-sicherheitscheck-kmu.html">IT-Sicherheitscheck für Schweizer KMU: So wird aus Befunden ein priorisiertes Cyber-Risikoregister</a></p>
 <p><strong>Version:</strong> 1.3 | <strong>Quellenstand:</strong> 1. November 2026 (Quellenprüfung; keine Fach- oder Rechtsfreigabe)</p>
 <p><strong>Organisation:</strong> ________________________________</p>
@@ -149,14 +175,16 @@
 <p>Bei Personendaten verlangt das DSG eine dem Risiko angemessene Datensicherheit. Die DSV nennt für die Beurteilung unter anderem Schutzbedarf, Ursache und Gefahr, vorhandene oder vorgesehene Massnahmen sowie Wahrscheinlichkeit und Schwere einer Datensicherheitsverletzung.<sup class="ref-link"><a href="#ref-2">[2]</a></sup> <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Ob eine konkrete Datenbearbeitung, ein Vertrag oder eine mögliche Meldung rechtliche Pflichten auslöst, ist durch qualifizierte Datenschutz- oder Rechtsfachpersonen zu beurteilen. Dieses Arbeitsmittel ist keine individuelle Rechtsberatung.</p>
 <p>Für eine methodische Einordnung können Sie die <a href="../../sicherheitsanalyse.html">Sicherheitsanalyse</a> und das <a href="../../risikomanagement.html">Risikomanagement</a> von DKSchV konsultieren.</p>
 <h2 id="quellen">Quellen</h2>
-      </div>
+        </div>
 
-      <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
-        <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
-        <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+        <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+          <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
+          <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+        </div>
       </div>
     </div>
   </div>
 
+  <script src="../../assets/js/portal-auth.js"></script>
 </body>
 </html>

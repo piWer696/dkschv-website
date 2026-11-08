@@ -55,7 +55,10 @@
         <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
         <span class="top-trust-tag">📍 Naters / Wallis</span>
       </div>
-      <div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700;">
+          🔑 Kunden-Login
+        </a>
         <a href="../kontakt.html#notfall" class="emergency-quicklink">
           🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
         </a>
@@ -75,9 +78,14 @@
           <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
           <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
           <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
-          <li><a href="./" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="./" class="nav-link active"><span style="margin-right:3px;">🔒</span> Kundenbereich</a></li>
           <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
           <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li>
+            <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
+              <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
+            </a>
+          </li>
           <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
         </ul>
       </nav>
@@ -94,7 +102,7 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="../index.html">Home</a>
         <span class="sep">/</span>
-        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <a href="./index.html">🔒 Kundenbereich</a>
         <span class="sep">/</span>
         <span style="color:#ffffff;">Datenschutz & nDSG</span>
       </nav>
@@ -106,7 +114,7 @@
         <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
         <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 13 Min.</strong></span>
         <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
-        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+        <span class="article-meta-item">🔒 Status: <strong>Mandanten-Bereich</strong></span>
       </div>
     </div>
   </header>
@@ -115,7 +123,38 @@
   <main class="container">
     <div class="article-container">
       <article class="article-content">
-        
+        <div class="article-lead"><strong>Kurzantwort:</strong> Eine Datenpanne ist nach Schweizer Datenschutzgesetz (DSG) dem Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) <strong>so rasch als möglich</strong> zu melden, wenn sie voraussichtlich ein hohes Risiko für Persönlichkeit oder Grundrechte natürlicher Personen schafft. Eine feste 72-Stunden-Frist steht nicht in Art. 24 DSG. Separat müssen die im Informationssicherheitsgesetz (ISG) erfassten Betreiber kritischer Infrastrukturen bestimmte Cyberangriffe dem Bundesamt für Cybersicherheit (BACS) innert <strong>24 Stunden nach Entdeckung</strong> melden; für fehlende Angaben gewährt das BACS eine Frist von 14 Tagen zur Ergänzung. Ein Vorfall kann beide Pflichten auslösen, nur eine oder keine. Klären Sie daher parallel Personendaten, Risiko, Branchenstatus und Angriffstatbestand. Im Zweifel über eine Meldepflicht ist <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>: Veranlassen Sie umgehend eine datenschutz- und gegebenenfalls sektorrechtliche Fachprüfung.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></div>
+<p>Eine Datenpanne verlangt zwei Entscheidungen, die nicht vermischt werden dürfen. Die erste betrifft den Schutz von Menschen und damit Art. 24 DSG. Die zweite betrifft die Cyberresilienz bestimmter Organisationen und damit die BACS-Meldepflicht nach ISG. Wer nur fragt «EDÖB oder BACS?», kann deshalb die falsche Frist oder den falschen Massstab anwenden.</p>
+<p>Dieser Beitrag bietet eine allgemeine Orientierung für Schweizer KMU. Er ist <strong>keine individuelle Rechtsberatung</strong>. Ob eine konkrete Meldung geschuldet ist, ob weitere sektorspezifische Vorgaben gelten und wie Betroffene informiert werden müssen, braucht bei ernsthaften oder unklaren Fällen eine zeitnahe Fachprüfung anhand der Fakten, Verträge und anwendbaren Regeln.</p>
+
+        <!-- Client Portal Login Gate (Visible when not logged in) -->
+        <div class="client-portal-gate" id="clientPortalGate">
+          <span class="gate-badge">🔒 Exklusiver Mandanteninhalt</span>
+          <h2 class="gate-title">Kunden-Login erforderlich</h2>
+          <p class="gate-desc">
+            Dieser vollständige Fachleitfaden und das druckbare Arbeitsmittel <strong>«EDÖB-/BACS-Entscheidungsbaum und Vorfallsprotokoll»</strong> sind für DKSchV-Mandanten und registrierte Kunden freigeschaltet.
+          </p>
+          <div class="gate-actions">
+            <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+              <span>🔑 Als Mandant anmelden</span>
+            </button>
+            <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+              <span>📋 Zugang anfordern</span>
+            </button>
+          </div>
+          <div class="gate-fast-login">
+            <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+            <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+              <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+              <button type="submit" class="gate-inline-btn">Freischalten</button>
+            </form>
+            <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+          </div>
+        </div>
+
+        <!-- Gated Content: Full Guide, Resources, Tables & References -->
+        <div class="gated-content" id="gatedArticleContent">
+          
       <div class="article-resource-box">
         <div class="resource-box-content">
           <h4>📥 Passendes Arbeitsmittel: EDÖB-/BACS-Entscheidungsbaum und Vorfallsprotokoll</h4>
@@ -127,10 +166,7 @@
         </a>
       </div>
     
-        <div class="article-lead"><strong>Kurzantwort:</strong> Eine Datenpanne ist nach Schweizer Datenschutzgesetz (DSG) dem Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) <strong>so rasch als möglich</strong> zu melden, wenn sie voraussichtlich ein hohes Risiko für Persönlichkeit oder Grundrechte natürlicher Personen schafft. Eine feste 72-Stunden-Frist steht nicht in Art. 24 DSG. Separat müssen die im Informationssicherheitsgesetz (ISG) erfassten Betreiber kritischer Infrastrukturen bestimmte Cyberangriffe dem Bundesamt für Cybersicherheit (BACS) innert <strong>24 Stunden nach Entdeckung</strong> melden; für fehlende Angaben gewährt das BACS eine Frist von 14 Tagen zur Ergänzung. Ein Vorfall kann beide Pflichten auslösen, nur eine oder keine. Klären Sie daher parallel Personendaten, Risiko, Branchenstatus und Angriffstatbestand. Im Zweifel über eine Meldepflicht ist <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>: Veranlassen Sie umgehend eine datenschutz- und gegebenenfalls sektorrechtliche Fachprüfung.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></div>
-<p>Eine Datenpanne verlangt zwei Entscheidungen, die nicht vermischt werden dürfen. Die erste betrifft den Schutz von Menschen und damit Art. 24 DSG. Die zweite betrifft die Cyberresilienz bestimmter Organisationen und damit die BACS-Meldepflicht nach ISG. Wer nur fragt «EDÖB oder BACS?», kann deshalb die falsche Frist oder den falschen Massstab anwenden.</p>
-<p>Dieser Beitrag bietet eine allgemeine Orientierung für Schweizer KMU. Er ist <strong>keine individuelle Rechtsberatung</strong>. Ob eine konkrete Meldung geschuldet ist, ob weitere sektorspezifische Vorgaben gelten und wie Betroffene informiert werden müssen, braucht bei ernsthaften oder unklaren Fällen eine zeitnahe Fachprüfung anhand der Fakten, Verträge und anwendbaren Regeln.</p>
-<h2 id="zuerst-stabilisieren-dann-beurteilen">Zuerst stabilisieren, dann beurteilen</h2>
+          <h2 id="zuerst-stabilisieren-dann-beurteilen">Zuerst stabilisieren, dann beurteilen</h2>
 <p>Eine <strong>Verletzung der Datensicherheit</strong> liegt nach Art. 5 Bst. h DSG vor, wenn Personendaten unbeabsichtigt oder widerrechtlich verlorengehen, gelöscht, vernichtet oder verändert werden oder Unbefugten offengelegt beziehungsweise zugänglich gemacht werden.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Personendaten sind Angaben über eine bestimmte oder bestimmbare <strong>natürliche Person</strong>. Damit kann ein fehlgeleitetes E-Mail ebenso relevant sein wie ein kompromittiertes Cloud-Konto, ein verlorener Laptop, ein Fehlrecht in einer Freigabe oder ein Ransomware-Angriff.</p>
 <p>Akute Eindämmung und rechtliche Einordnung laufen parallel. Trennen Sie eindeutig infizierte Systeme kontrolliert vom Netz, ohne Beweise unnötig zu verändern. Sichern Sie verfügbare Protokolle, Zeitstempel, Konfigurationsstände und die betroffenen Objekte. Das BACS empfiehlt bei Ransomware unter anderem das rasche Trennen infizierter Systeme sowie das Sichern von Logdateien. Forensische Sicherungen von Zwischenspeicher und Festplatten sollten vor weiteren Reparaturversuchen oder Neustarts durch Fachpersonen erfolgen, wenn eine forensische Untersuchung in Betracht kommt.<sup class="ref-link"><a href="#ref-9">[9]</a></sup></p>
 <p>Ein Verdacht auf Schadsoftware ist nicht mit einem bestätigten Angriff gleichzusetzen. Ein einzelnes Anzeichen, etwa ein langsames Gerät, beweist keine Infektion. Mehrere ungewöhnliche Beobachtungen rechtfertigen aber eine genauere Untersuchung; bei geschäftlich verwendeten Geräten empfiehlt das BACS, die zuständige IT oder den Arbeitgeber zu informieren.<sup class="ref-link"><a href="#ref-11">[11]</a></sup></p>
@@ -180,7 +216,7 @@
 <p>Eine belastbare Entscheidung entsteht nicht erst im Incident. Geschäftsleitung und IT sollten vorab festlegen, wer den Vorfall führt, wer den Verantwortlichen vertritt, wer die BACS-Unterstellung prüft und wer Meldungen freigibt. Ebenso wichtig sind aktuelle Kontaktlisten, Zugänge zu Meldeportalen, abgestimmte Auftragsbearbeitungsverträge und ein erprobter Weg für Betroffenenkommunikation. Eine <a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a> kann die technischen und organisatorischen Grundlagen sichtbar machen; ein Meldeprozess muss anschliessend in der Notfallplanung tatsächlich geübt werden.</p>
 <div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body"><strong>Nächster Schritt:</strong> Halten Sie Fakten, Fristen und Entscheide im <a href="./resources/03-datenpanne-entscheidungsbaum.html">Entscheidungsbaum</a> fest. Für eine Anfrage zur <a href="../sicherheitsanalyse.html">DKSchV-Sicherheitsanalyse</a> steht <a href="../kontakt.html">Kontakt</a> zur Verfügung. Das ersetzt keine rechtliche Einzelfallbeurteilung.</div></div>
 <h2 id="quellen">Quellen</h2>
-        
+          
       <div class="references-section">
         <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
           Geprüfte Primärquellen &amp; Rechtsreferenzen
@@ -289,6 +325,7 @@
         </ul>
       </div>
     
+        </div>
         
         <!-- Post-article consultation box -->
         <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
@@ -337,7 +374,7 @@
             <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
             <li><a href="../risikomanagement.html">Risikomanagement</a></li>
             <li><a href="../notfallplanung.html">Notfallplanung</a></li>
-            <li><a href="./">Wissen &amp; Ratgeber</a></li>
+            <li><a href="./">🔒 Mandantenbereich</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -363,6 +400,7 @@
       <div class="footer-bottom">
         <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
         <div class="footer-legal-links">
+          <a href="#" onclick="openPortalLoginModal(event)" style="color: #2dd4bf; font-weight: 600;">🔒 Mandanten-Login</a>
           <a href="../impressum.html">Impressum</a>
           <a href="../datenschutz.html">Datenschutz</a>
         </div>
@@ -370,6 +408,7 @@
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/portal-auth.js"></script>
   
 </body>
 </html>

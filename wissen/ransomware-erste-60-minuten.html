@@ -55,7 +55,10 @@
         <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
         <span class="top-trust-tag">📍 Naters / Wallis</span>
       </div>
-      <div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700;">
+          🔑 Kunden-Login
+        </a>
         <a href="../kontakt.html#notfall" class="emergency-quicklink">
           🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
         </a>
@@ -75,9 +78,14 @@
           <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
           <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
           <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
-          <li><a href="./" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="./" class="nav-link active"><span style="margin-right:3px;">🔒</span> Kundenbereich</a></li>
           <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
           <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li>
+            <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
+              <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
+            </a>
+          </li>
           <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
         </ul>
       </nav>
@@ -94,7 +102,7 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="../index.html">Home</a>
         <span class="sep">/</span>
-        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <a href="./index.html">🔒 Kundenbereich</a>
         <span class="sep">/</span>
         <span style="color:#ffffff;">Ransomware & Notfall</span>
       </nav>
@@ -106,7 +114,7 @@
         <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
         <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 15 Min.</strong></span>
         <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
-        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+        <span class="article-meta-item">🔒 Status: <strong>Mandanten-Bereich</strong></span>
       </div>
     </div>
   </header>
@@ -115,7 +123,36 @@
   <main class="container">
     <div class="article-container">
       <article class="article-content">
-        
+        <div class="article-lead"><strong>Kurzantwort:</strong> Isolieren Sie bei einem Ransomware-Verdacht betroffene Geräte unverzüglich vom Netzwerk, ohne sie vorschnell neu zu starten. Übernehmen Sie die Führung, dokumentieren Sie Zeitpunkte und Entscheidungen und sichern Sie Logdateien sowie – falls erforderlich – forensisch verwertbare Spuren, bevor Reparaturversuche beginnen. Schützen Sie danach Backups und starten Sie keine Wiederherstellung in eine möglicherweise noch kompromittierte Umgebung. Prüfen Sie parallel getrennt, ob eine Meldung an das BACS, den EDÖB oder die Kantonspolizei angezeigt oder vorgeschrieben ist. Bei kritischen Infrastrukturen gilt für bestimmte Cyberangriffe eine BACS-Meldepflicht innert 24 Stunden. Bei Personendaten entscheidet das voraussichtlich hohe Risiko über eine EDÖB-Meldung. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-3">[3]</a></sup></div>
+
+        <!-- Client Portal Login Gate (Visible when not logged in) -->
+        <div class="client-portal-gate" id="clientPortalGate">
+          <span class="gate-badge">🔒 Exklusiver Mandanteninhalt</span>
+          <h2 class="gate-title">Kunden-Login erforderlich</h2>
+          <p class="gate-desc">
+            Dieser vollständige Fachleitfaden und das druckbare Arbeitsmittel <strong>«60-Minuten-Checkliste bei Ransomware-Verdacht»</strong> sind für DKSchV-Mandanten und registrierte Kunden freigeschaltet.
+          </p>
+          <div class="gate-actions">
+            <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+              <span>🔑 Als Mandant anmelden</span>
+            </button>
+            <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+              <span>📋 Zugang anfordern</span>
+            </button>
+          </div>
+          <div class="gate-fast-login">
+            <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+            <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+              <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+              <button type="submit" class="gate-inline-btn">Freischalten</button>
+            </form>
+            <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+          </div>
+        </div>
+
+        <!-- Gated Content: Full Guide, Resources, Tables & References -->
+        <div class="gated-content" id="gatedArticleContent">
+          
       <div class="article-resource-box">
         <div class="resource-box-content">
           <h4>📥 Passendes Arbeitsmittel: 60-Minuten-Checkliste bei Ransomware-Verdacht</h4>
@@ -127,8 +164,7 @@
         </a>
       </div>
     
-        <div class="article-lead"><strong>Kurzantwort:</strong> Isolieren Sie bei einem Ransomware-Verdacht betroffene Geräte unverzüglich vom Netzwerk, ohne sie vorschnell neu zu starten. Übernehmen Sie die Führung, dokumentieren Sie Zeitpunkte und Entscheidungen und sichern Sie Logdateien sowie – falls erforderlich – forensisch verwertbare Spuren, bevor Reparaturversuche beginnen. Schützen Sie danach Backups und starten Sie keine Wiederherstellung in eine möglicherweise noch kompromittierte Umgebung. Prüfen Sie parallel getrennt, ob eine Meldung an das BACS, den EDÖB oder die Kantonspolizei angezeigt oder vorgeschrieben ist. Bei kritischen Infrastrukturen gilt für bestimmte Cyberangriffe eine BACS-Meldepflicht innert 24 Stunden. Bei Personendaten entscheidet das voraussichtlich hohe Risiko über eine EDÖB-Meldung. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-3">[3]</a></sup></div>
-<h2 id="warum-die-erste-stunde-ueber-den-weiteren-schaden-entscheidet">Warum die erste Stunde über den weiteren Schaden entscheidet</h2>
+          <h2 id="warum-die-erste-stunde-ueber-den-weiteren-schaden-entscheidet">Warum die erste Stunde über den weiteren Schaden entscheidet</h2>
 <p><strong>Ransomware</strong> ist Schadsoftware, die Daten oder Systeme verschlüsseln und häufig zusätzlich mit einer Veröffentlichung erbeuteter Daten drohen kann. In der ersten Stunde geht es nicht darum, jedes technische Detail abschliessend zu verstehen. Vorrang haben drei Ziele: die Ausbreitung stoppen, entscheidungsrelevante Spuren bewahren und den Betrieb für eine kontrollierte Wiederherstellung vorbereiten. Das BACS empfiehlt, infizierte Systeme sofort vom Netz zu trennen, Logdateien zu sichern und vor weiteren Reparaturversuchen oder Neustarts über eine forensische Sicherung zu entscheiden. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
 <p>Die Geschäftsleitung sollte den Vorfall deshalb nicht als reine IT-Störung behandeln. Bestimmen Sie sofort eine Person als <strong>Incident Lead</strong>. Das ist die Person, die Lagebild, Prioritäten und Freigaben zusammenführt. Sie muss nicht jede technische Massnahme selbst ausführen. Sie sorgt aber dafür, dass IT, externe Dienstleister, Geschäftsleitung und gegebenenfalls Kommunikation mit demselben bestätigten Informationsstand arbeiten.</p>
 <p>Nutzen Sie für die Abstimmung möglichst einen vom betroffenen Netz unabhängigen Kanal, etwa Telefon oder einen vorbereiteten Krisenkanal. Angreifer können kompromittierte Kommunikation beobachten. CISA empfiehlt deshalb eine koordinierte Isolierung und einen Kommunikationsweg ausserhalb der möglicherweise betroffenen Infrastruktur. <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
@@ -194,7 +230,7 @@ Bis 08.30 Uhr liegen eine Systemliste, Screenshots der Forderung und Exporte der
 <h2 id="grenzen-dieses-sofortleitfadens">Grenzen dieses Sofortleitfadens</h2>
 <p>Diese Anleitung ist eine allgemeine operative Orientierung für Schweizer KMU auf dem Stand der Quellenprüfung vom 1. November 2026; dieser Stand ist keine Fachfreigabe. Sie ersetzt weder eine technische Forensik noch eine individuelle rechtliche, datenschutzrechtliche, strafrechtliche, versicherungs- oder sanktionsrechtliche Beratung. <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Lassen Sie insbesondere die Einstufung als kritische Infrastruktur, die BACS-Meldepflicht, das hohe Risiko nach Art. 24 DSG, Meldetexte und den Umgang mit Lösegeld durch qualifizierte Fachpersonen prüfen. Halten Sie dafür die 60-Minuten-Checkliste und Ihren Entscheidungslog bereit.</p>
 <h2 id="quellen">Quellen</h2>
-        
+          
       <div class="references-section">
         <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
           Geprüfte Primärquellen &amp; Rechtsreferenzen
@@ -319,6 +355,7 @@ Bis 08.30 Uhr liegen eine Systemliste, Screenshots der Forderung und Exporte der
         </ul>
       </div>
     
+        </div>
         
         <!-- Post-article consultation box -->
         <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
@@ -372,7 +409,7 @@ Bis 08.30 Uhr liegen eine Systemliste, Screenshots der Forderung und Exporte der
             <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
             <li><a href="../risikomanagement.html">Risikomanagement</a></li>
             <li><a href="../notfallplanung.html">Notfallplanung</a></li>
-            <li><a href="./">Wissen &amp; Ratgeber</a></li>
+            <li><a href="./">🔒 Mandantenbereich</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -398,6 +435,7 @@ Bis 08.30 Uhr liegen eine Systemliste, Screenshots der Forderung und Exporte der
       <div class="footer-bottom">
         <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
         <div class="footer-legal-links">
+          <a href="#" onclick="openPortalLoginModal(event)" style="color: #2dd4bf; font-weight: 600;">🔒 Mandanten-Login</a>
           <a href="../impressum.html">Impressum</a>
           <a href="../datenschutz.html">Datenschutz</a>
         </div>
@@ -405,6 +443,7 @@ Bis 08.30 Uhr liegen eine Systemliste, Screenshots der Forderung und Exporte der
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/portal-auth.js"></script>
   
 </body>
 </html>

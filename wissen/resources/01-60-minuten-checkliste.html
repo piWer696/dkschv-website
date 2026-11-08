@@ -30,24 +30,50 @@
   </div>
 
   <div class="container">
-    <div class="resource-sheet">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
-        <div>
-          <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
-            DKSchV Schweiz · Dokumentiertes Arbeitsmittel
-          </span>
-          <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
-            60-Minuten-Checkliste bei Ransomware-Verdacht
-          </h1>
-          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
-            Stand 1. November 2026 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
-          </p>
-        </div>
-        <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+    <!-- Client Portal Gate for Printable Worksheets -->
+    <div class="client-portal-gate no-print" id="clientPortalGate" style="max-width: 900px; margin: 32px auto 0;">
+      <span class="gate-badge">🔒 Exklusives Arbeitsmittel</span>
+      <h2 class="gate-title">Mandanten-Login erforderlich</h2>
+      <p class="gate-desc">
+        Dieses druckfertige Arbeitsmittel steht Kunden und Mandanten der DKSchV zur Verfügung. Melden Sie sich an, um das Arbeitsblatt zu nutzen, zu drucken oder als PDF zu speichern.
+      </p>
+      <div class="gate-actions">
+        <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+          <span>🔑 Als Mandant anmelden</span>
+        </button>
+        <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+          <span>📋 Zugang anfordern</span>
+        </button>
       </div>
+      <div class="gate-fast-login">
+        <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+        <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+          <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+          <button type="submit" class="gate-inline-btn">Freischalten</button>
+        </form>
+        <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+      </div>
+    </div>
 
-      <div class="article-content" style="font-size: 15px;">
-        <h2 id="zweck">Zweck</h2>
+    <div class="gated-content" id="gatedArticleContent">
+      <div class="resource-sheet">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
+          <div>
+            <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
+              DKSchV Schweiz · Dokumentiertes Arbeitsmittel
+            </span>
+            <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
+              60-Minuten-Checkliste bei Ransomware-Verdacht
+            </h1>
+            <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
+              Stand 1. November 2026 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+            </p>
+          </div>
+          <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+        </div>
+
+        <div class="article-content" style="font-size: 15px;">
+          <h2 id="zweck">Zweck</h2>
 <p>Diese Checkliste unterstützt Geschäftsleitung und IT dabei, in der ersten Stunde nach einem Ransomware-Verdacht strukturiert zu handeln. Sie hilft, Eindämmung, Beweissicherung, Backup-Schutz und die erste Einordnung von BACS-, Polizei- und EDÖB-Meldungen zu dokumentieren. Sie ist für den Ausdruck und die handschriftliche Verwendung gedacht.</p>
 <p>Sie ersetzt weder eine forensische Untersuchung noch einen organisationsspezifischen Notfallplan. Eine korrekte Abarbeitung verhindert nicht automatisch Datenverlust, Betriebsunterbruch, Datenabfluss oder rechtliche Folgen.</p>
 <h2 id="anwendung">Anwendung</h2>
@@ -142,14 +168,16 @@
 <p>Diese Checkliste ist ein allgemeines Arbeitsmittel für die erste Reaktion auf dem Stand der Quellenprüfung vom 1. November 2026; dieser Stand ist keine Fachfreigabe. Sie ersetzt keine organisationsspezifische Notfallplanung, technische Forensik, Meldung oder Rechtsberatung. Sie erlaubt keine Aussage darüber, ob Systeme frei von Angreifern sind, ob ein Backup sicher wiederherstellbar ist oder ob keine Daten abgeflossen sind. Ein nachträglich eingespieltes Sicherheitsupdate beseitigt keine bereits erfolgte Kompromittierung. <sup class="ref-link"><a href="#ref-9">[9]</a></sup> Bei möglicher Personendatenverletzung, kritischer Infrastruktur, Strafanzeige, Lösegeldforderung oder grossem Betriebsunterbruch ist <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>; ziehen Sie unverzüglich eine geeignete Fachperson bei.</p>
 <p>Das BACS beschreibt Notfallkonzepte als Zusammenspiel von Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung. Pflegen und testen Sie Rollen, Kontakte, Backup-Wiederherstellung und Entscheidungswege daher ausserhalb des akuten Vorfalls. <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
 <h2 id="quellen">Quellen</h2>
-      </div>
+        </div>
 
-      <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
-        <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
-        <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+        <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+          <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
+          <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+        </div>
       </div>
     </div>
   </div>
 
+  <script src="../../assets/js/portal-auth.js"></script>
 </body>
 </html>

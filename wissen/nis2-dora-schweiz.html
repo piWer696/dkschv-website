@@ -55,7 +55,10 @@
         <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
         <span class="top-trust-tag">📍 Naters / Wallis</span>
       </div>
-      <div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700;">
+          🔑 Kunden-Login
+        </a>
         <a href="../kontakt.html#notfall" class="emergency-quicklink">
           🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
         </a>
@@ -75,9 +78,14 @@
           <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
           <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
           <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
-          <li><a href="./" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="./" class="nav-link active"><span style="margin-right:3px;">🔒</span> Kundenbereich</a></li>
           <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
           <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li>
+            <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
+              <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
+            </a>
+          </li>
           <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
         </ul>
       </nav>
@@ -94,7 +102,7 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="../index.html">Home</a>
         <span class="sep">/</span>
-        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <a href="./index.html">🔒 Kundenbereich</a>
         <span class="sep">/</span>
         <span style="color:#ffffff;">Compliance (NIS2/DORA)</span>
       </nav>
@@ -106,7 +114,7 @@
         <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
         <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 13 Min.</strong></span>
         <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
-        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+        <span class="article-meta-item">🔒 Status: <strong>Mandanten-Bereich</strong></span>
       </div>
     </div>
   </header>
@@ -115,7 +123,39 @@
   <main class="container">
     <div class="article-container">
       <article class="article-content">
-        
+        <div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Der direkte NIS2- oder DORA-Anwendungsbereich, nationale Umsetzungen, Vertretungsfragen und Kundenverträge müssen vor Veröffentlichung durch EU-rechtskundige Fachpersonen geprüft werden.</div></div>
+<div class="article-lead"><strong>Kurzantwort:</strong> Ein Sitz in der Schweiz macht ein Unternehmen nicht automatisch zu einem direkt unter NIS2 oder DORA regulierten Unternehmen. NIS2 ist eine EU-Richtlinie, deren konkrete Pflichten erst über das Recht des jeweiligen EU-Mitgliedstaats greifen. Direkte Relevanz kann bei Dienstleistungen in der EU, bestimmten Sektoren und digitalen Diensten entstehen; bei manchen digitalen Anbietern ohne EU-Niederlassung sieht NIS2 einen EU-Vertreter vor. DORA richtet sich primär an EU-Finanzunternehmen, prägt aber deren Verträge mit IKT-Drittdienstleistern erheblich. Für Schweizer Zulieferer ist deshalb die Trennung entscheidend: <strong>direkter Anwendungsbereich</strong>, <strong>Schweizer Recht</strong> und <strong>vertraglich weitergegebene Kundenanforderungen</strong>. Klären Sie zuerst den Sachverhalt und lassen Sie den möglichen direkten Geltungsbereich fachjuristisch prüfen.</div>
+<p>NIS2 und DORA stehen heute auf vielen Kundenfragebögen. Die richtige Antwort ist selten ein pauschales «nicht betroffen» oder «vollständig compliant». Für Schweizer IT-Dienstleister, Cloud- und Managed-Service-Anbieter sowie Zulieferer von EU-Kunden ist eine belastbare Einordnung wichtiger: Welche Rechtsordnung ist einschlägig? Welche Leistung erbringen Sie tatsächlich? Welche Anforderungen übernimmt Ihr Vertrag? Und welche Nachweise können Sie im Vorfall vorlegen?</p>
+<p>Dieser Artikel orientiert über den Rechtsrahmen und eine praktikable Vorbereitung. Er ist <strong>keine individuelle Rechtsberatung</strong>. Insbesondere die Einordnung eines konkreten Geschäftsmodells, einer EU-Niederlassung, eines Vertreters und eines Kundenvertrags muss fachjuristisch geprüft werden.</p>
+
+        <!-- Client Portal Login Gate (Visible when not logged in) -->
+        <div class="client-portal-gate" id="clientPortalGate">
+          <span class="gate-badge">🔒 Exklusiver Mandanteninhalt</span>
+          <h2 class="gate-title">Kunden-Login erforderlich</h2>
+          <p class="gate-desc">
+            Dieser vollständige Fachleitfaden und das druckbare Arbeitsmittel <strong>«Checkliste»</strong> sind für DKSchV-Mandanten und registrierte Kunden freigeschaltet.
+          </p>
+          <div class="gate-actions">
+            <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+              <span>🔑 Als Mandant anmelden</span>
+            </button>
+            <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+              <span>📋 Zugang anfordern</span>
+            </button>
+          </div>
+          <div class="gate-fast-login">
+            <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+            <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+              <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+              <button type="submit" class="gate-inline-btn">Freischalten</button>
+            </form>
+            <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+          </div>
+        </div>
+
+        <!-- Gated Content: Full Guide, Resources, Tables & References -->
+        <div class="gated-content" id="gatedArticleContent">
+          
       <div class="article-resource-box">
         <div class="resource-box-content">
           <h4>📥 Passendes Arbeitsmittel: Arbeitsvorlage & Notfall-Checkliste</h4>
@@ -127,11 +167,7 @@
         </a>
       </div>
     
-        <div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Der direkte NIS2- oder DORA-Anwendungsbereich, nationale Umsetzungen, Vertretungsfragen und Kundenverträge müssen vor Veröffentlichung durch EU-rechtskundige Fachpersonen geprüft werden.</div></div>
-<div class="article-lead"><strong>Kurzantwort:</strong> Ein Sitz in der Schweiz macht ein Unternehmen nicht automatisch zu einem direkt unter NIS2 oder DORA regulierten Unternehmen. NIS2 ist eine EU-Richtlinie, deren konkrete Pflichten erst über das Recht des jeweiligen EU-Mitgliedstaats greifen. Direkte Relevanz kann bei Dienstleistungen in der EU, bestimmten Sektoren und digitalen Diensten entstehen; bei manchen digitalen Anbietern ohne EU-Niederlassung sieht NIS2 einen EU-Vertreter vor. DORA richtet sich primär an EU-Finanzunternehmen, prägt aber deren Verträge mit IKT-Drittdienstleistern erheblich. Für Schweizer Zulieferer ist deshalb die Trennung entscheidend: <strong>direkter Anwendungsbereich</strong>, <strong>Schweizer Recht</strong> und <strong>vertraglich weitergegebene Kundenanforderungen</strong>. Klären Sie zuerst den Sachverhalt und lassen Sie den möglichen direkten Geltungsbereich fachjuristisch prüfen.</div>
-<p>NIS2 und DORA stehen heute auf vielen Kundenfragebögen. Die richtige Antwort ist selten ein pauschales «nicht betroffen» oder «vollständig compliant». Für Schweizer IT-Dienstleister, Cloud- und Managed-Service-Anbieter sowie Zulieferer von EU-Kunden ist eine belastbare Einordnung wichtiger: Welche Rechtsordnung ist einschlägig? Welche Leistung erbringen Sie tatsächlich? Welche Anforderungen übernimmt Ihr Vertrag? Und welche Nachweise können Sie im Vorfall vorlegen?</p>
-<p>Dieser Artikel orientiert über den Rechtsrahmen und eine praktikable Vorbereitung. Er ist <strong>keine individuelle Rechtsberatung</strong>. Insbesondere die Einordnung eines konkreten Geschäftsmodells, einer EU-Niederlassung, eines Vertreters und eines Kundenvertrags muss fachjuristisch geprüft werden.</p>
-<h2 id="drei-ebenen-sauber-trennen">Drei Ebenen sauber trennen</h2>
+          <h2 id="drei-ebenen-sauber-trennen">Drei Ebenen sauber trennen</h2>
 <p>Die erste Ebene ist <strong>Schweizer Recht</strong>. Die Schweiz hat mit der Meldepflicht für Cyberangriffe auf kritische Infrastrukturen eine eigene Regelung. Sie betrifft die im Informationssicherheitsgesetz genannten Behörden und Organisationen, darunter unter bestimmten Voraussetzungen auch Cloudcomputing-, Suchmaschinen-, digitale Sicherheits- und Vertrauensdienste sowie Rechenzentren mit Sitz in der Schweiz. Ein meldepflichtiger Cyberangriff ist innert 24 Stunden nach Entdeckung zu melden. Sind innerhalb dieser Frist nicht alle erforderlichen Informationen bekannt, gewährt das BACS für die Ergänzung der Meldung eine Frist von 14 Tagen. Ob Ihr Unternehmen in den Katalog fällt, muss anhand der konkreten Tätigkeit und gegebenenfalls mit dem BACS geklärt werden. Diese Schweizer Pflicht ist nicht NIS2. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-14">[14]</a></sup></p>
 <p>Die zweite Ebene ist <strong>NIS2</strong>, die Richtlinie (EU) 2022/2555 für ein hohes Cybersicherheitsniveau in der Union. Eine Richtlinie gilt nicht wie ein Schweizer Gesetz unmittelbar für jedes Unternehmen. Die Mitgliedstaaten müssen sie in nationales Recht umsetzen. NIS2 setzte dafür den 17. Oktober 2024 als Frist. Der Umsetzungsstand und die Detailregeln bleiben deshalb je nach Mitgliedstaat relevant. Am 8. Juli 2026 verwies die Europäische Kommission Irland, Spanien, Frankreich und die Niederlande wegen fehlender Notifizierung von Umsetzungsmassnahmen an den Gerichtshof der Europäischen Union. Prüfen Sie stets das geltende Recht des betroffenen EU-Staates, nicht nur den Richtlinientext. <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-3">[3]</a></sup> <sup class="ref-link"><a href="#ref-13">[13]</a></sup></p>
 <p>Die dritte Ebene ist <strong>DORA</strong>, die EU-Verordnung über digitale operationale Resilienz im Finanzsektor. Eine Verordnung unterscheidet sich grundsätzlich von einer Richtlinie: DORA gilt seit dem 17. Januar 2025. Artikel 2 führt Finanzunternehmen und IKT-Drittdienstleister getrennt auf. Ein Schweizer Anbieter wird nicht allein wegen eines Bankkunden zu einem DORA-Finanzunternehmen. DORA verpflichtet Finanzunternehmen unter anderem zum Management von IKT-Drittparteirisiken und zu Vertragsvorgaben; für als kritisch eingestufte IKT-Drittdienstleister besteht zudem ein eigener EU-Überwachungsrahmen. Welche unmittelbaren Pflichten in einem konkreten grenzüberschreitenden Fall bestehen, ist fachjuristisch zu prüfen. <sup class="ref-link"><a href="#ref-4">[4]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
@@ -175,7 +211,7 @@
 <p>Für Schweizer KMU ist NIS2/DORA-Readiness kein einheitliches Zertifizierungsprojekt. Der sachgerechte Weg trennt Schweizer Meldepflichten, möglichen direkten EU-Anwendungsbereich und vertragliche Kundenanforderungen. Erst diese Trennung erlaubt es, die richtigen Verantwortlichkeiten, Nachweise und technischen Massnahmen zu priorisieren. Wo EU-Tätigkeit, digitaler Dienst, Niederlassung, Vertreter oder Vertragsklauseln eine Rolle spielen, ist die fachjuristische Prüfung Teil der Readiness und kein nachträglicher Formalismus.</p>
 <div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong>Nächster Schritt:</strong> <a href="../kontakt.html">Kontaktieren Sie DKSchV</a>, wenn Sie Ihre Ausgangslage besprechen möchten. <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die Einordnung von Diensten, Verträgen und EU-Rechtsbezug bleibt einer Prüfung durch EU-rechtskundige Fachpersonen vorbehalten.</div></div>
 <h2 id="quellen">Quellen</h2>
-        
+          
       <div class="references-section">
         <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
           Geprüfte Primärquellen &amp; Rechtsreferenzen
@@ -308,6 +344,7 @@
         </ul>
       </div>
     
+        </div>
         
         <!-- Post-article consultation box -->
         <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
@@ -357,7 +394,7 @@
             <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
             <li><a href="../risikomanagement.html">Risikomanagement</a></li>
             <li><a href="../notfallplanung.html">Notfallplanung</a></li>
-            <li><a href="./">Wissen &amp; Ratgeber</a></li>
+            <li><a href="./">🔒 Mandantenbereich</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -383,6 +420,7 @@
       <div class="footer-bottom">
         <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
         <div class="footer-legal-links">
+          <a href="#" onclick="openPortalLoginModal(event)" style="color: #2dd4bf; font-weight: 600;">🔒 Mandanten-Login</a>
           <a href="../impressum.html">Impressum</a>
           <a href="../datenschutz.html">Datenschutz</a>
         </div>
@@ -390,6 +428,7 @@
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/portal-auth.js"></script>
   
 </body>
 </html>

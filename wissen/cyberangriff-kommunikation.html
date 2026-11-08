@@ -55,7 +55,10 @@
         <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
         <span class="top-trust-tag">📍 Naters / Wallis</span>
       </div>
-      <div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700;">
+          🔑 Kunden-Login
+        </a>
         <a href="../kontakt.html#notfall" class="emergency-quicklink">
           🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
         </a>
@@ -75,9 +78,14 @@
           <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
           <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
           <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
-          <li><a href="./" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="./" class="nav-link active"><span style="margin-right:3px;">🔒</span> Kundenbereich</a></li>
           <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
           <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li>
+            <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
+              <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
+            </a>
+          </li>
           <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
         </ul>
       </nav>
@@ -94,7 +102,7 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="../index.html">Home</a>
         <span class="sep">/</span>
-        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <a href="./index.html">🔒 Kundenbereich</a>
         <span class="sep">/</span>
         <span style="color:#ffffff;">Krisenkommunikation</span>
       </nav>
@@ -106,7 +114,7 @@
         <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
         <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 14 Min.</strong></span>
         <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
-        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+        <span class="article-meta-item">🔒 Status: <strong>Mandanten-Bereich</strong></span>
       </div>
     </div>
   </header>
@@ -115,7 +123,39 @@
   <main class="container">
     <div class="article-container">
       <article class="article-content">
-        
+        <div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die Aussagen zu Behördenmeldungen, Betroffeneninformation, Vertrags- und Strafverfolgungsfragen müssen vor Veröffentlichung durch Datenschutz- und Rechtsfachpersonen geprüft werden.</div></div>
+<div class="article-lead"><strong>Kurzantwort:</strong> Nach einem Cyberangriff sollten Sie weder schweigen noch spekulieren. Bilden Sie einen kleinen Krisenkreis, halten Sie bestätigte Fakten, offene Punkte und Entscheide getrennt fest und lassen Sie jede externe Aussage fachlich und geschäftlich freigeben. Informieren Sie Mitarbeitende vor der Öffentlichkeit, soweit dies die Lage zulässt, und kommunizieren Sie danach in den drei BACS-Phasen: über den Angriff, über die Bewältigung und über den Abschluss. Ein vorab freigegebenes Holding Statement verschafft Zeit, ohne Ursachen oder Auswirkungen vorwegzunehmen. Testen Sie Rollen, Freigaben, Kanäle und die Fragen-Antworten-Sammlung in einer Tabletop-Übung, bevor der Ernstfall eintritt.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup></div>
+<p>Ein Cyberangriff ist nicht nur ein IT-Ereignis. Wenn Systeme, Daten oder Leistungen betroffen sein könnten, entstehen gleichzeitig operative, rechtliche und kommunikative Fragen. Kundinnen und Kunden wollen wissen, ob sie handeln müssen. Mitarbeitende brauchen einen sicheren Arbeitsauftrag. Medien, Partner oder Angreifer können die öffentliche Wahrnehmung prägen, bevor die technische Analyse abgeschlossen ist.</p>
+<p>Das Bundesamt für Cybersicherheit (BACS) empfiehlt deshalb eine zeitnahe, koordinierte und durchdachte Kommunikation. Sie soll auf Tatsachen beruhen, regelmässig erfolgen, verständlich sein und die Sorgen der Anspruchsgruppen ernst nehmen.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Für ein KMU heisst das nicht, jede technische Erkenntnis sofort zu veröffentlichen. Es heisst, Zuständigkeit, Faktenprüfung und den nächsten Informationszeitpunkt vorab zu organisieren.</p>
+
+        <!-- Client Portal Login Gate (Visible when not logged in) -->
+        <div class="client-portal-gate" id="clientPortalGate">
+          <span class="gate-badge">🔒 Exklusiver Mandanteninhalt</span>
+          <h2 class="gate-title">Kunden-Login erforderlich</h2>
+          <p class="gate-desc">
+            Dieser vollständige Fachleitfaden und das druckbare Arbeitsmittel <strong>«Checkliste»</strong> sind für DKSchV-Mandanten und registrierte Kunden freigeschaltet.
+          </p>
+          <div class="gate-actions">
+            <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+              <span>🔑 Als Mandant anmelden</span>
+            </button>
+            <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+              <span>📋 Zugang anfordern</span>
+            </button>
+          </div>
+          <div class="gate-fast-login">
+            <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+            <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+              <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+              <button type="submit" class="gate-inline-btn">Freischalten</button>
+            </form>
+            <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+          </div>
+        </div>
+
+        <!-- Gated Content: Full Guide, Resources, Tables & References -->
+        <div class="gated-content" id="gatedArticleContent">
+          
       <div class="article-resource-box">
         <div class="resource-box-content">
           <h4>📥 Passendes Arbeitsmittel: Arbeitsvorlage & Notfall-Checkliste</h4>
@@ -127,11 +167,7 @@
         </a>
       </div>
     
-        <div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die Aussagen zu Behördenmeldungen, Betroffeneninformation, Vertrags- und Strafverfolgungsfragen müssen vor Veröffentlichung durch Datenschutz- und Rechtsfachpersonen geprüft werden.</div></div>
-<div class="article-lead"><strong>Kurzantwort:</strong> Nach einem Cyberangriff sollten Sie weder schweigen noch spekulieren. Bilden Sie einen kleinen Krisenkreis, halten Sie bestätigte Fakten, offene Punkte und Entscheide getrennt fest und lassen Sie jede externe Aussage fachlich und geschäftlich freigeben. Informieren Sie Mitarbeitende vor der Öffentlichkeit, soweit dies die Lage zulässt, und kommunizieren Sie danach in den drei BACS-Phasen: über den Angriff, über die Bewältigung und über den Abschluss. Ein vorab freigegebenes Holding Statement verschafft Zeit, ohne Ursachen oder Auswirkungen vorwegzunehmen. Testen Sie Rollen, Freigaben, Kanäle und die Fragen-Antworten-Sammlung in einer Tabletop-Übung, bevor der Ernstfall eintritt.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup></div>
-<p>Ein Cyberangriff ist nicht nur ein IT-Ereignis. Wenn Systeme, Daten oder Leistungen betroffen sein könnten, entstehen gleichzeitig operative, rechtliche und kommunikative Fragen. Kundinnen und Kunden wollen wissen, ob sie handeln müssen. Mitarbeitende brauchen einen sicheren Arbeitsauftrag. Medien, Partner oder Angreifer können die öffentliche Wahrnehmung prägen, bevor die technische Analyse abgeschlossen ist.</p>
-<p>Das Bundesamt für Cybersicherheit (BACS) empfiehlt deshalb eine zeitnahe, koordinierte und durchdachte Kommunikation. Sie soll auf Tatsachen beruhen, regelmässig erfolgen, verständlich sein und die Sorgen der Anspruchsgruppen ernst nehmen.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Für ein KMU heisst das nicht, jede technische Erkenntnis sofort zu veröffentlichen. Es heisst, Zuständigkeit, Faktenprüfung und den nächsten Informationszeitpunkt vorab zu organisieren.</p>
-<h2 id="kommunikation-ist-teil-der-vorfallsbewaeltigung">Kommunikation ist Teil der Vorfallsbewältigung</h2>
+          <h2 id="kommunikation-ist-teil-der-vorfallsbewaeltigung">Kommunikation ist Teil der Vorfallsbewältigung</h2>
 <p>Ein <strong>Cybervorfall</strong> ist ein Ereignis, das Vertraulichkeit, Integrität oder Verfügbarkeit von Systemen oder Daten beeinträchtigen kann. Eine <strong>Krise</strong> entsteht, wenn der Vorfall bedeutende Auswirkungen hat, rasch eskaliert oder das Vertrauen wichtiger Anspruchsgruppen berührt. Die technische Untersuchung und die Kommunikation müssen dann eng zusammenarbeiten, dürfen sich aber nicht gegenseitig ersetzen.</p>
 <p>Das BACS ordnet ein Krisenkommunikationskonzept ausdrücklich dem Notfallkonzept zu. Dieses umfasst auch Krisenorganisation, zentrale Notfallkontakte und konkrete Massnahmen. Bei schwerwiegenden Auswirkungen koordiniert die Notfallorganisation beziehungsweise der Krisenstab die interne und externe Kommunikation.<sup class="ref-link"><a href="#ref-2">[2]</a></sup> Verankern Sie die Kommunikationsarbeit daher in Ihrer <a href="../notfallplanung.html">IT-Notfallplanung</a>, nicht in einem isolierten Medienordner.</p>
 <p>Die organisatorische Vorbereitung ist dabei keine Nebenaufgabe. Das BACS hält in seiner am 22. Oktober 2026 veröffentlichten Mitteilung zur Studie «KMU Cybersicherheit 2026» fest, dass neben technischen Schutzmassnahmen gerade klare Verantwortlichkeiten, Mitarbeiterschulungen und Notfallkonzepte wichtig sind und bei organisatorischen Massnahmen weiterhin Lücken bestehen. Die Mitteilung begründet keine neue rechtliche Pflicht. Sie unterstreicht aber, weshalb Rollen, Vertretungen und Notfallkommunikation vor einem Vorfall geübt werden sollten.<sup class="ref-link"><a href="#ref-10">[10]</a></sup></p>
@@ -190,7 +226,7 @@
 <h2 id="naechster-schritt">Nächster Schritt</h2>
 <p>Eine gute Cyberkommunikation entsteht nicht aus einem Textbaustein, sondern aus geübten Rollen, belastbaren Fakten und einem funktionierenden Notfallplan. Für organisatorische Fragen erreichen Sie DKSchV über den <a href="../kontakt.html">Kontakt</a>. Eine Beratung ersetzt keine Prüfung von Meldepflichten oder Vertragsfragen im konkreten Vorfall.</p>
 <h2 id="quellen">Quellen</h2>
-        
+          
       <div class="references-section">
         <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
           Geprüfte Primärquellen &amp; Rechtsreferenzen
@@ -283,6 +319,7 @@
         </ul>
       </div>
     
+        </div>
         
         <!-- Post-article consultation box -->
         <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
@@ -334,7 +371,7 @@
             <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
             <li><a href="../risikomanagement.html">Risikomanagement</a></li>
             <li><a href="../notfallplanung.html">Notfallplanung</a></li>
-            <li><a href="./">Wissen &amp; Ratgeber</a></li>
+            <li><a href="./">🔒 Mandantenbereich</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -360,6 +397,7 @@
       <div class="footer-bottom">
         <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
         <div class="footer-legal-links">
+          <a href="#" onclick="openPortalLoginModal(event)" style="color: #2dd4bf; font-weight: 600;">🔒 Mandanten-Login</a>
           <a href="../impressum.html">Impressum</a>
           <a href="../datenschutz.html">Datenschutz</a>
         </div>
@@ -367,6 +405,7 @@
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/portal-auth.js"></script>
   
 </body>
 </html>
