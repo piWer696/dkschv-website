@@ -1,0 +1,14 @@
+{
+  "name": "dkschv-website",
+  "version": "1.0.0",
+  "description": "Offizielle Website von DKSchV Dini - Schweizer Cyber-Security & Datenschutz",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-knowledge-hub.mjs",
+    "publish-sunday": "./publish-sunday.sh",
+    "test": "node scripts/build-knowledge-hub.mjs"
+  },
+  "author": "DKSchV Dini",
+  "license": "UNLICENSED",
+  "private": true
+}

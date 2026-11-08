@@ -116,7 +116,7 @@ const deployArchive = path.join(ROOT_DIR, 'dkschv-website-deploy.zip');
 try {
   if (fs.existsSync(deployArchive)) fs.unlinkSync(deployArchive);
   // Zip standard website files excluding git and temp files
-  execSync(`zip -q -r "${deployArchive}" index.html sicherheitsanalyse.html risikomanagement.html notfallplanung.html ueber-uns.html kontakt.html impressum.html datenschutz.html wissen.html assets wissen`, { cwd: ROOT_DIR });
+  execSync(`zip -q -r "${deployArchive}" index.html sicherheitsanalyse.html risikomanagement.html notfallplanung.html ueber-uns.html kontakt.html impressum.html datenschutz.html wissen.html assets wissen .htaccess`, { cwd: ROOT_DIR });
   console.log(`\n📦 Bereitgestelltes Upload-Archiv für Infomaniak Web-FTP:`);
   console.log(`   👉 ${deployArchive}`);
 } catch (err) {
