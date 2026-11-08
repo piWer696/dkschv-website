@@ -445,6 +445,7 @@ function formatMarkdown(markdown, options = {}) {
 }
 
 function renderHeader(activeNav = 'wissen', relativeRoot = '.') {
+  const wissenHref = relativeRoot === '.' ? 'wissen/' : (relativeRoot === '..' ? './' : '../');
   return `
   <!-- Top Emergency Bar -->
   <div class="top-emergency-bar">
@@ -474,7 +475,7 @@ function renderHeader(activeNav = 'wissen', relativeRoot = '.') {
           <li><a href="${relativeRoot}/sicherheitsanalyse.html" class="nav-link ${activeNav === 'sicherheitsanalyse' ? 'active' : ''}">Sicherheitsanalyse</a></li>
           <li><a href="${relativeRoot}/risikomanagement.html" class="nav-link ${activeNav === 'risikomanagement' ? 'active' : ''}">Risikomanagement</a></li>
           <li><a href="${relativeRoot}/notfallplanung.html" class="nav-link ${activeNav === 'notfallplanung' ? 'active' : ''}">Notfallplanung</a></li>
-          <li><a href="${relativeRoot}/wissen.html" class="nav-link ${activeNav === 'wissen' ? 'active' : ''}">Wissen &amp; Ratgeber</a></li>
+          <li><a href="${wissenHref}" class="nav-link ${activeNav === 'wissen' ? 'active' : ''}">Wissen &amp; Ratgeber</a></li>
           <li><a href="${relativeRoot}/ueber-uns.html" class="nav-link ${activeNav === 'ueber-uns' ? 'active' : ''}">Über uns</a></li>
           <li><a href="${relativeRoot}/kontakt.html" class="nav-link ${activeNav === 'kontakt' ? 'active' : ''}">Kontakt</a></li>
           <li><a href="${relativeRoot}/kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
@@ -489,6 +490,7 @@ function renderHeader(activeNav = 'wissen', relativeRoot = '.') {
 }
 
 function renderFooter(relativeRoot = '.') {
+  const wissenHref = relativeRoot === '.' ? 'wissen/' : (relativeRoot === '..' ? './' : '../');
   return `
   <!-- Footer -->
   <footer class="site-footer">
@@ -504,7 +506,7 @@ function renderFooter(relativeRoot = '.') {
             <li><a href="${relativeRoot}/sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
             <li><a href="${relativeRoot}/risikomanagement.html">Risikomanagement</a></li>
             <li><a href="${relativeRoot}/notfallplanung.html">Notfallplanung</a></li>
-            <li><a href="${relativeRoot}/wissen.html">Wissen &amp; Ratgeber</a></li>
+            <li><a href="${wissenHref}">Wissen &amp; Ratgeber</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1103,11 +1105,31 @@ function generateCatalogHtml(relativeRoot = '.') {
 </html>`;
 }
 
-// Write wissen.html at site root
-fs.writeFileSync(path.join(ROOT_DIR, 'wissen.html'), generateCatalogHtml('.'));
-// Also write wissen/index.html so /wissen/ resolves identically
+// Copy assets into wissen/assets so the directory is completely self-contained
+const WISSEN_ASSETS_DIR = path.join(WISSEN_DIR, 'assets');
+fs.cpSync(path.join(ROOT_DIR, 'assets'), WISSEN_ASSETS_DIR, { recursive: true });
+console.log('✅ Assets in wissen/assets synchronisiert (eigenständiges Verzeichnis)');
+
+// Write wissen/index.html as canonical directory index
 fs.writeFileSync(path.join(WISSEN_DIR, 'index.html'), generateCatalogHtml('..'));
-console.log('✅ wissen.html und wissen/index.html erfolgreich generiert');
+
+// Write root wissen.html as redirect / fallback to wissen/
+const rootWissenRedirect = `<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=wissen/">
+  <link rel="canonical" href="https://www.dkschv.ch/wissen/">
+  <title>Wissen &amp; Ratgeber | DKSchV Schweiz</title>
+  <script>window.location.replace("wissen/");</script>
+</head>
+<body style="font-family: -apple-system, sans-serif; padding: 40px; text-align: center;">
+  <h2>Weiterleitung zum Wissensportal...</h2>
+  <p>Falls Sie nicht automatisch weitergeleitet werden, klicken Sie bitte hier: <a href="wissen/">https://www.dkschv.ch/wissen/</a></p>
+</body>
+</html>`;
+fs.writeFileSync(path.join(ROOT_DIR, 'wissen.html'), rootWissenRedirect);
+console.log('✅ wissen/index.html und Weiterleitung wissen.html erfolgreich generiert');
 
 // 6. Automatically Update Navigation in All Root HTML Pages
 const ROOT_PAGES = [
@@ -1129,26 +1151,28 @@ ROOT_PAGES.forEach(filename => {
   let html = fs.readFileSync(filePath, 'utf-8');
   let changed = false;
 
-  // Check header navigation
-  if (!html.includes('href="wissen.html"')) {
-    // Insert after notfallplanung.html
+  // Replace wissen.html with clean directory wissen/
+  if (html.includes('href="wissen.html"')) {
+    html = html.replace(/href="wissen\.html"/g, 'href="wissen/"');
+    changed = true;
+  }
+
+  // If missing entirely, insert after notfallplanung
+  if (!html.includes('href="wissen/"')) {
     const targetTag = '<li><a href="notfallplanung.html" class="nav-link">Notfallplanung</a></li>';
     const targetTagActive = '<li><a href="notfallplanung.html" class="nav-link active">Notfallplanung</a></li>';
 
     if (html.includes(targetTag)) {
-      html = html.replace(targetTag, `${targetTag}\n          <li><a href="wissen.html" class="nav-link">Wissen &amp; Ratgeber</a></li>`);
+      html = html.replace(targetTag, `${targetTag}\n          <li><a href="wissen/" class="nav-link">Wissen &amp; Ratgeber</a></li>`);
       changed = true;
     } else if (html.includes(targetTagActive)) {
-      html = html.replace(targetTagActive, `${targetTagActive}\n          <li><a href="wissen.html" class="nav-link">Wissen &amp; Ratgeber</a></li>`);
+      html = html.replace(targetTagActive, `${targetTagActive}\n          <li><a href="wissen/" class="nav-link">Wissen &amp; Ratgeber</a></li>`);
       changed = true;
     }
-  }
 
-  // Check footer links
-  if (!html.includes('<li><a href="wissen.html">Wissen &amp; Ratgeber</a></li>')) {
     const footerTarget = '<li><a href="notfallplanung.html">Notfallplanung</a></li>';
     if (html.includes(footerTarget)) {
-      html = html.replace(footerTarget, `${footerTarget}\n            <li><a href="wissen.html">Wissen &amp; Ratgeber</a></li>`);
+      html = html.replace(footerTarget, `${footerTarget}\n            <li><a href="wissen/">Wissen &amp; Ratgeber</a></li>`);
       changed = true;
     }
   }
