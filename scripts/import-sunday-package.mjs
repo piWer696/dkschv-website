@@ -111,16 +111,27 @@ try {
   process.exit(1);
 }
 
-// 3. Deployment-Paket vorbereiten
-const deployArchive = path.join(ROOT_DIR, 'dkschv-website-deploy.zip');
+// 3. Deployment-Pakete vorbereiten
+const deployFullArchive = path.join(ROOT_DIR, 'dkschv-website-deploy.zip');
+const deployWissenOnlyArchive = path.join(ROOT_DIR, 'wissen-ordner-deploy.zip');
+
 try {
-  if (fs.existsSync(deployArchive)) fs.unlinkSync(deployArchive);
-  // Zip standard website files excluding git and temp files
-  execSync(`zip -q -r "${deployArchive}" index.html sicherheitsanalyse.html risikomanagement.html notfallplanung.html ueber-uns.html kontakt.html impressum.html datenschutz.html wissen.html assets wissen .htaccess`, { cwd: ROOT_DIR });
-  console.log(`\n📦 Bereitgestelltes Upload-Archiv für Infomaniak Web-FTP:`);
-  console.log(`   👉 ${deployArchive}`);
+  if (fs.existsSync(deployFullArchive)) fs.unlinkSync(deployFullArchive);
+  if (fs.existsSync(deployWissenOnlyArchive)) fs.unlinkSync(deployWissenOnlyArchive);
+
+  // 1. Komplettes Website-Archiv
+  execSync(`zip -q -r "${deployFullArchive}" index.html sicherheitsanalyse.html risikomanagement.html notfallplanung.html ueber-uns.html kontakt.html impressum.html datenschutz.html wissen.html assets wissen .htaccess`, { cwd: ROOT_DIR });
+
+  // 2. Nur das Verzeichnis 'wissen' (eigenständig)
+  execSync(`zip -q -r "${deployWissenOnlyArchive}" wissen`, { cwd: ROOT_DIR });
+
+  console.log(`\n📦 Bereitgestellte Upload-Archive für Infomaniak:`);
+  console.log(`   1. Komplett-Paket (inkl. Menü-Links & Assets):`);
+  console.log(`      👉 ${deployFullArchive}`);
+  console.log(`   2. Nur Verzeichnis 'wissen' (eigenständig ohne Rest der Website zu berühren):`);
+  console.log(`      👉 ${deployWissenOnlyArchive}`);
 } catch (err) {
-  console.warn('⚠️ Warnung beim Erstellen des Deploy-Zips:', err.message);
+  console.warn('⚠️ Warnung beim Erstellen der Deploy-Zips:', err.message);
 }
 
 console.log('\n🎉 Fertig! Die Website und alle Blogbeiträge sind aktualisiert.');
