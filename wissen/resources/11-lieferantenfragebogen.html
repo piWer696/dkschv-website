@@ -21,8 +21,11 @@
         <a href="../lieferantenrisiken-cybersecurity.html" style="color: #cbd5e1; text-decoration: none; font-size: 13.5px; font-weight: 500;">&larr; Zurück zum Fachleitfaden</a>
       </div>
       <div style="display: flex; gap: 12px; align-items: center;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="top-bar-login-btn">
+          <span>🔒</span> <strong>Kunden-Login</strong>
+        </a>
         <span style="font-size: 12.5px; color: #94a3b8;">Format: DIN A4 Druckvorlage</span>
-        <button onclick="window.print()" class="btn-print">
+        <button onclick="if(window.DKSchVPortal.isLoggedIn()){ window.print(); } else { window.DKSchVPortal.openModal('login'); }" class="btn-print">
           <span>🖨️ Arbeitsblatt drucken / PDF</span>
         </button>
       </div>
