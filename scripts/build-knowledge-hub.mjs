@@ -111,6 +111,18 @@ function formatMarkdown(markdown, options = {}) {
   const headings = [];
   const references = [];
   const htmlParts = [];
+  const leadParts = [];
+  const restParts = [];
+  let reachedFirstHeading = false;
+
+  function pushHtml(chunk) {
+    htmlParts.push(chunk);
+    if (!reachedFirstHeading) {
+      leadParts.push(chunk);
+    } else {
+      restParts.push(chunk);
+    }
+  }
 
   // Determine relative root based on page type
   let rootPrefix = '..'; // Default for articles in wissen/
@@ -130,7 +142,7 @@ function formatMarkdown(markdown, options = {}) {
 
   function flushList() {
     if (inList) {
-      htmlParts.push(`</${listType}>`);
+      pushHtml(`</${listType}>`);
       inList = false;
       listType = null;
     }
@@ -151,7 +163,7 @@ function formatMarkdown(markdown, options = {}) {
         tHtml += '</tr>';
       });
       tHtml += '</tbody></table></div>';
-      htmlParts.push(tHtml);
+      pushHtml(tHtml);
       inTable = false;
       tableHeader = [];
       tableRows = [];
@@ -176,7 +188,7 @@ function formatMarkdown(markdown, options = {}) {
       }
 
       const processed = processInline(text.replace(/^[> ]+/gm, ''));
-      htmlParts.push(`<div class="${calloutClass}"><div class="callout-icon">${icon}</div><div class="callout-body">${processed}</div></div>`);
+      pushHtml(`<div class="${calloutClass}"><div class="callout-icon">${icon}</div><div class="callout-body">${processed}</div></div>`);
       inBlockquote = false;
       blockquoteLines = [];
     }
@@ -262,7 +274,7 @@ function formatMarkdown(markdown, options = {}) {
       flushList();
       flushTable();
       flushBlockquote();
-      htmlParts.push('<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">');
+      pushHtml('<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">');
       continue;
     }
 
@@ -279,10 +291,11 @@ function formatMarkdown(markdown, options = {}) {
       flushList();
       flushTable();
       flushBlockquote();
+      reachedFirstHeading = true;
       const title = line.replace(/^## /, '').trim();
       const id = slugify(title);
       headings.push({ level: 2, title, id });
-      htmlParts.push(`<h2 id="${id}">${processInline(title)}</h2>`);
+      pushHtml(`<h2 id="${id}">${processInline(title)}</h2>`);
       continue;
     }
 
@@ -293,7 +306,7 @@ function formatMarkdown(markdown, options = {}) {
       const title = line.replace(/^### /, '').trim();
       const id = slugify(title);
       headings.push({ level: 3, title, id });
-      htmlParts.push(`<h3 id="${id}">${processInline(title)}</h3>`);
+      pushHtml(`<h3 id="${id}">${processInline(title)}</h3>`);
       continue;
     }
 
@@ -302,7 +315,7 @@ function formatMarkdown(markdown, options = {}) {
       flushTable();
       flushBlockquote();
       const title = line.replace(/^#### /, '').trim();
-      htmlParts.push(`<h4>${processInline(title)}</h4>`);
+      pushHtml(`<h4>${processInline(title)}</h4>`);
       continue;
     }
 
@@ -341,11 +354,11 @@ function formatMarkdown(markdown, options = {}) {
       if (!inList) {
         inList = true;
         listType = 'ul';
-        htmlParts.push('<ul style="list-style: none; padding-left: 0;">');
+        pushHtml('<ul style="list-style: none; padding-left: 0;">');
       }
       const isChecked = taskMatch[2].toLowerCase() === 'x';
       const itemText = processInline(taskMatch[3]);
-      htmlParts.push(`<li class="task-item"><input type="checkbox" ${isChecked ? 'checked' : ''} onclick="return false;"> <span>${itemText}</span></li>`);
+      pushHtml(`<li class="task-item"><input type="checkbox" ${isChecked ? 'checked' : ''} onclick="return false;"> <span>${itemText}</span></li>`);
       continue;
     }
 
@@ -357,9 +370,9 @@ function formatMarkdown(markdown, options = {}) {
         flushList();
         inList = true;
         listType = 'ul';
-        htmlParts.push('<ul>');
+        pushHtml('<ul>');
       }
-      htmlParts.push(`<li>${processInline(ulMatch[2])}</li>`);
+      pushHtml(`<li>${processInline(ulMatch[2])}</li>`);
       continue;
     }
 
@@ -371,9 +384,9 @@ function formatMarkdown(markdown, options = {}) {
         flushList();
         inList = true;
         listType = 'ol';
-        htmlParts.push('<ol>');
+        pushHtml('<ol>');
       }
-      htmlParts.push(`<li>${processInline(olMatch[2])}</li>`);
+      pushHtml(`<li>${processInline(olMatch[2])}</li>`);
       continue;
     }
 
@@ -390,10 +403,10 @@ function formatMarkdown(markdown, options = {}) {
       flushBlockquote();
 
       if (isFirstParagraph && trimmed.startsWith('**Kurzantwort:**')) {
-        htmlParts.push(`<div class="article-lead">${processInline(trimmed)}</div>`);
+        pushHtml(`<div class="article-lead">${processInline(trimmed)}</div>`);
         isFirstParagraph = false;
       } else {
-        htmlParts.push(`<p>${processInline(trimmed)}</p>`);
+        pushHtml(`<p>${processInline(trimmed)}</p>`);
       }
       continue;
     }
@@ -438,6 +451,8 @@ function formatMarkdown(markdown, options = {}) {
 
   return {
     contentHtml: htmlParts.join('\n'),
+    leadHtml: leadParts.join('\n'),
+    restContentHtml: restParts.join('\n'),
     headings,
     references,
     referencesHtml
