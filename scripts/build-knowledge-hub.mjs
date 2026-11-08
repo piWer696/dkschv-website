@@ -106,11 +106,19 @@ function getAuthorityBadge(url) {
 }
 
 function formatMarkdown(markdown, options = {}) {
-  const { isArticle = true, currentSlug = '' } = options;
+  const { isArticle = true, isResource = false, isNews = false, currentSlug = '' } = options;
   const lines = markdown.split(/\r?\n/);
   const headings = [];
   const references = [];
   const htmlParts = [];
+
+  // Determine relative root based on page type
+  let rootPrefix = '..'; // Default for articles in wissen/
+  if (isResource || isNews) {
+    rootPrefix = '../..'; // For pages in wissen/resources/ or wissen/news/
+  } else if (!isArticle && !isResource && !isNews) {
+    rootPrefix = '.'; // For root pages
+  }
 
   let inList = false;
   let listType = null; // 'ul' or 'ol'
@@ -196,20 +204,29 @@ function formatMarkdown(markdown, options = {}) {
       let finalUrl = url;
       let targetAttr = '';
 
-      if (finalUrl.startsWith('/wissen/')) {
-        const slug = finalUrl.replace('/wissen/', '');
-        finalUrl = isArticle ? `./${slug}.html` : `wissen/${slug}.html`;
-      } else if (finalUrl.startsWith('/resources/')) {
-        const slug = finalUrl.replace('/resources/', '');
-        finalUrl = isArticle ? `./resources/${slug}.html` : `wissen/resources/${slug}.html`;
-      } else if (finalUrl.startsWith('/unsere-dienstleistungen/sicherheitsanalyse')) {
-        finalUrl = isArticle ? `../sicherheitsanalyse.html` : `sicherheitsanalyse.html`;
-      } else if (finalUrl.startsWith('/unsere-dienstleistungen/risikomanagement')) {
-        finalUrl = isArticle ? `../risikomanagement.html` : `risikomanagement.html`;
-      } else if (finalUrl.startsWith('/unsere-dienstleistungen/notfallplanung')) {
-        finalUrl = isArticle ? `../notfallplanung.html` : `notfallplanung.html`;
-      } else if (finalUrl.startsWith('/kontakt')) {
-        finalUrl = isArticle ? `../kontakt.html` : `kontakt.html`;
+      if (finalUrl.includes('Laufstatus.md') || finalUrl.includes('AUTOMATION_STATUS.md')) {
+        return linkText; // Plain text for internal dev files
+      }
+
+      if (finalUrl.startsWith('/wissen/') || finalUrl.startsWith('wissen/')) {
+        const slug = finalUrl.replace(/^\/?wissen\//, '').replace(/\.html$/, '');
+        if (isArticle) finalUrl = `./${slug}.html`;
+        else if (isResource || isNews) finalUrl = `../${slug}.html`;
+        else finalUrl = `wissen/${slug}.html`;
+      } else if (finalUrl.startsWith('/resources/') || finalUrl.startsWith('resources/')) {
+        const slug = finalUrl.replace(/^\/?resources\//, '').replace(/\.html$/, '');
+        if (isArticle) finalUrl = `./resources/${slug}.html`;
+        else if (isResource) finalUrl = `./${slug}.html`;
+        else if (isNews) finalUrl = `../resources/${slug}.html`;
+        else finalUrl = `wissen/resources/${slug}.html`;
+      } else if (finalUrl.includes('sicherheitsanalyse')) {
+        finalUrl = `${rootPrefix}/sicherheitsanalyse.html`;
+      } else if (finalUrl.includes('risikomanagement')) {
+        finalUrl = `${rootPrefix}/risikomanagement.html`;
+      } else if (finalUrl.includes('notfallplanung')) {
+        finalUrl = `${rootPrefix}/notfallplanung.html`;
+      } else if (finalUrl.includes('kontakt')) {
+        finalUrl = `${rootPrefix}/kontakt.html`;
       } else if (finalUrl.startsWith('http')) {
         targetAttr = ' target="_blank" rel="noopener noreferrer"';
       }
@@ -733,7 +750,7 @@ console.log(`✅ ${articles.length} Fachartikel unter wissen/<slug>.html generie
 
 // 3. Generate Printable Resource Pages in /wissen/resources/<slug>.html
 Object.values(resourcesByPrefix).forEach(res => {
-  const { contentHtml } = formatMarkdown(res.body, { isArticle: false });
+  const { contentHtml } = formatMarkdown(res.body, { isArticle: false, isResource: true });
   const parentArticle = articles.find(a => a.prefix === res.file.slice(0, 2));
   const resTitle = res.frontmatter.titel || res.frontmatter.meta_title || 'Arbeitsvorlage';
 
