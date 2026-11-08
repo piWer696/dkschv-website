@@ -470,7 +470,10 @@ function renderHeader(activeNav = 'wissen', relativeRoot = '.') {
         <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
         <span class="top-trust-tag">📍 Naters / Wallis</span>
       </div>
-      <div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="emergency-quicklink" style="color: #5eead4; font-weight: 700;">
+          🔑 Kunden-Login
+        </a>
         <a href="${relativeRoot}/kontakt.html#notfall" class="emergency-quicklink">
           🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
         </a>
@@ -490,9 +493,14 @@ function renderHeader(activeNav = 'wissen', relativeRoot = '.') {
           <li><a href="${relativeRoot}/sicherheitsanalyse.html" class="nav-link ${activeNav === 'sicherheitsanalyse' ? 'active' : ''}">Sicherheitsanalyse</a></li>
           <li><a href="${relativeRoot}/risikomanagement.html" class="nav-link ${activeNav === 'risikomanagement' ? 'active' : ''}">Risikomanagement</a></li>
           <li><a href="${relativeRoot}/notfallplanung.html" class="nav-link ${activeNav === 'notfallplanung' ? 'active' : ''}">Notfallplanung</a></li>
-          <li><a href="${wissenHref}" class="nav-link ${activeNav === 'wissen' ? 'active' : ''}">Wissen &amp; Ratgeber</a></li>
+          <li><a href="${wissenHref}" class="nav-link ${activeNav === 'wissen' ? 'active' : ''}"><span style="margin-right:3px;">🔒</span> Kundenbereich</a></li>
           <li><a href="${relativeRoot}/ueber-uns.html" class="nav-link ${activeNav === 'ueber-uns' ? 'active' : ''}">Über uns</a></li>
           <li><a href="${relativeRoot}/kontakt.html" class="nav-link ${activeNav === 'kontakt' ? 'active' : ''}">Kontakt</a></li>
+          <li>
+            <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
+              <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
+            </a>
+          </li>
           <li><a href="${relativeRoot}/kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
         </ul>
       </nav>
@@ -521,7 +529,7 @@ function renderFooter(relativeRoot = '.') {
             <li><a href="${relativeRoot}/sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
             <li><a href="${relativeRoot}/risikomanagement.html">Risikomanagement</a></li>
             <li><a href="${relativeRoot}/notfallplanung.html">Notfallplanung</a></li>
-            <li><a href="${wissenHref}">Wissen &amp; Ratgeber</a></li>
+            <li><a href="${wissenHref}">🔒 Mandantenbereich</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -547,6 +555,7 @@ function renderFooter(relativeRoot = '.') {
       <div class="footer-bottom">
         <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
         <div class="footer-legal-links">
+          <a href="#" onclick="openPortalLoginModal(event)" style="color: #2dd4bf; font-weight: 600;">🔒 Mandanten-Login</a>
           <a href="${relativeRoot}/impressum.html">Impressum</a>
           <a href="${relativeRoot}/datenschutz.html">Datenschutz</a>
         </div>
@@ -554,6 +563,7 @@ function renderFooter(relativeRoot = '.') {
     </div>
   </footer>
   <script src="${relativeRoot}/assets/js/main.js"></script>
+  <script src="${relativeRoot}/assets/js/portal-auth.js"></script>
   `;
 }
 
@@ -619,7 +629,7 @@ articleFiles.forEach(file => {
 
 // 2. Generate Article Pages in /wissen/<slug>.html
 articles.forEach(art => {
-  const { contentHtml, headings, referencesHtml } = formatMarkdown(art.body, {
+  const { contentHtml, leadHtml, restContentHtml, headings, referencesHtml } = formatMarkdown(art.body, {
     isArticle: true,
     currentSlug: art.slug
   });
