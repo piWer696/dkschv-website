@@ -834,7 +834,7 @@ if (newsFiles.length > 0) {
   const { frontmatter, body } = parseFrontmatter(rawNews);
   latestNewsDate = frontmatter.datum || '08.11.2026';
 
-  const { contentHtml, headings, referencesHtml } = formatMarkdown(body, { isArticle: true });
+  const { contentHtml, headings, referencesHtml } = formatMarkdown(body, { isArticle: false, isNews: true });
 
   // Extract quick highlights from H2s in news
   latestNewsPoints = headings.filter(h => h.level === 2 && !h.title.includes('Vormerkung') && !h.title.includes('References')).slice(0, 4);
