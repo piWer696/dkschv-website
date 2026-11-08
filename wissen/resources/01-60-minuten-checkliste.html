@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60-Minuten-Checkliste bei Ransomware-Verdacht | DKSchV</title>
+  <meta name="description" content="Druckbare Arbeitsvorlage für die erste Stunde nach einem Ransomware-Verdacht: Eindämmung, Beweissicherung, Backups und Meldeprüfung.">
+  <link rel="icon" type="image/png" href="../../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    /* Print-specific tweaks */
+    @page { margin: 1.5cm; }
+  </style>
+</head>
+<body style="background: var(--bg-light);">
+
+  <!-- Printable Action Bar -->
+  <div class="resource-top-bar no-print">
+    <div class="container resource-bar-inner">
+      <div>
+        <a href="../ransomware-erste-60-minuten.html" style="color: #cbd5e1; text-decoration: none; font-size: 13.5px; font-weight: 500;">&larr; Zurück zum Fachleitfaden</a>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <span style="font-size: 12.5px; color: #94a3b8;">Format: DIN A4 Druckvorlage</span>
+        <button onclick="window.print()" class="btn-print">
+          <span>🖨️ Arbeitsblatt drucken / PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="resource-sheet">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
+        <div>
+          <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
+            DKSchV Schweiz · Dokumentiertes Arbeitsmittel
+          </span>
+          <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
+            60-Minuten-Checkliste bei Ransomware-Verdacht
+          </h1>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
+            Stand 1. November 2026 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+          </p>
+        </div>
+        <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+      </div>
+
+      <div class="article-content" style="font-size: 15px;">
+        <h2 id="zweck">Zweck</h2>
+<p>Diese Checkliste unterstützt Geschäftsleitung und IT dabei, in der ersten Stunde nach einem Ransomware-Verdacht strukturiert zu handeln. Sie hilft, Eindämmung, Beweissicherung, Backup-Schutz und die erste Einordnung von BACS-, Polizei- und EDÖB-Meldungen zu dokumentieren. Sie ist für den Ausdruck und die handschriftliche Verwendung gedacht.</p>
+<p>Sie ersetzt weder eine forensische Untersuchung noch einen organisationsspezifischen Notfallplan. Eine korrekte Abarbeitung verhindert nicht automatisch Datenverlust, Betriebsunterbruch, Datenabfluss oder rechtliche Folgen.</p>
+<h2 id="anwendung">Anwendung</h2>
+<ol>
+<li>Tragen Sie zuerst Zeit, Incident Lead und sichere Kontaktwege ein.</li>
+<li>Arbeiten Sie die Zeitfenster in der vorgegebenen Reihenfolge ab. Markieren Sie nur erledigte oder bewusst nicht anwendbare Punkte.</li>
+<li>Halten Sie bei jeder wesentlichen Massnahme Zeitpunkt, Person und Grund fest.</li>
+<li>Erweitern Sie den Entscheidungslog sofort, wenn neue Fakten vorliegen.</li>
+<li>Übergeben Sie das Blatt bei Schichtwechsel oder Übergabe an die nächste verantwortliche Person.</li>
+</ol>
+<div class="callout callout-danger"><div class="callout-icon">🚨</div><div class="callout-body"><strong>Wichtig:</strong> Das BACS empfiehlt, infizierte Systeme umgehend vom Netz zu trennen. Vor Reparaturversuchen oder Neustarts ist früh über eine fachkundige forensische Sicherung zu entscheiden. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> Ausschalten ist nur ein Notbehelf, wenn eine Netztrennung nicht möglich ist und die Ausbreitung sonst nicht gestoppt werden kann; dabei können flüchtige Beweise verloren gehen. <sup class="ref-link"><a href="#ref-2">[2]</a></sup></div></div>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="a-start-und-kontaktfelder">A. Start- und Kontaktfelder</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Feld</th><th>Eintrag</th></tr></thead><tbody><tr><td>Organisation / Standort</td><td></td></tr><tr><td>Datum</td><td></td></tr><tr><td>Entdeckt am, Uhrzeit</td><td></td></tr><tr><td>Meldende Person / erreichbar unter</td><td></td></tr><tr><td>Incident Lead / erreichbar unter</td><td></td></tr><tr><td>Technische Einsatzleitung / Stellvertretung</td><td></td></tr><tr><td>Geschäftsleitungs-Freigabe / erreichbar unter</td><td></td></tr><tr><td>Sicherer Kommunikationskanal ausserhalb des betroffenen Netzes</td><td></td></tr><tr><td>Externe IT-/Incident-Response-Fachperson</td><td></td></tr><tr><td>Versicherer / Policen- oder Schadenfallnummer, falls vorhanden</td><td></td></tr><tr><td>Kantonspolizei / weitere vorab definierte Kontakte</td><td></td></tr></tbody></table></div>
+<h2 id="b-minute-015-eindaemmung-und-fuehrung">B. Minute 0–15: Eindämmung und Führung</h2>
+<p><strong>Zeitfenster begonnen um:</strong> __________  <strong>abgeschlossen um:</strong> __________</p>
+<ul style="list-style: none; padding-left: 0;">
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Ransomware-Verdacht als Incident deklariert; Incident Lead benannt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Uhrzeit, meldende Person und sichtbare Symptome im Entscheidungslog erfasst.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Sicheren Kommunikationsweg ausserhalb der möglicherweise betroffenen Infrastruktur genutzt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Betroffene Geräte, Server oder Freigaben unmittelbar identifiziert und vom Netzwerk getrennt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Bei Geräten: Netzwerkkabel entfernt und WLAN deaktiviert oder technisch gleichwertig isoliert.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Bei mehreren betroffenen Systemen: Notwendigkeit einer Netzwerkisolation auf Switch-/Segmentebene durch technische Einsatzleitung beurteilt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Betroffene Systeme nicht neu gestartet und nicht mit Bereinigungstools verändert.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Falls Ausschalten unvermeidbar war: Grund und Zeitpunkt dokumentiert.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Kritische Prozessverantwortliche über bestätigte Einschränkungen informiert.</span></li>
+</ul>
+<p><strong>Betroffene oder verdächtige Systeme / Freigaben:</strong></p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>System, Dienst oder Freigabe</th><th>Benutzer / Standort</th><th>Symptom</th><th>Isoliert um</th><th>Durch</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<p><strong>Kurzlage (nur bestätigte Fakten):</strong></p>
+<p>____________________________________________________________________________</p>
+<p>____________________________________________________________________________</p>
+<p>Ein einzelnes unspezifisches Zeichen wie ein langsames Gerät ist noch kein Infektionsbeweis. Dokumentieren Sie mehrere ungewöhnliche Beobachtungen oder Sicherheitswarnungen für die technische Untersuchung und informieren Sie bei Geschäftsgeräten die zuständige IT. <sup class="ref-link"><a href="#ref-8">[8]</a></sup></p>
+<h2 id="c-minute-1530-lagebild-und-beweissicherung">C. Minute 15–30: Lagebild und Beweissicherung</h2>
+<p><strong>Zeitfenster begonnen um:</strong> __________  <strong>abgeschlossen um:</strong> __________</p>
+<ul style="list-style: none; padding-left: 0;">
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Liste der betroffenen, verdächtigen und nach aktuellem Stand nicht betroffenen Systeme angelegt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Lösegeldnotiz, Fehlermeldungen und auffällige Dateiendungen dokumentiert, ohne Originale zu verändern.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Verfügbare Logs gesichert: Firewall, E-Mail-Gateway, VPN, Identitätsdienst, Endpoint-Schutz und relevante Server.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Für jeden Logexport Quelle, Zeitraum, Exportzeit, Speicherort und verantwortliche Person notiert.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Verdächtige E-Mails, Dateien, Alarmmeldungen und technische Beobachtungen nicht gelöscht.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Frühe Entscheidung über Forensik getroffen; bei Bedarf qualifizierte Fachperson kontaktiert.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Bei erwogener Strafanzeige: Beweissicherung und Kontakt zur Kantonspolizei vorbereitet.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Nur belastbar identifizierte schädliche URLs oder IP-Adressen zur technischen Blockierung an die Einsatzleitung übergeben.</span></li>
+</ul>
+<p>Das BACS nennt Logdateien und insbesondere Protokolle von E-Mail-Servern, Proxy, Firewall und weiterer Sicherheitssoftware als wichtige Grundlage zur Feststellung von Ausmass und Angriffsinfrastruktur. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<p><strong>Gesicherte Unterlagen und Spuren:</strong></p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Objekt / Quelle</th><th>Zeitraum oder Zeitpunkt</th><th>Speicherort / Referenz</th><th>Gesichert durch</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<p><strong>Forensik-Entscheid:</strong></p>
+<ul style="list-style: none; padding-left: 0;">
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Fachperson beauftragt: ______________________________</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Nicht beauftragt; Grund / Freigabe: __________________________________________</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Noch offen; Entscheidung bis: ______________________________</span></li>
+</ul>
+<h2 id="d-minute-3045-backups-sichern-wiederherstellung-vorbereiten">D. Minute 30–45: Backups sichern, Wiederherstellung vorbereiten</h2>
+<p><strong>Zeitfenster begonnen um:</strong> __________  <strong>abgeschlossen um:</strong> __________</p>
+<ul style="list-style: none; padding-left: 0;">
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Automatische Backup- oder Synchronisationsläufe auf Risiko der Übernahme verschlüsselter Daten geprüft.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Backup-Verwaltung und Sicherungsmedien soweit sicher möglich vom betroffenen Produktionsnetz abgegrenzt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Keine Wiederherstellung in die möglicherweise kompromittierte Umgebung gestartet.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Letzten erfolgreichen Lauf und enthaltenen Datenstand je kritischer Sicherung dokumentiert.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Aufbewahrungsort, Administrationsweg und Status als offline oder unveränderbar je Sicherung erfasst.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Verfügbarkeit eines früheren Wiederherstellungstests vermerkt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Wiederanlaufprioritäten der kritischen Geschäftsprozesse bereitgelegt oder bestimmt.</span></li>
+</ul>
+<p>CISA empfiehlt, Daten von offline gehaltenen, verschlüsselten Backups wiederherzustellen und dabei eine erneute Infektion sauberer Systeme zu verhindern. <sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kritische Sicherung</th><th>Letzter erfolgreicher Lauf</th><th>Datenstand</th><th>Getrennt / geschützt?</th><th>Wiederherstellungstest bekannt?</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<h2 id="e-minute-4560-meldungen-und-naechste-entscheidung">E. Minute 45–60: Meldungen und nächste Entscheidung</h2>
+<p><strong>Zeitfenster begonnen um:</strong> __________  <strong>abgeschlossen um:</strong> __________</p>
+<ul style="list-style: none; padding-left: 0;">
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>BACS-Relevanz geprüft: Ist die Organisation als kritische Infrastruktur erfasst oder besteht eine freiwillige Meldemöglichkeit?</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Bei möglicher BACS-Pflicht: Frist von 24 Stunden ab Entdeckung festgehalten und Erstmeldung vorbereitet.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Polizei: Strafanzeige oder frühzeitige Abstimmung zur Beweissicherung beurteilt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>EDÖB-Risikobeurteilung begonnen: Sind Personendaten betroffen, und ist ein voraussichtlich hohes Risiko für Persönlichkeit oder Grundrechte möglich?</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Für EDÖB-/BACS-Beurteilung zuständige Datenschutz-, Rechts- oder Fachperson benannt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Bei möglicher EDÖB-Meldung: soweit verfügbare Angaben zu Art, Zeitpunkt, Dauer, betroffenen Daten und Personen, Folgen, Massnahmen sowie Ansprechperson für die fachliche Prüfung zusammengestellt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Betroffene Personen nicht vorschnell informiert; Informationsbedarf fachlich geprüft.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Lageupdate für Geschäftsleitung mit bestätigten Fakten, Geschäftsauswirkung und offenen Entscheiden erstellt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Nächster Entscheid, verantwortliche Person und Zeitpunkt verbindlich festgelegt.</span></li>
+</ul>
+<p>Für Betreiber kritischer Infrastrukturen gilt bei meldepflichtigen Cyberangriffen eine Meldung an das BACS innert 24 Stunden nach Entdeckung. Die Voraussetzungen ergeben sich aus dem Informationssicherheitsgesetz und der Cybersicherheitsverordnung; die konkrete Einordnung ist fachlich zu prüfen. <sup class="ref-link"><a href="#ref-3">[3]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Nach Art. 24 DSG meldet der Verantwortliche dem EDÖB eine Datensicherheitsverletzung so rasch als möglich, wenn sie voraussichtlich zu einem hohen Risiko für Persönlichkeit oder Grundrechte natürlicher Personen führt. <strong>Dies ist keine individuelle Rechtsberatung; lassen Sie die konkrete Bewertung durch eine Datenschutz- oder Rechtsfachperson prüfen.</strong> <sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<p>Der EDÖB stellt für Meldungen von Verantwortlichen ein sicheres Online-Formular bereit. Art. 15 DSV nennt die Angaben, die soweit möglich in der Meldung stehen müssen, und verlangt, fehlende Angaben so rasch als möglich nachzureichen. Er verlangt zudem eine Dokumentation der Tatsachen, Auswirkungen und Massnahmen. <sup class="ref-link"><a href="#ref-10">[10]</a></sup> <sup class="ref-link"><a href="#ref-11">[11]</a></sup></p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Entscheidung / Meldung</th><th>Pflicht oder Option nach Prüfung</th><th>Verantwortlich</th><th>Frist / nächster Termin</th><th>Status</th></tr></thead><tbody><tr><td>BACS</td><td></td><td></td><td></td><td></td></tr><tr><td>Kantonspolizei</td><td></td><td></td><td></td><td></td></tr><tr><td>EDÖB</td><td></td><td></td><td></td><td></td></tr><tr><td>Versicherer / Vertragspartner</td><td></td><td></td><td></td><td></td></tr><tr><td>Interne Kommunikation</td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<h2 id="f-entscheidungslog-und-uebergabe">F. Entscheidungslog und Übergabe</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Uhrzeit</th><th>Neue Tatsache oder Massnahme</th><th>Entscheidung / Begründung</th><th>Verantwortlich</th><th>Offener Punkt / Termin</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<p><strong>Lage bei Ablauf der ersten 60 Minuten:</strong></p>
+<p>____________________________________________________________________________</p>
+<p>____________________________________________________________________________</p>
+<p><strong>Nächste verbindliche Entscheidung um:</strong> __________  <strong>durch:</strong> ______________________________</p>
+<h2 id="grenzen-und-fachliche-pruefung">Grenzen und fachliche Prüfung</h2>
+<p>Diese Checkliste ist ein allgemeines Arbeitsmittel für die erste Reaktion auf dem Stand der Quellenprüfung vom 1. November 2026; dieser Stand ist keine Fachfreigabe. Sie ersetzt keine organisationsspezifische Notfallplanung, technische Forensik, Meldung oder Rechtsberatung. Sie erlaubt keine Aussage darüber, ob Systeme frei von Angreifern sind, ob ein Backup sicher wiederherstellbar ist oder ob keine Daten abgeflossen sind. Ein nachträglich eingespieltes Sicherheitsupdate beseitigt keine bereits erfolgte Kompromittierung. <sup class="ref-link"><a href="#ref-9">[9]</a></sup> Bei möglicher Personendatenverletzung, kritischer Infrastruktur, Strafanzeige, Lösegeldforderung oder grossem Betriebsunterbruch ist <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>; ziehen Sie unverzüglich eine geeignete Fachperson bei.</p>
+<p>Das BACS beschreibt Notfallkonzepte als Zusammenspiel von Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung. Pflegen und testen Sie Rollen, Kontakte, Backup-Wiederherstellung und Entscheidungswege daher ausserhalb des akuten Vorfalls. <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<h2 id="quellen">Quellen</h2>
+      </div>
+
+      <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+        <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
+        <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

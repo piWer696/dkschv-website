@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDÖB-/BACS-Entscheidungsbaum für Datenpannen | DKSchV</title>
+  <meta name="description" content="Arbeitsvorlage zur getrennten Strukturierung der EDÖB- und BACS-Meldeprüfung nach einem Cyber- oder Datenschutzvorfall.">
+  <link rel="icon" type="image/png" href="../../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    /* Print-specific tweaks */
+    @page { margin: 1.5cm; }
+  </style>
+</head>
+<body style="background: var(--bg-light);">
+
+  <!-- Printable Action Bar -->
+  <div class="resource-top-bar no-print">
+    <div class="container resource-bar-inner">
+      <div>
+        <a href="../datenpanne-melden-schweiz.html" style="color: #cbd5e1; text-decoration: none; font-size: 13.5px; font-weight: 500;">&larr; Zurück zum Fachleitfaden</a>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <span style="font-size: 12.5px; color: #94a3b8;">Format: DIN A4 Druckvorlage</span>
+        <button onclick="window.print()" class="btn-print">
+          <span>🖨️ Arbeitsblatt drucken / PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="resource-sheet">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
+        <div>
+          <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
+            DKSchV Schweiz · Dokumentiertes Arbeitsmittel
+          </span>
+          <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
+            EDÖB-/BACS-Entscheidungsbaum und Vorfallsprotokoll
+          </h1>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
+            Rechtsstand 1. November 2026 (DSG, DSV, ISG und CSV amtlich verifiziert) · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+          </p>
+        </div>
+        <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+      </div>
+
+      <div class="article-content" style="font-size: 15px;">
+        <p><strong>Arbeitsmittel zu:</strong> <a href="wissen/datenpanne-melden-schweiz.html">Datenpanne in der Schweiz: DSG-Entscheidungsbaum für EDÖB-Meldung und BACS-Pflicht</a></p>
+<p><strong>Quellenprüfung:</strong> 1. November 2026; Abrufe der Originalquellen am 1. November 2026 nach 09:00 CET, zwischen 09:05 und 09:07 CET; keine Fachfreigabe</p>
+<p><strong>Rechtsstand:</strong> 1. November 2026 (DSG, DSV, ISG und CSV amtlich verifiziert)</p>
+<p><strong>Status:</strong> Arbeitsvorlage – allgemeine Orientierung, keine Rechtsberatung</p>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="zweck">Zweck</h2>
+<p>Dieses Arbeitsmittel hilft Schweizer Organisationen, einen Cyber- oder Datenschutzvorfall in den ersten Stunden geordnet zu erfassen und zwei <strong>separate</strong> Meldeprüfungen vorzunehmen:</p>
+<ol>
+<li><strong>EDÖB / Art. 24 DSG:</strong> Liegt eine Verletzung der Datensicherheit mit voraussichtlich hohem Risiko für Persönlichkeit oder Grundrechte natürlicher Personen vor? Dann meldet der Verantwortliche dem EDÖB <strong>so rasch als möglich</strong>.<sup class="ref-link"><a href="#ref-1">[1]</a></sup></li>
+<li><strong>BACS / Art. 74a–74f ISG:</strong> Ist die Organisation meldepflichtig und liegt ein meldepflichtiger Cyberangriff vor? Dann ist die Erstmeldung an das BACS innert <strong>24 Stunden nach Entdeckung</strong> erforderlich; bei fehlenden Angaben gewährt das BACS eine Frist von 14 Tagen zur Ergänzung.<sup class="ref-link"><a href="#ref-4">[4]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></li>
+</ol>
+<div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong>Wichtig:</strong> Dieses Blatt entscheidet keine Meldepflicht. Es dokumentiert den Faktenstand für die zuständigen Entscheidpersonen. <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Bei hohem, unklarem oder sektorspezifischem Risiko ist umgehend eine datenschutz-, aufsichts- und gegebenenfalls strafrechtliche Fachprüfung einzuholen.</div></div>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="anwendung">Anwendung</h2>
+<ol>
+<li>Drucken Sie das Arbeitsmittel aus oder führen Sie es in einem zugriffsgeschützten Vorfallsordner.</li>
+<li>Füllen Sie die Faktenfelder bei Entdeckung aus. Kennzeichnen Sie jede Angabe als <strong>bestätigt</strong>, <strong>vermutet</strong> oder <strong>offen</strong>.</li>
+<li>Bearbeiten Sie die DSG- und die BACS-Spur parallel. Ein «Nein» in einer Spur beendet die andere nicht.</li>
+<li>Erfassen Sie Entscheide, Uhrzeit, Begründung und Nachweise. Aktualisieren Sie den Stand, wenn neue Fakten eintreffen.</li>
+<li>Bewahren Sie Meldungen, Empfangsbestätigungen und Nachreichungen bei der Ereignisakte auf.</li>
+</ol>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="a-vorfallkopf-fakten-verantwortung-und-eindaemmung">A. Vorfallkopf: Fakten, Verantwortung und Eindämmung</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Feld</th><th>Eintrag</th></tr></thead><tbody><tr><td>Interne Vorfallsnummer</td><td>________________________________________________</td></tr><tr><td>Entdeckt am / um</td><td>____________________ Datum / Uhrzeit / Zeitzone</td></tr><tr><td>Entdeckt durch</td><td>________________________________________________</td></tr><tr><td>Vorfallleitung</td><td>________________________________________________</td></tr><tr><td>Stellvertretung</td><td>________________________________________________</td></tr><tr><td>Entscheidzuständige Person / Geschäftsleitung</td><td>________________________________________________</td></tr><tr><td>Datenschutz-Ansprechperson</td><td>________________________________________________</td></tr><tr><td>IT-/Forensik-Ansprechperson</td><td>________________________________________________</td></tr><tr><td>Auftragsbearbeiter oder Provider betroffen?</td><td>☐ Nein ☐ Ja: _________________________________</td></tr><tr><td>Status der Fakten</td><td>☐ bestätigt ☐ teilweise bestätigt ☐ vorläufig</td></tr><tr><td>Nächste Lagebeurteilung am / um</td><td>________________________________________________</td></tr></tbody></table></div>
+<h3 id="sofortkontrollpunkte">Sofortkontrollpunkte</h3>
+<ul>
+<li>☐ Betroffene Systeme oder Konten wurden, soweit fachlich vertretbar, kontrolliert isoliert.</li>
+<li>☐ Zugänge, Logdaten, Zeitstempel, Alarmmeldungen und relevante Konfigurationen wurden gesichert.</li>
+<li>☐ Keine unnötigen Neustarts, Reparaturen oder Löschungen vorgenommen, bevor der forensische Bedarf beurteilt wurde.</li>
+<li>☐ Der Vorfallszeitraum und der mögliche Zugriffsweg werden untersucht.</li>
+<li>☐ Backups und Wiederherstellungszugänge sind gegen weitere Beeinträchtigung geschützt.</li>
+<li>☐ Die Kontaktwege zu Dienstleistern, Versicherer und gegebenenfalls Behörden sind geprüft.</li>
+</ul>
+<p><strong>Notizen zu Sofortmassnahmen, Zeit und Verantwortlichkeit:</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Das BACS empfiehlt bei Ransomware, infizierte Systeme vom Netz zu trennen und Logdateien zu sichern. Sollen forensische Untersuchungen möglich bleiben, sollten fachkundige Personen Speicher- und Festplattensicherungen vor weiteren Reparaturversuchen oder Neustarts vornehmen.<sup class="ref-link"><a href="#ref-8">[8]</a></sup></p>
+<div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body"><strong>Verdacht ist kein Beweis:</strong> Ein einzelnes Anzeichen, etwa ein langsames Gerät, beweist keine Schadsoftware-Infektion. Mehrere ungewöhnliche Beobachtungen rechtfertigen aber eine Untersuchung; bei geschäftlich verwendeten Geräten empfiehlt das BACS, die zuständige IT oder den Arbeitgeber zu informieren.<sup class="ref-link"><a href="#ref-9">[9]</a></sup></div></div>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="b-entscheidungsschema-beide-spuren-pruefen">B. Entscheidungsschema: Beide Spuren prüfen</h2>
+<p>```text</p>
+<p>[Vorfall entdeckt]</p>
+<div class="table-responsive"><table class="kb-table"><thead><tr></tr></thead><tbody></tbody></table></div>
+<p>v</p>
+<p>[Systeme schützen, Fakten sichern, Vorfallsleitung einsetzen]</p>
+<div class="table-responsive"><table class="kb-table"><thead><tr></tr></thead><tbody></tbody></table></div>
+<p>+-----------------------------+-----------------------------+</p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th></th></tr></thead><tbody></tbody></table></div>
+<p>v                                                           v</p>
+<p>[DSG-SPUR]                                                   [BACS-SPUR]</p>
+<p>Sind Personendaten natürlicher Personen                    Gehört die Organisation zu Art. 74b ISG</p>
+<p>betroffen und unbefugt/verloren/verändert?                 (unter Berücksichtigung CSV-Ausnahmen)?</p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th></th></tr></thead><tbody></tbody></table></div>
+<p>Nein --+--> Art. 24 DSG nicht ausgelöst;                      Nein --+--> Keine BACS-Pflicht</p>
+<p>|     andere Pflichten prüfen.                                  aus diesem Grund;</p>
+<p>Ja                                                                  andere Pflichten prüfen.</p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th></th></tr></thead><tbody></tbody></table></div>
+<p>v                                                           Ja / unklar</p>
+<p>Besteht voraussichtlich ein hohes Risiko                          |</p>
+<p>für Persönlichkeit oder Grundrechte?                              v</p>
+<p>|                                              Liegt ein Cyberangriff nach Art. 74d ISG vor?</p>
+<p>Nein --+--> Begründung dokumentieren;                          |-- gefährdete Funktionsfähigkeit?</p>
+<p>|     weitere Pflichten prüfen.                          |-- Manipulation oder Informationsabfluss?</p>
+<p>Ja                                                      |-- längere Zeit unentdeckt?</p>
+<p>|                                                      |-- Erpressung, Drohung oder Nötigung?</p>
+<p>v                                                           |</p>
+<p>[EDÖB: Verantwortlicher meldet so rasch als möglich]              Nein --+--> Begründung dokumentieren;</p>
+<p>[DSV-Angaben ergänzen, falls nötig]                               |         andere Pflichten prüfen.</p>
+<p>[Betroffeneninformation getrennt prüfen]                          Ja / unklar</p>
+<div class="table-responsive"><table class="kb-table"><thead><tr></tr></thead><tbody></tbody></table></div>
+<p>v</p>
+<p>[BACS: Erstmeldung innert 24 Stunden</p>
+<p>nach Entdeckung; BACS gewährt bei fehlenden</p>
+<p>Angaben 14 Tage zur Ergänzung]</p>
+<p>```</p>
+<p><strong>Entscheidregeln:</strong></p>
+<ul>
+<li>Eine <strong>Datensicherheitsverletzung</strong> bedeutet, dass Personendaten unbeabsichtigt oder widerrechtlich verlorengehen, gelöscht, vernichtet oder verändert werden oder Unbefugten offengelegt beziehungsweise zugänglich gemacht werden.<sup class="ref-link"><a href="#ref-1">[1]</a></sup></li>
+<li>Für die EDÖB-Meldung ist nicht jede Datenpanne massgeblich, sondern ein <strong>voraussichtlich hohes Risiko</strong>. Beurteilen Sie Schwere und Wahrscheinlichkeit für die am stärksten betroffenen Personen. Bei Zweifel, der ein hohes Risiko nicht innert kurzer Zeit ausschliesst, soll nicht auf lange Abklärungen gewartet werden.<sup class="ref-link"><a href="#ref-3">[3]</a></sup></li>
+<li>Die BACS-Pflicht trifft nicht pauschal alle KMU. Sie folgt dem Katalog in Art. 74b ISG und den Ausnahmen der CSV. Das BACS kann auf Anfrage zur Unterstellung Auskunft geben und auf Antrag verfügen.<sup class="ref-link"><a href="#ref-4">[4]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup></li>
+<li>Eine EDÖB-Meldung und eine BACS-Meldung können nebeneinander nötig sein. Prüfen Sie sie getrennt.</li>
+</ul>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="c-dsg-spur-edoeb-pruefung-nach-art-24-dsg">C. DSG-Spur: EDÖB-Prüfung nach Art. 24 DSG</h2>
+<h3 id="c1-liegt-eine-datensicherheitsverletzung-mit-personendaten-vor">C1. Liegt eine Datensicherheitsverletzung mit Personendaten vor?</h3>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Ergebnis / Notiz</th></tr></thead><tbody><tr><td>Betroffene Systeme, Anwendungen, Dateien oder Papierakten</td><td>________________________________________________</td></tr><tr><td>Welche Personendaten?</td><td>________________________________________________</td></tr><tr><td>Besonders schützenswerte Daten, Identitätsdokumente, Zahlungsdaten oder andere sensible Kontexte?</td><td>________________________________________________</td></tr><tr><td>Welche Personen sind betroffen? (z. B. Kundschaft, Mitarbeitende, Patientinnen/Patienten)</td><td>________________________________________________</td></tr><tr><td>Geschätzte Anzahl Personen / Datenobjekte</td><td>________________________________________________</td></tr><tr><td>Was geschah? ☐ Verlust ☐ Löschung ☐ Veränderung ☐ Offenlegung ☐ unbefugter Zugang ☐ anderes</td><td>________________________________________________</td></tr><tr><td>Zeitpunkt, Dauer und möglicher Umfang</td><td>________________________________________________</td></tr><tr><td>Beleg für tatsächlichen oder möglichen Zugriff durch Unbefugte</td><td>________________________________________________</td></tr><tr><td>Verantwortlicher nach DSG</td><td>________________________________________________</td></tr><tr><td>Auftragsbearbeiter meldete dem Verantwortlichen am / um</td><td>________________________________________________</td></tr></tbody></table></div>
+<p><strong>Rollen und Datenfluss vor dem Entscheid festhalten:</strong> Notieren Sie pro betroffenem Dienstleister mindestens die bearbeiteten Datenkategorien, die festgestellten oder möglichen Übermittlungen, den Verantwortlichen, den Auftragsbearbeiter, die vertraglich vereinbarten Vorfallkontakte und den tatsächlichen Erreichbarkeitsweg. Die EDÖB-Mitteilung zur hängigen Untersuchung gegen die PK Softech AG zeigt, dass bei einem Lieferantenvorfall gerade übermittelte Personendaten, Rechtsgrundlagen, tatsächliche Datenübertragungen und der Umfang abgeflossener Informationen abgeklärt werden können. Sie stellt weder einen abschliessenden Verstossbefund noch eine neue allgemeine Meldefrist dar.<sup class="ref-link"><a href="#ref-10">[10]</a></sup></p>
+<h3 id="c2-risiko-fuer-betroffene-begruenden">C2. Risiko für Betroffene begründen</h3>
+<p>Kreuzen Sie nur an, was faktenbasiert ist, und begründen Sie die Einschätzung.</p>
+<ul>
+<li>☐ Besonders schützenswerte Personendaten können betroffen sein.</li>
+<li>☐ Die Daten erleichtern Identitätsdiebstahl, Zahlungsbetrug, Diskriminierung, Rufschädigung oder Vermögensschäden.</li>
+<li>☐ Minderjährige, Personen mit Behinderungen oder andere besonders verletzliche Personen können betroffen sein.</li>
+<li>☐ Die Daten erlauben eine einfache Bestimmung einzelner Personen.</li>
+<li>☐ Unberechtigte Dritte, Erpressung, Veröffentlichung oder ein breiter Empfängerkreis sind möglich oder bestätigt.</li>
+<li>☐ Die Daten waren wirksam verschlüsselt; eine Zugriffsmöglichkeit auf den Schlüssel durch Unbefugte ist nachweislich ausgeschlossen.</li>
+<li>☐ Die Daten waren nur pseudonymisiert; eine Re-Identifikation ist möglich.</li>
+<li>☐ Sofortmassnahmen haben das Risiko nachweislich ausgeschlossen oder gemindert. Nachweis: ____________________________</li>
+</ul>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Beurteilung</th><th>Eintrag</th></tr></thead><tbody><tr><td>Schwere der möglichen Folgen für die am stärksten betroffenen Personen</td><td>☐ tief ☐ mittel ☐ hoch – Begründung: __________________________</td></tr><tr><td>Wahrscheinlichkeit der möglichen Folgen</td><td>☐ tief ☐ mittel ☐ hoch – Begründung: __________________________</td></tr><tr><td>Voraussichtlich hohes Risiko?</td><td>☐ Ja ☐ Nein ☐ unklar – bei unklar: <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> veranlasst am: __________</td></tr><tr><td>EDÖB-Meldung erforderlich?</td><td>☐ Ja ☐ Nein ☐ noch zu entscheiden – Entscheid durch: __________</td></tr><tr><td>Entscheiduhrzeit und Faktenstand</td><td>________________________________________________</td></tr></tbody></table></div>
+<p>Der EDÖB nennt Datenart und Kontext, Art der Verletzung, Bestimmbarkeit, mögliche Auswirkungen und die Wahrscheinlichkeit als relevante Gesichtspunkte. Besonders schützenswerte Daten sprechen in vielen Fällen für ein hohes Risiko. Eine hohe Zahl Betroffener genügt für sich allein dagegen nicht.<sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<h3 id="c3-edoeb-meldung-und-betroffeneninformation">C3. EDÖB-Meldung und Betroffeneninformation</h3>
+<p><strong>Falls EDÖB-Meldung bejaht oder fachlich empfohlen:</strong></p>
+<ul>
+<li>☐ Meldung durch den Verantwortlichen <strong>so rasch als möglich</strong> veranlasst.</li>
+<li>☐ Art der Verletzung beschrieben.</li>
+<li>☐ Zeitpunkt und Dauer, soweit möglich, erfasst.</li>
+<li>☐ Kategorien und ungefähre Anzahl betroffener Daten und Personen erfasst.</li>
+<li>☐ Folgen und Risiken für Betroffene beschrieben.</li>
+<li>☐ Getroffene und vorgesehene Abhilfe- und Minderungsmassnahmen dokumentiert.</li>
+<li>☐ Kontaktperson für Rückfragen benannt.</li>
+<li>☐ Fehlende Angaben, Frist und Verantwortlichkeit zur Nachreichung festgelegt.</li>
+<li>☐ EDÖB-Meldung via DataBreach übermittelt; Bestätigung gesichert.</li>
+</ul>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Feld</th><th>Eintrag</th></tr></thead><tbody><tr><td>EDÖB-Meldung übermittelt am / um</td><td>________________________________________________</td></tr><tr><td>Übermittelnde Person</td><td>________________________________________________</td></tr><tr><td>Referenz / Bestätigung abgelegt unter</td><td>________________________________________________</td></tr><tr><td>Fehlende Angaben und Termin zur Nachreichung</td><td>________________________________________________</td></tr><tr><td>Ist Betroffeneninformation zum Schutz erforderlich?</td><td>☐ Ja ☐ Nein ☐ unklar – <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>: _________________________</td></tr><tr><td>Entscheid zur Betroffeneninformation, Begründung und Freigabe</td><td>________________________________________________</td></tr></tbody></table></div>
+<p>Art. 15 DSV benennt die Angaben einer EDÖB-Meldung und erlaubt das rasche Nachreichen fehlender Informationen. Betroffene sind zu informieren, wenn dies zu ihrem Schutz erforderlich ist oder der EDÖB es verlangt. Ausnahmen und die konkrete Kommunikation brauchen im Einzelfall eine fachliche Prüfung.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="d-bacs-spur-unterstellung-und-cyberangriff-pruefen">D. BACS-Spur: Unterstellung und Cyberangriff prüfen</h2>
+<h3 id="d1-unterstellung-der-organisation">D1. Unterstellung der Organisation</h3>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Ergebnis / Nachweis</th></tr></thead><tbody><tr><td>Unternehmen / Behörde / Organisation</td><td>________________________________________________</td></tr><tr><td>Betroffene Tätigkeit oder Dienstleistung</td><td>________________________________________________</td></tr><tr><td>Möglicher Tatbestand nach Art. 74b ISG</td><td>☐ Energie ☐ Finanzmarkt ☐ Gesundheit ☐ Verkehr ☐ Telekommunikation ☐ Cloud/Rechenzentrum ☐ andere: __________</td></tr><tr><td>Wirkt sich der Angriff auf eine Tätigkeit nach Art. 74b ISG in der Schweiz aus?</td><td>☐ Ja ☐ Nein ☐ unklar</td></tr><tr><td>Denkbare Ausnahme nach Art. 12 CSV?</td><td>☐ Nein ☐ Ja ☐ unklar – Begründung: __________________________</td></tr><tr><td>BACS-Unterstellung durch interne Prüfung, BACS-Auskunft oder Verfügung abgeklärt?</td><td>________________________________________________</td></tr><tr><td><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> / BACS-Anfrage ausgelöst am</td><td>________________________________________________</td></tr></tbody></table></div>
+<h3 id="d2-angriffstatbestand-und-frist">D2. Angriffstatbestand und Frist</h3>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Ergebnis / Nachweis</th></tr></thead><tbody><tr><td>Zeitpunkt der <strong>Entdeckung</strong> des Cyberangriffs</td><td>____________________ Datum / Uhrzeit / Zeitzone</td></tr><tr><td>Funktionsfähigkeit der kritischen Infrastruktur gefährdet?</td><td>☐ Ja ☐ Nein ☐ unklar – Details: _____________________________</td></tr><tr><td>Manipulation von Informationen?</td><td>☐ Ja ☐ Nein ☐ unklar – Details: _____________________________</td></tr><tr><td>Abfluss von Informationen?</td><td>☐ Ja ☐ Nein ☐ unklar – Details: _____________________________</td></tr><tr><td>Längere Zeit unentdeckt / Hinweise auf Vorbereitung weiterer Angriffe?</td><td>☐ Ja ☐ Nein ☐ unklar – Details: _____________________________</td></tr><tr><td>Erpressung, Drohung oder Nötigung?</td><td>☐ Ja ☐ Nein ☐ unklar – Details: _____________________________</td></tr><tr><td>BACS-Meldung erforderlich oder vorsorglich fachlich empfohlen?</td><td>☐ Ja ☐ Nein ☐ unklar</td></tr><tr><td>24-Stunden-Zeitpunkt für Erstmeldung</td><td>________________________________________________</td></tr><tr><td>Verantwortliche Person für BACS-Meldung</td><td>________________________________________________</td></tr></tbody></table></div>
+<h3 id="d3-bacs-meldung-durchfuehren-und-nachreichen">D3. BACS-Meldung durchführen und nachreichen</h3>
+<ul>
+<li>☐ Erstmeldung an BACS spätestens innerhalb von 24 Stunden nach Entdeckung vorbereitet.</li>
+<li>☐ Meldeweg festgelegt: ☐ Cyber Security Hub ☐ alternative Meldemöglichkeit.</li>
+<li>☐ Zeit, Umfang, Auswirkungen und bisherige Massnahmen sachlich beschrieben.</li>
+<li>☐ Weitere zuständige Behörden und vertragliche Meldewege separat geprüft.</li>
+<li>☐ Gewünschte Weiterleitung an andere Behörde kontrolliert und dokumentiert.</li>
+<li>☐ Empfangsbestätigung abgelegt.</li>
+<li>☐ Fehlende Angaben, verantwortliche Person und die vom BACS gewährte 14-Tage-Frist zur Ergänzung festgelegt.</li>
+</ul>
+<p>Das BACS beschreibt die verfügbaren Meldewege und die erforderlichen Angaben für die Erstmeldung auf seiner Informationsseite zum Meldeprozess.<sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Feld</th><th>Eintrag</th></tr></thead><tbody><tr><td>BACS-Erstmeldung übermittelt am / um</td><td>________________________________________________</td></tr><tr><td>Übermittelnde Person</td><td>________________________________________________</td></tr><tr><td>Referenz / Bestätigung abgelegt unter</td><td>________________________________________________</td></tr><tr><td>Ergänzung fällig am / um</td><td>________________________________________________</td></tr><tr><td>Ergänzung übermittelt am / um</td><td>________________________________________________</td></tr></tbody></table></div>
+<p>Art. 74d ISG nennt Gefährdung der Funktionsfähigkeit, Manipulation oder Abfluss von Informationen, länger unentdeckte Angriffe sowie Erpressung, Drohung oder Nötigung als Meldekriterien. Art. 74e ISG verlangt die Erstmeldung innert 24 Stunden nach Entdeckung; bei fehlenden Angaben gewährt das BACS nach Art. 16 CSV eine Frist von 14 Tagen zur Ergänzung.<sup class="ref-link"><a href="#ref-4">[4]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="e-abschluss-freigabe-und-nachbearbeitung">E. Abschluss, Freigabe und Nachbearbeitung</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Eintrag</th></tr></thead><tbody><tr><td>Welche weiteren Stellen wurden geprüft? (z. B. Police, Versicherer, Vertragspartner, kantonale Vorgaben, FINMA)</td><td>________________________________________________</td></tr><tr><td>Entscheide, die eine Fachprüfung erforderten</td><td>________________________________________________</td></tr><tr><td>Offene Fragen und Eigentümer</td><td>________________________________________________</td></tr><tr><td>Ursachenanalyse und technische Verbesserungen</td><td>________________________________________________</td></tr><tr><td>Vertragliche / organisatorische Verbesserungen</td><td>________________________________________________</td></tr><tr><td>Datum der Nachbesprechung</td><td>________________________________________________</td></tr><tr><td>Verantwortliche Person für Massnahmenverfolgung</td><td>________________________________________________</td></tr><tr><td>Abschluss durch</td><td>______________________________ Datum: __________</td></tr></tbody></table></div>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="grenzen-des-arbeitsmittels">Grenzen des Arbeitsmittels</h2>
+<p>Diese Vorlage erfasst weder alle sektoralen noch alle vertraglichen Melde-, Informations- oder Aufbewahrungspflichten. Insbesondere kann die Unterstellung unter Art. 74b ISG von der konkreten Tätigkeit, den CSV-Ausnahmen und der Auswirkung des Angriffs abhängen. Das BACS kann hierzu Auskunft erteilen und auf Antrag verfügen.<sup class="ref-link"><a href="#ref-4">[4]</a></sup> Eine EDÖB-Meldung, eine BACS-Meldung, eine Meldung an eine Aufsichtsbehörde, eine Strafanzeige oder eine Betroffeneninformation können parallel geprüft werden; keine ersetzt automatisch die andere.</p>
+<p>Die Checkpunkte sind keine Zusicherung, dass eine Meldung rechtzeitig, vollständig oder rechtlich ausreichend ist. <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Eine konkrete Risikobewertung, die Auslegung von Ausnahmegründen und jede externe Kommunikation brauchen bei Unsicherheit eine angemessene Fachprüfung. Aktualisieren Sie die Vorlage bei Änderungen von DSG, DSV, ISG, CSV oder behördlichen Vorgaben.</p>
+<h2 id="quellen">Quellen</h2>
+      </div>
+
+      <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+        <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
+        <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

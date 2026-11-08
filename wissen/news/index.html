@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber-Security Branchennews KW 45 (08.11.2026) | DKSchV Schweiz</title>
+  <meta name="description" content="Wöchentliche Lagebeurteilung für Schweizer KMU: SonicWall SAML-Bypass, Microsoft Secret-Hunting, EHRA-Phishing und EDÖB-Urteil.">
+  <link rel="icon" type="image/png" href="../../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  
+  <!-- Top Emergency Bar -->
+  <div class="top-emergency-bar">
+    <div class="container top-bar-inner">
+      <div class="top-trust-tags">
+        <span class="top-trust-tag">🇨🇭 Schweizer Cyber-Security &amp; Datenschutz</span>
+        <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
+        <span class="top-trust-tag">📍 Naters / Wallis</span>
+      </div>
+      <div>
+        <a href="../../kontakt.html#notfall" class="emergency-quicklink">
+          🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../../index.html" class="brand-link" title="DKSchV Schweiz Startseite">
+        <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz Logo" class="brand-logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../../index.html" class="nav-link ">Home</a></li>
+          <li><a href="../../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
+          <li><a href="../../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
+          <li><a href="../../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
+          <li><a href="../../wissen.html" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="../../ueber-uns.html" class="nav-link ">Über uns</a></li>
+          <li><a href="../../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li><a href="../../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <header class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="../../wissen.html">Wissen &amp; Ratgeber</a>
+        <span class="sep">/</span>
+        <span style="color:#ffffff;">Wochenausgabe KW 45</span>
+      </nav>
+
+      <span class="news-badge"><span class="news-pulse-dot"></span> Sonntagsausgabe · ISO-KW 45</span>
+      <h1 class="article-page-title">DKSchV-Branchennews: Wöchentliche Lage für Schweizer KMU</h1>
+      <div class="article-page-meta">
+        <span class="article-meta-item">📅 Ausgabedatum: <strong>08.11.2026</strong></span>
+        <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweiz, BACS, EDÖB &amp; KMU-Prüfpunkte</strong></span>
+        <span class="article-meta-item">⏱️ Lesezeit: <strong>5 Min.</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="article-container" style="grid-template-columns: 1fr;">
+      <article class="article-content" style="max-width: 860px; margin: 0 auto;">
+        <p>Alle Quellenabrufe erfolgten nach Redaktionsschluss; ein minutengenauer historischer Seitenstand ist nicht belegt. Die Auswahl beruht ausschliesslich auf den vorliegenden geprüften Befunden.</p>
+<h2 id="sonicwall-saml-geschuetzter-fernzugang-kann-verwundbar-sein">SonicWall: SAML-geschützter Fernzugang kann verwundbar sein</h2>
+<p><strong>6. November:</strong> CISA nahm CVE-2026-19868 in den Katalog bekannter ausgenutzter Schwachstellen auf.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Die SSLVPN-Lücke betrifft aktivierte SAML-Anmeldung: Gültige Zugangsdaten einer alternativen Authentifizierungsmethode können SAML-Kontrollen und möglicherweise darüber erzwungene MFA umgehen. Für die aufgeführten Gen7-/Gen8-Plattformen nennt SonicWall 7.3.4-7013 beziehungsweise 8.2.3-8015 als Mindestfixstände.<sup class="ref-link"><a href="#ref-2">[2]</a></sup> <strong>KMU-Prüfpunkt:</strong> Modell, Build, Erreichbarkeit und SAML-Konfiguration mit dem IT-Dienstleister abgleichen; verdächtige Zugänge zusätzlich untersuchen. MFA allein schliesst Betroffenheit nicht aus.</p>
+<h2 id="ki-gestuetzte-secret-suche-bedroht-anwendungsidentitaeten">KI-gestützte Secret-Suche bedroht Anwendungsidentitäten</h2>
+<p><strong>5. November:</strong> Microsoft beschreibt ARTEX-gestützte Suchen nach Secrets in öffentlichen GitHub-Repositories und Folgeangriffe auf Entra, Azure und Microsoft 365. Auch kompromittierte Multitenant-App-Credentials von Anbietern ermöglichten Zugriffe auf nachgelagerte Kundentenants; die Angriffe begannen vor dieser Ausgabewoche.<sup class="ref-link"><a href="#ref-3">[3]</a></sup> <strong>KMU-Prüfpunkt:</strong> Exponierte Secrets widerrufen oder rotieren und historische Nutzung sowie App-Berechtigungen untersuchen. Repository-Dateien zu löschen genügt nicht; bereits ausgestellte Tokens bleiben laut Quelle bis zum Ablauf gültig. Keine Schweizer Organisation ist als betroffen belegt.</p>
+<h2 id="ehra-imitation-datenaktualisierung-als-phishing-koeder">EHRA-Imitation: Datenaktualisierung als Phishing-Köder</h2>
+<p><strong>6. November:</strong> Das BACS warnt vor angeblich notwendigen Handelsregister-Datenaktualisierungen im Namen des EHRA und empfiehlt, die Phishing-Nachrichten zu löschen.<sup class="ref-link"><a href="#ref-4">[4]</a></sup> Für KMU-Administration ist dies ein konkretes Sensibilisierungsbeispiel. <strong>KMU-Prüfpunkt:</strong> Unerwartete Behördenanfragen über selbst recherchierte offizielle Kontaktwege verifizieren, nicht über Links oder Kontaktdaten aus der Nachricht.</p>
+<h2 id="erkannte-phishing-mails-koennen-durch-ausnahmen-zugestellt-werden">Erkannte Phishing-Mails können durch Ausnahmen zugestellt werden</h2>
+<p><strong>5. November:</strong> Microsofts neue Q3-Auswertung zeigt: Im September bestanden Overrides bei 63 Prozent der Nachrichten mit erfasstem Sicherheitsresultat im untersuchten Geschäftsservice-Spoofing-Bestand – nicht bei allen E-Mails. Die Zahlen belegen weder Öffnungen noch kompromittierte Konten.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> <strong>KMU-Prüfpunkt:</strong> Breite Absenderfreigaben und Sicherheitsausnahmen fachlich prüfen, nicht unkontrolliert entfernen. Zahlungs- und Kontoänderungen unabhängig bestätigen. Die Daten sind keine gemessene Schweizer KMU-Inzidenz.</p>
+<h2 id="datenpanne-technische-behebung-ersetzt-information-nicht-automatisch">Datenpanne: Technische Behebung ersetzt Information nicht automatisch</h2>
+<p><strong>6. November:</strong> Der EDÖB publizierte zum Fall SkySale/apfelkiste.ch: Das Bundesverwaltungsgericht bestätigte die angeordnete Betroffeneninformation; das Urteil vom 8. April 2026 ist laut Behörde rechtskräftig. Neu ist die Mitteilung, nicht der Vorfall oder das DSG.<sup class="ref-link"><a href="#ref-6">[6]</a></sup> Das Urteil begründet keine allgemeine Pflicht zur öffentlichen Bekanntmachung; diese wird als mögliche Ersatzform im konkreten Fall behandelt.<sup class="ref-link"><a href="#ref-7">[7]</a></sup> <strong>KMU-Prüfpunkt:</strong> Technische Eindämmung und Informationsbedarf getrennt beurteilen; Adressaten und Informationsform rechtlich prüfen lassen.</p>
+<h2 id="wordpress-kev-aufnahme-fuer-upgrade-schwachstelle">WordPress: KEV-Aufnahme für Upgrade-Schwachstelle</h2>
+<p><strong>3. November:</strong> Neu im KEV ist CVE-2026-119977, eine nicht authentifizierte Codeausführung während vollständiger Core-Upgrades.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Der Fix 7.1.4 stammt bereits vom 28. Oktober; liniengenaue Backports sind dokumentiert.<sup class="ref-link"><a href="#ref-8">[8]</a></sup> <strong>KMU-Prüfpunkt:</strong> Mit dem Hoster die tatsächlich installierte Linie und ihren Fixstand bestätigen. Nicht pauschal jede Version unter 7.1.4 als verwundbar behandeln. Bei Auffälligkeiten frühere Upgradefenster untersuchen: Ein Update beseitigt nicht automatisch eine bereits erfolgte Kompromittierung.</p>
+<h2 id="vormerkung-fuer-15-november-kw-46">Vormerkung für 15. November · KW 46</h2>
+<p>Keine zusätzliche eigenständige KI- oder EU-Regelwerksneuigkeit ist im begrenzten Lauf belegt. Die nächste Turnusprüfung umfasst Herstellerstände und KEV-Revisionen, App-Identitäten und Sicherheitsausnahmen sowie die getrennte Rechtsprüfung zur Betroffeneninformation. Artikel zu Schatten-KI bleiben ohne neue Freigabe.</p>
+<p><strong>Betriebsstatus:</strong> Der lokale KW44-Metadatenabgleich ist nachgeholt; der Paketvalidator meldet 0 Fehler und 0 Warnungen. Webador zeigt weiterhin den Login. Der heutige HTTP-Linkchecker erhielt 403, nicht einen neuen 404-Nachweis. Keine Live-Änderung, kein geschützter Import und keine Veröffentlichung. Die genauen Sperren stehen im <a href="2026-11-08_DKSchV_Laufstatus.md">Laufstatus</a>.</p>
+<p>## References</p>
+        
+      <div class="references-section">
+        <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
+          Geprüfte Primärquellen &amp; Rechtsreferenzen
+        </h3>
+        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
+          Alle behördlichen Vorgaben, Gesetzesartikel und technischen Richtlinien wurden im Rahmen der DKSchV-Quellenprüfung verifiziert:
+        </p>
+        <ul class="references-list">
+    
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json" target="_blank" rel="noopener noreferrer">CISA: Known Exploited Vulnerabilities Catalog</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0014" target="_blank" rel="noopener noreferrer">SonicWall: Advisory SNWLID-2026-0014</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/" target="_blank" rel="noopener noreferrer">Microsoft: Threat actors use agentic AI tooling to find and abuse exposed secrets</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/warnung-ehra-de" target="_blank" rel="noopener noreferrer">BACS: Warnung vor Phishing mit angeblicher EHRA-Datenaktualisierung</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://www.microsoft.com/en-us/security/blog/2026/11/05/email-threat-landscape-q3-2026-trends-and-insights/" target="_blank" rel="noopener noreferrer">Microsoft: Email threat landscape Q3 2026 – trends and insights</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
+            <a href="https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin" target="_blank" rel="noopener noreferrer">EDÖB: Bundesverwaltungsgericht bestätigt Informationspflicht der Onlineshop-Betreiberin</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
+            <a href="https://www.edoeb.admin.ch/dam/de/sd-web/ZjhZ9UBOprVL/Urteil%20BVGer%20A_3790_2024%20vom%208.%20April%202026%20betreffend%20Verf%C3%BCgung%20vom%2028.%20Mai%202024.pdf" target="_blank" rel="noopener noreferrer">Bundesverwaltungsgericht: Urteil A-3790/2024 vom 8. April 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://wordpress.org/documentation/wordpress-version/version-7-1-4/" target="_blank" rel="noopener noreferrer">WordPress: Version 7.1.4 und Backports</a>
+          </div>
+        </li>
+      
+        </ul>
+      </div>
+    
+        
+        <div style="margin-top: 40px; text-align: center;">
+          <a href="../../wissen.html" class="btn btn-secondary">&larr; Zurück zur Übersicht aller Ratgeber &amp; Checklisten</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 38px; filter: brightness(0) invert(1);">
+          <p>DKSchV Dini ist Ihr spezialisierter Schweizer Partner für Cyber-Security, Sicherheitsanalysen, IT-Notfallplanung und Datenschutz nach Schweizer Standard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Dienstleistungen</h4>
+          <ul class="footer-links">
+            <li><a href="../../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
+            <li><a href="../../risikomanagement.html">Risikomanagement</a></li>
+            <li><a href="../../notfallplanung.html">Notfallplanung</a></li>
+            <li><a href="../../wissen.html">Wissen &amp; Ratgeber</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul class="footer-links">
+            <li><a href="../../ueber-uns.html">Über uns</a></li>
+            <li><a href="../../kontakt.html">Kontakt &amp; Standort</a></li>
+            <li><a href="../../impressum.html">Impressum</a></li>
+            <li><a href="../../datenschutz.html">Datenschutz (nDSG)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Standort &amp; Notfallkontakt</h4>
+          <p style="font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 12px;">
+            <strong>DKSchV Dini</strong><br>Andreas Dini<br>Bammattenweg 19<br>CH-3904 Naters (Wallis)
+          </p>
+          <p style="font-size: 14px; color: #94a3b8;">
+            E-Mail: <a href="mailto:info@dkschv.ch" style="color: #ffffff;">info@dkschv.ch</a><br>
+            Telefon: <a href="tel:+41798446669" style="color: #ffffff;">+41 79 844 66 69</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
+        <div class="footer-legal-links">
+          <a href="../../impressum.html">Impressum</a>
+          <a href="../../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../assets/js/main.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ransomware im KMU: Erste Schritte im Vorfall | DKSchV</title>
+  <meta name="description" content="Ransomware-Verdacht im Unternehmen: Ein Schweizer Leitfaden zu Eindämmung, Beweissicherung, Backups und der getrennten Prüfung möglicher Meldungen.">
+  <link rel="canonical" href="https://www.dkschv.ch/wissen/ransomware-erste-60-minuten.html">
+  <link rel="icon" type="image/png" href="../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Ransomware im KMU: Erste Schritte im Vorfall">
+  <meta property="og:description" content="Ransomware-Verdacht im Unternehmen: Ein Schweizer Leitfaden zu Eindämmung, Beweissicherung, Backups und der getrennten Prüfung möglicher Meldungen.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.dkschv.ch/wissen/ransomware-erste-60-minuten.html">
+  <meta property="article:published_time" content="01.10.2026">
+  <meta property="article:author" content="DKSchV Redaktion">
+
+  <!-- Schema.org Article JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Ransomware im KMU: Erste Schritte im Vorfall",
+    "description": "Ransomware-Verdacht im Unternehmen: Ein Schweizer Leitfaden zu Eindämmung, Beweissicherung, Backups und der getrennten Prüfung möglicher Meldungen.",
+    "inLanguage": "de-CH",
+    "mainEntityOfPage": "https://www.dkschv.ch/wissen/ransomware-erste-60-minuten.html",
+    "author": {
+      "@type": "Organization",
+      "name": "DKSchV Dini Cyber-Security",
+      "url": "https://www.dkschv.ch"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DKSchV Schweiz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.dkschv.ch/assets/images/dkschv_logo.png"
+      }
+    },
+    "datePublished": "01.10.2026",
+    "dateModified": "1. November 2026"
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress-bar"></div>
+  
+  <!-- Top Emergency Bar -->
+  <div class="top-emergency-bar">
+    <div class="container top-bar-inner">
+      <div class="top-trust-tags">
+        <span class="top-trust-tag">🇨🇭 Schweizer Cyber-Security &amp; Datenschutz</span>
+        <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
+        <span class="top-trust-tag">📍 Naters / Wallis</span>
+      </div>
+      <div>
+        <a href="../kontakt.html#notfall" class="emergency-quicklink">
+          🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-link" title="DKSchV Schweiz Startseite">
+        <img src="../assets/images/dkschv_logo.png" alt="DKSchV Schweiz Logo" class="brand-logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link ">Home</a></li>
+          <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
+          <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
+          <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
+          <li><a href="../wissen.html" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
+          <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <!-- Article Page Header -->
+  <header class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <span class="sep">/</span>
+        <span style="color:#ffffff;">Ransomware & Notfall</span>
+      </nav>
+
+      <span class="category-tag" style="margin-bottom: 16px;">Ransomware & Notfall</span>
+      <h1 class="article-page-title">Ransomware im KMU: Erste Schritte im Vorfall</h1>
+
+      <div class="article-page-meta">
+        <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
+        <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 15 Min.</strong></span>
+        <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
+        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Main Content -->
+  <main class="container">
+    <div class="article-container">
+      <article class="article-content">
+        
+      <div class="article-resource-box">
+        <div class="resource-box-content">
+          <h4>📥 Passendes Arbeitsmittel: 60-Minuten-Checkliste bei Ransomware-Verdacht</h4>
+          <p>Druckbare Arbeitsvorlage für die erste Stunde nach einem Ransomware-Verdacht: Eindämmung, Beweissicherung, Backups und Meldeprüfung.</p>
+        </div>
+        <a href="./resources/01-60-minuten-checkliste.html" class="resource-btn">
+          <span>🖨️ Arbeitsvorlage öffnen</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    
+        <div class="article-lead"><strong>Kurzantwort:</strong> Isolieren Sie bei einem Ransomware-Verdacht betroffene Geräte unverzüglich vom Netzwerk, ohne sie vorschnell neu zu starten. Übernehmen Sie die Führung, dokumentieren Sie Zeitpunkte und Entscheidungen und sichern Sie Logdateien sowie – falls erforderlich – forensisch verwertbare Spuren, bevor Reparaturversuche beginnen. Schützen Sie danach Backups und starten Sie keine Wiederherstellung in eine möglicherweise noch kompromittierte Umgebung. Prüfen Sie parallel getrennt, ob eine Meldung an das BACS, den EDÖB oder die Kantonspolizei angezeigt oder vorgeschrieben ist. Bei kritischen Infrastrukturen gilt für bestimmte Cyberangriffe eine BACS-Meldepflicht innert 24 Stunden. Bei Personendaten entscheidet das voraussichtlich hohe Risiko über eine EDÖB-Meldung. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-3">[3]</a></sup></div>
+<h2 id="warum-die-erste-stunde-ueber-den-weiteren-schaden-entscheidet">Warum die erste Stunde über den weiteren Schaden entscheidet</h2>
+<p><strong>Ransomware</strong> ist Schadsoftware, die Daten oder Systeme verschlüsseln und häufig zusätzlich mit einer Veröffentlichung erbeuteter Daten drohen kann. In der ersten Stunde geht es nicht darum, jedes technische Detail abschliessend zu verstehen. Vorrang haben drei Ziele: die Ausbreitung stoppen, entscheidungsrelevante Spuren bewahren und den Betrieb für eine kontrollierte Wiederherstellung vorbereiten. Das BACS empfiehlt, infizierte Systeme sofort vom Netz zu trennen, Logdateien zu sichern und vor weiteren Reparaturversuchen oder Neustarts über eine forensische Sicherung zu entscheiden. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<p>Die Geschäftsleitung sollte den Vorfall deshalb nicht als reine IT-Störung behandeln. Bestimmen Sie sofort eine Person als <strong>Incident Lead</strong>. Das ist die Person, die Lagebild, Prioritäten und Freigaben zusammenführt. Sie muss nicht jede technische Massnahme selbst ausführen. Sie sorgt aber dafür, dass IT, externe Dienstleister, Geschäftsleitung und gegebenenfalls Kommunikation mit demselben bestätigten Informationsstand arbeiten.</p>
+<p>Nutzen Sie für die Abstimmung möglichst einen vom betroffenen Netz unabhängigen Kanal, etwa Telefon oder einen vorbereiteten Krisenkanal. Angreifer können kompromittierte Kommunikation beobachten. CISA empfiehlt deshalb eine koordinierte Isolierung und einen Kommunikationsweg ausserhalb der möglicherweise betroffenen Infrastruktur. <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<h2 id="minute-015-fuehrung-uebernehmen-und-ausbreitung-begrenzen">Minute 0–15: Führung übernehmen und Ausbreitung begrenzen</h2>
+<h3 id="1-vorfall-erklaeren-zeit-festhalten-verantwortliche-bestimmen">1. Vorfall erklären, Zeit festhalten, Verantwortliche bestimmen</h3>
+<p>Notieren Sie den Zeitpunkt der Entdeckung, die meldende Person, sichtbare Symptome und die bereits getroffenen Massnahmen. Benennen Sie Incident Lead, technische Einsatzleitung und eine Stellvertretung. Legen Sie eine Entscheidungslog an: Wer hat wann welches System isoliert, welche Konten gesperrt und welche Annahme lag zugrunde? Diese Chronologie hilft später bei Forensik, Meldungen und dem Wiederanlauf.</p>
+<p>Melden Sie intern nur die bestätigten Fakten: etwa verschlüsselte Dateien, eine Lösegeldnotiz, ungewöhnliche Anmeldeereignisse oder nicht erreichbare Freigaben. Vermeiden Sie Schuldzuweisungen und spekulative Erklärungen. Ein frühes, nüchternes Lagebild ist wertvoller als eine scheinbar vollständige, aber ungesicherte Diagnose.</p>
+<p>Ein einzelnes unspezifisches Anzeichen wie ein deutlich langsamer Computer belegt noch keine Infektion. Treten mehrere ungewöhnliche Beobachtungen auf oder warnt ein Sicherheitsprogramm, lassen Sie den Verdacht technisch untersuchen und informieren Sie bei Geschäftsgeräten die zuständige IT. <sup class="ref-link"><a href="#ref-10">[10]</a></sup></p>
+<h3 id="2-betroffene-systeme-isolieren-nicht-reflexartig-ausschalten">2. Betroffene Systeme isolieren – nicht reflexartig ausschalten</h3>
+<p>Trennen Sie sichtbar betroffene Endgeräte und Server unverzüglich vom Netzwerk: Netzwerkkabel ziehen, WLAN deaktivieren oder das Gerät in eine vorgesehene Quarantäne überführen. Bei mehreren betroffenen Systemen oder Subnetzen kann es notwendig sein, die Verbindung auf Switch-Ebene zu unterbrechen. Priorisieren Sie Systeme, deren weiterer Betrieb die Verschlüsselung von Freigaben, Backups oder kritischen Prozessen fördern könnte. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p><strong>Nicht neu starten und nicht bereinigen</strong>, solange die Entscheidung über eine forensische Untersuchung offen ist. Ein Neustart oder Reparaturversuch kann flüchtige Spuren im Arbeitsspeicher und weitere Beweismittel beseitigen. Ausschalten ist ein Notbehelf, wenn sich ein Gerät nicht anders vom Netz trennen lässt und eine weitere Ausbreitung droht; auch dann geht möglicherweise flüchtige Evidenz verloren. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p>Sperren Sie keinen ganzen Betrieb unkoordiniert. Halten Sie fest, welche Fernzugänge, Administrationskonten oder Freigaben technisch betroffen sein könnten, und lassen Sie die technische Einsatzleitung über gezielte Schutzmassnahmen entscheiden. Unkontrollierte globale Passwortwechsel oder Änderungen an zentralen Diensten können die Analyse und den Betrieb zusätzlich erschweren.</p>
+<h3 id="3-menschen-und-geschaeftsprozesse-schuetzen">3. Menschen und Geschäftsprozesse schützen</h3>
+<p>Informieren Sie Prozessverantwortliche über konkrete betriebliche Einschränkungen: beispielsweise, dass keine Dokumente auf einem bestimmten Laufwerk geöffnet oder keine Lieferdaten aus einem betroffenen System verwendet werden dürfen. Für kritische Leistungen sind vorab definierte manuelle Ersatzprozesse oft sicherer als improvisierte Systemeingriffe. Das BACS ordnet klare Verantwortlichkeiten, Notfallkontakte und Krisenkommunikation ausdrücklich als Bestandteile eines Notfallkonzepts ein. <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<h2 id="minute-1530-betroffene-systeme-erfassen-und-beweise-sichern">Minute 15–30: Betroffene Systeme erfassen und Beweise sichern</h2>
+<h3 id="4-lagebild-aufbauen-statt-nur-dateien-zu-zaehlen">4. Lagebild aufbauen statt nur Dateien zu zählen</h3>
+<p>Erstellen Sie eine erste Liste: Geräte- und Servername, Benutzerkonto, Standort, Netzwerksegment, Zeitpunkt der Beobachtung, Symptome, letzter bekannter funktionierender Zustand und geschäftliche Abhängigkeiten. Kennzeichnen Sie klar, was bestätigt, vermutet oder noch unbekannt ist. Fotografieren oder dokumentieren Sie Lösegeldnotizen, Fehlermeldungen und auffällige Dateiendungen, ohne die betroffenen Dateien zu verändern.</p>
+<p>Sichern Sie verfügbare <strong>Logdateien</strong>. Das sind automatisch aufgezeichnete Ereignisprotokolle von beispielsweise Firewall, E-Mail-Gateway, VPN, Identitätsdienst, Endpoint-Schutz und Servern. Sie können zeigen, welche Konten und Systeme betroffen sind und ob verdächtige Verbindungen bestanden. Das BACS nennt insbesondere Protokolle von E-Mail-Server, Proxy, Firewall und weiterer Sicherheitssoftware als wichtige Grundlage, um Ausmass, URLs und IP-Adressen zu ermitteln. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<p>Bewahren Sie die Originale nachvollziehbar auf und arbeiten Sie, wenn möglich, mit Kopien. Notieren Sie Quelle, Zeitraum, Exportzeitpunkt und verantwortliche Person. Löschen Sie keine verdächtigen E-Mails, Dateien oder Alarmmeldungen. Die technische Einsatzleitung kann bekannte schädliche URLs oder IP-Adressen an Proxy und Firewall blockieren, wenn dies anhand belastbarer Informationen geschieht. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<h3 id="5-frueh-ueber-forensik-und-strafanzeige-entscheiden">5. Früh über Forensik und Strafanzeige entscheiden</h3>
+<p><strong>Forensik</strong> bedeutet die fachgerechte Sicherung und Untersuchung digitaler Spuren mit dem Ziel, Ursache, Umfang und mögliche Beweise nachvollziehbar zu klären. Entscheiden Sie früh, ob eine spezialisierte Fachperson beigezogen werden soll. Das ist besonders wichtig, wenn eine Strafanzeige erwogen wird oder ein Datenabfluss nicht ausgeschlossen werden kann. Das BACS empfiehlt, Strafverfolgungsbehörden in diesem Fall früh zu informieren und Sicherungen von Arbeitsspeicher und Festplatten vor Neustarts oder Reparaturversuchen durch fachkundige Personen vorzunehmen. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<p><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Lassen Sie Umfang und Vorgehen durch eine qualifizierte Incident-Response- oder Forensik-Fachperson beurteilen, wenn die eigene Organisation diese Kompetenz nicht hat. Auch CISA empfiehlt, besonders flüchtige oder nur kurz gespeicherte Beweise wie Arbeitsspeicher und Logpuffer früh zu sichern. <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<h2 id="minute-3045-backups-schuetzen-wiederanlauf-noch-nicht-starten">Minute 30–45: Backups schützen, Wiederanlauf noch nicht starten</h2>
+<h3 id="6-backup-umgebung-vom-vorfall-abgrenzen">6. Backup-Umgebung vom Vorfall abgrenzen</h3>
+<p>Ein Backup hilft nur, wenn es lesbar, vollständig und vom Angreifer nicht ebenfalls verändert oder gelöscht wurde. Beenden oder unterbrechen Sie daher nach fachlicher Abklärung automatisierte Backup- und Synchronisationsläufe, die verschlüsselte Daten in Sicherungen übernehmen könnten. Trennen Sie die Backup-Verwaltung und vorhandene Sicherungsmedien vom betroffenen Produktionsnetz, soweit dies ohne Verlust vorhandener Sicherungen möglich ist. Verwenden Sie für die Prüfung keine Zugangsdaten, die vermutlich auf kompromittierten Systemen hinterlegt waren.</p>
+<p>Dokumentieren Sie für jede relevante Sicherung den letzten erfolgreichen Lauf, das enthaltene Datum, Aufbewahrungsort, Administrationsweg und den Status der Unveränderbarkeit oder Offline-Lagerung. Halten Sie zusätzlich fest, ob ein Test der Wiederherstellbarkeit vor dem Vorfall vorliegt. CISA empfiehlt offline gehaltene, verschlüsselte Backups sowie regelmässig getestete Verfügbarkeit und Integrität. <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p>Starten Sie jetzt <strong>keine</strong> Wiederherstellung in die bisherige Umgebung. Das BACS stellt die Neuinstallation betroffener Systeme vor die Wiederherstellung von Daten; CISA warnt ebenfalls davor, saubere Systeme während der Wiederherstellung erneut zu infizieren. Der Wiederanlauf gehört auf eine bereinigte, kontrollierte Grundlage und folgt einer priorisierten Liste kritischer Dienste. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p>Für die anschliessende Architekturprüfung sind die Themen <a href="./ransomware-resistente-backups.html">ransomware-resistente Backups</a> und <a href="./backup-wiederherstellung-testen.html">Backup-Wiederherstellung realistisch testen</a> relevant. In der Akutphase genügt zunächst die klare Antwort auf zwei Fragen: Welche Sicherungen sind vom Produktionsnetz getrennt, und welcher Datenstand ist nachweisbar verfügbar?</p>
+<h2 id="minute-4560-bacs-polizei-und-edoeb-richtig-einordnen">Minute 45–60: BACS, Polizei und EDÖB richtig einordnen</h2>
+<p>Meldungen verfolgen unterschiedliche Zwecke. Sie ersetzen einander nicht. Prüfen Sie sie parallel und dokumentieren Sie die Beurteilung.</p>
+<h3 id="bacs-pflicht-fuer-bestimmte-kritische-infrastrukturen-freiwillige-meldung-fuer-andere">BACS: Pflicht für bestimmte kritische Infrastrukturen, freiwillige Meldung für andere</h3>
+<p>Für <strong>nicht jedes KMU</strong> besteht allein wegen eines Ransomware-Vorfalls eine allgemeine gesetzliche BACS-Meldepflicht. Meldepflichtig sind die im Informationssicherheitsgesetz und in der Cybersicherheitsverordnung erfassten Behörden und Organisationen kritischer Infrastrukturen, etwa in Energie- oder Trinkwasserversorgung, Transport sowie kantonalen und kommunalen Verwaltungen. Die genaue Einordnung und allfällige Ausnahme müssen im konkreten Fall geprüft werden. <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-8">[8]</a></sup></p>
+<p>Ist Ihr Unternehmen erfasst und gefährdet der Angriff die Funktionsfähigkeit, führt er zu Manipulation oder Informationsabfluss, blieb er länger unentdeckt oder ist er mit Erpressung, Drohung oder Nötigung verbunden, muss die Meldung innert 24 Stunden nach Entdeckung an das BACS erfolgen. Unbekannte Angaben dürfen die Erstmeldung nicht verzögern; der Gesetzestext verlangt die Ergänzung, sobald neue Informationen vorliegen. <sup class="ref-link"><a href="#ref-8">[8]</a></sup></p>
+<p>Für die elektronische Übermittlung stellt das BACS ein sicheres System bereit. Die aktuelle BACS-Meldeoberfläche nennt ausserdem <code>incidents@ncsc.ch</code> als alternative Übermittlung und ordnet eine solche E-Mail ausdrücklich als fristwahrende Erstmeldung ein. Auf derselben Oberfläche bezeichnet das BACS die Schlussmeldung innert 14 Tagen als nächsten Schritt. Dieser praktische Meldeweg und seine Anforderungen sind im konkreten Fall unmittelbar vor der Übermittlung zu prüfen; sie ändern weder die gesetzliche Einzelfallprüfung noch den Wortlaut von Art. 74e ISG. <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-8">[8]</a></sup> <sup class="ref-link"><a href="#ref-11">[11]</a></sup></p>
+<p>Auch Organisationen ohne gesetzliche Pflicht können Cybervorfälle dem BACS freiwillig melden. <sup class="ref-link"><a href="#ref-11">[11]</a></sup> Für akute Gefährdungen oder eine Strafanzeige gelten die zuständigen polizeilichen Kontaktwege. <sup class="ref-link"><a href="#ref-9">[9]</a></sup></p>
+<h3 id="polizei-strafanzeige-frueh-mit-beweissicherung-abstimmen">Polizei: Strafanzeige früh mit Beweissicherung abstimmen</h3>
+<p>Eine Strafanzeige erstatten Sie bei der Kantonspolizei am Geschäftssitz. Das BACS rät bei erwogener Lösegeldzahlung ausdrücklich, das Vorgehen mit der Kantonspolizei zu besprechen. Für nicht über den Online-Polizeiposten erfassbare Delikte ist eine Polizeistelle zuständig. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-9">[9]</a></sup></p>
+<p>Übergeben Sie keine vorschnell bearbeiteten Systeme. Stellen Sie stattdessen das Ereignisprotokoll, gesicherte Logs, Lösegeldforderung, betroffene Systemliste und vorhandene technische Beobachtungen bereit. Die Polizei oder eine beigezogene Forensik-Fachperson bestimmt, welche weiteren Spuren gesichert werden sollen.</p>
+<h3 id="edoeb-personendaten-und-hohes-risiko-beurteilen">EDÖB: Personendaten und hohes Risiko beurteilen</h3>
+<p>Ransomware kann eine <strong>Verletzung der Datensicherheit</strong> nach Datenschutzgesetz sein, wenn Personendaten unbeabsichtigt oder widerrechtlich verloren gehen, verändert werden oder Unbefugten offengelegt beziehungsweise zugänglich gemacht werden. Allein die technische Bezeichnung «Ransomware» entscheidet aber nicht automatisch über eine Meldung. <sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Der Verantwortliche muss den EDÖB nach Art. 24 DSG <strong>so rasch als möglich</strong> informieren, wenn die Verletzung voraussichtlich zu einem hohen Risiko für Persönlichkeit oder Grundrechte natürlicher Personen führt. Die Meldung muss mindestens Art der Verletzung, Folgen sowie ergriffene oder vorgesehene Massnahmen nennen. Betroffene Personen sind zu informieren, wenn dies zu ihrem Schutz erforderlich ist oder der EDÖB es verlangt. <sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<p>Der EDÖB stellt Verantwortlichen für diese Meldung ein sicheres Online-Formular zur Verfügung; es ist nicht das Kontaktformular für betroffene Personen. Art. 15 DSV konkretisiert die zu erfassenden Angaben: soweit möglich Zeitpunkt und Dauer, Kategorien und ungefähre Anzahl betroffener Daten und Personen, Folgen und Risiken, getroffene oder vorgesehene Massnahmen sowie eine Ansprechperson. Fehlende Angaben sind so rasch als möglich nachzureichen; der Verantwortliche muss die Verletzung mit Tatsachen, Auswirkungen und Massnahmen dokumentieren. <sup class="ref-link"><a href="#ref-13">[13]</a></sup> <sup class="ref-link"><a href="#ref-14">[14]</a></sup></p>
+<p>Prüfen Sie diese Schwelle nicht erst nach Abschluss der Technikarbeiten. Der EDÖB weist darauf hin, dass bei Zweifeln, welche ein hohes Risiko nicht mit hinreichender Wahrscheinlichkeit ausschliessen, nicht zugewartet werden darf. Besonders schützenswerte Daten, identifizierende Unterlagen, mögliche Veröffentlichung oder ein nicht ausschliessbarer Abfluss können die Bewertung beeinflussen. <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die konkrete Risiko- und Meldebeurteilung sowie Meldetexte brauchen eine Datenschutz- oder Rechtsfachperson; dieser Artikel ersetzt keine individuelle Rechtsberatung. <sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Der vertiefende Entscheidungsweg folgt im Beitrag <a href="./datenpanne-melden-schweiz.html">Datenpanne in der Schweiz: EDÖB oder BACS?</a>.</p>
+<h2 id="hypothetisches-praxisbeispiel-produktion-und-dateiablage-betroffen">Hypothetisches Praxisbeispiel: Produktion und Dateiablage betroffen</h2>
+<div class="callout callout-info"><div class="callout-icon">💡</div><div class="callout-body"><strong>Hypothetisches Beispiel, kein Kundenfall:</strong> Um 08.12 Uhr meldet ein Mitarbeiter einer Maschinenbau-KMU, dass Dateien auf einer Projektfreigabe nicht mehr geöffnet werden können. Die IT sieht eine Lösegeldnotiz und trennt den betroffenen Arbeitsplatz sowie die Freigabe vom Netz. Die Geschäftsleitung setzt die IT-Leitung als Incident Lead ein und informiert Produktion und Disposition telefonisch über den Ausfall.
+
+Bis 08.30 Uhr liegen eine Systemliste, Screenshots der Forderung und Exporte der Firewall-, VPN- und Identitätsprotokolle vor. Da die Projektfreigabe Personendaten enthalten kann und ein Datenabfluss nicht ausgeschlossen ist, wird eine Fachperson zur forensischen und datenschutzrechtlichen Beurteilung beigezogen. Bis 08.45 Uhr wird die Backup-Verwaltung vom Produktionsnetz abgegrenzt; eine Wiederherstellung wird noch nicht ausgelöst. Bis 09.12 Uhr prüft das Team die BACS-Relevanz, bereitet eine Strafanzeige vor und hält die EDÖB-Risikobeurteilung im Entscheidungslog fest. Erst danach beginnt die vertiefte Untersuchung.</div></div>
+<p>Das Beispiel zeigt keinen Erfolgsablauf und keine Garantie. Es veranschaulicht nur die Reihenfolge: eindämmen, belegen, Sicherungen schützen, Pflichten klären.</p>
+<h2 id="loesegeld-ist-keine-verlaessliche-wiederherstellungsstrategie">Lösegeld ist keine verlässliche Wiederherstellungsstrategie</h2>
+<p>Das BACS rät von Lösegeldzahlungen ab. Eine Zahlung garantiert weder Entschlüsselung noch Nichtveröffentlichung oder Nichtweitergabe der Daten. Sie kann den Angriff zudem wirtschaftlich fördern. Wird eine Zahlung dennoch erwogen, empfiehlt das BACS ausdrücklich die Abstimmung mit der Kantonspolizei. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<p>Die Geschäftsleitung sollte daher nicht unter Zeitdruck allein über eine Zahlungsforderung entscheiden. Klären Sie zuerst, welche Systeme betroffen sind, ob Daten abgeflossen sein könnten, welche Backups vorhanden sind, welche Meldepflichten bestehen und welche Ermittlungs- oder Versicherungsprozesse einzubeziehen sind. Vertrags- und sanktionsrechtliche Fragen gehören zur fachlichen Prüfung durch dafür zuständige Stellen.</p>
+<h2 id="typische-fehler-in-der-akutphase">Typische Fehler in der Akutphase</h2>
+<p>Der häufigste Fehler ist der vorschnelle Neustart eines Geräts. Er kann eine Ausbreitung zwar in Einzelfällen unterbrechen, vernichtet aber möglicherweise flüchtige Spuren. Besser ist die sofortige Netztrennung; ausschalten bleibt die Ausnahme, wenn keine andere Eindämmung möglich ist. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p>Ebenso riskant ist es, verschlüsselte Daten aus laufender Synchronisation in Sicherungen zu übernehmen oder Backups ohne Prüfung in die kompromittierte Umgebung zurückzuspielen. Wiederherstellung ist kein erster Schritt, sondern Teil einer kontrollierten Bereinigung. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p>Ein dritter Fehler ist, Meldungen als reine Formalität zu behandeln. Die BACS-Meldepflicht, eine Strafanzeige und die EDÖB-Beurteilung haben unterschiedliche Auslöser. Wer den Entscheid, die zugrunde liegenden Fakten und den Zeitpunkt nicht dokumentiert, erschwert spätere Nachweise und Korrekturen. Das aktuelle BACS-Notfallkonzept ordnet daher Rollen, Meldung, Vorfallsbewältigung und Nachbearbeitung als zusammenhängende Phasen ein. <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<h2 id="nach-der-ersten-stunde-kontrolliert-bereinigen-und-lernen">Nach der ersten Stunde: kontrolliert bereinigen und lernen</h2>
+<p>Nach der Stabilisierung folgen Ursachenanalyse, Bereinigung, Neuaufbau und priorisierte Wiederherstellung. Prüfen Sie auch den ursprünglichen Zugang: kompromittierte Konten, Fernzugänge, Schwachstellen oder missbrauchte Administrationswege können sonst den erneuten Zugriff ermöglichen. CISA empfiehlt, nach vollständiger Bereinigung betroffene Passwörter zurückzusetzen, Persistenzmechanismen zu entfernen und Systeme auf einer sauberen Grundlage wieder aufzubauen. <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p>Ein nachträglich eingespieltes Sicherheitsupdate schliesst eine bekannte Schwachstelle, ist aber kein Nachweis dafür, dass davor keine Kompromittierung erfolgt ist. Das BACS weist in seiner aktuellen Warnung zu kritischen PHP-Schwachstellen ausdrücklich darauf hin, dass ein Update eine bereits erfolgte Kompromittierung nicht beseitigt. Diese allgemeine Abgrenzung enthält weder eine Aussage über ein bestimmtes Produkt noch eine organisationsspezifische Forensikanweisung. <sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
+<p>Dokumentieren Sie Befunde, Entscheidungen, Auswirkungen, Meldewege und offene Risiken in einem Debriefing. NIST empfiehlt, Incident Response in das laufende Cyberrisikomanagement einzubetten, damit Vorbereitung, Erkennung, Reaktion und Wiederherstellung messbar verbessert werden. <sup class="ref-link"><a href="#ref-7">[7]</a></sup> Eine <a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a> kann technische Schwachstellen und blinde Flecken sichtbar machen. Im <a href="../risikomanagement.html">Risikomanagement</a> lassen sich geschäftliche Auswirkungen, Eigentümer und Restrisiken verbindlich steuern. Die allgemeinen <a href="../kontakt.html">Kontaktdaten</a> gehören zusammen mit Polizei, Versicherer, IT-Provider und Fachpersonen in die offline verfügbare Notfallmappe.</p>
+<h2 id="naechster-schritt">Nächster Schritt</h2>
+<p>Nutzen Sie die <a href="./resources/01-60-minuten-checkliste.html">60-Minuten-Checkliste</a>, um Rollen, Zeitpunkte und offene Entscheide zu dokumentieren. Wenn Sie Unterstützung bei der Vorbereitung Ihres Notfallplans wünschen, können Sie eine <a href="../notfallplanung.html">DKSchV-Notfallplanungsleistung</a> anfragen. Umfang und Ergebnis hängen von der vereinbarten Leistung und Ihrer Ausgangslage ab.</p>
+<h2 id="grenzen-dieses-sofortleitfadens">Grenzen dieses Sofortleitfadens</h2>
+<p>Diese Anleitung ist eine allgemeine operative Orientierung für Schweizer KMU auf dem Stand der Quellenprüfung vom 1. November 2026; dieser Stand ist keine Fachfreigabe. Sie ersetzt weder eine technische Forensik noch eine individuelle rechtliche, datenschutzrechtliche, strafrechtliche, versicherungs- oder sanktionsrechtliche Beratung. <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Lassen Sie insbesondere die Einstufung als kritische Infrastruktur, die BACS-Meldepflicht, das hohe Risiko nach Art. 24 DSG, Meldetexte und den Umgang mit Lösegeld durch qualifizierte Fachpersonen prüfen. Halten Sie dafür die 60-Minuten-Checkliste und Ihren Entscheidungslog bereit.</p>
+<h2 id="quellen">Quellen</h2>
+        
+      <div class="references-section">
+        <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
+          Geprüfte Primärquellen &amp; Rechtsreferenzen
+        </h3>
+        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
+          Alle behördlichen Vorgaben, Gesetzesartikel und technischen Richtlinien wurden im Rahmen der DKSchV-Quellenprüfung verifiziert:
+        </p>
+        <ul class="references-list">
+    
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/ransomware-was-nun" target="_blank" rel="noopener noreferrer">BACS – Ransomware: Was nun?</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/informationen-zur-meldepflicht" target="_blank" rel="noopener noreferrer">BACS – Informationen zur Meldepflicht für Cyberangriffe auf kritische Infrastrukturen</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/491/de" target="_blank" rel="noopener noreferrer">Fedlex – Bundesgesetz über den Datenschutz, Art. 24 Meldung von Verletzungen der Datensicherheit</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
+            <a href="https://www.edoeb.admin.ch/dam/de/sd-web/T64CAUyvAMcF/1_2%20Leitfaden%20des%20ED%C3%96B%20betreffend%20die%20Meldung%20von%20Datensicherheitsverletzungen%20und%20Information%20der%20Betroffenen%20nach%20Art.%2024%20DSG_DE.pdf" target="_blank" rel="noopener noreferrer">EDÖB – Leitfaden zur Meldung von Datensicherheitsverletzungen und Information Betroffener nach Art. 24 DSG</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/stopransomware/ive-been-hit-ransomware" target="_blank" rel="noopener noreferrer">CISA – I've Been Hit By Ransomware! Response Checklist</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/notfallkonzept" target="_blank" rel="noopener noreferrer">BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔒 NIST Standard</span>
+            <a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 – Incident Response Recommendations and Considerations for Cybersecurity Risk Management</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/232/de" target="_blank" rel="noopener noreferrer">Fedlex – Bundesgesetz über die Informationssicherheit, Art. 74a–74h Cyberangriffe auf kritische Infrastrukturen</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Suisse ePolice</span>
+            <a href="https://www.suisse-epolice.ch/cybercrime-case" target="_blank" rel="noopener noreferrer">Suisse ePolice – Cyberkriminalität anzeigen</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/26w40-de" target="_blank" rel="noopener noreferrer">BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-11">
+          <span class="ref-num">[11]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.report.ncsc.admin.ch/de/chat?path=406%3E407%3E1" target="_blank" rel="noopener noreferrer">BACS – Freiwillige Meldung eines Cybervorfalls</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-12">
+          <span class="ref-num">[12]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/warnung-php-de" target="_blank" rel="noopener noreferrer">BACS – Kritische Schwachstellen in PHP: Sicherheitsupdates sofort einspielen, 21. Oktober 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-13">
+          <span class="ref-num">[13]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
+            <a href="https://www.edoeb.admin.ch/de/databreach" target="_blank" rel="noopener noreferrer">EDÖB – DataBreach: Meldung von Datensicherheitsverletzungen durch Verantwortliche</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-14">
+          <span class="ref-num">[14]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/568/de" target="_blank" rel="noopener noreferrer">Fedlex – Verordnung über den Datenschutz, Art. 15 Meldung von Verletzungen der Datensicherheit</a>
+          </div>
+        </li>
+      
+        </ul>
+      </div>
+    
+        
+        <!-- Post-article consultation box -->
+        <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
+          <span class="badge badge-teal" style="align-self: flex-start;">Individuelle Schweizer Sicherheitsberatung</span>
+          <h3 style="font-size: 22px; font-weight: 700; color: #ffffff; margin: 0;">Benötigen Sie Unterstützung bei der Umsetzung?</h3>
+          <p style="font-size: 15px; color: #cbd5e1; margin: 0; line-height: 1.6;">
+            Ob fundierte Sicherheitsanalyse, Microsoft 365 Cloud-Audit oder die Vorbereitung eines massgeschneiderten IT-Notfallplans: Wir unterstützen Sie pragmatisch und diskret im Wallis und der gesamten Schweiz.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+            <a href="../kontakt.html" class="btn btn-primary" style="background: var(--teal-accent);">Kostenloses Erstgespräch anfragen &rarr;</a>
+            <a href="../notfallplanung.html" class="btn btn-secondary" style="border-color: #334155; color: #ffffff;">Notfallplanung für KMU</a>
+          </div>
+        </div>
+      </article>
+
+      
+      <aside class="article-sidebar">
+        <div class="toc-title">Inhaltsverzeichnis</div>
+        <ul class="toc-list">
+          <li><a href="#warum-die-erste-stunde-ueber-den-weiteren-schaden-entscheidet">Warum die erste Stunde über den weiteren Schaden entscheidet</a></li>
+<li><a href="#minute-015-fuehrung-uebernehmen-und-ausbreitung-begrenzen">Minute 0–15: Führung übernehmen und Ausbreitung begrenzen</a></li>
+<li><a href="#minute-1530-betroffene-systeme-erfassen-und-beweise-sichern">Minute 15–30: Betroffene Systeme erfassen und Beweise sichern</a></li>
+<li><a href="#minute-3045-backups-schuetzen-wiederanlauf-noch-nicht-starten">Minute 30–45: Backups schützen, Wiederanlauf noch nicht starten</a></li>
+<li><a href="#minute-4560-bacs-polizei-und-edoeb-richtig-einordnen">Minute 45–60: BACS, Polizei und EDÖB richtig einordnen</a></li>
+<li><a href="#hypothetisches-praxisbeispiel-produktion-und-dateiablage-betroffen">Hypothetisches Praxisbeispiel: Produktion und Dateiablage betroffen</a></li>
+<li><a href="#loesegeld-ist-keine-verlaessliche-wiederherstellungsstrategie">Lösegeld ist keine verlässliche Wiederherstellungsstrategie</a></li>
+<li><a href="#typische-fehler-in-der-akutphase">Typische Fehler in der Akutphase</a></li>
+<li><a href="#nach-der-ersten-stunde-kontrolliert-bereinigen-und-lernen">Nach der ersten Stunde: kontrolliert bereinigen und lernen</a></li>
+<li><a href="#naechster-schritt">Nächster Schritt</a></li>
+<li><a href="#grenzen-dieses-sofortleitfadens">Grenzen dieses Sofortleitfadens</a></li>
+<li><a href="#quellen">Quellen</a></li>
+          <li><a href="#quellen-und-referenzen">Quellen &amp; Referenzen</a></li>
+        </ul>
+      </aside>
+    
+    </div>
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 38px; filter: brightness(0) invert(1);">
+          <p>DKSchV Dini ist Ihr spezialisierter Schweizer Partner für Cyber-Security, Sicherheitsanalysen, IT-Notfallplanung und Datenschutz nach Schweizer Standard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Dienstleistungen</h4>
+          <ul class="footer-links">
+            <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
+            <li><a href="../risikomanagement.html">Risikomanagement</a></li>
+            <li><a href="../notfallplanung.html">Notfallplanung</a></li>
+            <li><a href="../wissen.html">Wissen &amp; Ratgeber</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul class="footer-links">
+            <li><a href="../ueber-uns.html">Über uns</a></li>
+            <li><a href="../kontakt.html">Kontakt &amp; Standort</a></li>
+            <li><a href="../impressum.html">Impressum</a></li>
+            <li><a href="../datenschutz.html">Datenschutz (nDSG)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Standort &amp; Notfallkontakt</h4>
+          <p style="font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 12px;">
+            <strong>DKSchV Dini</strong><br>Andreas Dini<br>Bammattenweg 19<br>CH-3904 Naters (Wallis)
+          </p>
+          <p style="font-size: 14px; color: #94a3b8;">
+            E-Mail: <a href="mailto:info@dkschv.ch" style="color: #ffffff;">info@dkschv.ch</a><br>
+            Telefon: <a href="tel:+41798446669" style="color: #ffffff;">+41 79 844 66 69</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
+        <div class="footer-legal-links">
+          <a href="../impressum.html">Impressum</a>
+          <a href="../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  
+</body>
+</html>

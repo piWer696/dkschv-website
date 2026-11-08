@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft 365 sicher konfigurieren: KMU-Check | DKSchV</title>
+  <meta name="description" content="Praxis-Check für Schweizer KMU zu Identitäten, Adminrollen, externen Freigaben, Protokollen, Wiederherstellung und Provider-Governance in Microsoft 365.">
+  <link rel="canonical" href="https://www.dkschv.ch/wissen/microsoft-365-sicherheit-kmu.html">
+  <link rel="icon" type="image/png" href="../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Microsoft 365 sicher konfigurieren: KMU-Check">
+  <meta property="og:description" content="Praxis-Check für Schweizer KMU zu Identitäten, Adminrollen, externen Freigaben, Protokollen, Wiederherstellung und Provider-Governance in Microsoft 365.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.dkschv.ch/wissen/microsoft-365-sicherheit-kmu.html">
+  <meta property="article:published_time" content="05.11.2026">
+  <meta property="article:author" content="DKSchV Redaktion">
+
+  <!-- Schema.org Article JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Microsoft 365 sicher konfigurieren: KMU-Check",
+    "description": "Praxis-Check für Schweizer KMU zu Identitäten, Adminrollen, externen Freigaben, Protokollen, Wiederherstellung und Provider-Governance in Microsoft 365.",
+    "inLanguage": "de-CH",
+    "mainEntityOfPage": "https://www.dkschv.ch/wissen/microsoft-365-sicherheit-kmu.html",
+    "author": {
+      "@type": "Organization",
+      "name": "DKSchV Dini Cyber-Security",
+      "url": "https://www.dkschv.ch"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DKSchV Schweiz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.dkschv.ch/assets/images/dkschv_logo.png"
+      }
+    },
+    "datePublished": "05.11.2026",
+    "dateModified": "1. November 2026"
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress-bar"></div>
+  
+  <!-- Top Emergency Bar -->
+  <div class="top-emergency-bar">
+    <div class="container top-bar-inner">
+      <div class="top-trust-tags">
+        <span class="top-trust-tag">🇨🇭 Schweizer Cyber-Security &amp; Datenschutz</span>
+        <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
+        <span class="top-trust-tag">📍 Naters / Wallis</span>
+      </div>
+      <div>
+        <a href="../kontakt.html#notfall" class="emergency-quicklink">
+          🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-link" title="DKSchV Schweiz Startseite">
+        <img src="../assets/images/dkschv_logo.png" alt="DKSchV Schweiz Logo" class="brand-logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link ">Home</a></li>
+          <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
+          <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
+          <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
+          <li><a href="../wissen.html" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
+          <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <!-- Article Page Header -->
+  <header class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <span class="sep">/</span>
+        <span style="color:#ffffff;">Cloud & M365</span>
+      </nav>
+
+      <span class="category-tag" style="margin-bottom: 16px;">Cloud & M365</span>
+      <h1 class="article-page-title">Microsoft 365 sicher konfigurieren: KMU-Check</h1>
+
+      <div class="article-page-meta">
+        <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
+        <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 17 Min.</strong></span>
+        <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
+        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Main Content -->
+  <main class="container">
+    <div class="article-container">
+      <article class="article-content">
+        
+      <div class="article-resource-box">
+        <div class="resource-box-content">
+          <h4>📥 Passendes Arbeitsmittel: Microsoft-365-Tenant-Prüfliste für Schweizer KMU</h4>
+          <p>Arbeitsvorlage zur Priorisierung von Identitäten, Adminrollen, Freigaben, Protokollen, Wiederherstellung und Provider-Governance.</p>
+        </div>
+        <a href="./resources/06-m365-tenant-pruefliste.html" class="resource-btn">
+          <span>🖨️ Arbeitsvorlage öffnen</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    
+        <div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body"><strong>Stand:</strong> 1. November 2026. Die Quellenprüfung bestätigt allgemeine Hersteller- und Behördenaussagen, nicht die Einstellungen, Lizenzen oder Protokolle eines konkreten Tenants.</div></div>
+<div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body"><strong>Kurzantwort:</strong> Eine risikobewusste Microsoft-365-Konfiguration beginnt nicht mit einer einzelnen Einstellung, sondern mit klarer Verantwortung. Sichern Sie zuerst Identitäten und privilegierte Konten mit Mehrfaktor-Authentisierung (MFA), also mindestens zwei unabhängigen Anmeldefaktoren. Begrenzen und überprüfen Sie Administratorrollen. Regeln Sie externe Freigaben nach Datenart und Geschäftszweck. Stellen Sie sicher, dass relevante Anmelde-, Admin- und Freigabeereignisse protokolliert, aufbewahrt und im Notfall auswertbar sind. Definieren Sie zusätzlich, welche Daten und Konfigurationen Sie wie wiederherstellen müssen. Ein IT-Provider kann diese Aufgaben betreiben, die Geschäftsleitung und der datenschutzrechtlich Verantwortliche bleiben aber in der Pflicht. Priorisieren Sie die Lücken in einem 30-Tage-Plan, statt alle Funktionen gleichzeitig zu aktivieren.</div></div>
+<p>Microsoft 365 bündelt E-Mail, Dateien, Teams-Besprechungen und Verwaltungsfunktionen in einer Cloud-Umgebung. Genau diese Konzentration macht den Tenant – die logisch abgegrenzte Microsoft-365-Organisation eines Unternehmens – zu einem geschäftskritischen Ziel. Ein kompromittiertes Konto, eine zu breite Adminrolle oder ein unkontrollierter Gastzugriff kann mehrere Dienste gleichzeitig betreffen.</p>
+<p>Der folgende Praxis-Check richtet sich an Schweizer KMU mit bestehendem Microsoft 365. Er ersetzt weder eine technische Detailprüfung noch eine individuelle Rechtsberatung. Wo Personendaten, Auslandbekanntgaben oder Verträge beurteilt werden, ist <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>.</p>
+<h2 id="cloud-und-provider-aendern-die-verantwortung-nicht">Cloud und Provider ändern die Verantwortung nicht</h2>
+<p>Microsoft stellt die Plattform bereit. Ihr Unternehmen entscheidet jedoch über Konten, Berechtigungen, Daten, Freigaben, Konfigurationen und die Zusammenarbeit mit einem IT-Provider. Das Bundesamt für Cybersicherheit (BACS) weist für ausgelagerte IT-Aufgaben ausdrücklich darauf hin, dass Zuständigkeiten für technische und organisatorische Sicherheitsmassnahmen klar geregelt sein müssen und Verantwortung nicht delegiert werden kann.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Der EDÖB ordnet Cloud-Anbieter bei einer Datenbearbeitung im Auftrag in der Regel als Auftragsbearbeiter ein; der verantwortliche Cloud-Nutzer bleibt dafür zuständig, dass die Bearbeitung datenschutzkonform erfolgt und Betroffenenrechte durch die Auslagerung nicht geschmälert werden.<sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
+<p>Das Schweizer Datenschutzgesetz (DSG) verlangt vom Verantwortlichen und vom Auftragsbearbeiter eine dem Risiko angemessene Datensicherheit. Bei einer Auftragsbearbeitung muss sich der Verantwortliche insbesondere vergewissern, dass der Auftragsbearbeiter die Datensicherheit gewährleisten kann.<sup class="ref-link"><a href="#ref-3">[3]</a></sup> Das ist keine Aussage darüber, ob eine bestimmte Microsoft-365-Konfiguration rechtmässig ist. Es ist der Grund, warum Geschäftsleitung, IT und Provider ihre Aufgaben, Entscheidungsrechte und Nachweise schriftlich festlegen sollten.</p>
+<h3 id="das-hypothetische-praxisbeispiel-viel-schutz-aber-keine-steuerung">Das hypothetische Praxisbeispiel: Viel Schutz, aber keine Steuerung</h3>
+<p>Ein hypothetisches Handels-KMU nutzt Microsoft 365 mit einem externen IT-Provider. Die Geschäftsleitung geht davon aus, dass «der Provider Microsoft 365 absichert». Tatsächlich verwaltet er mehrere globale Administratoren, ehemalige Mitarbeitende werden verspätet bereinigt und Projektteams teilen Dateien per Link mit Externen. Die Audit-Protokolle sind verfügbar, doch niemand hat festgelegt, welche Ereignisse geprüft und wie lange sie aufbewahrt werden müssen.</p>
+<p>Das ist keine Produktlücke, sondern eine Steuerungslücke. Sichtbar werden müssen zuerst Eigentümer, Rollen, kritische Konten, externe Zusammenarbeit, Protokollierung und Wiederherstellungsziele. Danach folgen passende technische Kontrollen.</p>
+<h2 id="1-identitaeten-zuerst-konten-mfa-und-wiederherstellung">1. Identitäten zuerst: Konten, MFA und Wiederherstellung</h2>
+<p>Eine <strong>Identität</strong> ist im Tenant ein Benutzer-, Gast-, Dienst- oder Anwendungskonto, das Zugriff erhalten kann. Erfassen Sie daher nicht nur Mitarbeitende, sondern auch externe Gäste, gemeinsam genutzte Postfächer, technische Konten, Anwendungen und Konten des Providers. Ordnen Sie jedem Konto einen Eigentümer, einen Zweck, eine Berechtigungsstufe und ein Austritts- oder Überprüfungsdatum zu.</p>
+<p>MFA sollte für alle Benutzer und zwingend für alle administrativen Konten gelten. Microsoft setzt seit Februar 2025 MFA für Konten, die im Microsoft-365-Admincenter administrative Vorgänge durchführen, schrittweise durch; dies schützt jedoch nicht automatisch jede Benutzeranmeldung und ersetzt keine eigene Zugriffspolitik für die Geschäftsdienste.<sup class="ref-link"><a href="#ref-4">[4]</a></sup> Prüfen Sie deshalb explizit, wie Ihre Benutzerkonten, Gastkonten, Admins und automatisierten Zugriffe abgesichert sind. <strong>Conditional Access</strong> ist Microsofts regelbasierte Zugriffskontrolle, die Anmeldebedingungen wie MFA oder Gerätezustand durchsetzen kann. Ihre Verfügbarkeit hängt von der Entra-Lizenz ab; wenn sie nicht einsetzbar ist, nennt Microsoft Security Defaults als Alternative für einen grundlegenden Schutz.<sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Bei der Umsetzung genügt es nicht, eine Regel einzuschalten. Ermitteln Sie zuerst Anwendungen, Geräte und technische Prozesse, die dadurch betroffen sein können. Führen Sie neue Regeln mit einer kleinen Pilotgruppe ein. Halten Sie einen getesteten Weg für Kontowiederherstellung bereit. Für die Weiterentwicklung der Anmeldemethoden hilft der Beitrag <a href="./microsoft-365-mfa-passkeys.html">Microsoft 365 MFA und Passkeys für Schweizer KMU</a>.</p>
+<h3 id="notfallzugaenge-schuetzen-und-trotzdem-testbar-halten">Notfallzugänge schützen – und trotzdem testbar halten</h3>
+<p>Ein <strong>Notfallzugang</strong> (oft als Break-Glass-Konto bezeichnet) ist ein hochprivilegiertes Konto, das nur verwendet wird, wenn reguläre Adminzugänge nicht funktionieren. Microsoft empfiehlt mindestens zwei cloudnative Notfallkonten mit dauerhaft aktiver Global-Administrator-Rolle. Sie sollen unabhängig von föderierten oder synchronisierten Identitäten funktionieren und eine phishing-resistente, von den normalen Admin-Konten unterschiedliche Anmeldung mit Passkey (FIDO2) oder zertifikatbasierter Authentisierung verwenden. Sie sind zu überwachen und mindestens alle 90 Tage zu testen.<sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p>Ein solcher Zugang ist kein Freipass. Dokumentieren Sie, wer die Zugangsmittel in einem gesicherten Verfahren verwenden darf, wie eine Nutzung freigegeben wird und welche Nachprüfung danach erfolgt. Schliessen Sie diese Konten nur von Conditional-Access-Regeln aus, wenn sie sonst im Notfall blockiert wären. Die Ausnahme muss eng dokumentiert sein und die Anmeldung muss einen Alarm auslösen.<sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<h2 id="2-adminrollen-enterprise-apps-und-workload-identities-steuern">2. Adminrollen, Enterprise Apps und Workload Identities steuern</h2>
+<p>Eine <strong>Adminrolle</strong> gibt einem Konto Verwaltungsrechte. Die Global-Administrator-Rolle kann fast alle Einstellungen in Entra ID und Microsoft 365 verändern. Microsoft empfiehlt deshalb das Prinzip der geringsten Rechte: eine Rolle mit nur den benötigten Berechtigungen, im benötigten Bereich und für die benötigte Zeit. Als Richtwert nennt Microsoft weniger als fünf Global Administrators und weniger als zehn Zuweisungen privilegierter Rollen.<sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<p>Behandeln Sie diese Richtwerte nicht als Ersatz für Ihr eigenes Risikourteil. Entscheidend sind Aufgaben, Stellvertretung und Kontrolle. Prüfen Sie mindestens vierteljährlich:</p>
+<ul>
+<li>Wer ist Global Administrator, Privileged Role Administrator, Exchange-, SharePoint- oder Intune-Administrator?</li>
+<li>Welchen geschäftlichen Auftrag erfüllt jede Zuweisung, und wer genehmigte sie?</li>
+<li>Werden Alltagstätigkeiten mit einem separaten, nicht privilegierten Konto erledigt?</li>
+<li>Sind Providerzugänge und eine zeitlich begrenzte Aktivierung privilegierter Rechte festgelegt?</li>
+</ul>
+<p>Microsoft Entra Privileged Identity Management (PIM) kann berechtigte Adminrechte bei Bedarf zeitlich aktivieren und danach wieder entziehen. Die Funktion erfordert eine passende Lizenz.<sup class="ref-link"><a href="#ref-6">[6]</a></sup> Wenn sie nicht verfügbar ist, bleiben eine schriftliche Rollenliste, kurze Freigabewege, getrennte Adminkonten und regelmässige manuelle Reviews wertvolle Kontrollen.</p>
+<p>Eine <strong>Enterprise App</strong> beziehungsweise ein Dienstprinzipal (Service Principal) kann Berechtigungen erhalten und als Workload Identity ohne interaktive Benutzeranmeldung auf Dienste zugreifen. Führen Sie deshalb neben Konten und Adminrollen ein Inventar dieser Anwendungen: Eigentümer, Geschäftszweck, Hersteller- oder Providerbezug, Berechtigungen, Genehmigung, Lebenszyklus sowie die Application ID. Halten Sie bei wichtigen Integrationen zusätzlich die tenant-spezifische Objekt-ID des Dienstprinzipals fest. Überwachen Sie insbesondere neue Anmeldeinformationen, neue Eigentümer, Zustimmungen, Berechtigungen und Rollenzuweisungen ausserhalb des vorgesehenen Änderungsprozesses.<sup class="ref-link"><a href="#ref-13">[13]</a></sup></p>
+<h3 id="herstellerintegrationen-und-widerrufene-anmeldeinformationen-ohne-vorschnelles-loeschen">Herstellerintegrationen und widerrufene Anmeldeinformationen ohne vorschnelles Löschen</h3>
+<p>Microsoft berichtete am 21. Oktober 2026, dass Storm-0940 kompromittierte Identitäten mehrerer ConnectWise-Cloudanwendungen für Zugriffe über bereits berechtigte Anwendungen nutzte. Die spezifische Herstelleranweisung, die betroffenen Anbindungen bis zu formellen Wiederherstellungsanweisungen von ConnectWise deaktiviert zu halten, gilt nur für die vier im Bericht genannten Application IDs – nicht pauschal für jedes ConnectWise-Produkt oder jede Enterprise App. Wenn eine dieser Application IDs aktuell oder früher autorisiert war, soll die zuständige, hierzu berechtigte Incident-Response-Fachstelle die aktuelle und frühere Autorisierung nach Application ID statt nach Anzeigename abklären und die lokale Dienstprinzipal-Objekt-ID festhalten. Das Vorhandensein einer solchen Anwendung oder eine erfolgreiche Anmeldung belegt für sich weder einen Missbrauch noch Datenzugriff oder Datenabfluss.<sup class="ref-link"><a href="#ref-14">[14]</a></sup></p>
+<p>Sichern Sie Konfiguration und verfügbare Entra-Anmelde- und Auditdaten, Purview-Auditdaten sowie gegebenenfalls SIEM-Daten vor einer irreversiblen Änderung. Microsoft rät ausdrücklich davon ab, Enterprise Apps als erste Reaktion zu löschen. Bei bestätigten unbefugten Anmeldeinformationen, Zustimmungen, Eigentümern, Zuweisungen oder Identitäten sollen diese erst nach der Beweissicherung durch eine angemessen berechtigte Fachstelle entfernt werden; dringliche Eindämmung darf jedoch nicht auf Exporte warten.<sup class="ref-link"><a href="#ref-14">[14]</a></sup> Diese allgemeine Prüfliste ordnet keine App-Deaktivierung, Löschung, Credential-Rotation oder Tenant-Freigabe an.</p>
+<p>Ein Fehler für eine widerrufene Client-Anmeldeinformation belegt ebenfalls nicht, dass Microsoft den Widerruf ausgelöst hat: Dazu können auch ausreichend berechtigte Anwendungsbesitzer oder Administratoren fähig sein. Prüfen Sie bei einer fachlich begründeten Untersuchung die Widerrufseinträge am Application- <strong>und</strong> Service-Principal-Objekt mit derselben Application ID sowie das zugehörige Entra-Auditereignis. Ein Widerruf verhindert neue Tokens mit dieser Anmeldeinformation, beendet aber nicht zwingend jeden bereits ausgegebenen Zugriff sofort; bei einzelnen Ressourcen können Tokens bis zu 24 Stunden bis zum Ablauf weiter funktionieren. Ist eine Anmeldeinformation tatsächlich kompromittiert, empfiehlt Microsoft Ersatz und Umstellung der Workload auf die neue Anmeldeinformation; die kompromittierte Anmeldeinformation bleibt widerrufen.<sup class="ref-link"><a href="#ref-15">[15]</a></sup> <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die Einordnung eines Verdachts, Beweissicherung, Eindämmung und Wiederherstellung einer konkreten Anbieterintegration gehören in den aktuellen Notfallprozess und zu den zuständigen Fachstellen.</p>
+<h2 id="3-externe-freigaben-gezielt-statt-pauschal-oeffnen">3. Externe Freigaben gezielt statt pauschal öffnen</h2>
+<p>Externe Zusammenarbeit ist oft nötig, beispielsweise mit Treuhand, Kunden oder Projektpartnern. Das Risiko liegt nicht in jeder externen Freigabe, sondern in fehlendem Zweck, fehlender Begrenzung und fehlender Übersicht. Prüfen Sie SharePoint, OneDrive, Teams und die Einstellungen für Microsoft-Entra-Gäste als zusammenhängenden Prozess.</p>
+<p>SharePoint und OneDrive erlauben auf Organisationsebene Freigabestufen von «Nur Personen in Ihrer Organisation» bis zu «Jeder». «Jeder»-Links sind ohne Anmeldung nutzbar; bei Weitergabe kann nicht nachvollzogen werden, wer Zugriff hat. Die Einstellungen auf einzelnen Websites dürfen nur gleich restriktiv oder restriktiver als die Organisationseinstellung sein. OneDrive darf nicht offener als SharePoint konfiguriert werden.<sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<p>Für ein KMU ist eine daten- und partnerbezogene Regel meist besser als ein pauschales Verbot. Definieren Sie beispielsweise, welche Daten über Teams mit Gästen geteilt werden dürfen, ob anonym nutzbare Links überhaupt zulässig sind und wer eine Ausnahme genehmigt. Wo die Zusammenarbeit auf bekannte Partner beschränkt werden kann, prüfen Sie spezifische Personen, Gastablauf und zugelassene E-Mail-Domains. Microsoft bietet dafür unter anderem eingeschränkte Domains, Freigabe nur durch bestimmte Sicherheitsgruppen und Ablaufdaten für Gastzugriffe.<sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<p>Behandeln Sie die Eingabe interner Inhalte, Personendaten oder Geschäftsgeheimnisse in ein KI-Tool nicht wie einen gewöhnlichen Freigabelink. Das BACS empfiehlt, vor jeder Eingabe auf sensible oder persönliche Daten zu prüfen und diese zu anonymisieren; wenn möglich sollen Unternehmens- statt Privatkonten verwendet und Trainingsnutzung sowie vorhandene Opt-out-Möglichkeiten geprüft werden.<sup class="ref-link"><a href="#ref-11">[11]</a></sup> Welche Datenflüsse und Einstellungen ein konkret eingesetzter Microsoft-365- oder KI-Dienst erlaubt, bleibt vor dessen Nutzung <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>.</p>
+<p>Überprüfen Sie Gäste, extern freigegebene Sites und sensible Datenbereiche mindestens halbjährlich. Entfernen Sie nicht mehr benötigte Gäste und prüfen Sie Projekt-Sites nach Abschluss. Das dient datenschutzfreundlichen Voreinstellungen: Das DSG verlangt, die Bearbeitung standardmässig auf das nötige Mindestmass zu begrenzen.<sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<h2 id="4-logging-so-planen-dass-es-im-vorfall-hilft">4. Logging so planen, dass es im Vorfall hilft</h2>
+<p><strong>Logging</strong> bedeutet, sicherheitsrelevante Ereignisse als Protokolle festzuhalten. Protokolle sind erst dann nützlich, wenn geklärt ist, wer sie liest, welche Ereignisse einen Alarm auslösen, wie lange sie verfügbar bleiben und wie sie im Vorfall gesichert werden. Beginnen Sie mit vier Fragen: Wer meldet sich an? Wer verändert Adminrollen und Richtlinien? Wer lädt Apps hoch oder erteilt ihnen Berechtigungen? Wer erstellt oder verändert externe Freigaben?</p>
+<p>Microsoft Purview Audit erfasst und macht Tausende Benutzer- und Adminaktivitäten aus Microsoft-Diensten durchsuchbar. Audit (Standard) ist für Organisationen mit passendem Abonnement standardmässig aktiviert und bewahrt Auditdaten grundsätzlich 180 Tage auf.<sup class="ref-link"><a href="#ref-8">[8]</a></sup> Audit (Premium) bietet je nach Lizenz längere Standardaufbewahrung für Entra-, Exchange-, OneDrive- und SharePoint-Auditdaten sowie konfigurierbare Aufbewahrungsrichtlinien. Ob diese Funktionen, die zugrunde liegende Lizenzierung und die Aufbewahrungsdauer Ihre Anforderungen erfüllen, muss im jeweiligen Tenant geprüft werden.<sup class="ref-link"><a href="#ref-8">[8]</a></sup> <sup class="ref-link"><a href="#ref-9">[9]</a></sup></p>
+<p>Verlassen Sie sich deshalb nicht auf eine angenommene Aufbewahrungsfrist. Dokumentieren Sie für Ihren Tenant die tatsächlich verfügbaren Audit- und Anmeldeprotokolle, die verantwortliche Rolle für die Auswertung und die Aufbewahrungsanforderung aus Notfall-, Vertrags- und Datenschutzsicht. Bei einem Sicherheitsvorfall sollten relevante Protokolle zeitnah gesichert werden. Ergänzen Sie den Ablauf in Ihrer <a href="../notfallplanung.html">IT-Notfallplanung</a> und testen Sie eine Recherche nach einer Adminrollenänderung oder einer externen Freigabe.</p>
+<h2 id="5-backup-verantwortung-wiederherstellung-konkret-definieren">5. Backup-Verantwortung: Wiederherstellung konkret definieren</h2>
+<p>Microsoft 365 enthält Funktionen zur Aufbewahrung, Versionierung und Wiederherstellung in einzelnen Diensten. Diese Funktionen beantworten aber nicht automatisch Ihre Geschäftsfrage: <strong>Welche Daten, Konten, Einstellungen und Arbeitsabläufe müssen nach Löschung, Fehlkonfiguration, Kontoübernahme oder Ransomware in welchem Zustand wiederherstellbar sein?</strong></p>
+<p>Das BACS empfiehlt bei Cloud-Diensten, dass Daten exportierbar und als Offline-Backup gegen Ransomware gesichert werden können.<sup class="ref-link"><a href="#ref-10">[10]</a></sup> Bei Cloud- und Providerverträgen fordert es zudem, Backup-Konzept und erfolgreiche Wiederherstellungstests ausdrücklich zu klären.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Daraus folgt für das KMU: Entscheiden und dokumentieren Sie Ihre Wiederherstellungsanforderungen, statt «Backup vorhanden» als Nachweis zu akzeptieren.</p>
+<p>Definieren Sie für Mail, OneDrive, SharePoint, Teams-Daten sowie wichtige Konfigurationen und Identitäten eine Wiederanlaufreihenfolge. Legen Sie den akzeptierten Datenverlustzeitraum und die akzeptierte Wiederherstellungsdauer je Geschäftsprozess fest. Diese Ziele werden häufig als <strong>Recovery Point Objective (RPO)</strong> und <strong>Recovery Time Objective (RTO)</strong> bezeichnet. Prüfen Sie danach, ob Microsoft-Bordmittel, ein separates Sicherungsprodukt oder eine Kombination die Anforderungen tatsächlich abdecken. Führen Sie eine dokumentierte Wiederherstellungsprobe durch. Der Artikel <a href="./ransomware-resistente-backups.html">Ransomware-resistente Backups</a> und der Leitfaden zum <a href="./backup-wiederherstellung-testen.html">Backup-Wiederherstellung testen</a> helfen bei der Vertiefung.</p>
+<p>Ein Wiederherstellungstest legt nicht fest, wie ein konkreter Malwareverdacht zu behandeln ist. Das BACS empfiehlt, ein geschäftlich verwendetes Gerät bei Verdacht der zuständigen IT zu melden und es durch eine Fachperson untersuchen zu lassen; bei bestätigter Infektion nennt es das Neuaufsetzen und anschliessende Passwortwechsel.<sup class="ref-link"><a href="#ref-12">[12]</a></sup> Dieser Artikel ordnet keine Einzelfallmassnahmen für einen Vorfall an. Untersuchung, Protokollsicherung und Wiederanlauf sind mit dem aktuellen Notfallprozess und den zuständigen Stellen abzustimmen.</p>
+<h2 id="6-provider-governance-leistung-zugriff-und-exit-kontrollieren">6. Provider-Governance: Leistung, Zugriff und Exit kontrollieren</h2>
+<p><strong>Provider-Governance</strong> bedeutet, einen externen IT- oder Cloud-Dienstleister nicht nur auszuwählen, sondern dessen Zugriff, Pflichten und Leistungen fortlaufend zu steuern. Sie braucht eine verantwortliche Person im KMU, auch wenn der Provider technisch arbeitet. Der EDÖB empfiehlt für Cloud-Nutzer unter anderem, vertragliche Weisungsbindung, Sicherheitsmassnahmen, Unterauftragsbearbeiter, Länder der Datenbearbeitung, Unterstützung bei Betroffenenanfragen und Unterstützung bei einer allfälligen Meldung einer Datensicherheitsverletzung zu prüfen.<sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
+<p>Für Microsoft 365 sollte Ihr Vertrag oder Ihre dokumentierte Leistungsvereinbarung mindestens fünf Punkte regeln: erstens die beantragten, überprüften und bei Personalwechseln entfernten Providerzugänge; zweitens Freigaben für Apps, Zugriffspolitiken und Sicherheitsausnahmen; drittens Meldewege, Protokollsicherung und Eskalation im Vorfall; viertens Sicherungsumfang und Wiederherstellungstests; fünftens Unterauftrag, Datenorte und die Herausgabe von Daten, Konfigurationen und Unterlagen beim Exit.</p>
+<p><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die datenschutzrechtliche Tragfähigkeit von Auftragsbearbeitungsvertrag, Datenflüssen und Auslandbekanntgaben muss bei Ihrem konkreten Sachverhalt fachlich geprüft werden. Das DSG erlaubt die Übertragung an Auftragsbearbeiter nur unter seinen Voraussetzungen; eine Weiterübertragung an Dritte setzt die vorgängige Genehmigung des Verantwortlichen voraus.<sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<p>Nutzen Sie die Providersteuerung als Teil Ihres <a href="../risikomanagement.html">Cyber-Risikomanagements</a>. Bewerten Sie dabei nicht nur Technik, sondern auch Abhängigkeit, Ersatzmöglichkeiten und Verantwortlichkeiten. Ein vereinbartes Ticket-System allein ist noch kein Notfallprozess. Die erreichbaren Stellen und Entscheidungswege sollten intern griffbereit dokumentiert sein; halten Sie dazu auch den offiziellen <a href="../kontakt.html">Kontakt</a> sowie externe Notfallkontakte in Ihrer Notfallunterlage aktuell.</p>
+<h2 id="typische-fehler-die-im-praxis-check-auffallen">Typische Fehler, die im Praxis-Check auffallen</h2>
+<p><strong>«MFA ist aktiviert, also sind wir fertig.»</strong> MFA ersetzt nicht die Überprüfung von Gastkonten, Adminrollen, Anwendungen und Wiederherstellungswegen.</p>
+<p><strong>«Der Provider ist Global Administrator, das ist einfacher.»</strong> Eine breite Dauerberechtigung reduziert zwar kurzfristig Aufwand, vergrössert aber die Auswirkungen eines kompromittierten oder falsch verwendeten Kontos. Weisen Sie möglichst spezifische Rollen zu und überprüfen Sie sie.</p>
+<p><strong>«Externe Links sind nur praktisch.»</strong> Anonyme Links können weitergegeben werden. Stellen Sie Freigabestufe, Standard-Linktyp, Ablauf und Domänenregel auf den geschäftlichen Zweck ein.</p>
+<p><strong>«Audit ist standardmässig aktiv, also ist die Forensik gelöst.»</strong> Prüfen Sie verfügbare Protokolle, Suchberechtigungen, Aufbewahrung und Alarmierung.</p>
+<p><strong>«Der Cloud-Dienst sichert das schon.»</strong> Definieren Sie Wiederherstellungsziele und testen Sie die technische Abdeckung.</p>
+<h2 id="ihr-30-tage-prioritaetenplan">Ihr 30-Tage-Prioritätenplan</h2>
+<h3 id="tage-17-lagebild-und-eigentuemer-schaffen">Tage 1–7: Lagebild und Eigentümer schaffen</h3>
+<p>Benennen Sie einen fachlichen Tenant-Eigentümer und eine Vertretung. Exportieren oder erfassen Sie Konten, Gäste, Enterprise Apps und Dienstprinzipale mit Application ID, Adminrollen, externe Freigabestufen, vorhandene Regeln und Providerzugänge. Kennzeichnen Sie kritische Geschäftsprozesse und Datenbereiche. Halten Sie offene Fragen in der <a href="./resources/06-m365-tenant-pruefliste.html">Microsoft-365-Tenant-Prüfliste</a> fest.</p>
+<h3 id="tage-814-kritische-identitaeten-absichern">Tage 8–14: Kritische Identitäten absichern</h3>
+<p>Schliessen Sie Lücken bei MFA für Admin- und Benutzerkonten. Bereinigen Sie nicht benötigte oder nicht zuordenbare Konten und reduzieren Sie Global-Administrator-Rollen. Richten Sie mindestens zwei getestete, überwachte Notfallzugänge nach einem dokumentierten Verfahren ein. Führen Sie neue Zugriffskontrollen zunächst mit einer Pilotgruppe ein.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<h3 id="tage-1521-zusammenarbeit-und-sichtbarkeit-ordnen">Tage 15–21: Zusammenarbeit und Sichtbarkeit ordnen</h3>
+<p>Entscheiden Sie die zulässige externe Freigabestufe. Deaktivieren oder begrenzen Sie nicht begründete anonyme Freigaben. Prüfen Sie Gäste, externe Sites und Linkeinstellungen. Verifizieren Sie die Auditprotokollierung und testen Sie Suchabfragen für Adminrollen, Anmeldungen, Freigaben sowie Änderungen an Anwendungsanmeldeinformationen und Zustimmungen. Bestimmen Sie, welche Ereignisse an wen eskaliert werden.<sup class="ref-link"><a href="#ref-7">[7]</a></sup> <sup class="ref-link"><a href="#ref-8">[8]</a></sup> <sup class="ref-link"><a href="#ref-13">[13]</a></sup></p>
+<h3 id="tage-2230-wiederherstellung-und-provider-verbindlich-machen">Tage 22–30: Wiederherstellung und Provider verbindlich machen</h3>
+<p>Dokumentieren Sie RPO, RTO und Wiederanlaufreihenfolge für die wichtigsten Prozesse. Planen Sie einen begrenzten Restore-Test. Klären Sie mit dem Provider Zugänge, Alarmierung, Protokollsicherung, Sicherungsumfang, Subunternehmer und Exit-Unterlagen. Überführen Sie verbleibende Lücken mit Eigentümer und Termin in Ihr Risikoregister. Bei Fragen zu Datenflüssen, Auftragsbearbeitung oder internationalen Datenübermittlungen veranlassen Sie vor der Freigabe eine fachliche Prüfung.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body"><strong>Nächster Schritt:</strong> Halten Sie Befunde, Nachweise und Eigentümer in der <a href="./resources/06-m365-tenant-pruefliste.html">Microsoft-365-Tenant-Prüfliste</a> fest. Für eine Anfrage zur <a href="../sicherheitsanalyse.html">DKSchV-Sicherheitsanalyse</a> steht <a href="../kontakt.html">Kontakt</a> zur Verfügung. Eine Analyse kann Prioritäten strukturieren, ersetzt aber weder Tenant-Tests noch rechtliche Einzelfallprüfungen.</div></div>
+<h2 id="fazit">Fazit</h2>
+<p>Microsoft 365 wird nicht durch eine Checkliste «sicher». Sicherheit entsteht, wenn die Checkliste Entscheidungen sichtbar macht: Wer besitzt welche Identität? Wer darf welche Rolle aktivieren? Welche externe Zusammenarbeit ist erlaubt? Welche Ereignisse werden erkannt? Was muss nach einem Vorfall wiederherstellbar sein? Und welche Leistung schuldet der Provider nachvollziehbar?</p>
+<p>Wenn Sie diese Fragen innerhalb von 30 Tagen priorisiert bearbeiten, schaffen Sie eine nachvollziehbare Grundlage für weitere Risikoentscheide. Ob und wie sich Risiken verändern, hängt von den tatsächlichen Einstellungen, deren Umsetzung und laufender Kontrolle ab. Wiederholen Sie den Check mindestens halbjährlich sowie nach relevanten Lizenz-, Provider- oder Architekturänderungen.</p>
+<h2 id="quellen">Quellen</h2>
+        
+      <div class="references-section">
+        <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
+          Geprüfte Primärquellen &amp; Rechtsreferenzen
+        </h3>
+        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
+          Alle behördlichen Vorgaben, Gesetzesartikel und technischen Richtlinien wurden im Rahmen der DKSchV-Quellenprüfung verifiziert:
+        </p>
+        <ul class="references-list">
+    
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/empfehlungen-fuer-die-zusammenarbeit-mit-it-providern" target="_blank" rel="noopener noreferrer">BACS – Zusammenarbeit mit IT-Dienstleistern</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
+            <a href="https://www.edoeb.admin.ch/de/datenbearbeitungen-in-der-cloud" target="_blank" rel="noopener noreferrer">EDÖB – Cloud-Computing: Datenschutzpflichten bei Cloud-Diensten</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/491/de" target="_blank" rel="noopener noreferrer">Fedlex – Bundesgesetz über den Datenschutz (DSG), insbesondere Art. 7–9</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mandatory-multifactor-authentication" target="_blank" rel="noopener noreferrer">Microsoft Learn – Mandatory multifactor authentication for Azure and admin portals</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access" target="_blank" rel="noopener noreferrer">Microsoft Learn – Manage emergency access accounts in Microsoft Entra ID</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices" target="_blank" rel="noopener noreferrer">Microsoft Learn – Best practices for Microsoft Entra roles</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off" target="_blank" rel="noopener noreferrer">Microsoft Learn – Manage sharing settings for SharePoint and OneDrive in Microsoft 365</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/purview/audit-solutions-overview" target="_blank" rel="noopener noreferrer">Microsoft Learn – Learn about auditing solutions in Microsoft Purview</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/purview/audit-log-retention-policies" target="_blank" rel="noopener noreferrer">Microsoft Learn – Manage audit log retention policies</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/cloud-computing-und-cybersicherheit" target="_blank" rel="noopener noreferrer">BACS – Cloud Computing und Cybersicherheit</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-11">
+          <span class="ref-num">[11]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/csm26-s3-de" target="_blank" rel="noopener noreferrer">BACS – KI im Berufsalltag: Chancen nutzen, Daten schützen, 16. Oktober 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-12">
+          <span class="ref-num">[12]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/26w40-de" target="_blank" rel="noopener noreferrer">BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-13">
+          <span class="ref-num">[13]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/entra/architecture/security-operations-applications" target="_blank" rel="noopener noreferrer">Microsoft Learn – Microsoft Entra security operations guide for applications</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-14">
+          <span class="ref-num">[14]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/" target="_blank" rel="noopener noreferrer">Microsoft Security Blog – AI-driven large-scale nation-state campaign using ARTEX enables supply chain compromise</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-15">
+          <span class="ref-num">[15]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/entra/workload-id/troubleshoot-revoked-credentials" target="_blank" rel="noopener noreferrer">Microsoft Learn – Troubleshoot revoked application credentials</a>
+          </div>
+        </li>
+      
+        </ul>
+      </div>
+    
+        
+        <!-- Post-article consultation box -->
+        <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
+          <span class="badge badge-teal" style="align-self: flex-start;">Individuelle Schweizer Sicherheitsberatung</span>
+          <h3 style="font-size: 22px; font-weight: 700; color: #ffffff; margin: 0;">Benötigen Sie Unterstützung bei der Umsetzung?</h3>
+          <p style="font-size: 15px; color: #cbd5e1; margin: 0; line-height: 1.6;">
+            Ob fundierte Sicherheitsanalyse, Microsoft 365 Cloud-Audit oder die Vorbereitung eines massgeschneiderten IT-Notfallplans: Wir unterstützen Sie pragmatisch und diskret im Wallis und der gesamten Schweiz.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+            <a href="../kontakt.html" class="btn btn-primary" style="background: var(--teal-accent);">Kostenloses Erstgespräch anfragen &rarr;</a>
+            <a href="../notfallplanung.html" class="btn btn-secondary" style="border-color: #334155; color: #ffffff;">Notfallplanung für KMU</a>
+          </div>
+        </div>
+      </article>
+
+      
+      <aside class="article-sidebar">
+        <div class="toc-title">Inhaltsverzeichnis</div>
+        <ul class="toc-list">
+          <li><a href="#cloud-und-provider-aendern-die-verantwortung-nicht">Cloud und Provider ändern die Verantwortung nicht</a></li>
+<li><a href="#1-identitaeten-zuerst-konten-mfa-und-wiederherstellung">1. Identitäten zuerst: Konten, MFA und Wiederherstellung</a></li>
+<li><a href="#2-adminrollen-enterprise-apps-und-workload-identities-steuern">2. Adminrollen, Enterprise Apps und Workload Identities steuern</a></li>
+<li><a href="#3-externe-freigaben-gezielt-statt-pauschal-oeffnen">3. Externe Freigaben gezielt statt pauschal öffnen</a></li>
+<li><a href="#4-logging-so-planen-dass-es-im-vorfall-hilft">4. Logging so planen, dass es im Vorfall hilft</a></li>
+<li><a href="#5-backup-verantwortung-wiederherstellung-konkret-definieren">5. Backup-Verantwortung: Wiederherstellung konkret definieren</a></li>
+<li><a href="#6-provider-governance-leistung-zugriff-und-exit-kontrollieren">6. Provider-Governance: Leistung, Zugriff und Exit kontrollieren</a></li>
+<li><a href="#typische-fehler-die-im-praxis-check-auffallen">Typische Fehler, die im Praxis-Check auffallen</a></li>
+<li><a href="#ihr-30-tage-prioritaetenplan">Ihr 30-Tage-Prioritätenplan</a></li>
+<li><a href="#fazit">Fazit</a></li>
+<li><a href="#quellen">Quellen</a></li>
+          <li><a href="#quellen-und-referenzen">Quellen &amp; Referenzen</a></li>
+        </ul>
+      </aside>
+    
+    </div>
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 38px; filter: brightness(0) invert(1);">
+          <p>DKSchV Dini ist Ihr spezialisierter Schweizer Partner für Cyber-Security, Sicherheitsanalysen, IT-Notfallplanung und Datenschutz nach Schweizer Standard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Dienstleistungen</h4>
+          <ul class="footer-links">
+            <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
+            <li><a href="../risikomanagement.html">Risikomanagement</a></li>
+            <li><a href="../notfallplanung.html">Notfallplanung</a></li>
+            <li><a href="../wissen.html">Wissen &amp; Ratgeber</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul class="footer-links">
+            <li><a href="../ueber-uns.html">Über uns</a></li>
+            <li><a href="../kontakt.html">Kontakt &amp; Standort</a></li>
+            <li><a href="../impressum.html">Impressum</a></li>
+            <li><a href="../datenschutz.html">Datenschutz (nDSG)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Standort &amp; Notfallkontakt</h4>
+          <p style="font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 12px;">
+            <strong>DKSchV Dini</strong><br>Andreas Dini<br>Bammattenweg 19<br>CH-3904 Naters (Wallis)
+          </p>
+          <p style="font-size: 14px; color: #94a3b8;">
+            E-Mail: <a href="mailto:info@dkschv.ch" style="color: #ffffff;">info@dkschv.ch</a><br>
+            Telefon: <a href="tel:+41798446669" style="color: #ffffff;">+41 79 844 66 69</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
+        <div class="footer-legal-links">
+          <a href="../impressum.html">Impressum</a>
+          <a href="../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  
+</body>
+</html>

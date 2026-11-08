@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ransomware-resistente Backups für KMU | DKSchV</title>
+  <meta name="description" content="Wie Schweizer KMU Sicherungen mit getrennten Zugängen, geschützten Kopien und dokumentierten Wiederherstellungstests robuster gegen Ransomware planen.">
+  <link rel="canonical" href="https://www.dkschv.ch/wissen/ransomware-resistente-backups.html">
+  <link rel="icon" type="image/png" href="../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Ransomware-resistente Backups für KMU">
+  <meta property="og:description" content="Wie Schweizer KMU Sicherungen mit getrennten Zugängen, geschützten Kopien und dokumentierten Wiederherstellungstests robuster gegen Ransomware planen.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.dkschv.ch/wissen/ransomware-resistente-backups.html">
+  <meta property="article:published_time" content="22.10.2026">
+  <meta property="article:author" content="DKSchV Redaktion">
+
+  <!-- Schema.org Article JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Ransomware-resistente Backups für KMU",
+    "description": "Wie Schweizer KMU Sicherungen mit getrennten Zugängen, geschützten Kopien und dokumentierten Wiederherstellungstests robuster gegen Ransomware planen.",
+    "inLanguage": "de-CH",
+    "mainEntityOfPage": "https://www.dkschv.ch/wissen/ransomware-resistente-backups.html",
+    "author": {
+      "@type": "Organization",
+      "name": "DKSchV Dini Cyber-Security",
+      "url": "https://www.dkschv.ch"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DKSchV Schweiz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.dkschv.ch/assets/images/dkschv_logo.png"
+      }
+    },
+    "datePublished": "22.10.2026",
+    "dateModified": "1. November 2026"
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress-bar"></div>
+  
+  <!-- Top Emergency Bar -->
+  <div class="top-emergency-bar">
+    <div class="container top-bar-inner">
+      <div class="top-trust-tags">
+        <span class="top-trust-tag">🇨🇭 Schweizer Cyber-Security &amp; Datenschutz</span>
+        <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
+        <span class="top-trust-tag">📍 Naters / Wallis</span>
+      </div>
+      <div>
+        <a href="../kontakt.html#notfall" class="emergency-quicklink">
+          🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-link" title="DKSchV Schweiz Startseite">
+        <img src="../assets/images/dkschv_logo.png" alt="DKSchV Schweiz Logo" class="brand-logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link ">Home</a></li>
+          <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
+          <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
+          <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
+          <li><a href="../wissen.html" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
+          <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <!-- Article Page Header -->
+  <header class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <span class="sep">/</span>
+        <span style="color:#ffffff;">Backup & Resilienz</span>
+      </nav>
+
+      <span class="category-tag" style="margin-bottom: 16px;">Backup & Resilienz</span>
+      <h1 class="article-page-title">Ransomware-resistente Backups für KMU</h1>
+
+      <div class="article-page-meta">
+        <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
+        <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 14 Min.</strong></span>
+        <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
+        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Main Content -->
+  <main class="container">
+    <div class="article-container">
+      <article class="article-content">
+        
+      <div class="article-resource-box">
+        <div class="resource-box-content">
+          <h4>📥 Passendes Arbeitsmittel: Backup-Selbstcheck für ransomware-resistente Sicherungen</h4>
+          <p>Arbeitsvorlage für 3-2-1-Backups, getrennte Administration, geschützte Kopien und dokumentierte Restore-Tests.</p>
+        </div>
+        <a href="./resources/04-backup-selbstcheck.html" class="resource-btn">
+          <span>🖨️ Arbeitsvorlage öffnen</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    
+        <div class="article-lead"><strong>Kurzantwort:</strong> Ein Backup schützt vor Ransomware nur, wenn Angreifer es nicht mit dem Produktivsystem löschen, verschlüsseln oder unbemerkt manipulieren können – und wenn Sie es rechtzeitig wiederherstellen können. Bauen Sie deshalb auf dem 3-2-1-Prinzip auf: mehrere Kopien, unterschiedliche Speicherarten und mindestens eine räumlich getrennte Kopie. Ergänzen Sie dies mit separaten Backup-Administrationswegen, einer Offline- oder für eine definierte Frist unveränderbaren Kopie sowie regelmässig geprüften Wiederherstellungen. Legen Sie für kritische Geschäftsprozesse einen maximal tolerierbaren Datenverlust (RPO) und eine maximal tolerierbare Ausfallzeit (RTO) fest. Nicht der grüne Status einer Backup-Software, sondern ein dokumentierter Restore-Test belegt die Wiederherstellungsfähigkeit.</div>
+<h2 id="ein-vorhandenes-backup-kann-im-ernstfall-trotzdem-ausfallen">Ein vorhandenes Backup kann im Ernstfall trotzdem ausfallen</h2>
+<p>Ransomware verschlüsselt oder stiehlt nicht nur Daten. Angreifer suchen häufig nach erreichbaren Sicherungen, administrativen Konten und Wiederherstellungswegen. Ist ein Backup-Repository dauerhaft im selben Netzwerk erreichbar und können dieselben privilegierten Konten sowohl die Produktion als auch die Sicherung verwalten, kann ein erfolgreicher Angriff beide Bereiche treffen. Das BACS empfiehlt Unternehmen deshalb regelmässige Sicherungen auf einem externen Medium oder in einer sicheren Cloud; entscheidend ist, dass die Sicherung nicht dauerhaft mit dem Computer verbunden bleibt. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<p>Die am 20. Oktober veröffentlichte #StopRansomware-Warnung von CISA hält für die untersuchte SafePay-Gruppe fest, dass Akteure in einigen Fällen alle netzwerkangebundenen Sicherungen von Unternehmensdaten löschten. Das ist kein Befund zu einem Schweizer KMU. Es unterstreicht aber, dass eine Architektur den Daten- und Administrationspfad der letzten Rückfallebene getrennt planen und im Restore-Test prüfen muss. <sup class="ref-link"><a href="#ref-16">[16]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<p>Die Geschäftsleitung sollte Backups deshalb nicht als reine Speicherfrage behandeln. Sie sind ein Instrument für die Betriebsfähigkeit: Rechnungen, Aufträge, Produktionsdaten, E-Mail, Fachanwendungen und Konfigurationen müssen in einer sinnvollen Reihenfolge wieder verfügbar werden. Das BACS ordnet Datensicherung folgerichtig als technische Massnahme ein, die mit klaren Verantwortlichkeiten, Governance und Kontinuitätsmanagement zusammenwirken muss. <sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
+<div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body"><strong>Ransomware-resistent</strong> bedeutet nicht «unverletzlich». Gemeint ist eine Architektur, welche die Chance erhöht, nach einem Angriff auf einen sauberen, ausreichenden Datenstand zurückzukehren, ohne sich auf eine Lösegeldzahlung verlassen zu müssen.</div></div>
+<p>Im Ernstfall empfiehlt das BACS, infizierte Systeme vom Netz zu trennen, den Infektionsweg zu klären, Systeme neu aufzusetzen und Daten aus vorhandenen Backups wiederherzustellen. Vor Reparaturversuchen oder Neustarts sind bei Bedarf forensische Sicherungen durch Fachpersonen wichtig. <sup class="ref-link"><a href="#ref-3">[3]</a></sup> Der Backup-Plan muss daher mit dem <a href="../notfallplanung.html">IT-Notfallplan</a> und der Vorfallsbehandlung zusammenpassen – nicht erst nach einem Befall entstehen.</p>
+<p>Der BACS-Wochenrückblick vom 6. Oktober 2026 ergänzt: Einzelne Anzeichen beweisen keine Infektion; bei mehreren ungewöhnlichen Beobachtungen soll eine genauere Untersuchung erfolgen. Bei Verdacht empfiehlt das BACS die Untersuchung durch eine Fachperson; bei Geschäftsgeräten ist die zuständige IT zu informieren. Dieser Hinweis ersetzt keine forensische oder organisationsspezifische Triage. <sup class="ref-link"><a href="#ref-15">[15]</a></sup></p>
+<h2 id="3-2-1-richtig-anwenden-redundanz-ist-nur-der-anfang">3-2-1 richtig anwenden: Redundanz ist nur der Anfang</h2>
+<p>Die <strong>3-2-1-Regel</strong> ist eine einfache Mindeststruktur: Halten Sie mindestens drei Kopien der wichtigen Daten vor, nutzen Sie zwei unterschiedliche Speicherarten und bewahren Sie mindestens eine Kopie ausserhalb des primären Standorts auf. Das BACS nennt diese drei Elemente und empfiehlt die externe Kopie idealerweise offline. <sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Die Regel beantwortet jedoch noch nicht, <em>welche</em> Daten gesichert werden, <em>wer</em> eine Kopie löschen kann und <em>ob</em> eine Wiederherstellung den Betrieb tatsächlich wieder aufnimmt. Für ein KMU wird sie erst wirksam, wenn sie pro kritischem Dienst konkret ausgestaltet wird.</p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Baustein</th><th>Praktische Frage</th><th>Prüfkriterium</th></tr></thead><tbody><tr><td>Drei Kopien</td><td>Gibt es neben der produktiven Fassung mindestens zwei Sicherungskopien?</td><td>Datenbestand und System-/Konfigurationsdaten sind im Backup-Inventar aufgeführt.</td></tr><tr><td>Zwei Speicherarten</td><td>Hängt nicht jede Kopie an derselben Technik oder demselben Fehlerbild?</td><td>Die Schutzmechanismen und Fehlerdomänen der Kopien sind dokumentiert.</td></tr><tr><td>Eine externe Kopie</td><td>Überlebt mindestens eine Kopie einen Standort-, Konto- oder Netzwerkausfall?</td><td>Die Kopie liegt ausserhalb des primären Standorts und ist nicht dauerhaft aus der Produktion erreichbar.</td></tr><tr><td>Wiederherstellbarkeit</td><td>Kann das Team einen priorisierten Dienst auf einen sauberen Stand zurückbringen?</td><td>Ein Test weist Datenstand, Dauer, Abweichungen und Folgemassnahmen aus.</td></tr></tbody></table></div>
+<p>Unterscheiden Sie dabei die Begriffe. Ein <strong>Backup</strong> ist eine Kopie, die für die Wiederherstellung angelegt und aufbewahrt wird. <strong>Synchronisation</strong> verteilt Änderungen zwischen Orten; eine versehentlich gelöschte oder verschlüsselte Datei kann deshalb mitverteilt werden. Ein <strong>Snapshot</strong> ist ein zeitbezogener Zustand eines Systems oder Speichers, der je nach Plattform im selben Verwaltungs- und Vertrauensbereich liegen kann. Ein <strong>Archiv</strong> dient vor allem der langfristigen Aufbewahrung. Snapshot, Synchronisation und Archiv können nützlich sein, ersetzen aber nicht automatisch eine unabhängige, getestete Sicherung.</p>
+<h2 id="backup-administration-vom-produktivbetrieb-trennen">Backup-Administration vom Produktivbetrieb trennen</h2>
+<p>Die wichtigste Frage lautet: Kann eine kompromittierte Identität auch das Backup zerstören? Wenn die Antwort «ja» oder «unbekannt» ist, fehlt eine wesentliche Schutzschicht.</p>
+<p><strong>Getrennte Administration</strong> bedeutet, dass die Verwaltung von Backup-Speicher, Aufbewahrungsregeln und Wiederherstellung nicht ausschliesslich über dieselben Konten, Endgeräte, Verzeichnisse und Fernzugänge erfolgt wie der Tagesbetrieb. CISA empfiehlt, Administrationskonten von Benutzerkonten zu trennen und nur benannte Administrationskonten für administrative Aufgaben einzusetzen. <sup class="ref-link"><a href="#ref-5">[5]</a></sup> Für Backups sollte dieses Prinzip bis zum Repository, Cloud-Mandanten, Schlüsselsystem und Dienstleisterzugang durchdacht werden.</p>
+<p>In der Praxis heisst das nicht zwingend, dass jedes KMU eine komplexe Parallelumgebung braucht. Entscheidend ist ein nachvollziehbarer, dem Risiko angemessener Trennungsgrad. Definieren Sie beispielsweise eigene Backup-Admin-Konten mit Mehrfaktor-Authentisierung, vergeben Sie Berechtigungen nach dem Prinzip der minimalen Rechte und verhindern Sie, dass alltägliche Benutzer- oder Serverkonten Sicherungsfristen verkürzen oder Daten endgültig löschen können. Bewahren Sie Notfallzugänge kontrolliert, dokumentiert und getrennt von der Produktionsumgebung auf. Prüfen Sie auch, welche Rechte ein IT-Provider und dessen Fernwartungswerkzeuge besitzen.</p>
+<p>Bei ausgelagerter IT bleibt die Verantwortung für die Klärung der Rollen beim Unternehmen. Das BACS empfiehlt, Zuständigkeiten für technische und organisatorische Massnahmen klar zu regeln, nach dem Backup-Konzept und dem letzten erfolgreichen Wiederherstellungstest zu fragen sowie die vereinbarten Leistungen periodisch zu kontrollieren. <sup class="ref-link"><a href="#ref-4">[4]</a></sup> Verankern Sie daher mindestens Datenumfang, Aufbewahrung, Verantwortliche, Eskalationswege, Testnachweise und Rückgabe- beziehungsweise Wiederherstellungsprozess im Leistungsbeschrieb. Diese Punkte gehören auch in das <a href="../risikomanagement.html">Cyber-Risikomanagement</a>, weil sie Geschäftsrisiken und nicht nur IT-Parameter betreffen.</p>
+<h2 id="offline-und-unveraenderbar-zwei-unterschiedliche-schutzmechanismen">Offline und unveränderbar: zwei unterschiedliche Schutzmechanismen</h2>
+<p>Eine <strong>Offline-Kopie</strong> ist physisch oder logisch vom produktiven Umfeld getrennt und während der Trennung nicht über das Netzwerk erreichbar. Sie reduziert das Risiko, dass Schadsoftware auf eine zugängliche Sicherung zugreift. CISA empfiehlt verschlüsselte Offline-Backups kritischer Daten und regelmässige Tests auf Verfügbarkeit und Integrität, gerade weil Ransomware erreichbare Sicherungen löschen oder verschlüsseln kann. <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<p>Eine <strong>unveränderbare Kopie</strong> ist für eine vordefinierte Aufbewahrungsdauer gegen Überschreiben und Löschen geschützt. Solche Funktionen werden oft als WORM (<em>Write Once, Read Many</em>) oder Object Lock bezeichnet. Der Schutz entsteht aber nicht durch das Etikett: Entscheidend sind aktivierte Aufbewahrungsregeln, die gewählte Schutzstufe, Rechte zum Ändern der Regeln, Schlüsselverwaltung, Protokollierung und der tatsächliche Ablauf beim Restore. Herstellerdokumentationen zeigen diese Unterschiede deutlich: Bei Amazon S3 Object Lock hängt der Schutz beispielsweise an Objektversionen, Aufbewahrungsmodus und Berechtigungen; der Governance-Modus kann mit einer speziellen Berechtigung umgangen werden. <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<p>Eine unveränderbare Kopie ist auch nicht automatisch offline. Sie kann online verfügbar sein, aber Löschen oder Überschreiben während der Frist verhindern. Umgekehrt ist ein vom Netz getrenntes Medium nicht zwingend unveränderbar. Für kritische Daten ist deshalb die Kombination sinnvoll: eine vom Produktionsweg getrennte Kopie und ein Schutz gegen vorzeitige Veränderung, abgestimmt auf das Risikoszenario und die Wiederherstellungsziele. CISA weist darauf hin, dass Cloud-Objektsperren und Versionsverwaltung helfen können, Löschen oder Überschreiben zu begrenzen, zugleich aber sorgfältig konfiguriert werden müssen. <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<p>Legen Sie die Aufbewahrungsdauer nicht willkürlich fest. Sie muss mindestens lange genug sein, um eine unbemerkte Manipulation zu entdecken, einen sauberen Wiederherstellungspunkt zu wählen und die Wiederherstellung umzusetzen. Zu lange Fristen können Kosten, Datenschutz- und Löschkonzepte berühren. <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Ob Ihre konkrete Aufbewahrung und Sicherungsarchitektur den Anforderungen des DSG und weiterer anwendbarer Vorgaben genügt, braucht eine fachliche und bei rechtlichen Fragen eine fachjuristische Prüfung; dieser Beitrag ist keine individuelle Rechtsberatung. Das DSG verlangt risikogerechte technische und organisatorische Massnahmen; die Datenschutzverordnung verlangt unter anderem, dass Personendaten bei einem physischen oder technischen Zwischenfall rasch wiederhergestellt werden können. <sup class="ref-link"><a href="#ref-8">[8]</a></sup> <sup class="ref-link"><a href="#ref-9">[9]</a></sup></p>
+<h2 id="rpo-rto-und-wiederanlauf-vom-backup-journal-zur-geschaeftsentscheidung">RPO, RTO und Wiederanlauf: vom Backup-Journal zur Geschäftsentscheidung</h2>
+<p>Ein Backup-Job kann technisch erfolgreich sein und dennoch die falschen Ziele verfolgen. Definieren Sie deshalb mit den Prozessverantwortlichen zwei Kennzahlen:</p>
+<ul>
+<li>Das <strong>Recovery Point Objective (RPO)</strong> ist der Zeitpunkt, bis zu dem Daten nach einem Ausfall wiederhergestellt sein müssen. Praktisch beschreibt es den maximal hinnehmbaren Datenverlust zwischen zwei Wiederherstellungspunkten. <sup class="ref-link"><a href="#ref-10">[10]</a></sup></li>
+<li>Das <strong>Recovery Time Objective (RTO)</strong> ist die maximal vertretbare Dauer der Wiederherstellungsphase, bevor Geschäftsprozesse unvertretbar beeinträchtigt werden. <sup class="ref-link"><a href="#ref-11">[11]</a></sup></li>
+</ul>
+<p>Ein RPO von vier Stunden ist keine Zusage, dass ein Dienst nach vier Stunden läuft. Es legt fest, wie alt der Datenstand höchstens sein darf. Ein RTO von acht Stunden ist keine Eigenschaft einer Backup-Lizenz, sondern ein Ziel für die gesamte Kette: Angriff erkennen, Systeme bereinigen, Infrastruktur bereitstellen, Daten zurückspielen, Zugänge prüfen und den Prozess freigeben. NIST ordnet Wiederherstellungsprozesse dem Ziel zu, Systeme oder Vermögenswerte nach Cybervorfällen zeitgerecht wiederherzustellen. <sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
+<p>Priorisieren Sie daher nicht nach Datenmenge, sondern nach Geschäftswirkung. Die Buchhaltung braucht vielleicht zuerst die Zahlungsfreigabe und Lieferantendaten; die Produktion braucht zuerst die Steuerungs- oder Auftragsdaten; der Vertrieb benötigt möglicherweise Kunden- und Kontaktinformationen. Dokumentieren Sie je Dienst den Eigentümer, Abhängigkeiten wie Identitätsdienst, Netzwerk, Lizenzen und DNS, den RPO, den RTO, den vorgesehenen Wiederherstellungsort und die Abnahme durch den Fachbereich. So verbinden Sie die Backup-Architektur mit einer realistischen <a href="./backup-wiederherstellung-testen.html">Wiederherstellungsübung</a>.</p>
+<h3 id="hypothetisches-praxisbeispiel-was-der-restore-test-sichtbar-macht">Hypothetisches Praxisbeispiel: Was der Restore-Test sichtbar macht</h3>
+<p>Ein hypothetisches Handels-KMU sichert seine Dateidaten jede Nacht und sieht täglich erfolgreiche Jobs. Im Test stellt das Team jedoch fest, dass die Fachanwendung ohne separaten Lizenzserver und ohne die Dokumentation der Firewall-Regeln nicht startet. Zudem kann der externe IT-Provider die Backup-Konsole nur mit einem Konto öffnen, das auch die produktive Domäne verwaltet. Der Test zeigt damit zwei Risiken: Das geplante RTO ist mit dem aktuellen Ablauf nicht erreichbar, und ein kompromittiertes Domänenkonto könnte den Wiederherstellungsweg gefährden.</p>
+<p>Die Lösung ist nicht zwingend ein neues Produkt. Das Unternehmen trennt die Backup-Administration, sichert Konfigurationen und Wiederanlaufdokumente mit, definiert eine saubere Wiederherstellungsumgebung und wiederholt den Test nach der Anpassung. Das Ergebnis wird als Soll-Ist-Vergleich festgehalten. Erst dann ist klarer, ob RPO und RTO plausibel sind.</p>
+<h2 id="wiederherstellungsfaehigkeit-beweisen-nicht-vermuten">Wiederherstellungsfähigkeit beweisen, nicht vermuten</h2>
+<p>Ein vollständiger Test muss nicht jeden Monat die ganze Umgebung lahmlegen. Beginnen Sie mit einem priorisierten, abgegrenzten Szenario: Stellen Sie einen repräsentativen Datensatz oder einen kritischen Dienst in einer isolierten Umgebung wieder her. Prüfen Sie Datenintegrität, Benutzerzugriff, Abhängigkeiten und fachliche Nutzbarkeit. Messen Sie vom Start des Wiederanlaufs bis zur Abnahme durch den Fachbereich. CISA empfiehlt, Wiederherstellung aus Offline-Backups nach der Priorität kritischer Dienste vorzunehmen und saubere Systeme nicht erneut zu infizieren. <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<p>Als aktueller Schweizer Vergleichspunkt berichtete das BACS am 22. Oktober zur Studie «KMU Cybersicherheit 2026»: Neun von zehn KMU erstellen Backups, aber nur jedes vierte testet die Wiederherstellung. Die Studienangabe ist kein Nachweis für die Situation eines einzelnen Unternehmens, bestärkt jedoch den Fokus auf nachweisbare Tests. <sup class="ref-link"><a href="#ref-17">[17]</a></sup></p>
+<p>Der Testnachweis sollte mindestens den gewählten Sicherungsstand, den Start- und Endzeitpunkt, die tatsächlich erreichte Datenaktualität, verwendete Konten, Abweichungen, getroffene Entscheide und offene Massnahmen enthalten. NIST betont, dass Backups durchgeführt, gepflegt und getestet werden müssen; dessen Leitfaden richtet sich ausdrücklich an Dienstleister und ihre Kunden im Kontext von Ransomware und anderen Datenverlustereignissen. <sup class="ref-link"><a href="#ref-13">[13]</a></sup></p>
+<p>Das BACS strukturiert die Notfallvorsorge in Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung. Für KMU stellt es eine Vorlage für einen IT-Notfall- und Krisenplan bereit. <sup class="ref-link"><a href="#ref-14">[14]</a></sup> Verankern Sie darin, wer den Restore autorisiert, wer die Sauberkeit der Zielumgebung beurteilt, wer den Fachtest abnimmt und wie bei einem fehlgeschlagenen Wiederherstellungspunkt entschieden wird. Halten Sie Kontaktwege auch ausserhalb der potenziell betroffenen Systeme bereit; ein zentral gepflegter <a href="../kontakt.html">Kontakt</a> kann dabei als zusätzliche Anlaufstelle dokumentiert werden.</p>
+<h2 id="typische-fehler-die-den-backup-schutz-entwerten">Typische Fehler, die den Backup-Schutz entwerten</h2>
+<p><strong>«Wir haben eine Cloud, also ein Backup.»</strong> Cloud-Verfügbarkeit, Papierkorb und Versionierung können helfen, sind aber nicht automatisch eine unabhängige Sicherung. Klären Sie Datenumfang, Aufbewahrung, Löschrechte und Restore-Verfahren ausdrücklich.</p>
+<p><strong>«Der Backup-Job war grün.»</strong> Ein Jobprotokoll belegt vor allem, dass ein Prozess Daten übertragen hat. Es belegt weder einen sauberen Wiederherstellungspunkt noch einen funktionierenden Geschäftsdienst.</p>
+<p><strong>«Ein Domänen-Admin darf alles.»</strong> Dieses Muster bündelt Risiko. Trennen Sie alltägliche, produktive und Backup-Administration, und überprüfen Sie privilegierte Rechte regelmässig.</p>
+<p><strong>«Snapshots genügen.»</strong> Ein Snapshot im selben kompromittierten Speicher-, Hypervisor- oder Administrationsbereich ist keine gleichwertige letzte Rückfallebene.</p>
+<p><strong>«Wir testen später.»</strong> Ungetestete Sicherungen machen RPO und RTO zu Annahmen. Testen Sie nach wesentlichen Architektur-, Anwendungs- oder Provideränderungen und verbessern Sie den Ablauf anhand der Ergebnisse.</p>
+<h2 id="ein-umsetzbarer-30-tage-plan">Ein umsetzbarer 30-Tage-Plan</h2>
+<h3 id="tage-1-bis-7-bestand-und-prioritaeten-klaeren">Tage 1 bis 7: Bestand und Prioritäten klären</h3>
+<p>Erstellen Sie ein kompaktes Inventar der kritischen Prozesse, Daten, Anwendungen, Konfigurationen und Identitäten. Benennen Sie je Dienst einen Fachverantwortlichen. Halten Sie vorhandene Kopien, Speicherorte, Aufbewahrungsfristen, Zugriffsrechte und den letzten dokumentierten Restore-Test fest. Nutzen Sie dafür den <a href="./resources/04-backup-selbstcheck.html">Backup-Selbstcheck</a>.</p>
+<h3 id="tage-8-bis-14-schutzluecken-im-wiederherstellungsweg-schliessen">Tage 8 bis 14: Schutzlücken im Wiederherstellungsweg schliessen</h3>
+<p>Prüfen Sie, ob mindestens eine Kopie vom produktiven Zugriff getrennt und eine Kopie gegen vorzeitige Veränderung geschützt ist. Reduzieren und trennen Sie Backup-Administrationsrechte. Sichern Sie zusätzlich die für den Wiederanlauf notwendigen Konfigurationen, Installationsmedien, Lizenzen, Schlüssel, Dokumentationen und Kontaktlisten.</p>
+<h3 id="tage-15-bis-21-ziele-und-reihenfolge-verbindlich-festlegen">Tage 15 bis 21: Ziele und Reihenfolge verbindlich festlegen</h3>
+<p>Vereinbaren Sie RPO und RTO mit den Prozessverantwortlichen. Legen Sie die Wiederanlaufreihenfolge sowie Akzeptanzkriterien fest. Ergänzen Sie Rollen, Stellvertretungen und Eskalation im Notfallplan. Bei Unsicherheiten über Risiken und Prioritäten hilft eine methodische <a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a>, die technische Befunde mit den betroffenen Geschäftsprozessen verbindet.</p>
+<h3 id="tage-22-bis-30-wiederherstellung-ueben-und-nachsteuern">Tage 22 bis 30: Wiederherstellung üben und nachsteuern</h3>
+<p>Führen Sie einen abgegrenzten Restore-Test in einer geeigneten Umgebung durch. Vergleichen Sie Ist-Datenstand und Ist-Dauer mit RPO und RTO. Dokumentieren Sie Abweichungen, weisen Sie Massnahmen mit Verantwortlichen und Termin zu und legen Sie den Folgetest fest. Eine periodische Überprüfung ist auch deshalb wichtig, weil sich Anwendungen, Datenmengen, Berechtigungen und Dienstleisterbeziehungen verändern.</p>
+<h2 id="naechster-schritt">Nächster Schritt</h2>
+<p>Dokumentieren Sie den Ist-Stand mit dem <a href="./resources/04-backup-selbstcheck.html">Backup-Selbstcheck</a> und planen Sie einen abgegrenzten Restore-Test. Wenn Sie Unterstützung bei einer <a href="../sicherheitsanalyse.html">DKSchV-Sicherheitsanalyse</a> wünschen, klären Sie Umfang, Annahmen und gewünschte Ergebnisse vorab; eine Analyse garantiert keine Wiederherstellbarkeit.</p>
+<h2 id="quellen">Quellen</h2>
+        
+      <div class="references-section">
+        <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
+          Geprüfte Primärquellen &amp; Rechtsreferenzen
+        </h3>
+        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
+          Alle behördlichen Vorgaben, Gesetzesartikel und technischen Richtlinien wurden im Rahmen der DKSchV-Quellenprüfung verifiziert:
+        </p>
+        <ul class="references-list">
+    
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/erste-schritte-unternehmen-behoerden" target="_blank" rel="noopener noreferrer">BACS – Erste Schritte für Unternehmen und Behörden: Backup nicht dauerhaft verbunden</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/grundschutz-unternehmen-behoerden" target="_blank" rel="noopener noreferrer">BACS – Grundschutz für Unternehmen und Behörden</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/ransomware-was-nun" target="_blank" rel="noopener noreferrer">BACS – Ransomware: Was nun?</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/empfehlungen-fuer-die-zusammenarbeit-mit-it-providern" target="_blank" rel="noopener noreferrer">BACS – Zusammenarbeit mit IT-Dienstleistern: 3-2-1 und Wiederherstellungstest</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/stopransomware/ransomware-guide" target="_blank" rel="noopener noreferrer">CISA – StopRansomware Guide: getrennte Administrationskonten</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/stopransomware/ransomware-guide" target="_blank" rel="noopener noreferrer">CISA – StopRansomware Guide: Offline-Backups, Integritätstests und priorisierte Wiederherstellung</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html" target="_blank" rel="noopener noreferrer">Amazon S3 – Object Lock: WORM, Aufbewahrungsmodi und Berechtigungen</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/491/de" target="_blank" rel="noopener noreferrer">Fedlex – Datenschutzgesetz (DSG), Art. 8 Datensicherheit</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/568/de" target="_blank" rel="noopener noreferrer">Fedlex – Datenschutzverordnung (DSV), Art. 1 bis 3 Datensicherheit und Wiederherstellung</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔒 NIST Standard</span>
+            <a href="https://csrc.nist.gov/glossary/term/recovery_point_objective" target="_blank" rel="noopener noreferrer">NIST CSRC Glossary – Recovery Point Objective</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-11">
+          <span class="ref-num">[11]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔒 NIST Standard</span>
+            <a href="https://csrc.nist.gov/glossary/term/recovery_time_objective" target="_blank" rel="noopener noreferrer">NIST CSRC Glossary – Recovery Time Objective</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-12">
+          <span class="ref-num">[12]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔒 NIST Standard</span>
+            <a href="https://www.nist.gov/cyberframework/recover" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework – Recover</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-13">
+          <span class="ref-num">[13]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔒 NIST Standard</span>
+            <a href="https://csrc.nist.gov/pubs/other/2020/04/24/protecting-data-from-ransomware-and-other-data-los/final" target="_blank" rel="noopener noreferrer">NIST NCCoE – Protecting Data from Ransomware and Other Data Loss Events</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-14">
+          <span class="ref-num">[14]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/notfallkonzept" target="_blank" rel="noopener noreferrer">BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-15">
+          <span class="ref-num">[15]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/26w40-de" target="_blank" rel="noopener noreferrer">BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, veröffentlicht am 6. Oktober 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-16">
+          <span class="ref-num">[16]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a" target="_blank" rel="noopener noreferrer">CISA – StopRansomware: SafePay Ransomware, 20. Oktober 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-17">
+          <span class="ref-num">[17]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/26-kmustudie-de" target="_blank" rel="noopener noreferrer">BACS – KMU Cybersicherheit 2026: Cyberkriminalität wird zum Geschäftsrisiko für Schweizer KMU, 22. Oktober 2026</a>
+          </div>
+        </li>
+      
+        </ul>
+      </div>
+    
+        
+        <!-- Post-article consultation box -->
+        <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
+          <span class="badge badge-teal" style="align-self: flex-start;">Individuelle Schweizer Sicherheitsberatung</span>
+          <h3 style="font-size: 22px; font-weight: 700; color: #ffffff; margin: 0;">Benötigen Sie Unterstützung bei der Umsetzung?</h3>
+          <p style="font-size: 15px; color: #cbd5e1; margin: 0; line-height: 1.6;">
+            Ob fundierte Sicherheitsanalyse, Microsoft 365 Cloud-Audit oder die Vorbereitung eines massgeschneiderten IT-Notfallplans: Wir unterstützen Sie pragmatisch und diskret im Wallis und der gesamten Schweiz.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+            <a href="../kontakt.html" class="btn btn-primary" style="background: var(--teal-accent);">Kostenloses Erstgespräch anfragen &rarr;</a>
+            <a href="../notfallplanung.html" class="btn btn-secondary" style="border-color: #334155; color: #ffffff;">Notfallplanung für KMU</a>
+          </div>
+        </div>
+      </article>
+
+      
+      <aside class="article-sidebar">
+        <div class="toc-title">Inhaltsverzeichnis</div>
+        <ul class="toc-list">
+          <li><a href="#ein-vorhandenes-backup-kann-im-ernstfall-trotzdem-ausfallen">Ein vorhandenes Backup kann im Ernstfall trotzdem ausfallen</a></li>
+<li><a href="#3-2-1-richtig-anwenden-redundanz-ist-nur-der-anfang">3-2-1 richtig anwenden: Redundanz ist nur der Anfang</a></li>
+<li><a href="#backup-administration-vom-produktivbetrieb-trennen">Backup-Administration vom Produktivbetrieb trennen</a></li>
+<li><a href="#offline-und-unveraenderbar-zwei-unterschiedliche-schutzmechanismen">Offline und unveränderbar: zwei unterschiedliche Schutzmechanismen</a></li>
+<li><a href="#rpo-rto-und-wiederanlauf-vom-backup-journal-zur-geschaeftsentscheidung">RPO, RTO und Wiederanlauf: vom Backup-Journal zur Geschäftsentscheidung</a></li>
+<li><a href="#wiederherstellungsfaehigkeit-beweisen-nicht-vermuten">Wiederherstellungsfähigkeit beweisen, nicht vermuten</a></li>
+<li><a href="#typische-fehler-die-den-backup-schutz-entwerten">Typische Fehler, die den Backup-Schutz entwerten</a></li>
+<li><a href="#ein-umsetzbarer-30-tage-plan">Ein umsetzbarer 30-Tage-Plan</a></li>
+<li><a href="#naechster-schritt">Nächster Schritt</a></li>
+<li><a href="#quellen">Quellen</a></li>
+          <li><a href="#quellen-und-referenzen">Quellen &amp; Referenzen</a></li>
+        </ul>
+      </aside>
+    
+    </div>
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 38px; filter: brightness(0) invert(1);">
+          <p>DKSchV Dini ist Ihr spezialisierter Schweizer Partner für Cyber-Security, Sicherheitsanalysen, IT-Notfallplanung und Datenschutz nach Schweizer Standard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Dienstleistungen</h4>
+          <ul class="footer-links">
+            <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
+            <li><a href="../risikomanagement.html">Risikomanagement</a></li>
+            <li><a href="../notfallplanung.html">Notfallplanung</a></li>
+            <li><a href="../wissen.html">Wissen &amp; Ratgeber</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul class="footer-links">
+            <li><a href="../ueber-uns.html">Über uns</a></li>
+            <li><a href="../kontakt.html">Kontakt &amp; Standort</a></li>
+            <li><a href="../impressum.html">Impressum</a></li>
+            <li><a href="../datenschutz.html">Datenschutz (nDSG)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Standort &amp; Notfallkontakt</h4>
+          <p style="font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 12px;">
+            <strong>DKSchV Dini</strong><br>Andreas Dini<br>Bammattenweg 19<br>CH-3904 Naters (Wallis)
+          </p>
+          <p style="font-size: 14px; color: #94a3b8;">
+            E-Mail: <a href="mailto:info@dkschv.ch" style="color: #ffffff;">info@dkschv.ch</a><br>
+            Telefon: <a href="tel:+41798446669" style="color: #ffffff;">+41 79 844 66 69</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
+        <div class="footer-legal-links">
+          <a href="../impressum.html">Impressum</a>
+          <a href="../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  
+</body>
+</html>

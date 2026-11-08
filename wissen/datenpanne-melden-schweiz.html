@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenpanne melden: EDÖB oder BACS? | DKSchV</title>
+  <meta name="description" content="Schweizer Entscheidungsweg zu Datenpannen: Art. 24 DSG, EDÖB und die getrennte BACS-Meldeprüfung bei kritischen Infrastrukturen.">
+  <link rel="canonical" href="https://www.dkschv.ch/wissen/datenpanne-melden-schweiz.html">
+  <link rel="icon" type="image/png" href="../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Datenpanne melden: EDÖB oder BACS?">
+  <meta property="og:description" content="Schweizer Entscheidungsweg zu Datenpannen: Art. 24 DSG, EDÖB und die getrennte BACS-Meldeprüfung bei kritischen Infrastrukturen.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.dkschv.ch/wissen/datenpanne-melden-schweiz.html">
+  <meta property="article:published_time" content="15.10.2026">
+  <meta property="article:author" content="DKSchV Redaktion">
+
+  <!-- Schema.org Article JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Datenpanne melden: EDÖB oder BACS?",
+    "description": "Schweizer Entscheidungsweg zu Datenpannen: Art. 24 DSG, EDÖB und die getrennte BACS-Meldeprüfung bei kritischen Infrastrukturen.",
+    "inLanguage": "de-CH",
+    "mainEntityOfPage": "https://www.dkschv.ch/wissen/datenpanne-melden-schweiz.html",
+    "author": {
+      "@type": "Organization",
+      "name": "DKSchV Dini Cyber-Security",
+      "url": "https://www.dkschv.ch"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DKSchV Schweiz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.dkschv.ch/assets/images/dkschv_logo.png"
+      }
+    },
+    "datePublished": "15.10.2026",
+    "dateModified": "1. November 2026"
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress-bar"></div>
+  
+  <!-- Top Emergency Bar -->
+  <div class="top-emergency-bar">
+    <div class="container top-bar-inner">
+      <div class="top-trust-tags">
+        <span class="top-trust-tag">🇨🇭 Schweizer Cyber-Security &amp; Datenschutz</span>
+        <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
+        <span class="top-trust-tag">📍 Naters / Wallis</span>
+      </div>
+      <div>
+        <a href="../kontakt.html#notfall" class="emergency-quicklink">
+          🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-link" title="DKSchV Schweiz Startseite">
+        <img src="../assets/images/dkschv_logo.png" alt="DKSchV Schweiz Logo" class="brand-logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link ">Home</a></li>
+          <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
+          <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
+          <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
+          <li><a href="../wissen.html" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
+          <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <!-- Article Page Header -->
+  <header class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <span class="sep">/</span>
+        <span style="color:#ffffff;">Datenschutz & nDSG</span>
+      </nav>
+
+      <span class="category-tag" style="margin-bottom: 16px;">Datenschutz & nDSG</span>
+      <h1 class="article-page-title">Datenpanne melden: EDÖB oder BACS?</h1>
+
+      <div class="article-page-meta">
+        <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
+        <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 13 Min.</strong></span>
+        <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
+        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Main Content -->
+  <main class="container">
+    <div class="article-container">
+      <article class="article-content">
+        
+      <div class="article-resource-box">
+        <div class="resource-box-content">
+          <h4>📥 Passendes Arbeitsmittel: EDÖB-/BACS-Entscheidungsbaum und Vorfallsprotokoll</h4>
+          <p>Arbeitsvorlage zur getrennten Strukturierung der EDÖB- und BACS-Meldeprüfung nach einem Cyber- oder Datenschutzvorfall.</p>
+        </div>
+        <a href="./resources/03-datenpanne-entscheidungsbaum.html" class="resource-btn">
+          <span>🖨️ Arbeitsvorlage öffnen</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    
+        <div class="article-lead"><strong>Kurzantwort:</strong> Eine Datenpanne ist nach Schweizer Datenschutzgesetz (DSG) dem Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) <strong>so rasch als möglich</strong> zu melden, wenn sie voraussichtlich ein hohes Risiko für Persönlichkeit oder Grundrechte natürlicher Personen schafft. Eine feste 72-Stunden-Frist steht nicht in Art. 24 DSG. Separat müssen die im Informationssicherheitsgesetz (ISG) erfassten Betreiber kritischer Infrastrukturen bestimmte Cyberangriffe dem Bundesamt für Cybersicherheit (BACS) innert <strong>24 Stunden nach Entdeckung</strong> melden; für fehlende Angaben gewährt das BACS eine Frist von 14 Tagen zur Ergänzung. Ein Vorfall kann beide Pflichten auslösen, nur eine oder keine. Klären Sie daher parallel Personendaten, Risiko, Branchenstatus und Angriffstatbestand. Im Zweifel über eine Meldepflicht ist <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>: Veranlassen Sie umgehend eine datenschutz- und gegebenenfalls sektorrechtliche Fachprüfung.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></div>
+<p>Eine Datenpanne verlangt zwei Entscheidungen, die nicht vermischt werden dürfen. Die erste betrifft den Schutz von Menschen und damit Art. 24 DSG. Die zweite betrifft die Cyberresilienz bestimmter Organisationen und damit die BACS-Meldepflicht nach ISG. Wer nur fragt «EDÖB oder BACS?», kann deshalb die falsche Frist oder den falschen Massstab anwenden.</p>
+<p>Dieser Beitrag bietet eine allgemeine Orientierung für Schweizer KMU. Er ist <strong>keine individuelle Rechtsberatung</strong>. Ob eine konkrete Meldung geschuldet ist, ob weitere sektorspezifische Vorgaben gelten und wie Betroffene informiert werden müssen, braucht bei ernsthaften oder unklaren Fällen eine zeitnahe Fachprüfung anhand der Fakten, Verträge und anwendbaren Regeln.</p>
+<h2 id="zuerst-stabilisieren-dann-beurteilen">Zuerst stabilisieren, dann beurteilen</h2>
+<p>Eine <strong>Verletzung der Datensicherheit</strong> liegt nach Art. 5 Bst. h DSG vor, wenn Personendaten unbeabsichtigt oder widerrechtlich verlorengehen, gelöscht, vernichtet oder verändert werden oder Unbefugten offengelegt beziehungsweise zugänglich gemacht werden.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Personendaten sind Angaben über eine bestimmte oder bestimmbare <strong>natürliche Person</strong>. Damit kann ein fehlgeleitetes E-Mail ebenso relevant sein wie ein kompromittiertes Cloud-Konto, ein verlorener Laptop, ein Fehlrecht in einer Freigabe oder ein Ransomware-Angriff.</p>
+<p>Akute Eindämmung und rechtliche Einordnung laufen parallel. Trennen Sie eindeutig infizierte Systeme kontrolliert vom Netz, ohne Beweise unnötig zu verändern. Sichern Sie verfügbare Protokolle, Zeitstempel, Konfigurationsstände und die betroffenen Objekte. Das BACS empfiehlt bei Ransomware unter anderem das rasche Trennen infizierter Systeme sowie das Sichern von Logdateien. Forensische Sicherungen von Zwischenspeicher und Festplatten sollten vor weiteren Reparaturversuchen oder Neustarts durch Fachpersonen erfolgen, wenn eine forensische Untersuchung in Betracht kommt.<sup class="ref-link"><a href="#ref-9">[9]</a></sup></p>
+<p>Ein Verdacht auf Schadsoftware ist nicht mit einem bestätigten Angriff gleichzusetzen. Ein einzelnes Anzeichen, etwa ein langsames Gerät, beweist keine Infektion. Mehrere ungewöhnliche Beobachtungen rechtfertigen aber eine genauere Untersuchung; bei geschäftlich verwendeten Geräten empfiehlt das BACS, die zuständige IT oder den Arbeitgeber zu informieren.<sup class="ref-link"><a href="#ref-11">[11]</a></sup></p>
+<p>Bestimmen Sie unmittelbar eine verantwortliche Person für den Vorfall, eine Stellvertretung und einen Entscheidkanal zur Geschäftsleitung. Halten Sie fest, <strong>was</strong> bekannt ist, <strong>was</strong> nur vermutet wird und <strong>wann</strong> eine Annahme überprüft wird. Diese sachliche Ereignisakte hilft der technischen Untersuchung ebenso wie der späteren Meldung. Ein Muster für Rollen, Erfassung und Entscheidpunkte gehört in Ihre <a href="../notfallplanung.html">IT-Notfallplanung</a>; für die ersten Eindämmungsschritte kann auch der Beitrag <a href="./ransomware-erste-60-minuten.html">Ransomware im KMU: die ersten 60 Minuten</a> herangezogen werden.</p>
+<h2 id="entscheidungsbaum-drei-fragen-zwei-meldewege">Entscheidungsbaum: Drei Fragen, zwei Meldewege</h2>
+<p>Der folgende Ablauf ist bewusst kein Ersatz für die Prüfung des Einzelfalls. Er zeigt, welche Abklärungen parallel erfolgen sollten.</p>
+<h3 id="1-sind-personendaten-betroffen-und-liegt-eine-datensicherheitsverletzung-vor">1. Sind Personendaten betroffen und liegt eine Datensicherheitsverletzung vor?</h3>
+<p>Erfassen Sie Datenarten, Systeme, Personengruppen und möglichen Zugriff. Entscheidend ist nicht, ob ein Datensatz bereits nachweislich veröffentlicht wurde. Auch ein unbefugter Zugang oder eine unbeabsichtigte Offenlegung kann eine Datensicherheitsverletzung sein.<sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<p>Wenn keine Personendaten natürlicher Personen betroffen sind, greift Art. 24 DSG für diesen Vorfall nicht. Das bedeutet <strong>nicht</strong>, dass keine anderen Pflichten bestehen. Ein Ausfall, eine Erpressung oder ein Abfluss von Betriebsinformationen kann bei einer erfassten kritischen Infrastruktur dennoch BACS-relevant sein.<sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p>Klären Sie zudem Ihre Rolle. Der <strong>Verantwortliche</strong> entscheidet über Zweck und Mittel der Datenbearbeitung. Ein <strong>Auftragsbearbeiter</strong> verarbeitet Personendaten im Auftrag. Nach Art. 24 Abs. 3 DSG muss der Auftragsbearbeiter dem Verantwortlichen eine Verletzung so rasch als möglich melden. Die Meldung an den EDÖB obliegt dagegen dem Verantwortlichen.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Der EDÖB hält ausdrücklich fest, dass der Auftragsbearbeiter den Verantwortlichen über jede Datensicherheitsverletzung informieren muss, unabhängig von der späteren Risikoeinschätzung.<sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Die am 23. Oktober 2026 veröffentlichte Mitteilung des EDÖB zum Cyberangriff auf die PK Softech AG ist ein Anlass, Datenbearbeiterbeziehungen vor einem Vorfall greifbar zu machen. Der EDÖB untersucht dort unter anderem, welche Personendaten Vorsorgeeinrichtungen dem Softwareunternehmen zur Verfügung stellten, auf welchen rechtlichen Grundlagen Datenübertragungen beruhten, wie sie tatsächlich umgesetzt wurden und welche Informationen abgeflossen sind. Das Verfahren ist hängig. Die Mitteilung ist <strong>weder</strong> ein festgestellter Datenschutzverstoss <strong>noch</strong> eine neue allgemeine Meldefrist. Für die eigene Ereignisakte sollten Verantwortliche deshalb Datenflüsse, Rollen, Vertrags- und Meldewege sowie erreichbare Vorfallkontakte faktenbasiert festhalten; die rechtliche Rollenqualifikation bleibt im Einzelfall zu prüfen.<sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
+<h3 id="2-fuehrt-die-datenpanne-voraussichtlich-zu-einem-hohen-risiko">2. Führt die Datenpanne voraussichtlich zu einem hohen Risiko?</h3>
+<p>Art. 24 Abs. 1 DSG knüpft die Meldung an den EDÖB nicht an jede Datenpanne, sondern an ein <strong>voraussichtlich hohes Risiko</strong> für Persönlichkeit oder Grundrechte betroffener Personen. Der EDÖB verlangt eine Beurteilung sowohl der Schwere möglicher Folgen als auch ihrer Wahrscheinlichkeit. Massgebend ist die Beeinträchtigung für die am schwersten betroffenen Personen, nicht ein Durchschnittswert über alle Fälle.<sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Die folgenden Umstände sind keine starre Punkteliste. Sie strukturieren aber die Fachprüfung:</p>
+<ul>
+<li><strong>Daten und Kontext:</strong> Besonders schützenswerte Personendaten wie Gesundheits-, biometrische oder Sozialhilfedaten sprechen häufig für ein hohes Risiko. Auch Kopien von Identitätsdokumenten oder Kreditkartendaten können je nach Kontext schwer wiegen.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup></li>
+<li><strong>Zugriff und Angreifer:</strong> Ein möglicher Abfluss an unbekannte Dritte, eine Veröffentlichung im Darknet oder ein krimineller Zugriff kann das Risiko erhöhen. Ein blosses Vertrauen in unbekannte Empfänger genügt nicht, um ein objektiv hohes Risiko auszuschliessen.<sup class="ref-link"><a href="#ref-4">[4]</a></sup></li>
+<li><strong>Folgen für Menschen:</strong> Identitätsdiebstahl, Kreditkartenbetrug, Diskriminierung, Rufschädigung oder Vermögenseinbussen sind Beispiele möglicher schwerer Auswirkungen.<sup class="ref-link"><a href="#ref-4">[4]</a></sup></li>
+<li><strong>Bestimmbarkeit und Schutz:</strong> Wirksam verschlüsselte Daten, für die der unbefugte Dritte keinen Schlüssel besitzt, gelten für ihn als anonym; dies kann eine Meldepflicht ausschliessen. Pseudonymisierte Daten bleiben dagegen Personendaten. Auch der Umfang kann wichtig sein, doch viele Betroffene allein begründen nach dem EDÖB noch kein hohes Risiko.<sup class="ref-link"><a href="#ref-4">[4]</a></sup></li>
+</ul>
+<p>Geplante spätere Massnahmen dürfen die anfängliche Risikoeinstufung nicht kleinrechnen. Nachweisbare Sofortmassnahmen können in der Beurteilung berücksichtigt werden, wenn sie eine Zweckentfremdung rasch und belastbar ausschliessen oder mindern. Bei verbleibendem Zweifel, der ein hohes Risiko nicht mit hinreichender Wahrscheinlichkeit ausschliesst, soll nicht auf langwierige Abklärungen gewartet werden.<sup class="ref-link"><a href="#ref-4">[4]</a></sup> <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Diese Abwägung und insbesondere die Wirkung einer Verschlüsselung brauchen bei Grenzfällen eine datenschutzrechtliche Fachbeurteilung.</p>
+<h3 id="3-edoeb-melden-so-rasch-als-moeglich-nicht-schematisch-nach-72-stunden">3. EDÖB melden: «so rasch als möglich», nicht schematisch nach 72 Stunden</h3>
+<p>Besteht voraussichtlich ein hohes Risiko, meldet der Verantwortliche die Verletzung dem EDÖB <strong>so rasch als möglich</strong>. Art. 24 DSG nennt dafür keine pauschale Stundenfrist. Eine aus der EU-Datenschutz-Grundverordnung bekannte 72-Stunden-Regel darf daher weder als Schweizer Frist behauptet noch als Grund für ein Abwarten verstanden werden.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-10">[10]</a></sup> Der EDÖB erläutert: Ist das hohe Risiko nach einer raschen Analyse erkennbar oder nicht innert kurzer Zeit abschliessend auszuschliessen, muss gemeldet werden; bei Ransomware kann dies je nach Umständen bereits in der ersten Analyse der Fall sein.<sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Die Datenschutzverordnung (DSV) verlangt für die Meldung unter anderem Art der Verletzung, soweit möglich Zeitpunkt und Dauer, Kategorien und ungefähre Anzahl der betroffenen Daten und Personen, Folgen und Risiken, getroffene oder vorgesehene Massnahmen sowie eine Ansprechperson. Nicht verfügbare Angaben dürfen so rasch als möglich nachgereicht werden.<sup class="ref-link"><a href="#ref-2">[2]</a></sup> Das EDÖB-Portal <strong>DataBreach</strong> dient Verantwortlichen zur sicheren digitalen Übermittlung und ermöglicht den Download einer Bestätigung.<sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<p>Die Information betroffener Personen ist ein eigener Entscheid. Der Verantwortliche informiert sie, wenn dies zu ihrem Schutz erforderlich ist oder der EDÖB dies verlangt. Das Gesetz enthält Möglichkeiten, eine Information unter bestimmten Voraussetzungen einzuschränken, aufzuschieben oder darauf zu verzichten. <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Ob eine solche Ausnahme vorliegt und wie konkret informiert wird, braucht eine fachjuristische Beurteilung.<sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<h2 id="die-bacs-pflicht-anderer-geltungsbereich-kuerzere-frist">Die BACS-Pflicht: anderer Geltungsbereich, kürzere Frist</h2>
+<p>Seit 1. April 2025 gilt die Meldepflicht für Cyberangriffe auf kritische Infrastrukturen. Sie betrifft die im Art. 74b ISG aufgeführten Behörden und Organisationen, nicht pauschal jedes Schweizer KMU.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> Der Katalog umfasst unter anderem bestimmte Energie-, Finanz-, Gesundheits-, Verkehrs-, Telekommunikations- und Cloud-Anbieter sowie weitere öffentliche und private Betreiber. Beispielsweise erfasst das Gesetz Cloudcomputing-Anbieter mit Sitz in der Schweiz, wenn sie entsprechende Leistungen erbringen; es erfasst nicht automatisch jedes IT-Unternehmen. Für einzelne Gruppen bestehen Ausnahmen in der Cybersicherheitsverordnung (CSV). Das BACS kann auf Anfrage Auskunft über die Unterstellung geben und auf Antrag eine Verfügung erlassen.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<p>Für eine erfasste Organisation ist zusätzlich zu klären, ob ein <strong>Cyberangriff</strong> nach Art. 74d ISG vorliegt. Meldbar ist ein Angriff, wenn er die Funktionsfähigkeit der betroffenen kritischen Infrastruktur gefährdet, Informationen manipuliert oder abfliessen lässt, länger unentdeckt blieb oder mit Erpressung, Drohung oder Nötigung verbunden ist.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> Das ist ein anderer Test als das hohe Risiko nach DSG: Hier können auch nicht personenbezogene Informationen oder ein Verfügbarkeitsangriff relevant sein.</p>
+<p>Die Erstmeldung an das BACS ist innert <strong>24 Stunden nach Entdeckung</strong> des Angriffs fällig. Sind dabei nicht alle erforderlichen Informationen bekannt, gewährt das BACS für deren Ergänzung eine Frist von <strong>14 Tagen</strong>.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup> Das BACS stellt dafür im Cyber Security Hub ein Meldeformular bereit; alternativ beschreibt der Meldebutton eine Meldemöglichkeit ohne Plattformzugang.<sup class="ref-link"><a href="#ref-8">[8]</a></sup> Das Formular kann auf Wunsch an weitere zuständige Behörden, beispielsweise den EDÖB, weiterleiten. <strong>Verlassen Sie sich im konkreten Fall nicht ungeprüft auf eine Weiterleitung:</strong> Ordnen Sie die EDÖB-Prüfung und die BACS-Prüfung getrennt zu, klären Sie den Umfang der Weiterleitung und sichern Sie die Eingangsbestätigung.<sup class="ref-link"><a href="#ref-8">[8]</a></sup></p>
+<h3 id="hypothetisches-praxisbeispiel-ein-angriff-zwei-pruefungen">Hypothetisches Praxisbeispiel: Ein Angriff, zwei Prüfungen</h3>
+<p>Ein <strong>hypothetisches</strong> Spital, das auf einer kantonalen Spitalliste steht, entdeckt Ransomware. Patientendaten sind vorübergehend nicht verfügbar; die Angreifer behaupten zudem, Daten kopiert zu haben. Das Spital trennt betroffene Systeme, sichert Beweise und bewertet die Behandlungsauswirkung. Wegen des Spitalstatus ist die BACS-Unterstellung nach Art. 74b ISG zu prüfen; die Gefährdung der Funktionsfähigkeit und der behauptete Abfluss sind mögliche BACS-Tatbestände. Die Erstmeldung muss daher gegebenenfalls innerhalb von 24 Stunden erfolgen.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<p>Unabhängig davon sind Gesundheitsdaten besonders schützenswerte Personendaten. Der behauptete Abfluss kann für einzelne Patientinnen und Patienten ein voraussichtlich hohes Risiko darstellen. Der Verantwortliche muss deshalb parallel die EDÖB-Meldung «so rasch als möglich» beurteilen und die Schutzbedürftigkeit einer Betroffeneninformation prüfen.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup> Das Beispiel entscheidet keine Rechtsfrage vorweg: Tatsächlicher Datenzugriff, Rollen, Unterstellung und Sofortmassnahmen sind konkret festzustellen und fachlich zu würdigen.</p>
+<h2 id="in-sieben-schritten-vom-alarm-zur-nachvollziehbaren-entscheidung">In sieben Schritten vom Alarm zur nachvollziehbaren Entscheidung</h2>
+<ol>
+<li><strong>Vorfall eröffnen und eindämmen.</strong> Erfassen Sie Entdeckungszeit, Meldende, Systeme, Datenquellen und erste Schutzmassnahmen. Verhindern Sie weitere Ausbreitung, ohne Untersuchungsdaten unnötig zu zerstören.</li>
+<li><strong>Fakten in zwei Spuren ordnen.</strong> Führen Sie eine Datenschutzspur für Personendaten, Betroffene und Risiken sowie eine Cyber-/Betriebsspur für Auswirkung, Angriff und BACS-Status. Ergänzen Sie den Stand laufend.</li>
+<li><strong>Rollen und Verträge prüfen.</strong> Bestimmen Sie Verantwortlichen, Auftragsbearbeiter, Versicherer, Dienstleister und allfällige regulatorische Ansprechpartner. Der Auftragsbearbeiter informiert den Verantwortlichen unverzüglich; die Zuständigkeit für die EDÖB-Meldung bleibt klar zuzuweisen.<sup class="ref-link"><a href="#ref-1">[1]</a></sup></li>
+<li><strong>EDÖB-Risiko früh beurteilen.</strong> Beurteilen Sie Schwere und Wahrscheinlichkeit für die am stärksten betroffenen Personen. Kann ein hohes Risiko nicht innert kurzer Zeit belastbar ausgeschlossen werden, bereiten Sie eine zeitnahe Meldung vor.<sup class="ref-link"><a href="#ref-4">[4]</a></sup></li>
+<li><strong>BACS-Geltung und Angriffstatbestand separat prüfen.</strong> Gleichen Sie die Organisation mit Art. 74b ISG und allfälligen CSV-Ausnahmen ab. Prüfen Sie danach die Kriterien des Art. 74d ISG. Bei Unsicherheit nutzen Sie die Auskunftsmöglichkeit des BACS und holen Sie rechtzeitig Fachhilfe bei.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></li>
+<li><strong>Melden, ergänzen, kommunizieren.</strong> Übermitteln Sie jede erforderliche Meldung über den vorgesehenen Kanal. Reichen Sie fehlende Fakten nach, wenn dies vorgesehen ist. Bereiten Sie eine Betroffeneninformation nur auf einer geprüften Faktenbasis vor. Für die Kommunikation nach einem Angriff hilft der Beitrag <a href="./cyberangriff-kommunikation.html">Notfallkommunikation für Schweizer KMU</a>.</li>
+<li><strong>Entscheid und Verbesserung festhalten.</strong> Archivieren Sie Faktenstand, Risikobegründung, Meldungen, Bestätigungen, Kommunikationsfreigaben und Folgemassnahmen. Überführen Sie technische und organisatorische Lücken in Ihr <a href="../risikomanagement.html">Risikomanagement</a> und testen Sie den Prozess im Notfallplan.</li>
+</ol>
+<p>Der <a href="./resources/03-datenpanne-entscheidungsbaum.html">EDÖB-/BACS-Entscheidungsbaum und das Vorfallsprotokoll</a> übersetzen diese Schritte in ausfüllbare Kontrollpunkte. Sie unterstützen die erste Strukturierung, nicht die fachliche Entscheidung.</p>
+<h2 id="typische-fehler-die-fristen-und-schutz-gefaehrden">Typische Fehler, die Fristen und Schutz gefährden</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Fehler</th><th>Warum er problematisch ist</th><th>Bessere Praxis</th></tr></thead><tbody><tr><td>Auf eine pauschale 72-Stunden-Frist warten</td><td>Das DSG verlangt eine Meldung so rasch als möglich, wenn voraussichtlich ein hohes Risiko besteht.</td><td>Nach einer kurzen, belastbaren Erstbeurteilung entscheiden und fehlende DSV-Angaben nachreichen.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup></td></tr><tr><td>EDÖB- und BACS-Prüfung zusammenziehen</td><td>Auslöser, Adressat und Frist sind verschieden.</td><td>Zwei getrennte Entscheidspuren mit einer gemeinsamen Ereignisakte führen.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup></td></tr><tr><td>Erst vollständige Forensik abwarten</td><td>Bei unklarem hohem Risiko kann dies die zeitnahe DSG-Meldung verzögern.</td><td>Früh melden, falls nötig ergänzen, und die Untersuchung fortführen.<sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup></td></tr><tr><td>«Kein Datenabfluss bewiesen» mit «kein Risiko» verwechseln</td><td>Ein unbefugter Zugang oder Verlust kann bereits relevant sein; Ransomware schafft oft Unsicherheit.</td><td>Zugriff, Datenarten und Ausschlussgründe nachvollziehbar bewerten.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup></td></tr><tr><td>Die Information Betroffener als automatische Folge jeder EDÖB-Meldung behandeln</td><td>Der Massstab ist der erforderliche Schutz der Betroffenen oder eine Anordnung des EDÖB.</td><td>Betroffeneninformation separat, verständlich und fachlich geprüft entscheiden.<sup class="ref-link"><a href="#ref-1">[1]</a></sup></td></tr></tbody></table></div>
+<h2 id="meldefaehigkeit-ist-fuehrungsaufgabe">Meldefähigkeit ist Führungsaufgabe</h2>
+<p>Eine belastbare Entscheidung entsteht nicht erst im Incident. Geschäftsleitung und IT sollten vorab festlegen, wer den Vorfall führt, wer den Verantwortlichen vertritt, wer die BACS-Unterstellung prüft und wer Meldungen freigibt. Ebenso wichtig sind aktuelle Kontaktlisten, Zugänge zu Meldeportalen, abgestimmte Auftragsbearbeitungsverträge und ein erprobter Weg für Betroffenenkommunikation. Eine <a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a> kann die technischen und organisatorischen Grundlagen sichtbar machen; ein Meldeprozess muss anschliessend in der Notfallplanung tatsächlich geübt werden.</p>
+<div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body"><strong>Nächster Schritt:</strong> Halten Sie Fakten, Fristen und Entscheide im <a href="./resources/03-datenpanne-entscheidungsbaum.html">Entscheidungsbaum</a> fest. Für eine Anfrage zur <a href="../sicherheitsanalyse.html">DKSchV-Sicherheitsanalyse</a> steht <a href="../kontakt.html">Kontakt</a> zur Verfügung. Das ersetzt keine rechtliche Einzelfallbeurteilung.</div></div>
+<h2 id="quellen">Quellen</h2>
+        
+      <div class="references-section">
+        <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
+          Geprüfte Primärquellen &amp; Rechtsreferenzen
+        </h3>
+        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
+          Alle behördlichen Vorgaben, Gesetzesartikel und technischen Richtlinien wurden im Rahmen der DKSchV-Quellenprüfung verifiziert:
+        </p>
+        <ul class="references-list">
+    
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/491/de" target="_blank" rel="noopener noreferrer">Fedlex – Bundesgesetz über den Datenschutz (DSG), insbesondere Art. 5 und Art. 24</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/568/de" target="_blank" rel="noopener noreferrer">Fedlex – Verordnung über den Datenschutz (DSV), Art. 15 zur Meldung von Datensicherheitsverletzungen</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
+            <a href="https://www.edoeb.admin.ch/de/databreach" target="_blank" rel="noopener noreferrer">EDÖB – DataBreach: Meldung von Datensicherheitsverletzungen durch Verantwortliche</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
+            <a href="https://www.edoeb.admin.ch/dam/de/sd-web/T64CAUyvAMcF/1_2%20Leitfaden%20des%20ED%C3%96B%20betreffend%20die%20Meldung%20von%20Datensicherheitsverletzungen%20und%20Information%20der%20Betroffenen%20nach%20Art.%2024%20DSG_DE.pdf" target="_blank" rel="noopener noreferrer">EDÖB – Leitfaden zur Meldung von Datensicherheitsverletzungen und Information der Betroffenen nach Art. 24 DSG, Version 1.2</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/232/de" target="_blank" rel="noopener noreferrer">Fedlex – Bundesgesetz über die Informationssicherheit beim Bund (ISG), Art. 74a–74f</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2025/169/de" target="_blank" rel="noopener noreferrer">Fedlex – Verordnung über die Cybersicherheit (CSV), Art. 12 sowie Art. 14–16</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/informationen-zur-meldepflicht" target="_blank" rel="noopener noreferrer">BACS – Informationen zur Meldepflicht für Cyberangriffe auf kritische Infrastrukturen</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/wie-muss-gemeldet-werden" target="_blank" rel="noopener noreferrer">BACS – Wie muss ein Cyberangriff gemeldet werden?</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/ransomware-was-nun" target="_blank" rel="noopener noreferrer">BACS – Ransomware: Was nun?</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32016R0679" target="_blank" rel="noopener noreferrer">EUR-Lex – Verordnung (EU) 2016/679 (Datenschutz-Grundverordnung), Art. 33</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-11">
+          <span class="ref-num">[11]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/26w40-de" target="_blank" rel="noopener noreferrer">BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-12">
+          <span class="ref-num">[12]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
+            <a href="https://www.edoeb.admin.ch/de/edoeb-leitete-nach-cyberangriff-auf-softwarelieferant-abklaerungen-ein" target="_blank" rel="noopener noreferrer">EDÖB – Abklärungen nach Cyberangriff auf Softwarelieferant, 23. Oktober 2026</a>
+          </div>
+        </li>
+      
+        </ul>
+      </div>
+    
+        
+        <!-- Post-article consultation box -->
+        <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
+          <span class="badge badge-teal" style="align-self: flex-start;">Individuelle Schweizer Sicherheitsberatung</span>
+          <h3 style="font-size: 22px; font-weight: 700; color: #ffffff; margin: 0;">Benötigen Sie Unterstützung bei der Umsetzung?</h3>
+          <p style="font-size: 15px; color: #cbd5e1; margin: 0; line-height: 1.6;">
+            Ob fundierte Sicherheitsanalyse, Microsoft 365 Cloud-Audit oder die Vorbereitung eines massgeschneiderten IT-Notfallplans: Wir unterstützen Sie pragmatisch und diskret im Wallis und der gesamten Schweiz.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+            <a href="../kontakt.html" class="btn btn-primary" style="background: var(--teal-accent);">Kostenloses Erstgespräch anfragen &rarr;</a>
+            <a href="../notfallplanung.html" class="btn btn-secondary" style="border-color: #334155; color: #ffffff;">Notfallplanung für KMU</a>
+          </div>
+        </div>
+      </article>
+
+      
+      <aside class="article-sidebar">
+        <div class="toc-title">Inhaltsverzeichnis</div>
+        <ul class="toc-list">
+          <li><a href="#zuerst-stabilisieren-dann-beurteilen">Zuerst stabilisieren, dann beurteilen</a></li>
+<li><a href="#entscheidungsbaum-drei-fragen-zwei-meldewege">Entscheidungsbaum: Drei Fragen, zwei Meldewege</a></li>
+<li><a href="#die-bacs-pflicht-anderer-geltungsbereich-kuerzere-frist">Die BACS-Pflicht: anderer Geltungsbereich, kürzere Frist</a></li>
+<li><a href="#in-sieben-schritten-vom-alarm-zur-nachvollziehbaren-entscheidung">In sieben Schritten vom Alarm zur nachvollziehbaren Entscheidung</a></li>
+<li><a href="#typische-fehler-die-fristen-und-schutz-gefaehrden">Typische Fehler, die Fristen und Schutz gefährden</a></li>
+<li><a href="#meldefaehigkeit-ist-fuehrungsaufgabe">Meldefähigkeit ist Führungsaufgabe</a></li>
+<li><a href="#quellen">Quellen</a></li>
+          <li><a href="#quellen-und-referenzen">Quellen &amp; Referenzen</a></li>
+        </ul>
+      </aside>
+    
+    </div>
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 38px; filter: brightness(0) invert(1);">
+          <p>DKSchV Dini ist Ihr spezialisierter Schweizer Partner für Cyber-Security, Sicherheitsanalysen, IT-Notfallplanung und Datenschutz nach Schweizer Standard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Dienstleistungen</h4>
+          <ul class="footer-links">
+            <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
+            <li><a href="../risikomanagement.html">Risikomanagement</a></li>
+            <li><a href="../notfallplanung.html">Notfallplanung</a></li>
+            <li><a href="../wissen.html">Wissen &amp; Ratgeber</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul class="footer-links">
+            <li><a href="../ueber-uns.html">Über uns</a></li>
+            <li><a href="../kontakt.html">Kontakt &amp; Standort</a></li>
+            <li><a href="../impressum.html">Impressum</a></li>
+            <li><a href="../datenschutz.html">Datenschutz (nDSG)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Standort &amp; Notfallkontakt</h4>
+          <p style="font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 12px;">
+            <strong>DKSchV Dini</strong><br>Andreas Dini<br>Bammattenweg 19<br>CH-3904 Naters (Wallis)
+          </p>
+          <p style="font-size: 14px; color: #94a3b8;">
+            E-Mail: <a href="mailto:info@dkschv.ch" style="color: #ffffff;">info@dkschv.ch</a><br>
+            Telefon: <a href="tel:+41798446669" style="color: #ffffff;">+41 79 844 66 69</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
+        <div class="footer-legal-links">
+          <a href="../impressum.html">Impressum</a>
+          <a href="../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backup-Selbstcheck für Schweizer KMU | DKSchV</title>
+  <meta name="description" content="Arbeitsvorlage für 3-2-1-Backups, getrennte Administration, geschützte Kopien und dokumentierte Restore-Tests.">
+  <link rel="icon" type="image/png" href="../../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    /* Print-specific tweaks */
+    @page { margin: 1.5cm; }
+  </style>
+</head>
+<body style="background: var(--bg-light);">
+
+  <!-- Printable Action Bar -->
+  <div class="resource-top-bar no-print">
+    <div class="container resource-bar-inner">
+      <div>
+        <a href="../ransomware-resistente-backups.html" style="color: #cbd5e1; text-decoration: none; font-size: 13.5px; font-weight: 500;">&larr; Zurück zum Fachleitfaden</a>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <span style="font-size: 12.5px; color: #94a3b8;">Format: DIN A4 Druckvorlage</span>
+        <button onclick="window.print()" class="btn-print">
+          <span>🖨️ Arbeitsblatt drucken / PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="resource-sheet">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
+        <div>
+          <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
+            DKSchV Schweiz · Dokumentiertes Arbeitsmittel
+          </span>
+          <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
+            Backup-Selbstcheck für ransomware-resistente Sicherungen
+          </h1>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
+            Stand 1. November 2026 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+          </p>
+        </div>
+        <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+      </div>
+
+      <div class="article-content" style="font-size: 15px;">
+        <h2 id="zweck">Zweck</h2>
+<p>Dieser Selbstcheck hilft Geschäftsleitungen und IT-Verantwortlichen von Schweizer KMU, die <strong>Wiederherstellungsfähigkeit</strong> ihrer Backup-Architektur strukturiert zu besprechen. Er fokussiert auf das 3-2-1-Prinzip, getrennte Administration, Offline- oder unveränderbare Kopien, Wiederherstellungsziele und Restore-Tests.</p>
+<p>Das Arbeitsmittel ist eine Orientierung für die Priorisierung von Verbesserungen. Ein ausgefüllter Selbstcheck, ein erfolgreiches Backup-Protokoll oder ein einzelner Test sind <strong>keine Garantie</strong> gegen Ransomware, Datenverlust oder Betriebsunterbruch.</p>
+<p>Das BACS empfiehlt getrennte Sicherungskopien und regelmässige Wiederherstellungstests. Der internationale StopRansomware-Leitfaden empfiehlt zusätzlich offline gehaltene, geschützte Sicherungen und Integritätsprüfungen.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
+<p>Bei einem aktuellen Verdacht auf Schadsoftware ist dieser Selbstcheck keine Vorfallsanweisung: Das BACS empfiehlt die Untersuchung durch eine Fachperson und bei Geschäftsgeräten die Information der zuständigen IT. <sup class="ref-link"><a href="#ref-8">[8]</a></sup></p>
+<h2 id="anwendung">Anwendung</h2>
+<p>Füllen Sie den Selbstcheck gemeinsam mit der internen IT, Prozessverantwortlichen und – falls vorhanden – dem IT-Dienstleister aus. Verwenden Sie pro kritischem Dienst oder Dienstgruppe ein separates Blatt. Belegen Sie Antworten soweit möglich mit einem Datum, einer Konfiguration, einem Testprotokoll oder einem vertraglichen Nachweis.</p>
+<p><strong>Bewertung je Kontrollpunkt:</strong> ☐ Ja  ☐ Teilweise  ☐ Nein  ☐ Nicht bekannt</p>
+<p><strong>Nachweis / Fundstelle:</strong> ________________________________________________</p>
+<p><strong>Massnahme, Verantwortliche Person, Termin:</strong> ______________________________</p>
+<div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body"><strong>Arbeitsregel:</strong> «Nicht bekannt» ist ein Befund. Behandeln Sie ihn wie eine offene Klärung, nicht wie ein «Ja».</div></div>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="1-geltungsbereich-und-verantwortlichkeit">1. Geltungsbereich und Verantwortlichkeit</h2>
+<p><strong>Unternehmen / Bereich:</strong> ________________________________________________</p>
+<p><strong>Kritischer Dienst / Prozess:</strong> ____________________________________________</p>
+<p><strong>Fachverantwortliche Person:</strong> ____________________________________________</p>
+<p><strong>IT-Verantwortliche Person:</strong> ______________________________________________</p>
+<p><strong>IT-Dienstleister / Notfallkontakt:</strong> _______________________________________</p>
+<p><strong>Datum der Erhebung:</strong> __________________</p>
+<p><strong>Letzter dokumentierter Restore-Test:</strong> ____________________________________</p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Bewertung</th><th>Nachweis / Massnahme</th></tr></thead><tbody><tr><td>Der geschäftskritische Dienst, seine Daten und der zuständige Fachbereich sind benannt.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Abhängigkeiten für den Wiederanlauf sind erfasst, etwa Identitäten, Netzwerk, DNS, Lizenzen, Schlüssel und externe Dienste.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Es ist festgelegt, wer einen Restore auslöst, wer ihn technisch durchführt und wer ihn fachlich abnimmt.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Kontakt- und Eskalationswege sind auch verfügbar, wenn E-Mail oder Kollaborationsplattformen ausfallen.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr></tbody></table></div>
+<h2 id="2-3-2-1-architektur-und-datenumfang">2. 3-2-1-Architektur und Datenumfang</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Bewertung</th><th>Nachweis / Massnahme</th></tr></thead><tbody><tr><td>Neben der produktiven Fassung bestehen mindestens zwei Sicherungskopien der für den Dienst notwendigen Daten.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Die Kopien nutzen unterschiedliche Speicherarten oder ausreichend getrennte Fehlerdomänen.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Mindestens eine Kopie befindet sich ausserhalb des primären Standorts.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Der Backup-Umfang umfasst nicht nur Fach- und Dateidaten, sondern auch notwendige Konfigurationen und Wiederanlaufunterlagen.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Es ist dokumentiert, was bewusst <strong>nicht</strong> gesichert wird und welches Risiko damit akzeptiert wird.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr></tbody></table></div>
+<p><strong>Kopienübersicht</strong></p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kopie</th><th>Daten / Systeme</th><th>Speicherort und Speicherart</th><th>Eigentümer / Zugriff</th><th>Aufbewahrung</th><th>Offline / unveränderbar?</th></tr></thead><tbody><tr><td>Produktion</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td></tr><tr><td>Backup 1</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td></tr><tr><td>Backup 2</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td></tr><tr><td>Weitere</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td></tr></tbody></table></div>
+<h2 id="3-schutz-der-backup-administration">3. Schutz der Backup-Administration</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Bewertung</th><th>Nachweis / Massnahme</th></tr></thead><tbody><tr><td>Backup-Administrationskonten sind von normalen Benutzerkonten getrennt.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Privilegierte Backup-Zugänge sind von der Produktivadministration sinnvoll getrennt und mit Mehrfaktor-Authentisierung geschützt.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Nur berechtigte Personen können Aufbewahrung, Löschungen oder Schutzregeln verändern.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Berechtigungen von IT-Dienstleistern, Fernwartung und Notfallzugängen sind dokumentiert und periodisch überprüft.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Administrative Änderungen und fehlgeschlagene Zugriffe sind nachvollziehbar protokolliert und werden ausgewertet.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr></tbody></table></div>
+<h2 id="4-isolierte-und-unveraenderbare-kopien">4. Isolierte und unveränderbare Kopien</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Bewertung</th><th>Nachweis / Massnahme</th></tr></thead><tbody><tr><td>Mindestens eine relevante Sicherungskopie ist nicht dauerhaft aus dem Produktivnetz erreichbar.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Für eine kritische Kopie ist eine unveränderbare Aufbewahrung mit klarer Frist und überprüften Änderungsrechten konfiguriert.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Die Schutzdauer ist aus Erkennungs-, Wiederherstellungs- und Geschäftsanforderungen abgeleitet.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Für die unveränderbare Kopie sind Modus, Aufbewahrungsregel, Rechte zum Umgehen oder Ändern und Protokollierung dokumentiert.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Wiederherstellung aus der geschützten Kopie ist praktisch möglich, ohne sie unnötig dem kompromittierten Produktivumfeld auszusetzen.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr></tbody></table></div>
+<p><strong>Konfiguration der letzten Rückfallebene</strong></p>
+<p>Kopietyp / Plattform: _______________________________________________________</p>
+<p>Offline- oder Trennungsmechanismus: ________________________________________</p>
+<p>Unveränderbarkeitsmodus / Aufbewahrungsfrist: _______________________________</p>
+<p>Wer darf die Regeln ändern oder umgehen? ___________________________________</p>
+<p>Letzte Prüfung der Konfiguration: ___________________________________________</p>
+<h2 id="5-wiederherstellungsziele-und-reihenfolge">5. Wiederherstellungsziele und Reihenfolge</h2>
+<p>Der <strong>Recovery Point Objective (RPO)</strong> beschreibt den angestrebten Wiederherstellungspunkt und damit den tolerierten Datenverlust in Zeit. Der <strong>Recovery Time Objective (RTO)</strong> beschreibt die angestrebte Zeit bis zur Wiederherstellung.<sup class="ref-link"><a href="#ref-3">[3]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Bewertung</th><th>Nachweis / Massnahme</th></tr></thead><tbody><tr><td>Für den Dienst ist ein RPO definiert: der maximal hinnehmbare Datenverlust bis zum Wiederherstellungspunkt.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Für den Dienst ist ein RTO definiert: die maximal vertretbare Wiederherstellungsdauer bis zur fachlichen Nutzbarkeit.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>RPO und RTO sind vom Fachbereich bestätigt und mit der tatsächlichen Backup-Frequenz sowie Restore-Kapazität abgeglichen.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Die Wiederanlaufreihenfolge berücksichtigt technische und fachliche Abhängigkeiten.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Für den Fall, dass RPO oder RTO nicht erreicht werden, ist eine Eskalation oder Behelfslösung definiert.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr></tbody></table></div>
+<p><strong>Zielwerte und Abnahme</strong></p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Dienst / Prozess</th><th>Priorität</th><th>RPO</th><th>RTO</th><th>Wiederanlaufreihenfolge</th><th>Fachliche Abnahme durch</th></tr></thead><tbody><tr><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td></tr><tr><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td></tr><tr><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td><td>__________________</td></tr></tbody></table></div>
+<h2 id="6-restore-test-und-verbesserungen">6. Restore-Test und Verbesserungen</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Bewertung</th><th>Nachweis / Massnahme</th></tr></thead><tbody><tr><td>Ein Restore-Test ist geplant und umfasst ein realistisches Ransomware- oder Datenverlustszenario.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Der Test wird in einer geeigneten, kontrollierten Umgebung durchgeführt.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Der Test prüft Datenstand, Datenintegrität, technische Funktion, Benutzerzugriff und fachliche Nutzbarkeit.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Start, Ende, verwendete Sicherung, erreichte Datenaktualität und Abweichungen werden dokumentiert.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr><tr><td>Offene Punkte haben eine verantwortliche Person, einen Termin und einen Nachtest.</td><td>☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt</td><td>__________________________________</td></tr></tbody></table></div>
+<p><strong>Protokoll des letzten oder nächsten Restore-Tests</strong></p>
+<p>Testszenario: ______________________________________________________________</p>
+<p>Testdatum / Ort / Umgebung: __________________________________________________</p>
+<p>Verwendeter Sicherungsstand: _______________________________________________</p>
+<p>Teststart: __________________  Testende: __________________</p>
+<p>Erreichte Datenaktualität: __________________________________________________</p>
+<p>Technische Resultate: ______________________________________________________</p>
+<p>Fachliche Abnahme / Einschränkungen: ________________________________________</p>
+<p>Abweichung zu RPO / RTO: ___________________________________________________</p>
+<p>Offene Massnahmen / Eigentümer / Termin: ____________________________________</p>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="kurzfazit-und-priorisierung">Kurzfazit und Priorisierung</h2>
+<p><strong>Kritische Lücken, die vor dem nächsten Test oder vor einer Architekturänderung geklärt werden müssen:</strong></p>
+<ol>
+<li>________________________________________________________________________</li>
+<li>________________________________________________________________________</li>
+<li>________________________________________________________________________</li>
+</ol>
+<p><strong>Nächste verbindliche Massnahme:</strong> _________________________________________</p>
+<p><strong>Verantwortliche Person:</strong> __________________</p>
+<p><strong>Termin:</strong> __________________</p>
+<p><strong>Termin für Nachtest / Review:</strong> ___________________________________________</p>
+<h2 id="grenzen-und-fachliche-pruefung">Grenzen und fachliche Prüfung</h2>
+<p>Dieses Arbeitsmittel bildet keine vollständige Sicherheits-, Datenschutz-, Vertrags- oder Risikoanalyse ab. Die passende Lösung hängt insbesondere von Schutzbedarf, Datenarten, Geschäftsprozessen, Infrastruktur, Dienstleistermodell, Wiederherstellungszielen und anwendbaren Aufbewahrungs- oder Löschpflichten ab.</p>
+<p><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Eine fachliche und bei rechtlichen Fragen fachjuristische Prüfung ist erforderlich, wenn Sie beurteilen müssen, ob Ihre konkrete Backup-Architektur, Aufbewahrungsfrist, Datenbearbeitung oder vertragliche Regelung den Anforderungen des DSG, der Datenschutzverordnung oder weiteren anwendbaren Vorgaben genügt.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup> Der Selbstcheck ersetzt weder einen Restore-Test noch ein IT-Notfallkonzept. Das BACS ordnet Wiederanlauf, Verantwortlichkeiten und Nachbearbeitung in ein umfassendes Notfallkonzept ein.<sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<h2 id="quellen">Quellen</h2>
+      </div>
+
+      <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+        <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
+        <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

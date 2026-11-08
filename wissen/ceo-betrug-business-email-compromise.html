@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEO-Betrug und BEC erkennen: Schweizer KMU | DKSchV</title>
+  <meta name="description" content="Manipulierte Zahlungsaufträge und E-Mail-Konten erkennen: Prüfschritte, Rückbestätigung und Erstreaktion für Schweizer KMU.">
+  <link rel="canonical" href="https://www.dkschv.ch/wissen/ceo-betrug-business-email-compromise.html">
+  <link rel="icon" type="image/png" href="../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <!-- OpenGraph -->
+  <meta property="og:title" content="CEO-Betrug und BEC erkennen: Schweizer KMU">
+  <meta property="og:description" content="Manipulierte Zahlungsaufträge und E-Mail-Konten erkennen: Prüfschritte, Rückbestätigung und Erstreaktion für Schweizer KMU.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.dkschv.ch/wissen/ceo-betrug-business-email-compromise.html">
+  <meta property="article:published_time" content="08.10.2026">
+  <meta property="article:author" content="DKSchV Redaktion">
+
+  <!-- Schema.org Article JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "CEO-Betrug und BEC erkennen: Schweizer KMU",
+    "description": "Manipulierte Zahlungsaufträge und E-Mail-Konten erkennen: Prüfschritte, Rückbestätigung und Erstreaktion für Schweizer KMU.",
+    "inLanguage": "de-CH",
+    "mainEntityOfPage": "https://www.dkschv.ch/wissen/ceo-betrug-business-email-compromise.html",
+    "author": {
+      "@type": "Organization",
+      "name": "DKSchV Dini Cyber-Security",
+      "url": "https://www.dkschv.ch"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DKSchV Schweiz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.dkschv.ch/assets/images/dkschv_logo.png"
+      }
+    },
+    "datePublished": "08.10.2026",
+    "dateModified": "1. November 2026"
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress-bar"></div>
+  
+  <!-- Top Emergency Bar -->
+  <div class="top-emergency-bar">
+    <div class="container top-bar-inner">
+      <div class="top-trust-tags">
+        <span class="top-trust-tag">🇨🇭 Schweizer Cyber-Security &amp; Datenschutz</span>
+        <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
+        <span class="top-trust-tag">📍 Naters / Wallis</span>
+      </div>
+      <div>
+        <a href="../kontakt.html#notfall" class="emergency-quicklink">
+          🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-link" title="DKSchV Schweiz Startseite">
+        <img src="../assets/images/dkschv_logo.png" alt="DKSchV Schweiz Logo" class="brand-logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link ">Home</a></li>
+          <li><a href="../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
+          <li><a href="../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
+          <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
+          <li><a href="../wissen.html" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="../ueber-uns.html" class="nav-link ">Über uns</a></li>
+          <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li><a href="../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <!-- Article Page Header -->
+  <header class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <span class="sep">/</span>
+        <span style="color:#ffffff;">E-Mail & Betrug</span>
+      </nav>
+
+      <span class="category-tag" style="margin-bottom: 16px;">E-Mail & Betrug</span>
+      <h1 class="article-page-title">CEO-Betrug und BEC erkennen: Schweizer KMU</h1>
+
+      <div class="article-page-meta">
+        <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
+        <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 14 Min.</strong></span>
+        <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
+        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Main Content -->
+  <main class="container">
+    <div class="article-container">
+      <article class="article-content">
+        
+      <div class="article-resource-box">
+        <div class="resource-box-content">
+          <h4>📥 Passendes Arbeitsmittel: Zahlungsprüfprotokoll: Bankverbindung und aussergewöhnliche Zahlungsaufträge</h4>
+          <p>Ausfüllbare Vorlage für die unabhängige Prüfung von IBAN-Änderungen und aussergewöhnlichen Zahlungsaufträgen.</p>
+        </div>
+        <a href="./resources/02-zahlungspruefprotokoll.html" class="resource-btn">
+          <span>🖨️ Arbeitsvorlage öffnen</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    
+        <div class="article-lead"><strong>Kurzantwort:</strong> CEO-Betrug imitiert häufig eine Führungsperson, um eine dringende Zahlung auszulösen. <strong>Business Email Compromise (BEC)</strong> beziehungsweise Rechnungsmanipulationsbetrug kann echte Korrespondenz ausnutzen; dabei kann ein eigenes oder ein fremdes Geschäftspostfach kompromittiert sein, die Absenderadresse aber auch nur täuschend echt wirken. Entscheidend ist deshalb nicht die Etikette, sondern ein separater Zahlungsprüfprozess: Rückruf über eine unabhängig bekannte Nummer, dokumentierte Rückbestätigung und eine zur Organisation passende Freigabe. Bei einer verdächtigen Zahlung halten Sie Ausführung und Stammdatenänderung an und klären über den etablierten Kanal. Ist Geld bereits überwiesen, kontaktieren Sie unverzüglich die Bank. Bei Anzeichen für ein kompromittiertes eigenes Postfach sichern Sie die Kontrolle über Konto und Identitäten, prüfen Weiterleitungen und informieren betroffene Kontakte über einen vertrauenswürdigen Kanal. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup></div>
+<p><strong>Stand der Quellenprüfung: 1. November 2026.</strong> Diese Standangabe dokumentiert den gezielten Abgleich der unten genannten Quellen. Sie ist keine Fach-, Rechts-, Forensik-, Tenant- oder Veröffentlichungsfreigabe.</p>
+<h2 id="die-entscheidende-abgrenzung-taeuschung-oder-kompromittiertes-postfach">Die entscheidende Abgrenzung: Täuschung oder kompromittiertes Postfach?</h2>
+<p>Für die erste Reaktion ist nicht entscheidend, wie überzeugend eine Nachricht aussieht. Entscheidend ist, ob lediglich der <strong>Absender vorgetäuscht</strong> wurde oder ob jemand unbefugt Zugriff auf ein echtes Firmenpostfach hat. Beides kann zu Zahlungsbetrug führen. Die technischen und organisatorischen Folgen sind jedoch unterschiedlich.</p>
+<p>Beim <strong>CEO-Betrug</strong> wird eine Führungsperson imitiert. Häufig erhält die Buchhaltung eine angeblich vertrauliche, eilige Anweisung, Geld zu überweisen oder Geschenkkarten zu kaufen. Die Angreifer können Namen, Funktionen und E-Mail-Adressen aus öffentlich verfügbaren Quellen ableiten. Das BACS warnt ausdrücklich davor, Geld zu überweisen oder Geschenkkarten zu kaufen, ohne vorher Rücksprache zu halten. <sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
+<p>BACS weist seit der vorangehenden Quellenprüfung zudem darauf hin, dass einzeln harmlos wirkende, kombinierte Informationen personalisiertes Phishing, Identitätsdiebstahl oder gezielten Betrug erleichtern können. Zusammen mit öffentlich zugänglichen Angaben zu Namen, Funktionen und E-Mail-Adressen können solche Informationen die Vorbereitung einer glaubwürdigen Täuschung erleichtern. <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
+<p>Beim <strong>Business Email Compromise (BEC)</strong>, auf Deutsch häufig Rechnungsmanipulationsbetrug, missbrauchen Täter einen glaubwürdigen Geschäftskontext, um Zahlungen umzuleiten. Dies kann über ein kompromittiertes Postfach und einen echten Verlauf geschehen; auch eine täuschend ähnliche Absenderadresse kann Teil des Betrugs sein. Eine veränderte IBAN in einer scheinbar plausiblen Rechnung ist deshalb kein Nachweis für die Echtheit einer Zahlungsanweisung. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Beobachtung</th><th>Eher Täuschung / CEO-Betrug</th><th>Eher kompromittiertes Postfach / BEC</th></tr></thead><tbody><tr><td>Absender und Verlauf</td><td>Häufig ähnliche oder verfälschte Adresse, neuer Verlauf oder ungewöhnlicher Kanal</td><td>Kann an einen bekannten Verlauf anknüpfen; ein kompromittiertes Postfach ist möglich, aber nicht allein anhand der Nachricht beweisbar</td></tr><tr><td>Hauptziel</td><td>Eilige Sonderzahlung, Geheimhaltung oder Geschenkkarten</td><td>Umleitung einer Rechnung oder Ausnutzung bestehender Zahlungsbeziehungen</td></tr><tr><td>Reaktion</td><td>Auftrag nicht ausführen; Auftrag über einen unabhängigen Kanal bestätigen</td><td>Bei Verdacht auf kompromittiertes eigenes oder relevantes Partnerpostfach zusätzlich den Sicherheitsvorfall nach dem Notfallprozess behandeln</td></tr><tr><td>Schutzschwerpunkt</td><td>Verbindlicher Zahlungsprüfprozess und Rollen</td><td>Zahlungsprüfprozess plus Absicherung, Bereinigung und Analyse der Identität</td></tr></tbody></table></div>
+<p>Die Zuordnung ist eine Arbeitshypothese, kein Freigabesignal. Eine täuschend echte Nachricht kann auch ein Hinweis auf ein kompromittiertes Konto sein. Umgekehrt kann ein echter Absender nach einem Kontoangriff fremdgesteuert handeln. Buchhaltung, Geschäftsleitung und IT sollten deshalb mit einer gemeinsamen Eskalationsregel arbeiten: <strong>Zahlung pausieren, unabhängig bestätigen, Verdacht intern melden.</strong></p>
+<h2 id="so-laeuft-ein-bec-angriff-typischerweise-ab">So läuft ein BEC-Angriff typischerweise ab</h2>
+<p>Ein BEC-Angriff verbindet oft technische Kompromittierung mit sorgfältiger Täuschung. Zugangsdaten können etwa durch Phishing oder aus einem Datenabfluss stammen. Nach der Übernahme beobachten Täter das Konto und suchen nach Rechnungen, Lieferanten, Zeichnungsberechtigten und Zahlungszeitpunkten. Anschliessend setzen sie eine Nachricht in einem realen E-Mail-Verlauf ab oder ändern die Bankverbindung für künftige Rechnungen. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<p>Die Wirkung entsteht nicht allein durch die E-Mail. Sie entsteht aus dem Zusammenspiel von vertrautem Kontext, Zeitdruck und einer Lücke im Zahlungsprozess. Ein Prozess, der eine neue IBAN nur mit der E-Mail des Lieferanten bestätigt, übernimmt die Annahme der Angreifer. Der Gegenbeweis muss ausserhalb des E-Mail-Kanals erfolgen.</p>
+<h3 id="hypothetisches-praxisbeispiel-die-geaenderte-lieferanten-iban">Hypothetisches Praxisbeispiel: Die geänderte Lieferanten-IBAN</h3>
+<div class="callout callout-info"><div class="callout-icon">💡</div><div class="callout-body"><strong>Hypothetisches Beispiel:</strong> Die Buchhaltung eines Schweizer Handelsunternehmens erhält am Tag vor dem Monatsabschluss eine Antwort im bisherigen Mailverlauf eines Lieferanten. Die Nachricht nennt Rechnungsnummer, Betrag und eine neue IBAN. Sie verlangt eine sofortige Umstellung, sonst werde die Lieferung gestoppt. Die Sachbearbeiterin verwendet das Zahlungsprüfprotokoll: Sie hält die Zahlung zurück, sucht die Lieferantennummer im bereits freigegebenen Stammdatensatz und ruft dort an. Der Lieferant bestätigt, keine neue Bankverbindung gemeldet zu haben. IT stellt anschliessend fest, dass dessen E-Mail-Konto wahrscheinlich kompromittiert wurde. Die Zahlung blieb im regulären Prozess; der Vorfall wird dokumentiert und der Lieferant informiert.</div></div>
+<p>Das Beispiel zeigt den Kern: Die Rückbestätigung muss eine <strong>unabhängig bekannte Kontaktinformation</strong> verwenden. Eine Nummer, ein Link oder eine Antwortadresse aus der verdächtigen Nachricht ist kein unabhängiger Kanal.</p>
+<h2 id="warnzeichen-die-eine-zahlung-stoppen-muessen">Warnzeichen, die eine Zahlung stoppen müssen</h2>
+<p>Nicht jedes Warnzeichen belegt einen Betrug. Mehrere Signale oder eine Änderung von Zahlungsdaten genügen jedoch, um den normalen Ablauf zu unterbrechen. Legen Sie diese Stoppsignale gemeinsam mit Geschäftsleitung und Buchhaltung fest:</p>
+<ul>
+<li>Eine neue oder geänderte IBAN, ein neues Empfängerkonto oder eine abweichende Zahlungsanweisung trifft per E-Mail ein.</li>
+<li>Der Auftrag verlangt aussergewöhnliche Eile, Vertraulichkeit oder das Übergehen der üblichen Freigabe.</li>
+<li>Eine Führungsperson ist angeblich nicht telefonisch erreichbar oder verlangt Kommunikation ausschliesslich per E-Mail.</li>
+<li>Betrag, Zahlungszeitpunkt, Empfänger oder Verwendungszweck weichen vom Vertrag, der Bestellung oder dem Stammdatensatz ab.</li>
+<li>Die Nachricht fordert Geschenkkarten, eine Aufteilung auf mehrere Zahlungen oder eine Zahlung ausserhalb des bisherigen Lieferantenprozesses.</li>
+<li>Das Mail erscheint zwar echt, passt aber nicht zu üblichen Schreibweisen, Rollen oder dem vereinbarten Ablauf.</li>
+</ul>
+<p>Gute Grammatik, ein korrektes Logo oder ein echter Mailverlauf widerlegen den Verdacht nicht. Aktuelle Phishing-Nachrichten können professionell formuliert sein. CISA empfiehlt, verdächtige Links oder Anhänge nicht zu öffnen und die angebliche Person oder Organisation über einen bereits bekannten oder unabhängig ermittelten Kontaktweg zu überprüfen. <sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Das BACS beschrieb am 20. Oktober 2026 Hotelbuchungs-Phishing mit echten Buchungsdetails, nachgeahmten Webseiten und einer vorgetäuschten Rückerstattung. Im beschriebenen Ablauf versuchen die Täter auch, eine Zweitfaktor-Bestätigung für einen im Hintergrund gestarteten Zugriff zu erhalten. Für Zahlungs- und Freigabeprozesse ist daran nur das Prüfmuster relevant: Echte Kontextdaten und eine unter einem Vorwand verlangte Bestätigung ersetzen keine unabhängige Verifikation. Bei einer Aufforderung zu einem Code, QR-Scan oder einer Freigabe öffnen Mitarbeitende die bekannte App oder Website selbst oder rufen die unabhängig ermittelte offizielle Nummer an. Sie verwenden weder den Link aus der Nachricht noch geben sie angeforderte Codes weiter. Diese Phishing-Orientierung ist keine Anweisung zu einem bestimmten Bank- oder Zahlungsprodukt. <sup class="ref-link"><a href="#ref-11">[11]</a></sup></p>
+<h2 id="praevention-zahlungen-unabhaengig-von-e-mails-absichern">Prävention: Zahlungen unabhängig von E-Mails absichern</h2>
+<h3 id="1-einen-verbindlichen-zahlungspruefprozess-festlegen">1. Einen verbindlichen Zahlungsprüfprozess festlegen</h3>
+<p>Definieren Sie, welche Fälle zwingend eine unabhängige Rückbestätigung benötigen. Dazu gehören mindestens Änderungen von Bankverbindungen, aussergewöhnliche Zahlungsaufträge und Zahlungsanweisungen, die von den hinterlegten Lieferantendaten abweichen. Nutzen Sie dafür das druckbare <a href="./resources/02-zahlungspruefprotokoll.html">Zahlungsprüfprotokoll</a> und legen Sie Eigentümer, Stellvertretung und Ablageort fest.</p>
+<p>Die Rückbestätigung erfolgt durch eine Person, die nicht allein über die Zahlung entscheidet. Sie verwendet eine Telefonnummer oder einen Kontakt aus einem bereits geprüften Vertrag, einem freigegebenen Stammdatensatz oder einer unabhängig aufgerufenen offiziellen Website. Dokumentieren Sie Zeitpunkt, Kontaktperson, Rückrufnummer, bestätigte IBAN und Ergebnis. Erst danach darf die Bankverbindung im Lieferantenstamm geändert werden.</p>
+<h3 id="2-vier-augen-freigabe-und-saubere-rollen-einrichten">2. Vier-Augen-Freigabe und saubere Rollen einrichten</h3>
+<p>Die Person, die Lieferantenstammdaten ändert, sollte nicht allein auch die Zahlung auslösen und freigeben können. Ein Vier-Augen-Prinzip bedeutet hier: Zwei berechtigte Personen prüfen unterschiedliche Teile des Vorgangs nachvollziehbar. Die Geschäftsleitung definiert die Schwellenwerte und Ausnahmen. Sie erhält eine periodische Übersicht über neue Bankverbindungen, zurückgewiesene Anweisungen und Prozessabweichungen.</p>
+<p>Diese Kontrollen gehören in das <a href="../risikomanagement.html">Cyber-Risikomanagement</a>: Das Risiko ist nicht nur eine einzelne Phishing-Nachricht, sondern der mögliche finanzielle und operative Schaden, wenn ein kritischer Zahlungsprozess umgangen wird.</p>
+<h3 id="3-e-mail-identitaeten-und-versanddomain-schuetzen">3. E-Mail-Identitäten und Versanddomain schützen</h3>
+<p>IT reduziert die Wahrscheinlichkeit eines Kontoangriffs mit eindeutigen Konten, Mehrfaktor-Authentisierung (MFA), aktuellen Systemen und einem geregelten Verfahren für Wiederherstellung und privilegierte Zugänge. <strong>MFA</strong> verlangt neben dem Passwort einen weiteren Nachweis und erschwert die Übernahme allein mit gestohlenen Passwörtern. Sie ersetzt aber nicht den Zahlungsprüfprozess: Ein bereits kompromittiertes Konto kann dennoch glaubwürdige Zahlungsanweisungen versenden.</p>
+<p>Für die eigene Versanddomain sind <strong>SPF</strong>, <strong>DKIM</strong> und <strong>DMARC</strong> wichtige Bausteine. SPF legt fest, welche Server im Namen einer Domain senden dürfen. DKIM versieht Nachrichten mit einer kryptografischen Signatur. DMARC verknüpft die Prüfung mit der sichtbaren Absenderdomain und gibt empfangenden Systemen eine Behandlungsrichtlinie für nicht authentisierte Nachrichten. Die Standards helfen insbesondere gegen das Spoofing der eigenen Domain und liefern Berichte für die Überwachung. Sie sind jedoch kein Schutz gegen einen Angreifer, der aus einem tatsächlich übernommenen Mailkonto sendet. <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p>Die technische Konfiguration gehört in eine risikobasierte <a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a>, nicht in eine isolierte DNS-Änderung. Prüfen Sie vor einer verschärften DMARC-Richtlinie alle legitimen Versandquellen, etwa ERP, Newsletter- und Ticket-Systeme, und werten Sie die Berichte aus.</p>
+<h3 id="4-auffaelligkeiten-sichtbar-und-meldefaehig-machen">4. Auffälligkeiten sichtbar und meldefähig machen</h3>
+<p>IT braucht Protokolle und Warnungen für ungewöhnliche Anmeldungen, Änderungen von MFA-Methoden, neue Weiterleitungsregeln, delegierte Zugriffe und verdächtige Mailversände. Die Buchhaltung braucht einen einfachen Meldeweg ohne Schuldzuweisung.</p>
+<p>Trainieren Sie mit kurzen, rollenbezogenen Szenarien. Für die Buchhaltung steht die Prüfung einer IBAN im Vordergrund. Für Führungspersonen geht es darum, nie ausserhalb des vereinbarten Prozesses zu intervenieren. Für IT geht es um Erkennung, Zugriffssicherung und Beweissicherung. Die weiterführenden Beiträge zu <a href="./microsoft-365-mfa-passkeys.html">Microsoft 365 MFA und Passkeys</a> und zur <a href="./microsoft-365-sicherheit-kmu.html">Microsoft-365-Sicherheit im KMU</a> helfen bei der technischen Vertiefung.</p>
+<h2 id="erstreaktion-was-bei-verdacht-oder-bestaetigtem-vorfall-zu-tun-ist">Erstreaktion: Was bei Verdacht oder bestätigtem Vorfall zu tun ist</h2>
+<p>Die folgenden Schritte trennen die akute Zahlungsentscheidung von der technischen Untersuchung. Die Reihenfolge soll Schäden begrenzen; sie ersetzt keine forensische oder rechtliche Einzelfallbeurteilung.</p>
+<h3 id="verdaechtige-noch-nicht-ausgefuehrte-zahlung">Verdächtige, noch nicht ausgeführte Zahlung</h3>
+<ol>
+<li><strong>Zahlung und Stammdatenänderung anhalten.</strong> Keine Antwort auf die verdächtige Nachricht, keine Verwendung von Links, Anhängen oder Kontaktdaten daraus.</li>
+<li><strong>Unabhängig rückbestätigen.</strong> Lieferant oder Führungsperson über einen bereits verifizierten Kontakt erreichen. Bestätigen Sie Auftrag, Betrag, IBAN und Dringlichkeit.</li>
+<li><strong>Entscheid dokumentieren.</strong> Protokollieren Sie Anlass, Rückruf, Resultat und Freigaben im Zahlungsprüfprotokoll.</li>
+<li><strong>Intern eskalieren.</strong> Informieren Sie die festgelegte Stelle in Buchhaltung und IT. Bei Anzeichen für ein kompromittiertes Firmenpostfach übernimmt IT den Vorfallprozess.</li>
+</ol>
+<h3 id="zahlung-bereits-ausgefuehrt">Zahlung bereits ausgeführt</h3>
+<p>Kontaktieren Sie <strong>unverzüglich Ihre Bank</strong> und schildern Sie die mutmasslich betrügerische Zahlung. Das BACS weist darauf hin, dass die Bank eine Zahlung unter Umständen noch stoppen kann; eine Rückholung ist damit nicht garantiert. Sichern Sie Rechnung, Zahlungsauftrag, vollständige E-Mail-Kopfzeilen, Zeitpunkte und die Rückbestätigung. Erstatten Sie bei finanziellem Schaden Anzeige bei der zuständigen Kantonspolizei. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<p>Die Geschäftsleitung führt die Entscheidung über weitere Kommunikation und Prioritäten. IT klärt parallel, ob die eigene E-Mail-Umgebung betroffen sein kann. Lieferanten und andere Kontakte werden nicht über Links aus verdächtigen Nachrichten kontaktiert, sondern über gesicherte Kanäle informiert.</p>
+<h3 id="eigenes-e-mail-konto-vermutlich-kompromittiert">Eigenes E-Mail-Konto vermutlich kompromittiert</h3>
+<p>Behandeln Sie dies als Sicherheitsvorfall. Sichern Sie zuerst die Kontrolle über die Identität und erhalten Sie Belege, bevor Routinearbeiten die Spuren verwischen. Die konkrete technische Reihenfolge muss zu Ihrem Maildienst, Ihrer Identitätsarchitektur und laufenden Ermittlungen passen.</p>
+<ul>
+<li>Beschränken Sie gemäss Ihrem Notfallverfahren den unbefugten Zugriff und sichern Sie relevante Protokolle, Nachrichten und Konfigurationsstände.</li>
+<li>Ändern Sie das Passwort, wenn der Zugriff noch möglich ist, und prüfen Sie registrierte MFA-Methoden, Sitzungen, delegierte Zugriffe und Adminrollen.</li>
+<li>Kontrollieren und entfernen Sie fremde Mail-Weiterleitungsregeln. BACS hebt diese Prüfung ausdrücklich hervor, weil Täter nach einer Passwortänderung sonst weiter Mails erhalten können. <sup class="ref-link"><a href="#ref-3">[3]</a></sup></li>
+<li>Setzen Sie Passwörter von Diensten zurück, deren Wiederherstellung an das kompromittierte Postfach gebunden ist, und prüfen Sie Endgeräte auf aktuelle Updates und Schadsoftware. <sup class="ref-link"><a href="#ref-3">[3]</a></sup></li>
+<li>Informieren Sie betroffene Kontakte über einen vertrauenswürdigen Kanal, damit sie betrügerische Nachrichten erkennen können. Lassen Sie die E-Mail-Infrastruktur fachlich analysieren, wenn im Namen Ihrer Firma gefälschte Rechnungen versendet wurden. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></li>
+</ul>
+<p>Ein strukturierter Ablauf mit Rollen, Kontakten, Entscheidpunkten und Nachbearbeitung gehört in die <a href="../notfallplanung.html">IT-Notfallplanung</a>. NIST empfiehlt, Incident Response in das laufende Cyber-Risikomanagement einzubetten, um Erkennung, Reaktion und Wiederherstellung wirksamer zu gestalten. <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<h2 id="datenschutz-und-meldungen-in-der-schweiz-richtig-einordnen">Datenschutz und Meldungen in der Schweiz richtig einordnen</h2>
+<p>Ein kompromittiertes Postfach kann eine <strong>Verletzung der Datensicherheit</strong> sein, wenn Personendaten unbeabsichtigt oder widerrechtlich verloren gehen, verändert oder Unbefugten offengelegt oder zugänglich gemacht werden. Ob eine Meldung notwendig ist, hängt nicht vom Begriff «BEC» ab, sondern von den konkreten Fakten und Risiken. <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<p>Nach Art. 24 DSG muss der Verantwortliche dem EDÖB eine Verletzung der Datensicherheit <strong>so rasch als möglich</strong> melden, wenn sie voraussichtlich zu einem hohen Risiko für Persönlichkeit oder Grundrechte betroffener Personen führt. Der Verantwortliche informiert betroffene Personen, wenn dies zu ihrem Schutz erforderlich ist oder der EDÖB es verlangt. Die Datenschutzverordnung verlangt ausserdem eine Dokumentation der Tatsachen, Auswirkungen und ergriffenen Massnahmen; diese ist ab dem Zeitpunkt der Meldung mindestens zwei Jahre aufzubewahren. <sup class="ref-link"><a href="#ref-8">[8]</a></sup> <sup class="ref-link"><a href="#ref-9">[9]</a></sup></p>
+<div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die Beurteilung, ob Personendaten betroffen sind, ob ein voraussichtlich hohes Risiko besteht und welche Meldungen oder Informationen erforderlich sind, braucht im konkreten Vorfall eine datenschutzrechtliche Fachprüfung. Dieser Artikel ist keine individuelle Rechtsberatung.</div></div>
+<p>Unabhängig davon gilt seit 1. April 2025 für Betreiberinnen und Betreiber kritischer Infrastrukturen eine BACS-Meldepflicht für erfasste Cyberangriffe innerhalb von 24 Stunden nach Entdeckung. Ein gewöhnliches KMU ist dadurch nicht automatisch meldepflichtig. Prüfen Sie den Anwendungsbereich und allfällige sektorielle Anforderungen im Einzelfall. Auch nicht meldepflichtige Organisationen können Cybervorfälle freiwillig an das BACS melden. <sup class="ref-link"><a href="#ref-10">[10]</a></sup> <sup class="ref-link"><a href="#ref-13">[13]</a></sup></p>
+<h2 id="typische-fehler-die-den-schutz-aushebeln">Typische Fehler, die den Schutz aushebeln</h2>
+<p>Der häufigste Fehler ist, eine E-Mail als ausreichenden Nachweis für eine neue Bankverbindung zu behandeln. Beim BEC ist gerade dieser Kanal nicht mehr verlässlich. Auch die Rückbestätigung über eine Nummer aus der verdächtigen Nachricht bestätigt nur die Kontrolle der Täter über den Kontaktweg.</p>
+<p>Technische Kontrollen ohne klare Zahlungsrollen reichen ebenfalls nicht. MFA, Spamfilter und DMARC ersetzen weder Stammdaten-Kontrollen noch Freigaben. Beschränkt sich die Reaktion auf einen Passwortwechsel, können übersehene Weiterleitungen, Sitzungen oder Wiederherstellungswege den Zugriff fortsetzen.</p>
+<h2 id="ein-30-tage-startplan-fuer-zahlungs-und-e-mail-kontrollen">Ein 30-Tage-Startplan für Zahlungs- und E-Mail-Kontrollen</h2>
+<p>Beginnen Sie mit einem gemeinsamen Termin von Geschäftsleitung, Buchhaltung und IT. Erfassen Sie Wege für Bankverbindungsänderungen und Sonderzahlungen. Entscheiden Sie, wann Rückruf und Vier-Augen-Freigabe zwingend sind. Benennen Sie Stellvertretungen und testen Sie das Protokoll an einem hypothetischen Lieferantenwechsel.</p>
+<p>Prüfen Sie danach kritische E-Mail-Konten: MFA, Berechtigungen, Wiederherstellungswege, Protokollierung, Weiterleitungsregeln und Domain-Authentisierung. Ordnen Sie Befunde nach Geschäftsrisiko und üben Sie die Erstreaktion. Halten Sie offene Punkte im Notfallplan fest.</p>
+<div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body"><strong>Nächster Schritt:</strong> Dokumentieren Sie kritische Zahlungsänderungen mit dem <a href="./resources/02-zahlungspruefprotokoll.html">Zahlungsprüfprotokoll</a>. Für eine Anfrage zur <a href="../sicherheitsanalyse.html">DKSchV-Sicherheitsanalyse</a> steht die Seite <a href="../kontakt.html">Kontakt</a> zur Verfügung. Eine Analyse ersetzt weder Bankvorgaben noch die Prüfung eines konkreten Betrugs- oder Rechtsfalls.</div></div>
+<h2 id="quellen">Quellen</h2>
+        
+      <div class="references-section">
+        <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
+          Geprüfte Primärquellen &amp; Rechtsreferenzen
+        </h3>
+        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
+          Alle behördlichen Vorgaben, Gesetzesartikel und technischen Richtlinien wurden im Rahmen der DKSchV-Quellenprüfung verifiziert:
+        </p>
+        <ul class="references-list">
+    
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/business-email-compromise-de" target="_blank" rel="noopener noreferrer">BACS – Business E-Mail Compromise (Rechnungsmanipulationsbetrug)</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/ceo-betrug" target="_blank" rel="noopener noreferrer">BACS – CEO-Betrug</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/konto-gehackt" target="_blank" rel="noopener noreferrer">BACS – Konto gehackt oder Daten abgeflossen: Was nun?</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/teach-employees-avoid-phishing" target="_blank" rel="noopener noreferrer">CISA – Teach Employees to Avoid Phishing</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/news-events/directives/bod-18-01-enhance-email-and-web-security" target="_blank" rel="noopener noreferrer">CISA – Enhance Email and Web Security</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔒 NIST Standard</span>
+            <a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 – Incident Response Recommendations and Considerations for Cybersecurity Risk Management</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
+            <a href="https://www.edoeb.admin.ch/de/leitfaden-data-breach" target="_blank" rel="noopener noreferrer">EDÖB – Leitfaden DataBreach</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/491/de" target="_blank" rel="noopener noreferrer">Fedlex – Bundesgesetz über den Datenschutz, Art. 24</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 Fedlex Bundesrecht</span>
+            <a href="https://www.fedlex.admin.ch/eli/cc/2022/568/de" target="_blank" rel="noopener noreferrer">Fedlex – Verordnung über den Datenschutz, Art. 15</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/meldepflicht" target="_blank" rel="noopener noreferrer">BACS – Meldepflicht für Cyberangriffe auf kritische Infrastrukturen</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-11">
+          <span class="ref-num">[11]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/26w42-de" target="_blank" rel="noopener noreferrer">BACS – Woche 42: Hotelbuchungs-Phishing zielt auf TWINT-Konten, 20.10.2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-12">
+          <span class="ref-num">[12]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/csm26-s2-de" target="_blank" rel="noopener noreferrer">BACS – Cyber Security Month 2026: Oversharing – Wie viel geben wir über uns preis?</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-13">
+          <span class="ref-num">[13]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/vorfall-unternehmen-behoerden" target="_blank" rel="noopener noreferrer">BACS – Unternehmen und Behörden</a>
+          </div>
+        </li>
+      
+        </ul>
+      </div>
+    
+        
+        <!-- Post-article consultation box -->
+        <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
+          <span class="badge badge-teal" style="align-self: flex-start;">Individuelle Schweizer Sicherheitsberatung</span>
+          <h3 style="font-size: 22px; font-weight: 700; color: #ffffff; margin: 0;">Benötigen Sie Unterstützung bei der Umsetzung?</h3>
+          <p style="font-size: 15px; color: #cbd5e1; margin: 0; line-height: 1.6;">
+            Ob fundierte Sicherheitsanalyse, Microsoft 365 Cloud-Audit oder die Vorbereitung eines massgeschneiderten IT-Notfallplans: Wir unterstützen Sie pragmatisch und diskret im Wallis und der gesamten Schweiz.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+            <a href="../kontakt.html" class="btn btn-primary" style="background: var(--teal-accent);">Kostenloses Erstgespräch anfragen &rarr;</a>
+            <a href="../notfallplanung.html" class="btn btn-secondary" style="border-color: #334155; color: #ffffff;">Notfallplanung für KMU</a>
+          </div>
+        </div>
+      </article>
+
+      
+      <aside class="article-sidebar">
+        <div class="toc-title">Inhaltsverzeichnis</div>
+        <ul class="toc-list">
+          <li><a href="#die-entscheidende-abgrenzung-taeuschung-oder-kompromittiertes-postfach">Die entscheidende Abgrenzung: Täuschung oder kompromittiertes Postfach?</a></li>
+<li><a href="#so-laeuft-ein-bec-angriff-typischerweise-ab">So läuft ein BEC-Angriff typischerweise ab</a></li>
+<li><a href="#warnzeichen-die-eine-zahlung-stoppen-muessen">Warnzeichen, die eine Zahlung stoppen müssen</a></li>
+<li><a href="#praevention-zahlungen-unabhaengig-von-e-mails-absichern">Prävention: Zahlungen unabhängig von E-Mails absichern</a></li>
+<li><a href="#erstreaktion-was-bei-verdacht-oder-bestaetigtem-vorfall-zu-tun-ist">Erstreaktion: Was bei Verdacht oder bestätigtem Vorfall zu tun ist</a></li>
+<li><a href="#datenschutz-und-meldungen-in-der-schweiz-richtig-einordnen">Datenschutz und Meldungen in der Schweiz richtig einordnen</a></li>
+<li><a href="#typische-fehler-die-den-schutz-aushebeln">Typische Fehler, die den Schutz aushebeln</a></li>
+<li><a href="#ein-30-tage-startplan-fuer-zahlungs-und-e-mail-kontrollen">Ein 30-Tage-Startplan für Zahlungs- und E-Mail-Kontrollen</a></li>
+<li><a href="#quellen">Quellen</a></li>
+          <li><a href="#quellen-und-referenzen">Quellen &amp; Referenzen</a></li>
+        </ul>
+      </aside>
+    
+    </div>
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 38px; filter: brightness(0) invert(1);">
+          <p>DKSchV Dini ist Ihr spezialisierter Schweizer Partner für Cyber-Security, Sicherheitsanalysen, IT-Notfallplanung und Datenschutz nach Schweizer Standard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Dienstleistungen</h4>
+          <ul class="footer-links">
+            <li><a href="../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
+            <li><a href="../risikomanagement.html">Risikomanagement</a></li>
+            <li><a href="../notfallplanung.html">Notfallplanung</a></li>
+            <li><a href="../wissen.html">Wissen &amp; Ratgeber</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul class="footer-links">
+            <li><a href="../ueber-uns.html">Über uns</a></li>
+            <li><a href="../kontakt.html">Kontakt &amp; Standort</a></li>
+            <li><a href="../impressum.html">Impressum</a></li>
+            <li><a href="../datenschutz.html">Datenschutz (nDSG)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Standort &amp; Notfallkontakt</h4>
+          <p style="font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 12px;">
+            <strong>DKSchV Dini</strong><br>Andreas Dini<br>Bammattenweg 19<br>CH-3904 Naters (Wallis)
+          </p>
+          <p style="font-size: 14px; color: #94a3b8;">
+            E-Mail: <a href="mailto:info@dkschv.ch" style="color: #ffffff;">info@dkschv.ch</a><br>
+            Telefon: <a href="tel:+41798446669" style="color: #ffffff;">+41 79 844 66 69</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
+        <div class="footer-legal-links">
+          <a href="../impressum.html">Impressum</a>
+          <a href="../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  
+</body>
+</html>

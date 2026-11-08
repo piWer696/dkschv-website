@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arbeitsvorlage | DKSchV Schweiz</title>
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="../../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    /* Print-specific tweaks */
+    @page { margin: 1.5cm; }
+  </style>
+</head>
+<body style="background: var(--bg-light);">
+
+  <!-- Printable Action Bar -->
+  <div class="resource-top-bar no-print">
+    <div class="container resource-bar-inner">
+      <div>
+        <a href="../backup-wiederherstellung-testen.html" style="color: #cbd5e1; text-decoration: none; font-size: 13.5px; font-weight: 500;">&larr; Zurück zum Fachleitfaden</a>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <span style="font-size: 12.5px; color: #94a3b8;">Format: DIN A4 Druckvorlage</span>
+        <button onclick="window.print()" class="btn-print">
+          <span>🖨️ Arbeitsblatt drucken / PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="resource-sheet">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
+        <div>
+          <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
+            DKSchV Schweiz · Dokumentiertes Arbeitsmittel
+          </span>
+          <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
+            Arbeitsvorlage
+          </h1>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
+            1.2 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+          </p>
+        </div>
+        <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+      </div>
+
+      <div class="article-content" style="font-size: 15px;">
+        <p><strong>Version 1.2 · Quellenstand: 1. November 2026.</strong> Die Standangabe bezeichnet die Quellenpflege und keine Fach-, Rechts- oder Nutzungsfreigabe.</p>
+<div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die rechtlichen Hinweise und die organisationsspezifische Durchführung eines Wiederanlaufs müssen vor Verwendung durch zuständige Fachpersonen geprüft werden.</div></div>
+<h2 id="zweck">Zweck</h2>
+<p>Dieses Protokoll hilft Schweizer KMU, einen Wiederherstellungstest als überprüfbaren Ablauf zu planen, durchzuführen und nachzubereiten. Es dokumentiert nicht nur, ob eine Sicherung technisch lesbar ist, sondern ob ein klar bestimmter kritischer Geschäftsprozess mit sauberen Systemen, einem ausreichenden Datenstand und innerhalb des vereinbarten Zeitrahmens wieder betrieben werden kann.</p>
+<p>Die Vorlage stützt sich auf die BACS-Phasen Vorbereitung, Vorfallsbewältigung und Nachbearbeitung sowie auf die Empfehlung, Backups in einem Disaster-Recovery-Szenario auf Verfügbarkeit und Integrität zu testen.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup> Sie ist kein Zertifikat und keine Garantie, dass eine Wiederherstellung in jedem Cybervorfall gelingt.</p>
+<h2 id="anwendung">Anwendung</h2>
+<p>Füllen Sie die Felder vor dem Test gemeinsam mit IT, Prozessverantwortung und der zuständigen Führungsperson aus. Führen Sie den Test nur in einer freigegebenen, vom angenommen kompromittierten Bereich getrennten Umgebung durch. Halten Sie Zeiten, Entscheidungen und Abweichungen unmittelbar fest. Schliessen Sie den Ablauf erst nach Debriefing, Massnahmenplanung und einem Nachtest kritischer Befunde ab.</p>
+<p><strong>Wichtige Grenze:</strong> Dieses Arbeitsmittel simuliert einen Vorfall. Es darf keine produktiven Daten verschlüsseln, keine Schadsoftware einsetzen und keine Wiederanlaufmassnahmen in der Produktivumgebung auslösen, wenn dies nicht ausdrücklich freigegeben und risikogerecht abgesichert ist.</p>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="1-testauftrag-und-freigabe">1. Testauftrag und Freigabe</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Feld</th><th>Eintrag</th></tr></thead><tbody><tr><td>Organisation / Bereich</td><td></td></tr><tr><td>Testbezeichnung / Version</td><td></td></tr><tr><td>Testdatum</td><td></td></tr><tr><td>Geplanter Zeitrahmen</td><td></td></tr><tr><td>Testleitung</td><td></td></tr><tr><td>Auftraggebende Führungsperson</td><td></td></tr><tr><td>Freigabe für Durchführung erteilt durch / Datum</td><td></td></tr><tr><td>Protokollführung</td><td></td></tr><tr><td>Testtyp</td><td>☐ Tabletop ☐ Technischer Teiltest ☐ End-to-End-Restore-Test ☐ Nachtest</td></tr><tr><td>Testumgebung</td><td></td></tr><tr><td>Abbruchkriterien</td><td></td></tr><tr><td>Besonderer Schutzbedarf / Einschränkungen</td><td></td></tr></tbody></table></div>
+<h3 id="testszenario">Testszenario</h3>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Prüfpunkt</th><th>Eintrag</th></tr></thead><tbody><tr><td>Angenommener Auslöser und Zeitpunkt</td><td></td></tr><tr><td>Als kompromittiert angenommene Systeme / Datenbereiche</td><td></td></tr><tr><td>Ausdrücklich nicht betroffene Systeme</td><td></td></tr><tr><td>Priorisierter Geschäftsprozess</td><td></td></tr><tr><td>Mindestfunktion nach Wiederanlauf</td><td></td></tr><tr><td>Zugelassene Behelfsprozesse</td><td></td></tr><tr><td>Angenommene Ausfälle von Zugängen, Lieferanten oder Schnittstellen</td><td></td></tr><tr><td>Wiederherstellungsquelle / Sicherungssatz</td><td></td></tr><tr><td>Referenzzeitpunkt für Datenstand</td><td></td></tr></tbody></table></div>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="2-geschaeftsprozess-und-ziele">2. Geschäftsprozess und Ziele</h2>
+<p><strong>Begriffshilfe:</strong> Das <strong>RTO</strong> (Recovery Time Objective) ist die maximal akzeptierte Zeit bis zur vereinbarten Mindestfunktion des Geschäftsprozesses. Das <strong>RPO</strong> (Recovery Point Objective) ist der maximal vertretbare Datenverlust, als Zeitspanne gemessen. Ziele werden von der Organisation festgelegt; sie sind keine Eigenschaft eines Backup-Produkts.</p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Prüfpunkt</th><th>Sollwert / Festlegung</th><th>Istwert / Ergebnis</th><th>Erfüllt?</th></tr></thead><tbody><tr><td>Prozessverantwortliche Person</td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>RTO: Messstart</td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>RTO: Zielzeitpunkt / zulässige Dauer</td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>RTO: tatsächlicher Zeitpunkt fachlicher Abnahme</td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>RPO: maximal zulässige Datenlücke</td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>RPO: Zeitstempel wiederhergestellter Daten</td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Fachliches Abnahmekriterium</td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Notwendiger Behelfsprozess bis Wiederanlauf</td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr></tbody></table></div>
+<h3 id="abhaengigkeiten-und-wiederanlaufreihenfolge">Abhängigkeiten und Wiederanlaufreihenfolge</h3>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Nr.</th><th>Abhängigkeit / System / Dienstleister</th><th>Verantwortliche Person</th><th>Reihenfolge</th><th>Vorbedingung / Freigabe</th><th>Ergebnis</th></tr></thead><tbody><tr><td>1</td><td></td><td></td><td></td><td></td><td>☐ OK ☐ Abweichung</td></tr><tr><td>2</td><td></td><td></td><td></td><td></td><td>☐ OK ☐ Abweichung</td></tr><tr><td>3</td><td></td><td></td><td></td><td></td><td>☐ OK ☐ Abweichung</td></tr><tr><td>4</td><td></td><td></td><td></td><td></td><td>☐ OK ☐ Abweichung</td></tr><tr><td>5</td><td></td><td></td><td></td><td></td><td>☐ OK ☐ Abweichung</td></tr><tr><td>6</td><td></td><td></td><td></td><td></td><td>☐ OK ☐ Abweichung</td></tr></tbody></table></div>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="3-rollen-kommunikation-und-unterlagen">3. Rollen, Kommunikation und Unterlagen</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Rolle</th><th>Name</th><th>Stellvertretung</th><th>Erreichbarkeit / Zugangsweg geprüft?</th><th>Ergebnis</th></tr></thead><tbody><tr><td>Testleitung</td><td></td><td></td><td>☐ Ja ☐ Nein</td><td></td></tr><tr><td>Wiederanlaufleitung</td><td></td><td></td><td>☐ Ja ☐ Nein</td><td></td></tr><tr><td>Systemverantwortung</td><td></td><td></td><td>☐ Ja ☐ Nein</td><td></td></tr><tr><td>Prozessverantwortung</td><td></td><td></td><td>☐ Ja ☐ Nein</td><td></td></tr><tr><td>Sicherheits- / Forensikkoordination</td><td></td><td></td><td>☐ Ja ☐ Nein</td><td></td></tr><tr><td>Lieferantenkoordination</td><td></td><td></td><td>☐ Ja ☐ Nein</td><td></td></tr><tr><td>Protokollführung</td><td></td><td></td><td>☐ Ja ☐ Nein</td><td></td></tr></tbody></table></div>
+<h3 id="kontrollpunkte-vor-dem-start">Kontrollpunkte vor dem Start</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Der Testauftrag, die Testumgebung und die Abbruchkriterien sind freigegeben.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Die Testumgebung ist von der als kompromittiert angenommenen Umgebung getrennt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Notfallkontakte, Eskalationswege und Stellvertretungen sind über einen unabhängigen Zugang verfügbar.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Zugänge zu Sicherungen, Systemvorlagen, Installationsmedien, Konfigurationsdokumentation und nötigen Lizenzen sind erreichbar.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Der Sicherungssatz ist eindeutig bezeichnet; der erwartete Datenstand ist festgehalten.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Die Prozessverantwortung kennt Testfall und Abnahmekriterium.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Der Umgang mit Testdaten und Personendaten ist geklärt.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Das Vorgehen gefährdet keine produktiven Systeme oder Daten.</span></li>
+</ul>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="4-durchfuehrungsprotokoll">4. Durchführungsprotokoll</h2>
+<div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body">Erfassen Sie jede wesentliche Entscheidung und Übergabe mit Uhrzeit. Die RTO-Messung endet erst mit der fachlichen Abnahme der vereinbarten Mindestfunktion.</div></div>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Uhrzeit</th><th>Schritt / Entscheidung</th><th>Verantwortliche Person</th><th>Nachweis / Ergebnis</th><th>Abweichung oder Risiko</th></tr></thead><tbody><tr><td></td><td>Alarmzeitpunkt gemäss Szenario / RTO-Messung gestartet</td><td></td><td></td><td></td></tr><tr><td></td><td>Testlage bestätigt und Grenze der Testumgebung geprüft</td><td></td><td></td><td></td></tr><tr><td></td><td>Wiederanlaufumgebung vorbereitet</td><td></td><td></td><td></td></tr><tr><td></td><td>Vertrauenswürdige Systemvorlage / Installationsquelle geprüft</td><td></td><td></td><td></td></tr><tr><td></td><td>Identität, Netzwerk und weitere Grundkomponenten bereitgestellt</td><td></td><td></td><td></td></tr><tr><td></td><td>Anwendung wiederhergestellt</td><td></td><td></td><td></td></tr><tr><td></td><td>Daten wiederhergestellt</td><td></td><td></td><td></td></tr><tr><td></td><td>Datenstand gegen RPO geprüft</td><td></td><td></td><td></td></tr><tr><td></td><td>Berechtigungen und Sicherheitskonfiguration geprüft</td><td></td><td></td><td></td></tr><tr><td></td><td>Fachlicher Test durchgeführt</td><td></td><td></td><td></td></tr><tr><td></td><td>Mindestfunktion durch Prozessverantwortung abgenommen</td><td></td><td></td><td></td></tr><tr><td></td><td>Freigabe / kontrollierter Abschluss des Tests</td><td></td><td></td><td></td></tr></tbody></table></div>
+<h3 id="technische-kontrollpunkte">Technische Kontrollpunkte</h3>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kontrollpunkt</th><th>Ergebnis / Nachweis</th><th>Erfüllt?</th></tr></thead><tbody><tr><td>Wiederherstellungsquelle verfügbar und eindeutig identifiziert</td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Zugang zur Sicherung unabhängig von der Test-Schadensannahme möglich</td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Wiederanlaufumgebung sauber und getrennt bereitgestellt</td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>System aus vertrauenswürdiger Quelle bereitgestellt bzw. neu installiert</td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Administrations- und Dienstkonten nur im benötigten Umfang aktiviert</td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Wiederhergestellte Daten lesbar und dem erwarteten Sicherungsstand entsprechend</td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Anwendungs-, Netzwerk- und Schnittstellenfunktion geprüft</td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Protokollierung und Überwachung nach Wiederanlauf aktiv</td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Rückfall- oder Abbruchweg verfügbar</td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Verwendete Komponenten, Produkt- oder Paketversionen sowie zuständige Betreiberin oder zuständiger Betreiber dokumentiert</td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>Fixstand der verwendeten Komponenten durch laufende korrigierte Version oder Anbieterbestätigung nachgewiesen</td><td></td><td>☐ Ja ☐ Nein</td></tr></tbody></table></div>
+<p><strong>Abgrenzung zum Vorfallsbefund:</strong> Die beiden letzten Kontrollpunkte dokumentieren nur die Komponenten und Fixnachweise der für diesen Test bereitgestellten Wiederanlaufumgebung. Die BACS-Warnung zu PHP empfiehlt bei integrierten und extern betriebenen Komponenten die Kontrolle der tatsächlich laufenden korrigierten Version oder eines vom Anbieter als behoben bestätigten Pakets; ein Update beseitigt jedoch keine bereits erfolgte Kompromittierung.<sup class="ref-link"><a href="#ref-6">[6]</a></sup> Dieses Protokoll beurteilt deshalb weder einen früheren Daten- oder Kontenkompromiss noch dessen Umfang, Zeitpunkt oder Folgen. Beweise, Logs und betroffene produktive Systeme gehören in einem tatsächlichen Vorfall in eine gesonderte, fachlich gesteuerte Incident-Response- und Forensikbehandlung.</p>
+<h3 id="fachliche-abnahme">Fachliche Abnahme</h3>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Testfall für Mindestfunktion</th><th>Erwartetes Ergebnis</th><th>Tatsächliches Ergebnis</th><th>Abnahme durch / Uhrzeit</th></tr></thead><tbody><tr><td>Anmeldung mit vorgesehener Rolle</td><td></td><td></td><td></td></tr><tr><td>Kerntransaktion erfassen oder bearbeiten</td><td></td><td></td><td></td></tr><tr><td>Relevante Daten finden und prüfen</td><td></td><td></td><td></td></tr><tr><td>Erforderliche Ausgabe oder Schnittstelle prüfen</td><td></td><td></td><td></td></tr><tr><td>Behelfsprozess beenden / Übergabe dokumentieren</td><td></td><td></td><td></td></tr></tbody></table></div>
+<p><strong>Abnahmeentscheid:</strong> ☐ Mindestfunktion erreicht ☐ Mit Einschränkungen erreicht ☐ Nicht erreicht</p>
+<p><strong>Begründung / Einschränkungen:</strong></p>
+<p>................................................................................................................................................</p>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="5-messung-und-ergebnis">5. Messung und Ergebnis</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Kennzahl</th><th>Soll</th><th>Ist</th><th>Differenz</th><th>Bewertung</th></tr></thead><tbody><tr><td>RTO: Zeit bis zur fachlichen Abnahme</td><td></td><td></td><td></td><td>☐ Erfüllt ☐ Nicht erfüllt</td></tr><tr><td>RPO: Datenlücke zum Referenzzeitpunkt</td><td></td><td></td><td></td><td>☐ Erfüllt ☐ Nicht erfüllt</td></tr><tr><td>Vollständigkeit der Abhängigkeiten</td><td></td><td></td><td></td><td>☐ Erfüllt ☐ Nicht erfüllt</td></tr><tr><td>Fachliche Mindestfunktion</td><td></td><td></td><td></td><td>☐ Erfüllt ☐ Nicht erfüllt</td></tr><tr><td>Rollen und Kommunikation</td><td></td><td></td><td></td><td>☐ Erfüllt ☐ Nicht erfüllt</td></tr><tr><td>Sicherheit der Wiederanlaufumgebung</td><td></td><td></td><td></td><td>☐ Erfüllt ☐ Nicht erfüllt</td></tr></tbody></table></div>
+<p><strong>Gesamtergebnis:</strong> ☐ Bestanden ☐ Bestanden mit Auflagen ☐ Nicht bestanden ☐ Abgebrochen</p>
+<p><strong>Entscheid durch / Datum:</strong></p>
+<p>................................................................................................................................................</p>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="6-debriefing-und-massnahmen">6. Debriefing und Massnahmen</h2>
+<p>Das BACS empfiehlt ein strukturiertes Debriefing, um aus der Bewältigung zu lernen und Vorfall-, Notfall- und Krisenplanung fortlaufend zu verbessern.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Führen Sie das Debriefing zeitnah durch und konzentrieren Sie sich auf beobachtbare Fakten.</p>
+<h3 id="leitfragen">Leitfragen</h3>
+<ul>
+<li>Was hat den Wiederanlauf beschleunigt oder verzögert?</li>
+<li>Welche Abhängigkeit, Information, Berechtigung oder Freigabe war nicht vollständig bekannt?</li>
+<li>War die Wiederherstellungsreihenfolge für den Geschäftsprozess richtig?</li>
+<li>Konnten RTO und RPO nachweisbar erreicht werden?</li>
+<li>War die Datenqualität für die vereinbarte Mindestfunktion ausreichend?</li>
+<li>Welche Rolle, Stellvertretung oder Lieferantenleistung war unklar oder nicht erreichbar?</li>
+<li>Welche Massnahme verhindert eine Wiederholung der kritischen Abweichung?</li>
+</ul>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Nr.</th><th>Befund / Ursache</th><th>Risiko / Auswirkung</th><th>Massnahme</th><th>Verantwortliche Person</th><th>Termin</th><th>Nachtest nötig?</th></tr></thead><tbody><tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr><tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td>☐ Ja ☐ Nein</td></tr></tbody></table></div>
+<h3 id="nachtest-und-dokumentenpflege">Nachtest und Dokumentenpflege</h3>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Prüfpunkt</th><th>Eintrag</th></tr></thead><tbody><tr><td>Kritischer Befund, der nachgetestet wird</td><td></td></tr><tr><td>Nachtestziel / Abnahmekriterium</td><td></td></tr><tr><td>Termin Nachtest</td><td></td></tr><tr><td>Verantwortliche Person</td><td></td></tr><tr><td>Aktualisierte Dokumente (Notfallplan, Runbook, Kontaktliste, Risikoregister)</td><td></td></tr><tr><td>Abgenommen und geschlossen durch / Datum</td><td></td></tr></tbody></table></div>
+<hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);">
+<h2 id="grenzen-und-eskalation">Grenzen und Eskalation</h2>
+<p>Dieses Protokoll ersetzt keine forensische Untersuchung, keine Incident Response und keine fachjuristische Beratung. In einem tatsächlichen Ransomware-Vorfall empfiehlt das BACS, den Infektionsweg zu ermitteln, Neuinfektionen zu verhindern, betroffene Systeme vor der Datenwiederherstellung neu aufzusetzen und allfällige forensische Sicherungen vor Reparaturversuchen oder Neustarts frühzeitig durch Fachpersonen zu beurteilen.<sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<p>Ein einzelnes Anzeichen beweist keine Malware-Infektion. Mehrere ungewöhnliche Beobachtungen rechtfertigen laut BACS jedoch eine genauere Untersuchung; bei einer bestätigten Infektion empfiehlt das BACS ein Neuaufsetzen und anschliessende Passwortänderungen.<sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Ergibt ein Test Hinweise auf eine reale Kompromittierung oder einen Datenabfluss, stoppen Sie den Test nach dem definierten Sicherheitsverfahren. Melde- und Informationspflichten sind anhand des konkreten Sachverhalts durch Datenschutz- und Rechtsfachpersonen zu beurteilen. Art. 24 DSG verlangt eine Meldung an den EDÖB so rasch als möglich, wenn eine Datensicherheitsverletzung voraussichtlich zu einem hohen Risiko für Persönlichkeit oder Grundrechte führt.<sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<h2 id="quellen">Quellen</h2>
+      </div>
+
+      <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+        <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
+        <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arbeitsvorlage | DKSchV Schweiz</title>
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="../../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    /* Print-specific tweaks */
+    @page { margin: 1.5cm; }
+  </style>
+</head>
+<body style="background: var(--bg-light);">
+
+  <!-- Printable Action Bar -->
+  <div class="resource-top-bar no-print">
+    <div class="container resource-bar-inner">
+      <div>
+        <a href="../it-sicherheitscheck-kmu.html" style="color: #cbd5e1; text-decoration: none; font-size: 13.5px; font-weight: 500;">&larr; Zurück zum Fachleitfaden</a>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <span style="font-size: 12.5px; color: #94a3b8;">Format: DIN A4 Druckvorlage</span>
+        <button onclick="window.print()" class="btn-print">
+          <span>🖨️ Arbeitsblatt drucken / PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="resource-sheet">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
+        <div>
+          <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
+            DKSchV Schweiz · Dokumentiertes Arbeitsmittel
+          </span>
+          <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
+            Arbeitsvorlage
+          </h1>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
+            1.3 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+          </p>
+        </div>
+        <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
+      </div>
+
+      <div class="article-content" style="font-size: 15px;">
+        <div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Datenschutz-, Vertrags- und sektorale Anforderungen sowie die Risikokriterien müssen vor Verwendung durch zuständige Fachpersonen geprüft werden.</div></div>
+<p><strong>Arbeitsmittel zu:</strong> <a href="wissen/it-sicherheitscheck-kmu.html">IT-Sicherheitscheck für Schweizer KMU: So wird aus Befunden ein priorisiertes Cyber-Risikoregister</a></p>
+<p><strong>Version:</strong> 1.3 | <strong>Quellenstand:</strong> 1. November 2026 (Quellenprüfung; keine Fach- oder Rechtsfreigabe)</p>
+<p><strong>Organisation:</strong> ________________________________</p>
+<p><strong>Register-Verantwortung:</strong> ________________________________</p>
+<p><strong>Letzte Überprüfung:</strong> ________________________________</p>
+<p><strong>Nächste Überprüfung:</strong> ________________________________</p>
+<h2 id="zweck">Zweck</h2>
+<p>Diese Vorlage hilft Geschäftsleitung, Fachbereichen und IT, technische Befunde in nachvollziehbare <strong>Cyber-Risikoszenarien</strong> zu übersetzen und deren Behandlung zu steuern. Ein Risikoszenario beschreibt, was aufgrund einer Schwachstelle oder Abhängigkeit passieren könnte und welche geschäftliche Folge daraus entstehen kann. Das Register macht Priorität, Verantwortlichkeit, Massnahme, Nachweis und Restrisiko sichtbar.</p>
+<p>Die Vorlage ist für eine risikobasierte Arbeitsweise bestimmt. Der NIST-Leitfaden für kleine Unternehmen empfiehlt ebenfalls, Cyberrisiken, Massnahmen und Verantwortlichkeiten nachvollziehbar zu priorisieren.<sup class="ref-link"><a href="#ref-3">[3]</a></sup> Die Vorlage ersetzt weder technische Prüfungen, Schwachstellenscans, Datenschutz-Folgenabschätzungen noch eine individuelle rechtliche oder fachliche Beurteilung.</p>
+<h2 id="anwendung">Anwendung</h2>
+<ol>
+<li>Erfassen Sie zunächst wichtige Geschäftsprozesse und die dafür notwendigen Systeme, Daten, Konten und Dienstleister. Das BACS empfiehlt diese Reihenfolge auch in seiner Cybersicherheits- und Resilienzmethode.<sup class="ref-link"><a href="#ref-1">[1]</a></sup></li>
+<li>Übernehmen Sie geprüfte Befunde aus Sicherheitschecks, Betriebsereignissen, Lieferantenprüfungen oder Wiederherstellungstests. Notieren Sie für jeden Befund eine Evidenz, etwa eine Befund-ID oder einen Konfigurationsnachweis. Bei Verdacht auf Schadsoftware dokumentieren Sie den Befundstatus, etwa «Verdacht», «untersucht» oder «bestätigt»: Ein einzelnes Anzeichen ist noch kein Infektionsbeweis, mehrere ungewöhnliche Beobachtungen sollten genauer untersucht werden. Das BACS empfiehlt bei Verdacht die Untersuchung durch eine Fachperson sowie bei geschäftlich genutzten Geräten die Information der zuständigen IT-Stelle.<sup class="ref-link"><a href="#ref-4">[4]</a></sup></li>
+<li>Formulieren Sie das Risiko als Satz: <strong>Wenn</strong> eine Bedrohung eine Schwachstelle oder Abhängigkeit ausnutzt, <strong>dann</strong> tritt ein Ereignis ein, <strong>wodurch</strong> eine geschäftliche Folge entsteht.</li>
+<li>Bewerten Sie Auswirkung und Eintrittswahrscheinlichkeit unter Berücksichtigung der nachweislich bestehenden Kontrollen. Legen Sie die Skala vor der ersten Bewertung fest und verwenden Sie sie einheitlich.</li>
+<li>Benennen Sie Risiko- und Massnahmen-Eigentümer. Schliessen Sie eine Zeile erst, wenn das Abnahmekriterium erfüllt und die Restbewertung geprüft ist.</li>
+<li>Legen Sie Top-Risiken dem zuständigen Führungsgremium zur Entscheidung vor und überführen Sie relevante Ausfallszenarien in die Notfallplanung.</li>
+</ol>
+<h3 id="zusaetzliche-kontrollpunkte-bei-komponenten-und-ki">Zusätzliche Kontrollpunkte bei Komponenten und KI</h3>
+<p>Ergibt ein Befund eine möglicherweise betroffene eingebettete oder extern betriebene Komponente, erfassen Sie zusätzlich Produkt, Komponente, tatsächlichen Lauf- oder Paketstand, Erreichbarkeit und Betreiber. Verlangen Sie vom Hersteller, Hoster oder Dienstleister eine Fixbestätigung für die konkrete Instanz und prüfen Sie den Nachweis des tatsächlich laufenden, behobenen Stands. Eine reine Hauptversionsangabe genügt bei zurückportierten Sicherheitskorrekturen nicht zwingend.<sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p>Bei einem KI-gestützten Prozess dokumentieren Sie, welche Funktion von dem Dienst abhängt, welche Kapazitäts-, Budget- oder Quotenannahme gilt, ab welchen Schwellen gewarnt wird und wer bei eingeschränkter Verfügbarkeit entscheidet. Ergänzen Sie einen manuellen oder anderen Ausweichablauf, soweit der Prozess kritisch ist. Die Orientierung zu KI-Tokenverbrauch nennt risikobasierte Priorisierung, Monitoring, Warnschwellen sowie Kapazitäts- und Ausweichplanung als mögliche organisatorische Massnahmen.<sup class="ref-link"><a href="#ref-6">[6]</a></sup> <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<p>Bei KI-Agenten erfassen Sie zudem die eigene Identität, den konkreten Auftrag, angebundene Daten und Werkzeuge, zulässige Netzwerkverbindungen und mögliche externe Wirkungen. Für Handlungen mit hohem Schadenspotenzial oder geringer Rückgängigkeitsmöglichkeit sind menschliche Freigabe, Protokollierung und ein auf die Aufgabe begrenzter Berechtigungsumfang als mögliche Kontrollen zu beurteilen.<sup class="ref-link"><a href="#ref-8">[8]</a></sup> Diese Punkte sind keine Freigabe eines Agenten und begründen keine Aussage über eine konkrete Schwachstelle oder einen Patchstand.</p>
+<h2 id="registerrahmen-und-bewertungsskala">Registerrahmen und Bewertungsskala</h2>
+<p><strong>Zuständiges Entscheidgremium:</strong> ____________________________________________</p>
+<p><strong>Berichtsintervall:</strong> ☐ monatlich ☐ quartalsweise ☐ nach Ereignis ☐ anderes: __________</p>
+<p><strong>Risikotoleranz / Eskalationsregel:</strong> ________________________________________________</p>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>Stufe</th><th>Auswirkung auf Geschäft, Daten oder Verpflichtungen</th><th>Eintrittswahrscheinlichkeit im eigenen Umfeld</th></tr></thead><tbody><tr><td>1 – niedrig</td><td>Geringe, kurzfristig beherrschbare Beeinträchtigung; kein kritischer Prozess betroffen.</td><td>Ausnutzung im aktuellen Umfeld wenig plausibel; wirksame Kontrollen sind nachgewiesen.</td></tr><tr><td>2 – mittel</td><td>Spürbare Beeinträchtigung eines Bereichs, zusätzliche Arbeit oder begrenzter Unterbruch.</td><td>Ausnutzung ist möglich; Kontrollen sind teilweise vorhanden oder nicht vollständig überprüft.</td></tr><tr><td>3 – hoch</td><td>Kritischer Prozess, vertrauliche oder wichtige Daten, Vertrags- oder Meldeabklärungen könnten betroffen sein.</td><td>Ausnutzung ist plausibel; Exponierung, fehlende Kontrolle oder bekannte Abhängigkeit erhöhen das Risiko.</td></tr><tr><td>4 – sehr hoch</td><td>Schwerer oder länger dauernder Geschäftsausfall, erhebliche Beeinträchtigung von Daten oder wesentlichen Verpflichtungen möglich.</td><td>Ausnutzung ist unmittelbar oder wiederholt plausibel; wirksame Kontrolle fehlt.</td></tr></tbody></table></div>
+<p><strong>Bewertungsregel:</strong> Priorität = Auswirkung ___ × Wahrscheinlichkeit ___ = ___ .</p>
+<p><strong>Hinweis:</strong> Die Multiplikation ist eine Orientierung, kein Ersatz für den Geschäftsentscheid. Bei sehr hoher Auswirkung, privilegierten Zugängen, externer Exponierung oder einer dringenden Verpflichtung ist eine Eskalation auch unabhängig vom Produktwert zu prüfen.</p>
+<h2 id="risikoregister">Risikoregister</h2>
+<div class="table-responsive"><table class="kb-table"><thead><tr><th>ID</th><th>Befundstatus, Befund und Evidenz</th><th>Betroffener Prozess / Schutzobjekt</th><th>Risikoszenario: Wenn … dann … wodurch …</th><th>Bestehende Kontrollen und Nachweis</th><th>Auswirkung (1–4)</th><th>Wahrscheinlichkeit (1–4)</th><th>Priorität / Entscheid</th><th>Risiko-Eigentümer</th><th>Massnahme, Abnahmekriterium und Massnahmen-Eigentümer</th><th>Zieltermin / Status</th><th>Restrisiko, Entscheidung und Prüftermin</th></tr></thead><tbody><tr><td>CR-___</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CR-___</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CR-___</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CR-___</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CR-___</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CR-___</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<h2 id="einzelblatt-fuer-ein-priorisiertes-risiko">Einzelblatt für ein priorisiertes Risiko</h2>
+<p><strong>Risiko-ID:</strong> CR-__________</p>
+<p><strong>Datum der Erfassung:</strong> ____________________</p>
+<p><strong>Letzte Überprüfung:</strong> ____________________</p>
+<h3 id="1-kontext-und-evidenz">1. Kontext und Evidenz</h3>
+<p><strong>Betroffener Geschäftsprozess:</strong> ________________________________________________</p>
+<p><strong>Systeme, Daten, Konten oder Dienstleister:</strong> _______________________________________</p>
+<p><strong>Befundstatus:</strong> ☐ Verdacht ☐ untersucht ☐ bestätigt ☐ anderer: ____________________</p>
+<p><strong>Technischer oder organisatorischer Befund:</strong> _________________________________________</p>
+<p><strong>Evidenz / Quelle / Befund-ID:</strong> ___________________________________________________</p>
+<p><strong>Bei eingebetteter oder externer Komponente: Produkt / Komponente / Lauf- oder Paketstand / Betreiber:</strong></p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Betreiber-Fixbestätigung und überprüfter Nachweis (falls einschlägig):</strong></p>
+<p>__________________________________________________________________________________</p>
+<h3 id="2-risikoszenario">2. Risikoszenario</h3>
+<p><strong>Bedrohung oder Auslöser:</strong> ________________________________________________________</p>
+<p><strong>Schwachstelle oder Abhängigkeit:</strong> __________________________________________________</p>
+<p><strong>Szenario:</strong> Wenn __________________________________________________________________</p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Mögliche geschäftliche Folgen:</strong> ☐ Verfügbarkeit ☐ Vertraulichkeit ☐ Integrität ☐ Nachvollziehbarkeit ☐ Vertrag / Kunde ☐ Finanzen ☐ Andere: ____________________</p>
+<p><strong>Bei KI-gestütztem Prozess (falls einschlägig): Dienst / kritische Funktion / Kapazitäts-, Budget- oder Quotenannahme:</strong></p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Warnschwellen, Ausweichablauf und Entscheidkontakt:</strong></p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Bei KI-Agent (falls einschlägig): Identität / Auftrag / Daten und Werkzeuge / zulässige Netzwerkverbindungen / mögliche externe Wirkung:</strong></p>
+<p>__________________________________________________________________________________</p>
+<h3 id="3-bewertung-vor-der-massnahme">3. Bewertung vor der Massnahme</h3>
+<p><strong>Auswirkung (1–4):</strong> ______  <strong>Begründung:</strong> ________________________________________</p>
+<p><strong>Eintrittswahrscheinlichkeit (1–4):</strong> ______  <strong>Begründung:</strong> __________________________</p>
+<p><strong>Priorität / Eskalation:</strong> ____________________________________________________________</p>
+<p><strong>Bestehende Kontrollen:</strong> __________________________________________________________</p>
+<p><strong>Kontrollnachweis und bekannte Grenzen:</strong> ____________________________________________</p>
+<h3 id="4-behandlung-und-verantwortlichkeit">4. Behandlung und Verantwortlichkeit</h3>
+<p><strong>Behandlungsart:</strong> ☐ reduzieren ☐ vermeiden ☐ übertragen ☐ befristet akzeptieren ☐ weiter analysieren</p>
+<p><strong>Risiko-Eigentümer (Name / Funktion):</strong> ______________________________________________</p>
+<p><strong>Massnahmen-Eigentümer (Name / Funktion):</strong> _________________________________________</p>
+<p><strong>Massnahme als überprüfbares Ergebnis:</strong></p>
+<p>__________________________________________________________________________________</p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Abnahmekriterium / benötigter Nachweis:</strong></p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Abhängigkeiten, Ressourcen oder Entscheidbedarf:</strong></p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Zieltermin:</strong> ____________________  <strong>Status:</strong> ☐ offen ☐ in Umsetzung ☐ abgenommen ☐ überfällig</p>
+<h3 id="5-restrisiko-und-fuehrungentscheid">5. Restrisiko und Führungentscheid</h3>
+<p><strong>Bewertung nach Massnahme:</strong> Auswirkung ______ × Wahrscheinlichkeit ______ = ______</p>
+<p><strong>Begründung des Restrisikos:</strong> ______________________________________________________</p>
+<p><strong>Entscheid:</strong> ☐ akzeptiert ☐ weitere Massnahme ☐ eskalieren ☐ geschlossen nach Nachweis</p>
+<p><strong>Entscheider / Gremium:</strong> ____________________  <strong>Datum:</strong> ____________________</p>
+<p><strong>Nächster Prüftermin:</strong> ____________________</p>
+<h2 id="kontrollpunkte-vor-dem-schliessen-eines-eintrags">Kontrollpunkte vor dem Schliessen eines Eintrags</h2>
+<ul>
+<li>☐ Das Szenario nennt Ursache, Ereignis und geschäftliche Folge; es ist mehr als eine technische Befundbezeichnung.</li>
+<li>☐ Der betroffene Prozess, die Schutzobjekte und die Evidenz sind dokumentiert.</li>
+<li>☐ Auswirkung und Wahrscheinlichkeit sind nach der festgelegten Skala begründet.</li>
+<li>☐ Bestehende Kontrollen sind nachweisbar; ihre Grenzen sind bekannt.</li>
+<li>☐ Risiko-Eigentümer und Massnahmen-Eigentümer sind benannt.</li>
+<li>☐ Die Massnahme hat ein Abnahmekriterium und einen Termin.</li>
+<li>☐ Das Restrisiko wurde nach Umsetzung neu bewertet und durch die zuständige Instanz entschieden.</li>
+<li>☐ Bei einer eingebetteten oder extern betriebenen Komponente sind Betreiber, konkreter Fixnachweis und tatsächlich laufender Stand festgehalten, soweit einschlägig.</li>
+<li>☐ Bei einem KI-gestützten kritischen Prozess sind Kapazitäts- oder Budgetannahmen, Warnschwellen und Ausweichablauf beurteilt, soweit einschlägig.</li>
+<li>☐ Bei einem KI-Agenten sind Identität, Werkzeug- und Netzwerkzugriffe, mögliche externe Wirkungen sowie notwendige menschliche Freigaben beurteilt, soweit einschlägig.</li>
+<li>☐ Ein kritisches Ausfallszenario ist in der <a href="notfallplanung.html">IT-Notfallplanung</a> berücksichtigt.</li>
+<li>☐ Relevante Datenschutz-, Vertrags- oder sektorale Anforderungen wurden fachlich geprüft.</li>
+</ul>
+<h2 id="grenzen-und-fachliche-pruefung">Grenzen und fachliche Prüfung</h2>
+<p>Die Vorlage schafft Transparenz, garantiert aber weder die Vollständigkeit aller Risiken noch die Vermeidung von Cybervorfällen. Eine niedrige Bewertung oder eine akzeptierte Restrisikoentscheidung ist keine Sicherheitsgarantie. Bewerten Sie Annahmen neu, wenn sich Prozesse, Systeme, Bedrohungslage, Lieferanten oder gesetzliche und vertragliche Anforderungen ändern.</p>
+<p>Bei Personendaten verlangt das DSG eine dem Risiko angemessene Datensicherheit. Die DSV nennt für die Beurteilung unter anderem Schutzbedarf, Ursache und Gefahr, vorhandene oder vorgesehene Massnahmen sowie Wahrscheinlichkeit und Schwere einer Datensicherheitsverletzung.<sup class="ref-link"><a href="#ref-2">[2]</a></sup> <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Ob eine konkrete Datenbearbeitung, ein Vertrag oder eine mögliche Meldung rechtliche Pflichten auslöst, ist durch qualifizierte Datenschutz- oder Rechtsfachpersonen zu beurteilen. Dieses Arbeitsmittel ist keine individuelle Rechtsberatung.</p>
+<p>Für eine methodische Einordnung können Sie die <a href="sicherheitsanalyse.html">Sicherheitsanalyse</a> und das <a href="risikomanagement.html">Risikomanagement</a> von DKSchV konsultieren.</p>
+<h2 id="quellen">Quellen</h2>
+      </div>
+
+      <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+        <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
+        <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

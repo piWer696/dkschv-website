@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wissen &amp; Ratgeber: Cyber-Security &amp; Datenschutz für Schweizer KMU | DKSchV</title>
+  <meta name="description" content="Verifizierte Leitfäden, Notfall-Checklisten, Microsoft 365 Best Practices und nDSG/BACS-Entscheidungshilfen für Geschäftsführer und IT-Verantwortliche in der Schweiz.">
+  <link rel="canonical" href="https://www.dkschv.ch/wissen.html">
+  <link rel="icon" type="image/png" href="./assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  
+  <!-- Top Emergency Bar -->
+  <div class="top-emergency-bar">
+    <div class="container top-bar-inner">
+      <div class="top-trust-tags">
+        <span class="top-trust-tag">🇨🇭 Schweizer Cyber-Security &amp; Datenschutz</span>
+        <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
+        <span class="top-trust-tag">📍 Naters / Wallis</span>
+      </div>
+      <div>
+        <a href="./kontakt.html#notfall" class="emergency-quicklink">
+          🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="./index.html" class="brand-link" title="DKSchV Schweiz Startseite">
+        <img src="./assets/images/dkschv_logo.png" alt="DKSchV Schweiz Logo" class="brand-logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="./index.html" class="nav-link ">Home</a></li>
+          <li><a href="./sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
+          <li><a href="./risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
+          <li><a href="./notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
+          <li><a href="./wissen.html" class="nav-link active">Wissen &amp; Ratgeber</a></li>
+          <li><a href="./ueber-uns.html" class="nav-link ">Über uns</a></li>
+          <li><a href="./kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li><a href="./kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <!-- Hero Section -->
+  <section class="hub-hero">
+    <div class="container">
+      <div class="hub-hero-badge">
+        <span>🇨🇭</span>
+        <span>Praxiswissen für Schweizer KMU &amp; Verwaltungsräte</span>
+      </div>
+      <h1 class="hub-hero-title">
+        Wissen &amp; Ratgeber: Cyber-Security &amp; Datenschutz
+      </h1>
+      <p class="hub-hero-lead">
+        Klare Handlungsanleitungen, verifizierte Rechtsgrundlagen nach neuem Schweizer Datenschutzgesetz (nDSG) und BACS-Meldepflicht sowie sofort einsetzbare Notfall-Checklisten für Ihre Organisation.
+      </p>
+
+      <!-- Search & Filters -->
+      <div class="hub-toolbar">
+        <div class="hub-search-wrapper">
+          <svg class="hub-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="hubSearchInput" class="hub-search-input" placeholder="Nach Thema suchen (z. B. Ransomware, Backups, M365, EDÖB, NIS2)..." aria-label="Ratgeber durchsuchen">
+        </div>
+
+        <div class="hub-filter-chips">
+          <button class="filter-chip active" data-filter="all">Alle Themen (12)</button>
+          <button class="filter-chip" data-filter="notfall">Ransomware &amp; Notfall</button>
+          <button class="filter-chip" data-filter="cloud">Cloud &amp; Microsoft 365</button>
+          <button class="filter-chip" data-filter="datenschutz">Datenschutz &amp; nDSG</button>
+          <button class="filter-chip" data-filter="backup">Backup &amp; Resilienz</button>
+          <button class="filter-chip" data-filter="governance">Audit &amp; Compliance</button>
+          <button class="filter-chip" data-filter="ki">Künstliche Intelligenz</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main class="section" style="padding-top: 48px;">
+    <div class="container">
+
+      <!-- Sunday News Highlight -->
+      <div class="news-highlight-card">
+        <div class="news-badge">
+          <span class="news-pulse-dot"></span>
+          <span>Wochenlage Sonntagsausgabe · KW 45 (08.11.2026)</span>
+        </div>
+        <h2 class="news-title">Aktuelle Schweizer Cyber-Security Branchennews</h2>
+        <p style="font-size: 14.5px; color: #cbd5e1; max-width: 820px; line-height: 1.6; margin-bottom: 16px;">
+          Wöchentlicher Lagebericht für Schweizer KMU: Wichtige Warnungen von BACS und EDÖB, KEV-Aufnahmen und konkrete Handlungspunkte für Geschäftsleitungen.
+        </p>
+
+        <div class="news-points">
+          <div class="news-point-item">
+            <span>🛡️</span>
+            <div><strong>SonicWall VPN:</strong> CISA KEV Aufnahme für SAML-Bypass; Modell- und Patchstände prüfen.</div>
+          </div>
+          <div class="news-point-item">
+            <span>🔍</span>
+            <div><strong>Schatten-Secrets:</strong> KI-gestützte Secret-Jagd bedroht Azure/M365 Tokens &amp; Repositories.</div>
+          </div>
+          <div class="news-point-item">
+            <span>⚠️</span>
+            <div><strong>EHRA-Phishing:</strong> BACS warnt vor gefälschten Handelsregister-Aktualisierungsmails.</div>
+          </div>
+          <div class="news-point-item">
+            <span>⚖️</span>
+            <div><strong>EDÖB / SkySale:</strong> Bundesverwaltungsgericht bestätigt Betroffenen-Informationspflicht.</div>
+          </div>
+        </div>
+
+        <a href="wissen/news/2026-11-08-branchennews.html" class="btn btn-primary" style="background: var(--teal-accent); display: inline-flex; align-items: center; gap: 8px;">
+          <span>Vollständige Sonntagsausgabe lesen</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Section Title -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <h2 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin-bottom: 6px;">
+            Fundierte Fachbeiträge &amp; Handlungsanleitungen
+          </h2>
+          <p style="font-size: 15px; color: var(--text-muted); margin: 0;">
+            Alle Artikel basieren auf geprüften Primärquellen (BACS, Fedlex, EDÖB, NIST, CISA) mit Stand November 2026.
+          </p>
+        </div>
+        <div style="font-size: 13.5px; color: var(--text-muted); font-weight: 500;">
+          Gesamt: <strong>12 Fachartikel</strong> mit Arbeitsvorlagen
+        </div>
+      </div>
+
+      <!-- No Results State -->
+      <div id="hubNoResults" style="display: none; padding: 60px 20px; text-align: center; background: var(--bg-light); border-radius: var(--radius-md); border: 1px dashed var(--border);">
+        <p style="font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px;">Keine Artikel zu diesem Suchbegriff gefunden</p>
+        <p style="font-size: 14.5px; color: var(--text-muted); margin: 0;">Versuchen Sie es mit einem anderen Begriff wie «MFA», «Ransomware», «Backups» oder «EDÖB».</p>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="articles-grid">
+        
+          <article class="hub-article-card" data-category="notfall" data-keywords="Ransomware was tun KMU Schweiz Informational – Sofortmassnahmen bei Ransomware-Verdacht Ransomware & Notfall">
+            <div class="card-top-meta">
+              <span class="category-tag">Ransomware & Notfall</span>
+              <span class="read-time">⏱️ 15 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/ransomware-erste-60-minuten.html">Ransomware im KMU: Erste Schritte im Vorfall</a>
+            </h3>
+
+            <p class="card-description">
+              Ransomware-Verdacht im Unternehmen: Ein Schweizer Leitfaden zu Eindämmung, Beweissicherung, Backups und der getrennten Prüfung möglicher Meldungen.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: 60-Minuten-Checkliste bei Ransom...</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/ransomware-erste-60-minuten.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="email" data-keywords="CEO-Betrug verhindern Informational – Zahlungsbetrug und Business Email Compromise erkennen E-Mail & Betrug">
+            <div class="card-top-meta">
+              <span class="category-tag">E-Mail & Betrug</span>
+              <span class="read-time">⏱️ 14 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/ceo-betrug-business-email-compromise.html">CEO-Betrug und BEC erkennen: Schweizer KMU</a>
+            </h3>
+
+            <p class="card-description">
+              Manipulierte Zahlungsaufträge und E-Mail-Konten erkennen: Prüfschritte, Rückbestätigung und Erstreaktion für Schweizer KMU.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: Zahlungsprüfprotokoll: Bankverbi...</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/ceo-betrug-business-email-compromise.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="datenschutz" data-keywords="Datenpanne melden Schweiz Informational – Meldewege bei Datenpannen in der Schweiz einordnen Datenschutz & nDSG">
+            <div class="card-top-meta">
+              <span class="category-tag">Datenschutz & nDSG</span>
+              <span class="read-time">⏱️ 13 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/datenpanne-melden-schweiz.html">Datenpanne melden: EDÖB oder BACS?</a>
+            </h3>
+
+            <p class="card-description">
+              Schweizer Entscheidungsweg zu Datenpannen: Art. 24 DSG, EDÖB und die getrennte BACS-Meldeprüfung bei kritischen Infrastrukturen.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: EDÖB-/BACS-Entscheidungsbaum und...</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/datenpanne-melden-schweiz.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="backup" data-keywords="ransomware-resistente Backups Informational – Backups gegen Ransomware planen und testen Backup & Resilienz">
+            <div class="card-top-meta">
+              <span class="category-tag">Backup & Resilienz</span>
+              <span class="read-time">⏱️ 14 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/ransomware-resistente-backups.html">Ransomware-resistente Backups für KMU</a>
+            </h3>
+
+            <p class="card-description">
+              Wie Schweizer KMU Sicherungen mit getrennten Zugängen, geschützten Kopien und dokumentierten Wiederherstellungstests robuster gegen Ransomware planen.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: Backup-Selbstcheck für ransomwar...</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/ransomware-resistente-backups.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="cloud" data-keywords="Microsoft 365 MFA Informational – Passkey- und MFA-Rollout in Microsoft Entra ID planen Cloud & M365">
+            <div class="card-top-meta">
+              <span class="category-tag">Cloud & M365</span>
+              <span class="read-time">⏱️ 15 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/microsoft-365-mfa-passkeys.html">Microsoft 365: MFA und Passkeys 2026/2027</a>
+            </h3>
+
+            <p class="card-description">
+              Microsoft Entra ID: Passkey-Rollout für Schweizer KMU mit Pilot, Conditional Access, Wiederherstellung und aktuellen Herstellerterminen.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: Passkey-Rollout-Checkliste für M...</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/microsoft-365-mfa-passkeys.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="cloud" data-keywords="Microsoft 365 Sicherheit KMU Informational – Microsoft-365-Tenant risikobasiert prüfen Cloud & M365">
+            <div class="card-top-meta">
+              <span class="category-tag">Cloud & M365</span>
+              <span class="read-time">⏱️ 17 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/microsoft-365-sicherheit-kmu.html">Microsoft 365 sicher konfigurieren: KMU-Check</a>
+            </h3>
+
+            <p class="card-description">
+              Praxis-Check für Schweizer KMU zu Identitäten, Adminrollen, externen Freigaben, Protokollen, Wiederherstellung und Provider-Governance in Microsoft 365.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: Microsoft-365-Tenant-Prüfliste f...</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/microsoft-365-sicherheit-kmu.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="backup" data-keywords="Wiederherstellungstest Backup Informational – Backup-Wiederherstellung und Restore-Tests planen Backup & Resilienz">
+            <div class="card-top-meta">
+              <span class="category-tag">Backup & Resilienz</span>
+              <span class="read-time">⏱️ 14 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/backup-wiederherstellung-testen.html">Backup-Wiederherstellung testen: KMU-Leitfaden</a>
+            </h3>
+
+            <p class="card-description">
+              So testen Schweizer KMU Backups, Wiederanlauf, Rollen und Kommunikation in einem realistischen Ransomware-Szenario.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: Checkliste</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/backup-wiederherstellung-testen.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="governance" data-keywords="IT-Sicherheitscheck KMU Informational – technische Befunde in ein Cyber-Risikoregister überführen Audit & Risikomanagement">
+            <div class="card-top-meta">
+              <span class="category-tag">Audit & Risikomanagement</span>
+              <span class="read-time">⏱️ 14 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/it-sicherheitscheck-kmu.html">IT-Sicherheitscheck und Risikoregister für KMU</a>
+            </h3>
+
+            <p class="card-description">
+              So werden technische Befunde zu nachvollziehbaren Cyberrisiken, Prioritäten, Verantwortlichkeiten und Massnahmen für die Geschäftsleitung.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: Checkliste</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/it-sicherheitscheck-kmu.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="ki" data-keywords="Schatten-KI KMU Informational – Schatten-KI risikobasiert steuern Künstliche Intelligenz">
+            <div class="card-top-meta">
+              <span class="category-tag">Künstliche Intelligenz</span>
+              <span class="read-time">⏱️ 16 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/schatten-ki-kmu.html">Schatten-KI im Schweizer KMU sicher steuern</a>
+            </h3>
+
+            <p class="card-description">
+              KI-Nutzung sichtbar machen, vertrauliche Daten schützen und klare Regeln schaffen: ein Praxisleitfaden für Schweizer KMU.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: Checkliste</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/schatten-ki-kmu.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="notfall" data-keywords="Ransomware Notfallkommunikation Informational – Krisenkommunikation bei Cyberangriffen vorbereiten Krisenkommunikation">
+            <div class="card-top-meta">
+              <span class="category-tag">Krisenkommunikation</span>
+              <span class="read-time">⏱️ 14 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/cyberangriff-kommunikation.html">Cyberangriff: Krisenkommunikation für KMU</a>
+            </h3>
+
+            <p class="card-description">
+              Rollen, Freigaben, Holding Statement und drei Kommunikationsphasen: So bereiten Schweizer KMU ihre Cyber-Krisenkommunikation vor.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: Checkliste</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/cyberangriff-kommunikation.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="governance" data-keywords="Lieferantenrisiken Cybersecurity KMU Informational – Cyberrisiken bei Lieferanten erfassen und priorisieren Lieferanten & Dritte">
+            <div class="card-top-meta">
+              <span class="category-tag">Lieferanten & Dritte</span>
+              <span class="read-time">⏱️ 15 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/lieferantenrisiken-cybersecurity.html">Cyberrisiken bei IT-Lieferanten prüfen</a>
+            </h3>
+
+            <p class="card-description">
+              So priorisieren und prüfen Schweizer KMU Cloud-, IT- und andere kritische Lieferanten mit einem pragmatischen Risikokreislauf.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: Checkliste</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/lieferantenrisiken-cybersecurity.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+
+          <article class="hub-article-card" data-category="governance" data-keywords="NIS2 DORA Schweiz Informational – NIS2- und DORA-Relevanz für Schweizer Zulieferer einordnen Compliance (NIS2/DORA)">
+            <div class="card-top-meta">
+              <span class="category-tag">Compliance (NIS2/DORA)</span>
+              <span class="read-time">⏱️ 13 Min.</span>
+            </div>
+
+            <h3 class="card-title">
+              <a href="wissen/nis2-dora-schweiz.html">NIS2 und DORA: Relevanz für Schweizer KMU</a>
+            </h3>
+
+            <p class="card-description">
+              Wann betreffen NIS2 oder DORA Schweizer Anbieter direkt oder über EU-Kunden? Relevanzcheck für Verträge, Sicherheit und Notfallnachweise.
+            </p>
+
+            
+            <div class="card-resource-pill">
+              <span>📄</span>
+              <span>Inkl. Arbeitsmittel: Checkliste</span>
+            </div>
+            
+
+            <div class="card-footer-meta">
+              <span>Stand: 1. November 2026</span>
+              <a href="wissen/nis2-dora-schweiz.html" class="card-read-link">
+                <span>Leitfaden lesen</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+          
+      </div>
+
+      <!-- Downloadable Worksheets Directory Section -->
+      <div style="margin-top: 72px; background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 40px;">
+        <div style="max-width: 680px; margin-bottom: 28px;">
+          <span class="badge badge-teal" style="margin-bottom: 12px;">Druckfertige Vorlagen</span>
+          <h3 style="font-size: 24px; font-weight: 800; color: var(--text-dark); margin-bottom: 10px;">
+            Notfall-Checklisten, Protokolle &amp; Entscheidungshilfen
+          </h3>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin: 0;">
+            Alle Arbeitsmittel sind für den Ausdruck optimiert (DIN A4) und können direkt im Ernstfall handschriftlich oder digital zur Triage und Beweissicherung verwendet werden.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+          
+            <a href="wissen/resources/01-60-minuten-checkliste.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                60-Minuten-Checkliste bei Ransomware-Verdacht
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/02-zahlungspruefprotokoll.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                Zahlungsprüfprotokoll: Bankverbindung und aussergewöhnliche Zahlungsaufträge
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/03-datenpanne-entscheidungsbaum.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                EDÖB-/BACS-Entscheidungsbaum und Vorfallsprotokoll
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/04-backup-selbstcheck.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                Backup-Selbstcheck für ransomware-resistente Sicherungen
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/05-passkey-rollout-checkliste.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                Passkey-Rollout-Checkliste für Microsoft 365 und Entra ID
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/06-m365-tenant-pruefliste.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                Microsoft-365-Tenant-Prüfliste für Schweizer KMU
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/07-restore-testprotokoll.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                Backup-Wiederherstellung testen: KMU-Leitfaden
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/08-risikoregister-vorlage.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                IT-Sicherheitscheck und Risikoregister für KMU
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/09-ki-nutzungsregel.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                Schatten-KI im Schweizer KMU sicher steuern
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/10-holding-statement-vorlage.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                Cyberangriff: Krisenkommunikation für KMU
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/11-lieferantenfragebogen.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                Cyberrisiken bei IT-Lieferanten prüfen
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+
+            <a href="wissen/resources/12-nis2-dora-relevanzmatrix.html" style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);" onmouseover="this.style.borderColor='var(--teal-accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-weight: 700; font-size: 14.5px; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4;">
+                NIS2 und DORA: Relevanz für Schweizer KMU
+              </div>
+              <div style="font-size: 12px; color: var(--teal-accent); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                <span>🖨️ Druckbare Vorlage</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+            
+        </div>
+      </div>
+
+      <!-- Advisory CTA Banner -->
+      <div style="margin-top: 56px; background: linear-gradient(135deg, #0a0f1d 0%, #1e293b 100%); border-radius: var(--radius-xl); padding: 48px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px;">
+        <div style="max-width: 620px;">
+          <h3 style="font-size: 26px; font-weight: 800; color: #ffffff; margin-bottom: 12px;">
+            Haben Sie offene Fragen zu Ihrem Cyber-Sicherheitsniveau?
+          </h3>
+          <p style="font-size: 16px; color: #cbd5e1; line-height: 1.6; margin: 0;">
+            Wir analysieren Ihre IT-Infrastruktur unabhängig, objektiv und nach anerkannten Schweizer Massstäben. Vereinbaren Sie ein vertrauliches Beratungsgespräch.
+          </p>
+        </div>
+        <div>
+          <a href="./kontakt.html" class="btn btn-primary" style="background: var(--teal-accent); font-size: 15px; padding: 14px 28px;">
+            Sicherheitsaudit anfragen &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="./assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 38px; filter: brightness(0) invert(1);">
+          <p>DKSchV Dini ist Ihr spezialisierter Schweizer Partner für Cyber-Security, Sicherheitsanalysen, IT-Notfallplanung und Datenschutz nach Schweizer Standard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Dienstleistungen</h4>
+          <ul class="footer-links">
+            <li><a href="./sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
+            <li><a href="./risikomanagement.html">Risikomanagement</a></li>
+            <li><a href="./notfallplanung.html">Notfallplanung</a></li>
+            <li><a href="./wissen.html">Wissen &amp; Ratgeber</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul class="footer-links">
+            <li><a href="./ueber-uns.html">Über uns</a></li>
+            <li><a href="./kontakt.html">Kontakt &amp; Standort</a></li>
+            <li><a href="./impressum.html">Impressum</a></li>
+            <li><a href="./datenschutz.html">Datenschutz (nDSG)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Standort &amp; Notfallkontakt</h4>
+          <p style="font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 12px;">
+            <strong>DKSchV Dini</strong><br>Andreas Dini<br>Bammattenweg 19<br>CH-3904 Naters (Wallis)
+          </p>
+          <p style="font-size: 14px; color: #94a3b8;">
+            E-Mail: <a href="mailto:info@dkschv.ch" style="color: #ffffff;">info@dkschv.ch</a><br>
+            Telefon: <a href="tel:+41798446669" style="color: #ffffff;">+41 79 844 66 69</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
+        <div class="footer-legal-links">
+          <a href="./impressum.html">Impressum</a>
+          <a href="./datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./assets/js/main.js"></script>
+  
+</body>
+</html>
