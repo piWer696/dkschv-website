@@ -137,4 +137,95 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // 5. Knowledge Hub Search & Filter Logic
+  const hubSearchInput = document.getElementById('hubSearchInput');
+  const filterChips = document.querySelectorAll('.filter-chip');
+  const articleCards = document.querySelectorAll('.hub-article-card');
+
+  let activeCategory = 'all';
+  let activeSearchTerm = '';
+
+  function filterHubCards() {
+    let visibleCount = 0;
+    articleCards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category') || '';
+      const cardTitle = (card.querySelector('.card-title') ? card.querySelector('.card-title').textContent : '').toLowerCase();
+      const cardDesc = (card.querySelector('.card-description') ? card.querySelector('.card-description').textContent : '').toLowerCase();
+      const cardTags = (card.getAttribute('data-keywords') || '').toLowerCase();
+
+      const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
+      const matchesSearch = !activeSearchTerm ||
+        cardTitle.includes(activeSearchTerm) ||
+        cardDesc.includes(activeSearchTerm) ||
+        cardTags.includes(activeSearchTerm);
+
+      if (matchesCategory && matchesSearch) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const noResultsEl = document.getElementById('hubNoResults');
+    if (noResultsEl) {
+      noResultsEl.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  if (hubSearchInput) {
+    hubSearchInput.addEventListener('input', function (e) {
+      activeSearchTerm = e.target.value.trim().toLowerCase();
+      filterHubCards();
+    });
+  }
+
+  if (filterChips.length > 0) {
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', function () {
+        filterChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeCategory = chip.getAttribute('data-filter') || 'all';
+        filterHubCards();
+      });
+    });
+  }
+
+  // 6. Article Reading Progress & TOC Scrollspy
+  const progressBar = document.querySelector('.reading-progress-bar');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+  const articleSections = document.querySelectorAll('.article-content h2[id]');
+
+  if (progressBar || (tocLinks.length > 0 && articleSections.length > 0)) {
+    window.addEventListener('scroll', function () {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+      if (progressBar && height > 0) {
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + '%';
+      }
+
+      if (articleSections.length > 0 && tocLinks.length > 0) {
+        let currentSectionId = '';
+        articleSections.forEach(section => {
+          const sectionTop = section.offsetTop - 120;
+          if (winScroll >= sectionTop) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        if (currentSectionId) {
+          tocLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' + currentSectionId) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      }
+    }, { passive: true });
+  }
 });
