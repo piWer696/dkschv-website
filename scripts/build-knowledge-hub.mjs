@@ -723,7 +723,7 @@ articles.forEach(art => {
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="../index.html">Home</a>
         <span class="sep">/</span>
-        <a href="../wissen.html">Wissen &amp; Ratgeber</a>
+        <a href="./index.html">🔒 Kundenbereich</a>
         <span class="sep">/</span>
         <span style="color:#ffffff;">${art.categoryLabel}</span>
       </nav>
@@ -735,7 +735,7 @@ articles.forEach(art => {
         <span class="article-meta-item">📅 Stand: <strong>${art.frontmatter.stand || 'November 2026'}</strong></span>
         <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. ${art.readTimeMin} Min.</strong></span>
         <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
-        <span class="article-meta-item">✍️ Redaktion: <strong>DKSchV Fachredaktion</strong></span>
+        <span class="article-meta-item">🔒 Status: <strong>Mandanten-Bereich</strong></span>
       </div>
     </div>
   </header>
@@ -744,9 +744,39 @@ articles.forEach(art => {
   <main class="container">
     <div class="article-container">
       <article class="article-content">
-        ${resourceBoxHtml}
-        ${contentHtml}
-        ${referencesHtml}
+        ${leadHtml}
+
+        <!-- Client Portal Login Gate (Visible when not logged in) -->
+        <div class="client-portal-gate" id="clientPortalGate">
+          <span class="gate-badge">🔒 Exklusiver Mandanteninhalt</span>
+          <h2 class="gate-title">Kunden-Login erforderlich</h2>
+          <p class="gate-desc">
+            Dieser vollständige Fachleitfaden und das druckbare Arbeitsmittel <strong>«${art.resource ? (art.resource.frontmatter.titel || 'Checkliste') : 'Checkliste'}»</strong> sind für DKSchV-Mandanten und registrierte Kunden freigeschaltet.
+          </p>
+          <div class="gate-actions">
+            <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+              <span>🔑 Als Mandant anmelden</span>
+            </button>
+            <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+              <span>📋 Zugang anfordern</span>
+            </button>
+          </div>
+          <div class="gate-fast-login">
+            <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+            <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+              <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+              <button type="submit" class="gate-inline-btn">Freischalten</button>
+            </form>
+            <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+          </div>
+        </div>
+
+        <!-- Gated Content: Full Guide, Resources, Tables & References -->
+        <div class="gated-content" id="gatedArticleContent">
+          ${resourceBoxHtml}
+          ${restContentHtml}
+          ${referencesHtml}
+        </div>
         
         <!-- Post-article consultation box -->
         <div style="margin-top: 48px; background: #0f172a; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; display: flex; flex-direction: column; gap: 16px;">
@@ -813,33 +843,61 @@ Object.values(resourcesByPrefix).forEach(res => {
   </div>
 
   <div class="container">
-    <div class="resource-sheet">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
-        <div>
-          <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
-            DKSchV Schweiz · Dokumentiertes Arbeitsmittel
-          </span>
-          <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
-            ${resTitle}
-          </h1>
-          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
-            ${res.frontmatter.version || res.frontmatter.stand || 'Stand: November 2026'} · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
-          </p>
+    <!-- Client Portal Gate for Printable Worksheets -->
+    <div class="client-portal-gate no-print" id="clientPortalGate" style="max-width: 900px; margin: 32px auto 0;">
+      <span class="gate-badge">🔒 Exklusives Arbeitsmittel</span>
+      <h2 class="gate-title">Mandanten-Login erforderlich</h2>
+      <p class="gate-desc">
+        Dieses druckfertige Arbeitsmittel steht Kunden und Mandanten der DKSchV zur Verfügung. Melden Sie sich an, um das Arbeitsblatt zu nutzen, zu drucken oder als PDF zu speichern.
+      </p>
+      <div class="gate-actions">
+        <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
+          <span>🔑 Als Mandant anmelden</span>
+        </button>
+        <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
+          <span>📋 Zugang anfordern</span>
+        </button>
+      </div>
+      <div class="gate-fast-login">
+        <div class="gate-fast-login-title">Schnell-Freischaltung mit Mandanten-Passwort:</div>
+        <form class="gate-inline-form" onsubmit="window.DKSchVPortal.handleInlineUnlock(event)">
+          <input type="password" class="gate-inline-input" placeholder="Mandanten-Code (z.B. dkschv2026)" required>
+          <button type="submit" class="gate-inline-btn">Freischalten</button>
+        </form>
+        <div class="inline-error" style="color:#fca5a5; font-size:12px; margin-top:6px; display:none;"></div>
+      </div>
+    </div>
+
+    <div class="gated-content" id="gatedArticleContent">
+      <div class="resource-sheet">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
+          <div>
+            <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-accent);">
+              DKSchV Schweiz · Dokumentiertes Arbeitsmittel
+            </span>
+            <h1 style="font-size: 26px; font-weight: 800; color: var(--text-dark); margin: 6px 0 8px;">
+              ${resTitle}
+            </h1>
+            <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
+              ${res.frontmatter.version || res.frontmatter.stand || 'Stand: November 2026'} · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+            </p>
+          </div>
+          <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
         </div>
-        <img src="../../assets/images/dkschv_logo.png" alt="DKSchV Schweiz" style="height: 34px;">
-      </div>
 
-      <div class="article-content" style="font-size: 15px;">
-        ${contentHtml}
-      </div>
+        <div class="article-content" style="font-size: 15px;">
+          ${contentHtml}
+        </div>
 
-      <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
-        <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
-        <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+        <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+          <div>DKSchV Dini · Bammattenweg 19, CH-3904 Naters · <a href="https://www.dkschv.ch" style="color: inherit;">www.dkschv.ch</a></div>
+          <div>Vertrauliche Arbeitsunterlage · Rechts- &amp; Fachprüfung vorbehalten</div>
+        </div>
       </div>
     </div>
   </div>
 
+  <script src="../../assets/js/portal-auth.js"></script>
 </body>
 </html>`;
 
@@ -928,9 +986,9 @@ function generateCatalogHtml(relativeRoot = '.') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wissen &amp; Ratgeber: Cyber-Security &amp; Datenschutz für Schweizer KMU | DKSchV</title>
-  <meta name="description" content="Verifizierte Leitfäden, Notfall-Checklisten, Microsoft 365 Best Practices und nDSG/BACS-Entscheidungshilfen für Geschäftsführer und IT-Verantwortliche in der Schweiz.">
-  <link rel="canonical" href="https://www.dkschv.ch/wissen.html">
+  <title>Mandantenbereich: Cyber-Security Leitfäden &amp; Vorlagen | DKSchV Schweiz</title>
+  <meta name="description" content="Exklusiver Mandantenbereich: Verifizierte Leitfäden, Notfall-Checklisten, Microsoft 365 Best Practices und nDSG/BACS-Entscheidungshilfen für Kunden und Mandanten.">
+  <link rel="canonical" href="https://www.dkschv.ch/wissen/">
   <link rel="icon" type="image/png" href="${relativeRoot}/assets/images/dkschv_icon.png">
   <link rel="stylesheet" href="${relativeRoot}/assets/css/style.css">
 </head>
@@ -941,14 +999,14 @@ function generateCatalogHtml(relativeRoot = '.') {
   <section class="hub-hero">
     <div class="container">
       <div class="hub-hero-badge">
-        <span>🇨🇭</span>
-        <span>Praxiswissen für Schweizer KMU &amp; Verwaltungsräte</span>
+        <span>🔒</span>
+        <span>Exklusiver Mandantenbereich für Schweizer Unternehmen</span>
       </div>
       <h1 class="hub-hero-title">
-        Wissen &amp; Ratgeber: Cyber-Security &amp; Datenschutz
+        DKSchV Mandantenbereich: Fachwissen &amp; Vorlagen
       </h1>
       <p class="hub-hero-lead">
-        Klare Handlungsanleitungen, verifizierte Rechtsgrundlagen nach neuem Schweizer Datenschutzgesetz (nDSG) und BACS-Meldepflicht sowie sofort einsetzbare Notfall-Checklisten für Ihre Organisation.
+        Klare Handlungsanleitungen, verifizierte Rechtsgrundlagen nach neuem Schweizer Datenschutzgesetz (nDSG) und BACS-Meldepflicht sowie sofort einsetzbare Notfall-Checklisten. Melden Sie sich an, um alle Inhalte vollständig freizuschalten.
       </p>
 
       <!-- Search & Filters -->
@@ -974,6 +1032,9 @@ function generateCatalogHtml(relativeRoot = '.') {
   <!-- Main Content Area -->
   <main class="section" style="padding-top: 48px;">
     <div class="container">
+
+      <!-- Client Portal Status Banner -->
+      <div id="catalogPortalStatus"></div>
 
       <!-- Sunday News Highlight -->
       <div class="news-highlight-card">
