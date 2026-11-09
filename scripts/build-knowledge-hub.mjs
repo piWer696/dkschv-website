@@ -528,7 +528,7 @@ function renderFooter(relativeRoot = '.') {
             <li><a href="${relativeRoot}/sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
             <li><a href="${relativeRoot}/risikomanagement.html">Risikomanagement</a></li>
             <li><a href="${relativeRoot}/notfallplanung.html">Notfallplanung</a></li>
-            <li><a href="${wissenHref}">🔒 Mandantenbereich</a></li>
+            <li><a href="#" onclick="openPortalLoginModal(event)">🔒 Kunden-Login</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1243,6 +1243,9 @@ ROOT_PAGES.forEach(filename => {
   if (html.includes('href="wissen/"') || html.includes('href="wissen.html"')) {
     html = html.replace(/\s*<li>\s*<a href="wissen\/" class="nav-link"[^>]*>[\s\S]*?<\/a>\s*<\/li>/gi, '');
     html = html.replace(/\s*<li>\s*<a href="wissen\.html"[^>]*>[\s\S]*?<\/a>\s*<\/li>/gi, '');
+    // In footer, standardize to Kunden-Login
+    html = html.replace(/<li><a href="wissen\/"><span style="margin-right:3px;">🔒<\/span> Kundenbereich<\/a><\/li>/g, '<li><a href="#" onclick="openPortalLoginModal(event)">🔒 Kunden-Login</a></li>');
+    html = html.replace(/<li><a href="wissen\/">🔒 Mandantenbereich<\/a><\/li>/g, '<li><a href="#" onclick="openPortalLoginModal(event)">🔒 Kunden-Login</a></li>');
     changed = true;
   }
 
