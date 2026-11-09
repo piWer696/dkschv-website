@@ -72,9 +72,9 @@
     const portalBtns = document.querySelectorAll('.nav-portal-btn, #headerPortalBtn');
     portalBtns.forEach(btn => {
       if (authenticated) {
-        btn.innerHTML = `<span class="portal-btn-icon">👤</span> <span class="portal-btn-text">Kundenbereich: ${session.company || session.email ? (session.company || session.email.split('@')[0]) : 'Aktiv'}</span> <span class="portal-logout-badge" title="Abmelden" onclick="event.stopPropagation(); window.DKSchVPortal.logout();">&times;</span>`;
+        btn.innerHTML = `<span class="portal-btn-icon">👤</span> <span class="portal-btn-text">Kundenbereich</span> <span class="portal-logout-badge" title="Abmelden" onclick="event.stopPropagation(); window.DKSchVPortal.logout();">&times;</span>`;
         btn.classList.add('logged-in');
-        btn.setAttribute('title', `Angemeldet als ${session.email || 'Mandant'}. Klicken zum Abmelden.`);
+        btn.setAttribute('title', `Angemeldet als ${session.email || 'Mandant'}. Klicken für Kundenbereich.`);
       } else {
         btn.innerHTML = `<span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>`;
         btn.classList.remove('logged-in');
@@ -343,7 +343,10 @@
           submitBtn.disabled = false;
           submitBtn.innerHTML = '<span>Anmelden &amp; Inhalte freischalten &rarr;</span>';
         }
-      }, 600);
+        if (!window.location.pathname.includes('/wissen')) {
+          window.location.href = 'wissen/';
+        }
+      }, 500);
     } else {
       if (submitBtn) {
         submitBtn.disabled = false;
@@ -448,8 +451,12 @@
   window.openPortalLoginModal = function (e) {
     if (e && e.preventDefault) e.preventDefault();
     if (isLoggedIn()) {
-      if (confirm('Sie sind derzeit als Mandant angemeldet. Möchten Sie sich abmelden?')) {
-        logout();
+      if (!window.location.pathname.includes('/wissen')) {
+        window.location.href = 'wissen/';
+      } else {
+        if (confirm('Sie sind derzeit als Mandant angemeldet. Möchten Sie sich abmelden?')) {
+          logout();
+        }
       }
     } else {
       openModal('login');

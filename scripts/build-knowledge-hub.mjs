@@ -493,7 +493,6 @@ function renderHeader(activeNav = 'wissen', relativeRoot = '.') {
           <li><a href="${relativeRoot}/sicherheitsanalyse.html" class="nav-link ${activeNav === 'sicherheitsanalyse' ? 'active' : ''}">Sicherheitsanalyse</a></li>
           <li><a href="${relativeRoot}/risikomanagement.html" class="nav-link ${activeNav === 'risikomanagement' ? 'active' : ''}">Risikomanagement</a></li>
           <li><a href="${relativeRoot}/notfallplanung.html" class="nav-link ${activeNav === 'notfallplanung' ? 'active' : ''}">Notfallplanung</a></li>
-          <li><a href="${wissenHref}" class="nav-link ${activeNav === 'wissen' ? 'active' : ''}"><span style="margin-right:3px;">🔒</span> Kundenbereich</a></li>
           <li><a href="${relativeRoot}/ueber-uns.html" class="nav-link ${activeNav === 'ueber-uns' ? 'active' : ''}">Über uns</a></li>
           <li><a href="${relativeRoot}/kontakt.html" class="nav-link ${activeNav === 'kontakt' ? 'active' : ''}">Kontakt</a></li>
           <li>
@@ -1240,18 +1239,10 @@ ROOT_PAGES.forEach(filename => {
   let html = fs.readFileSync(filePath, 'utf-8');
   let changed = false;
 
-  // Replace wissen.html or update link text to 🔒 Kundenbereich
-  if (html.includes('href="wissen.html"')) {
-    html = html.replace(/href="wissen\.html"[^>]*>Wissen &amp; Ratgeber<\/a>/g, 'href="wissen/" class="nav-link"><span style="margin-right:3px;">🔒</span> Kundenbereich</a>');
-    html = html.replace(/href="wissen\.html"/g, 'href="wissen/"');
-    changed = true;
-  }
-  if (html.includes('href="wissen/" class="nav-link">Wissen &amp; Ratgeber</a>')) {
-    html = html.replace('href="wissen/" class="nav-link">Wissen &amp; Ratgeber</a>', 'href="wissen/" class="nav-link"><span style="margin-right:3px;">🔒</span> Kundenbereich</a>');
-    changed = true;
-  }
-  if (html.includes('<li><a href="wissen/">Wissen &amp; Ratgeber</a></li>')) {
-    html = html.replace('<li><a href="wissen/">Wissen &amp; Ratgeber</a></li>', '<li><a href="wissen/">🔒 Mandantenbereich</a></li>');
+  // Remove redundant "Kundenbereich" link from navigation menu (User requested: only keep Kunden-Login button)
+  if (html.includes('href="wissen/"') || html.includes('href="wissen.html"')) {
+    html = html.replace(/\s*<li>\s*<a href="wissen\/" class="nav-link"[^>]*>[\s\S]*?<\/a>\s*<\/li>/gi, '');
+    html = html.replace(/\s*<li>\s*<a href="wissen\.html"[^>]*>[\s\S]*?<\/a>\s*<\/li>/gi, '');
     changed = true;
   }
 
