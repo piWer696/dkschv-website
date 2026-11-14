@@ -1,0 +1,16 @@
+{
+  "version": "1.0.2",
+  "releaseDate": "2026-11-14",
+  "title": "FakturaDesk ERP v1.0.2 Release (DKSchV Enterprise Secured)",
+  "changelog": "\u2022 camt.054/053 XML & ZIP Mehrfach-Bankimport mit Auto-Matching und Entlastung\n\u2022 Vor-Ort Baustellen-Rapport mit digitalem Touch-Visum (Monteur / Kunde) und \u00dcbernahme auf QR-Rechnungen\n\u2022 E-Mail-Vorlagen f\u00fcr alle Belegarten mit Schweizer TWINT-Direktzahlung (Pay-Link & P2P-Mobilnummer)\n\u2022 Fernwartungsintegration (RustDesk Direktanbindung & DKSchV Support) und revisionssicheres GeB\u00fcV 10-Jahre Archiv mit SHA-256 Pr\u00fcfprotokoll\n\u2022 Intelligente 2-Wege Synchronisation mit automatischer Konflikterkennung und Notfall-Snapshots\n\u2022 Benutzer- und Inhaber-Aktualisierung auf P. Iwer (p.Iwer)",
+  "downloadUrlWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.2/FakturaDesk_v1.0.2_Windows_x64.zip",
+  "downloadUrlHgmWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.2/FakturaDesk_v1.0.2_HGM_Service_Vollversion_Win11.zip",
+  "downloadUrlDkschvWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.2/FakturaDesk_v1.0.2_DKSchV_Enterprise_Win11.zip",
+  "downloadUrlRenoGipsWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.2/FakturaDesk_v1.0.2_RenoGips_Handwerk_Win11.zip",
+  "downloadUrlLinux": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.2/FakturaDesk_v1.0.2_Linux_x64.tar.gz",
+  "sha256Win": "e958fdb310e94ceeab4d1d8cb04a374f4c5efef3e4aafa025f23c0039c54746c",
+  "sha256HgmWin": "ed707b99e9e25ea4c305c8ebd79683b1f750521203606fea2da2adc2d00e71fd",
+  "sha256DkschvWin": "de9d37833ac8e088777f7afddb079817de5d34616d122385b42c9af833e2d0b7",
+  "sha256RenoGipsWin": "84fd9023e948592f63a19c10a55fab443852a7f3b0d0039afddd810a15e9d286",
+  "sha256Linux": "af35f30d1861f018781cd03e9faefcb403320b907db4e8f621e2780c6f310999"
+}
