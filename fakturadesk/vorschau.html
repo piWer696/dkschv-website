@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FakturaDesk ERP | Die Schweizer KMU & Handwerker Rechnungssoftware</title>
+  <meta name="description" content="FakturaDesk ERP: Schweizer QR-Rechnung (ISO 20022), digitaler Baustellen-Rapport mit Touch-Visum, camt.054 Bankabgleich, TWINT-Zahlung und GeBüV-Archiv. Entwickelt & gesichert von DKSchV Schweiz.">
+  <meta name="author" content="DKSchV Schweiz - P. Iwer">
+  <link rel="canonical" href="https://dkschv.ch/fakturadesk/">
+
+  <!-- OpenGraph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dkschv.ch/fakturadesk/">
+  <meta property="og:title" content="FakturaDesk ERP | Schweizer Software für KMU & Handwerker">
+  <meta property="og:description" content="100% Swiss Made: Schweizer QR-Rechnungen, mobile Rapporte mit digitaler Signatur, camt.054 Bankimport und revisionssicheres GeBüV-Archiv.">
+  <meta property="og:image" content="https://dkschv.ch/assets/images/dkschv_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/dkschv_icon.svg">
+  <link rel="alternate icon" type="image/png" href="../assets/images/dkschv_icon.png">
+
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2563EB;
+      --primary-hover: #1D4ED8;
+      --primary-dark: #1E40AF;
+      --accent: #0EA5E9;
+      --accent-glow: rgba(14, 165, 233, 0.25);
+      --success: #10B981;
+      --success-dark: #059669;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+      --bg: #0B0F19;
+      --bg-card: #111827;
+      --bg-subtle: #1F2937;
+      --border: #374151;
+      --border-light: #4B5563;
+      --text: #F9FAFB;
+      --text-muted: #9CA3AF;
+      --text-dim: #6B7280;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #38BDF8;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(11, 15, 25, 0.85);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: #FFFFFF;
+    }
+
+    .brand-icon {
+      background: linear-gradient(135deg, #2563EB, #0EA5E9);
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+
+    .brand-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: #0284C7;
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-left: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #FFFFFF;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-subtle);
+      border-color: var(--border-light);
+      color: #FFFFFF;
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: #FFFFFF;
+    }
+
+    .btn-success:hover {
+      background: var(--success-dark);
+      color: #FFFFFF;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 90px 0 60px 0;
+      background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
+      text-align: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37, 99, 235, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #38BDF8;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #60A5FA, #38BDF8, #34D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin: 0 auto 36px auto;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-meta-item span.icon {
+      color: var(--success);
+      font-weight: bold;
+    }
+
+    /* App Preview Mockup */
+    .app-preview-wrap {
+      margin-top: 50px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+    }
+
+    .app-window-header {
+      background: #1E293B;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot.red { background: #EF4444; }
+    .dot.yellow { background: #F59E0B; }
+    .dot.green { background: #10B981; }
+
+    .window-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .app-grid-preview {
+      display: grid;
+      grid-template-columns: 240px 1fr 300px;
+      min-height: 440px;
+      background: #0F172A;
+      text-align: left;
+    }
+
+    .mock-sidebar-left {
+      background: #090D16;
+      border-right: 1px solid var(--border);
+      padding: 16px;
+      font-size: 0.85rem;
+    }
+
+    .mock-content {
+      padding: 24px;
+      background: #0B0F19;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mock-sidebar-right {
+      background: #090D16;
+      border-left: 1px solid var(--border);
+      padding: 16px;
+      font-size: 0.85rem;
+    }
+
+    .mock-card {
+      background: #111827;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .mock-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    /* Features Grid */
+    .section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 60px auto;
+    }
+
+    .section-eyebrow {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .feature-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      width: 52px;
+      height: 52px;
+      background: rgba(37, 99, 235, 0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .feature-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .feature-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34D399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    /* Pricing Section */
+    .pricing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .toggle-pill {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 4px;
+      display: inline-flex;
+    }
+
+    .toggle-btn {
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .toggle-btn.active {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: #38BDF8;
+      background: linear-gradient(180deg, rgba(14, 165, 233, 0.08) 0%, rgba(17, 24, 39, 1) 100%);
+      box-shadow: 0 15px 40px rgba(14, 165, 233, 0.15);
+      transform: scale(1.03);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #0284C7, #0EA5E9);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+    }
+
+    .pricing-tier {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .pricing-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      min-height: 42px;
+    }
+
+    .pricing-price {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .price-currency {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .price-val {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+
+    .price-period {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .pricing-once-note {
+      font-size: 0.85rem;
+      color: #38BDF8;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .pricing-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex-grow: 1;
+    }
+
+    .pricing-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #E5E7EB;
+    }
+
+    .pricing-list li .check {
+      color: var(--success);
+      font-weight: bold;
+    }
+
+    /* Comparison / Trust */
+    .trust-banner {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .trust-item h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #FFFFFF;
+    }
+
+    .trust-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* FAQ Section */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 24px;
+    }
+
+    .faq-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .faq-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .faq-card p {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* CTA Bottom */
+    .cta-box {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(14, 165, 233, 0.1));
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 14px;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .cta-box p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 32px auto;
+    }
+
+    /* Footer */
+    footer {
+      background: #070A10;
+      border-top: 1px solid var(--border);
+      padding: 50px 0 30px 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h5 {
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+    }
+
+    .footer-col a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(55, 65, 81, 0.5);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 992px) {
+      .hero-title { font-size: 2.4rem; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: none; }
+      .app-grid-preview { grid-template-columns: 1fr; }
+      .mock-sidebar-left, .mock-sidebar-right { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 2rem; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">💼</div>
+        <div>
+          <span>FakturaDesk</span>
+          <span class="brand-badge">ERP v1.0.2</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features">Funktionen</a></li>
+        <li><a href="#rapporte">Baustellen-Rapporte</a></li>
+        <li><a href="#bankabgleich">Bank &amp; QR</a></li>
+        <li><a href="#preise">Preise</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://dkschv.ch" target="_blank">DKSchV.ch ↗</a></li>
+      </ul>
+
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <a href="#preise" class="btn btn-secondary" style="font-size: 0.88rem; padding: 8px 14px;">Preise ansehen</a>
+        <a href="#download" class="btn btn-primary" style="font-size: 0.88rem; padding: 8px 16px;">Testversion laden</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-pill">
+        <span>🇨🇭 100% Swiss Made</span>
+        <span>•</span>
+        <span>GeBüV 10-Jahre Archiv</span>
+        <span>•</span>
+        <span>ISO 20022 Standard</span>
+      </div>
+
+      <h1 class="hero-title">
+        Die Rechnungssoftware für Schweizer KMU &amp; Handwerker.<br>
+        <span>Einfach. Revisionssicher. Effizient.</span>
+      </h1>
+
+      <p class="hero-sub">
+        FakturaDesk ERP vereint Schweizer QR-Rechnungen, mobile Baustellen-Rapporte mit Touch-Visum, automatischen camt.054 Bankabgleich und 10-Jahre GeBüV-Archivierung in einer einzigen, blitzschnellen Desktop-Lösung für Windows 11 &amp; Linux.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#download" class="btn btn-primary" style="font-size: 1.05rem; padding: 14px 28px;">
+          <span>🚀 Kostenlose Testversion laden (v1.0.2)</span>
+        </a>
+        <a href="#preise" class="btn btn-secondary" style="font-size: 1.05rem; padding: 14px 26px;">
+          <span>💰 Preismodelle ab CHF 49.– / Mt.</span>
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="icon">✓</span> Keine Cloud-Knebelverträge (Lokale Datenhoheit)
+        </div>
+        <div class="hero-meta-item">
+          <span class="icon">✓</span> Multi-Device 2-Weg-Sync (Büro-PC &amp; Vor-Ort Laptop)
+        </div>
+        <div class="hero-meta-item">
+          <span class="icon">✓</span> Zertifizierte nDSG- &amp; GeBüV-Compliance
+        </div>
+      </div>
+
+      <!-- Live App Preview Mockup -->
+      <div class="app-preview-wrap">
+        <div class="app-window-header">
+          <div class="window-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="window-title">FakturaDesk ERP v1.0.2 – Schweizer QR-Zahlungsverkehr &amp; Handwerker-Cockpit</div>
+          <div style="font-size: 0.75rem; color: #38BDF8; font-weight: 600;">🔒 DKSchV Enterprise Secured</div>
+        </div>
+
+        <div class="app-grid-preview">
+          <!-- Linke Menüleiste -->
+          <div class="mock-sidebar-left">
+            <div style="font-weight: 700; color: #F1F5F9; margin-bottom: 12px;">💼 FakturaDesk ERP</div>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <div style="background: #2563EB; color: white; padding: 6px 10px; border-radius: 4px; font-weight: 600;">📄 Rechnungen &amp; Belege</div>
+              <div style="color: #94A3B8; padding: 6px 10px;">👥 Kundenstamm</div>
+              <div style="color: #94A3B8; padding: 6px 10px;">📦 Artikel &amp; Leistungen</div>
+              <div style="color: #94A3B8; padding: 6px 10px;">🏦 Bankfile (pain.001)</div>
+              <div style="color: #94A3B8; padding: 6px 10px;">📷 GeBüV Belegscanner</div>
+              <div style="color: #94A3B8; padding: 6px 10px;">⚙️ Firmeneinstellungen</div>
+            </div>
+          </div>
+
+          <!-- Hauptinhalt -->
+          <div class="mock-content">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div style="font-weight:700; font-size:1.1rem; color:#FFFFFF;">Übersicht Rechnungen &amp; Rapporte</div>
+              <div style="display:flex; gap:8px;">
+                <span class="mock-tag" style="background:#0D9488; color:white;">+ Neuer Rapport</span>
+                <span class="mock-tag" style="background:#2563EB; color:white;">+ Neue Rechnung</span>
+              </div>
+            </div>
+
+            <!-- Belegtabelle Simulation -->
+            <div class="mock-card" style="font-size:0.8rem; line-height:1.8;">
+              <div style="display:grid; grid-template-columns: 80px 100px 1fr 100px 90px; font-weight:700; color:#94A3B8; border-bottom:1px solid #374151; padding-bottom:4px;">
+                <span>Art</span><span>Nummer</span><span>Kunde / Objekt</span><span style="text-align:right;">Betrag</span><span style="text-align:right;">Status</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 80px 100px 1fr 100px 90px; padding:6px 0; border-bottom:1px solid rgba(55,65,81,0.5);">
+                <span>📄 RE</span><span style="font-weight:600; color:#38BDF8;">2026-0008</span><span>Matterhorn Tech AG, Zermatt</span><span style="text-align:right; font-weight:600;">1'420.50 CHF</span><span style="text-align:right; color:#10B981;">● Bezahlt</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 80px 100px 1fr 100px 90px; padding:6px 0; border-bottom:1px solid rgba(55,65,81,0.5);">
+                <span>✍️ RAP</span><span style="font-weight:600; color:#38BDF8;">RAP-2026-14</span><span>Chalet Bergkristall, Naters</span><span style="text-align:right; font-weight:600;">680.00 CHF</span><span style="text-align:right; color:#0EA5E9;">🔒 Visiert</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 80px 100px 1fr 100px 90px; padding:6px 0;">
+                <span>💬 OFF</span><span style="font-weight:600; color:#38BDF8;">OFF-2026-03</span><span>Alpenresidenz Brig, Glis</span><span style="text-align:right; font-weight:600;">3'850.00 CHF</span><span style="text-align:right; color:#F59E0B;">● Offen</span>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+              <div class="mock-card">
+                <div style="font-size:0.75rem; color:#94A3B8; font-weight:600;">🇨🇭 SCHWEIZER QR-ZAHLTEIL</div>
+                <div style="font-size:0.85rem; font-weight:700; color:#10B981; margin-top:4px;">QR-IBAN &amp; 27-stellige Referenz aktiv</div>
+                <div style="font-size:0.75rem; color:#6B7280;">ISO 20022 pain.001 / camt.054 kompatibel</div>
+              </div>
+              <div class="mock-card">
+                <div style="font-size:0.75rem; color:#94A3B8; font-weight:600;">🔒 GEBÜV 10-JAHRE ARCHIV</div>
+                <div style="font-size:0.85rem; font-weight:700; color:#38BDF8; margin-top:4px;">SHA-256 Prüfsummen gesichert</div>
+                <div style="font-size:0.75rem; color:#6B7280;">Revisionssicher nach Art. 958f OR</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rechte Cockpit-Spalte -->
+          <div class="mock-sidebar-right">
+            <div style="font-weight: 700; color: #F1F5F9; font-size:0.85rem; margin-bottom: 8px;">🏢 Mandanten-Cockpit</div>
+            
+            <div class="mock-card" style="border-color:#0284C7; background:#0F172A; margin-bottom:6px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:700; font-size:0.8rem; color:#38BDF8;">🐧 DKSchV Master</span>
+                <span style="font-size:0.65rem; background:#059669; color:white; padding:1px 4px; border-radius:3px;">AKTIV</span>
+              </div>
+              <div style="font-size:0.7rem; color:#94A3B8;">Linux Workstation (Naters)</div>
+            </div>
+
+            <div class="mock-card" style="border-color:#7C3AED; background:#0F172A; margin-bottom:6px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:700; font-size:0.8rem; color:#A78BFA;">💻 Win11 Laptop</span>
+                <span style="font-size:0.65rem; color:#94A3B8;">Bereit</span>
+              </div>
+              <div style="font-size:0.7rem; color:#94A3B8;">Tailscale 2-Weg-Sync aktiv</div>
+            </div>
+
+            <div class="mock-card" style="border-color:#10B981; background:#0F172A; margin-bottom:6px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:700; font-size:0.8rem; color:#34D399;">🔧 HGM-Service</span>
+                <span style="font-size:0.65rem; color:#94A3B8;">Bereit</span>
+              </div>
+              <div style="font-size:0.7rem; color:#94A3B8;">Gebäudemanagement</div>
+            </div>
+
+            <div class="mock-card" style="border-color:#F59E0B; background:#0F172A; margin-bottom:12px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:700; font-size:0.8rem; color:#FBBF24;">🏗️ RenoGips</span>
+                <span style="font-size:0.65rem; color:#94A3B8;">Bereit</span>
+              </div>
+              <div style="font-size:0.7rem; color:#94A3B8;">Handwerk &amp; Rapporte</div>
+            </div>
+
+            <div style="font-weight:700; font-size:0.8rem; color:#94A3B8; margin-bottom:4px;">📊 Liquidität (30 Tage)</div>
+            <div style="font-size:1rem; font-weight:800; color:#10B981;">+ 12'450.80 CHF</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Highlights &amp; Schweizer Standards</div>
+        <h2 class="section-title">Alles, was Ihr Schweizer Betrieb wirklich braucht.</h2>
+        <p class="section-desc">Entwickelt ohne US-Cloud-Abhängigkeit. Schnell wie eine native App, flexibel wie ein Schweizer Taschenmesser.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <span class="feature-badge">SIX Zertifiziert</span>
+          <div class="feature-icon">🇨🇭</div>
+          <h3 class="feature-title">Schweizer QR-Rechnung &amp; ISO 20022</h3>
+          <p class="feature-text">
+            Erstellen Sie sekundenschnell offizielle Schweizer QR-Rechnungen nach dem SIX-Standard. Volle Unterstützung für QR-IBAN, normale IBAN, VESR-Referenzen (27-stellig), SCOR (ISO 11649) und automatische Debitor-Adressbereinigung ohne fehlerhafte DE-Präfixe.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card" id="rapporte">
+          <span class="feature-badge">Handwerker-Hit</span>
+          <div class="feature-icon">✍️</div>
+          <h3 class="feature-title">Baustellen-Rapport &amp; Vor-Ort Visum</h3>
+          <p class="feature-text">
+            Arbeitsstunden, Monteur und Material direkt auf der Baustelle erfassen. Der Bauleiter oder Kunde unterschreibt unmittelbar auf dem Touchscreen (Finger oder Stift). Mit 1 Klick wird der visierte Rapport in eine fertige QR-Rechnung umgewandelt – inklusive digitalem Prüfsiegel.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card" id="bankabgleich">
+          <span class="feature-badge">Automatisierung</span>
+          <div class="feature-icon">🏦</div>
+          <h3 class="feature-title">Bankabgleich per camt.054 (XML &amp; ZIP)</h3>
+          <p class="feature-text">
+            Laden Sie den camt.054 oder camt.053 Kontoauszug Ihrer Bank (Raiffeisen, UBS, PostFinance, Kantonalbanken) als XML oder ZIP-Archiv hoch. FakturaDesk ordnet die Zahlungen automatisch den offenen Rechnungen zu und entlastet Ihre Buchhaltung.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <span class="feature-badge">Schneller Cashflow</span>
+          <div class="feature-icon">📲</div>
+          <h3 class="feature-title">TWINT-Sofortzahlung &amp; WhatsApp</h3>
+          <p class="feature-text">
+            Rechnungen direkt per Schweizer TWINT-Link oder P2P-Mobilfunknummer versenden. Rechnungsversand per WhatsApp oder E-Mail mit 1 Klick. Ihre Kunden bezahlen bequem und ohne Tippfehler vom Smartphone – für bis zu 40% schnelleren Geldeingang.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <span class="feature-badge">Gesetzeskonform</span>
+          <div class="feature-icon">🔒</div>
+          <h3 class="feature-title">GeBüV 10-Jahre Archiv &amp; SHA-256</h3>
+          <p class="feature-text">
+            Gesetzliche Aufbewahrungspflicht nach Art. 958f OR und Schweizer GeBüV. FakturaDesk exportiert Jahresarchive mit lückenlosem Prüfprotokoll und SHA-256 Checksummen. Manipulationssicher und audit-geprüft für Ihren Treuhänder und die Steuerbehörde.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <span class="feature-badge">Multi-Device</span>
+          <div class="feature-icon">🔄</div>
+          <h3 class="feature-title">Intelligente 2-Weg-Synchronisation</h3>
+          <p class="feature-text">
+            Arbeiten Sie im Büro auf Ihrer Linux- oder Windows-Workstation und unterwegs auf dem Windows 11 Laptop. Der automatische Tailscale-Sync gleicht die SQLite-Datenbank ab und schützt mit Konflikterkennung vor Datenverlust durch gleichzeitige Offline-Bearbeitung.
+          </p>
+        </div>
+
+        <!-- Feature 7 -->
+        <div class="feature-card">
+          <span class="feature-badge">Multi-Tenant</span>
+          <div class="feature-icon">🏢</div>
+          <h3 class="feature-title">4-Mandanten Cockpit</h3>
+          <p class="feature-text">
+            Verwalten Sie mehrere Unternehmen oder Firmenzweige (z.B. Treuhand, Handwerk, Gebäudemanagement) in einer Oberfläche. Schneller Profilwechsel in der rechten Seitenleiste mit individuellen Bankverbindungen, MwSt-Sätzen und Logo-Designs.
+          </p>
+        </div>
+
+        <!-- Feature 8 -->
+        <div class="feature-card">
+          <span class="feature-badge">Hardware-Ready</span>
+          <div class="feature-icon">📷</div>
+          <h3 class="feature-title">Smartphone-Belegscanner &amp; PayEye</h3>
+          <p class="feature-text">
+            Scannen Sie Eingangsrechnungen und Barquittungen mit der Kamera Ihres Smartphones oder schließen Sie einen CREALOGIX PayEye / SwissReader an. Alle QR-Daten und Beträge werden sofort ausgelesen und in Ihren Zahlungsverkehr übernommen.
+          </p>
+        </div>
+
+        <!-- Feature 9 -->
+        <div class="feature-card">
+          <span class="feature-badge">Support Inklusive</span>
+          <div class="feature-icon">🆘</div>
+          <h3 class="feature-title">RustDesk Fernwartung &amp; Support</h3>
+          <p class="feature-text">
+            Integrierter Fernwartungszugriff ohne teure TeamViewer-Abonnements. Mit 1 Klick starten Sie über das DKSchV-Netzwerk eine verschlüsselte Support-Sitzung, wenn Sie Hilfe bei der Einrichtung oder Fragen zur Buchhaltung haben.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section" id="preise" style="background: rgba(15, 23, 42, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Transparente Schweizer Preisgestaltung</div>
+        <h2 class="section-title">Einfache Lizenzierung. Keine versteckten Kosten.</h2>
+        <p class="section-desc">Wählen Sie zwischen flexiblem Monatsabonnement oder einmaliger Dauerlizenz (Kaufversion ohne Folgekosten).</p>
+      </div>
+
+      <div class="pricing-toggle">
+        <div class="toggle-pill">
+          <button class="toggle-btn active" id="btnMonthly" onclick="setPricing('monthly')">Monatliche Abrechnung</button>
+          <button class="toggle-btn" id="btnLifetime" onclick="setPricing('lifetime')">Einmalige Dauerlizenz (Lifetime) 🎉</button>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1: KMU Starter -->
+        <div class="pricing-card">
+          <div class="pricing-tier">Starter KMU</div>
+          <div class="pricing-sub">Ideal für Einzelfirmen, Freiberufler &amp; Startups mit unkomplizierter Rechnungsstellung.</div>
+          
+          <div class="pricing-price">
+            <span class="price-currency">CHF</span>
+            <span class="price-val" id="priceStarter">49.–</span>
+            <span class="price-period" id="periodStarter">/ Monat</span>
+          </div>
+          <div class="pricing-once-note" id="noteStarter">Monatlich kündbar</div>
+
+          <ul class="pricing-list">
+            <li><span class="check">✓</span> 1 Mandantenprofil</li>
+            <li><span class="check">✓</span> Unbegrenzt Schweizer QR-Rechnungen</li>
+            <li><span class="check">✓</span> TWINT Sofortzahlung &amp; E-Mail-Vorlagen</li>
+            <li><span class="check">✓</span> Kunden- &amp; Artikelstamm</li>
+            <li><span class="check">✓</span> PDF-Export mit Schweizer QR-Zahlteil</li>
+            <li><span class="check">✓</span> Automatische Rappenrundung (0.05 CHF)</li>
+            <li><span class="check">✓</span> Lokale SQLite-Datenbank (Volle Kontrolle)</li>
+          </ul>
+
+          <a href="#kontakt" class="btn btn-secondary">Starter wählen</a>
+        </div>
+
+        <!-- Plan 2: Handwerker Pro (Featured) -->
+        <div class="pricing-card featured">
+          <div class="featured-badge">Bestseller für Schweizer Betriebe</div>
+          <div class="pricing-tier" style="color:#38BDF8;">Handwerker Pro ⭐</div>
+          <div class="pricing-sub">Perfekt für Handwerker, Monteure, Gipser, Maler, Haustechnik &amp; Gewerbebetriebe.</div>
+          
+          <div class="pricing-price">
+            <span class="price-currency">CHF</span>
+            <span class="price-val" id="pricePro" style="color:#38BDF8;">79.–</span>
+            <span class="price-period" id="periodPro">/ Monat</span>
+          </div>
+          <div class="pricing-once-note" id="notePro" style="color:#34D399;">Inklusive aller Handwerker-Module</div>
+
+          <ul class="pricing-list">
+            <li><span class="check">✓</span> <strong>Alles aus dem Starter-Paket</strong></li>
+            <li><span class="check">✓</span> <strong>Vor-Ort Baustellen-Rapport &amp; Touch-Visum</strong></li>
+            <li><span class="check">✓</span> <strong>1-Klick Konvertierung: Rapport ➔ Rechnung</strong></li>
+            <li><span class="check">✓</span> <strong>Automatischer Bankabgleich (camt.054 XML &amp; ZIP)</strong></li>
+            <li><span class="check">✓</span> Lieferschein- &amp; Auftragsbestätigungs-Workflow</li>
+            <li><span class="check">✓</span> Mobiler Belegscanner per Smartphone &amp; PayEye</li>
+            <li><span class="check">✓</span> Bis zu 3 Mandantenprofile</li>
+            <li><span class="check">✓</span> WhatsApp &amp; SMS Schnellversand</li>
+            <li><span class="check">✓</span> Mahnwesen mit 3-stufiger Mahngebühr</li>
+          </ul>
+
+          <a href="#kontakt" class="btn btn-primary" style="background:#0284C7;">Handwerker Pro anfragen</a>
+        </div>
+
+        <!-- Plan 3: Enterprise & Treuhand -->
+        <div class="pricing-card">
+          <div class="pricing-tier">Enterprise &amp; Treuhand</div>
+          <div class="pricing-sub">Für Treuhänder, KMU mit mehreren Standorten &amp; höchste Datenschutz-Anforderungen.</div>
+          
+          <div class="pricing-price">
+            <span class="price-currency">CHF</span>
+            <span class="price-val" id="priceEnterprise">149.–</span>
+            <span class="price-period" id="periodEnterprise">/ Monat</span>
+          </div>
+          <div class="pricing-once-note" id="noteEnterprise">DKSchV Secured &amp; Audit-Ready</div>
+
+          <ul class="pricing-list">
+            <li><span class="check">✓</span> <strong>Alles aus Handwerker Pro</strong></li>
+            <li><span class="check">✓</span> <strong>Unbegrenzte Mandanten (Multi-Tenant)</strong></li>
+            <li><span class="check">✓</span> <strong>Revisionssicheres GeBüV 10-Jahre Archiv (SHA-256)</strong></li>
+            <li><span class="check">✓</span> <strong>Multi-Device 2-Wege Sync (Linux Workstation &amp; Win11)</strong></li>
+            <li><span class="check">✓</span> Intelligente Konflikterkennung &amp; Backups</li>
+            <li><span class="check">✓</span> EBICS Bankanbindung (pain.001 Aufträge)</li>
+            <li><span class="check">✓</span> Chef-Cockpit &amp; 30-Tage Cashflow-Liquiditätsradar</li>
+            <li><span class="check">✓</span> Treuhand-Export für Banana Buchhaltung &amp; Abacus</li>
+            <li><span class="check">✓</span> nDSG 2027 Datenschutz-Compliance Zertifikat</li>
+            <li><span class="check">✓</span> Persönlicher VIP-Support &amp; RustDesk Fernwartung</li>
+          </ul>
+
+          <a href="#kontakt" class="btn btn-secondary">Enterprise anfragen</a>
+        </div>
+      </div>
+
+      <!-- Infomaniak Hosting Trust Badge -->
+      <div class="trust-banner">
+        <div class="trust-item">
+          <h4>🇨🇭 100% Infomaniak Schweiz</h4>
+          <p>Gehostet in den umweltfreundlichen Tier 3+ Rechenzentren von Infomaniak in Genf. Vollständige Schweizer Datenhoheit.</p>
+        </div>
+        <div class="trust-item">
+          <h4>⚖️ nDSG &amp; GeBüV Konform</h4>
+          <p>Erfüllt das neue Schweizer Datenschutzgesetz (nDSG 2027) und die Geschäftsbücherverordnung (Art. 958f OR).</p>
+        </div>
+        <div class="trust-item">
+          <h4>🛡️ Kein Cloud-Lock-in</h4>
+          <p>Ihre Kundendaten und Rechnungen liegen sicher verschlüsselt auf Ihrer eigenen Hardware. Niemand sperrt Ihnen den Zugriff.</p>
+        </div>
+        <div class="trust-item">
+          <h4>⚡ Blitzschnelle Performance</h4>
+          <p>Native Avalonia / .NET 8 Desktop-Technologie für Windows 11 &amp; Linux. Sofort startklar ohne Browser-Ladezeiten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="section" id="download">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Download &amp; Release v1.0.2</div>
+        <h2 class="section-title">Testen Sie FakturaDesk 30 Tage kostenlos.</h2>
+        <p class="section-desc">Laden Sie das Installationspaket für Ihr Betriebssystem herunter. Keine Kreditkarte erforderlich.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:24px; max-width:960px; margin:0 auto 40px auto;">
+        
+        <!-- Windows 11 Download Card -->
+        <div class="feature-card" style="text-align:center;">
+          <div style="font-size:3rem; margin-bottom:12px;">🪟</div>
+          <h3 class="feature-title">FakturaDesk für Windows 11</h3>
+          <p class="feature-text" style="margin-bottom:20px;">
+            Optimiert für Windows 11 und Windows 10 (64-Bit). Schnelle Portable- oder Desktop-Installation inklusive OpenSSH &amp; RustDesk Fernwartung.
+          </p>
+          <div style="font-size:0.8rem; font-family:var(--font-mono); color:#94A3B8; margin-bottom:16px;">
+            Version 1.0.2 • ZIP-Archiv (~64 MB)
+          </div>
+          <a href="https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.2/FakturaDesk_v1.0.2_DKSchV_Enterprise_Win11.zip" class="btn btn-primary" style="width:100%;">
+            <span>📥 Download Windows 11 (v1.0.2)</span>
+          </a>
+        </div>
+
+        <!-- Linux Download Card -->
+        <div class="feature-card" style="text-align:center;">
+          <div style="font-size:3rem; margin-bottom:12px;">🐧</div>
+          <h3 class="feature-title">FakturaDesk für Linux x64</h3>
+          <p class="feature-text" style="margin-bottom:20px;">
+            Native Linux 64-bit Binärversion (Ubuntu, Debian, Kali, Fedora, Arch). Ideal als zentraler Master-Server oder lokale Produktivstation.
+          </p>
+          <div style="font-size:0.8rem; font-family:var(--font-mono); color:#94A3B8; margin-bottom:16px;">
+            Version 1.0.2 • Tar.Gz-Archiv (~150 MB)
+          </div>
+          <a href="https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.2/FakturaDesk_v1.0.2_Linux_x64.tar.gz" class="btn btn-secondary" style="width:100%;">
+            <span>📥 Download Linux x64 (v1.0.2)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Update Info & Hashes Box -->
+      <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:8px; padding:20px; max-width:960px; margin:0 auto; font-size:0.85rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <span style="font-weight:700; color:#38BDF8;">🔒 Offizieller Auto-Update Server (DKSchV Infomaniak)</span>
+          <a href="version.json" target="_blank" style="font-family:var(--font-mono); font-size:0.75rem;">version.json prüfen ↗</a>
+        </div>
+        <p style="color:var(--text-muted); margin-bottom:10px;">
+          FakturaDesk prüft Updates automatisch verschlüsselt über <code>https://dkschv.ch/fakturadesk/version.json</code>. Jedes Paket ist mit SHA-256 gesichert.
+        </p>
+        <div style="background:#0B0F19; border:1px solid var(--border); border-radius:6px; padding:10px; font-family:var(--font-mono); font-size:0.75rem; color:#94A3B8; word-break:break-all;">
+          <strong>SHA-256 Win11:</strong> 3eff79ff6784a1df55e73e8b130e52e402a08ce4388b413ba5389422cd57167c<br>
+          <strong>SHA-256 Linux:</strong> 66c202e8f55c09912ac9f5ddee1186857d05d1f13c4d4d0827ce4f0fc10463da
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Häufig gestellte Fragen</div>
+        <h2 class="section-title">Alles Wissenswerte zu FakturaDesk.</h2>
+        <p class="section-desc">Haben Sie weitere Fragen? Unser Team in Naters (Wallis) berät Sie gerne persönlich.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h4>🇨🇭 Erfüllt die QR-Rechnung den Schweizer Standard?</h4>
+          <p>
+            Ja, zu 100%. FakturaDesk verwendet die offizielle SwissQRBill-Spezifikation nach SIX Interbank Clearing und ISO 20022. Sowohl QR-IBAN mit strukturierter 27-stelliger Referenz (VESR) als auch reguläre IBAN mit SCOR (ISO 11649) oder ohne Referenz werden vollständig unterstützt.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <h4>✍️ Wie funktioniert das digitale Touch-Visum auf der Baustelle?</h4>
+          <p>
+            Der Monteur erfasst Stunden und Material vor Ort auf seinem Laptop oder Tablet. Der Kunde unterschreibt direkt mit dem Finger oder einem Stift auf dem Bildschirm. Die Unterschrift wird datenschutzkonform digital im Beleg verankert und mit einem Sicherheits-Siegel auf den Rapport und die fertige Rechnung gedruckt.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <h4>🏦 Wie läuft der Bankabgleich mit camt.054 ab?</h4>
+          <p>
+            Sie laden im E-Banking Ihrer Bank (z.B. Raiffeisen, UBS, Kantonalbank) die camt.054 Benachrichtigungen herunter. Auch wenn mehrere XML-Dateien in einem ZIP-Archiv liegen, ziehen Sie die Datei einfach per Drag &amp; Drop in FakturaDesk. Rechnungen werden automatisch abgeglichen und auf «Bezahlt» gesetzt.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <h4>💻 Wo liegen meine Firmendaten?</h4>
+          <p>
+            Ihre Daten gehören ausschliesslich Ihnen. FakturaDesk speichert alle Kunden, Belege und Einstellungen in einer lokalen SQLite-Datenbank auf Ihrem Rechner. Es gibt keinen unbefugten Drittzugriff und kein Ausspähen durch ausländische Cloud-Anbieter.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <h4>🔄 Wie funktioniert der Abgleich zwischen Büro und Laptop?</h4>
+          <p>
+            Über eine sichere Tailscale-Verbindung synchronisiert FakturaDesk die Datenbank auf Knopfdruck oder im Hintergrund. Werden auf beiden Geräten offline Änderungen vorgenommen, erkennt die intelligente Konflikterkennung die Situation sofort und sichert automatisch beidseitige Backups.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <h4>🔒 Was beinhaltet das GeBüV 10-Jahre Jahresarchiv?</h4>
+          <p>
+            Nach Art. 958f OR müssen Geschäftsbücher und Belege 10 Jahre unveränderbar aufbewahrt werden. FakturaDesk erzeugt auf Knopfdruck ein revisionssicheres Jahresarchiv aller Ausgangs- und Eingangsbelege inklusive SHA-256 Prüfsummen und Prüfungsprotokoll für Treuhänder.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Request Section -->
+  <section class="section" id="kontakt">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Bereit für modernes Schweizer Rechnungsmanagement?</h2>
+        <p>
+          Lassen Sie sich FakturaDesk unverbindlich vorführen oder bestellen Sie Ihre persönliche Lizenz. Wir richten auf Wunsch auch die Anbindung an Ihr E-Banking und Ihre Geräte ein.
+        </p>
+
+        <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:32px;">
+          <div style="background:rgba(17,24,39,0.7); border:1px solid var(--border); border-radius:8px; padding:16px 24px; text-align:left;">
+            <div style="font-size:0.8rem; color:#94A3B8; text-transform:uppercase; font-weight:700;">Direktkontakt</div>
+            <div style="font-size:1.15rem; font-weight:700; color:#FFFFFF; margin-top:2px;">+41 79 844 66 69</div>
+            <div style="font-size:0.85rem; color:#38BDF8;">Montag – Freitag: 08:00 – 18:00 Uhr</div>
+          </div>
+
+          <div style="background:rgba(17,24,39,0.7); border:1px solid var(--border); border-radius:8px; padding:16px 24px; text-align:left;">
+            <div style="font-size:0.8rem; color:#94A3B8; text-transform:uppercase; font-weight:700;">E-Mail &amp; Support</div>
+            <div style="font-size:1.15rem; font-weight:700; color:#FFFFFF; margin-top:2px;"><a href="mailto:info@dkschv.ch" style="color:white;">info@dkschv.ch</a></div>
+            <div style="font-size:0.85rem; color:#10B981;">Antwort in der Regel innerhalb von 2 Std.</div>
+          </div>
+
+          <div style="background:rgba(17,24,39,0.7); border:1px solid var(--border); border-radius:8px; padding:16px 24px; text-align:left;">
+            <div style="font-size:0.8rem; color:#94A3B8; text-transform:uppercase; font-weight:700;">Standort</div>
+            <div style="font-size:1.15rem; font-weight:700; color:#FFFFFF; margin-top:2px;">DKSchV Schweiz</div>
+            <div style="font-size:0.85rem; color:#E5E7EB;">Bammattenweg 19, 3904 Naters (Wallis)</div>
+          </div>
+        </div>
+
+        <div>
+          <a href="mailto:info@dkschv.ch?subject=FakturaDesk%20ERP%20Anfrage%20/%20Demo&body=Guten%20Tag%20DKSchV-Team%0A%0ABitte%20senden%20Sie%20mir%20weitere%20Informationen%20zu%20FakturaDesk%20ERP%20bzw.%20eine%20Offerte%20f%C3%BCr:%0A%0A[%20]%20Starter%20KMU%0A[%20]%20Handwerker%20Pro%0A[%20]%20Enterprise%20%26%20Treuhand%0A%0AFirmenname:%0AAnsprechperson:%0ATelefonnummer:%0A%0AFreundliche%20Gr%C3%BCsse" class="btn btn-primary" style="font-size:1.1rem; padding:14px 32px;">
+            <span>✉️ Jetzt unverbindliche Offerte oder Demo anfordern</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+            <div style="background:linear-gradient(135deg, #2563EB, #0EA5E9); width:32px; height:32px; border-radius:6px; display:flex; align-items:center; justify-content:center;">💼</div>
+            <span style="font-size:1.2rem; font-weight:800; color:white;">FakturaDesk ERP</span>
+          </div>
+          <p style="margin-bottom:14px; line-height:1.6;">
+            Die sichere Rechnungs- und Warenwirtschafts-Gesamtlösung für Schweizer Handwerker, Dienstleister und KMU. Entwickelt, betreut und gesichert durch DKSchV Schweiz.
+          </p>
+          <div style="font-size:0.8rem; color:#6B7280;">
+            CHE-300.469.278 • Inhaber: P. Iwer • Naters / Wallis
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Produkt</h5>
+          <ul>
+            <li><a href="#features">Alle Funktionen</a></li>
+            <li><a href="#rapporte">Baustellen-Rapporte</a></li>
+            <li><a href="#bankabgleich">Bank &amp; camt.054</a></li>
+            <li><a href="#preise">Preise &amp; Lizenzen</a></li>
+            <li><a href="#download">Downloads &amp; Releases</a></li>
+            <li><a href="version.json" target="_blank">Auto-Update Server</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Rechtliches &amp; Standards</h5>
+          <ul>
+            <li><a href="https://dkschv.ch/datenschutz.html" target="_blank">Datenschutzerklärung</a></li>
+            <li><a href="https://dkschv.ch/impressum.html" target="_blank">Impressum</a></li>
+            <li><a href="#features">Schweizer GeBüV (Art. 958f OR)</a></li>
+            <li><a href="#features">nDSG 2027 Compliance</a></li>
+            <li><a href="#features">ISO 20022 Standard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>DKSchV Schweiz</h5>
+          <ul>
+            <li><a href="https://dkschv.ch" target="_blank">DKSchV Hauptportal ↗</a></li>
+            <li><a href="https://dkschv.ch/sicherheitsanalyse.html" target="_blank">Cyber-Sicherheitsanalyse</a></li>
+            <li><a href="https://dkschv.ch/risikomanagement.html" target="_blank">Risikomanagement</a></li>
+            <li><a href="https://dkschv.ch/kontakt.html" target="_blank">Kontakt Naters</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 DKSchV Schweiz – Datenschutz &amp; Cybersecurity. Alle Rechte vorbehalten.
+        </div>
+        <div style="display:flex; gap:16px;">
+          <span>🇨🇭 100% Swiss Hosted auf Infomaniak (Genf)</span>
+          <span>•</span>
+          <a href="https://dkschv.ch" style="color:#38BDF8;">www.dkschv.ch</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Preisrechner Toggle (Monatlich vs. Dauerlizenz)
+    function setPricing(type) {
+      const btnMonthly = document.getElementById('btnMonthly');
+      const btnLifetime = document.getElementById('btnLifetime');
+      
+      const priceStarter = document.getElementById('priceStarter');
+      const periodStarter = document.getElementById('periodStarter');
+      const noteStarter = document.getElementById('noteStarter');
+
+      const pricePro = document.getElementById('pricePro');
+      const periodPro = document.getElementById('periodPro');
+      const notePro = document.getElementById('notePro');
+
+      const priceEnterprise = document.getElementById('priceEnterprise');
+      const periodEnterprise = document.getElementById('periodEnterprise');
+      const noteEnterprise = document.getElementById('noteEnterprise');
+
+      if (type === 'lifetime') {
+        btnLifetime.classList.add('active');
+        btnMonthly.classList.remove('active');
+
+        priceStarter.textContent = '490.–';
+        periodStarter.textContent = 'einmalig';
+        noteStarter.textContent = 'Lifetime Dauerlizenz ohne Folgekosten';
+
+        pricePro.textContent = '790.–';
+        periodPro.textContent = 'einmalig';
+        notePro.textContent = 'Lifetime Dauerlizenz inkl. aller Handwerker-Module';
+
+        priceEnterprise.textContent = "1'490.–";
+        periodEnterprise.textContent = 'einmalig';
+        noteEnterprise.textContent = 'Lifetime Dauerlizenz inkl. GeBüV & EBICS';
+      } else {
+        btnMonthly.classList.add('active');
+        btnLifetime.classList.remove('active');
+
+        priceStarter.textContent = '49.–';
+        periodStarter.textContent = '/ Monat';
+        noteStarter.textContent = 'Monatlich kündbar';
+
+        pricePro.textContent = '79.–';
+        periodPro.textContent = '/ Monat';
+        notePro.textContent = 'Inklusive aller Handwerker-Module';
+
+        priceEnterprise.textContent = '149.–';
+        periodEnterprise.textContent = '/ Monat';
+        noteEnterprise.textContent = 'DKSchV Secured & Audit-Ready';
+      }
+    }
+  </script>
+</body>
+</html>

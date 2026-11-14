@@ -1,5 +1,6 @@
 # DKSchV Schweiz · FakturaDesk Auto-Update Web-Verzeichnis
 Options -Indexes
+Header set X-Robots-Tag "noindex, nofollow, noarchive"
 <Files "version.json">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
