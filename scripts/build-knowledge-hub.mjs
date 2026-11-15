@@ -216,7 +216,7 @@ function formatMarkdown(markdown, options = {}) {
       let finalUrl = url;
       let targetAttr = '';
 
-      if (finalUrl.includes('Laufstatus.md') || finalUrl.includes('AUTOMATION_STATUS.md')) {
+      if (finalUrl.includes('Laufstatus.md') || finalUrl.includes('AUTOMATION_STATUS.md') || finalUrl.includes('Pflegebericht') || finalUrl.includes('reviews/') || finalUrl.endsWith('.md')) {
         return linkText; // Plain text for internal dev files
       }
 
