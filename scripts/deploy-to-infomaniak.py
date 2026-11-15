@@ -72,7 +72,7 @@ def sync_tree(ftp, local_base, remote_base):
             remote_dir = remote_base
 
         ensure_remote_dir(ftp, remote_dir)
-        for file in files:
+        for file in sorted(files):
             local_file = Path(root) / file
             remote_file = f"{remote_dir}/{file}".replace("\\", "/")
             upload_file(ftp, local_file, remote_file)
@@ -88,22 +88,18 @@ try:
     print("\n📦 Synchronisiere /wissen ...")
     sync_tree(ftp, ROOT_DIR / "wissen", "/wissen")
 
-    # 2. content/ Verzeichnis synchronisieren
-    print("\n📦 Synchronisiere /content ...")
-    sync_tree(ftp, ROOT_DIR / "content", "/content")
-
-    # 3. wissen.html Weiterleitung
+    # 2. wissen.html Weiterleitung
     print("\n📦 Aktualisiere wissen.html ...")
     upload_file(ftp, ROOT_DIR / "wissen.html", "/wissen.html")
 
     ftp.quit()
-    print("\n🎉 Alle Dateien erfolgreich übertragen!")
+    print("\n🎉 Alle Knowledge-Hub-Dateien erfolgreich übertragen!")
 
 except Exception as err:
     print(f"❌ FTP-Fehler: {err}")
     sys.exit(1)
 
-# 4. Live-Verifizierung über HTTPS
+# 3. Live-Verifizierung über HTTPS
 print("\n🔍 Führe Live-Verifikation über HTTPS durch...")
 urls_to_test = [
     ("https://dkschv.ch/wissen/", ["Mandantenbereich", "KW 46", "15.11.2026"]),
@@ -136,3 +132,4 @@ if all_passed:
     print("\n🚀 Live-Deployment VOLLSTÄNDIG ERFOLGREICH und verifiziert!")
 else:
     print("\n⚠️ Deployment beendet, aber einige Live-Prüfungen schlugen fehl.")
+    sys.exit(1)
