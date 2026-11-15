@@ -708,7 +708,7 @@ articles.forEach(art => {
       }
     },
     "datePublished": "${art.frontmatter.veröffentlichungsdatum || '2026-11-01'}",
-    "dateModified": "${art.frontmatter.stand || '2026-11-08'}"
+    "dateModified": "${art.frontmatter.stand || '15. November 2026'}"
   }
   </script>
 </head>
@@ -771,7 +771,7 @@ articles.forEach(art => {
         </div>
 
         <!-- Gated Content: Full Guide, Resources, Tables & References -->
-        <div class="gated-content" id="gatedArticleContent">
+        <div class="gated-content is-locked" id="gatedArticleContent">
           ${resourceBoxHtml}
           ${restContentHtml}
           ${referencesHtml}
@@ -870,7 +870,7 @@ Object.values(resourcesByPrefix).forEach(res => {
       </div>
     </div>
 
-    <div class="gated-content" id="gatedArticleContent">
+    <div class="gated-content is-locked" id="gatedArticleContent">
       <div class="resource-sheet">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
           <div>

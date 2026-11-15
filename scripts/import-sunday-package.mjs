@@ -26,24 +26,35 @@ console.log('📦 DKSchV Sonntags-Paket Import gestartet...');
 let zipPath = process.argv[2];
 
 if (!zipPath) {
-  if (fs.existsSync(DOWNLOADS_DIR)) {
-    const candidateFiles = fs.readdirSync(DOWNLOADS_DIR)
-      .filter(f => f.endsWith('.zip') && (f.includes('DKSchV') || f.includes('News') || f.includes('KW')))
-      .map(f => {
-        const full = path.join(DOWNLOADS_DIR, f);
-        return { file: f, path: full, mtime: fs.statSync(full).mtimeMs };
-      })
-      .sort((a, b) => b.mtime - a.mtime);
+  const searchDirs = [
+    ROOT_DIR,
+    DOWNLOADS_DIR,
+    path.join(os.homedir(), 'Dokumente', 'Firma DKSchV')
+  ];
 
-    if (candidateFiles.length > 0) {
-      zipPath = candidateFiles[0].path;
-      console.log(`🔍 Neuestes Paket in Downloads gefunden: ${path.basename(zipPath)}`);
+  let candidateFiles = [];
+  for (const sDir of searchDirs) {
+    if (fs.existsSync(sDir)) {
+      const found = fs.readdirSync(sDir)
+        .filter(f => f.endsWith('.zip') && (f.includes('DKSchV') || f.includes('News') || f.includes('KW') || f.includes('Blogpflege')))
+        .map(f => {
+          const full = path.join(sDir, f);
+          return { file: f, path: full, mtime: fs.statSync(full).mtimeMs };
+        });
+      candidateFiles.push(...found);
     }
+  }
+
+  candidateFiles.sort((a, b) => b.mtime - a.mtime);
+
+  if (candidateFiles.length > 0) {
+    zipPath = candidateFiles[0].path;
+    console.log(`🔍 Neuestes Paket gefunden: ${path.basename(zipPath)} (${zipPath})`);
   }
 }
 
 if (!zipPath || !fs.existsSync(zipPath)) {
-  console.log('ℹ️ Keine neue ZIP-Datei angegeben oder in ~/Downloads gefunden.');
+  console.log('ℹ️ Keine neue ZIP-Datei angegeben oder in Suchpfaden gefunden.');
   console.log('👉 Führe stattdessen Re-Build des bestehenden Inhalts aus...');
 } else {
   console.log(`📂 Entpacke Paket: ${zipPath}`);
@@ -53,7 +64,7 @@ if (!zipPath || !fs.existsSync(zipPath)) {
   try {
     execSync(`unzip -q -o "${zipPath}" -d "${tempExtractDir}"`);
 
-    // Suche nach articles, resources, news
+    // Suche nach articles, resources, news, reviews, qa
     function copyIfExists(srcSub, destSub) {
       const candidates = [
         path.join(tempExtractDir, srcSub),
@@ -73,15 +84,32 @@ if (!zipPath || !fs.existsSync(zipPath)) {
       return false;
     }
 
-    // Copy articles & resources
+    // Copy articles, resources, news, reviews, qa
     copyIfExists('articles', 'blog-paket/articles');
     copyIfExists('resources', 'blog-paket/resources');
     copyIfExists('news', 'news');
+    copyIfExists('reviews', 'reviews');
+    copyIfExists('qa', 'blog-paket/qa');
+
+    // Also look for blog-paket root files
+    const blogPaketDir = path.join(tempExtractDir, 'blog-paket');
+    if (fs.existsSync(blogPaketDir) && fs.statSync(blogPaketDir).isDirectory()) {
+      const bpFiles = fs.readdirSync(blogPaketDir);
+      bpFiles.forEach(f => {
+        const full = path.join(blogPaketDir, f);
+        if (fs.statSync(full).isFile()) {
+          const dest = path.join(CONTENT_DIR, 'blog-paket', f);
+          fs.mkdirSync(path.dirname(dest), { recursive: true });
+          fs.copyFileSync(full, dest);
+          console.log(`  ✓ Blog-Paket Datei kopiert: ${f}`);
+        }
+      });
+    }
 
     // Also look for root .md news files in extract dir
     const files = fs.readdirSync(tempExtractDir);
     files.forEach(f => {
-      if (f.endsWith('_Branchennews.md') || f.endsWith('_News.md')) {
+      if (f.endsWith('_Branchennews.md') || f.endsWith('_News.md') || f.endsWith('_Laufstatus.md')) {
         const dest = path.join(CONTENT_DIR, 'news', f);
         fs.mkdirSync(path.dirname(dest), { recursive: true });
         fs.copyFileSync(path.join(tempExtractDir, f), dest);
