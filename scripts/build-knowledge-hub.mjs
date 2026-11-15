@@ -908,31 +908,39 @@ Object.values(resourcesByPrefix).forEach(res => {
 
 console.log(`✅ ${Object.keys(resourcesByPrefix).length} druckbare Arbeitsvorlagen unter wissen/resources/<slug>.html generiert`);
 
-// 4. Generate Weekly News Page in /wissen/news/2026-11-08-branchennews.html
+// 4. Generate Weekly News Page in /wissen/news/
 const newsFiles = fs.readdirSync(NEWS_DIR).filter(f => f.endsWith('_DKSchV_Branchennews.md')).sort().reverse();
 let latestNewsPoints = [];
 let latestNewsTitle = 'DKSchV-Branchennews: Sonntagsausgabe';
-let latestNewsDate = '08.11.2026';
+let latestNewsDate = '15.11.2026';
+let latestNewsKW = 'KW 46';
+let latestNewsFilename = '2026-11-15-branchennews.html';
 let latestNewsFile = '';
 
 if (newsFiles.length > 0) {
   latestNewsFile = newsFiles[0];
   const rawNews = fs.readFileSync(path.join(NEWS_DIR, latestNewsFile), 'utf-8');
   const { frontmatter, body } = parseFrontmatter(rawNews);
-  latestNewsDate = frontmatter.datum || '08.11.2026';
+  latestNewsDate = frontmatter.datum || '15.11.2026';
+  latestNewsKW = frontmatter.kalenderwoche || 'KW 46';
+
+  const dateMatch = latestNewsFile.match(/^(\d{4}-\d{2}-\d{2})/);
+  if (dateMatch) {
+    latestNewsFilename = `${dateMatch[1]}-branchennews.html`;
+  }
 
   const { contentHtml, headings, referencesHtml } = formatMarkdown(body, { isArticle: false, isNews: true });
 
   // Extract quick highlights from H2s in news
-  latestNewsPoints = headings.filter(h => h.level === 2 && !h.title.includes('Vormerkung') && !h.title.includes('References')).slice(0, 4);
+  latestNewsPoints = headings.filter(h => h.level === 2 && !h.title.includes('Vormerkung') && !h.title.includes('References')).slice(0, 5);
 
   const newsHtml = `<!DOCTYPE html>
 <html lang="de-CH">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyber-Security Branchennews KW 45 (${latestNewsDate}) | DKSchV Schweiz</title>
-  <meta name="description" content="Wöchentliche Lagebeurteilung für Schweizer KMU: SonicWall SAML-Bypass, Microsoft Secret-Hunting, EHRA-Phishing und EDÖB-Urteil.">
+  <title>Cyber-Security Branchennews ${latestNewsKW} (${latestNewsDate}) | DKSchV Schweiz</title>
+  <meta name="description" content="Wöchentliche Lagebeurteilung für Schweizer KMU: Outlook- &amp; Chromium-Zero-Days, BACS-Warnung Kühlsteuerungen, ScreenConnect-SCKit und KI-Fakeshops vor Black Friday.">
   <link rel="icon" type="image/png" href="../../assets/images/dkschv_icon.png">
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
@@ -946,10 +954,10 @@ if (newsFiles.length > 0) {
         <span class="sep">/</span>
         <a href="../../wissen.html">Wissen &amp; Ratgeber</a>
         <span class="sep">/</span>
-        <span style="color:#ffffff;">Wochenausgabe KW 45</span>
+        <span style="color:#ffffff;">Wochenausgabe ${latestNewsKW}</span>
       </nav>
 
-      <span class="news-badge"><span class="news-pulse-dot"></span> Sonntagsausgabe · ISO-KW 45</span>
+      <span class="news-badge"><span class="news-pulse-dot"></span> Sonntagsausgabe · ISO-${latestNewsKW}</span>
       <h1 class="article-page-title">DKSchV-Branchennews: Wöchentliche Lage für Schweizer KMU</h1>
       <div class="article-page-meta">
         <span class="article-meta-item">📅 Ausgabedatum: <strong>${latestNewsDate}</strong></span>
@@ -976,9 +984,9 @@ if (newsFiles.length > 0) {
 </body>
 </html>`;
 
-  fs.writeFileSync(path.join(WISSEN_NEWS_DIR, '2026-11-08-branchennews.html'), newsHtml);
+  fs.writeFileSync(path.join(WISSEN_NEWS_DIR, latestNewsFilename), newsHtml);
   fs.writeFileSync(path.join(WISSEN_NEWS_DIR, 'index.html'), newsHtml);
-  console.log('✅ Wöchentliche Branchennews unter wissen/news/2026-11-08-branchennews.html generiert');
+  console.log(`✅ Wöchentliche Branchennews unter wissen/news/${latestNewsFilename} und index.html generiert`);
 }
 
 // 5. Generate Knowledge Hub Catalog: wissen.html & wissen/index.html
