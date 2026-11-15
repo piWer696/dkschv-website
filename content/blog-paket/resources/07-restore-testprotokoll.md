@@ -1,18 +1,18 @@
 ---
 arbeitsmittel: "Restore-Testprotokoll für Ransomware-Wiederherstellung"
 passender_artikel: /wissen/backup-wiederherstellung-testen
-version: "1.2"
+version: "1.3"
 status: "Arbeitsvorlage – nicht freigegeben"
 slug: "/resources/07-restore-testprotokoll"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
-stand: "1. November 2026"
-quellenpruefung_umfang: "6 zitierte externe Originalquellen, darunter Fedlex zusätzlich über amtliche Chronologie, Änderungen und XML; ergänzend BACS Im Fokus, BACS-KMU-Studie, CISA SafePay und CISA-Ressourceneintrag geprüft. Abrufe am 01.11.2026, 09:05–09:09 CET Europe/Zurich. Interne bzw. geplante DKSchV-URLs wurden nicht live geprüft."
-quellenpruefung_status: "vollständig für die 6 zitierten externen Originalquellen; kein Nachweis eines minutengenauen historischen Website-Wortlauts und keine Fach-, Rechts- oder Nutzungsfreigabe"
+stand: "15. November 2026"
+quellenpruefung_umfang: "12 zitierte externe Originalquellen direkt geprüft; gemeinsames Quellenjournal mit 28 Originalabrufen, darunter Fedlex-Chronologie und vorhandene amtliche XML sowie 16 ergänzende Quellen. Abrufrückgaben am 15.11.2026, 09:06:11–09:08:59 CET Europe/Zurich, nach 09:00. BACS-Wordtemplate nach Base64-Rückgabe lokal dekodiert und gelesen. Interne Ziele nur lokal abgeglichen, keine Live-Prüfung."
+quellenpruefung_status: "12/12 zitierte Quellen inhaltlich lesbar; 1 ergänzender Inhaltsblocker: Fedlex-Änderungsseite liefert nur Javascript-Hinweis, nicht erfolgreich verifiziert. DSG-Wortlaut separat per amtlicher XML bestätigt. Kein historischer 09:00-Wortlaut, keine tatsächliche Einzelfallprüfung und keine Fach-, Rechts-, Forensik-, Tenant-, Produkt-, Veröffentlichungs- oder Nutzungsfreigabe."
 ---
 
 # Restore-Testprotokoll für Ransomware-Wiederherstellung
 
-**Version 1.2 · Quellenstand: 1. November 2026.** Die Standangabe bezeichnet die Quellenpflege und keine Fach-, Rechts- oder Nutzungsfreigabe.
+**Version 1.3 · Quellenstand: 15. November 2026.** Die Standangabe bezeichnet die Quellenpflege und keine Fach-, Rechts- oder Nutzungsfreigabe. Die ergänzende Fedlex-Änderungsseite war nicht inhaltlich auslesbar; der amtliche DSG-XML-Wortlaut war lesbar.
 
 > **[FACHPRÜFUNG ERFORDERLICH]** Die rechtlichen Hinweise und die organisationsspezifische Durchführung eines Wiederanlaufs müssen vor Verwendung durch zuständige Fachpersonen geprüft werden.
 
@@ -153,6 +153,27 @@ Füllen Sie die Felder vor dem Test gemeinsam mit IT, Prozessverantwortung und d
 
 **Abgrenzung zum Vorfallsbefund:** Die beiden letzten Kontrollpunkte dokumentieren nur die Komponenten und Fixnachweise der für diesen Test bereitgestellten Wiederanlaufumgebung. Die BACS-Warnung zu PHP empfiehlt bei integrierten und extern betriebenen Komponenten die Kontrolle der tatsächlich laufenden korrigierten Version oder eines vom Anbieter als behoben bestätigten Pakets; ein Update beseitigt jedoch keine bereits erfolgte Kompromittierung.[6] Dieses Protokoll beurteilt deshalb weder einen früheren Daten- oder Kontenkompromiss noch dessen Umfang, Zeitpunkt oder Folgen. Beweise, Logs und betroffene produktive Systeme gehören in einem tatsächlichen Vorfall in eine gesonderte, fachlich gesteuerte Incident-Response- und Forensikbehandlung.
 
+### Rückfall und Beweissicherungsübergabe
+
+Die aktuell angebotene BACS-KMU-Vorlage verlangt eine durch Experten bestätigte Beseitigung der Gefahr vor dem Wiederanlauf betroffener Systeme und Dienste.[8] Im Test wird dieser Freigabepunkt nur simuliert. Protokollieren Sie Kriterien, benannte Rolle, Entscheid und offene Befunde; damit wird keine echte Umgebung zur Wiederverbindung freigegeben.
+
+| Prüfpunkt | Festlegung vor Test / Ergebnis / verantwortliche Person |
+|---|---|
+| Simulierter Sicherheitsentscheid vor Wiederanlauf: Kriterien, Rolle, Uhrzeit und Nachweis |  |
+| Nicht nutzbarer Sicherungssatz: zulässige Alternative und zusätzlicher Datenverlust |  |
+| RPO verfehlt oder Fachtest gescheitert: Abbruchentscheid, Behelfsprozess und Nachtest |  |
+| Verdächtiger Zugriff nach Start: Stoppbefugnis, sichere Trennung und Eskalationsweg |  |
+| Rückfall durchgeführt: Auslöser, Zeitpunkt, Ergebnis und erneute Abnahme |  |
+| Log-Erhalt und Beweissicherungsübergabe: betroffene Quellen, zuständige Fachstelle, Entscheid vor veränderndem Eingriff |  |
+| Zugelassene Homeoffice-/Heimnetzabhängigkeit: Betreiber, Exposition, Geräte-/Dienststand und Zugangsweg |  |
+| Prozessrelevante OT-/Kühlsteuerung: Betreiber, Sollwerte, Alarme und sichere Betriebsabnahme |  |
+
+Die Rückfallszenarien konkretisieren die bisherigen Test-, Abbruch- und Freigabefelder, sie sind keine neu eingeführte allgemeine Behördenpflicht. BACS und CISA betonen den Erhalt relevanter Logs und flüchtiger Beweise.[3] [2] Die Zeile zur Beweissicherungsübergabe hält nur Planung, Zuständigkeit und Entscheid fest; sie ist keine forensische Sicherung oder Bestätigung einer Beweiskette. Bei einem tatsächlichen Vorfall bestimmt die zuständige Fachstelle das risikogerechte Vorgehen. Der Rückfall darf nicht in die als kompromittiert angenommene Produktion führen.
+
+Die BACS-Meldung vom 3. November 2026 verlangt im Heimnetzkontext aktuelle Geräte und Dienste und empfiehlt getrennte Segmente, VPN sowie wenn möglich einen zweiten Faktor.[7] Die Zeile gilt nur für tatsächlich zugelassene Geschäftsprozessabhängigkeiten; sie erlaubt keine Auslagerung auf private Geräte und bestätigt keine Heimnetzsicherheit. Die BACS-Warnung vom 10. November 2026 zu Kühlsteuerungen begründet den OT-Prüfpunkt, sofern solche Anlagen zum Prozess gehören.[9] Sollwerte, Alarme und sichere Schalthandlungen sind durch zuständige Betriebsfachpersonen zu bestimmen, nicht durch dieses Protokoll.
+
+Eine KEV-Aufnahme ist kein Kompromittierungsbefund und kein Restoreentscheid.[10] CISA-BOD-Fristen gelten im dort definierten US-Behördenumfang, nicht automatisch für Schweizer KMU.[11] Update, Anbieterbestätigung und Funktionstest ersetzen keinen gesonderten Sicherheitsentscheid.
+
 ### Fachliche Abnahme
 
 | Testfall für Mindestfunktion | Erwartetes Ergebnis | Tatsächliches Ergebnis | Abnahme durch / Uhrzeit |
@@ -229,6 +250,8 @@ Dieses Protokoll ersetzt keine forensische Untersuchung, keine Incident Response
 
 Ein einzelnes Anzeichen beweist keine Malware-Infektion. Mehrere ungewöhnliche Beobachtungen rechtfertigen laut BACS jedoch eine genauere Untersuchung; bei einer bestätigten Infektion empfiehlt das BACS ein Neuaufsetzen und anschliessende Passwortänderungen.[5]
 
+Ein Restore- oder Patch-Ergebnis ersetzt auch die gesonderte Beurteilung der Betroffeneninformation nicht. Die EDÖB-Mitteilung vom 6. November 2026 zum konkreten Fall SkySale hält fest, dass nachträgliche technische Massnahmen die bestätigte Informationspflicht nicht beseitigten.[12] Art. 24 Abs. 4 DSG und die konkrete Schutzbedürftigkeit sind getrennt zu beurteilen; daraus wird keine allgemeine Pflicht zur öffentlichen Bekanntmachung abgeleitet.[4]
+
 **[FACHPRÜFUNG ERFORDERLICH]** Ergibt ein Test Hinweise auf eine reale Kompromittierung oder einen Datenabfluss, stoppen Sie den Test nach dem definierten Sicherheitsverfahren. Melde- und Informationspflichten sind anhand des konkreten Sachverhalts durch Datenschutz- und Rechtsfachpersonen zu beurteilen. Art. 24 DSG verlangt eine Meldung an den EDÖB so rasch als möglich, wenn eine Datensicherheitsverletzung voraussichtlich zu einem hohen Risiko für Persönlichkeit oder Grundrechte führt.[4]
 
 ## Quellen
@@ -239,3 +262,9 @@ Ein einzelnes Anzeichen beweist keine Malware-Infektion. Mehrere ungewöhnliche 
 [4]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz, Art. 24"
 [5]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
 [6]: https://www.bacs.admin.ch/de/warnung-php-de "BACS – Kritische Schwachstellen in PHP: Sicherheitsupdates sofort einspielen, 21. Oktober 2026"
+[7]: https://www.bacs.admin.ch/de/26w44-de "BACS – Woche 44: Wenn das Heimnetzwerk zum Einfallstor für Cyberkriminelle wird, 3. November 2026"
+[8]: https://www.bacs.admin.ch/dam/de/sd-web/AU4cjn0YWqWM/Notfallplan_Template_KMU_DE.docx "BACS – Template IT-Notfall- und Krisenplan für KMU, Download-Datum 11. November 2026"
+[9]: https://www.bacs.admin.ch/de/warnung-kuehlanlagen-de "BACS – Kühl- und Kältesteuerungen: Systeme identifizieren, aktualisieren und schützen, 10. November 2026"
+[10]: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json "CISA – Known Exploited Vulnerabilities Catalog, abgerufen am 15. November 2026"
+[11]: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk "CISA – BOD 26-04: Prioritizing Security Updates Based on Risk, US-Geltungsbereich"
+[12]: https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin "EDÖB – Bundesverwaltungsgericht bestätigt Informationspflicht der Onlineshop-Betreiberin, 6. November 2026"

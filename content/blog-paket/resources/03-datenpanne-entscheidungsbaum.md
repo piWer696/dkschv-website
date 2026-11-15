@@ -6,19 +6,20 @@ meta_title: "EDÖB-/BACS-Entscheidungsbaum für Datenpannen | DKSchV"
 meta_description: "Arbeitsvorlage zur getrennten Strukturierung der EDÖB- und BACS-Meldeprüfung nach einem Cyber- oder Datenschutzvorfall."
 suchintention: "Arbeitsmittel – Meldeprüfung bei Datenpannen strukturieren"
 zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer Organisationen"
-version: "Rechtsstand 1. November 2026 (DSG, DSV, ISG und CSV amtlich verifiziert)"
+version: "Rechtsstand 1. November 2026 (DSG, DSV, ISG und CSV amtlich verifiziert); redaktionelle Revision 2"
 bezug: "/wissen/datenpanne-melden-schweiz"
-stand: "1. November 2026"
-quellenpruefung_umfang: "Alle 12 zitierten externen Originalquellen dieses Arbeitsmittels und des zugehörigen Artikels; einschliesslich amtlicher Fedlex-Historien und ISG-XML bei stateless Leerabruf sowie einschlägiger EDÖB-/BACS-Originalmeldungen seit 18. Oktober 2026"
-quellenpruefung_status: "Vollständig für die 12 zitierten externen Originalquellen geprüft am 1. November 2026; keine Fachfreigabe"
+stand: "15. November 2026"
+quellenpruefung_umfang: "14 unterschiedliche zitierte externe Originalquellen von Arbeitsmittel und Artikel direkt geprüft; zusätzlich 21 amtliche Rechts-, Übersichts- und Nachrichtenquellen, einschliesslich Fedlex-Chronologien/XML und EDÖB-/BACS-Meldungen seit 1. November 2026"
+quellenpruefung_status: "14 von 14 zitierten Originalquellen inhaltlich abgeglichen am 15. November 2026 nach 09:00 CET; 2 ergänzende Fedlex-Änderungsseiten nur Javascript-Hinweis, Leseblocker offen trotz lesbarer Normtexte/Chronologien/XML; keine Fachfreigabe oder Einzelfallprüfung"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
 
 # EDÖB-/BACS-Entscheidungsbaum und Vorfallsprotokoll
 
 **Arbeitsmittel zu:** [Datenpanne in der Schweiz: DSG-Entscheidungsbaum für EDÖB-Meldung und BACS-Pflicht](/wissen/datenpanne-melden-schweiz)  
-**Quellenprüfung:** 1. November 2026; Abrufe der Originalquellen am 1. November 2026 nach 09:00 CET, zwischen 09:05 und 09:07 CET; keine Fachfreigabe  
+**Quellenprüfung:** 15. November 2026; Originalquellen-Rückgaben am 15. November 2026 nach 09:00 CET, zwischen 09:06:12 und 09:07:48 CET; 14 zitierte Quellen inhaltlich geprüft, 2 ergänzende Fedlex-Änderungsseiten nicht auslesbar; keine Fachfreigabe  
 **Rechtsstand:** 1. November 2026 (DSG, DSV, ISG und CSV amtlich verifiziert)  
+**Version:** Rechtsstand 1. November 2026 (DSG, DSV, ISG und CSV amtlich verifiziert); redaktionelle Revision 2  
 **Status:** Arbeitsvorlage – allgemeine Orientierung, keine Rechtsberatung
 
 ---
@@ -107,7 +108,8 @@ Besteht voraussichtlich ein hohes Risiko                          |
 für Persönlichkeit oder Grundrechte?                              v
           |                                              Liegt ein Cyberangriff nach Art. 74d ISG vor?
    Nein --+--> Begründung dokumentieren;                          |-- gefährdete Funktionsfähigkeit?
-          |     weitere Pflichten prüfen.                          |-- Manipulation oder Informationsabfluss?
+          |     Betroffeneninformation separat in C3 prüfen;       |-- Manipulation oder Informationsabfluss?
+          |     weitere Pflichten prüfen.
           Ja                                                      |-- längere Zeit unentdeckt?
           |                                                      |-- Erpressung, Drohung oder Nötigung?
           v                                                           |
@@ -127,6 +129,7 @@ für Persönlichkeit oder Grundrechte?                              v
 - Für die EDÖB-Meldung ist nicht jede Datenpanne massgeblich, sondern ein **voraussichtlich hohes Risiko**. Beurteilen Sie Schwere und Wahrscheinlichkeit für die am stärksten betroffenen Personen. Bei Zweifel, der ein hohes Risiko nicht innert kurzer Zeit ausschliesst, soll nicht auf lange Abklärungen gewartet werden.[3]
 - Die BACS-Pflicht trifft nicht pauschal alle KMU. Sie folgt dem Katalog in Art. 74b ISG und den Ausnahmen der CSV. Das BACS kann auf Anfrage zur Unterstellung Auskunft geben und auf Antrag verfügen.[4] [5]
 - Eine EDÖB-Meldung und eine BACS-Meldung können nebeneinander nötig sein. Prüfen Sie sie getrennt.
+- Die Betroffeneninformation ist bei einer Datensicherheitsverletzung unabhängig von der hohen Risikoschwelle der EDÖB-Meldung zu prüfen. Ein «Nein» zur EDÖB-Meldung oder eine technische Behebung schliesst sie nicht automatisch aus.[1] [3] [12]
 
 ---
 
@@ -193,9 +196,20 @@ Der EDÖB nennt Datenart und Kontext, Art der Verletzung, Bestimmbarkeit, mögli
 | Referenz / Bestätigung abgelegt unter | ________________________________________________ |
 | Fehlende Angaben und Termin zur Nachreichung | ________________________________________________ |
 | Ist Betroffeneninformation zum Schutz erforderlich? | ☐ Ja ☐ Nein ☐ unklar – **[FACHPRÜFUNG ERFORDERLICH]**: _________________________ |
+| Hat der EDÖB Betroffeneninformation verlangt? | ☐ Ja ☐ Nein ☐ offen – Datum / Inhalt: _________________________ |
+| Welche Schutzhandlungen können Betroffene noch vornehmen, auch nach technischer Behebung? | ________________________________________________ |
+| Welche Personen können direkt erreicht werden, und welche Nachweise fehlen? | ________________________________________________ |
+| Individuelle Information oder geprüfte Ersatzform; gewählte Kanäle und Begründung | ________________________________________________ |
+| Gesetzlicher Ausnahmegrund für Einschränkung, Aufschub oder Verzicht; mildere geeignete Form geprüft? | ________________________________________________ |
 | Entscheid zur Betroffeneninformation, Begründung und Freigabe | ________________________________________________ |
 
-Art. 15 DSV benennt die Angaben einer EDÖB-Meldung und erlaubt das rasche Nachreichen fehlender Informationen. Betroffene sind zu informieren, wenn dies zu ihrem Schutz erforderlich ist oder der EDÖB es verlangt. Ausnahmen und die konkrete Kommunikation brauchen im Einzelfall eine fachliche Prüfung.[1] [2]
+**Betroffeneninformation immer separat bearbeiten:** Die Informationskontrollpunkte gelten auch bei verneinter EDÖB-Meldepflicht. Art. 15 DSV benennt die Angaben einer EDÖB-Meldung und erlaubt das rasche Nachreichen fehlender Informationen. Betroffene sind zu informieren, wenn dies zu ihrem Schutz erforderlich ist oder der EDÖB es verlangt. Eine erforderliche Information nennt in einfacher und verständlicher Sprache mindestens die Art der Verletzung, Folgen einschliesslich Risiken, getroffene oder vorgesehene Massnahmen sowie Name und Kontaktdaten einer Ansprechperson. Ausnahmen und die konkrete Kommunikation brauchen im Einzelfall eine fachliche Prüfung.[1] [2] [3]
+
+**Fallbezogene Orientierung, keine allgemeine Bekanntmachungspflicht:** Der EDÖB publizierte am 6. November 2026 die Mitteilung zu SkySale/apfelkiste.ch. Das Urteil A-3790/2024 vom 8. April 2026 bestätigte die Betroffeneninformation und ist laut EDÖB rechtskräftig. Im konkreten Fall beseitigte die nachträgliche technische Zugriffsbeschränkung den Schutzbedarf nicht, weil vorher offengelegte Daten bereits kopiert oder weiterverarbeitet worden sein konnten.[11] [12]
+
+E. 6.3.7 des Urteils behandelt eine öffentliche Bekanntmachung als mögliche Ersatzform bei unmöglicher oder unverhältnismässig aufwändiger individueller Information, sofern die Information vergleichbar sichergestellt ist. Zugleich nennt sie das Fehlen einer ausdrücklichen gesetzlichen Pflicht zu dieser Form und die fehlende Kompetenz des EDÖB, sie in solchen Fällen formell anzuordnen. Davon getrennt bleibt eine eigene Information der Öffentlichkeit durch den EDÖB unter den gesetzlichen Voraussetzungen. Die mildeste geeignete Einschränkung ist gegenüber einem vollständigen Verzicht abzuwägen.[12]
+
+E. 6.3.8 hält fest, dass die Bekanntmachung deshalb nur als Möglichkeit in den Erwägungen der Verfügung stand. Im konkreten Fall konnten die Betroffenen nach den Massnahmen nicht mehr identifiziert werden; eine direkte Information war unmöglich beziehungsweise unverhältnismässig. Eine Ersatzform musste dann nicht dieselbe Zustellungsart haben. Das Gericht hielt eine Bekanntmachung mit gleichem Informationsgehalt und möglicher Weiterverbreitung für möglich und nach E. 6.4 für verhältnismässig. Dieses Blatt entscheidet weder diese Voraussetzungen noch die Adressaten oder Kanäle eines anderen Vorfalls. Nicht pauschal jede Datenpanne öffentlich publizieren.[12]
 
 ---
 
@@ -284,3 +298,5 @@ Die Checkpunkte sind keine Zusicherung, dass eine Meldung rechtzeitig, vollstän
 [8]: https://www.bacs.admin.ch/de/ransomware-was-nun "BACS – Ransomware: Was nun?"
 [9]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
 [10]: https://www.edoeb.admin.ch/de/edoeb-leitete-nach-cyberangriff-auf-softwarelieferant-abklaerungen-ein "EDÖB – Abklärungen nach Cyberangriff auf Softwarelieferant, 23. Oktober 2026"
+[11]: https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin "EDÖB – SkySale/apfelkiste.ch: Bundesverwaltungsgericht bestätigt Informationspflicht, 6. November 2026"
+[12]: https://www.edoeb.admin.ch/dam/de/sd-web/ZjhZ9UBOprVL/Urteil%20BVGer%20A_3790_2024%20vom%208.%20April%202026%20betreffend%20Verf%C3%BCgung%20vom%2028.%20Mai%202024.pdf "Bundesverwaltungsgericht – Urteil A-3790/2024 vom 8. April 2026, insbesondere E. 6.3.7 und 6.3.8"

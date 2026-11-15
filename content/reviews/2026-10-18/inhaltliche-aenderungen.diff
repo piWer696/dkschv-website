@@ -1,0 +1,905 @@
+--- vorher/articles/01-ransomware-erste-60-minuten.md
++++ nachher/articles/01-ransomware-erste-60-minuten.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "01.10.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "11 von 11 externen Quellenreferenzen geprüft; BACS Im Fokus auf neuere einschlägige Meldungen geprüft"
++quellenpruefung_status: "Vollständig für die Quellenreferenzen; interne relative Ziele nicht live geprüft"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -31,6 +33,8 @@
+ Notieren Sie den Zeitpunkt der Entdeckung, die meldende Person, sichtbare Symptome und die bereits getroffenen Massnahmen. Benennen Sie Incident Lead, technische Einsatzleitung und eine Stellvertretung. Legen Sie eine Entscheidungslog an: Wer hat wann welches System isoliert, welche Konten gesperrt und welche Annahme lag zugrunde? Diese Chronologie hilft später bei Forensik, Meldungen und dem Wiederanlauf.
+ 
+ Melden Sie intern nur die bestätigten Fakten: etwa verschlüsselte Dateien, eine Lösegeldnotiz, ungewöhnliche Anmeldeereignisse oder nicht erreichbare Freigaben. Vermeiden Sie Schuldzuweisungen und spekulative Erklärungen. Ein frühes, nüchternes Lagebild ist wertvoller als eine scheinbar vollständige, aber ungesicherte Diagnose.
++
++Ein einzelnes unspezifisches Anzeichen wie ein deutlich langsamer Computer belegt noch keine Infektion. Treten mehrere ungewöhnliche Beobachtungen auf oder warnt ein Sicherheitsprogramm, lassen Sie den Verdacht technisch untersuchen und informieren Sie bei Geschäftsgeräten die zuständige IT. [10]
+ 
+ ### 2. Betroffene Systeme isolieren – nicht reflexartig ausschalten
+ 
+@@ -82,7 +86,7 @@
+ 
+ Ist Ihr Unternehmen erfasst und gefährdet der Angriff die Funktionsfähigkeit, führt er zu Manipulation oder Informationsabfluss, blieb er länger unentdeckt oder ist er mit Erpressung, Drohung oder Nötigung verbunden, muss die Meldung innert 24 Stunden nach Entdeckung an das BACS erfolgen. Unbekannte Angaben dürfen die Erstmeldung nicht verzögern; der Gesetzestext verlangt die Ergänzung, sobald neue Informationen vorliegen. [8]
+ 
+-Auch Organisationen ohne gesetzliche Pflicht können Cybervorfälle dem BACS freiwillig melden. Für akute Gefährdungen oder eine Strafanzeige gelten die zuständigen polizeilichen Kontaktwege. [2] [9]
++Auch Organisationen ohne gesetzliche Pflicht können Cybervorfälle dem BACS freiwillig melden. [11] Für akute Gefährdungen oder eine Strafanzeige gelten die zuständigen polizeilichen Kontaktwege. [9]
+ 
+ ### Polizei: Strafanzeige früh mit Beweissicherung abstimmen
+ 
+@@ -134,7 +138,7 @@
+ 
+ ## Grenzen dieses Sofortleitfadens
+ 
+-Diese Anleitung ist eine allgemeine operative Orientierung für Schweizer KMU per 4. Oktober 2026. Sie ersetzt weder eine technische Forensik noch eine individuelle rechtliche, datenschutzrechtliche, strafrechtliche, versicherungs- oder sanktionsrechtliche Beratung. **[FACHPRÜFUNG ERFORDERLICH]** Lassen Sie insbesondere die Einstufung als kritische Infrastruktur, die BACS-Meldepflicht, das hohe Risiko nach Art. 24 DSG, Meldetexte und den Umgang mit Lösegeld durch qualifizierte Fachpersonen prüfen. Halten Sie dafür die 60-Minuten-Checkliste und Ihren Entscheidungslog bereit.
++Diese Anleitung ist eine allgemeine operative Orientierung für Schweizer KMU auf dem Stand der Quellenprüfung vom 18. Oktober 2026; dieser Stand ist keine Fachfreigabe. Sie ersetzt weder eine technische Forensik noch eine individuelle rechtliche, datenschutzrechtliche, strafrechtliche, versicherungs- oder sanktionsrechtliche Beratung. **[FACHPRÜFUNG ERFORDERLICH]** Lassen Sie insbesondere die Einstufung als kritische Infrastruktur, die BACS-Meldepflicht, das hohe Risiko nach Art. 24 DSG, Meldetexte und den Umgang mit Lösegeld durch qualifizierte Fachpersonen prüfen. Halten Sie dafür die 60-Minuten-Checkliste und Ihren Entscheidungslog bereit.
+ 
+ ## Quellen
+ 
+@@ -147,3 +151,5 @@
+ [7]: https://csrc.nist.gov/pubs/sp/800/61/r3/final "NIST SP 800-61 Rev. 3 – Incident Response Recommendations and Considerations for Cybersecurity Risk Management"
+ [8]: https://www.fedlex.admin.ch/eli/cc/2022/232/de "Fedlex – Bundesgesetz über die Informationssicherheit, Art. 74a–74h Cyberangriffe auf kritische Infrastrukturen"
+ [9]: https://www.suisse-epolice.ch/cybercrime-case "Suisse ePolice – Cyberkriminalität anzeigen"
++[10]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
++[11]: https://www.report.ncsc.admin.ch/de/chat?path=406%3E407%3E1 "BACS – Freiwillige Meldung eines Cybervorfalls"
+--- vorher/articles/02-ceo-betrug-business-email-compromise.md
++++ nachher/articles/02-ceo-betrug-business-email-compromise.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen, Buchhaltungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "08.10.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "11 ursprünglich zitierte Originalquellen auf Erreichbarkeit geprüft; 10 davon beibehalten, 1 ungenutzte Referenz entfernt und 2 zitierte BACS-Originalquellen ergänzt; einschlägige BACS-«Im Fokus»-Meldungen seit 4. Oktober 2026 geprüft; keine Live-Prüfung interner Zielseiten"
++quellenpruefung_status: "vollständig geprüft – alle Quellenreferenzen dieses Artikels gegen Originalquellen abgeglichen; keine Fach- oder Veröffentlichungsfreigabe"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -21,6 +23,8 @@
+ Für die erste Reaktion ist nicht entscheidend, wie überzeugend eine Nachricht aussieht. Entscheidend ist, ob lediglich der **Absender vorgetäuscht** wurde oder ob jemand unbefugt Zugriff auf ein echtes Firmenpostfach hat. Beides kann zu Zahlungsbetrug führen. Die technischen und organisatorischen Folgen sind jedoch unterschiedlich.
+ 
+ Beim **CEO-Betrug** wird eine Führungsperson imitiert. Häufig erhält die Buchhaltung eine angeblich vertrauliche, eilige Anweisung, Geld zu überweisen oder Geschenkkarten zu kaufen. Die Angreifer können Namen, Funktionen und E-Mail-Adressen aus öffentlich verfügbaren Quellen ableiten. Das BACS warnt ausdrücklich davor, Geld zu überweisen oder Geschenkkarten zu kaufen, ohne vorher Rücksprache zu halten. [2]
++
++BACS weist seit der vorangehenden Quellenprüfung zudem darauf hin, dass einzeln harmlos wirkende, kombinierte Informationen personalisiertes Phishing, Identitätsdiebstahl oder gezielten Betrug erleichtern können. Zusammen mit öffentlich zugänglichen Angaben zu Namen, Funktionen und E-Mail-Adressen können solche Informationen die Vorbereitung einer glaubwürdigen Täuschung erleichtern. [2] [12]
+ 
+ Beim **Business Email Compromise (BEC)**, auf Deutsch häufig Rechnungsmanipulationsbetrug, missbrauchen Täter einen glaubwürdigen Geschäftskontext, um Zahlungen umzuleiten. Dies kann über ein kompromittiertes Postfach und einen echten Verlauf geschehen; auch eine täuschend ähnliche Absenderadresse kann Teil des Betrugs sein. Eine veränderte IBAN in einer scheinbar plausiblen Rechnung ist deshalb kein Nachweis für die Echtheit einer Zahlungsanweisung. [1]
+ 
+@@ -123,7 +127,7 @@
+ 
+ > **[FACHPRÜFUNG ERFORDERLICH]** Die Beurteilung, ob Personendaten betroffen sind, ob ein voraussichtlich hohes Risiko besteht und welche Meldungen oder Informationen erforderlich sind, braucht im konkreten Vorfall eine datenschutzrechtliche Fachprüfung. Dieser Artikel ist keine individuelle Rechtsberatung.
+ 
+-Unabhängig davon gilt seit 1. April 2025 für Betreiberinnen und Betreiber kritischer Infrastrukturen eine BACS-Meldepflicht für erfasste Cyberangriffe innerhalb von 24 Stunden nach Entdeckung. Ein gewöhnliches KMU ist dadurch nicht automatisch meldepflichtig. Prüfen Sie den Anwendungsbereich und allfällige sektorielle Anforderungen im Einzelfall. Auch nicht meldepflichtige Organisationen können Cybervorfälle freiwillig an das BACS melden. [10] [11]
++Unabhängig davon gilt seit 1. April 2025 für Betreiberinnen und Betreiber kritischer Infrastrukturen eine BACS-Meldepflicht für erfasste Cyberangriffe innerhalb von 24 Stunden nach Entdeckung. Ein gewöhnliches KMU ist dadurch nicht automatisch meldepflichtig. Prüfen Sie den Anwendungsbereich und allfällige sektorielle Anforderungen im Einzelfall. Auch nicht meldepflichtige Organisationen können Cybervorfälle freiwillig an das BACS melden. [10] [13]
+ 
+ ## Typische Fehler, die den Schutz aushebeln
+ 
+@@ -148,7 +152,8 @@
+ [5]: https://www.cisa.gov/news-events/directives/bod-18-01-enhance-email-and-web-security "CISA – Enhance Email and Web Security"
+ [6]: https://csrc.nist.gov/pubs/sp/800/61/r3/final "NIST SP 800-61 Rev. 3 – Incident Response Recommendations and Considerations for Cybersecurity Risk Management"
+ [7]: https://www.edoeb.admin.ch/de/leitfaden-data-breach "EDÖB – Leitfaden DataBreach"
+-[8]: https://www.fedlex.admin.ch/eli/oc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz, Art. 24"
+-[9]: https://www.fedlex.admin.ch/eli/oc/2022/568/de "Fedlex – Verordnung über den Datenschutz, Art. 15"
++[8]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz, Art. 24"
++[9]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Verordnung über den Datenschutz, Art. 15"
+ [10]: https://www.bacs.admin.ch/de/meldepflicht "BACS – Meldepflicht für Cyberangriffe auf kritische Infrastrukturen"
+-[11]: https://www.bacs.admin.ch/de/faq-meldepflicht "BACS – FAQ zur Meldepflicht für Cyberangriffe auf kritische Infrastrukturen"
++[12]: https://www.bacs.admin.ch/de/csm26-s2-de "BACS – Cyber Security Month 2026: Oversharing – Wie viel geben wir über uns preis?"
++[13]: https://www.bacs.admin.ch/de/vorfall-unternehmen-behoerden "BACS – Unternehmen und Behörden"
+--- vorher/articles/03-datenpanne-melden-schweiz.md
++++ nachher/articles/03-datenpanne-melden-schweiz.md
+@@ -9,13 +9,15 @@
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "15.10.2026"
+ rechtsstand: "4. Oktober 2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Manifestierte Primärquellen sowie alle zitierten externen Originalquellen dieses Artikels und des zugehörigen Arbeitsmittels; BACS-Im-Fokus seit 4. Oktober 2026"
++quellenpruefung_status: "Vollständig für die zitierten externen Originalquellen geprüft am 18. Oktober 2026; keine Fachfreigabe"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+ # Datenpanne in der Schweiz: DSG-Entscheidungsbaum für EDÖB-Meldung und BACS-Pflicht
+ 
+-**Kurzantwort:** Eine Datenpanne ist nach Schweizer Datenschutzgesetz (DSG) dem Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) **so rasch als möglich** zu melden, wenn sie voraussichtlich ein hohes Risiko für Persönlichkeit oder Grundrechte natürlicher Personen schafft. Eine feste 72-Stunden-Frist steht nicht in Art. 24 DSG. Separat müssen die im Informationssicherheitsgesetz (ISG) erfassten Betreiber kritischer Infrastrukturen bestimmte Cyberangriffe dem Bundesamt für Cybersicherheit (BACS) innert **24 Stunden nach Entdeckung** melden; fehlende Angaben sind innert 14 Tagen nachzureichen. Ein Vorfall kann beide Pflichten auslösen, nur eine oder keine. Klären Sie daher parallel Personendaten, Risiko, Branchenstatus und Angriffstatbestand. Im Zweifel über eine Meldepflicht ist **[FACHPRÜFUNG ERFORDERLICH]**: Veranlassen Sie umgehend eine datenschutz- und gegebenenfalls sektorrechtliche Fachprüfung.[1] [5]
++**Kurzantwort:** Eine Datenpanne ist nach Schweizer Datenschutzgesetz (DSG) dem Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) **so rasch als möglich** zu melden, wenn sie voraussichtlich ein hohes Risiko für Persönlichkeit oder Grundrechte natürlicher Personen schafft. Eine feste 72-Stunden-Frist steht nicht in Art. 24 DSG. Separat müssen die im Informationssicherheitsgesetz (ISG) erfassten Betreiber kritischer Infrastrukturen bestimmte Cyberangriffe dem Bundesamt für Cybersicherheit (BACS) innert **24 Stunden nach Entdeckung** melden; für fehlende Angaben gewährt das BACS eine Frist von 14 Tagen zur Ergänzung. Ein Vorfall kann beide Pflichten auslösen, nur eine oder keine. Klären Sie daher parallel Personendaten, Risiko, Branchenstatus und Angriffstatbestand. Im Zweifel über eine Meldepflicht ist **[FACHPRÜFUNG ERFORDERLICH]**: Veranlassen Sie umgehend eine datenschutz- und gegebenenfalls sektorrechtliche Fachprüfung.[1] [5] [6]
+ 
+ Eine Datenpanne verlangt zwei Entscheidungen, die nicht vermischt werden dürfen. Die erste betrifft den Schutz von Menschen und damit Art. 24 DSG. Die zweite betrifft die Cyberresilienz bestimmter Organisationen und damit die BACS-Meldepflicht nach ISG. Wer nur fragt «EDÖB oder BACS?», kann deshalb die falsche Frist oder den falschen Massstab anwenden.
+ 
+@@ -26,6 +28,8 @@
+ Eine **Verletzung der Datensicherheit** liegt nach Art. 5 Bst. h DSG vor, wenn Personendaten unbeabsichtigt oder widerrechtlich verlorengehen, gelöscht, vernichtet oder verändert werden oder Unbefugten offengelegt beziehungsweise zugänglich gemacht werden.[1] Personendaten sind Angaben über eine bestimmte oder bestimmbare **natürliche Person**. Damit kann ein fehlgeleitetes E-Mail ebenso relevant sein wie ein kompromittiertes Cloud-Konto, ein verlorener Laptop, ein Fehlrecht in einer Freigabe oder ein Ransomware-Angriff.
+ 
+ Akute Eindämmung und rechtliche Einordnung laufen parallel. Trennen Sie eindeutig infizierte Systeme kontrolliert vom Netz, ohne Beweise unnötig zu verändern. Sichern Sie verfügbare Protokolle, Zeitstempel, Konfigurationsstände und die betroffenen Objekte. Das BACS empfiehlt bei Ransomware unter anderem das rasche Trennen infizierter Systeme sowie das Sichern von Logdateien. Forensische Sicherungen von Zwischenspeicher und Festplatten sollten vor weiteren Reparaturversuchen oder Neustarts durch Fachpersonen erfolgen, wenn eine forensische Untersuchung in Betracht kommt.[9]
++
++Ein Verdacht auf Schadsoftware ist nicht mit einem bestätigten Angriff gleichzusetzen. Ein einzelnes Anzeichen, etwa ein langsames Gerät, beweist keine Infektion. Mehrere ungewöhnliche Beobachtungen rechtfertigen aber eine genauere Untersuchung; bei geschäftlich verwendeten Geräten empfiehlt das BACS, die zuständige IT oder den Arbeitgeber zu informieren.[11]
+ 
+ Bestimmen Sie unmittelbar eine verantwortliche Person für den Vorfall, eine Stellvertretung und einen Entscheidkanal zur Geschäftsleitung. Halten Sie fest, **was** bekannt ist, **was** nur vermutet wird und **wann** eine Annahme überprüft wird. Diese sachliche Ereignisakte hilft der technischen Untersuchung ebenso wie der späteren Meldung. Ein Muster für Rollen, Erfassung und Entscheidpunkte gehört in Ihre [IT-Notfallplanung](/unsere-dienstleistungen/notfallplanung); für die ersten Eindämmungsschritte kann auch der Beitrag [Ransomware im KMU: die ersten 60 Minuten](/wissen/ransomware-erste-60-minuten) herangezogen werden.
+ 
+@@ -68,7 +72,7 @@
+ 
+ Für eine erfasste Organisation ist zusätzlich zu klären, ob ein **Cyberangriff** nach Art. 74d ISG vorliegt. Meldbar ist ein Angriff, wenn er die Funktionsfähigkeit der betroffenen kritischen Infrastruktur gefährdet, Informationen manipuliert oder abfliessen lässt, länger unentdeckt blieb oder mit Erpressung, Drohung oder Nötigung verbunden ist.[5] Das ist ein anderer Test als das hohe Risiko nach DSG: Hier können auch nicht personenbezogene Informationen oder ein Verfügbarkeitsangriff relevant sein.
+ 
+-Die Erstmeldung an das BACS ist innert **24 Stunden nach Entdeckung** des Angriffs fällig. Unvollständige Angaben können innert **14 Tagen** ergänzt werden.[7] Das BACS stellt dafür im Cyber Security Hub ein Meldeformular bereit; alternativ beschreibt der Meldebutton eine Meldemöglichkeit ohne Plattformzugang.[8] Das Formular kann auf Wunsch an weitere zuständige Behörden, beispielsweise den EDÖB, weiterleiten. **Verlassen Sie sich im konkreten Fall nicht ungeprüft auf eine Weiterleitung:** Ordnen Sie die EDÖB-Prüfung und die BACS-Prüfung getrennt zu, klären Sie den Umfang der Weiterleitung und sichern Sie die Eingangsbestätigung.[8]
++Die Erstmeldung an das BACS ist innert **24 Stunden nach Entdeckung** des Angriffs fällig. Sind dabei nicht alle erforderlichen Informationen bekannt, gewährt das BACS für deren Ergänzung eine Frist von **14 Tagen**.[5] [6] Das BACS stellt dafür im Cyber Security Hub ein Meldeformular bereit; alternativ beschreibt der Meldebutton eine Meldemöglichkeit ohne Plattformzugang.[8] Das Formular kann auf Wunsch an weitere zuständige Behörden, beispielsweise den EDÖB, weiterleiten. **Verlassen Sie sich im konkreten Fall nicht ungeprüft auf eine Weiterleitung:** Ordnen Sie die EDÖB-Prüfung und die BACS-Prüfung getrennt zu, klären Sie den Umfang der Weiterleitung und sichern Sie die Eingangsbestätigung.[8]
+ 
+ ### Hypothetisches Praxisbeispiel: Ein Angriff, zwei Prüfungen
+ 
+@@ -110,9 +114,10 @@
+ [2]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Verordnung über den Datenschutz (DSV), Art. 15 zur Meldung von Datensicherheitsverletzungen"
+ [3]: https://www.edoeb.admin.ch/de/databreach "EDÖB – DataBreach: Meldung von Datensicherheitsverletzungen durch Verantwortliche"
+ [4]: https://www.edoeb.admin.ch/dam/de/sd-web/T64CAUyvAMcF/1_2%20Leitfaden%20des%20ED%C3%96B%20betreffend%20die%20Meldung%20von%20Datensicherheitsverletzungen%20und%20Information%20der%20Betroffenen%20nach%20Art.%2024%20DSG_DE.pdf "EDÖB – Leitfaden zur Meldung von Datensicherheitsverletzungen und Information der Betroffenen nach Art. 24 DSG, Version 1.2"
+-[5]: https://www.fedlex.admin.ch/eli/cc/2022/232/de "Fedlex – Bundesgesetz über die Informationssicherheit beim Bund (ISG), Art. 74a–74d"
+-[6]: https://www.fedlex.admin.ch/eli/cc/2025/169/de "Fedlex – Verordnung über die Cybersicherheit (CSV), Art. 12 zu Ausnahmen von der Meldepflicht"
++[5]: https://www.fedlex.admin.ch/eli/cc/2022/232/de "Fedlex – Bundesgesetz über die Informationssicherheit beim Bund (ISG), Art. 74a–74f"
++[6]: https://www.fedlex.admin.ch/eli/cc/2025/169/de "Fedlex – Verordnung über die Cybersicherheit (CSV), Art. 12 sowie Art. 14–16"
+ [7]: https://www.bacs.admin.ch/de/informationen-zur-meldepflicht "BACS – Informationen zur Meldepflicht für Cyberangriffe auf kritische Infrastrukturen"
+ [8]: https://www.bacs.admin.ch/de/wie-muss-gemeldet-werden "BACS – Wie muss ein Cyberangriff gemeldet werden?"
+ [9]: https://www.bacs.admin.ch/de/ransomware-was-nun "BACS – Ransomware: Was nun?"
+ [10]: https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32016R0679 "EUR-Lex – Verordnung (EU) 2016/679 (Datenschutz-Grundverordnung), Art. 33"
++[11]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
+--- vorher/articles/04-ransomware-resistente-backups.md
++++ nachher/articles/04-ransomware-resistente-backups.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "22.10.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Alle 14 bestehenden Quellenreferenzen sowie die neue BACS-Meldung vom 6. Oktober 2026; BACS «Im Fokus» und die BACS-Meldung vom 5. Oktober 2026 als Aktualitätskontext geprüft. Interne relative Paketlinks wurden erhalten, nicht als künftige Live-URLs geprüft."
++quellenpruefung_status: "Vollständig für die zitierten externen Quellen am 18. Oktober 2026 nach 09:00 Europe/Zurich; keine Freigabe und keine lückenlose historische Änderungsverifikation."
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -25,6 +27,8 @@
+ > **Ransomware-resistent** bedeutet nicht «unverletzlich». Gemeint ist eine Architektur, welche die Chance erhöht, nach einem Angriff auf einen sauberen, ausreichenden Datenstand zurückzukehren, ohne sich auf eine Lösegeldzahlung verlassen zu müssen.
+ 
+ Im Ernstfall empfiehlt das BACS, infizierte Systeme vom Netz zu trennen, den Infektionsweg zu klären, Systeme neu aufzusetzen und Daten aus vorhandenen Backups wiederherzustellen. Vor Reparaturversuchen oder Neustarts sind bei Bedarf forensische Sicherungen durch Fachpersonen wichtig. [3] Der Backup-Plan muss daher mit dem [IT-Notfallplan](/unsere-dienstleistungen/notfallplanung) und der Vorfallsbehandlung zusammenpassen – nicht erst nach einem Befall entstehen.
++
++Der BACS-Wochenrückblick vom 6. Oktober 2026 ergänzt: Einzelne Anzeichen beweisen keine Infektion; bei mehreren ungewöhnlichen Beobachtungen soll eine genauere Untersuchung erfolgen. Bei Verdacht empfiehlt das BACS die Untersuchung durch eine Fachperson; bei Geschäftsgeräten ist die zuständige IT zu informieren. Dieser Hinweis ersetzt keine forensische oder organisationsspezifische Triage. [15]
+ 
+ ## 3-2-1 richtig anwenden: Redundanz ist nur der Anfang
+ 
+@@ -136,3 +140,4 @@
+ [12]: https://www.nist.gov/cyberframework/recover "NIST Cybersecurity Framework – Recover"
+ [13]: https://csrc.nist.gov/pubs/other/2020/04/24/protecting-data-from-ransomware-and-other-data-los/final "NIST NCCoE – Protecting Data from Ransomware and Other Data Loss Events"
+ [14]: https://www.bacs.admin.ch/de/notfallkonzept "BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz"
++[15]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, veröffentlicht am 6. Oktober 2026"
+--- vorher/articles/05-microsoft-365-mfa-passkeys.md
++++ nachher/articles/05-microsoft-365-mfa-passkeys.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "29.10.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "14 eindeutige Quellenreferenzen aus Artikel und Arbeitsmittel; manifestierte Microsoft-Primärquellen; BACS Im Fokus sowie BACS 26w40 und csm26-s2"
++quellenpruefung_status: "Referenzen vollständig abgeglichen – Fedlex Art. 8 nachträglich über amtliche Chronologie und XML-Fassung Stand 7. Juli 2025 bestätigt; keine Fach-, Rechts-, Tenant- oder Publikationsfreigabe."
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -16,7 +18,7 @@
+ 
+ **Kurzantwort:** Schweizer KMU sollten jetzt erfassen, welche Entra-ID-Benutzer noch SMS oder Sprachanruf für die Mehrfaktor-Authentisierung (MFA) verwenden, und diese Gruppen kontrolliert auf phishing-resistente Verfahren umstellen. Microsoft aktiviert seit dem 1. September 2026 Passkeys für die betroffenen Benutzer und zieht seine SMS-/Sprachtelefonie für die meisten Benutzer am 1. Februar 2027 zurück. Beginnen Sie mit Administratoren und einem repräsentativen Pilot. Prüfen Sie Conditional Access zuerst im Berichtsmodus, definieren Sie Wiederherstellung und Notfallzugänge vor der Durchsetzung und kommunizieren Sie pro Benutzergruppe klar. Warten Sie nicht auf eine blockierende Registrierung beim Anmelden. [1]
+ 
+-*Stand der Produktinformationen: 4. Oktober 2026. Dieser Beitrag bezieht sich auf Microsoft Entra ID in der Public Cloud. **[FACHPRÜFUNG ERFORDERLICH]** Vor einer Veröffentlichung und vor jedem produktiven Schritt müssen die Herstellertermine, der Geltungsbereich, die Lizenzen und die konkreten Tenant-Einstellungen durch eine Microsoft-Entra-Fachperson gegen die aktuelle Herstellerdokumentation geprüft werden.*
++*Stand der Produktinformationen: 18. Oktober 2026. Dieser Beitrag bezieht sich auf Microsoft Entra ID in der Public Cloud. **[FACHPRÜFUNG ERFORDERLICH]** Vor einer Veröffentlichung und vor jedem produktiven Schritt müssen die Herstellertermine, der Geltungsbereich, die Lizenzen und die konkreten Tenant-Einstellungen durch eine Microsoft-Entra-Fachperson gegen die aktuelle Herstellerdokumentation geprüft werden.*
+ 
+ ## Die Termine: Was Microsoft ändert – und was bis Februar erledigt sein muss
+ 
+@@ -26,7 +28,7 @@
+ 
+ Für interne Benutzer und interne Gastbenutzer gilt ein wichtiger Stichtag: Ab **1. Februar 2027** stellt Microsoft die von Microsoft bereitgestellte Übermittlung von SMS und Sprachanrufen ein. Wer dann nur diese Methode hat, erhält beim Anmelden eine nicht überspringbare Aufforderung, einen Passkey zu registrieren, bevor der Zugriff weitergeht. Einen Verzicht auf diese Durchsetzung gibt es nicht. Globale Administratoren und externe Benutzer haben für die von Microsoft bereitgestellten Telekommunikationsdienste eine spätere Frist bis **1. Juli 2027**. Für die Betriebsstabilität ist es dennoch sinnvoll, auch diese Gruppen im Programm bis Februar 2027 einzuplanen. [1]
+ 
+-Die Termine gelten laut Microsoft nur für die **Public Cloud**. Azure AD B2C ist nicht betroffen; für Microsoft Entra External ID ist eine spätere separate Ankündigung vorgesehen. Unternehmen, die aus einem belegten betrieblichen, regulatorischen oder technischen Grund SMS oder Sprache weiter benötigen, können ab **30. Oktober 2026** einen unterstützten Telekommunikationsanbieter über den Microsoft Security Store auswählen und konfigurieren. Am 4. Oktober 2026 ist diese Konfigurationsfunktion laut Microsoft noch nicht verfügbar; in der privaten Vorschau nennt Microsoft Soprano und Telesign. Das ist eine Ausnahme mit eigener Prüfung, nicht der Standardpfad. Ein temporärer Opt-out kann die automatische Aktivierung und Kampagne verzögern, verschiebt aber die Durchsetzung nicht. [1] [3] [14]
++Die Termine gelten laut Microsoft nur für die **Public Cloud**. Azure AD B2C ist nicht betroffen; für Microsoft Entra External ID ist eine spätere separate Ankündigung vorgesehen. Unternehmen, die aus einem belegten betrieblichen, regulatorischen oder technischen Grund SMS oder Sprache weiter benötigen, können ab **30. Oktober 2026** einen unterstützten Telekommunikationsanbieter über den Microsoft Security Store auswählen und konfigurieren. Am 18. Oktober 2026 ist diese Konfigurationsfunktion laut Microsoft noch nicht verfügbar; in der privaten Vorschau nennt Microsoft Soprano und Telesign. Das ist eine Ausnahme mit eigener Prüfung, nicht der Standardpfad. Ein temporärer Opt-out kann die automatische Aktivierung und Kampagne verzögern, verschiebt aber die Durchsetzung nicht. [1] [3] [14]
+ 
+ ## Warum MFA allein nicht genügt
+ 
+@@ -84,7 +86,7 @@
+ 
+ Der **Temporary Access Pass (TAP)** von Entra ist dafür ein mögliches Werkzeug. Es handelt sich um einen zeitlich begrenzten Code für einmalige oder mehrfache Nutzung, mit dem Benutzer passwortlose Methoden einrichten können; Microsoft nennt ihn ausdrücklich auch für die Wiederherstellung nach Verlust oder Vergessen einer starken Methode. Nur Benutzer im TAP-Richtlinienumfang können ihn verwenden. Der Code ist nach dem Anzeigen nicht mehr abrufbar. Damit verlangt die Ausgabe einen klaren Identitätsprüfprozess, sichere Übermittlung und getrennte Rollen. [12]
+ 
+-Verknüpfen Sie den Ablauf mit der [IT-Notfallplanung](/unsere-dienstleistungen/notfallplanung). Dort gehören Stellvertretung, Erreichbarkeit ausserhalb der Bürozeit, sichere Aufbewahrung der Notfallzugänge und ein Testtermin hinein. Wenn Personendaten bearbeitet werden, verlangt Art. 8 DSG angemessene technische und organisatorische Massnahmen zur Datensicherheit. **[FACHPRÜFUNG ERFORDERLICH]** Ob Ihr konkretes Verfahren, die Protokollierung und allfällige Branchenvorgaben diese Anforderung erfüllen, muss fachlich und bei Bedarf rechtlich geprüft werden; dieser Beitrag ist keine individuelle Rechtsberatung. [13]
++Verknüpfen Sie den Ablauf mit der [IT-Notfallplanung](/unsere-dienstleistungen/notfallplanung). Dort gehören Stellvertretung, Erreichbarkeit ausserhalb der Bürozeit, sichere Aufbewahrung der Notfallzugänge und ein Testtermin hinein. Art. 8 DSG verlangt geeignete technische und organisatorische Massnahmen für eine dem Risiko angemessene Datensicherheit. Der Wortlaut wurde am 18. Oktober 2026 mit der amtlichen Fedlex-XML-Fassung und Chronologie abgeglichen; die jüngste dort ausgewiesene Fassung hat den Stand 7. Juli 2025. **[FACHPRÜFUNG ERFORDERLICH]** Ob Ihr konkretes Verfahren, die Protokollierung und allfällige Branchenvorgaben diese Anforderung erfüllen, muss fachlich und bei Bedarf rechtlich geprüft werden; die Quellenprüfung erteilt keine individuelle Rechtsfreigabe. [13]
+ 
+ ## Kommunikation ist eine Sicherheitskontrolle
+ 
+@@ -123,7 +125,7 @@
+ [3]: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement-faq "Microsoft Learn – Frequently asked questions about SMS and voice retirement"
+ [4]: https://pages.nist.gov/800-63-4/sp800-63b.html "NIST SP 800-63B – Digital Identity Guidelines: Authentication and Authenticator Management"
+ [5]: https://www.bacs.admin.ch/de/26w5-de "BACS – Woche 5: Weltweite SharePoint-Phishing-Welle – auch die Schweiz ist betroffen"
+-[6]: https://www.cisa.gov/sites/default/files/publications/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf "CISA – Implementing Phishing-Resistant MFA"
++[6]: https://www.cisa.gov/sites/default/files/2023-01/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf "CISA – Implementing Phishing-Resistant MFA"
+ [7]: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strengths "Microsoft Learn – Conditional Access authentication strengths"
+ [8]: https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication "Microsoft Learn – Plan a phishing-resistant passwordless authentication deployment in Microsoft Entra ID"
+ [9]: https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access "Microsoft Learn – Plan a Conditional Access deployment"
+--- vorher/articles/06-microsoft-365-sicherheit-kmu.md
++++ nachher/articles/06-microsoft-365-sicherheit-kmu.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "05.11.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Alle externen Quellenreferenzen dieses Artikels und des zugehörigen Arbeitsmittels sowie BACS «Im Fokus» bis 18.10.2026; keine Tenant- oder Live-Linkprüfung."
++quellenpruefung_status: "Vollständig für die referenzierten Quellen; keine Fach-, Rechts-, Tenant- oder Publikationsfreigabe."
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -36,13 +38,13 @@
+ 
+ Eine **Identität** ist im Tenant ein Benutzer-, Gast-, Dienst- oder Anwendungskonto, das Zugriff erhalten kann. Erfassen Sie daher nicht nur Mitarbeitende, sondern auch externe Gäste, gemeinsam genutzte Postfächer, technische Konten, Anwendungen und Konten des Providers. Ordnen Sie jedem Konto einen Eigentümer, einen Zweck, eine Berechtigungsstufe und ein Austritts- oder Überprüfungsdatum zu.
+ 
+-MFA sollte für alle Benutzer und zwingend für alle administrativen Konten gelten. Microsoft setzt seit Februar 2025 MFA für Anmeldungen im Microsoft-365-Admincenter schrittweise durch; dies schützt jedoch nicht automatisch jede Benutzeranmeldung und ersetzt keine eigene Zugriffspolitik für die Geschäftsdienste.[4] Prüfen Sie deshalb explizit, wie Ihre Benutzerkonten, Gastkonten, Admins und automatisierten Zugriffe abgesichert sind. **Conditional Access** ist Microsofts regelbasierte Zugriffskontrolle, die Anmeldebedingungen wie MFA oder Gerätezustand durchsetzen kann. Ihre Verfügbarkeit hängt von der Entra-Lizenz ab; wenn sie nicht einsetzbar ist, nennt Microsoft Security Defaults als Alternative für einen grundlegenden Schutz.[4]
++MFA sollte für alle Benutzer und zwingend für alle administrativen Konten gelten. Microsoft setzt seit Februar 2025 MFA für Konten, die im Microsoft-365-Admincenter administrative Vorgänge durchführen, schrittweise durch; dies schützt jedoch nicht automatisch jede Benutzeranmeldung und ersetzt keine eigene Zugriffspolitik für die Geschäftsdienste.[4] Prüfen Sie deshalb explizit, wie Ihre Benutzerkonten, Gastkonten, Admins und automatisierten Zugriffe abgesichert sind. **Conditional Access** ist Microsofts regelbasierte Zugriffskontrolle, die Anmeldebedingungen wie MFA oder Gerätezustand durchsetzen kann. Ihre Verfügbarkeit hängt von der Entra-Lizenz ab; wenn sie nicht einsetzbar ist, nennt Microsoft Security Defaults als Alternative für einen grundlegenden Schutz.[4]
+ 
+ Bei der Umsetzung genügt es nicht, eine Regel einzuschalten. Ermitteln Sie zuerst Anwendungen, Geräte und technische Prozesse, die dadurch betroffen sein können. Führen Sie neue Regeln mit einer kleinen Pilotgruppe ein. Halten Sie einen getesteten Weg für Kontowiederherstellung bereit. Für die Weiterentwicklung der Anmeldemethoden hilft der Beitrag [Microsoft 365 MFA und Passkeys für Schweizer KMU](/wissen/microsoft-365-mfa-passkeys).
+ 
+ ### Notfallzugänge schützen – und trotzdem testbar halten
+ 
+-Ein **Notfallzugang** (oft als Break-Glass-Konto bezeichnet) ist ein hochprivilegiertes Konto, das nur verwendet wird, wenn reguläre Adminzugänge nicht funktionieren. Microsoft empfiehlt mindestens zwei cloudnative Notfallkonten mit dauerhaft aktiver Global-Administrator-Rolle. Sie sollen unabhängig von föderierten oder synchronisierten Identitäten funktionieren, starke und von den normalen Admin-Konten unterschiedliche Authentisierung verwenden, überwacht und mindestens alle 90 Tage getestet werden.[5]
++Ein **Notfallzugang** (oft als Break-Glass-Konto bezeichnet) ist ein hochprivilegiertes Konto, das nur verwendet wird, wenn reguläre Adminzugänge nicht funktionieren. Microsoft empfiehlt mindestens zwei cloudnative Notfallkonten mit dauerhaft aktiver Global-Administrator-Rolle. Sie sollen unabhängig von föderierten oder synchronisierten Identitäten funktionieren und eine phishing-resistente, von den normalen Admin-Konten unterschiedliche Anmeldung mit Passkey (FIDO2) oder zertifikatbasierter Authentisierung verwenden. Sie sind zu überwachen und mindestens alle 90 Tage zu testen.[5]
+ 
+ Ein solcher Zugang ist kein Freipass. Dokumentieren Sie, wer die Zugangsmittel in einem gesicherten Verfahren verwenden darf, wie eine Nutzung freigegeben wird und welche Nachprüfung danach erfolgt. Schliessen Sie diese Konten nur von Conditional-Access-Regeln aus, wenn sie sonst im Notfall blockiert wären. Die Ausnahme muss eng dokumentiert sein und die Anmeldung muss einen Alarm auslösen.[5]
+ 
+@@ -67,6 +69,8 @@
+ 
+ Für ein KMU ist eine daten- und partnerbezogene Regel meist besser als ein pauschales Verbot. Definieren Sie beispielsweise, welche Daten über Teams mit Gästen geteilt werden dürfen, ob anonym nutzbare Links überhaupt zulässig sind und wer eine Ausnahme genehmigt. Wo die Zusammenarbeit auf bekannte Partner beschränkt werden kann, prüfen Sie spezifische Personen, Gastablauf und zugelassene E-Mail-Domains. Microsoft bietet dafür unter anderem eingeschränkte Domains, Freigabe nur durch bestimmte Sicherheitsgruppen und Ablaufdaten für Gastzugriffe.[7]
+ 
++Behandeln Sie die Eingabe interner Inhalte, Personendaten oder Geschäftsgeheimnisse in ein KI-Tool nicht wie einen gewöhnlichen Freigabelink. Das BACS empfiehlt, vor jeder Eingabe auf sensible oder persönliche Daten zu prüfen und diese zu anonymisieren; wenn möglich sollen Unternehmens- statt Privatkonten verwendet und Trainingsnutzung sowie vorhandene Opt-out-Möglichkeiten geprüft werden.[11] Welche Datenflüsse und Einstellungen ein konkret eingesetzter Microsoft-365- oder KI-Dienst erlaubt, bleibt vor dessen Nutzung **[FACHPRÜFUNG ERFORDERLICH]**.
++
+ Überprüfen Sie Gäste, extern freigegebene Sites und sensible Datenbereiche mindestens halbjährlich. Entfernen Sie nicht mehr benötigte Gäste und prüfen Sie Projekt-Sites nach Abschluss. Das dient datenschutzfreundlichen Voreinstellungen: Das DSG verlangt, die Bearbeitung standardmässig auf das nötige Mindestmass zu begrenzen.[3]
+ 
+ ## 4. Logging so planen, dass es im Vorfall hilft
+@@ -84,6 +88,8 @@
+ Das BACS empfiehlt bei Cloud-Diensten, dass Daten exportierbar und als Offline-Backup gegen Ransomware gesichert werden können.[10] Bei Cloud- und Providerverträgen fordert es zudem, Backup-Konzept und erfolgreiche Wiederherstellungstests ausdrücklich zu klären.[1] Daraus folgt für das KMU: Entscheiden und dokumentieren Sie Ihre Wiederherstellungsanforderungen, statt «Backup vorhanden» als Nachweis zu akzeptieren.
+ 
+ Definieren Sie für Mail, OneDrive, SharePoint, Teams-Daten sowie wichtige Konfigurationen und Identitäten eine Wiederanlaufreihenfolge. Legen Sie den akzeptierten Datenverlustzeitraum und die akzeptierte Wiederherstellungsdauer je Geschäftsprozess fest. Diese Ziele werden häufig als **Recovery Point Objective (RPO)** und **Recovery Time Objective (RTO)** bezeichnet. Prüfen Sie danach, ob Microsoft-Bordmittel, ein separates Sicherungsprodukt oder eine Kombination die Anforderungen tatsächlich abdecken. Führen Sie eine dokumentierte Wiederherstellungsprobe durch. Der Artikel [Ransomware-resistente Backups](/wissen/ransomware-resistente-backups) und der Leitfaden zum [Backup-Wiederherstellung testen](/wissen/backup-wiederherstellung-testen) helfen bei der Vertiefung.
++
++Ein Wiederherstellungstest legt nicht fest, wie ein konkreter Malwareverdacht zu behandeln ist. Das BACS empfiehlt, ein geschäftlich verwendetes Gerät bei Verdacht der zuständigen IT zu melden und es durch eine Fachperson untersuchen zu lassen; bei bestätigter Infektion nennt es das Neuaufsetzen und anschliessende Passwortwechsel.[12] Dieser Artikel ordnet keine Einzelfallmassnahmen für einen Vorfall an. Untersuchung, Protokollsicherung und Wiederanlauf sind mit dem aktuellen Notfallprozess und den zuständigen Stellen abzustimmen.
+ 
+ ## 6. Provider-Governance: Leistung, Zugriff und Exit kontrollieren
+ 
+@@ -145,3 +151,5 @@
+ [8]: https://learn.microsoft.com/en-us/purview/audit-solutions-overview "Microsoft Learn – Learn about auditing solutions in Microsoft Purview"
+ [9]: https://learn.microsoft.com/en-us/purview/audit-log-retention-policies "Microsoft Learn – Manage audit log retention policies"
+ [10]: https://www.bacs.admin.ch/de/cloud-computing-und-cybersicherheit "BACS – Cloud Computing und Cybersicherheit"
++[11]: https://www.bacs.admin.ch/de/csm26-s3-de "BACS – KI im Berufsalltag: Chancen nutzen, Daten schützen, 16. Oktober 2026"
++[12]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
+--- vorher/articles/07-backup-wiederherstellung-testen.md
++++ nachher/articles/07-backup-wiederherstellung-testen.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "12.11.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "8 zitierte externe Originalquellen sowie BACS Im Fokus, 26w41 und csm26-s2; Abrufe am 18.10.2026 nach 09:00 Europe/Zurich. Interne bzw. geplante DKSchV-URLs wurden nicht live geprüft."
++quellenpruefung_status: "vollständig für die 8 zitierten externen Originalquellen; keine Fach-, Rechts- oder Veröffentlichungsfreigabe"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -78,6 +80,8 @@
+ 
+ Bei einem echten Ransomware-Fall sind Wiederherstellung und Bereinigung nicht dasselbe. Das BACS empfiehlt, den Infektionsweg zu suchen, Neuinfektionen zu verhindern, betroffene Systeme neu aufzusetzen und erst danach Daten aus vorhandenen Backups wiederherzustellen. Vor Reparaturversuchen oder Neustarts können forensische Sicherungen von Zwischenspeicher und Festplatten wichtig sein; dies ist frühzeitig mit Fachpersonen und gegebenenfalls Strafverfolgungsbehörden abzustimmen.[2]
+ 
++Die BACS-Meldung vom 6. Oktober 2026 präzisiert den Umgang mit Malware-Verdacht: Ein einzelnes Anzeichen beweist keine Infektion; mehrere ungewöhnliche Beobachtungen begründen aber eine genauere Untersuchung. Bei einer bestätigten Infektion empfiehlt das BACS, das System neu aufzusetzen und anschliessend die Passwörter zu ändern.[8] Ein Restore-Test ersetzt diese Untersuchung in einem echten Vorfall nicht.
++
+ Für den Test leiten Sie daraus eine kontrollierte Reihenfolge ab:
+ 
+ 1. **Testlage bestätigen und Grenze ziehen.** Halten Sie Startzeit, angenommenen Schadensumfang, zulässige Testsysteme und Abbruchkriterien fest. Der Test darf keine Produktion gefährden.
+@@ -136,3 +140,4 @@
+ [5]: https://www.bacs.admin.ch/de/meldepflicht "BACS – Meldepflicht für Cyberangriffe auf kritische Infrastrukturen"
+ [6]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz, Art. 24"
+ [7]: https://www.edoeb.admin.ch/de/leitfaden-data-breach "EDÖB – Leitfaden DataBreach"
++[8]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
+--- vorher/articles/08-it-sicherheitscheck-kmu.md
++++ nachher/articles/08-it-sicherheitscheck-kmu.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "19.11.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Alle 9 Quellenreferenzen dieses Artikels (8 eindeutige Original-URLs) und alle 4 Quellenreferenzen des zugehörigen Arbeitsmittels, einschliesslich amtlicher Fedlex-Chronologien; BACS Im Fokus bis 15. Oktober 2026 geprüft."
++quellenpruefung_status: "Vollständig für alle Quellenreferenzen; interne relative Paketlinks erhalten, nicht als künftige Live-URLs geprüft."
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -51,6 +53,8 @@
+ Ein Szenario darf mehrere zusammenhängende Befunde zusammenführen, wenn sie dieselbe Ursache oder Folge haben. Mehrere fehlende Sicherheitsupdates auf vergleichbaren öffentlich erreichbaren Systemen können etwa ein Patch-Management-Risiko bilden. Verschiedene Befunde mit unterschiedlichen Geschäftsfolgen gehören dagegen getrennt: Ein nicht gesicherter Lager-PC und ein ungeschütztes Finanzkonto sind nicht dasselbe Risiko.
+ 
+ Dokumentieren Sie neben dem Szenario die **Evidenz**. Das kann die Befund-ID des Checks, ein Konfigurationsauszug, eine Testbeobachtung oder die Rückmeldung eines Systemeigentümers sein. Evidenz macht später überprüfbar, ob die Massnahme die Ursache wirklich adressiert hat. Vermeiden Sie Formulierungen wie «System unsicher» oder «Sicherheit verbessern». Sie benennen weder den Auslöser noch die Entscheidung.
++
++Bei Verdacht auf Schadsoftware trennen Sie ein Anzeichen von einem bestätigten Befund: Ein einzelnes Anzeichen ist noch kein Infektionsbeweis. Mehrere ungewöhnliche Beobachtungen sollten dagegen genauer untersucht werden. Das BACS empfiehlt bei Verdacht die Untersuchung durch eine Fachperson sowie bei geschäftlich genutzten Geräten die Information der zuständigen IT-Stelle.[9] Halten Sie im Register deshalb fest, ob ein Befund nur vermutet, untersucht oder bestätigt ist.
+ 
+ ### Hypothetisches Praxisbeispiel: Vom Patch-Befund zur Geschäftsentscheidung
+ 
+@@ -134,3 +138,4 @@
+ [6]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Verordnung über den Datenschutz (DSV), Art. 1–3"
+ [7]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz (DSG), Art. 24"
+ [8]: https://www.bacs.admin.ch/de/notfallkonzept "BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz"
++[9]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion"
+--- vorher/articles/09-schatten-ki-kmu.md
++++ nachher/articles/09-schatten-ki-kmu.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "26.11.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "12 verwendete Primärquellen – alle Quellenreferenzen dieses Artikels und des zugehörigen Arbeitsmittels; EDÖB/BACS vom 16.10.2026 zusätzlich direkt geprüft"
++quellenpruefung_status: "vollständig – alle Referenzen erreichbar und inhaltlich abgeglichen; keine organisations- oder anbieterbezogene Freigabe"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -27,6 +29,10 @@
+ ## Warum ein Verbot allein Schatten-KI nicht beendet
+ 
+ Ein Verbot kann für besonders kritische Daten oder nicht freigegebene Dienste notwendig sein. Ohne sichere Werkzeuge und einen kurzen Freigabeweg weichen Mitarbeitende jedoch auf private Konten, Browser-Erweiterungen oder kostenlose Dienste aus. Das Unternehmen verliert den Überblick über Datenflüsse, Verträge, Zugriffsrechte und Nachweise.
++
++Das BACS nannte am 5. Oktober 2026 ein unbedacht in ein KI-Tool eingegebenes internes Dokument als Beispiel für Oversharing. Kombinierte Informationen können laut BACS personalisiertes Phishing, Identitätsdiebstahl oder gezielten Betrug erleichtern.[10]
++
++Am 16. Oktober 2026 konkretisierten EDÖB und BACS in einer gemeinsamen Kampagne die Risiken generativer KI am Arbeitsplatz. Der EDÖB hebt dabei Kundinnen und Kunden, Patientinnen und Patienten sowie Mitarbeitende hervor, deren Daten in Eingaben betroffen sein können. Die Kampagne bekräftigt die Anwendung des bestehenden DSG; sie führt keine neue gesetzliche Pflicht oder Frist ein. [11]
+ 
+ Der passende Gegenentwurf ist **KI-Governance**: Rollen, Regeln, Freigaben und Kontrollen für die KI-Nutzung. Das freiwillige NIST AI Risk Management Framework bietet eine brauchbare Denkstruktur. Sein Profil für generative KI empfiehlt Nutzungsbedingungen, relevante Rollen sowie Kriterien für das Erfassen und Melden von Vorfällen.[4]
+ 
+@@ -89,6 +95,8 @@
+ 
+ Setzen Sie deshalb freigegebene KI-Werkzeuge möglichst über zentral verwaltete Geschäftskonten ein. Erzwingen Sie Mehrfaktor-Authentisierung, beschränken Sie administrative Rollen und überprüfen Sie Berechtigungen regelmässig. Trennen Sie Test- und Produktivzugänge. Regeln Sie, wer neue KI-Funktionen in bestehenden Cloud-Diensten aktivieren darf. Solche Grundkontrollen gehören auch in eine [Sicherheitsanalyse](/unsere-dienstleistungen/sicherheitsanalyse), weil KI sonst eine zusätzliche, unkontrollierte Schnittstelle im vorhandenen Cloud- und Identitätsbestand schafft.
+ 
++Das BACS empfiehlt seit dem 16. Oktober zusätzlich ausdrücklich, wenn möglich geschäftliche Business- oder Enterprise-Zugänge statt privater Konten zu verwenden sowie Trainingsnutzung und vorhandene Opt-out-Möglichkeiten zu prüfen. Eine einzelne Einstellung oder ein Business-Tarif ist jedoch keine pauschale Datenschutzfreigabe; der konkrete Dienst, seine Datenflüsse und Vertragsbedingungen bleiben zu beurteilen. [12]
++
+ Ergänzen Sie technische Kontrollen durch einen kurzen **Prompt-Standard**: keine Passwörter, Schlüssel oder Tokens; keine vollständigen Dossiers oder Personalakten; nur nötige, möglichst anonymisierte Angaben; keine Uploads aus Gewohnheit; Ausgabe vor Weitergabe fachlich prüfen. **Datenverlustprävention (DLP)** bezeichnet Kontrollen, die das unberechtigte Weitergeben sensibler Inhalte erkennen, warnen oder verhindern sollen. Eignung und Verfügbarkeit von DLP, Protokollierung sowie Browser- oder Netzwerkkontrollen sind für Ihre Umgebung zu prüfen. CISA betont robuste Datensicherheit, Risikomanagement, Monitoring und Erkennung über den KI-Lebenszyklus.[6]
+ 
+ Definieren Sie Nachweise für den Freigabestatus: Vertragsunterlagen, Datenflüsse, Konfiguration, Rollen, Schulungsnachweis und Reviewdatum. Protokollierung soll im Vorfall zeigen, welches Konto welches Werkzeug für welchen freigegebenen Zweck nutzte. Für besonders schützenswerte Daten in grossem Umfang oder Profiling mit hohem Risiko kann die DSV eine weitergehende Protokollierung verlangen.[5]
+@@ -146,3 +154,6 @@
+ [7]: https://www.edoeb.admin.ch/de/databreach "EDÖB – DataBreach: Meldung von Datensicherheitsverletzungen und Information der Betroffenen"
+ [8]: https://www.bacs.admin.ch/de/infos-unternehmen-behoerden "BACS – Informationen für Unternehmen und Behörden zu Cybervorfällen und Meldepflicht"
+ [9]: https://www.bacs.admin.ch/de/datenabfluss-behoerden "BACS – Datenabfluss: Was nun?"
++[10]: https://www.bacs.admin.ch/de/csm26-s2-de "BACS – Cyber Security Month 2026: Oversharing – Wie viel geben wir über uns preis?"
++[11]: https://www.edoeb.admin.ch/de/csm-generative-ki-arbeitsplatz-datenschutzherausforderungen "EDÖB – Generative KI am Arbeitsplatz: gemeinsame Kampagne vom 16.10.2026"
++[12]: https://www.bacs.admin.ch/de/csm26-s3-de "BACS – KI im Berufsalltag: Chancen nutzen, Daten schützen, 16.10.2026"
+--- vorher/articles/10-cyberangriff-kommunikation.md
++++ nachher/articles/10-cyberangriff-kommunikation.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "03.12.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Alle acht einzigartigen externen Quellenreferenzen in Artikel und Arbeitsmittel sowie BACS-Im-Fokus/Medienmitteilungen auf neue einschlägige Inhalte seit 4. Oktober 2026; interne Paketlinks nur auf Erhalt geprüft, nicht als künftige Live-URLs."
++quellenpruefung_status: "Externe Quellenreferenzen vollständig geprüft; keine materielle Änderung seit 4. Oktober 2026 belegt. Rechts- und Fachprüfung bleiben offen."
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+--- vorher/articles/11-lieferantenrisiken-cybersecurity.md
++++ nachher/articles/11-lieferantenrisiken-cybersecurity.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "10.12.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Alle acht eindeutigen externen Quellenreferenzen in Artikel und Arbeitsmittel sowie einschlägige BACS-Meldungen seit 4. Oktober 2026 gezielt geprüft; interne Paketlinks nur erhalten, nicht live geprüft."
++quellenpruefung_status: "Alle externen Quellenreferenzen geprüft; keine seit 4. Oktober 2026 belegte materielle Änderung der zitierten Anforderungen."
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -62,7 +64,7 @@
+ 
+ Priorisieren Sie die Landkarte in einem kurzen Workshop mit Fachbereich, IT und einer Person mit Entscheidungsbefugnis. Verwenden Sie keine mathematische Präzision, die nicht belastbar ist. Eine dreistufige Einordnung – hoch, mittel, basis – genügt, wenn die Kriterien dokumentiert sind.
+ 
+-Ein Lieferant ist in der Regel **hoch kritisch**, wenn mindestens eine der folgenden Bedingungen erfüllt ist: Er hat privilegierten Zugriff auf produktive Systeme; ohne ihn steht ein kritischer Geschäftsprozess still; er verarbeitet besonders schutzbedürftige oder umfangreiche Personendaten; oder die Ablösung beziehungsweise Wiederherstellung ist unklar. Berücksichtigen Sie auch Konzentrationsrisiken: Mehrere Anwendungen beim gleichen Provider können gemeinsam ausfallen, obwohl jede für sich als mittel kritisch erscheint.
++Ein Lieferant ist in der Regel **hoch kritisch**, wenn mindestens eine der folgenden Bedingungen erfüllt ist: Er hat privilegierten Zugriff auf produktive Systeme; ohne ihn steht ein kritischer Geschäftsprozess still; er verarbeitet besonders schützenswerte oder umfangreiche Personendaten; oder die Ablösung beziehungsweise Wiederherstellung ist unklar. Berücksichtigen Sie auch Konzentrationsrisiken: Mehrere Anwendungen beim gleichen Provider können gemeinsam ausfallen, obwohl jede für sich als mittel kritisch erscheint.
+ 
+ Für hoch kritische Lieferanten folgt eine vertiefte Prüfung. Bei mittlerer Kritikalität reichen fokussierte Nachweise und eine periodische Aktualisierung. Für Basislieferanten genügen dokumentierte Mindestanforderungen und eine Neubewertung bei wesentlichen Änderungen. Dieser risikobasierte Zuschnitt entspricht dem Grundgedanken des BACS, Lieferanten nach Business Impact, Abhängigkeit und den geteilten Informationen zu priorisieren.[1] Auch die Schweizer Datenschutzverordnung verlangt, Schutzbedarf, Risiko und technische sowie organisatorische Massnahmen über die gesamte Bearbeitungsdauer zu überprüfen und nötigenfalls anzupassen.[5]
+ 
+@@ -134,4 +136,4 @@
+ [5]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Verordnung über den Datenschutz (DSV), insbesondere Artikel 1 bis 3 und 7"
+ [6]: https://www.edoeb.admin.ch/de/datenbearbeitungen-in-der-cloud "EDÖB – Cloud-Computing"
+ [7]: https://www.edoeb.admin.ch/de/outsourcing-auftragsdatenbearbeitung "EDÖB – Outsourcing (Auftragsdatenbearbeitung)"
+-[8]: https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final "NIST SP 800-161 Rev. 1 – Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations"
++[8]: https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final "NIST SP 800-161 Rev. 1, Update 1 – Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations"
+--- vorher/articles/12-nis2-dora-schweiz.md
++++ nachher/articles/12-nis2-dora-schweiz.md
+@@ -8,7 +8,9 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+ autor: "DKSchV Redaktion"
+ veröffentlichungsdatum: "17.12.2026"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Alle Quellenreferenzen dieses Artikels; manifestierte Primärquellen; BACS /im-fokus sowie die BACS-Meldungen vom 5. und 6. Oktober 2026. Interne Paketziele nur lokal geprüft."
++quellenpruefung_status: "vollständig verifiziert am 18. Oktober 2026 nach 09:00 Europe/Zurich; keine Fach- oder Rechtsfreigabe"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -26,9 +28,9 @@
+ 
+ Die erste Ebene ist **Schweizer Recht**. Die Schweiz hat mit der Meldepflicht für Cyberangriffe auf kritische Infrastrukturen eine eigene Regelung. Sie betrifft die im Informationssicherheitsgesetz genannten Behörden und Organisationen, darunter unter bestimmten Voraussetzungen auch Cloudcomputing-, Suchmaschinen-, digitale Sicherheits- und Vertrauensdienste sowie Rechenzentren mit Sitz in der Schweiz. Ein meldepflichtiger Cyberangriff ist innert 24 Stunden nach Entdeckung zu melden; fehlende Angaben dürfen nachgereicht werden. Ob Ihr Unternehmen in den Katalog fällt, muss anhand der konkreten Tätigkeit und gegebenenfalls mit dem BACS geklärt werden. Diese Schweizer Pflicht ist nicht NIS2. [1]
+ 
+-Die zweite Ebene ist **NIS2**, die Richtlinie (EU) 2022/2555 für ein hohes Cybersicherheitsniveau in der Union. Eine Richtlinie gilt nicht wie ein Schweizer Gesetz unmittelbar für jedes Unternehmen. Die Mitgliedstaaten müssen sie in nationales Recht umsetzen. NIS2 setzte dafür den 17. Oktober 2024 als Frist. Der Umsetzungsstand und die Detailregeln bleiben deshalb je nach Mitgliedstaat relevant. Am 8. Juli 2026 verwies die Europäische Kommission Irland, Spanien, Frankreich und die Niederlande wegen fehlender Notifizierung von Umsetzungsmassnahmen an den Gerichtshof der Europäischen Union. Prüfen Sie stets das geltende Recht des betroffenen EU-Staates, nicht nur den Richtlinientext. [2] [3]
++Die zweite Ebene ist **NIS2**, die Richtlinie (EU) 2022/2555 für ein hohes Cybersicherheitsniveau in der Union. Eine Richtlinie gilt nicht wie ein Schweizer Gesetz unmittelbar für jedes Unternehmen. Die Mitgliedstaaten müssen sie in nationales Recht umsetzen. NIS2 setzte dafür den 17. Oktober 2024 als Frist. Der Umsetzungsstand und die Detailregeln bleiben deshalb je nach Mitgliedstaat relevant. Am 8. Juli 2026 verwies die Europäische Kommission Irland, Spanien, Frankreich und die Niederlande wegen fehlender Notifizierung von Umsetzungsmassnahmen an den Gerichtshof der Europäischen Union. Prüfen Sie stets das geltende Recht des betroffenen EU-Staates, nicht nur den Richtlinientext. [2] [3] [13]
+ 
+-Die dritte Ebene ist **DORA**, die EU-Verordnung über digitale operationale Resilienz im Finanzsektor. Eine Verordnung unterscheidet sich grundsätzlich von einer Richtlinie: DORA gilt seit dem 17. Januar 2025 für die in ihrem Anwendungsbereich aufgeführten EU-Finanzunternehmen und regelt auch das Management von IKT-Drittparteirisiken. Ein Schweizer Anbieter wird jedoch nicht allein deshalb zu einem vollumfänglich DORA-regulierten Finanzunternehmen, weil er eine Bank beliefert. Die Bank oder das andere Finanzunternehmen bleibt für die Erfüllung von DORA verantwortlich und wird Anforderungen vertraglich an Lieferanten weitergeben. [4] [5]
++Die dritte Ebene ist **DORA**, die EU-Verordnung über digitale operationale Resilienz im Finanzsektor. Eine Verordnung unterscheidet sich grundsätzlich von einer Richtlinie: DORA gilt seit dem 17. Januar 2025. Artikel 2 führt Finanzunternehmen und IKT-Drittdienstleister getrennt auf. Ein Schweizer Anbieter wird nicht allein wegen eines Bankkunden zu einem DORA-Finanzunternehmen. DORA verpflichtet Finanzunternehmen unter anderem zum Management von IKT-Drittparteirisiken und zu Vertragsvorgaben; für als kritisch eingestufte IKT-Drittdienstleister besteht zudem ein eigener EU-Überwachungsrahmen. Welche unmittelbaren Pflichten in einem konkreten grenzüberschreitenden Fall bestehen, ist fachjuristisch zu prüfen. [4] [5]
+ 
+ > **IKT-Drittdienstleister** ist im DORA-Sinn ein Unternehmen, das IKT-Dienstleistungen bereitstellt. IKT-Dienstleistungen sind fortlaufend über IKT-Systeme erbrachte digitale oder Datendienste. Das kann je nach Leistungsbild etwa Hosting, Managed Services, Sicherheitsbetrieb oder eine Softwareplattform umfassen. [4]
+ 
+@@ -110,7 +112,7 @@
+ 
+ ## Quellen
+ 
+-[1]: https://www.fedlex.admin.ch/eli/oc/2024/257/de "Fedlex – Informationssicherheitsgesetz: Meldepflicht für Cyberangriffe auf kritische Infrastrukturen"
++[1]: https://www.fedlex.admin.ch/eli/cc/2022/232/de "Fedlex – Informationssicherheitsgesetz, ISG, Artikel 74a bis 74h"
+ [2]: https://digital-strategy.ec.europa.eu/en/policies/nis2-directive "Europäische Kommission – NIS2-Richtlinie: Cybersicherheit von Netz- und Informationssystemen"
+ [3]: https://digital-strategy.ec.europa.eu/en/policies/nis-transposition "Europäische Kommission – Stand der NIS2-Umsetzung in den EU-Mitgliedstaaten"
+ [4]: https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32022R2554 "EUR-Lex – Verordnung (EU) 2022/2554 über die digitale operationale Resilienz im Finanzsektor (DORA)"
+@@ -122,3 +124,4 @@
+ [10]: https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32022R2554#d1e7039-1-1 "EUR-Lex – DORA, Artikel 28 und 29: Management des IKT-Drittparteienrisikos"
+ [11]: https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32022R2554#d1e7683-1-1 "EUR-Lex – DORA, Artikel 30: Wesentliche Vertragsbestimmungen"
+ [12]: https://www.nist.gov/cyberframework "NIST – Cybersecurity Framework 2.0"
++[13]: https://digital-strategy.ec.europa.eu/en/news/commission-refers-ireland-spain-france-and-netherlands-court-justice-failing-transpose-rules "Europäische Kommission – Verweisung von Irland, Spanien, Frankreich und den Niederlanden wegen NIS2-Umsetzung"
+--- vorher/resources/01-60-minuten-checkliste.md
++++ nachher/resources/01-60-minuten-checkliste.md
+@@ -6,7 +6,9 @@
+ meta_description: "Druckbare Arbeitsvorlage für die erste Stunde nach einem Ransomware-Verdacht: Eindämmung, Beweissicherung, Backups und Meldeprüfung."
+ suchintention: "Arbeitsmittel – Ransomware-Erstreaktion dokumentieren"
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+-version: "Stand 4. Oktober 2026"
++version: "Stand 18. Oktober 2026"
++quellenpruefung_umfang: "8 von 8 externen Quellenreferenzen geprüft"
++quellenpruefung_status: "Vollständig für die Quellenreferenzen; interne relative Ziele nicht live geprüft"
+ bezug: "/wissen/ransomware-erste-60-minuten"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+@@ -75,6 +77,8 @@
+ ____________________________________________________________________________
+ 
+ ____________________________________________________________________________
++
++Ein einzelnes unspezifisches Zeichen wie ein langsames Gerät ist noch kein Infektionsbeweis. Dokumentieren Sie mehrere ungewöhnliche Beobachtungen oder Sicherheitswarnungen für die technische Untersuchung und informieren Sie bei Geschäftsgeräten die zuständige IT. [8]
+ 
+ ## C. Minute 15–30: Lagebild und Beweissicherung
+ 
+@@ -172,7 +176,7 @@
+ 
+ ## Grenzen und fachliche Prüfung
+ 
+-Diese Checkliste ist ein allgemeines Arbeitsmittel für die erste Reaktion. Sie ersetzt keine organisationsspezifische Notfallplanung, technische Forensik, Meldung oder Rechtsberatung. Sie erlaubt keine Aussage darüber, ob Systeme frei von Angreifern sind, ob ein Backup sicher wiederherstellbar ist oder ob keine Daten abgeflossen sind. Bei möglicher Personendatenverletzung, kritischer Infrastruktur, Strafanzeige, Lösegeldforderung oder grossem Betriebsunterbruch ist **[FACHPRÜFUNG ERFORDERLICH]**; ziehen Sie unverzüglich eine geeignete Fachperson bei.
++Diese Checkliste ist ein allgemeines Arbeitsmittel für die erste Reaktion auf dem Stand der Quellenprüfung vom 18. Oktober 2026; dieser Stand ist keine Fachfreigabe. Sie ersetzt keine organisationsspezifische Notfallplanung, technische Forensik, Meldung oder Rechtsberatung. Sie erlaubt keine Aussage darüber, ob Systeme frei von Angreifern sind, ob ein Backup sicher wiederherstellbar ist oder ob keine Daten abgeflossen sind. Bei möglicher Personendatenverletzung, kritischer Infrastruktur, Strafanzeige, Lösegeldforderung oder grossem Betriebsunterbruch ist **[FACHPRÜFUNG ERFORDERLICH]**; ziehen Sie unverzüglich eine geeignete Fachperson bei.
+ 
+ Das BACS beschreibt Notfallkonzepte als Zusammenspiel von Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung. Pflegen und testen Sie Rollen, Kontakte, Backup-Wiederherstellung und Entscheidungswege daher ausserhalb des akuten Vorfalls. [7]
+ 
+@@ -185,3 +189,4 @@
+ [5]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz, Art. 24 Meldung von Verletzungen der Datensicherheit"
+ [6]: https://www.edoeb.admin.ch/dam/de/sd-web/T64CAUyvAMcF/1_2%20Leitfaden%20des%20ED%C3%96B%20betreffend%20die%20Meldung%20von%20Datensicherheitsverletzungen%20und%20Information%20der%20Betroffenen%20nach%20Art.%2024%20DSG_DE.pdf "EDÖB – Leitfaden zur Meldung von Datensicherheitsverletzungen und Information Betroffener nach Art. 24 DSG"
+ [7]: https://www.bacs.admin.ch/de/notfallkonzept "BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz"
++[8]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
+--- vorher/resources/02-zahlungspruefprotokoll.md
++++ nachher/resources/02-zahlungspruefprotokoll.md
+@@ -6,8 +6,10 @@
+ meta_description: "Ausfüllbare Vorlage für die unabhängige Prüfung von IBAN-Änderungen und aussergewöhnlichen Zahlungsaufträgen."
+ suchintention: "Arbeitsmittel – Zahlungsänderungen unabhängig prüfen"
+ zielgruppe: "Buchhaltungen, Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+-version: "Stand 4. Oktober 2026"
++version: "Stand 18. Oktober 2026"
+ bezug: "/wissen/ceo-betrug-business-email-compromise"
++quellenpruefung_umfang: "4 zitierte Originalquellen dieses Arbeitsmittels sowie die 2 im bezogenen Artikel ergänzten BACS-Quellen gegen Originalquellen abgeglichen; keine Live-Prüfung des öffentlichen Ressourcenlinks"
++quellenpruefung_status: "vollständig geprüft – alle Quellenreferenzen dieses Arbeitsmittels gegen Originalquellen abgeglichen; keine Fach- oder Veröffentlichungsfreigabe"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -109,5 +111,5 @@
+ 
+ [1]: https://www.bacs.admin.ch/de/business-email-compromise-de "BACS – Business E-Mail Compromise (Rechnungsmanipulationsbetrug)"
+ [2]: https://www.bacs.admin.ch/de/konto-gehackt "BACS – Konto gehackt oder Daten abgeflossen: Was nun?"
+-[3]: https://www.fedlex.admin.ch/eli/oc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz, Art. 24"
+-[4]: https://www.fedlex.admin.ch/eli/oc/2022/568/de "Fedlex – Verordnung über den Datenschutz, Art. 15"
++[3]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz, Art. 24"
++[4]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Verordnung über den Datenschutz, Art. 15"
+--- vorher/resources/03-datenpanne-entscheidungsbaum.md
++++ nachher/resources/03-datenpanne-entscheidungsbaum.md
+@@ -8,12 +8,16 @@
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer Organisationen"
+ version: "Rechtsstand 4. Oktober 2026"
+ bezug: "/wissen/datenpanne-melden-schweiz"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Manifestierte Primärquellen sowie alle zitierten externen Originalquellen dieses Arbeitsmittels und des zugehörigen Artikels; BACS-Im-Fokus seit 4. Oktober 2026"
++quellenpruefung_status: "Vollständig für die zitierten externen Originalquellen geprüft am 18. Oktober 2026; keine Fachfreigabe"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+ # EDÖB-/BACS-Entscheidungsbaum und Vorfallsprotokoll
+ 
+ **Arbeitsmittel zu:** [Datenpanne in der Schweiz: DSG-Entscheidungsbaum für EDÖB-Meldung und BACS-Pflicht](/wissen/datenpanne-melden-schweiz)  
++**Quellenprüfung:** 18. Oktober 2026; keine Fachfreigabe  
+ **Rechtsstand:** 4. Oktober 2026  
+ **Status:** Arbeitsvorlage – allgemeine Orientierung, keine Rechtsberatung
+ 
+@@ -24,7 +28,7 @@
+ Dieses Arbeitsmittel hilft Schweizer Organisationen, einen Cyber- oder Datenschutzvorfall in den ersten Stunden geordnet zu erfassen und zwei **separate** Meldeprüfungen vorzunehmen:
+ 
+ 1. **EDÖB / Art. 24 DSG:** Liegt eine Verletzung der Datensicherheit mit voraussichtlich hohem Risiko für Persönlichkeit oder Grundrechte natürlicher Personen vor? Dann meldet der Verantwortliche dem EDÖB **so rasch als möglich**.[1]
+-2. **BACS / Art. 74a–74d ISG:** Ist die Organisation meldepflichtig und liegt ein meldepflichtiger Cyberangriff vor? Dann ist die Erstmeldung an das BACS innert **24 Stunden nach Entdeckung** erforderlich; fehlende Angaben sind innert 14 Tagen zu ergänzen.[4] [6]
++2. **BACS / Art. 74a–74f ISG:** Ist die Organisation meldepflichtig und liegt ein meldepflichtiger Cyberangriff vor? Dann ist die Erstmeldung an das BACS innert **24 Stunden nach Entdeckung** erforderlich; bei fehlenden Angaben gewährt das BACS eine Frist von 14 Tagen zur Ergänzung.[4] [5] [6]
+ 
+ > **Wichtig:** Dieses Blatt entscheidet keine Meldepflicht. Es dokumentiert den Faktenstand für die zuständigen Entscheidpersonen. **[FACHPRÜFUNG ERFORDERLICH]** Bei hohem, unklarem oder sektorspezifischem Risiko ist umgehend eine datenschutz-, aufsichts- und gegebenenfalls strafrechtliche Fachprüfung einzuholen.
+ 
+@@ -74,6 +78,8 @@
+ ________________________________________________________________________________
+ 
+ Das BACS empfiehlt bei Ransomware, infizierte Systeme vom Netz zu trennen und Logdateien zu sichern. Sollen forensische Untersuchungen möglich bleiben, sollten fachkundige Personen Speicher- und Festplattensicherungen vor weiteren Reparaturversuchen oder Neustarts vornehmen.[8]
++
++> **Verdacht ist kein Beweis:** Ein einzelnes Anzeichen, etwa ein langsames Gerät, beweist keine Schadsoftware-Infektion. Mehrere ungewöhnliche Beobachtungen rechtfertigen aber eine Untersuchung; bei geschäftlich verwendeten Geräten empfiehlt das BACS, die zuständige IT oder den Arbeitgeber zu informieren.[9]
+ 
+ ---
+ 
+@@ -111,7 +117,8 @@
+                                                                       |
+                                                                       v
+                                                          [BACS: Erstmeldung innert 24 Stunden
+-                                                          nach Entdeckung; Ergänzung innert 14 Tagen]
++                                                          nach Entdeckung; BACS gewährt bei fehlenden
++                                                          Angaben 14 Tage zur Ergänzung]
+ ```
+ 
+ **Entscheidregeln:**
+@@ -226,7 +233,7 @@
+ - ☐ Weitere zuständige Behörden und vertragliche Meldewege separat geprüft.
+ - ☐ Gewünschte Weiterleitung an andere Behörde kontrolliert und dokumentiert.
+ - ☐ Empfangsbestätigung abgelegt.
+-- ☐ Fehlende Angaben, verantwortliche Person und 14-Tage-Termin für die Ergänzung festgelegt.
++- ☐ Fehlende Angaben, verantwortliche Person und die vom BACS gewährte 14-Tage-Frist zur Ergänzung festgelegt.
+ 
+ Das BACS beschreibt die verfügbaren Meldewege und die erforderlichen Angaben für die Erstmeldung auf seiner Informationsseite zum Meldeprozess.[7]
+ 
+@@ -238,7 +245,7 @@
+ | Ergänzung fällig am / um | ________________________________________________ |
+ | Ergänzung übermittelt am / um | ________________________________________________ |
+ 
+-Art. 74d ISG nennt Gefährdung der Funktionsfähigkeit, Manipulation oder Abfluss von Informationen, länger unentdeckte Angriffe sowie Erpressung, Drohung oder Nötigung als Meldekriterien. Die BACS-Informationen nennen 24 Stunden nach Entdeckung für die Erstmeldung und 14 Tage für die Vervollständigung.[4] [6]
++Art. 74d ISG nennt Gefährdung der Funktionsfähigkeit, Manipulation oder Abfluss von Informationen, länger unentdeckte Angriffe sowie Erpressung, Drohung oder Nötigung als Meldekriterien. Art. 74e ISG verlangt die Erstmeldung innert 24 Stunden nach Entdeckung; bei fehlenden Angaben gewährt das BACS nach Art. 16 CSV eine Frist von 14 Tagen zur Ergänzung.[4] [5] [6]
+ 
+ ---
+ 
+@@ -268,8 +275,9 @@
+ [1]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz (DSG), insbesondere Art. 5 und Art. 24"
+ [2]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Verordnung über den Datenschutz (DSV), Art. 15 zur Meldung von Datensicherheitsverletzungen"
+ [3]: https://www.edoeb.admin.ch/dam/de/sd-web/T64CAUyvAMcF/1_2%20Leitfaden%20des%20ED%C3%96B%20betreffend%20die%20Meldung%20von%20Datensicherheitsverletzungen%20und%20Information%20der%20Betroffenen%20nach%20Art.%2024%20DSG_DE.pdf "EDÖB – Leitfaden zur Meldung von Datensicherheitsverletzungen und Information der Betroffenen nach Art. 24 DSG, Version 1.2"
+-[4]: https://www.fedlex.admin.ch/eli/cc/2022/232/de "Fedlex – Bundesgesetz über die Informationssicherheit beim Bund (ISG), Art. 74a–74d"
+-[5]: https://www.fedlex.admin.ch/eli/cc/2025/169/de "Fedlex – Verordnung über die Cybersicherheit (CSV), Art. 12 zu Ausnahmen von der Meldepflicht"
++[4]: https://www.fedlex.admin.ch/eli/cc/2022/232/de "Fedlex – Bundesgesetz über die Informationssicherheit beim Bund (ISG), Art. 74a–74f"
++[5]: https://www.fedlex.admin.ch/eli/cc/2025/169/de "Fedlex – Verordnung über die Cybersicherheit (CSV), Art. 12 sowie Art. 14–16"
+ [6]: https://www.bacs.admin.ch/de/informationen-zur-meldepflicht "BACS – Informationen zur Meldepflicht für Cyberangriffe auf kritische Infrastrukturen"
+ [7]: https://www.bacs.admin.ch/de/wie-muss-gemeldet-werden "BACS – Wie muss ein Cyberangriff gemeldet werden?"
+ [8]: https://www.bacs.admin.ch/de/ransomware-was-nun "BACS – Ransomware: Was nun?"
++[9]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
+--- vorher/resources/04-backup-selbstcheck.md
++++ nachher/resources/04-backup-selbstcheck.md
+@@ -6,7 +6,9 @@
+ meta_description: "Arbeitsvorlage für 3-2-1-Backups, getrennte Administration, geschützte Kopien und dokumentierte Restore-Tests."
+ suchintention: "Arbeitsmittel – Backup- und Wiederherstellungsfähigkeit prüfen"
+ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
+-version: "Stand 4. Oktober 2026"
++version: "Stand 18. Oktober 2026"
++quellenpruefung_umfang: "Alle sieben bestehenden Quellenreferenzen sowie die ergänzte BACS-Meldung vom 6. Oktober 2026; interne relative Paketlinks wurden erhalten, nicht als künftige Live-URLs geprüft."
++quellenpruefung_status: "Vollständig für die zitierten externen Quellen am 18. Oktober 2026 nach 09:00 Europe/Zurich; keine Freigabe und keine lückenlose historische Änderungsverifikation."
+ bezug: "/wissen/ransomware-resistente-backups"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+@@ -20,6 +22,8 @@
+ Das Arbeitsmittel ist eine Orientierung für die Priorisierung von Verbesserungen. Ein ausgefüllter Selbstcheck, ein erfolgreiches Backup-Protokoll oder ein einzelner Test sind **keine Garantie** gegen Ransomware, Datenverlust oder Betriebsunterbruch.
+ 
+ Das BACS empfiehlt getrennte Sicherungskopien und regelmässige Wiederherstellungstests. Der internationale StopRansomware-Leitfaden empfiehlt zusätzlich offline gehaltene, geschützte Sicherungen und Integritätsprüfungen.[1] [2]
++
++Bei einem aktuellen Verdacht auf Schadsoftware ist dieser Selbstcheck keine Vorfallsanweisung: Das BACS empfiehlt die Untersuchung durch eine Fachperson und bei Geschäftsgeräten die Information der zuständigen IT. [8]
+ 
+ ## Anwendung
+ 
+@@ -167,3 +171,4 @@
+ [5]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Datenschutzgesetz (DSG), Art. 8 Datensicherheit"
+ [6]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Datenschutzverordnung (DSV), Art. 1 bis 3 Datensicherheit und Wiederherstellung"
+ [7]: https://www.bacs.admin.ch/de/notfallkonzept "BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz"
++[8]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, veröffentlicht am 6. Oktober 2026"
+--- vorher/resources/05-passkey-rollout-checkliste.md
++++ nachher/resources/05-passkey-rollout-checkliste.md
+@@ -6,7 +6,9 @@
+ meta_description: "Arbeitsvorlage für Inventar, Pilot, Conditional Access, Wiederherstellung und Kommunikation beim Entra-Passkey-Rollout."
+ suchintention: "Arbeitsmittel – Passkey-Rollout in Microsoft Entra ID planen"
+ zielgruppe: "IT-Verantwortliche und Geschäftsleitungen Schweizer KMU"
+-version: "Stand 4. Oktober 2026"
++version: "Stand 18. Oktober 2026"
++quellenpruefung_umfang: "14 eindeutige Quellenreferenzen aus Artikel und Arbeitsmittel; manifestierte Microsoft-Primärquellen; BACS Im Fokus sowie BACS 26w40 und csm26-s2"
++quellenpruefung_status: "Referenzen vollständig abgeglichen – Fedlex Art. 8 nachträglich über amtliche Chronologie und XML-Fassung Stand 7. Juli 2025 bestätigt; keine Fach-, Rechts-, Tenant- oder Publikationsfreigabe."
+ bezug: "/wissen/microsoft-365-mfa-passkeys"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+@@ -14,7 +16,7 @@
+ # Passkey-Rollout-Checkliste für Microsoft 365 / Entra ID
+ 
+ **Arbeitsmittel zum Artikel:** [Microsoft 365 MFA und Passkeys für Schweizer KMU: Rollout zu den Microsoft-Terminen 2027](/wissen/microsoft-365-mfa-passkeys)  
+-**Version:** 4. Oktober 2026  
++**Version:** 18. Oktober 2026  
+ **Status:** Arbeitsvorlage – nicht freigegeben; vor produktiver Durchsetzung **[FACHPRÜFUNG ERFORDERLICH]**
+ 
+ ---
+@@ -23,7 +25,7 @@
+ 
+ Diese Checkliste unterstützt Schweizer KMU dabei, die Ablösung von Microsoft-bereitgestellter SMS- und Sprachanruf-MFA in Microsoft Entra ID planbar vorzubereiten. Sie verbindet Inventar, Pilot, Conditional Access, Wiederherstellung und Benutzerkommunikation. Sie hilft, Auslassungen sichtbar zu machen, ersetzt aber weder die Prüfung des konkreten Entra-Tenants noch Herstellerdokumentation, Lizenzprüfung oder eine allfällig erforderliche rechtliche Fachprüfung.
+ 
+-Die Microsoft-Termine gelten nach Herstellerangaben für Entra ID in der Public Cloud: Seit 1. September 2026 werden Benutzer, die für SMS oder Voice aktiviert sind, für Passkeys automatisch aktiviert und können durch eine Registrierungskampagne angesprochen werden. Ab 1. Februar 2027 stellt Microsoft die bereitgestellte SMS-/Sprachübermittlung für alle Benutzer ausser globalen Administratoren und externen Benutzern ein; interne Gastbenutzer bleiben in dieser Februar-Gruppe. Für globale Administratoren und externe Benutzer gilt der 1. Juli 2027. Für einen belegten betrieblichen, regulatorischen oder technischen Bedarf kann ein unterstützter Telekommunikationsanbieter genutzt werden; die Konfiguration ist laut Microsoft erst ab 30. Oktober 2026 verfügbar und am 4. Oktober 2026 noch nicht verfügbar. **[FACHPRÜFUNG ERFORDERLICH]** Prüfen Sie Geltungsbereich, Termine, Lizenzen und Tenant-Konfiguration vor jeder produktiven Änderung erneut gegen die aktuelle Microsoft-Dokumentation. [1] [2] [8]
++Die Microsoft-Termine gelten nach Herstellerangaben für Entra ID in der Public Cloud: Seit 1. September 2026 werden Benutzer, die für SMS oder Voice aktiviert sind, für Passkeys automatisch aktiviert und können durch eine Registrierungskampagne angesprochen werden. Ab 1. Februar 2027 stellt Microsoft die bereitgestellte SMS-/Sprachübermittlung für alle Benutzer ausser globalen Administratoren und externen Benutzern ein; interne Gastbenutzer bleiben in dieser Februar-Gruppe. Für globale Administratoren und externe Benutzer gilt der 1. Juli 2027. Für einen belegten betrieblichen, regulatorischen oder technischen Bedarf kann ein unterstützter Telekommunikationsanbieter genutzt werden; die Konfiguration ist laut Microsoft erst ab 30. Oktober 2026 verfügbar und am 18. Oktober 2026 noch nicht verfügbar. **[FACHPRÜFUNG ERFORDERLICH]** Prüfen Sie Geltungsbereich, Termine, Lizenzen und Tenant-Konfiguration vor jeder produktiven Änderung erneut gegen die aktuelle Microsoft-Dokumentation. [1] [2] [8]
+ 
+ ## Anwendung
+ 
+@@ -171,7 +173,7 @@
+ 
+ Diese Checkliste ist eine organisatorische Arbeitsvorlage. Sie garantiert weder eine unterbruchsfreie Anmeldung noch vollständigen Schutz vor Kontoübernahmen oder Phishing. Passkeys reduzieren bestimmte Phishing-Risiken, ersetzen aber nicht sichere Endgeräte, Berechtigungsmanagement, Protokollierung, Benutzeraufmerksamkeit und Incident Response. Herstellerfunktionen, Lizenzvoraussetzungen, unterstützte Geräte sowie Microsoft-Termine können sich ändern; prüfen Sie vor jedem produktiven Schritt die aktuelle Herstellerdokumentation.
+ 
+-Für Bearbeitungen von Personendaten verlangt Art. 8 DSG angemessene technische und organisatorische Massnahmen. **[FACHPRÜFUNG ERFORDERLICH]** Ob die konkreten Einstellungen, Verfahren und allfälligen Branchenvorgaben Ihres Unternehmens genügen, muss fachlich und bei Bedarf rechtlich geprüft werden. Dieses Arbeitsmittel ist keine individuelle Rechtsberatung. [7]
++Art. 8 DSG verlangt geeignete technische und organisatorische Massnahmen für eine dem Risiko angemessene Datensicherheit. Der Wortlaut wurde am 18. Oktober 2026 anhand der amtlichen Fedlex-XML-Fassung und Chronologie geprüft; die jüngste dort ausgewiesene Fassung hat den Stand 7. Juli 2025. **[FACHPRÜFUNG ERFORDERLICH]** Ob die konkreten Einstellungen, Verfahren und allfälligen Branchenvorgaben Ihres Unternehmens genügen, muss fachlich und bei Bedarf rechtlich geprüft werden. Dieses Arbeitsmittel und die Quellenprüfung erteilen keine individuelle Rechtsfreigabe. [7]
+ 
+ ## Quellen
+ 
+--- vorher/resources/06-m365-tenant-pruefliste.md
++++ nachher/resources/06-m365-tenant-pruefliste.md
+@@ -6,8 +6,10 @@
+ meta_description: "Arbeitsvorlage zur Priorisierung von Identitäten, Adminrollen, Freigaben, Protokollen, Wiederherstellung und Provider-Governance."
+ suchintention: "Arbeitsmittel – Microsoft-365-Tenant strukturiert prüfen"
+ zielgruppe: "Geschäftsleitungen, interne IT und IT-Provider Schweizer KMU"
+-version: "Stand 4. Oktober 2026"
++version: "Stand 18. Oktober 2026"
+ bezug: "/wissen/microsoft-365-sicherheit-kmu"
++quellenpruefung_umfang: "Alle externen Quellenreferenzen dieses Arbeitsmittels und des zugehörigen Artikels sowie BACS «Im Fokus» bis 18.10.2026; keine Tenant- oder Live-Linkprüfung."
++quellenpruefung_status: "Vollständig für die referenzierten Quellen; keine Fach-, Rechts-, Tenant- oder Publikationsfreigabe."
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+ ---
+ 
+@@ -53,7 +55,7 @@
+ | A6 | Kritisch | Mindestens zwei cloudnative Notfallzugänge bestehen, sind geschützt, überwacht und periodisch getestet. |  |  |  |  |
+ | A7 | Optimierend | Risiko- oder Ausnahmeregeln für Anmeldungen werden regelmässig auf Notwendigkeit und Nebenwirkungen geprüft. |  |  |  |  |
+ 
+-**Prüfnotiz zu A6:** Microsoft empfiehlt mindestens zwei cloudnative Notfallkonten. Sie sollen unabhängig von föderierten oder synchronisierten Identitäten sein, eine starke, von normalen Admin-Konten unterschiedliche Authentisierung verwenden und mindestens alle 90 Tage getestet werden.[3]
++**Prüfnotiz zu A6:** Microsoft empfiehlt mindestens zwei cloudnative Notfallkonten. Sie sollen unabhängig von föderierten oder synchronisierten Identitäten sein und eine phishing-resistente, von normalen Admin-Konten unterschiedliche Anmeldung mit Passkey (FIDO2) oder zertifikatbasierter Authentisierung verwenden. Die Konten sind zu überwachen und mindestens alle 90 Tage zu testen.[3]
+ 
+ ### B. Administratorrechte und Anwendungen
+ 
+@@ -79,8 +81,11 @@
+ | C4 | Wichtig | Ablaufdaten für Gastzugriffe und gegebenenfalls zugelassene Partner-Domains sind geprüft und eingestellt. |  |  |  |  |
+ | C5 | Wichtig | Gäste, extern freigegebene Sites und sensible Projekträume werden mindestens halbjährlich überprüft; nicht benötigte Zugriffe werden entfernt. |  |  |  |  |
+ | C6 | Optimierend | Das Verfahren für Freigabeausnahmen enthält Genehmigung, Ablaufdatum und spätere Überprüfung. |  |  |  |  |
++| C7 | Wichtig | Für KI-Tools ist vor Eingaben geregelt, ob Personendaten, Kundendaten, Geschäftsgeheimnisse oder interne Dokumente zulässig sind; Sensibles wird vor einer Eingabe geprüft und gegebenenfalls anonymisiert. |  |  |  |  |
+ 
+ **Prüfnotiz zu C2–C4:** SharePoint und OneDrive kennen organisationsweite Freigabestufen. Einzelne Sites dürfen nur gleich restriktiv oder restriktiver eingestellt sein; OneDrive darf nicht offener als SharePoint sein. «Jeder»-Links sind ohne Anmeldung verwendbar und bei Weitergabe nicht personenbezogen nachvollziehbar.[5]
++
++**Prüfnotiz zu C7:** Das BACS empfiehlt im Berufsalltag, vor jeder KI-Eingabe auf sensible oder persönliche Daten zu prüfen und diese zu anonymisieren; wenn möglich sollen Unternehmens- statt Privatkonten verwendet und Trainingsnutzung sowie vorhandene Opt-out-Möglichkeiten geprüft werden.[10] **[FACHPRÜFUNG ERFORDERLICH]** Die konkrete Zulässigkeit, Datenflüsse und Einstellungen des eingesetzten Dienstes sind nicht mit dieser Vorlage beurteilt.
+ 
+ ### D. Protokollierung, Alarmierung und Notfallbezug
+ 
+@@ -107,6 +112,8 @@
+ | E6 | Optimierend | Die Wiederanlaufreihenfolge ist mit Geschäftsleitung, Fachbereichen und dem Notfallplan abgestimmt. |  |  |  |  |
+ 
+ **Prüfnotiz zu E3–E5:** Das BACS empfiehlt bei Cloud-Diensten, dass Daten exportierbar und als Offline-Backup gegen Ransomware gesichert werden können. Es empfiehlt ausserdem, Backup-Konzept und erfolgreichen Wiederherstellungstest mit dem Dienstleister ausdrücklich zu klären.[8] [9]
++
++**Prüfnotiz zum Vorfallbezug:** Bei Malwareverdacht auf einem geschäftlich verwendeten Gerät empfiehlt das BACS, die zuständige IT zu informieren und eine Fachperson untersuchen zu lassen; bei bestätigter Infektion nennt es Neuaufsetzen und anschliessende Passwortwechsel.[11] Das ist kein Ersatz für eine organisationsspezifische forensische oder Wiederanlaufentscheidung.
+ 
+ ### F. Provider-Governance und Datenschutz
+ 
+@@ -151,3 +158,5 @@
+ [7]: https://learn.microsoft.com/en-us/purview/audit-log-retention-policies "Microsoft Learn – Manage audit log retention policies"
+ [8]: https://www.bacs.admin.ch/de/cloud-computing-und-cybersicherheit "BACS – Cloud Computing und Cybersicherheit"
+ [9]: https://www.bacs.admin.ch/de/empfehlungen-fuer-die-zusammenarbeit-mit-it-providern "BACS – Zusammenarbeit mit IT-Dienstleistern"
++[10]: https://www.bacs.admin.ch/de/csm26-s3-de "BACS – KI im Berufsalltag: Chancen nutzen, Daten schützen, 16. Oktober 2026"
++[11]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
+--- vorher/resources/07-restore-testprotokoll.md
++++ nachher/resources/07-restore-testprotokoll.md
+@@ -5,7 +5,9 @@
+ status: "Arbeitsvorlage – nicht freigegeben"
+ slug: "/resources/07-restore-testprotokoll"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "5 zitierte externe Originalquellen; Abrufe am 18.10.2026 nach 09:00 Europe/Zurich. Interne bzw. geplante DKSchV-URLs wurden nicht live geprüft."
++quellenpruefung_status: "vollständig für die 5 zitierten externen Originalquellen; keine Fach-, Rechts- oder Nutzungsfreigabe"
+ ---
+ 
+ # Restore-Testprotokoll für Ransomware-Wiederherstellung
+@@ -219,6 +221,8 @@
+ 
+ Dieses Protokoll ersetzt keine forensische Untersuchung, keine Incident Response und keine fachjuristische Beratung. In einem tatsächlichen Ransomware-Vorfall empfiehlt das BACS, den Infektionsweg zu ermitteln, Neuinfektionen zu verhindern, betroffene Systeme vor der Datenwiederherstellung neu aufzusetzen und allfällige forensische Sicherungen vor Reparaturversuchen oder Neustarts frühzeitig durch Fachpersonen zu beurteilen.[3]
+ 
++Ein einzelnes Anzeichen beweist keine Malware-Infektion. Mehrere ungewöhnliche Beobachtungen rechtfertigen laut BACS jedoch eine genauere Untersuchung; bei einer bestätigten Infektion empfiehlt das BACS ein Neuaufsetzen und anschliessende Passwortänderungen.[5]
++
+ **[FACHPRÜFUNG ERFORDERLICH]** Ergibt ein Test Hinweise auf eine reale Kompromittierung oder einen Datenabfluss, stoppen Sie den Test nach dem definierten Sicherheitsverfahren. Melde- und Informationspflichten sind anhand des konkreten Sachverhalts durch Datenschutz- und Rechtsfachpersonen zu beurteilen. Art. 24 DSG verlangt eine Meldung an den EDÖB so rasch als möglich, wenn eine Datensicherheitsverletzung voraussichtlich zu einem hohen Risiko für Persönlichkeit oder Grundrechte führt.[4]
+ 
+ ## Quellen
+@@ -227,3 +231,4 @@
+ [2]: https://www.cisa.gov/stopransomware/ransomware-guide "CISA – StopRansomware Guide"
+ [3]: https://www.bacs.admin.ch/de/ransomware-was-nun "BACS – Ransomware: Was nun?"
+ [4]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz, Art. 24"
++[5]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
+--- vorher/resources/08-risikoregister-vorlage.md
++++ nachher/resources/08-risikoregister-vorlage.md
+@@ -1,11 +1,13 @@
+ ---
+ arbeitsmittel: "Risikoregister-Vorlage für Cyberrisiken im KMU"
+ passender_artikel: /wissen/it-sicherheitscheck-kmu
+-version: "1.1"
++version: "1.2"
+ status: "Arbeitsvorlage – nicht freigegeben"
+ slug: "/resources/08-risikoregister-vorlage"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Alle 4 Quellenreferenzen dieser Vorlage, einschliesslich amtlicher Fedlex-Chronologie; Abgleich mit dem passenden Artikel und BACS Im Fokus bis 15. Oktober 2026."
++quellenpruefung_status: "Vollständig für alle Quellenreferenzen; interne relative Paketlinks erhalten, nicht als künftige Live-URLs geprüft."
+ ---
+ 
+ # Risikoregister-Vorlage für Cyberrisiken im KMU
+@@ -13,7 +15,7 @@
+ > **[FACHPRÜFUNG ERFORDERLICH]** Datenschutz-, Vertrags- und sektorale Anforderungen sowie die Risikokriterien müssen vor Verwendung durch zuständige Fachpersonen geprüft werden.
+ 
+ **Arbeitsmittel zu:** [IT-Sicherheitscheck für Schweizer KMU: So wird aus Befunden ein priorisiertes Cyber-Risikoregister](/wissen/it-sicherheitscheck-kmu)  
+-**Version:** 1.1 | **Quellenstand:** 4. Oktober 2026  
++**Version:** 1.2 | **Quellenstand:** 18. Oktober 2026  
+ **Organisation:** ________________________________  
+ **Register-Verantwortung:** ________________________________  
+ **Letzte Überprüfung:** ________________________________
+@@ -28,7 +30,7 @@
+ ## Anwendung
+ 
+ 1. Erfassen Sie zunächst wichtige Geschäftsprozesse und die dafür notwendigen Systeme, Daten, Konten und Dienstleister. Das BACS empfiehlt diese Reihenfolge auch in seiner Cybersicherheits- und Resilienzmethode.[1]
+-2. Übernehmen Sie geprüfte Befunde aus Sicherheitschecks, Betriebsereignissen, Lieferantenprüfungen oder Wiederherstellungstests. Notieren Sie für jeden Befund eine Evidenz, etwa eine Befund-ID oder einen Konfigurationsnachweis.
++2. Übernehmen Sie geprüfte Befunde aus Sicherheitschecks, Betriebsereignissen, Lieferantenprüfungen oder Wiederherstellungstests. Notieren Sie für jeden Befund eine Evidenz, etwa eine Befund-ID oder einen Konfigurationsnachweis. Bei Verdacht auf Schadsoftware dokumentieren Sie den Befundstatus, etwa «Verdacht», «untersucht» oder «bestätigt»: Ein einzelnes Anzeichen ist noch kein Infektionsbeweis, mehrere ungewöhnliche Beobachtungen sollten genauer untersucht werden. Das BACS empfiehlt bei Verdacht die Untersuchung durch eine Fachperson sowie bei geschäftlich genutzten Geräten die Information der zuständigen IT-Stelle.[4]
+ 3. Formulieren Sie das Risiko als Satz: **Wenn** eine Bedrohung eine Schwachstelle oder Abhängigkeit ausnutzt, **dann** tritt ein Ereignis ein, **wodurch** eine geschäftliche Folge entsteht.
+ 4. Bewerten Sie Auswirkung und Eintrittswahrscheinlichkeit unter Berücksichtigung der nachweislich bestehenden Kontrollen. Legen Sie die Skala vor der ersten Bewertung fest und verwenden Sie sie einheitlich.
+ 5. Benennen Sie Risiko- und Massnahmen-Eigentümer. Schliessen Sie eine Zeile erst, wenn das Abnahmekriterium erfüllt und die Restbewertung geprüft ist.
+@@ -52,7 +54,7 @@
+ 
+ ## Risikoregister
+ 
+-| ID | Befund und Evidenz | Betroffener Prozess / Schutzobjekt | Risikoszenario: Wenn … dann … wodurch … | Bestehende Kontrollen und Nachweis | Auswirkung (1–4) | Wahrscheinlichkeit (1–4) | Priorität / Entscheid | Risiko-Eigentümer | Massnahme, Abnahmekriterium und Massnahmen-Eigentümer | Zieltermin / Status | Restrisiko, Entscheidung und Prüftermin |
++| ID | Befundstatus, Befund und Evidenz | Betroffener Prozess / Schutzobjekt | Risikoszenario: Wenn … dann … wodurch … | Bestehende Kontrollen und Nachweis | Auswirkung (1–4) | Wahrscheinlichkeit (1–4) | Priorität / Entscheid | Risiko-Eigentümer | Massnahme, Abnahmekriterium und Massnahmen-Eigentümer | Zieltermin / Status | Restrisiko, Entscheidung und Prüftermin |
+ |---|---|---|---|---|---:|---:|---|---|---|---|---|
+ | CR-___ |  |  |  |  |  |  |  |  |  |  |  |
+ | CR-___ |  |  |  |  |  |  |  |  |  |  |  |
+@@ -71,6 +73,7 @@
+ 
+ **Betroffener Geschäftsprozess:** ________________________________________________  
+ **Systeme, Daten, Konten oder Dienstleister:** _______________________________________  
++**Befundstatus:** ☐ Verdacht ☐ untersucht ☐ bestätigt ☐ anderer: ____________________  
+ **Technischer oder organisatorischer Befund:** _________________________________________  
+ **Evidenz / Quelle / Befund-ID:** ___________________________________________________
+ 
+@@ -142,3 +145,4 @@
+ [1]: https://www.bacs.admin.ch/de/cybersicherheits-und-resilienzmethode-csrm "BACS – Cybersicherheits- und Resilienzmethode (CSRM)"
+ [2]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Verordnung über den Datenschutz (DSV), Art. 1–3"
+ [3]: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1300.pdf "NIST – Cybersecurity Framework 2.0 Small Business Quick-Start Guide"
++[4]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion"
+--- vorher/resources/09-ki-nutzungsregel.md
++++ nachher/resources/09-ki-nutzungsregel.md
+@@ -1,11 +1,13 @@
+ ---
+ arbeitsmittel: "KI-Nutzungsregel für Schweizer KMU"
+ passender_artikel: /wissen/schatten-ki-kmu
+-version: "1.1"
++version: "1.2"
+ status: "Arbeitsvorlage – nicht freigegeben"
+ slug: "/resources/09-ki-nutzungsregel"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "12 verwendete Primärquellen – alle Quellenreferenzen dieses Arbeitsmittels und des zugehörigen Artikels; EDÖB/BACS vom 16.10.2026 zusätzlich direkt geprüft"
++quellenpruefung_status: "vollständig – alle Referenzen erreichbar und inhaltlich abgeglichen; keine organisations- oder anbieterbezogene Freigabe"
+ ---
+ 
+ # KI-Nutzungsregel für Schweizer KMU
+@@ -50,6 +52,12 @@
+ | **Besonders schützenswert oder geheim** | Gesundheitsdaten, Daten über Strafverfahren oder Sozialhilfe, Passwörter, Schlüssel, Tokens, Berufs- und Geschäftsgeheimnisse | Nicht eingeben oder hochladen, ausser ein spezifischer, fachlich geprüfter und ausdrücklich freigegebener Prozess erlaubt dies. | Datenschutz- und Sicherheitsprüfung, gegebenenfalls rechtliche Prüfung |
+ 
+ > **Grundregel:** Entfernen Sie nicht benötigte Personenbezüge und Details. «Name gelöscht» bedeutet nicht automatisch anonymisiert. Wenn Personen trotz weggelassenem Namen anhand der verbleibenden Angaben bestimmbar sein können, behandeln Sie den Inhalt weiterhin als Personendaten.
++
++Das BACS nennt ein unbedacht in ein KI-Tool eingegebenes internes Dokument als Beispiel für Oversharing. Diese Vorlage legt deshalb Datenklassen und Freigaben fest; sie ersetzt keine Prüfung des konkreten Dienstes, Datenflusses oder Vertrags.[6]
++
++Die gemeinsame EDÖB/BACS-Kampagne vom 16. Oktober 2026 hebt Risiken für Daten von Kundinnen und Kunden, Patientinnen und Patienten sowie Mitarbeitenden hervor. Die Hinweise bekräftigen die Anwendung des bestehenden DSG, ohne eine neue Pflicht oder Frist einzuführen. [8]
++
++Das BACS empfiehlt geschäftliche Business- oder Enterprise-Zugänge statt privater Konten, soweit möglich, sowie die Prüfung der Trainingsnutzung und vorhandener Opt-out-Möglichkeiten. Dokumentieren Sie diese Punkte vor der Freigabe; ein Tarifname oder ein Opt-out ersetzt nicht die Prüfung der konkreten Datenflüsse und Vertragsbedingungen. [7]
+ 
+ ## Erlaubt, freigabepflichtig, untersagt
+ 
+@@ -110,6 +118,7 @@
+ | Zugriffsrechte folgen dem Prinzip der geringsten Berechtigung. | ☐ |  |
+ | Datenminimierung und gegebenenfalls Anonymisierung wurden geprüft. | ☐ |  |
+ | Datenfluss, Empfänger, Datenorte und vertragliche Unterlagen wurden geprüft. | ☐ |  |
++| Trainings-/Weiterverwendungsoptionen und vorhandener Opt-out sind geprüft und dokumentiert. [7] | ☐ |  |
+ | Eingabe-, Upload- und Schnittstellenrechte sind begrenzt. | ☐ |  |
+ | Relevante Protokolle und die zuständige prüfende Person sind bestimmt. | ☐ |  |
+ | DLP- oder andere technische Kontrollen wurden auf Eignung geprüft. | ☐ |  |
+@@ -120,7 +129,7 @@
+ 
+ **Sofort handeln, nicht beschönigen.** Frühzeitige Meldung dient dem Schutz von Personen und Unternehmen. Die Meldung einer Person ist keine Schuldzuweisung.
+ 
+-Das BACS empfiehlt bei einem vermuteten Datenabfluss, den Vorfall einzudämmen, Fakten und Protokolle zu sichern und den möglichen Umfang systematisch abzuklären.[5]
++Bei einem Datenabfluss empfiehlt das BACS, den Schaden zu begrenzen, die Sicherheitslücke zu finden und zu schliessen sowie weitere Abflüsse zu verhindern. Verschaffen Sie sich einen Überblick über potenziell abgeflossene Daten und das damit verbundene Risiko.[5]
+ 
+ 1. ☐ Keine weiteren Eingaben, Uploads oder Freigaben vornehmen; betroffene Nutzung stoppen.
+ 2. ☐ Zugangsdaten, Token oder Schlüssel umgehend sperren oder ersetzen, falls diese offengelegt wurden.
+@@ -165,3 +174,6 @@
+ [3]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Verordnung über den Datenschutz (DSV), insbesondere Art. 1–4"
+ [4]: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf "NIST – Generative AI Profile: Governance, Risikobewertung und Vorfallprozesse"
+ [5]: https://www.bacs.admin.ch/de/datenabfluss-behoerden "BACS – Datenabfluss: Was nun?"
++[6]: https://www.bacs.admin.ch/de/csm26-s2-de "BACS – Cyber Security Month 2026: Oversharing – Wie viel geben wir über uns preis?"
++[7]: https://www.bacs.admin.ch/de/csm26-s3-de "BACS – KI im Berufsalltag: Chancen nutzen, Daten schützen, 16.10.2026"
++[8]: https://www.edoeb.admin.ch/de/csm-generative-ki-arbeitsplatz-datenschutzherausforderungen "EDÖB – Generative KI am Arbeitsplatz: gemeinsame Kampagne vom 16.10.2026"
+--- vorher/resources/10-holding-statement-vorlage.md
++++ nachher/resources/10-holding-statement-vorlage.md
+@@ -5,7 +5,9 @@
+ status: "Arbeitsvorlage – nicht freigegeben"
+ slug: "/resources/10-holding-statement-vorlage"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Alle vier externen Quellenreferenzen des Arbeitsmittels und die gemeinsamen Quellenreferenzen des passenden Artikels geprüft; interne Paketlinks nur auf Erhalt geprüft, nicht als künftige Live-URLs."
++quellenpruefung_status: "Externe Quellenreferenzen vollständig geprüft; keine materielle Änderung seit 4. Oktober 2026 belegt. Rechts- und Fachprüfung bleiben offen."
+ ---
+ 
+ # Holding-Statement-Vorlage für Cybervorfälle
+--- vorher/resources/11-lieferantenfragebogen.md
++++ nachher/resources/11-lieferantenfragebogen.md
+@@ -5,7 +5,9 @@
+ status: "Arbeitsvorlage – nicht freigegeben"
+ slug: "/resources/11-lieferantenfragebogen"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Alle fünf externen Quellenreferenzen dieses Arbeitsmittels und die korrespondierenden Originalquellen des passenden Artikels gezielt geprüft; interne Paketlinks nur erhalten, nicht live geprüft."
++quellenpruefung_status: "Alle externen Quellenreferenzen geprüft; keine seit 4. Oktober 2026 belegte materielle Änderung der zitierten Anforderungen."
+ ---
+ 
+ # Lieferantenfragebogen und Priorisierungsmatrix
+--- vorher/resources/12-nis2-dora-relevanzmatrix.md
++++ nachher/resources/12-nis2-dora-relevanzmatrix.md
+@@ -1,18 +1,20 @@
+ ---
+ arbeitsmittel: "NIS2-/DORA-Relevanzmatrix für Schweizer IT-Dienstleister und KMU-Zulieferer"
+ passender_artikel: /wissen/nis2-dora-schweiz
+-version: "1.1"
++version: "1.2"
+ status: "Arbeitsvorlage – nicht freigegeben"
+ slug: "/resources/12-nis2-dora-relevanzmatrix"
+ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
+-stand: "4. Oktober 2026"
++stand: "18. Oktober 2026"
++quellenpruefung_umfang: "Alle Quellenreferenzen dieses Arbeitsmittels; manifestierte Primärquellen; BACS /im-fokus sowie die BACS-Meldungen vom 5. und 6. Oktober 2026. Der Artikelbezug und interne Paketziele wurden nur lokal geprüft."
++quellenpruefung_status: "vollständig verifiziert am 18. Oktober 2026 nach 09:00 Europe/Zurich; keine Fach-, Vertrags- oder Rechtsfreigabe"
+ ---
+ 
+ # NIS2-/DORA-Relevanzmatrix für Schweizer IT-Dienstleister und KMU-Zulieferer
+ 
+ > **[FACHPRÜFUNG ERFORDERLICH]** Der direkte EU-Anwendungsbereich, nationale Umsetzungen und Kundenverträge müssen im Einzelfall durch EU-rechtskundige Fachpersonen geprüft werden.
+ 
+-**Version:** 4. Oktober 2026  
++**Version:** 18. Oktober 2026  
+ **Zweck:** Erstorientierung für Geschäftsleitung, IT und Vertrieb zu Schweizer Meldepflichten, möglicher NIS2-Relevanz und DORA-veranlassten Kundenanforderungen.  
+ **Geeignet für:** Schweizer Anbieter von IKT-, Cloud-, Managed-, Sicherheits- oder Datendiensten mit EU-Kunden.  
+ **Nicht geeignet als:** Rechtsgutachten, Unterstellungsentscheid, Vertragsfreigabe oder Konformitätsbescheinigung.
+@@ -109,7 +111,7 @@
+ 
+ ## D. DORA: Finanzkunden und Lieferantenvertrag prüfen
+ 
+-DORA gilt für die in Artikel 2 aufgeführten Finanzunternehmen. Sie verpflichtet diese, IKT-Drittparteirisiken zu steuern. Deshalb können EU-Finanzkunden von Schweizer IKT-Drittdienstleistern Informationen, Vertragsregelungen und Nachweise verlangen. Der Finanzkunde bleibt für seine DORA-Pflichten verantwortlich. Für Verträge nennt DORA unter anderem Leistungsbeschreibung, Standorte, Datenzugang und -rückgabe, Vorfallunterstützung, Zusammenarbeit mit Behörden, Kündigungsrechte, Audit sowie bei kritischen oder wichtigen Funktionen Notfall- und Ausstiegsregelungen. [4] [5]
++DORA nennt in Artikel 2 sowohl die dort definierten Finanzunternehmen als auch IKT-Drittdienstleister. Sie verpflichtet Finanzunternehmen unter anderem, IKT-Drittparteirisiken zu steuern; für als kritisch eingestufte IKT-Drittdienstleister besteht ein eigener Überwachungsrahmen. Deshalb können EU-Finanzkunden von Schweizer IKT-Drittdienstleistern Informationen, Vertragsregelungen und Nachweise verlangen. Welche unmittelbaren Pflichten im konkreten grenzüberschreitenden Fall bestehen, ist fachjuristisch zu prüfen. Für Verträge nennt DORA unter anderem Leistungsbeschreibung, Standorte, Datenzugang und -rückgabe, Vorfallunterstützung, Zusammenarbeit mit Behörden, Kündigungsrechte, Audit sowie bei kritischen oder wichtigen Funktionen Notfall- und Ausstiegsregelungen. [4] [5]
+ 
+ | Prüffrage | Ja | Nein | Unklar | Fakten / Vertragsstelle / Massnahme |
+ |---|:---:|:---:|:---:|---|
+@@ -173,7 +175,7 @@
+ 
+ ## Quellen
+ 
+-[1]: https://www.fedlex.admin.ch/eli/oc/2024/257/de "Fedlex – Informationssicherheitsgesetz: Meldepflicht für Cyberangriffe auf kritische Infrastrukturen"
++[1]: https://www.fedlex.admin.ch/eli/cc/2022/232/de "Fedlex – Informationssicherheitsgesetz, ISG, Artikel 74a bis 74h"
+ [2]: https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32022L2555 "EUR-Lex – Richtlinie (EU) 2022/2555 (NIS2)"
+ [3]: https://digital-strategy.ec.europa.eu/en/policies/nis-transposition "Europäische Kommission – Stand der NIS2-Umsetzung in den EU-Mitgliedstaaten"
+ [4]: https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32022R2554 "EUR-Lex – Verordnung (EU) 2022/2554 über die digitale operationale Resilienz im Finanzsektor (DORA)"

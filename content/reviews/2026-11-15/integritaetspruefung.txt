@@ -1,0 +1,3 @@
+24 Inhaltsdateien: Originalfelder und alle ursprünglichen Fachmarker erhalten.
+Lokale Berichtslinks, Dateivollständigkeit und News-Referenzen: OK.
+Diff und Integritätsvergleich gespeichert. Keine Fach- oder Live-Freigabe erteilt.

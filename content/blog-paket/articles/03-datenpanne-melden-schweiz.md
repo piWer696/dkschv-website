@@ -9,9 +9,9 @@ zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
 autor: "DKSchV Redaktion"
 veröffentlichungsdatum: "15.10.2026"
 rechtsstand: "1. November 2026 (DSG, DSV, ISG und CSV amtlich verifiziert)"
-stand: "1. November 2026"
-quellenpruefung_umfang: "Alle 12 zitierten externen Originalquellen dieses Artikels und des zugehörigen Arbeitsmittels; einschliesslich amtlicher Fedlex-Historien und ISG-XML bei stateless Leerabruf sowie einschlägiger EDÖB-/BACS-Originalmeldungen seit 18. Oktober 2026"
-quellenpruefung_status: "Vollständig für die 12 zitierten externen Originalquellen geprüft am 1. November 2026; keine Fachfreigabe"
+stand: "15. November 2026"
+quellenpruefung_umfang: "14 unterschiedliche zitierte externe Originalquellen von Artikel und Arbeitsmittel direkt geprüft; zusätzlich 21 amtliche Rechts-, Übersichts- und Nachrichtenquellen, einschliesslich Fedlex-Chronologien/XML und EDÖB-/BACS-Meldungen seit 1. November 2026"
+quellenpruefung_status: "14 von 14 zitierten Originalquellen inhaltlich abgeglichen am 15. November 2026 nach 09:00 CET; 2 ergänzende Fedlex-Änderungsseiten nur Javascript-Hinweis, Leseblocker offen trotz lesbarer Normtexte/Chronologien/XML; keine Fachfreigabe oder Einzelfallprüfung"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
 
@@ -31,7 +31,7 @@ Akute Eindämmung und rechtliche Einordnung laufen parallel. Trennen Sie eindeut
 
 Ein Verdacht auf Schadsoftware ist nicht mit einem bestätigten Angriff gleichzusetzen. Ein einzelnes Anzeichen, etwa ein langsames Gerät, beweist keine Infektion. Mehrere ungewöhnliche Beobachtungen rechtfertigen aber eine genauere Untersuchung; bei geschäftlich verwendeten Geräten empfiehlt das BACS, die zuständige IT oder den Arbeitgeber zu informieren.[11]
 
-Bestimmen Sie unmittelbar eine verantwortliche Person für den Vorfall, eine Stellvertretung und einen Entscheidkanal zur Geschäftsleitung. Halten Sie fest, **was** bekannt ist, **was** nur vermutet wird und **wann** eine Annahme überprüft wird. Diese sachliche Ereignisakte hilft der technischen Untersuchung ebenso wie der späteren Meldung. Ein Muster für Rollen, Erfassung und Entscheidpunkte gehört in Ihre [IT-Notfallplanung](/unsere-dienstleistungen/notfallplanung); für die ersten Eindämmungsschritte kann auch der Beitrag [Ransomware im KMU: die ersten 60 Minuten](/wissen/ransomware-erste-60-minuten) herangezogen werden.
+Bestimmen Sie unmittelbar eine verantwortliche Person für den Vorfall, eine Stellvertretung und einen Entscheidkanal zur Geschäftsleitung. Halten Sie fest, **was** bekannt ist, **was** nur vermutet wird und **wann** eine Annahme überprüft wird. Diese sachliche Ereignisakte hilft der technischen Untersuchung ebenso wie der späteren Meldung. Ein Muster für Rollen, Erfassung und Entscheidpunkte gehört in Ihre [IT-Notfallplanung](https://www.dkschv.ch/notfallplanung.html); für die ersten Eindämmungsschritte kann auch der Beitrag [Ransomware im KMU: die ersten 60 Minuten](/wissen/ransomware-erste-60-minuten) herangezogen werden.
 
 ## Entscheidungsbaum: Drei Fragen, zwei Meldewege
 
@@ -66,7 +66,17 @@ Besteht voraussichtlich ein hohes Risiko, meldet der Verantwortliche die Verletz
 
 Die Datenschutzverordnung (DSV) verlangt für die Meldung unter anderem Art der Verletzung, soweit möglich Zeitpunkt und Dauer, Kategorien und ungefähre Anzahl der betroffenen Daten und Personen, Folgen und Risiken, getroffene oder vorgesehene Massnahmen sowie eine Ansprechperson. Nicht verfügbare Angaben dürfen so rasch als möglich nachgereicht werden.[2] Das EDÖB-Portal **DataBreach** dient Verantwortlichen zur sicheren digitalen Übermittlung und ermöglicht den Download einer Bestätigung.[3]
 
-Die Information betroffener Personen ist ein eigener Entscheid. Der Verantwortliche informiert sie, wenn dies zu ihrem Schutz erforderlich ist oder der EDÖB dies verlangt. Das Gesetz enthält Möglichkeiten, eine Information unter bestimmten Voraussetzungen einzuschränken, aufzuschieben oder darauf zu verzichten. **[FACHPRÜFUNG ERFORDERLICH]** Ob eine solche Ausnahme vorliegt und wie konkret informiert wird, braucht eine fachjuristische Beurteilung.[1]
+Die Information betroffener Personen ist ein eigener Entscheid, unabhängig von der Schwelle des voraussichtlich hohen Risikos für die EDÖB-Meldung. Der Verantwortliche informiert sie, wenn dies zu ihrem Schutz erforderlich ist oder der EDÖB dies verlangt. Auch wenn keine EDÖB-Meldung erforderlich ist, muss die Betroffeneninformation deshalb separat geprüft werden. Das Gesetz enthält Möglichkeiten, eine Information unter bestimmten Voraussetzungen einzuschränken, aufzuschieben oder darauf zu verzichten. **[FACHPRÜFUNG ERFORDERLICH]** Ob eine solche Ausnahme vorliegt und wie konkret informiert wird, braucht eine fachjuristische Beurteilung.[1] [4]
+
+### Betroffene informieren: Technische Behebung und Informationsform getrennt prüfen
+
+Die Mitteilung des EDÖB vom **6. November 2026** zur SkySale Schweiz GmbH, Betreiberin von apfelkiste.ch, verdeutlicht diese Trennung. Das Bundesverwaltungsgericht bestätigte mit Urteil **A-3790/2024 vom 8. April 2026** die angeordnete Betroffeneninformation; laut EDÖB ist das Urteil rechtskräftig. Neu im Quellenfenster ist die Mitteilung, nicht das Urteil oder eine neue DSG-Frist. Im beurteilten Fall beseitigten nachträgliche technische Zugriffsbeschränkungen den Schutzbedarf nicht: Zuvor offengelegte Daten konnten bereits kopiert, gespeichert oder weiterverarbeitet worden sein. Die Information sollte den Betroffenen eigene Schutzmassnahmen ermöglichen, etwa die Prüfung von Kontoauszügen und verdächtigen Nachrichten.[13] [14]
+
+Für die Informationsform ist das Urteil genauer als die kurze Mitteilung. **E. 6.3.7** hält fest: Eine öffentliche Bekanntmachung kann eine unmögliche oder unverhältnismässig aufwändige individuelle Information ersetzen, wenn diese in vergleichbarer Weise sichergestellt wird. Das DSG statuiert jedoch keine ausdrückliche Pflicht, in solchen Fällen öffentlich bekanntzumachen; der EDÖB darf diese Form nach der Erwägung nicht formell verlangen. Davon getrennt kann der EDÖB unter den gesetzlichen Voraussetzungen selbst die Öffentlichkeit über seine Feststellungen und Verfügungen informieren. Zu prüfen bleibt die mildeste geeignete Einschränkungsform statt eines vorschnellen vollständigen Verzichts.[14]
+
+**E. 6.3.8** bestätigt die Informationspflicht im konkreten Fall, nicht eine allgemeine öffentliche Bekanntmachungspflicht. Die öffentliche Bekanntmachung war nur als Möglichkeit in den Erwägungen der Verfügung enthalten. Weil SkySale die Betroffenen nach ihren Massnahmen nicht mehr identifizieren konnte und eine direkte Information unmöglich beziehungsweise unverhältnismässig war, konnte sie als Ersatzform dienen. «Vergleichbar» verlangt dann nicht dieselbe Zustellungsart. Das Gericht hielt eine Bekanntmachung mit gleichem Informationsgehalt und möglicher Weiterverbreitung an die betroffene Kundschaft für möglich und prüfte sie in E. 6.4 als verhältnismässig. Diese fallbezogene Beurteilung ist keine pauschale Anweisung, jede Datenpanne auf der Website zu publizieren.[14]
+
+Halten Sie daher neben der technischen Eindämmung fest, welche Schutzhandlungen Betroffene noch vornehmen können, wie sie erreichbar sind und weshalb eine gewählte Informationsform geeignet ist. Eine erforderliche Information muss nach Art. 15 Abs. 3 DSV in einfacher und verständlicher Sprache mindestens die Art der Verletzung, die Folgen einschliesslich Risiken, die getroffenen oder vorgesehenen Massnahmen sowie Name und Kontaktdaten einer Ansprechperson nennen. Adressaten, Ausnahmen, Inhalt und Form sind anhand des konkreten Vorfalls fachlich zu prüfen; eine behördliche Mitteilung ist keine Freigabe Ihres Kommunikationsentscheids.[2] [14]
 
 ## Die BACS-Pflicht: anderer Geltungsbereich, kürzere Frist
 
@@ -89,10 +99,10 @@ Unabhängig davon sind Gesundheitsdaten besonders schützenswerte Personendaten.
 3. **Rollen und Verträge prüfen.** Bestimmen Sie Verantwortlichen, Auftragsbearbeiter, Versicherer, Dienstleister und allfällige regulatorische Ansprechpartner. Der Auftragsbearbeiter informiert den Verantwortlichen unverzüglich; die Zuständigkeit für die EDÖB-Meldung bleibt klar zuzuweisen.[1]
 4. **EDÖB-Risiko früh beurteilen.** Beurteilen Sie Schwere und Wahrscheinlichkeit für die am stärksten betroffenen Personen. Kann ein hohes Risiko nicht innert kurzer Zeit belastbar ausgeschlossen werden, bereiten Sie eine zeitnahe Meldung vor.[4]
 5. **BACS-Geltung und Angriffstatbestand separat prüfen.** Gleichen Sie die Organisation mit Art. 74b ISG und allfälligen CSV-Ausnahmen ab. Prüfen Sie danach die Kriterien des Art. 74d ISG. Bei Unsicherheit nutzen Sie die Auskunftsmöglichkeit des BACS und holen Sie rechtzeitig Fachhilfe bei.[5] [6]
-6. **Melden, ergänzen, kommunizieren.** Übermitteln Sie jede erforderliche Meldung über den vorgesehenen Kanal. Reichen Sie fehlende Fakten nach, wenn dies vorgesehen ist. Bereiten Sie eine Betroffeneninformation nur auf einer geprüften Faktenbasis vor. Für die Kommunikation nach einem Angriff hilft der Beitrag [Notfallkommunikation für Schweizer KMU](/wissen/cyberangriff-kommunikation).
-7. **Entscheid und Verbesserung festhalten.** Archivieren Sie Faktenstand, Risikobegründung, Meldungen, Bestätigungen, Kommunikationsfreigaben und Folgemassnahmen. Überführen Sie technische und organisatorische Lücken in Ihr [Risikomanagement](/unsere-dienstleistungen/risikomanagement) und testen Sie den Prozess im Notfallplan.
+6. **Melden, ergänzen, kommunizieren.** Übermitteln Sie jede erforderliche Meldung über den vorgesehenen Kanal. Reichen Sie fehlende Fakten nach, wenn dies vorgesehen ist. Prüfen Sie die Betroffeneninformation auch bei verneinter EDÖB-Meldepflicht separat. Dokumentieren Sie Schutzbedarf, erreichbare Adressaten, Informationsform und die fachliche Begründung allfälliger Ausnahmen; eine technische Behebung ersetzt diesen Entscheid nicht automatisch.[1] [4] [14] Für die Kommunikation nach einem Angriff hilft der Beitrag [Notfallkommunikation für Schweizer KMU](/wissen/cyberangriff-kommunikation).
+7. **Entscheid und Verbesserung festhalten.** Archivieren Sie Faktenstand, Risikobegründung, Meldungen, Bestätigungen, Kommunikationsfreigaben und Folgemassnahmen. Überführen Sie technische und organisatorische Lücken in Ihr [Risikomanagement](https://www.dkschv.ch/risikomanagement.html) und testen Sie den Prozess im Notfallplan.
 
-Der [EDÖB-/BACS-Entscheidungsbaum und das Vorfallsprotokoll](/resources/03-datenpanne-entscheidungsbaum) übersetzen diese Schritte in ausfüllbare Kontrollpunkte. Sie unterstützen die erste Strukturierung, nicht die fachliche Entscheidung.
+Der [EDÖB-/BACS-Entscheidungsbaum und das Vorfallsprotokoll](https://www.dkschv.ch/wissen/resources/03-datenpanne-entscheidungsbaum.html) übersetzen diese Schritte in ausfüllbare Kontrollpunkte. Sie unterstützen die erste Strukturierung, nicht die fachliche Entscheidung.
 
 ## Typische Fehler, die Fristen und Schutz gefährden
 
@@ -103,12 +113,13 @@ Der [EDÖB-/BACS-Entscheidungsbaum und das Vorfallsprotokoll](/resources/03-date
 | Erst vollständige Forensik abwarten | Bei unklarem hohem Risiko kann dies die zeitnahe DSG-Meldung verzögern. | Früh melden, falls nötig ergänzen, und die Untersuchung fortführen.[2] [4] |
 | «Kein Datenabfluss bewiesen» mit «kein Risiko» verwechseln | Ein unbefugter Zugang oder Verlust kann bereits relevant sein; Ransomware schafft oft Unsicherheit. | Zugriff, Datenarten und Ausschlussgründe nachvollziehbar bewerten.[1] [4] |
 | Die Information Betroffener als automatische Folge jeder EDÖB-Meldung behandeln | Der Massstab ist der erforderliche Schutz der Betroffenen oder eine Anordnung des EDÖB. | Betroffeneninformation separat, verständlich und fachlich geprüft entscheiden.[1] |
+| Nach technischer Behebung die Informationsfrage schliessen | Bereits offengelegte Daten können weiter missbraucht werden; der Schutzbedarf kann fortbestehen. | Eigene Schutzmöglichkeiten der Betroffenen und geeignete Informationsform prüfen; nicht pauschal öffentlich publizieren.[14] |
 
 ## Meldefähigkeit ist Führungsaufgabe
 
-Eine belastbare Entscheidung entsteht nicht erst im Incident. Geschäftsleitung und IT sollten vorab festlegen, wer den Vorfall führt, wer den Verantwortlichen vertritt, wer die BACS-Unterstellung prüft und wer Meldungen freigibt. Ebenso wichtig sind aktuelle Kontaktlisten, Zugänge zu Meldeportalen, abgestimmte Auftragsbearbeitungsverträge und ein erprobter Weg für Betroffenenkommunikation. Eine [Sicherheitsanalyse](/unsere-dienstleistungen/sicherheitsanalyse) kann die technischen und organisatorischen Grundlagen sichtbar machen; ein Meldeprozess muss anschliessend in der Notfallplanung tatsächlich geübt werden.
+Eine belastbare Entscheidung entsteht nicht erst im Incident. Geschäftsleitung und IT sollten vorab festlegen, wer den Vorfall führt, wer den Verantwortlichen vertritt, wer die BACS-Unterstellung prüft und wer Meldungen freigibt. Ebenso wichtig sind aktuelle Kontaktlisten, Zugänge zu Meldeportalen, abgestimmte Auftragsbearbeitungsverträge und ein erprobter Weg für Betroffenenkommunikation. Eine [Sicherheitsanalyse](https://www.dkschv.ch/sicherheitsanalyse.html) kann die technischen und organisatorischen Grundlagen sichtbar machen; ein Meldeprozess muss anschliessend in der Notfallplanung tatsächlich geübt werden.
 
-> **Nächster Schritt:** Halten Sie Fakten, Fristen und Entscheide im [Entscheidungsbaum](/resources/03-datenpanne-entscheidungsbaum) fest. Für eine Anfrage zur [DKSchV-Sicherheitsanalyse](/unsere-dienstleistungen/sicherheitsanalyse) steht [Kontakt](/kontakt) zur Verfügung. Das ersetzt keine rechtliche Einzelfallbeurteilung.
+> **Nächster Schritt:** Halten Sie Fakten, Fristen und Entscheide im [Entscheidungsbaum](https://www.dkschv.ch/wissen/resources/03-datenpanne-entscheidungsbaum.html) fest. Für eine Anfrage zur [DKSchV-Sicherheitsanalyse](https://www.dkschv.ch/sicherheitsanalyse.html) steht [Kontakt](/kontakt) zur Verfügung. Das ersetzt keine rechtliche Einzelfallbeurteilung.
 
 ## Quellen
 
@@ -124,3 +135,5 @@ Eine belastbare Entscheidung entsteht nicht erst im Incident. Geschäftsleitung 
 [10]: https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32016R0679 "EUR-Lex – Verordnung (EU) 2016/679 (Datenschutz-Grundverordnung), Art. 33"
 [11]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, 6. Oktober 2026"
 [12]: https://www.edoeb.admin.ch/de/edoeb-leitete-nach-cyberangriff-auf-softwarelieferant-abklaerungen-ein "EDÖB – Abklärungen nach Cyberangriff auf Softwarelieferant, 23. Oktober 2026"
+[13]: https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin "EDÖB – SkySale/apfelkiste.ch: Bundesverwaltungsgericht bestätigt Informationspflicht, 6. November 2026"
+[14]: https://www.edoeb.admin.ch/dam/de/sd-web/ZjhZ9UBOprVL/Urteil%20BVGer%20A_3790_2024%20vom%208.%20April%202026%20betreffend%20Verf%C3%BCgung%20vom%2028.%20Mai%202024.pdf "Bundesverwaltungsgericht – Urteil A-3790/2024 vom 8. April 2026, insbesondere E. 6.3.7 und 6.3.8"

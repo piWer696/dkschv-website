@@ -6,14 +6,17 @@ meta_title: "60-Minuten-Checkliste bei Ransomware-Verdacht | DKSchV"
 meta_description: "Druckbare Arbeitsvorlage für die erste Stunde nach einem Ransomware-Verdacht: Eindämmung, Beweissicherung, Backups und Meldeprüfung."
 suchintention: "Arbeitsmittel – Ransomware-Erstreaktion dokumentieren"
 zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
-version: "Stand 1. November 2026"
-quellenpruefung_umfang: "11 von 11 externen Quellenreferenzen geprüft; BACS-, EDÖB- und Fedlex-Meldewege sowie einschlägige Originalmeldungen seit 18. Oktober 2026 geprüft"
-quellenpruefung_status: "Vollständig für die Quellenreferenzen; Fedlex-Historie und amtliche XML-Fassungen zusätzlich geprüft; interne relative Ziele nicht live geprüft"
+version: "Stand 15. November 2026"
+stand: "15. November 2026"
+quellenpruefung_umfang: "15 von 15 externen Quellenreferenzen inhaltlich geprüft; zusätzlich Fedlex-History/XML und einschlägige BACS-/EDÖB-/CISA-Primärmeldungen seit 1. November 2026; Abrufe nach 09:00 CET"
+quellenpruefung_status: "15 Referenzen lesbar; 1 zusätzlicher Ausleseblocker: BACS-KMU-Template vom 11.11.2026 nur als Base64/ZIP, Inhalt ungeprüft; keine Fachfreigabe oder Einzelfallprüfung; interne Ziele nur lokal abgeglichen, nicht live geprüft"
 bezug: "/wissen/ransomware-erste-60-minuten"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
 
 # 60-Minuten-Checkliste bei Ransomware-Verdacht
+
+**Version: Stand 15. November 2026**
 
 ## Zweck
 
@@ -62,6 +65,7 @@ Sie ersetzt weder eine forensische Untersuchung noch einen organisationsspezifis
 - [ ] Betroffene Systeme nicht neu gestartet und nicht mit Bereinigungstools verändert.
 - [ ] Falls Ausschalten unvermeidbar war: Grund und Zeitpunkt dokumentiert.
 - [ ] Kritische Prozessverantwortliche über bestätigte Einschränkungen informiert.
+- [ ] Bei geschäftlicher Nutzung im Homeoffice: Arbeitsort und bekannte Verbindungen zu Heimnetz-Diensten erfasst; zuständige IT informiert, keine unkoordinierten Änderungen an privaten Geräten ausgelöst.
 
 **Betroffene oder verdächtige Systeme / Freigaben:**
 
@@ -79,6 +83,8 @@ ____________________________________________________________________________
 ____________________________________________________________________________
 
 Ein einzelnes unspezifisches Zeichen wie ein langsames Gerät ist noch kein Infektionsbeweis. Dokumentieren Sie mehrere ungewöhnliche Beobachtungen oder Sicherheitswarnungen für die technische Untersuchung und informieren Sie bei Geschäftsgeräten die zuständige IT. [8]
+
+Das BACS warnt seit dem 3. November 2026 vor verwundbaren, aus dem Internet erreichbaren Heimnetz-Diensten und empfiehlt bei Infektion eine fachkundige Untersuchung weiterer Geräte im selben Netz. Dies ist kein Beleg für die Betroffenheit Ihres Homeoffice-Geräts oder Unternehmensnetzes und keine Router- oder Produktfreigabe. [12]
 
 ## C. Minute 15–30: Lagebild und Beweissicherung
 
@@ -140,15 +146,18 @@ CISA empfiehlt, Daten von offline gehaltenen, verschlüsselten Backups wiederher
 - [ ] EDÖB-Risikobeurteilung begonnen: Sind Personendaten betroffen, und ist ein voraussichtlich hohes Risiko für Persönlichkeit oder Grundrechte möglich?
 - [ ] Für EDÖB-/BACS-Beurteilung zuständige Datenschutz-, Rechts- oder Fachperson benannt.
 - [ ] Bei möglicher EDÖB-Meldung: soweit verfügbare Angaben zu Art, Zeitpunkt, Dauer, betroffenen Daten und Personen, Folgen, Massnahmen sowie Ansprechperson für die fachliche Prüfung zusammengestellt.
-- [ ] Betroffene Personen nicht vorschnell informiert; Informationsbedarf fachlich geprüft.
+- [ ] Informationsbedarf betroffener Personen getrennt von der technischen Behebung fachlich geprüft; zuständige Person und nächster Termin bestimmt, notwendige Information nicht wegen der Behebung als erledigt betrachtet.
+- [ ] Bei genutzter BACS-Weiterleitung: Empfänger, übermittelte Angaben und Bestätigung separat dokumentiert; EDÖB-Pflicht nicht automatisch als erfüllt markiert.
 - [ ] Lageupdate für Geschäftsleitung mit bestätigten Fakten, Geschäftsauswirkung und offenen Entscheiden erstellt.
 - [ ] Nächster Entscheid, verantwortliche Person und Zeitpunkt verbindlich festgelegt.
 
-Für Betreiber kritischer Infrastrukturen gilt bei meldepflichtigen Cyberangriffen eine Meldung an das BACS innert 24 Stunden nach Entdeckung. Die Voraussetzungen ergeben sich aus dem Informationssicherheitsgesetz und der Cybersicherheitsverordnung; die konkrete Einordnung ist fachlich zu prüfen. [3] [4]
+Für Betreiber kritischer Infrastrukturen gilt bei meldepflichtigen Cyberangriffen eine Meldung an das BACS innert 24 Stunden nach Entdeckung. Die Voraussetzungen ergeben sich aus dem Informationssicherheitsgesetz und der Cybersicherheitsverordnung; die konkrete Einordnung ist fachlich zu prüfen. [3] [4] [14]
 
 Nach Art. 24 DSG meldet der Verantwortliche dem EDÖB eine Datensicherheitsverletzung so rasch als möglich, wenn sie voraussichtlich zu einem hohen Risiko für Persönlichkeit oder Grundrechte natürlicher Personen führt. **Dies ist keine individuelle Rechtsberatung; lassen Sie die konkrete Bewertung durch eine Datenschutz- oder Rechtsfachperson prüfen.** [5] [6]
 
 Der EDÖB stellt für Meldungen von Verantwortlichen ein sicheres Online-Formular bereit. Art. 15 DSV nennt die Angaben, die soweit möglich in der Meldung stehen müssen, und verlangt, fehlende Angaben so rasch als möglich nachzureichen. Er verlangt zudem eine Dokumentation der Tatsachen, Auswirkungen und Massnahmen. [10] [11]
+
+Das BACS bietet im Cyber Security Hub eine Weiterleitung an weitere Behörden auf Wunsch an. Eine BACS-Meldung ist damit nicht automatisch ein Nachweis der erfüllten EDÖB-Meldung. [15] Die EDÖB-Mitteilung vom 6. November 2026 bestätigt im dortigen Fall, dass nachträgliche technische Massnahmen die erforderliche Betroffeneninformation nicht aufheben. Empfänger, Informationsform und Ausnahmen bleiben konkret zu prüfen; eine öffentliche Bekanntmachung ist keine allgemeine KMU-Pflicht. [13] [5] [6]
 
 | Entscheidung / Meldung | Pflicht oder Option nach Prüfung | Verantwortlich | Frist / nächster Termin | Status |
 |---|---|---|---|---|
@@ -179,7 +188,7 @@ ____________________________________________________________________________
 
 ## Grenzen und fachliche Prüfung
 
-Diese Checkliste ist ein allgemeines Arbeitsmittel für die erste Reaktion auf dem Stand der Quellenprüfung vom 1. November 2026; dieser Stand ist keine Fachfreigabe. Sie ersetzt keine organisationsspezifische Notfallplanung, technische Forensik, Meldung oder Rechtsberatung. Sie erlaubt keine Aussage darüber, ob Systeme frei von Angreifern sind, ob ein Backup sicher wiederherstellbar ist oder ob keine Daten abgeflossen sind. Ein nachträglich eingespieltes Sicherheitsupdate beseitigt keine bereits erfolgte Kompromittierung. [9] Bei möglicher Personendatenverletzung, kritischer Infrastruktur, Strafanzeige, Lösegeldforderung oder grossem Betriebsunterbruch ist **[FACHPRÜFUNG ERFORDERLICH]**; ziehen Sie unverzüglich eine geeignete Fachperson bei.
+Diese Checkliste ist ein allgemeines Arbeitsmittel für die erste Reaktion auf dem Stand der Quellenprüfung vom 15. November 2026; dieser Stand ist keine Fachfreigabe. Erreichbare Quellen und allgemeine Empfehlungen belegen keine tatsächliche Einzelfallprüfung. Sie ersetzt keine organisationsspezifische Notfallplanung, technische Forensik, Meldung oder Rechtsberatung. Sie erlaubt keine Aussage darüber, ob Systeme frei von Angreifern sind, ob ein Backup sicher wiederherstellbar ist oder ob keine Daten abgeflossen sind. Ein nachträglich eingespieltes Sicherheitsupdate beseitigt keine bereits erfolgte Kompromittierung. [9] Bei möglicher Personendatenverletzung, kritischer Infrastruktur, Strafanzeige, Lösegeldforderung oder grossem Betriebsunterbruch ist **[FACHPRÜFUNG ERFORDERLICH]**; ziehen Sie unverzüglich eine geeignete Fachperson bei.
 
 Das BACS beschreibt Notfallkonzepte als Zusammenspiel von Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung. Pflegen und testen Sie Rollen, Kontakte, Backup-Wiederherstellung und Entscheidungswege daher ausserhalb des akuten Vorfalls. [7]
 
@@ -196,3 +205,7 @@ Das BACS beschreibt Notfallkonzepte als Zusammenspiel von Vorbereitung, Eintritt
 [9]: https://www.bacs.admin.ch/de/warnung-php-de "BACS – Kritische Schwachstellen in PHP: Sicherheitsupdates sofort einspielen, 21. Oktober 2026"
 [10]: https://www.edoeb.admin.ch/de/databreach "EDÖB – DataBreach: Meldung von Datensicherheitsverletzungen durch Verantwortliche"
 [11]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Verordnung über den Datenschutz, Art. 15 Meldung von Verletzungen der Datensicherheit"
+[12]: https://www.bacs.admin.ch/de/26w44-de "BACS – Woche 44: Wenn das Heimnetzwerk zum Einfallstor für Cyberkriminelle wird, 3. November 2026"
+[13]: https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin "EDÖB – Bundesverwaltungsgericht bestätigt Informationspflicht der Onlineshop-Betreiberin, 6. November 2026"
+[14]: https://www.fedlex.admin.ch/eli/cc/2025/169/de "Fedlex – Cybersicherheitsverordnung, Art. 12 Ausnahmen von der Meldepflicht"
+[15]: https://www.bacs.admin.ch/de/wie-muss-gemeldet-werden "BACS – Wie muss gemeldet werden? Weiterleitung auf Wunsch und Meldeprozess"

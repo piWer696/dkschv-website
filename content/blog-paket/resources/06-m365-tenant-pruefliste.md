@@ -6,16 +6,17 @@ meta_title: "Microsoft-365-Tenant-Prüfliste für Schweizer KMU | DKSchV"
 meta_description: "Arbeitsvorlage zur Priorisierung von Identitäten, Adminrollen, Freigaben, Protokollen, Wiederherstellung und Provider-Governance."
 suchintention: "Arbeitsmittel – Microsoft-365-Tenant strukturiert prüfen"
 zielgruppe: "Geschäftsleitungen, interne IT und IT-Provider Schweizer KMU"
-version: "Stand 1. November 2026"
+version: "Stand 15. November 2026"
+stand: "15. November 2026"
 bezug: "/wissen/microsoft-365-sicherheit-kmu"
-quellenpruefung_umfang: "Alle 15 eindeutigen, nach dieser Pflege in Arbeitsmittel und zugehörigem Artikel zitierten externen Originalquellen; zusätzlich BACS «Im Fokus», Microsoft Security Blog und einschlägige Microsoft-Learn-Referenzen vom 18.10. bis 01.11.2026. Keine Tenant-, App-ID-, Log-, Lizenz-, CMS- oder Live-Linkprüfung."
-quellenpruefung_status: "Vollständig für die 15 zitierten externen Originalquellen und die im Umfang genannten Übersichten; keine Fach-, Rechts-, Tenant-, Forensik-, Herstellerfreigabe- oder Publikationsfreigabe."
+quellenpruefung_umfang: "21 eindeutige zitierte externe Originalquellen beider Dateien; insgesamt 30 direkte Original-URLs einschliesslich DSG-History/XML, BACS-/Microsoft-Übersichten und relevanter Primärmeldungen seit 01.11.2026. Tatsächliche Abrufe am 15.11.2026 nach 09:00 CET; Einzelstatus im Quellenjournal. Keine Tenant-, App-ID-, Log-, Lizenz-, CMS-, Browser- oder Live-Linkprüfung."
+quellenpruefung_status: "21 von 21 zitierten Originalquellen in den relevanten Passagen auslesbar; 30 von 30 dokumentierten Original-URLs mit relevantem Inhalt, teilweise gekürzte Extraktionen. Kein nicht auslesbarer Quellenblocker; Microsofts widersprüchliche App-ID-Anzahl im Journal offengelegt und nicht übernommen. Keine Fach-, Rechts-, Tenant-, Forensik-, Produkt-, Hersteller- oder Publikationsfreigabe."
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
 
 # Microsoft-365-Tenant-Prüfliste für Schweizer KMU
 
-> **Version:** Stand 1. November 2026. Die Vorlage ist eine Arbeitsgrundlage; ihr Ausfüllen belegt keine Tenant-, Fach-, Rechts- oder Veröffentlichungsfreigabe.
+> **Version:** Stand 15. November 2026. Die Vorlage ist eine Arbeitsgrundlage; ihr Ausfüllen belegt keine Tenant-, Fach-, Rechts- oder Veröffentlichungsfreigabe.
 
 ## Zweck
 
@@ -68,15 +69,19 @@ Ordnen Sie offene Punkte einer Priorität zu. **Kritisch** bedeutet: Es besteht 
 | B3 | Wichtig | Administrative Tätigkeiten erfolgen mit separaten Adminkonten, nicht mit dem alltäglichen Benutzerkonto. |  |  |  |  |
 | B4 | Wichtig | Privilegierte Rollen und Providerzugänge werden mindestens vierteljährlich überprüft; nicht benötigte Rechte werden entfernt. |  |  |  |  |
 | B5 | Wichtig | Zeitlich begrenzte oder genehmigungspflichtige Aktivierung privilegierter Rechte wird genutzt oder die Abweichung ist begründet. |  |  |  |  |
-| B6 | Kritisch | Enterprise Apps, Dienstprinzipale und andere Workload Identities sind mit Eigentümer, Zweck, Hersteller- oder Providerbezug, Application ID, Berechtigungen, Genehmigung und Lebenszyklus inventarisiert. |  |  |  |  |
+| B6 | Kritisch | Enterprise Apps, Dienstprinzipale und andere Workload Identities sind mit Eigentümer, Zweck, Hersteller- oder Providerbezug, Heimtenant, Single-Tenant-/Multitenant-Typ, Application ID, lokaler Dienstprinzipal-Objekt-ID, Berechtigungen, Genehmigung und Lebenszyklus inventarisiert. |  |  |  |  |
 | B7 | Kritisch | Für einen begründeten Untersuchungshinweis zu einer Herstellerintegration sind aktuelle und frühere Autorisierungen nach Application ID sowie die tenant-spezifische Dienstprinzipal-Objekt-ID, verfügbare Anmelde- und Auditdaten und die Konfiguration vor irreversiblen Änderungen gesichert oder als Lücke dokumentiert. Eindämmung folgt dem berechtigten Notfallprozess. |  |  |  |  |
 | B8 | Optimierend | Der Tenant nutzt Gruppen, klar abgegrenzte Bereiche oder andere Mechanismen, um Verwaltungsrechte strukturiert zu delegieren. |  |  |  |  |
+| B9 | Kritisch | Speicherung, Lebenszyklus, Eigentümer und Erkennung exponierter App-Secrets sind geregelt; öffentlich exponierte Credentials werden nach Herstelleranweisung durch berechtigte Fachstellen behandelt und ihre historische Nutzung untersucht. Keine Secret-Werte werden in dieser Vorlage erfasst. |  |  |  |  |
+| B10 | Wichtig | Je Workload Identity sind anwendbare Zugriffskontrollen, Lizenzvoraussetzungen und nicht abgedeckte Integrationen dokumentiert. Workload-Conditional-Access-Abdeckung wird nicht aus Benutzer-MFA oder einer Gruppenzuweisung abgeleitet. |  |  |  |  |
 
 **Prüfnotiz zu B2:** Microsoft empfiehlt das Prinzip der geringsten Rechte und nennt als Richtwerte weniger als fünf Global Administrators sowie weniger als zehn Zuweisungen privilegierter Rollen. Die angemessene Zahl muss jedoch aus Aufgaben, Stellvertretung und Risiko der eigenen Organisation abgeleitet werden.[4]
 
-**Prüfnotiz zu B6–B7:** Anwendungen und Dienstprinzipale können weitreichende Berechtigungen erhalten. Microsoft empfiehlt, neue Anmeldeinformationen, neue Eigentümer, Zustimmungen, Berechtigungen und privilegierte Rollenzuweisungen ausserhalb des vorgesehenen Änderungsprozesses zu überwachen.[12] Der Herstellerbericht zu Storm-0940 vom 21. Oktober 2026 verlangt bei den **vier dort konkret genannten ConnectWise-Application-IDs**, nicht bloss beim Anzeigenamen, ein Inventar in aktuell und früher autorisierten Tenants. Die eingeschränkte Anweisung, diese betroffenen Anbindungen bis zu formellen Wiederherstellungsanweisungen von ConnectWise deaktiviert zu halten, gilt nicht pauschal für andere ConnectWise-Produkte oder Anwendungen. Enterprise Apps sollen nicht als erste Reaktion gelöscht werden: Verfügbare Konfiguration und Beweise sind vor irreversiblen Änderungen zu sichern; dringliche Eindämmung darf nicht auf Exporte warten.[13]
+**Prüfnotiz zu B6–B7:** Anwendungen und Dienstprinzipale können weitreichende Berechtigungen erhalten. Microsoft empfiehlt, neue Anmeldeinformationen, neue Eigentümer, Zustimmungen, Berechtigungen und privilegierte Rollenzuweisungen ausserhalb des vorgesehenen Änderungsprozesses zu überwachen.[12] Das Anwendungsobjekt liegt im Heimtenant, der Dienstprinzipal ist die lokale Repräsentation; bei Multitenant-Apps existieren lokale Dienstprinzipale in mehreren autorisierten Tenants.[17] [18] Beim Storm-0940-/Cloud-Backup-Bezug ist die aktuelle ConnectWise-Liste nach Application ID massgeblich: Sie nennt sieben am 17. Oktober deaktivierte App-Identitäten, nicht einen pauschalen Produktnamen. Herstellerseitige Deaktivierung belegt keine separate lokale Änderung in jedem Kundentenant.[20] Prüfen Sie aktuelle und frühere Autorisierungen nach Application ID. Ein App-Treffer oder eine erfolgreiche Anmeldung ist kein Nachweis für Missbrauch, Datenzugriff oder Abfluss. Enterprise Apps sollen nicht als erste Reaktion gelöscht werden: Verfügbare Konfiguration und Beweise sind vor irreversiblen Änderungen zu sichern; dringliche Eindämmung darf nicht auf Exporte warten.[13]
 
-**Prüfnotiz zu widerrufenen Anmeldeinformationen:** Ein Widerrufsfehler beweist nicht, dass Microsoft die Anmeldeinformation widerrufen hat. Prüfen Sie bei einer fachlich begründeten Untersuchung die `tokenRevocations` am Application- und Service-Principal-Objekt mit derselben Application ID sowie das passende Entra-Auditereignis. Ein Widerruf verhindert neue Tokens, kann aber je nach Ressource bereits ausgestellte Tokens bis zu 24 Stunden weiterwirken lassen. Bei bestätigter Kompromittierung empfiehlt Microsoft Ersatz und Umstellung der Workload; die kompromittierte Anmeldeinformation bleibt widerrufen.[14] **[FACHPRÜFUNG ERFORDERLICH]** Diese Notiz ordnet keine App-Deaktivierung, Löschung, Credential-Rotation oder Wiederaktivierung eines Widerrufs an.
+**Prüfnotiz zu widerrufenen Anmeldeinformationen:** Ein Widerrufsfehler beweist nicht, dass Microsoft die Anmeldeinformation widerrufen hat. Prüfen Sie bei einer fachlich begründeten Untersuchung die `tokenRevocations` am Application- und Service-Principal-Objekt mit derselben Application ID; es kann nur einer dieser Objekttypen oder beide im Tenant vorhanden sein. Berechtigungsfehler belegen keine fehlenden Widerrufe. Microsoft nennt entweder den passenden Aussteller in `auditDetails.issuedBy` oder das korrespondierende Entra-Auditereignis als Herkunftsnachweis; fehlende Audit-Historie klärt die Herkunft allein nicht. Ein Widerruf verhindert neue Tokens, kann aber je nach Ressource bereits ausgestellte Tokens bis zu 24 Stunden weiterwirken lassen. Bei bestätigter Kompromittierung empfiehlt Microsoft Ersatz und Umstellung der Workload; die kompromittierte Anmeldeinformation bleibt widerrufen.[14] **[FACHPRÜFUNG ERFORDERLICH]** Diese Notiz ordnet keine App-Deaktivierung, Löschung, Credential-Rotation oder Wiederaktivierung eines Widerrufs an.
+
+**Prüfnotiz zu B9–B10:** Microsofts Bericht vom 5. November 2026 beschreibt KI-gestützte Secret-Suche und sowohl Anbieter-Credentials einer Multitenant-App mit nachgelagerten Kundenzugriffen als auch Folgezugriffe über Single-Tenant-Apps. Löschen des Repository-Inhalts invalidiert kein Secret. Öffentlich exponierte Credentials sind laut Hersteller als kompromittiert zu behandeln, unverzüglich zu widerrufen oder zu rotieren und auf historische Nutzung zu untersuchen; bereits ausgestellte Tokens können weiter gelten.[15] Das ist keine mit dieser Vorlage ausgeführte Vorfallmassnahme. Conditional Access für Workload Identities verlangt für Erstellung oder Änderung Workload ID Premium und eine direkte Dienstprinzipal-Zuweisung. Erfasst werden im eigenen Tenant registrierte Single-Tenant-Dienstprinzipale; Multitenant-/Drittanbieter-SaaS und Managed Identities sind nicht erfasst. Eine Gruppenzuweisung gilt nicht für enthaltene Dienstprinzipale. Benutzer-MFA deckt diese nichtmenschlichen Identitäten nicht ab.[16]
 
 ### C. Externe Zusammenarbeit und Freigaben
 
@@ -105,7 +110,7 @@ Ordnen Sie offene Punkte einer Priorität zu. **Kritisch** bedeutet: Es besteht 
 | D5 | Wichtig | Sicherheitsrelevante Protokolle, Konfigurationen und weitere verfügbare Beweise können im Vorfall nach einem dokumentierten Ablauf vor irreversiblen Änderungen gesichert werden. |  |  |  |  |
 | D6 | Optimierend | Die Alarmregeln und Kontaktwege werden nach Änderungen von Rollen, Provider oder Notfallplan überprüft. |  |  |  |  |
 
-**Prüfnotiz zu D2:** Microsoft Purview Audit (Standard) ist in Organisationen mit passendem Abonnement standardmässig aktiviert und bewahrt Auditdaten grundsätzlich 180 Tage auf. Audit (Premium) und die konkrete Lizenzierung können längere Aufbewahrung ermöglichen. Prüfen Sie die tatsächliche Verfügbarkeit und Aufbewahrung in Ihrem Tenant.[6] [7]
+**Prüfnotiz zu D2:** Microsoft Purview Audit (Standard) ist in Organisationen mit passendem Abonnement standardmässig aktiviert und bewahrt Auditdaten grundsätzlich 180 Tage auf. Audit (Premium) und die konkrete Lizenzierung können längere Aufbewahrung ermöglichen. Die Auditübersicht nennt für Datensätze nichtmenschlicher Entitäten wie Dienstprinzipal-Aktionen und Anwendungsaktivitäten einen festen Zeitraum von einem Jahr; benutzerdefinierte Aufbewahrungsrichtlinien gelten dafür nicht.[6] Prüfen Sie Ereignistyp, tatsächliche Verfügbarkeit und Aufbewahrung in Ihrem Tenant getrennt; Purview-Fristen sind keine pauschalen Fristen für Entra-Anmeldelogs oder Azure-Ressourcenlogs.[7] [12]
 
 ### E. Wiederherstellung und Backup-Verantwortung
 
@@ -117,8 +122,11 @@ Ordnen Sie offene Punkte einer Priorität zu. **Kritisch** bedeutet: Es besteht 
 | E4 | Wichtig | Datenexport, gesicherte Kopien und Zugriff auf Wiederherstellungsunterlagen sind auch bei Störung oder Providerwechsel berücksichtigt. |  |  |  |  |
 | E5 | Kritisch | Ein Wiederherstellungstest mit Ziel, Umfang, Ergebnis, Abweichungen und Verbesserungsmassnahmen ist dokumentiert. |  |  |  |  |
 | E6 | Optimierend | Die Wiederanlaufreihenfolge ist mit Geschäftsleitung, Fachbereichen und dem Notfallplan abgestimmt. |  |  |  |  |
+| E7 | Wichtig | Nach unterbrochenen oder erneut autorisierten Backup-Integrationen sind erfolgreiche neue Snapshots, die Sicherungslücke und weiterhin fehlende Funktionen getrennt nachgewiesen; Wiederautorisierung gilt nicht als Sicherheits- oder Restore-Freigabe. |  |  |  |  |
 
 **Prüfnotiz zu E3–E5:** Das BACS empfiehlt bei Cloud-Diensten, dass Daten exportierbar und als Offline-Backup gegen Ransomware gesichert werden können. Es empfiehlt ausserdem, Backup-Konzept und erfolgreichen Wiederherstellungstest mit dem Dienstleister ausdrücklich zu klären.[8] [9]
+
+**Prüfnotiz zu E7:** ConnectWise beschreibt seit dem 28. Oktober 2026 die Wiederherstellung über die neue App «ConnectWise Cloud Backup for M365». Das Update vom 4. November bestätigt Backups und Restores für erneut autorisierte Tenants, aber noch nicht sämtliche Zusatzfunktionen. Alte deaktivierte Apps sollen ohne ausdrückliche Anweisung nicht wieder aktiviert werden. Erneute Autorisierung ersetzt weder Tenant-Untersuchung noch neue erfolgreiche Snapshots. Erfassen Sie die Lücke zwischen letztem erfolgreichem Snapshot vor der Unterbrechung und erstem danach.[20] Diese Vorlage ordnet keine Wiederautorisierung an.
 
 **Prüfnotiz zum Vorfallbezug:** Bei Malwareverdacht auf einem geschäftlich verwendeten Gerät empfiehlt das BACS, die zuständige IT zu informieren und eine Fachperson untersuchen zu lassen; bei bestätigter Infektion nennt es Neuaufsetzen und anschliessende Passwortwechsel.[11] Das ist kein Ersatz für eine organisationsspezifische forensische oder Wiederanlaufentscheidung.
 
@@ -132,8 +140,11 @@ Ordnen Sie offene Punkte einer Priorität zu. **Kritisch** bedeutet: Es besteht 
 | F4 | Wichtig | Sicherungsumfang, Wiederherstellungstests, Datenexport und Übergabe bei Vertragsende sind überprüfbar vereinbart. |  |  |  |  |
 | F5 | Wichtig | Auftragsbearbeitung, Unterauftragsbearbeiter, Datenbearbeitungsorte und Auslandbekanntgaben werden für den konkreten Sachverhalt fachlich geprüft. |  |  |  |  |
 | F6 | Optimierend | Die vereinbarten Leistungen und Nachweise werden periodisch kontrolliert und Abweichungen nachverfolgt. |  |  |  |  |
+| F7 | Wichtig | Breite Absenderfreigaben und E-Mail-Schutz-Overrides sind mit Zweck, Genehmigung, Reichweite, Ablauf oder Review-Termin und beobachteter Wirkung dokumentiert; Änderungen erfolgen kontrolliert nach Prüfung der Geschäftsabläufe. |  |  |  |  |
 
 **Prüfnotiz zu F5:** Das DSG verlangt, dass der Verantwortliche sich insbesondere vergewissert, dass der Auftragsbearbeiter die Datensicherheit gewährleisten kann. Eine Unterauftragsbearbeitung erfordert die vorgängige Genehmigung des Verantwortlichen.[1] Der EDÖB empfiehlt unter anderem die Prüfung von Weisungsbindung, Sicherheitsmassnahmen, Unterauftragsbearbeitern, Bearbeitungsländern und Unterstützung im Vorfall.[2] Diese Prüfliste kann keine rechtliche Einzelfallwürdigung ersetzen.
+
+**Prüfnotiz zu F7:** Microsofts Q3-Bericht vom 5. November 2026 beschreibt Zustellungen erkannter schädlicher Nachrichten mit vorgetäuschten Geschäftsservice-Absendern durch tenant- oder benutzerseitige Ausnahmen. Das belegt keine geöffneten Nachrichten oder kompromittierten Konten in Ihrem Unternehmen.[19] Die Vorlage verlangt ein überprüfbares Ausnahmeregister, keine unkontrollierte Entfernung sämtlicher Freigaben.
 
 ## Priorisierte Massnahmenliste
 
@@ -170,3 +181,9 @@ Die Liste ist keine Zertifizierung, kein Auditbericht und keine Zusage zur Wiede
 [12]: https://learn.microsoft.com/en-us/entra/architecture/security-operations-applications "Microsoft Learn – Microsoft Entra security operations guide for applications"
 [13]: https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/ "Microsoft Security Blog – AI-driven large-scale nation-state campaign using ARTEX enables supply chain compromise"
 [14]: https://learn.microsoft.com/en-us/entra/workload-id/troubleshoot-revoked-credentials "Microsoft Learn – Troubleshoot revoked application credentials"
+[15]: https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/ "Microsoft Security Blog – Threat actors use agentic AI tooling to find and abuse exposed secrets, 5. November 2026"
+[16]: https://learn.microsoft.com/en-us/entra/identity/conditional-access/workload-identity "Microsoft Learn – Conditional Access for workload identities"
+[17]: https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals "Microsoft Learn – Apps and service principals in Microsoft Entra ID"
+[18]: https://learn.microsoft.com/en-us/entra/identity-platform/single-and-multi-tenant-apps "Microsoft Learn – Single and multitenant apps in Microsoft Entra ID"
+[19]: https://www.microsoft.com/en-us/security/blog/2026/11/05/email-threat-landscape-q3-2026-trends-and-insights/ "Microsoft Security Blog – Email threat landscape: Q3 2026 trends and insights, 5. November 2026"
+[20]: https://www.connectwise.com/company/trust/advisories "ConnectWise Trust Center – Cloud Backup: Wiederherstellungsupdate vom 4. November 2026 und App-Identitäten"

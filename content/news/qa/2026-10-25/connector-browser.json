@@ -1,0 +1,29 @@
+Config loaded for non-project session.
+Config file: /home/ubuntu/.manus/config/config.json
+Baseline file: /home/ubuntu/.manus/config/baseline/config.json
+
+Search results for "browser" in config.json:
+151:    {
+152:      "uid": "d7a2e55b-5a4b-41ca-b5fc-517ad5434152",
+153:      "name": "Anchor Browser",
+154:      "brief": "Automate web tasks, bypass CAPTCHAs, and manage cloud browser sessions",
+155:      "enabled": false,
+156:      "tokenReplacementEnabled": true
+157:    }
+1641:    {
+1642:      "uid": "be268223-40b2-4f3c-a907-c12eb1699283",
+1643:      "name": "My Browser",
+1644:      "brief": "Access the web on your own browser",
+1645:      "enabled": true,
+1646:      "tokenReplacementEnabled": true
+1647:    }
+1900:    {
+1901:      "uid": "356d5bc1-fb9f-4fa1-babb-05039dc09d63",
+1902:      "name": "Playwright",
+1903:      "brief": "Automate browsers for testing, scraping, and more with Playwright",
+1904:      "enabled": false,
+1905:      "tokenReplacementEnabled": true
+1906:    }
+Note: config.json contains editable connector and session selections only.
+      Use connector commands to inspect connector details.
+Next step: edit config.json and run `manus-config config save`

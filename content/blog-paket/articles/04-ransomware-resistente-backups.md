@@ -8,9 +8,9 @@ suchintention: "Informational – Backups gegen Ransomware planen und testen"
 zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
 autor: "DKSchV Redaktion"
 veröffentlichungsdatum: "22.10.2026"
-stand: "1. November 2026"
-quellenpruefung_umfang: "Alle 17 Quellendefinitionen des Artikels und alle acht des Arbeitsmittels, entsprechend 16 unterschiedlichen zitierten externen Original-URLs (der CISA-Leitfaden ist im Artikel zweimal referenziert), auf Erreichbarkeit und Aussagegehalt geprüft. Zusätzlich BACS «Im Fokus» sowie die BACS-Meldungen vom 20., 21. und 27. Oktober 2026 als Aktualitätskontext geprüft. Interne relative Paketlinks wurden erhalten, nicht als künftige Live-URLs geprüft."
-quellenpruefung_status: "Vollständig für die 16 unterschiedlichen zitierten externen Original-URLs am 1. November 2026, tatsächlicher Abruf ca. 09:05–09:07 CET Europe/Zurich; keine Freigabe und keine lückenlose historische Änderungsverifikation."
+stand: "15. November 2026"
+quellenpruefung_umfang: "Alle 18 Quellendefinitionen des Artikels und alle neun des Arbeitsmittels: 17 unterschiedliche zitierte externe Original-URLs direkt abgerufen und im verwendeten Aussageumfang gelesen. Zusätzlich sechs BACS-Aktualitätsquellen seit 1. November, CISA-Übersicht und Resilienzmeldung, Microsoft-Backup-Orientierung sowie sechs amtliche Fedlex-Zusatzadressen geprüft. Interne Paketziele nur lokal abgeglichen, nicht live geprüft."
+quellenpruefung_status: "15. November 2026, tatsächliche Fetch-Rückgaben 09:06:14–09:08:35 CET Europe/Zurich: 17 zitierte Original-URLs inhaltlich lesbar, Fedlex-HTML teilweise gekürzt und durch lesbare History/XML ergänzt. Von 15 Zusatzadressen zwei Blocker: DSG-/DSV-Änderungsseiten liefern nur JavaScript-Hinweis. Keine Fach-, Rechts-, Forensik-, Tenant-, Produkt- oder Veröffentlichungsfreigabe; keine RPO/RTO-, Retention- oder Architekturfreigabe und keine lückenlose historische Änderungsverifikation."
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
 
@@ -28,7 +28,7 @@ Die Geschäftsleitung sollte Backups deshalb nicht als reine Speicherfrage behan
 
 > **Ransomware-resistent** bedeutet nicht «unverletzlich». Gemeint ist eine Architektur, welche die Chance erhöht, nach einem Angriff auf einen sauberen, ausreichenden Datenstand zurückzukehren, ohne sich auf eine Lösegeldzahlung verlassen zu müssen.
 
-Im Ernstfall empfiehlt das BACS, infizierte Systeme vom Netz zu trennen, den Infektionsweg zu klären, Systeme neu aufzusetzen und Daten aus vorhandenen Backups wiederherzustellen. Vor Reparaturversuchen oder Neustarts sind bei Bedarf forensische Sicherungen durch Fachpersonen wichtig. [3] Der Backup-Plan muss daher mit dem [IT-Notfallplan](/unsere-dienstleistungen/notfallplanung) und der Vorfallsbehandlung zusammenpassen – nicht erst nach einem Befall entstehen.
+Im Ernstfall empfiehlt das BACS, infizierte Systeme vom Netz zu trennen, den Infektionsweg zu klären, Systeme neu aufzusetzen und Daten aus vorhandenen Backups wiederherzustellen. Vor Reparaturversuchen oder Neustarts sind bei Bedarf forensische Sicherungen durch Fachpersonen wichtig. [3] Der Backup-Plan muss daher mit dem [IT-Notfallplan](https://www.dkschv.ch/notfallplanung.html) und der Vorfallsbehandlung zusammenpassen – nicht erst nach einem Befall entstehen.
 
 Der BACS-Wochenrückblick vom 6. Oktober 2026 ergänzt: Einzelne Anzeichen beweisen keine Infektion; bei mehreren ungewöhnlichen Beobachtungen soll eine genauere Untersuchung erfolgen. Bei Verdacht empfiehlt das BACS die Untersuchung durch eine Fachperson; bei Geschäftsgeräten ist die zuständige IT zu informieren. Dieser Hinweis ersetzt keine forensische oder organisationsspezifische Triage. [15]
 
@@ -55,7 +55,7 @@ Die wichtigste Frage lautet: Kann eine kompromittierte Identität auch das Backu
 
 In der Praxis heisst das nicht zwingend, dass jedes KMU eine komplexe Parallelumgebung braucht. Entscheidend ist ein nachvollziehbarer, dem Risiko angemessener Trennungsgrad. Definieren Sie beispielsweise eigene Backup-Admin-Konten mit Mehrfaktor-Authentisierung, vergeben Sie Berechtigungen nach dem Prinzip der minimalen Rechte und verhindern Sie, dass alltägliche Benutzer- oder Serverkonten Sicherungsfristen verkürzen oder Daten endgültig löschen können. Bewahren Sie Notfallzugänge kontrolliert, dokumentiert und getrennt von der Produktionsumgebung auf. Prüfen Sie auch, welche Rechte ein IT-Provider und dessen Fernwartungswerkzeuge besitzen.
 
-Bei ausgelagerter IT bleibt die Verantwortung für die Klärung der Rollen beim Unternehmen. Das BACS empfiehlt, Zuständigkeiten für technische und organisatorische Massnahmen klar zu regeln, nach dem Backup-Konzept und dem letzten erfolgreichen Wiederherstellungstest zu fragen sowie die vereinbarten Leistungen periodisch zu kontrollieren. [4] Verankern Sie daher mindestens Datenumfang, Aufbewahrung, Verantwortliche, Eskalationswege, Testnachweise und Rückgabe- beziehungsweise Wiederherstellungsprozess im Leistungsbeschrieb. Diese Punkte gehören auch in das [Cyber-Risikomanagement](/unsere-dienstleistungen/risikomanagement), weil sie Geschäftsrisiken und nicht nur IT-Parameter betreffen.
+Bei ausgelagerter IT bleibt die Verantwortung für die Klärung der Rollen beim Unternehmen. Das BACS empfiehlt, Zuständigkeiten für technische und organisatorische Massnahmen klar zu regeln, nach dem Backup-Konzept und dem letzten erfolgreichen Wiederherstellungstest zu fragen sowie die vereinbarten Leistungen periodisch zu kontrollieren. [4] Verankern Sie daher mindestens Datenumfang, Aufbewahrung, Verantwortliche, Eskalationswege, Testnachweise und Rückgabe- beziehungsweise Wiederherstellungsprozess im Leistungsbeschrieb. Diese Punkte gehören auch in das [Cyber-Risikomanagement](https://www.dkschv.ch/risikomanagement.html), weil sie Geschäftsrisiken und nicht nur IT-Parameter betreffen.
 
 ## Offline und unveränderbar: zwei unterschiedliche Schutzmechanismen
 
@@ -76,6 +76,8 @@ Ein Backup-Job kann technisch erfolgreich sein und dennoch die falschen Ziele ve
 
 Ein RPO von vier Stunden ist keine Zusage, dass ein Dienst nach vier Stunden läuft. Es legt fest, wie alt der Datenstand höchstens sein darf. Ein RTO von acht Stunden ist keine Eigenschaft einer Backup-Lizenz, sondern ein Ziel für die gesamte Kette: Angriff erkennen, Systeme bereinigen, Infrastruktur bereitstellen, Daten zurückspielen, Zugänge prüfen und den Prozess freigeben. NIST ordnet Wiederherstellungsprozesse dem Ziel zu, Systeme oder Vermögenswerte nach Cybervorfällen zeitgerecht wiederherzustellen. [12]
 
+Die verwendete NIST-Zuordnungsseite «Recover» wird ausdrücklich nicht mehr aktualisiert. Sie dient hier nur der allgemeinen Begriffseinordnung, nicht als Nachweis einer aktuellen organisationsspezifischen Wiederherstellungsfreigabe. [12]
+
 Priorisieren Sie daher nicht nach Datenmenge, sondern nach Geschäftswirkung. Die Buchhaltung braucht vielleicht zuerst die Zahlungsfreigabe und Lieferantendaten; die Produktion braucht zuerst die Steuerungs- oder Auftragsdaten; der Vertrieb benötigt möglicherweise Kunden- und Kontaktinformationen. Dokumentieren Sie je Dienst den Eigentümer, Abhängigkeiten wie Identitätsdienst, Netzwerk, Lizenzen und DNS, den RPO, den RTO, den vorgesehenen Wiederherstellungsort und die Abnahme durch den Fachbereich. So verbinden Sie die Backup-Architektur mit einer realistischen [Wiederherstellungsübung](/wissen/backup-wiederherstellung-testen).
 
 ### Hypothetisches Praxisbeispiel: Was der Restore-Test sichtbar macht
@@ -87,6 +89,8 @@ Die Lösung ist nicht zwingend ein neues Produkt. Das Unternehmen trennt die Bac
 ## Wiederherstellungsfähigkeit beweisen, nicht vermuten
 
 Ein vollständiger Test muss nicht jeden Monat die ganze Umgebung lahmlegen. Beginnen Sie mit einem priorisierten, abgegrenzten Szenario: Stellen Sie einen repräsentativen Datensatz oder einen kritischen Dienst in einer isolierten Umgebung wieder her. Prüfen Sie Datenintegrität, Benutzerzugriff, Abhängigkeiten und fachliche Nutzbarkeit. Messen Sie vom Start des Wiederanlaufs bis zur Abnahme durch den Fachbereich. CISA empfiehlt, Wiederherstellung aus Offline-Backups nach der Priorität kritischer Dienste vorzunehmen und saubere Systeme nicht erneut zu infizieren. [6]
+
+Berücksichtigen Sie auch Homeoffice- und externe Zugangswege, soweit diese für den Dienst relevant sind. Das BACS berichtete am 3. November 2026 über Schadsoftware in privaten Heimnetzen mit aus dem Internet erreichbaren, verwundbaren Diensten. Bei einer Infektion kann eine Neuinstallation nötig sein; auch weitere Geräte im selben Netz sollen untersucht oder von Fachpersonen untersucht werden. Für die Wiederherstellungsplanung ist dies ein Anlass, Heimnetzabhängigkeiten und die Beurteilung der Zielumgebung mit der zuständigen IT zu klären. Die Meldung belegt weder einen Vorfall in Ihrem KMU noch einen sauberen Sicherungsstand oder eine fertige forensische Untersuchung. Sie gibt keine konkrete PHP-/Plex-Version oder Backup-Architektur frei. [18] [6]
 
 Als aktueller Schweizer Vergleichspunkt berichtete das BACS am 22. Oktober zur Studie «KMU Cybersicherheit 2026»: Neun von zehn KMU erstellen Backups, aber nur jedes vierte testet die Wiederherstellung. Die Studienangabe ist kein Nachweis für die Situation eines einzelnen Unternehmens, bestärkt jedoch den Fokus auf nachweisbare Tests. [17]
 
@@ -110,7 +114,7 @@ Das BACS strukturiert die Notfallvorsorge in Vorbereitung, Eintritt des Vorfalls
 
 ### Tage 1 bis 7: Bestand und Prioritäten klären
 
-Erstellen Sie ein kompaktes Inventar der kritischen Prozesse, Daten, Anwendungen, Konfigurationen und Identitäten. Benennen Sie je Dienst einen Fachverantwortlichen. Halten Sie vorhandene Kopien, Speicherorte, Aufbewahrungsfristen, Zugriffsrechte und den letzten dokumentierten Restore-Test fest. Nutzen Sie dafür den [Backup-Selbstcheck](/resources/04-backup-selbstcheck).
+Erstellen Sie ein kompaktes Inventar der kritischen Prozesse, Daten, Anwendungen, Konfigurationen und Identitäten. Benennen Sie je Dienst einen Fachverantwortlichen. Halten Sie vorhandene Kopien, Speicherorte, Aufbewahrungsfristen, Zugriffsrechte und den letzten dokumentierten Restore-Test fest. Nutzen Sie dafür den [Backup-Selbstcheck](https://www.dkschv.ch/wissen/resources/04-backup-selbstcheck.html).
 
 ### Tage 8 bis 14: Schutzlücken im Wiederherstellungsweg schliessen
 
@@ -118,7 +122,7 @@ Prüfen Sie, ob mindestens eine Kopie vom produktiven Zugriff getrennt und eine 
 
 ### Tage 15 bis 21: Ziele und Reihenfolge verbindlich festlegen
 
-Vereinbaren Sie RPO und RTO mit den Prozessverantwortlichen. Legen Sie die Wiederanlaufreihenfolge sowie Akzeptanzkriterien fest. Ergänzen Sie Rollen, Stellvertretungen und Eskalation im Notfallplan. Bei Unsicherheiten über Risiken und Prioritäten hilft eine methodische [Sicherheitsanalyse](/unsere-dienstleistungen/sicherheitsanalyse), die technische Befunde mit den betroffenen Geschäftsprozessen verbindet.
+Vereinbaren Sie RPO und RTO mit den Prozessverantwortlichen. Legen Sie die Wiederanlaufreihenfolge sowie Akzeptanzkriterien fest. Ergänzen Sie Rollen, Stellvertretungen und Eskalation im Notfallplan. Bei Unsicherheiten über Risiken und Prioritäten hilft eine methodische [Sicherheitsanalyse](https://www.dkschv.ch/sicherheitsanalyse.html), die technische Befunde mit den betroffenen Geschäftsprozessen verbindet.
 
 ### Tage 22 bis 30: Wiederherstellung üben und nachsteuern
 
@@ -126,7 +130,7 @@ Führen Sie einen abgegrenzten Restore-Test in einer geeigneten Umgebung durch. 
 
 ## Nächster Schritt
 
-Dokumentieren Sie den Ist-Stand mit dem [Backup-Selbstcheck](/resources/04-backup-selbstcheck) und planen Sie einen abgegrenzten Restore-Test. Wenn Sie Unterstützung bei einer [DKSchV-Sicherheitsanalyse](/unsere-dienstleistungen/sicherheitsanalyse) wünschen, klären Sie Umfang, Annahmen und gewünschte Ergebnisse vorab; eine Analyse garantiert keine Wiederherstellbarkeit.
+Dokumentieren Sie den Ist-Stand mit dem [Backup-Selbstcheck](https://www.dkschv.ch/wissen/resources/04-backup-selbstcheck.html) und planen Sie einen abgegrenzten Restore-Test. Wenn Sie Unterstützung bei einer [DKSchV-Sicherheitsanalyse](https://www.dkschv.ch/sicherheitsanalyse.html) wünschen, klären Sie Umfang, Annahmen und gewünschte Ergebnisse vorab; eine Analyse garantiert keine Wiederherstellbarkeit.
 
 ## Quellen
 
@@ -141,9 +145,10 @@ Dokumentieren Sie den Ist-Stand mit dem [Backup-Selbstcheck](/resources/04-backu
 [9]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Datenschutzverordnung (DSV), Art. 1 bis 3 Datensicherheit und Wiederherstellung"
 [10]: https://csrc.nist.gov/glossary/term/recovery_point_objective "NIST CSRC Glossary – Recovery Point Objective"
 [11]: https://csrc.nist.gov/glossary/term/recovery_time_objective "NIST CSRC Glossary – Recovery Time Objective"
-[12]: https://www.nist.gov/cyberframework/recover "NIST Cybersecurity Framework – Recover"
+[12]: https://www.nist.gov/cyberframework/recover "NIST Cybersecurity Framework – Recover, nicht mehr aktualisierte Zuordnungsseite"
 [13]: https://csrc.nist.gov/pubs/other/2020/04/24/protecting-data-from-ransomware-and-other-data-los/final "NIST NCCoE – Protecting Data from Ransomware and Other Data Loss Events"
 [14]: https://www.bacs.admin.ch/de/notfallkonzept "BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz"
 [15]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, veröffentlicht am 6. Oktober 2026"
 [16]: https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a "CISA – StopRansomware: SafePay Ransomware, 20. Oktober 2026"
 [17]: https://www.bacs.admin.ch/de/26-kmustudie-de "BACS – KMU Cybersicherheit 2026: Cyberkriminalität wird zum Geschäftsrisiko für Schweizer KMU, 22. Oktober 2026"
+[18]: https://www.bacs.admin.ch/de/26w44-de "BACS – Woche 44: Wenn das Heimnetzwerk zum Einfallstor für Cyberkriminelle wird, 3. November 2026"

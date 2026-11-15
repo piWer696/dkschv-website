@@ -1,0 +1,18 @@
+{
+  "url": "https://www.dkschv.ch/wissen/backup-wiederherstellung-testen",
+  "final_url": "https://www.dkschv.ch/wissen/backup-wiederherstellung-testen",
+  "http_status": 200,
+  "request_had_credentials": false,
+  "safe_headers": {
+    "server": "Apache",
+    "last-modified": "Tue, 10 Nov 2026 07:34:25 GMT",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "generator": null,
+  "text_characters": 22218,
+  "login_hinweis": true,
+  "restore_abschnitt": true,
+  "forensik_abschnitt": true,
+  "fachpruefung_hinweis": true,
+  "external_source_link_count": 9
+}

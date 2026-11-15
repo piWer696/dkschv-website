@@ -8,9 +8,9 @@ suchintention: "Informational – Sofortmassnahmen bei Ransomware-Verdacht"
 zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
 autor: "DKSchV Redaktion"
 veröffentlichungsdatum: "01.10.2026"
-stand: "1. November 2026"
-quellenpruefung_umfang: "14 von 14 externen Quellenreferenzen geprüft; BACS-, EDÖB- und Fedlex-Meldewege sowie einschlägige Originalmeldungen seit 18. Oktober 2026 geprüft"
-quellenpruefung_status: "Vollständig für die Quellenreferenzen; Fedlex-Historie und amtliche XML-Fassungen zusätzlich geprüft; interne relative Ziele nicht live geprüft"
+stand: "15. November 2026"
+quellenpruefung_umfang: "18 von 18 externen Quellenreferenzen inhaltlich geprüft; zusätzlich Fedlex-History/XML und einschlägige BACS-/EDÖB-/CISA-Primärmeldungen seit 1. November 2026; Abrufe nach 09:00 CET"
+quellenpruefung_status: "18 Referenzen lesbar; 1 zusätzlicher Ausleseblocker: BACS-KMU-Template vom 11.11.2026 nur als Base64/ZIP, Inhalt ungeprüft; keine Fachfreigabe oder Einzelfallprüfung; interne Ziele nur lokal abgeglichen, nicht live geprüft"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
 
@@ -43,6 +43,8 @@ Trennen Sie sichtbar betroffene Endgeräte und Server unverzüglich vom Netzwerk
 **Nicht neu starten und nicht bereinigen**, solange die Entscheidung über eine forensische Untersuchung offen ist. Ein Neustart oder Reparaturversuch kann flüchtige Spuren im Arbeitsspeicher und weitere Beweismittel beseitigen. Ausschalten ist ein Notbehelf, wenn sich ein Gerät nicht anders vom Netz trennen lässt und eine weitere Ausbreitung droht; auch dann geht möglicherweise flüchtige Evidenz verloren. [1] [5]
 
 Sperren Sie keinen ganzen Betrieb unkoordiniert. Halten Sie fest, welche Fernzugänge, Administrationskonten oder Freigaben technisch betroffen sein könnten, und lassen Sie die technische Einsatzleitung über gezielte Schutzmassnahmen entscheiden. Unkontrollierte globale Passwortwechsel oder Änderungen an zentralen Diensten können die Analyse und den Betrieb zusätzlich erschweren.
+
+Erfassen Sie bei einem geschäftlich genutzten Homeoffice-Gerät auch den Arbeitsort und bekannte Verbindungen zu Heimnetz-Diensten wie einem Netzwerkspeicher. Das BACS warnt seit dem 3. November 2026 vor verwundbaren, aus dem Internet erreichbaren Heimnetz-Diensten und empfiehlt bei einer Infektion, weitere Geräte im selben Netz fachkundig untersuchen zu lassen. Die Meldung betrifft primär Privatnetze: Sie beweist weder eine Infektion Ihres Geschäftsgeräts noch einen Angriff auf das Unternehmensnetz. Geben Sie die Beobachtungen an die zuständige IT weiter; verändern Sie private Router oder andere Geräte nicht unkoordiniert im Zuge der Akutreaktion. [15] [10]
 
 ### 3. Menschen und Geschäftsprozesse schützen
 
@@ -82,11 +84,13 @@ Meldungen verfolgen unterschiedliche Zwecke. Sie ersetzen einander nicht. Prüfe
 
 ### BACS: Pflicht für bestimmte kritische Infrastrukturen, freiwillige Meldung für andere
 
-Für **nicht jedes KMU** besteht allein wegen eines Ransomware-Vorfalls eine allgemeine gesetzliche BACS-Meldepflicht. Meldepflichtig sind die im Informationssicherheitsgesetz und in der Cybersicherheitsverordnung erfassten Behörden und Organisationen kritischer Infrastrukturen, etwa in Energie- oder Trinkwasserversorgung, Transport sowie kantonalen und kommunalen Verwaltungen. Die genaue Einordnung und allfällige Ausnahme müssen im konkreten Fall geprüft werden. [2] [8]
+Für **nicht jedes KMU** besteht allein wegen eines Ransomware-Vorfalls eine allgemeine gesetzliche BACS-Meldepflicht. Meldepflichtig sind die im Informationssicherheitsgesetz und in der Cybersicherheitsverordnung erfassten Behörden und Organisationen kritischer Infrastrukturen, etwa in Energie- oder Trinkwasserversorgung, Transport sowie kantonalen und kommunalen Verwaltungen. Die genaue Einordnung und allfällige Ausnahme müssen im konkreten Fall geprüft werden. [2] [8] [17]
 
 Ist Ihr Unternehmen erfasst und gefährdet der Angriff die Funktionsfähigkeit, führt er zu Manipulation oder Informationsabfluss, blieb er länger unentdeckt oder ist er mit Erpressung, Drohung oder Nötigung verbunden, muss die Meldung innert 24 Stunden nach Entdeckung an das BACS erfolgen. Unbekannte Angaben dürfen die Erstmeldung nicht verzögern; der Gesetzestext verlangt die Ergänzung, sobald neue Informationen vorliegen. [8]
 
 Für die elektronische Übermittlung stellt das BACS ein sicheres System bereit. Die aktuelle BACS-Meldeoberfläche nennt ausserdem `incidents@ncsc.ch` als alternative Übermittlung und ordnet eine solche E-Mail ausdrücklich als fristwahrende Erstmeldung ein. Auf derselben Oberfläche bezeichnet das BACS die Schlussmeldung innert 14 Tagen als nächsten Schritt. Dieser praktische Meldeweg und seine Anforderungen sind im konkreten Fall unmittelbar vor der Übermittlung zu prüfen; sie ändern weder die gesetzliche Einzelfallprüfung noch den Wortlaut von Art. 74e ISG. [2] [8] [11]
+
+Das BACS beschreibt im Cyber Security Hub eine Weiterleitung an weitere Behörden auf Wunsch, etwa an den EDÖB. Daraus folgt keine automatische Erfüllung einer EDÖB-Meldepflicht. Beurteilen Sie Empfänger, Meldeschwelle, benötigte Angaben und die tatsächlich bestätigte Übermittlung für jeden Meldeweg separat. [18] [3] [13]
 
 Auch Organisationen ohne gesetzliche Pflicht können Cybervorfälle dem BACS freiwillig melden. [11] Für akute Gefährdungen oder eine Strafanzeige gelten die zuständigen polizeilichen Kontaktwege. [9]
 
@@ -105,6 +109,8 @@ Der Verantwortliche muss den EDÖB nach Art. 24 DSG **so rasch als möglich** in
 Der EDÖB stellt Verantwortlichen für diese Meldung ein sicheres Online-Formular zur Verfügung; es ist nicht das Kontaktformular für betroffene Personen. Art. 15 DSV konkretisiert die zu erfassenden Angaben: soweit möglich Zeitpunkt und Dauer, Kategorien und ungefähre Anzahl betroffener Daten und Personen, Folgen und Risiken, getroffene oder vorgesehene Massnahmen sowie eine Ansprechperson. Fehlende Angaben sind so rasch als möglich nachzureichen; der Verantwortliche muss die Verletzung mit Tatsachen, Auswirkungen und Massnahmen dokumentieren. [13] [14]
 
 Prüfen Sie diese Schwelle nicht erst nach Abschluss der Technikarbeiten. Der EDÖB weist darauf hin, dass bei Zweifeln, welche ein hohes Risiko nicht mit hinreichender Wahrscheinlichkeit ausschliessen, nicht zugewartet werden darf. Besonders schützenswerte Daten, identifizierende Unterlagen, mögliche Veröffentlichung oder ein nicht ausschliessbarer Abfluss können die Bewertung beeinflussen. **[FACHPRÜFUNG ERFORDERLICH]** Die konkrete Risiko- und Meldebeurteilung sowie Meldetexte brauchen eine Datenschutz- oder Rechtsfachperson; dieser Artikel ersetzt keine individuelle Rechtsberatung. [4]
+
+Technische Eindämmung und Information betroffener Personen sind getrennte Entscheide. Die EDÖB-Mitteilung vom 6. November 2026 zum Urteil A-3790/2024 bestätigt im dortigen Fall, dass nachträgliche technische Massnahmen die erforderliche Betroffeneninformation nicht aufheben. Neu ist die Mitteilung, nicht Art. 24 DSG. Ob eine direkte Information oder ausnahmsweise eine öffentliche Bekanntmachung geeignet und zulässig ist, muss konkret geprüft werden; daraus entsteht keine allgemeine Pflicht jedes KMU zur öffentlichen Bekanntmachung. [16] [3] [4]
 
 Der vertiefende Entscheidungsweg folgt im Beitrag [Datenpanne in der Schweiz: EDÖB oder BACS?](/wissen/datenpanne-melden-schweiz).
 
@@ -136,15 +142,15 @@ Nach der Stabilisierung folgen Ursachenanalyse, Bereinigung, Neuaufbau und prior
 
 Ein nachträglich eingespieltes Sicherheitsupdate schliesst eine bekannte Schwachstelle, ist aber kein Nachweis dafür, dass davor keine Kompromittierung erfolgt ist. Das BACS weist in seiner aktuellen Warnung zu kritischen PHP-Schwachstellen ausdrücklich darauf hin, dass ein Update eine bereits erfolgte Kompromittierung nicht beseitigt. Diese allgemeine Abgrenzung enthält weder eine Aussage über ein bestimmtes Produkt noch eine organisationsspezifische Forensikanweisung. [12]
 
-Dokumentieren Sie Befunde, Entscheidungen, Auswirkungen, Meldewege und offene Risiken in einem Debriefing. NIST empfiehlt, Incident Response in das laufende Cyberrisikomanagement einzubetten, damit Vorbereitung, Erkennung, Reaktion und Wiederherstellung messbar verbessert werden. [7] Eine [Sicherheitsanalyse](/unsere-dienstleistungen/sicherheitsanalyse) kann technische Schwachstellen und blinde Flecken sichtbar machen. Im [Risikomanagement](/unsere-dienstleistungen/risikomanagement) lassen sich geschäftliche Auswirkungen, Eigentümer und Restrisiken verbindlich steuern. Die allgemeinen [Kontaktdaten](/kontakt) gehören zusammen mit Polizei, Versicherer, IT-Provider und Fachpersonen in die offline verfügbare Notfallmappe.
+Dokumentieren Sie Befunde, Entscheidungen, Auswirkungen, Meldewege und offene Risiken in einem Debriefing. NIST empfiehlt, Incident Response in das laufende Cyberrisikomanagement einzubetten, damit Vorbereitung, Erkennung, Reaktion und Wiederherstellung messbar verbessert werden. [7] Eine [Sicherheitsanalyse](https://www.dkschv.ch/sicherheitsanalyse.html) kann technische Schwachstellen und blinde Flecken sichtbar machen. Im [Risikomanagement](https://www.dkschv.ch/risikomanagement.html) lassen sich geschäftliche Auswirkungen, Eigentümer und Restrisiken verbindlich steuern. Die allgemeinen [Kontaktdaten](/kontakt) gehören zusammen mit Polizei, Versicherer, IT-Provider und Fachpersonen in die offline verfügbare Notfallmappe.
 
 ## Nächster Schritt
 
-Nutzen Sie die [60-Minuten-Checkliste](/resources/01-60-minuten-checkliste), um Rollen, Zeitpunkte und offene Entscheide zu dokumentieren. Wenn Sie Unterstützung bei der Vorbereitung Ihres Notfallplans wünschen, können Sie eine [DKSchV-Notfallplanungsleistung](/unsere-dienstleistungen/notfallplanung) anfragen. Umfang und Ergebnis hängen von der vereinbarten Leistung und Ihrer Ausgangslage ab.
+Nutzen Sie die [60-Minuten-Checkliste](https://www.dkschv.ch/wissen/resources/01-60-minuten-checkliste.html), um Rollen, Zeitpunkte und offene Entscheide zu dokumentieren. Wenn Sie Unterstützung bei der Vorbereitung Ihres Notfallplans wünschen, können Sie eine [DKSchV-Notfallplanungsleistung](https://www.dkschv.ch/notfallplanung.html) anfragen. Umfang und Ergebnis hängen von der vereinbarten Leistung und Ihrer Ausgangslage ab.
 
 ## Grenzen dieses Sofortleitfadens
 
-Diese Anleitung ist eine allgemeine operative Orientierung für Schweizer KMU auf dem Stand der Quellenprüfung vom 1. November 2026; dieser Stand ist keine Fachfreigabe. Sie ersetzt weder eine technische Forensik noch eine individuelle rechtliche, datenschutzrechtliche, strafrechtliche, versicherungs- oder sanktionsrechtliche Beratung. **[FACHPRÜFUNG ERFORDERLICH]** Lassen Sie insbesondere die Einstufung als kritische Infrastruktur, die BACS-Meldepflicht, das hohe Risiko nach Art. 24 DSG, Meldetexte und den Umgang mit Lösegeld durch qualifizierte Fachpersonen prüfen. Halten Sie dafür die 60-Minuten-Checkliste und Ihren Entscheidungslog bereit.
+Diese Anleitung ist eine allgemeine operative Orientierung für Schweizer KMU auf dem Stand der Quellenprüfung vom 15. November 2026; dieser Stand ist keine Fachfreigabe. Erreichbare Quellen und allgemeine Empfehlungen belegen keine tatsächliche Einzelfallprüfung. Sie ersetzt weder eine technische Forensik noch eine individuelle rechtliche, datenschutzrechtliche, strafrechtliche, versicherungs- oder sanktionsrechtliche Beratung. **[FACHPRÜFUNG ERFORDERLICH]** Lassen Sie insbesondere die Einstufung als kritische Infrastruktur, die BACS-Meldepflicht, das hohe Risiko nach Art. 24 DSG, Meldetexte und den Umgang mit Lösegeld durch qualifizierte Fachpersonen prüfen. Halten Sie dafür die 60-Minuten-Checkliste und Ihren Entscheidungslog bereit.
 
 ## Quellen
 
@@ -162,3 +168,7 @@ Diese Anleitung ist eine allgemeine operative Orientierung für Schweizer KMU au
 [12]: https://www.bacs.admin.ch/de/warnung-php-de "BACS – Kritische Schwachstellen in PHP: Sicherheitsupdates sofort einspielen, 21. Oktober 2026"
 [13]: https://www.edoeb.admin.ch/de/databreach "EDÖB – DataBreach: Meldung von Datensicherheitsverletzungen durch Verantwortliche"
 [14]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Verordnung über den Datenschutz, Art. 15 Meldung von Verletzungen der Datensicherheit"
+[15]: https://www.bacs.admin.ch/de/26w44-de "BACS – Woche 44: Wenn das Heimnetzwerk zum Einfallstor für Cyberkriminelle wird, 3. November 2026"
+[16]: https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin "EDÖB – Bundesverwaltungsgericht bestätigt Informationspflicht der Onlineshop-Betreiberin, 6. November 2026"
+[17]: https://www.fedlex.admin.ch/eli/cc/2025/169/de "Fedlex – Cybersicherheitsverordnung, Art. 12 Ausnahmen von der Meldepflicht"
+[18]: https://www.bacs.admin.ch/de/wie-muss-gemeldet-werden "BACS – Wie muss gemeldet werden? Weiterleitung auf Wunsch und Meldeprozess"

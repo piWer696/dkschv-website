@@ -381,7 +381,10 @@
       formData.append('email', email);
       formData.append('phone', phone);
       formData.append('requestType', 'Mandanten-Zugang Wissensportal');
-      formData.append('notes', 'Kunde hat Zugang zum DKSchV-Wissensportal angefordert.');
+      formData.append('question', 'Kunde hat Zugang zum geschützten DKSchV-Mandantenbereich und den Fach-Leitfäden angefordert.');
+      formData.append('source', 'DKSchV-Kundenportal (Zugang angefordert)');
+      formData.append('topic', 'Datenschutz oder Datenabfluss');
+      formData.append('urgency', 'Normal');
 
       await fetch(API_LEAD_URL, {
         method: 'POST',

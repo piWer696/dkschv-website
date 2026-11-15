@@ -8,9 +8,9 @@ hauptkeyword: "Schatten-KI KMU"
 zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
 autor: "DKSchV Redaktion"
 veröffentlichungsdatum: "26.11.2026"
-stand: "1. November 2026"
-quellenpruefung_umfang: "15 verwendete Primärquellen – alle Quellenreferenzen dieses Artikels und des zugehörigen Arbeitsmittels direkt geprüft; ergänzt um CISA- und kanadische Behördenorientierungen zu KI-Tokenverbrauch und agentischen Kontrollen"
-quellenpruefung_status: "vollständig für 15/15 zitierte externe Originalquellen – am 1. November 2026 nach 09:00 Europe/Zurich erreichbar und inhaltlich abgeglichen; keine organisations-, anbieter- oder tenantbezogene Freigabe"
+stand: "15. November 2026"
+quellenpruefung_umfang: "17 unterschiedliche zitierte externe Primärquellen des Artikel-/Arbeitsmittel-Paars direkt geöffnet und auf verwendete Aussagen abgeglichen; zusätzlich 11 Fassungs-, Übersichts- und Kontextquellen, davon EDÖB-Newsübersicht ohne auslesbare Meldungsliste"
+quellenpruefung_status: "17/17 zitierte Originalquellen inhaltlich auslesbar; insgesamt 27/28 direkt geöffneten Quellen mit auswertbarem Inhalt am 15. November 2026 nach 09:00 Europe/Zurich; 1 Blocker: EDÖB-Newsübersicht zeigt nur 'werden geladen', Jahresübersicht separat lesbar; keine Fach-, Rechts-, Forensik-, Anbieter-, Produkt- oder Tenantfreigabe"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
 
@@ -36,7 +36,7 @@ Am 16. Oktober 2026 konkretisierten EDÖB und BACS in einer gemeinsamen Kampagne
 
 Der passende Gegenentwurf ist **KI-Governance**: Rollen, Regeln, Freigaben und Kontrollen für die KI-Nutzung. Das freiwillige NIST AI Risk Management Framework bietet eine brauchbare Denkstruktur. Sein Profil für generative KI empfiehlt Nutzungsbedingungen, relevante Rollen sowie Kriterien für das Erfassen und Melden von Vorfällen.[4]
 
-Für ein KMU genügt zunächst: **sehen, entscheiden, schützen, überprüfen**. Führen Sie diesen Kreislauf im [Cyber-Risikomanagement](/unsere-dienstleistungen/risikomanagement); dort gehören auch bewusst akzeptierte Restrisiken hin.
+Für ein KMU genügt zunächst: **sehen, entscheiden, schützen, überprüfen**. Führen Sie diesen Kreislauf im [Cyber-Risikomanagement](https://www.dkschv.ch/risikomanagement.html); dort gehören auch bewusst akzeptierte Restrisiken hin.
 
 ### Hypothetisches Praxisbeispiel: Der hilfreiche Prompt wird zum Datenfluss
 
@@ -61,6 +61,8 @@ Bei Datenbearbeitungen mit voraussichtlich hohem Risiko ist vorab eine Datenschu
 Beginnen Sie nicht mit einer langen Liste verbotener Tools. Erstellen Sie ein **KI-Inventar**: eine zentrale, lebende Übersicht über alle bekannten KI-Werkzeuge, eingebetteten KI-Funktionen in Fachanwendungen, Agenten mit Toolzugriff und geplanten Anwendungsfälle. Das Inventar verbindet die technische Sicht mit dem Geschäftsprozess.[4] [15]
 
 Erfassen Sie mindestens Werkzeug und Anbieter, Eigentümer, Zweck, Datenklassen, Kontotyp, Datenflüsse und Datenorte soweit bekannt, Vertragsunterlagen, Freigabestatus sowie Reviewdatum. Bei Agenten gehören eigene Identität, zugelassene Tools sowie Umfang und Laufzeit der Rechte dazu. Halten Sie auch fest, ob Ausgaben extern verwendet werden oder Entscheidungen beeinflussen.[15]
+
+Erfassen Sie bei Agenten zusätzlich den Auftraggeber und zulässige Weiterdelegationen: Ein Unteragent darf nicht mehr Rechte erhalten als der delegierende Agent. NIST schlägt in seinen «Design Tenets for Agent Identity Management Systems» vom 27. Oktober 2026 eine nachvollziehbare Verknüpfung von Agent, Auftrag und verantwortlicher Person oder Organisation vor. Das ergänzt die bestehenden Identitätskontrollen als freiwillige Orientierung; es ist ein anfänglicher Vorschlag, keine Schweizer Norm.[16]
 
 Kombinieren Sie das Inventar mit vier einfachen **Datenklassen**. Sie sind ein Steuerungsmittel, keine rechtliche Ersatzprüfung:
 
@@ -95,9 +97,11 @@ Untersagt sind mindestens private oder nicht freigegebene Konten für vertraulic
 
 Die Datenschutzverordnung verlangt, Schutzbedarf und Risiko zu bestimmen und geeignete technische sowie organisatorische Massnahmen festzulegen. Ihre Ziele sind Vertraulichkeit, Verfügbarkeit, Integrität und Nachvollziehbarkeit. Zugriff darf nur erhalten, wer ihn für die Aufgabe braucht; Verletzungen sollen rasch erkannt und ihre Folgen gemindert werden können.[5]
 
-Setzen Sie deshalb freigegebene KI-Werkzeuge möglichst über zentral verwaltete Geschäftskonten ein. Erzwingen Sie Mehrfaktor-Authentisierung, beschränken Sie administrative Rollen und überprüfen Sie Berechtigungen regelmässig. Trennen Sie Test- und Produktivzugänge. Regeln Sie, wer neue KI-Funktionen in bestehenden Cloud-Diensten aktivieren darf. Solche Grundkontrollen gehören auch in eine [Sicherheitsanalyse](/unsere-dienstleistungen/sicherheitsanalyse), weil KI sonst eine zusätzliche, unkontrollierte Schnittstelle im vorhandenen Cloud- und Identitätsbestand schafft.
+Setzen Sie deshalb freigegebene KI-Werkzeuge möglichst über zentral verwaltete Geschäftskonten ein. Erzwingen Sie Mehrfaktor-Authentisierung, beschränken Sie administrative Rollen und überprüfen Sie Berechtigungen regelmässig. Trennen Sie Test- und Produktivzugänge. Regeln Sie, wer neue KI-Funktionen in bestehenden Cloud-Diensten aktivieren darf. Solche Grundkontrollen gehören auch in eine [Sicherheitsanalyse](https://www.dkschv.ch/sicherheitsanalyse.html), weil KI sonst eine zusätzliche, unkontrollierte Schnittstelle im vorhandenen Cloud- und Identitätsbestand schafft.
 
 Das BACS empfiehlt seit dem 16. Oktober zusätzlich ausdrücklich, wenn möglich geschäftliche Business- oder Enterprise-Zugänge statt privater Konten zu verwenden sowie Trainingsnutzung und vorhandene Opt-out-Möglichkeiten zu prüfen. Eine einzelne Einstellung oder ein Business-Tarif ist jedoch keine pauschale Datenschutzfreigabe; der konkrete Dienst, seine Datenflüsse und Vertragsbedingungen bleiben zu beurteilen. [12]
+
+Für Agenten konkretisiert der NIST-Vorschlag die technische Durchsetzung: Zugriffsentscheide gehören in eine vom Schlussfolgern des Modells getrennte Kontrollschicht. Eine Prompt-Regel allein genügt dafür nicht. Prüfen Sie, ob jeder Toolaufruf gegen die aktuell erlaubten Rechte kontrolliert wird, Berechtigungen kurzlebig und widerrufbar sind und ein Agent im Ruhezustand keine dauerhaften Privilegien behält. Testen Sie den Rechteentzug während einer laufenden Aufgabe. Halten Sie Agentenidentität, Auftrag, Weiterdelegation und ausgeführte Aktionen in gegen unbemerkte Veränderung geschützten Protokollen fest, die der Agent selbst nicht ändern kann. NIST weist darauf hin, dass nicht alle vorgeschlagenen Grundsätze mit dem heutigen Stand von Standards und Technik sofort erfüllbar sind. Dokumentieren Sie deshalb tatsächliche Fähigkeiten und Lücken statt eine Produktfunktion vorauszusetzen. Diese Sicherheitsorientierung ersetzt keine DSG-, Datenfluss- oder Anbieterprüfung.[16]
 
 Ergänzen Sie technische Kontrollen durch einen kurzen **Prompt-Standard**: keine Passwörter, Schlüssel oder Tokens; keine vollständigen Dossiers oder Personalakten; nur nötige, möglichst anonymisierte Angaben; keine Uploads aus Gewohnheit; Ausgabe vor Weitergabe fachlich prüfen. **Datenverlustprävention (DLP)** bezeichnet Kontrollen, die das unberechtigte Weitergeben sensibler Inhalte erkennen, warnen oder verhindern sollen. Eignung und Verfügbarkeit von DLP, Protokollierung sowie Browser- oder Netzwerkkontrollen sind für Ihre Umgebung zu prüfen. CISA betont robuste Datensicherheit, Risikomanagement, Monitoring und Erkennung über den KI-Lebenszyklus.[6]
 
@@ -107,13 +111,15 @@ Definieren Sie Nachweise für den Freigabestatus: Vertragsunterlagen, Datenflüs
 
 ## Wenn vertrauliche Daten bereits in einen Prompt gelangt sind
 
-Behandeln Sie die Meldung «Ich habe etwas Falsches eingegeben» ruhig und ohne Schuldzuweisung. Nur dann erreicht sie die zuständige Stelle früh genug. Aktivieren Sie Ihre [IT-Notfallplanung](/unsere-dienstleistungen/notfallplanung). Die ausführliche rechtlich-operative Einordnung bietet der Beitrag [Datenpanne in der Schweiz: EDÖB oder BACS?](/wissen/datenpanne-melden-schweiz); die interne Kontaktliste bleibt getrennt von der öffentlich sichtbaren [Kontaktseite](/kontakt).
+Behandeln Sie die Meldung «Ich habe etwas Falsches eingegeben» ruhig und ohne Schuldzuweisung. Nur dann erreicht sie die zuständige Stelle früh genug. Aktivieren Sie Ihre [IT-Notfallplanung](https://www.dkschv.ch/notfallplanung.html). Die ausführliche rechtlich-operative Einordnung bietet der Beitrag [Datenpanne in der Schweiz: EDÖB oder BACS?](/wissen/datenpanne-melden-schweiz); die interne Kontaktliste bleibt getrennt von der öffentlich sichtbaren [Kontaktseite](/kontakt).
 
 1. **Nutzung stoppen und Zugang begrenzen.** Verhindern Sie weitere Eingaben oder Freigaben im betroffenen Konto. Ändern oder sperren Sie Zugangsdaten, Tokens oder Schlüssel, falls solche offengelegt wurden. Löschen Sie keine Belege vorschnell.
 2. **Fakten sichern.** Dokumentieren Sie Zeitpunkt, Konto, Werkzeug, Prompt oder Upload, Datenklasse, betroffene Personen oder Systeme, erzeugte Ausgabe und bereits getroffene Massnahmen. Sichern Sie verfügbare Protokolle und Screenshots nach Ihrem Beweissicherungsprozess.
 3. **Umfang und Datenfluss klären.** Prüfen Sie, welche Daten offengelegt wurden, ob sie gespeichert, exportiert oder durch weitere Empfänger verarbeitet werden konnten und welche Vertrags- oder Dienstinformation dafür relevant ist. Fordern Sie bei Bedarf Unterstützung des Anbieters nach den vereinbarten Wegen an.
 4. **Risiko beurteilen und eskalieren.** Bewerten Sie technische, geschäftliche und datenschutzrechtliche Folgen. Eine Verletzung der Datensicherheit liegt nach DSG vor, wenn Personendaten unbeabsichtigt oder widerrechtlich verloren gehen, verändert werden oder Unbefugten offengelegt beziehungsweise zugänglich gemacht werden.[2]
 5. **Melden, informieren, nacharbeiten.** Führt die Verletzung voraussichtlich zu einem hohen Risiko für Persönlichkeit oder Grundrechte, meldet der Verantwortliche sie dem EDÖB so rasch wie möglich. Betroffene Personen sind zu informieren, wenn dies zu ihrem Schutz erforderlich ist oder der EDÖB es verlangt. Betreiber kritischer Infrastrukturen können zusätzlich einer BACS-Meldepflicht unterliegen.[7] [8]
+
+Technische Eindämmung und Betroffeneninformation sind getrennt zu beurteilen. Am 6. November 2026 berichtete der EDÖB über einen konkreten Onlineshopfall, in dem nachträgliche technische Massnahmen die erforderliche Information nicht ersetzten. Die dort bestätigte öffentliche Bekanntmachung ist keine allgemeine Pflicht für jeden Prompt-Vorfall oder jedes KMU. Ob Information nötig ist und in welcher Form, bleibt eine fachlich zu prüfende Einzelfallfrage.[17]
 
 > **[FACHPRÜFUNG ERFORDERLICH]** Ob ein konkreter Prompt-Vorfall eine meldepflichtige Datensicherheitsverletzung ist, welche Personen zu informieren sind, ob eine BACS-Meldepflicht besteht und welche Ausland- oder Vertragsfragen folgen, ist durch Datenschutz- und gegebenenfalls Rechtsfachpersonen zu beurteilen. Es gibt im Schweizer DSG keine pauschale, für alle Fälle geltende 72-Stunden-Frist.[2] [8]
 
@@ -125,7 +131,7 @@ Das BACS empfiehlt bei Datenabfluss, den Schaden zu begrenzen, die Sicherheitsl�
 
 **Tage 8–14: Daten und Risiken entscheiden.** Beschliessen Sie die vier Datenklassen und die drei Freigabestufen. Prüfen Sie besonders die Anwendungsfälle mit Personen-, Kunden-, Personal- oder vertraulichen Daten. Legen Sie fest, welche Fragen zwingend in eine Fachprüfung und welche ins Risikoregister gehören.
 
-**Tage 15–21: Sichere Nutzung ermöglichen.** Wählen Sie freigegebene Konten und Werkzeuge aus, richten Sie Identitäts- und Berechtigungskontrollen ein und legen Sie für Agenten Toolumfang, minimale Rechte, menschliche Freigabepunkte und Entzug nach Ende der Aufgabe fest.[15] Veröffentlichen Sie die kurze KI-Nutzungsregel. Schulen Sie anhand echter Arbeitssituationen, nicht nur mit abstrakten Verboten. Das druckbare [Arbeitsmittel KI-Nutzungsregel, Version 1.3](/resources/09-ki-nutzungsregel) hilft bei der Einführung.
+**Tage 15–21: Sichere Nutzung ermöglichen.** Wählen Sie freigegebene Konten und Werkzeuge aus, richten Sie Identitäts- und Berechtigungskontrollen ein und legen Sie für Agenten Toolumfang, minimale Rechte, menschliche Freigabepunkte und Entzug nach Ende der Aufgabe fest.[15] Prüfen Sie auch begrenzte Weiterdelegationen, vom Modell getrennte Zugriffsentscheide, Rechteentzug während laufender Aufgaben und unabhängige Protokolle; halten Sie Umsetzungslücken fest.[16] Veröffentlichen Sie die kurze KI-Nutzungsregel. Schulen Sie anhand echter Arbeitssituationen, nicht nur mit abstrakten Verboten. Das druckbare [Arbeitsmittel KI-Nutzungsregel, Version 1.4](https://www.dkschv.ch/wissen/resources/09-ki-nutzungsregel.html) hilft bei der Einführung.
 
 **Tage 22–30: Vorfall und Review testen.** Spielen Sie einen Prompt-Vorfall durch: Wer nimmt die Meldung an? Wo werden Fakten gesichert? Wer beurteilt Datenfluss und Meldepflicht? Welche Nachweise sind verfügbar? Testen Sie bei kritischen KI-Abläufen zusätzlich eine Verbrauchswarnung und den Ausweichablauf bei fehlender KI-Verfügbarkeit.[13] [14] Überführen Sie offene Punkte mit Eigentümer und Termin in das Risikoregister. Legen Sie einen risikobasierten Reviewtermin fest und überprüfen Sie die Regel bei wesentlichen Tool-, Vertrags- oder Datenflussänderungen.
 
@@ -166,3 +172,5 @@ Damit wird Schatten-KI von einem blinden Fleck zu einem führbaren Risiko. Die R
 [13]: https://www.cisa.gov/resources-tools/resources/managing-ai-token-consumption-operational-resilience "CISA – Managing AI Token Consumption for Operational Resilience, 22.10.2026"
 [14]: https://www.cyber.gc.ca/en/guidance/managing-ai-token-consumption-operational-resilience-itsm00125 "Canadian Centre for Cyber Security – Managing AI token consumption for operational resilience"
 [15]: https://www.cyber.gc.ca/en/guidance/careful-adoption-agentic-ai "Canadian Centre for Cyber Security – Careful adoption of agentic AI"
+[16]: https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems "NIST – Design Tenets for Agent Identity Management Systems, Vorschlag vom 27.10.2026"
+[17]: https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin "EDÖB – Datensicherheitsverletzung: Bundesverwaltungsgericht bestätigt Informationspflicht der Onlineshop-Betreiberin, 6.11.2026"

@@ -1,18 +1,18 @@
 ---
 arbeitsmittel: "Lieferantenfragebogen und Priorisierungsmatrix für Cloud-, IT- und kritische Dienstleister"
 passender_artikel: /wissen/lieferantenrisiken-cybersecurity
-version: "1.2"
+version: "1.3"
 status: "Arbeitsvorlage – nicht freigegeben"
 slug: "/resources/11-lieferantenfragebogen"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
-stand: "1. November 2026"
-quellenpruefung_umfang: "Alle neun eindeutigen externen Quellenreferenzen dieses Arbeitsmittels (fünf bestehende, vier neu aufgenommene) sowie die korrespondierenden Originalquellen des passenden Artikels gezielt geprüft; interne Paketlinks nur erhalten, nicht live geprüft."
-quellenpruefung_status: "Alle externen Quellenreferenzen als Originalquellen geprüft; Fedlex-Korrespondenz zusätzlich über Chronologie, Änderungen und amtliche XML-Fassungen geprüft. Vier kontextbezogene Prüfpunkte ergänzt; keine automatische Freigabe, Rechts- oder Tenantentscheidung."
+stand: "15. November 2026"
+quellenpruefung_umfang: "Alle 13 eindeutigen externen Originalreferenzen dieses Arbeitsmittels, neun bestehende und vier neue, sowie alle 16 Originalreferenzen des passenden Artikels direkt inhaltlich geprüft; aktuelle BACS-/Microsoft-Meldungen seit 1. November 2026 und sechs zusätzliche Fedlex-Endpunkte geprüft. Interne Paketziele nur lokal abgeglichen, nicht live geprüft."
+quellenpruefung_status: "13 Arbeitsmittelreferenzen inhaltlich lesbar; BACS-DOCX direkt per ZIP/XML extrahiert. Drei technische Einschränkungen im Verbund: kanadische KI-Quelle per Fetch lesbar, generischer HTTP-Abruf 403; beide Fedlex-Änderungsübersichten nur JavaScript-Hinweis, Chronologien/XML lesbar. Materielle Ergänzungen zu App-Secrets, Fernwartung, Kühlsteuerungen und KI-Artefakten; keine Fach-, Rechts-, Forensik-, Tenant-, Produkt- oder Veröffentlichungsfreigabe."
 ---
 
 # Lieferantenfragebogen und Priorisierungsmatrix
 
-**Version 1.2 · Quellenstand: 1. November 2026 · Arbeitsvorlage – nicht freigegeben**
+**Version 1.3 · Quellenstand: 15. November 2026 · Arbeitsvorlage – nicht freigegeben**
 
 > **[FACHPRÜFUNG ERFORDERLICH]** Auftragsbearbeitung, Auslandbekanntgaben, Geheimhaltung und Vertragsklauseln müssen im Einzelfall durch Datenschutz- und Rechtsfachpersonen geprüft werden.
 
@@ -57,6 +57,10 @@ Für die anschliessende Vertragsprüfung stellt das BACS eine Best-Practice-Unte
 | Kritische Produkte, Komponenten oder Appliances: Produkt/Paket, Einsatzort, zuständiger Betreiber, laufender Stand |  |
 | SaaS-Integration, soweit anwendbar: Anwendung/Mandant, Anwendungs- oder Dienstprinzipal-ID, Rechte/Zustimmungen, Eigentümerschaft |  |
 | KI-gestützter Dienst, soweit anwendbar: unterstützter Prozess, Anbieter/Modell oder Agent, Connectoren/Toolrechte, bekannte Quoten oder Limiten |  |
+| App-Secrets, soweit anwendbar: zuständige Stelle für Schutz, Offenlegungserkennung, Widerruf/Rotation und Kundeninformation; keine Secret-Werte eintragen |  |
+| Fernwartung, soweit anwendbar: zugelassene Managementinstanzen und Verbindungsziele, Erweiterungen, Technikerclients und verantwortliche Stelle |  |
+| Kühl- oder Kältesteuerungen, soweit anwendbar: Anlagen-/Wartungsverantwortung, Modell, Firmware, Supportende, Erreichbarkeit und Ersatzplanung |  |
+| Drittanbieter-KI-Artefakte, soweit anwendbar: Modell-Checkpoint/Fine-Tuning-Daten, Herkunft, Version, verfügbarer Hash und Reviewstatus |  |
 
 ## Teil B – BACS-Lieferantentyp und Abhängigkeit
 
@@ -111,6 +115,10 @@ Für Software, Komponenten und externe Betriebsleistungen verlangen Sie nur bei 
 
 Für hochberechtigte SaaS-Integrationen sind Anwendung, Mandant, Anwendungs- oder Dienstprinzipal, Berechtigungen und Zustimmungen getrennt vom üblichen Lieferantenkontakt zu dokumentieren. Ein Microsoft-Bericht vom 21. Oktober zu bestimmten ConnectWise-Cloudanwendungen begründet keine Vermutung gegen andere Produkte. Er stützt aber die kontextbezogene Prüfung weitreichender App-Berechtigungen, auffälliger anwendungsbasierter Aktivitäten und der Beweissicherung vor irreversiblen Änderungen.[8]
 
+Microsoft beschreibt am 5. November 2026 auch kompromittierte App-Zugangsdaten eines Anbieters mit Zugriff auf nachgelagerte Kundentenants; entsprechende Aktivität begann bereits vor November. Fragen Sie nach dem Secret-Lebenszyklus und der abgestimmten Kundeninformation. Das Entfernen eines Secrets aus einem Repository macht es nicht ungültig; bereits ausgestellte Tokens bleiben laut Quelle bis zum Ablauf gültig. Widerruf/Rotation, historische Nutzung und verbleibende Zugänge sind fachlich zu beurteilen. Weder diese Meldung noch eine Selbstauskunft belegt die Sicherheit oder Betroffenheit Ihrer Integration.[10]
+
+Bei Fernwartung unterscheidet Microsoft am 13. November Managementkonsole und Erweiterungen, Technikerclients sowie Kundenendgeräte. Ein Konsolenupdate bestätigt nicht den Stand jedes Technikerclients; unbefugte Clients und exponierte Sitzungen sind getrennte Vorfallfragen. Die initiale Eintrittsmethode der beschriebenen SCKit-Kampagne bleibt laut Quelle in Untersuchung.[12] Die BACS-Warnung vom 10. November nennt zudem extern gewartete Kühl- und Kältesteuerungen. Prüfen Sie diesen Anlagenkontext nur, wenn er für Ihre Leistung relevant ist; Änderungen erfordern die zuständigen Anlagen- und Sicherheitsfachpersonen.[11]
+
 | Frage an den Lieferanten | Ja | Nein | N. a. | Nachweis / Erläuterung |
 |---|:---:|:---:|:---:|---|
 | Sind die für unsere Leistung eingesetzten Personen zur Vertraulichkeit verpflichtet? | ☐ | ☐ | ☐ |  |
@@ -122,6 +130,10 @@ Für hochberechtigte SaaS-Integrationen sind Anwendung, Mandant, Anwendungs- ode
 | Kann der Lieferant nach einem Sicherheitsupdate den tatsächlich laufenden Stand oder eine gleichwertige Herstellerbestätigung nachweisen? | ☐ | ☐ | ☐ |  |
 | Sind bei einer hochberechtigten SaaS-Integration die Anwendung oder der Dienstprinzipal, Rechte, Zustimmungen, Eigentümerschaft und erforderliche Prüfprotokolle dokumentiert? | ☐ | ☐ | ☐ |  |
 | Können wir den Zugriff im Vorfall oder bei Vertragsende sperren oder beenden? | ☐ | ☐ | ☐ |  |
+| Sind für risikorelevante App-Secrets Schutz, Offenlegungserkennung, Widerruf/Rotation, historische Nutzungsprüfung und Kundeninformation einer zuständigen Stelle zugeordnet? | ☐ | ☐ | ☐ |  |
+| Ist bei einer kompromittierten Anbieterintegration die Prüfung von Kundenberechtigungen, bereits ausgestellten Tokens und weiteren verbliebenen Zugängen abgestimmt? | ☐ | ☐ | ☐ |  |
+| Sind bei Fernwartung zugelassene Instanzen, Verbindungsziele und Erweiterungen sowie die separat überprüften Technikerclient-Stände dokumentiert? | ☐ | ☐ | ☐ |  |
+| Sind bei relevantem Kühlanlagenbetrieb Modell, Firmware, Supportende, direkte oder indirekte Internet-Erreichbarkeit, Fernzugangsweg und Ersatzplanung mit der zuständigen Stelle geklärt? | ☐ | ☐ | ☐ |  |
 
 ### D2. Daten, Unterauftragsbearbeiter und Datenschutz
 
@@ -150,12 +162,15 @@ Die Rollen- und Kontaktangaben sollen im Vorfall nachvollziehbar sein. Die EDÖB
 | Ist bekannt, wie wir Daten oder wesentliche Konfigurationen bei Ausfall oder Vertragsende erhalten? | ☐ | ☐ | ☐ |  |
 | Besteht ein dokumentierter Übergangs- oder manueller Ersatzprozess für einen längeren Ausfall? | ☐ | ☐ | ☐ |  |
 | Wurde der interne Eskalations- und Kontaktweg geprüft oder geübt? | ☐ | ☐ | ☐ |  |
+| Ist bei Verdacht auf kompromittierte Fernwartung ein unabhängiger Vorfallkanal für Kundenendgeräte und Technikerarbeitsplätze vorgesehen, ohne diese Vorlage als Bereinigungsfreigabe zu verwenden? | ☐ | ☐ | ☐ |  |
 
 ---
 
 ### D4. KI-gestützte Dienste, Quoten und Notbetrieb
 
 Füllen Sie diesen Abschnitt nur aus, wenn der Lieferant einen KI-gestützten Dienst, Agenten oder Connector für einen relevanten Prozess bereitstellt. Die kanadische Behördenorientierung vom 22. Oktober beschreibt Quoten- und Tokenerschöpfung als mögliches Kosten- und Verfügbarkeitsrisiko. Sie empfiehlt unter anderem Monitoring, abgestufte Warnungen, die Prüfung von Drittanbieterlimiten und manuelle oder anders unterstützte Ausweichabläufe. Das ist freiwillige ausländische Orientierung, keine Schweizer Rechtsvorgabe.[9]
+
+Für Angebote mit übernommenen Drittanbieter-Modell-Checkpoints oder Fine-Tuning-Daten ergänzt Microsoft am 12. November 2026 Herkunfts- und Integritätskontrollen sowie die Evaluation in der tatsächlichen Agentenkonfiguration. Die zwei Forschungsstudien zu manipulierten Artefakten sind kein Befund gegen alle Anbieter. Klären Sie ausserhalb des Modells durchgesetzte Toolrechte, isolierte Ausführung und menschliche Genehmigung folgenreicher Aktionen; eine gute normale Testantwort ist keine Sicherheitsfreigabe.[13]
 
 | Frage an den Lieferanten | Ja | Nein | N. a. | Nachweis / Erläuterung |
 |---|:---:|:---:|:---:|---|
@@ -164,6 +179,8 @@ Füllen Sie diesen Abschnitt nur aus, wenn der Lieferant einen KI-gestützten Di
 | Bestehen angemessene Monitoring- oder Warnmöglichkeiten für ungewöhnlichen Verbrauch oder sich nähernde Limiten? | ☐ | ☐ | ☐ |  |
 | Ist für den Ausfall, eine Quotenausschöpfung oder unzuverlässige Ergebnisse ein manueller oder anders unterstützter Notbetrieb festgelegt und im Verhältnis zur Kritikalität geprüft? | ☐ | ☐ | ☐ |  |
 | Sind weitreichende Tool- und Connectorrechte auf das für die Aufgabe notwendige Mass beschränkt und überprüfbar? | ☐ | ☐ | ☐ |  |
+| Sind bei übernommenen Drittanbieter-KI-Artefakten Herkunft, Version, verfügbarer Integritätsnachweis und Reviewstatus dokumentiert? | ☐ | ☐ | ☐ |  |
+| Wurde der Agent in der vorgesehenen Konfiguration evaluiert, und bestehen ausserhalb des Modells wirksame Toolgrenzen, isolierte Ausführung und Genehmigung folgenreicher Aktionen? | ☐ | ☐ | ☐ |  |
 
 ---
 
@@ -201,3 +218,7 @@ Das Blatt ersetzt keine rechtliche Beratung. Insbesondere ist eine **[FACHPRÜFU
 [7]: https://www.edoeb.admin.ch/de/edoeb-leitete-nach-cyberangriff-auf-softwarelieferant-abklaerungen-ein "EDÖB – Abklärungen nach Cyberangriff auf Softwarelieferant, 23. Oktober 2026"
 [8]: https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/ "Microsoft – AI-driven large-scale nation-state campaign using ARTEX enables supply chain compromise, 21. Oktober 2026"
 [9]: https://www.cyber.gc.ca/en/guidance/managing-ai-token-consumption-operational-resilience-itsm00125 "Canadian Centre for Cyber Security – Managing AI token consumption for operational resilience, 22. Oktober 2026"
+[10]: https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/ "Microsoft – Threat actors use agentic AI tooling to find and abuse exposed secrets, 5. November 2026"
+[11]: https://www.bacs.admin.ch/de/warnung-kuehlanlagen-de "BACS – Kühl- und Kältesteuerungen: Systeme identifizieren, aktualisieren und schützen, 10. November 2026"
+[12]: https://www.microsoft.com/en-us/security/blog/2026/11/13/sckit-abuses-screenconnect-deploy-remote-access-target-technician-sessions/ "Microsoft – SCKit abuses ScreenConnect to deploy remote access and target technician sessions, 13. November 2026"
+[13]: https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/ "Microsoft – Trained to betray: How post-training supply chain attacks hijack coding agents, 12. November 2026"

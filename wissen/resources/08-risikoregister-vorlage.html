@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="gated-content" id="gatedArticleContent">
+    <div class="gated-content is-locked" id="gatedArticleContent">
       <div class="resource-sheet">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
           <div>
@@ -69,7 +69,7 @@
               Arbeitsvorlage
             </h1>
             <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
-              1.3 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+              1.4 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
             </p>
           </div>
           <img src="../../assets/images/dkschv_logo.svg" alt="DKSchV Schweiz" style="height: 34px;">
@@ -78,7 +78,7 @@
         <div class="article-content" style="font-size: 15px;">
           <div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Datenschutz-, Vertrags- und sektorale Anforderungen sowie die Risikokriterien müssen vor Verwendung durch zuständige Fachpersonen geprüft werden.</div></div>
 <p><strong>Arbeitsmittel zu:</strong> <a href="../it-sicherheitscheck-kmu.html">IT-Sicherheitscheck für Schweizer KMU: So wird aus Befunden ein priorisiertes Cyber-Risikoregister</a></p>
-<p><strong>Version:</strong> 1.3 | <strong>Quellenstand:</strong> 1. November 2026 (Quellenprüfung; keine Fach- oder Rechtsfreigabe)</p>
+<p><strong>Version:</strong> 1.4 | <strong>Quellenstand:</strong> 15. November 2026 (Quellenprüfung; keine Fach- oder Rechtsfreigabe)</p>
 <p><strong>Organisation:</strong> ________________________________</p>
 <p><strong>Register-Verantwortung:</strong> ________________________________</p>
 <p><strong>Letzte Überprüfung:</strong> ________________________________</p>
@@ -95,10 +95,15 @@
 <li>Benennen Sie Risiko- und Massnahmen-Eigentümer. Schliessen Sie eine Zeile erst, wenn das Abnahmekriterium erfüllt und die Restbewertung geprüft ist.</li>
 <li>Legen Sie Top-Risiken dem zuständigen Führungsgremium zur Entscheidung vor und überführen Sie relevante Ausfallszenarien in die Notfallplanung.</li>
 </ol>
+<p><strong>Methodengrenze:</strong> Die CSRM nutzt einen erweiterten Grundschutz und eine qualitative Schutzbedarfsbewertung; das amtliche Dokument vom 24. November 2025 verzichtet ausdrücklich auf eine vollständige Risikoanalyse und Quantifizierung.<sup class="ref-link"><a href="#ref-9">[9]</a></sup> Dieses Register ergänzt die Prozesssicht um Geschäftsentscheide. Seine Skala ist kein offizieller CSRM-Prüfkatalog, keine Zertifizierung und keine Bestätigung erfüllter Anforderungen. Dokumentieren Sie auch Abhängigkeiten zu vorläufig zurückgestellten Schutzobjekten.<sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<p><strong>Nachweise zuordnen:</strong> Notieren Sie Beobachtungsdatum, Schutzobjekt, tatsächlichen Lauf- oder Paketstand, Zugangspfad, Prüfumfang und zuständige Person. Trennen Sie öffentliche Warnung, mögliche Produktbetroffenheit und bestätigten lokalen Befund. Ein Warnungs- oder KEV-Eintrag ersetzt weder die Prüfung der konkreten Instanz noch einen Nachweis ihrer Kompromittierung.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-12">[12]</a></sup> Fehlende Nachweise erhalten einen Klärungsauftrag mit Eigentümer und Termin; «nicht geprüft» bedeutet nicht «nicht betroffen».</p>
+<p><strong>Homeoffice und OT einbeziehen:</strong> Erfassen Sie geschäftliche Zugangspfade und bekannte Grenzen der Netztrennung, wenn private Heimnetze für die Arbeit genutzt werden. Das BACS nennt bei exponierten Heimdiensten Segmentierung, beschränkte Zugriffe, VPN und möglichst einen zweiten Faktor als Schutzpunkte; es liefert keine konkrete Plex-Fixversion.<sup class="ref-link"><a href="#ref-10">[10]</a></sup> Prüfen Sie ausserdem betriebliche Steuerungen samt direkten, indirekten und dienstleisterbetriebenen Fernwartungswegen. Die Warnung zu Kühlanlagen vom 10. November 2026 ist ein Beispiel für mögliche Waren- und Betriebsfolgen, keine Bestätigung der eigenen Gerätebetroffenheit.<sup class="ref-link"><a href="#ref-11">[11]</a></sup> Private Geräte dürfen daraus nicht pauschal als geprüft oder für uneingeschränkte Prüfungen freigegeben gelten.</p>
 <h3 id="zusaetzliche-kontrollpunkte-bei-komponenten-und-ki">Zusätzliche Kontrollpunkte bei Komponenten und KI</h3>
 <p>Ergibt ein Befund eine möglicherweise betroffene eingebettete oder extern betriebene Komponente, erfassen Sie zusätzlich Produkt, Komponente, tatsächlichen Lauf- oder Paketstand, Erreichbarkeit und Betreiber. Verlangen Sie vom Hersteller, Hoster oder Dienstleister eine Fixbestätigung für die konkrete Instanz und prüfen Sie den Nachweis des tatsächlich laufenden, behobenen Stands. Eine reine Hauptversionsangabe genügt bei zurückportierten Sicherheitskorrekturen nicht zwingend.<sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
 <p>Bei einem KI-gestützten Prozess dokumentieren Sie, welche Funktion von dem Dienst abhängt, welche Kapazitäts-, Budget- oder Quotenannahme gilt, ab welchen Schwellen gewarnt wird und wer bei eingeschränkter Verfügbarkeit entscheidet. Ergänzen Sie einen manuellen oder anderen Ausweichablauf, soweit der Prozess kritisch ist. Die Orientierung zu KI-Tokenverbrauch nennt risikobasierte Priorisierung, Monitoring, Warnschwellen sowie Kapazitäts- und Ausweichplanung als mögliche organisatorische Massnahmen.<sup class="ref-link"><a href="#ref-6">[6]</a></sup> <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
 <p>Bei KI-Agenten erfassen Sie zudem die eigene Identität, den konkreten Auftrag, angebundene Daten und Werkzeuge, zulässige Netzwerkverbindungen und mögliche externe Wirkungen. Für Handlungen mit hohem Schadenspotenzial oder geringer Rückgängigkeitsmöglichkeit sind menschliche Freigabe, Protokollierung und ein auf die Aufgabe begrenzter Berechtigungsumfang als mögliche Kontrollen zu beurteilen.<sup class="ref-link"><a href="#ref-8">[8]</a></sup> Diese Punkte sind keine Freigabe eines Agenten und begründen keine Aussage über eine konkrete Schwachstelle oder einen Patchstand.</p>
+<p>Prüfen Sie zusätzlich, welche vom Modell getrennte Stelle Berechtigungsregeln durchsetzt, wie Zugriffe deterministisch entschieden und Rechte widerrufen werden sowie ob der Agent seine eigenen Nachweise verändern kann. Diese Punkte greifen die vorgeschlagenen NIST-Gestaltungsgrundsätze vom 27. Oktober 2026 auf, keinen finalen verbindlichen Standard.<sup class="ref-link"><a href="#ref-17">[17]</a></sup> Die kanadische Orientierung empfiehlt eine vorsichtige Einführung für nicht sensible Aufgaben mit niedrigem Risiko. Eine menschliche Freigabe allein ist keine Legitimation eines Hochrisikoeinsatzes.<sup class="ref-link"><a href="#ref-8">[8]</a></sup></p>
+<p><strong>Datierter Prüfkontext, 15. November 2026:</strong> KEV führt SonicWall CVE-2026-19868 seit 6. November, Apple CVE-2024-27834 seit 4. November und WordPress CVE-2026-119977 seit 3. November 2026.<sup class="ref-link"><a href="#ref-12">[12]</a></sup> Erfassen Sie dies bei passenden Produkten als Prüfauftrag, nicht als bestätigten Befund. Bei SonicWall sind Modellgeneration, Build, SAML und alternative Authentisierung zu prüfen; die Revision vom 9. November ergänzt einen Workaround, dessen Eignung separat fachlich zu beurteilen ist.<sup class="ref-link"><a href="#ref-13">[13]</a></sup> Bei WordPress zählen Versionslinie, Backport und tatsächlich ausgelieferter Hosterstand.<sup class="ref-link"><a href="#ref-14">[14]</a></sup> Bei Apple sind historische CVE-Fixes von aktuellen, gerätespezifischen Sicherheitsreleases zu trennen.<sup class="ref-link"><a href="#ref-15">[15]</a></sup> <sup class="ref-link"><a href="#ref-16">[16]</a></sup> KEV-Fristen sind hier keine Schweizer gesetzlichen Fristen. Keine Produkt-, Patch-, Konfigurations- oder Vorfallfreigabe folgt aus diesem Kontext.</p>
 <h2 id="registerrahmen-und-bewertungsskala">Registerrahmen und Bewertungsskala</h2>
 <p><strong>Zuständiges Entscheidgremium:</strong> ____________________________________________</p>
 <p><strong>Berichtsintervall:</strong> ☐ monatlich ☐ quartalsweise ☐ nach Ereignis ☐ anderes: __________</p>
@@ -118,6 +123,15 @@
 <p><strong>Befundstatus:</strong> ☐ Verdacht ☐ untersucht ☐ bestätigt ☐ anderer: ____________________</p>
 <p><strong>Technischer oder organisatorischer Befund:</strong> _________________________________________</p>
 <p><strong>Evidenz / Quelle / Befund-ID:</strong> ___________________________________________________</p>
+<p><strong>Beobachtungsdatum / Prüfumfang / prüfende Stelle / bekannte Nachweisgrenzen:</strong></p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Exposition:</strong> ☐ direkt aus dem Internet ☐ indirekter Fernzugriff ☐ intern ☐ unbekannt</p>
+<p><strong>Zugangspfad / Netzsegment / Authentisierung / Nachweisdatum:</strong></p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Geschäftlicher Homeoffice- oder OT-Bezug / Betreiber / noch zu klärende Abhängigkeiten:</strong></p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Öffentliche Warnung / Herstellerrevision / CVE und getrenntes Ergebnis der lokalen Modell-, Versions- und Konfigurationsprüfung:</strong></p>
+<p>__________________________________________________________________________________</p>
 <p><strong>Bei eingebetteter oder externer Komponente: Produkt / Komponente / Lauf- oder Paketstand / Betreiber:</strong></p>
 <p>__________________________________________________________________________________</p>
 <p><strong>Betreiber-Fixbestätigung und überprüfter Nachweis (falls einschlägig):</strong></p>
@@ -133,6 +147,8 @@
 <p><strong>Warnschwellen, Ausweichablauf und Entscheidkontakt:</strong></p>
 <p>__________________________________________________________________________________</p>
 <p><strong>Bei KI-Agent (falls einschlägig): Identität / Auftrag / Daten und Werkzeuge / zulässige Netzwerkverbindungen / mögliche externe Wirkung:</strong></p>
+<p>__________________________________________________________________________________</p>
+<p><strong>Unabhängige Berechtigungsdurchsetzung / Widerruf / Schutz der Nachweise vor Agentenänderung, soweit einschlägig:</strong></p>
 <p>__________________________________________________________________________________</p>
 <h3 id="3-bewertung-vor-der-massnahme">3. Bewertung vor der Massnahme</h3>
 <p><strong>Auswirkung (1–4):</strong> ______  <strong>Begründung:</strong> ________________________________________</p>
@@ -162,6 +178,9 @@
 <ul>
 <li>☐ Das Szenario nennt Ursache, Ereignis und geschäftliche Folge; es ist mehr als eine technische Befundbezeichnung.</li>
 <li>☐ Der betroffene Prozess, die Schutzobjekte und die Evidenz sind dokumentiert.</li>
+<li>☐ Befunddatum, Prüfumfang, Exposition und Nachweisgrenzen sind dokumentiert; offene Klärungsaufträge haben Eigentümer und Termin.</li>
+<li>☐ Warnung oder KEV-Kontext sind von lokaler Modell-, Versions-, Konfigurations- und Vorfallprüfung getrennt.</li>
+<li>☐ Geschäftliche Homeoffice- und OT-Abhängigkeiten samt Fernwartungswegen sind beurteilt, soweit einschlägig.</li>
 <li>☐ Auswirkung und Wahrscheinlichkeit sind nach der festgelegten Skala begründet.</li>
 <li>☐ Bestehende Kontrollen sind nachweisbar; ihre Grenzen sind bekannt.</li>
 <li>☐ Risiko-Eigentümer und Massnahmen-Eigentümer sind benannt.</li>
@@ -170,6 +189,7 @@
 <li>☐ Bei einer eingebetteten oder extern betriebenen Komponente sind Betreiber, konkreter Fixnachweis und tatsächlich laufender Stand festgehalten, soweit einschlägig.</li>
 <li>☐ Bei einem KI-gestützten kritischen Prozess sind Kapazitäts- oder Budgetannahmen, Warnschwellen und Ausweichablauf beurteilt, soweit einschlägig.</li>
 <li>☐ Bei einem KI-Agenten sind Identität, Werkzeug- und Netzwerkzugriffe, mögliche externe Wirkungen sowie notwendige menschliche Freigaben beurteilt, soweit einschlägig.</li>
+<li>☐ Bei einem KI-Agenten sind unabhängige Berechtigungsdurchsetzung, Widerruf und Nachweisschutz beurteilt, soweit einschlägig.</li>
 <li>☐ Ein kritisches Ausfallszenario ist in der <a href="../../notfallplanung.html">IT-Notfallplanung</a> berücksichtigt.</li>
 <li>☐ Relevante Datenschutz-, Vertrags- oder sektorale Anforderungen wurden fachlich geprüft.</li>
 </ul>

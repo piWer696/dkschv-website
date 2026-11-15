@@ -1,20 +1,20 @@
 ---
 arbeitsmittel: "NIS2-/DORA-Relevanzmatrix für Schweizer IT-Dienstleister und KMU-Zulieferer"
 passender_artikel: /wissen/nis2-dora-schweiz
-version: "1.3"
+version: "1.4"
 status: "Arbeitsvorlage – nicht freigegeben"
 slug: "/resources/12-nis2-dora-relevanzmatrix"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
-stand: "1. November 2026"
-quellenpruefung_umfang: "Quellenpflegedurchgang vom 1. November 2026: alle sieben Quellenreferenzen dieses Arbeitsmittels und alle 15 Quellenreferenzen des verknüpften Artikels; datierte Fedlex-XML/PDF-Fassung, ISG-Änderungsakt und CSV sowie einschlägige Originalmeldungen seit 18. Oktober 2026 und Vormerkungen vom 25. Oktober geprüft. Ergänzender ISG-Fassungsabgleich anhand Fedlex-History und XML-Fassung vom 1. Oktober 2025 am 1. November 2026 gegen 09:18 CET dokumentiert. Am 8. November 2026 ausschliesslich Fassungskorrektur von Referenz [1] auf dieser bereits geprüften Quelle; keine erneute vollständige Quellenpflege. Der Artikelbezug und interne Paketziele wurden nur lokal geprüft."
-quellenpruefung_status: "Quellenprüfung vom 1. November 2026 dokumentiert: Erstabrufe ca. 09:05–09:12 CET, ergänzender ISG-Fassungsabgleich gegen 09:18 CET (Europe/Zurich). Fassungskorrektur am 8. November 2026 auf bereits am 1. November geprüfter Quelle; kein neuer Quellenabruf und keine erneute vollständige Quellenprüfung. Stand bleibt 1. November 2026; keine Fach-, Vertrags-, Rechts- oder Veröffentlichungsfreigabe"
+stand: "15. November 2026"
+quellenpruefung_umfang: "Acht Matrix- und 16 Artikelreferenzen, zusammen 16 eindeutige externe Endziele, direkt mit fetch geprüft; zusätzlich 20 amtliche Prüfpfade zu Fedlex-History, EU-Akten und Primärmeldungen seit 1. November 2026 samt Vormerkungen vom 8. November. Insgesamt 36 externe URLs; 35 mit benutzbarem Inhalt, ein EUR-Lex-Verfahrenspfad nur mit Ausfall-/Amtsblattersatzseite. ISG-Fassung 1. Oktober 2025 per vorhandener XML und History bestätigt. Artikelbezug und Paket-Artikel-/Ressourcenziele nur lokal geprüft; keine CMS-/Browseroperation."
+quellenpruefung_status: "Tatsächliche fetch-Rückgaben am 15. November 2026, 09:06:18–09:09:11 CET, Europe/Zurich; ergänzende Lektüre gespeicherter Volltexte dokumentiert. Alle 16 Endziele auslesbar; Zusatzblocker: EUR-Lex-Verfahrenspfad nicht inhaltlich auslesbar, amtlicher NIS2-Durchführungs-Volltext separat erfolgreich. Keine vollständige Prüfung nationaler Umsetzungen oder konkreter Unterstellung; keine Fach-, Rechts-, Vertrags-, Forensik-, Tenant-, Produkt- oder Veröffentlichungsfreigabe."
 ---
 
 # NIS2-/DORA-Relevanzmatrix für Schweizer IT-Dienstleister und KMU-Zulieferer
 
 > **[FACHPRÜFUNG ERFORDERLICH]** Der direkte EU-Anwendungsbereich, nationale Umsetzungen und Kundenverträge müssen im Einzelfall durch EU-rechtskundige Fachpersonen geprüft werden.
 
-**Version:** 1. November 2026 (1.3)  
+**Version:** 15. November 2026 (1.4)  
 **Zweck:** Erstorientierung für Geschäftsleitung, IT und Vertrieb zu Schweizer Meldepflichten, möglicher NIS2-Relevanz und DORA-veranlassten Kundenanforderungen.  
 **Geeignet für:** Schweizer Anbieter von IKT-, Cloud-, Managed-, Sicherheits- oder Datendiensten mit EU-Kunden.  
 **Nicht geeignet als:** Rechtsgutachten, Unterstellungsentscheid, Vertragsfreigabe oder Konformitätsbescheinigung.
@@ -92,6 +92,8 @@ __________________________________________________________________
 
 NIS2 ist eine EU-Richtlinie. Sie erfasst als Grundregel mittlere und grössere Einrichtungen bestimmter Arten, die Dienste in der Union erbringen oder dort tätig sind. Zu den relevanten digitalen Kategorien zählen unter anderem Cloudcomputing, Rechenzentren, Inhaltszustellnetze, verwaltete Dienste und verwaltete Sicherheitsdienste. Für bestimmte digitale Anbieter ohne Niederlassung in der EU sieht die Richtlinie bei Diensten in der Union einen EU-Vertreter vor. Die rechtliche Anwendung hängt jedoch vom nationalen Umsetzungsgesetz des jeweiligen Mitgliedstaats ab. [2] [3]
 
+Für die erfassten digitalen Anbieter konkretisiert die bereits 2024 veröffentlichte Durchführungsverordnung (EU) 2024/2690 technische und methodische Risikomanagementanforderungen sowie Kriterien erheblicher Sicherheitsvorfälle. Bei einem möglichen direkten Bezug sind deshalb auch dieser EU-Durchführungsakt und seine Anwendung auf den konkreten Dienst fachjuristisch zu prüfen. Er begründet keine pauschale Unterstellung aller Schweizer KMU und kein allgemeines Lieferanten-SLA. [8]
+
 | Prüffrage | Ja | Nein | Unklar | Tatsachenbeleg / fachjuristische Frage |
 |---|:---:|:---:|:---:|---|
 | Erbringen wir den Dienst in einem oder mehreren EU-Mitgliedstaaten? | ☐ | ☐ | ☐ |  |
@@ -101,6 +103,7 @@ NIS2 ist eine EU-Richtlinie. Sie erfasst als Grundregel mittlere und grössere E
 | Besteht eine EU-Niederlassung; falls ja, in welchem Staat? | ☐ | ☐ | ☐ |  |
 | Falls keine EU-Niederlassung: werden Dienste in der EU erbracht und ist ein EU-Vertreter zu prüfen? | ☐ | ☐ | ☐ |  |
 | Welches nationale NIS2-Umsetzungsgesetz und welche Behörde sind einschlägig? | ☐ | ☐ | ☐ |  |
+| Ist bei möglichem direktem Bezug auch die Durchführungsverordnung (EU) 2024/2690 für unseren Dienst zu prüfen? | ☐ | ☐ | ☐ |  |
 | Sind Risiko-, Vorfall-, Backup-, Lieferanten- und Zugriffsprozesse nachweisbar? | ☐ | ☐ | ☐ |  |
 
 **Zwischenresultat NIS2:**  
@@ -184,3 +187,4 @@ DORA nennt in Artikel 2 sowohl die dort definierten Finanzunternehmen als auch I
 [5]: https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/digital-operational-resilience-act-dora "ESMA – Digital Operational Resilience Act (DORA)"
 [6]: https://www.fedlex.admin.ch/eli/cc/2025/169/de "Fedlex – Cybersicherheitsverordnung, CSV"
 [7]: https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=OJ:L_202500532 "EUR-Lex – Delegierte Verordnung EU 2025/532 zur Unterauftragsvergabe von IKT-Dienstleistungen"
+[8]: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402690 "EUR-Lex – Durchführungsverordnung EU 2024/2690 zu NIS2-Risikomanagement und erheblichen Sicherheitsvorfällen"

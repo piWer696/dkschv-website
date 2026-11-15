@@ -17,7 +17,8 @@ BASE_FIELDS = ['Dateiname', 'Slug', 'Titel', 'Meta-Title', 'Meta-Description',
 EXTRA_FIELDS = ['Letzte gezielte Quellenprüfung', 'Prüfbericht', 'Interne Paketlinks',
                 'Öffentliche Artikel-URL', 'Öffentliche Arbeitsmittel-URL',
                 'CMS-Synchronisierung', 'Fachprüfung', 'Quellenprüfungsumfang',
-                'Quellenprüfungsstatus']
+                'Quellenprüfungsstatus', 'Live-Artikel-Ziel', 'Live-Arbeitsmittel-Ziel',
+                'Live-Arbeitsmittel-HTTP', 'Live-Zielzuordnung', 'Öffentliche Darstellung/Freigabe']
 
 
 def metadata(path: Path) -> dict[str, str]:
@@ -35,6 +36,7 @@ def main() -> None:
     parser.add_argument('--review-date', required=True)
     parser.add_argument('--link-check', type=Path, required=True)
     parser.add_argument('--review-dir', type=Path, required=True)
+    parser.add_argument('--target-map', type=Path)
     parser.add_argument('--cms-status', default='BLOCKIERT – kein authentifizierter CMS-Zugang in diesem Lauf')
     args = parser.parse_args()
     path = ROOT / 'cms-import-manifest.csv'
@@ -44,6 +46,12 @@ def main() -> None:
         raise ValueError('Erwarte exakt zwölf unterschiedliche Artikelzeilen')
     with args.link_check.open(encoding='utf-8', newline='') as handle:
         public = {r['path']: r['public_status'] for r in csv.DictReader(handle)}
+    targets = {}
+    if args.target_map:
+        with args.target_map.open(encoding='utf-8', newline='') as handle:
+            targets = {r['number']: r for r in csv.DictReader(handle) if r['type'] == 'resource'}
+        if len(targets) != 12:
+            raise ValueError('Live-Zielzuordnung muss zwölf eindeutige Ressourcen enthalten')
     date = datetime.strptime(args.review_date, '%Y-%m-%d')
     rows = []
     for record in original:
@@ -79,6 +87,15 @@ def main() -> None:
             'Quellenprüfungsumfang': meta.get('quellenpruefung_umfang', 'Siehe Einzelbericht'),
             'Quellenprüfungsstatus': meta.get('quellenpruefung_status', 'Siehe Einzelbericht'),
         })
+        if number in targets:
+            target = targets[number]
+            record.update({
+                'Live-Artikel-Ziel': target['source_url'],
+                'Live-Arbeitsmittel-Ziel': target['target_url'],
+                'Live-Arbeitsmittel-HTTP': target['target_status'],
+                'Live-Zielzuordnung': str(args.target_map.relative_to(ROOT.parent)),
+                'Öffentliche Darstellung/Freigabe': 'HTTP-Erreichbarkeit ist keine Fachfreigabe; Schutz/Herkunft nicht bestätigt; kein Live-Schreiben in diesem Lauf',
+            })
         months = ('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
                   'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')
         expected_date = f'{date.day}. {months[date.month - 1]} {date.year}'

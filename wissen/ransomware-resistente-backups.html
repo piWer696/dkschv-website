@@ -40,7 +40,7 @@
       }
     },
     "datePublished": "22.10.2026",
-    "dateModified": "1. November 2026"
+    "dateModified": "15. November 2026"
   }
   </script>
 </head>
@@ -110,8 +110,8 @@
       <h1 class="article-page-title">Ransomware-resistente Backups für KMU</h1>
 
       <div class="article-page-meta">
-        <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
-        <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 14 Min.</strong></span>
+        <span class="article-meta-item">📅 Stand: <strong>15. November 2026</strong></span>
+        <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 15 Min.</strong></span>
         <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
         <span class="article-meta-item">🔒 Status: <strong>Mandanten-Bereich</strong></span>
       </div>
@@ -150,7 +150,7 @@
         </div>
 
         <!-- Gated Content: Full Guide, Resources, Tables & References -->
-        <div class="gated-content" id="gatedArticleContent">
+        <div class="gated-content is-locked" id="gatedArticleContent">
           
       <div class="article-resource-box">
         <div class="resource-box-content">
@@ -192,12 +192,14 @@
 <li>Das <strong>Recovery Time Objective (RTO)</strong> ist die maximal vertretbare Dauer der Wiederherstellungsphase, bevor Geschäftsprozesse unvertretbar beeinträchtigt werden. <sup class="ref-link"><a href="#ref-11">[11]</a></sup></li>
 </ul>
 <p>Ein RPO von vier Stunden ist keine Zusage, dass ein Dienst nach vier Stunden läuft. Es legt fest, wie alt der Datenstand höchstens sein darf. Ein RTO von acht Stunden ist keine Eigenschaft einer Backup-Lizenz, sondern ein Ziel für die gesamte Kette: Angriff erkennen, Systeme bereinigen, Infrastruktur bereitstellen, Daten zurückspielen, Zugänge prüfen und den Prozess freigeben. NIST ordnet Wiederherstellungsprozesse dem Ziel zu, Systeme oder Vermögenswerte nach Cybervorfällen zeitgerecht wiederherzustellen. <sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
+<p>Die verwendete NIST-Zuordnungsseite «Recover» wird ausdrücklich nicht mehr aktualisiert. Sie dient hier nur der allgemeinen Begriffseinordnung, nicht als Nachweis einer aktuellen organisationsspezifischen Wiederherstellungsfreigabe. <sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
 <p>Priorisieren Sie daher nicht nach Datenmenge, sondern nach Geschäftswirkung. Die Buchhaltung braucht vielleicht zuerst die Zahlungsfreigabe und Lieferantendaten; die Produktion braucht zuerst die Steuerungs- oder Auftragsdaten; der Vertrieb benötigt möglicherweise Kunden- und Kontaktinformationen. Dokumentieren Sie je Dienst den Eigentümer, Abhängigkeiten wie Identitätsdienst, Netzwerk, Lizenzen und DNS, den RPO, den RTO, den vorgesehenen Wiederherstellungsort und die Abnahme durch den Fachbereich. So verbinden Sie die Backup-Architektur mit einer realistischen <a href="./backup-wiederherstellung-testen.html">Wiederherstellungsübung</a>.</p>
 <h3 id="hypothetisches-praxisbeispiel-was-der-restore-test-sichtbar-macht">Hypothetisches Praxisbeispiel: Was der Restore-Test sichtbar macht</h3>
 <p>Ein hypothetisches Handels-KMU sichert seine Dateidaten jede Nacht und sieht täglich erfolgreiche Jobs. Im Test stellt das Team jedoch fest, dass die Fachanwendung ohne separaten Lizenzserver und ohne die Dokumentation der Firewall-Regeln nicht startet. Zudem kann der externe IT-Provider die Backup-Konsole nur mit einem Konto öffnen, das auch die produktive Domäne verwaltet. Der Test zeigt damit zwei Risiken: Das geplante RTO ist mit dem aktuellen Ablauf nicht erreichbar, und ein kompromittiertes Domänenkonto könnte den Wiederherstellungsweg gefährden.</p>
 <p>Die Lösung ist nicht zwingend ein neues Produkt. Das Unternehmen trennt die Backup-Administration, sichert Konfigurationen und Wiederanlaufdokumente mit, definiert eine saubere Wiederherstellungsumgebung und wiederholt den Test nach der Anpassung. Das Ergebnis wird als Soll-Ist-Vergleich festgehalten. Erst dann ist klarer, ob RPO und RTO plausibel sind.</p>
 <h2 id="wiederherstellungsfaehigkeit-beweisen-nicht-vermuten">Wiederherstellungsfähigkeit beweisen, nicht vermuten</h2>
 <p>Ein vollständiger Test muss nicht jeden Monat die ganze Umgebung lahmlegen. Beginnen Sie mit einem priorisierten, abgegrenzten Szenario: Stellen Sie einen repräsentativen Datensatz oder einen kritischen Dienst in einer isolierten Umgebung wieder her. Prüfen Sie Datenintegrität, Benutzerzugriff, Abhängigkeiten und fachliche Nutzbarkeit. Messen Sie vom Start des Wiederanlaufs bis zur Abnahme durch den Fachbereich. CISA empfiehlt, Wiederherstellung aus Offline-Backups nach der Priorität kritischer Dienste vorzunehmen und saubere Systeme nicht erneut zu infizieren. <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<p>Berücksichtigen Sie auch Homeoffice- und externe Zugangswege, soweit diese für den Dienst relevant sind. Das BACS berichtete am 3. November 2026 über Schadsoftware in privaten Heimnetzen mit aus dem Internet erreichbaren, verwundbaren Diensten. Bei einer Infektion kann eine Neuinstallation nötig sein; auch weitere Geräte im selben Netz sollen untersucht oder von Fachpersonen untersucht werden. Für die Wiederherstellungsplanung ist dies ein Anlass, Heimnetzabhängigkeiten und die Beurteilung der Zielumgebung mit der zuständigen IT zu klären. Die Meldung belegt weder einen Vorfall in Ihrem KMU noch einen sauberen Sicherungsstand oder eine fertige forensische Untersuchung. Sie gibt keine konkrete PHP-/Plex-Version oder Backup-Architektur frei. <sup class="ref-link"><a href="#ref-18">[18]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
 <p>Als aktueller Schweizer Vergleichspunkt berichtete das BACS am 22. Oktober zur Studie «KMU Cybersicherheit 2026»: Neun von zehn KMU erstellen Backups, aber nur jedes vierte testet die Wiederherstellung. Die Studienangabe ist kein Nachweis für die Situation eines einzelnen Unternehmens, bestärkt jedoch den Fokus auf nachweisbare Tests. <sup class="ref-link"><a href="#ref-17">[17]</a></sup></p>
 <p>Der Testnachweis sollte mindestens den gewählten Sicherungsstand, den Start- und Endzeitpunkt, die tatsächlich erreichte Datenaktualität, verwendete Konten, Abweichungen, getroffene Entscheide und offene Massnahmen enthalten. NIST betont, dass Backups durchgeführt, gepflegt und getestet werden müssen; dessen Leitfaden richtet sich ausdrücklich an Dienstleister und ihre Kunden im Kontext von Ransomware und anderen Datenverlustereignissen. <sup class="ref-link"><a href="#ref-13">[13]</a></sup></p>
 <p>Das BACS strukturiert die Notfallvorsorge in Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung. Für KMU stellt es eine Vorlage für einen IT-Notfall- und Krisenplan bereit. <sup class="ref-link"><a href="#ref-14">[14]</a></sup> Verankern Sie darin, wer den Restore autorisiert, wer die Sauberkeit der Zielumgebung beurteilt, wer den Fachtest abnimmt und wie bei einem fehlgeschlagenen Wiederherstellungspunkt entschieden wird. Halten Sie Kontaktwege auch ausserhalb der potenziell betroffenen Systeme bereit; ein zentral gepflegter <a href="../kontakt.html">Kontakt</a> kann dabei als zusätzliche Anlaufstelle dokumentiert werden.</p>
@@ -209,7 +211,7 @@
 <p><strong>«Wir testen später.»</strong> Ungetestete Sicherungen machen RPO und RTO zu Annahmen. Testen Sie nach wesentlichen Architektur-, Anwendungs- oder Provideränderungen und verbessern Sie den Ablauf anhand der Ergebnisse.</p>
 <h2 id="ein-umsetzbarer-30-tage-plan">Ein umsetzbarer 30-Tage-Plan</h2>
 <h3 id="tage-1-bis-7-bestand-und-prioritaeten-klaeren">Tage 1 bis 7: Bestand und Prioritäten klären</h3>
-<p>Erstellen Sie ein kompaktes Inventar der kritischen Prozesse, Daten, Anwendungen, Konfigurationen und Identitäten. Benennen Sie je Dienst einen Fachverantwortlichen. Halten Sie vorhandene Kopien, Speicherorte, Aufbewahrungsfristen, Zugriffsrechte und den letzten dokumentierten Restore-Test fest. Nutzen Sie dafür den <a href="./resources/04-backup-selbstcheck.html">Backup-Selbstcheck</a>.</p>
+<p>Erstellen Sie ein kompaktes Inventar der kritischen Prozesse, Daten, Anwendungen, Konfigurationen und Identitäten. Benennen Sie je Dienst einen Fachverantwortlichen. Halten Sie vorhandene Kopien, Speicherorte, Aufbewahrungsfristen, Zugriffsrechte und den letzten dokumentierten Restore-Test fest. Nutzen Sie dafür den <a href="https://www.dkschv.ch/wissen/resources/04-backup-selbstcheck.html" target="_blank" rel="noopener noreferrer">Backup-Selbstcheck</a>.</p>
 <h3 id="tage-8-bis-14-schutzluecken-im-wiederherstellungsweg-schliessen">Tage 8 bis 14: Schutzlücken im Wiederherstellungsweg schliessen</h3>
 <p>Prüfen Sie, ob mindestens eine Kopie vom produktiven Zugriff getrennt und eine Kopie gegen vorzeitige Veränderung geschützt ist. Reduzieren und trennen Sie Backup-Administrationsrechte. Sichern Sie zusätzlich die für den Wiederanlauf notwendigen Konfigurationen, Installationsmedien, Lizenzen, Schlüssel, Dokumentationen und Kontaktlisten.</p>
 <h3 id="tage-15-bis-21-ziele-und-reihenfolge-verbindlich-festlegen">Tage 15 bis 21: Ziele und Reihenfolge verbindlich festlegen</h3>
@@ -217,7 +219,7 @@
 <h3 id="tage-22-bis-30-wiederherstellung-ueben-und-nachsteuern">Tage 22 bis 30: Wiederherstellung üben und nachsteuern</h3>
 <p>Führen Sie einen abgegrenzten Restore-Test in einer geeigneten Umgebung durch. Vergleichen Sie Ist-Datenstand und Ist-Dauer mit RPO und RTO. Dokumentieren Sie Abweichungen, weisen Sie Massnahmen mit Verantwortlichen und Termin zu und legen Sie den Folgetest fest. Eine periodische Überprüfung ist auch deshalb wichtig, weil sich Anwendungen, Datenmengen, Berechtigungen und Dienstleisterbeziehungen verändern.</p>
 <h2 id="naechster-schritt">Nächster Schritt</h2>
-<p>Dokumentieren Sie den Ist-Stand mit dem <a href="./resources/04-backup-selbstcheck.html">Backup-Selbstcheck</a> und planen Sie einen abgegrenzten Restore-Test. Wenn Sie Unterstützung bei einer <a href="../sicherheitsanalyse.html">DKSchV-Sicherheitsanalyse</a> wünschen, klären Sie Umfang, Annahmen und gewünschte Ergebnisse vorab; eine Analyse garantiert keine Wiederherstellbarkeit.</p>
+<p>Dokumentieren Sie den Ist-Stand mit dem <a href="https://www.dkschv.ch/wissen/resources/04-backup-selbstcheck.html" target="_blank" rel="noopener noreferrer">Backup-Selbstcheck</a> und planen Sie einen abgegrenzten Restore-Test. Wenn Sie Unterstützung bei einer <a href="../sicherheitsanalyse.html">DKSchV-Sicherheitsanalyse</a> wünschen, klären Sie Umfang, Annahmen und gewünschte Ergebnisse vorab; eine Analyse garantiert keine Wiederherstellbarkeit.</p>
 <h2 id="quellen">Quellen</h2>
           
       <div class="references-section">
@@ -321,7 +323,7 @@
           <span class="ref-num">[12]</span>
           <div>
             <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔒 NIST Standard</span>
-            <a href="https://www.nist.gov/cyberframework/recover" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework – Recover</a>
+            <a href="https://www.nist.gov/cyberframework/recover" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework – Recover, nicht mehr aktualisierte Zuordnungsseite</a>
           </div>
         </li>
       
@@ -362,6 +364,14 @@
           <div>
             <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
             <a href="https://www.bacs.admin.ch/de/26-kmustudie-de" target="_blank" rel="noopener noreferrer">BACS – KMU Cybersicherheit 2026: Cyberkriminalität wird zum Geschäftsrisiko für Schweizer KMU, 22. Oktober 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-18">
+          <span class="ref-num">[18]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/26w44-de" target="_blank" rel="noopener noreferrer">BACS – Woche 44: Wenn das Heimnetzwerk zum Einfallstor für Cyberkriminelle wird, 3. November 2026</a>
           </div>
         </li>
       

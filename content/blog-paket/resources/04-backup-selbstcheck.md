@@ -6,14 +6,17 @@ meta_title: "Backup-Selbstcheck für Schweizer KMU | DKSchV"
 meta_description: "Arbeitsvorlage für 3-2-1-Backups, getrennte Administration, geschützte Kopien und dokumentierte Restore-Tests."
 suchintention: "Arbeitsmittel – Backup- und Wiederherstellungsfähigkeit prüfen"
 zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
-version: "Stand 1. November 2026"
-quellenpruefung_umfang: "Alle acht zitierten externen Original-URLs des Arbeitsmittels auf Erreichbarkeit und Aussagegehalt geprüft; interne relative Paketlinks wurden erhalten, nicht als künftige Live-URLs geprüft."
-quellenpruefung_status: "Vollständig für die acht zitierten externen Original-URLs am 1. November 2026, tatsächlicher Abruf ca. 09:05–09:07 CET Europe/Zurich; keine Freigabe und keine lückenlose historische Änderungsverifikation."
+version: "Stand 15. November 2026"
+stand: "15. November 2026"
+quellenpruefung_umfang: "Alle neun zitierten externen Original-URLs direkt abgerufen und im verwendeten Aussageumfang gelesen; gemeinsamer Abgleich mit Artikel 04 umfasst 17 zitierte Original-URLs und 15 Zusatzadressen. DSG/DSV zusätzlich mit vorhandener amtlicher History/XML geprüft. Interne Paketziele nur lokal abgeglichen, nicht live geprüft."
+quellenpruefung_status: "15. November 2026, tatsächliche Fetch-Rückgaben 09:06:14–09:08:35 CET Europe/Zurich: neun zitierte Original-URLs inhaltlich lesbar. Zwei Zusatzblocker: DSG-/DSV-Änderungsseiten liefern nur JavaScript-Hinweis; History/XML lesbar. Keine Fach-, Rechts-, Forensik-, Tenant-, Produkt- oder Veröffentlichungsfreigabe; keine RPO/RTO-, Retention- oder Architekturfreigabe und keine lückenlose historische Änderungsverifikation."
 bezug: "/wissen/ransomware-resistente-backups"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
 
 # Backup-Selbstcheck: Wiederherstellung nach Ransomware vorbereiten
+
+**Arbeitsmittelversion: Stand 15. November 2026.** Die Version bezeichnet die ergänzten Kontroll- und Nachweisfragen, keine fachliche Abnahme.
 
 ## Zweck
 
@@ -21,13 +24,19 @@ Dieser Selbstcheck hilft Geschäftsleitungen und IT-Verantwortlichen von Schweiz
 
 Das Arbeitsmittel ist eine Orientierung für die Priorisierung von Verbesserungen. Ein ausgefüllter Selbstcheck, ein erfolgreiches Backup-Protokoll oder ein einzelner Test sind **keine Garantie** gegen Ransomware, Datenverlust oder Betriebsunterbruch.
 
-Das BACS empfiehlt getrennte Sicherungskopien und regelmässige Wiederherstellungstests. Der internationale StopRansomware-Leitfaden empfiehlt zusätzlich offline gehaltene, geschützte Sicherungen und Integritätsprüfungen.[1] [2]
+Das BACS empfiehlt getrennte Sicherungskopien und regelmässige Wiederherstellungstests. Der internationale StopRansomware-Leitfaden empfiehlt zusätzlich offline gehaltene, geschützte Sicherungen und Integritätsprüfungen. [1] [2]
 
 Bei einem aktuellen Verdacht auf Schadsoftware ist dieser Selbstcheck keine Vorfallsanweisung: Das BACS empfiehlt die Untersuchung durch eine Fachperson und bei Geschäftsgeräten die Information der zuständigen IT. [8]
+
+Der BACS-Bericht vom 3. November 2026 betrifft private Heimnetze mit aus dem Internet erreichbaren, verwundbaren Diensten. Bei einer Infektion kann eine Neuinstallation erforderlich sein; weitere Geräte im selben Netz sollen untersucht oder durch eine Fachperson untersucht werden. Der Bericht ist hier nur ein begrenzter Anlass, Homeoffice-Abhängigkeiten im Wiederherstellungsweg zu erfassen. Er belegt keinen Vorfall im eigenen Unternehmen, keine sauberen Backups und keine abgeschlossene Forensik. Konkrete PHP-/Plex-Fixversionen oder eine zulässige Backup-Architektur werden daraus nicht abgeleitet. [9]
 
 ## Anwendung
 
 Füllen Sie den Selbstcheck gemeinsam mit der internen IT, Prozessverantwortlichen und – falls vorhanden – dem IT-Dienstleister aus. Verwenden Sie pro kritischem Dienst oder Dienstgruppe ein separates Blatt. Belegen Sie Antworten soweit möglich mit einem Datum, einer Konfiguration, einem Testprotokoll oder einem vertraglichen Nachweis.
+
+Halten Sie bei einem «Ja» fest, was genau nachgewiesen ist. Die Zusage eines Dienstleisters, ein Jobprotokoll und ein praktisch beobachteter Restore beantworten unterschiedliche Fragen. Ein Jobprotokoll kann den gewählten Sicherungslauf dokumentieren; daraus folgt noch nicht, dass die Daten für den Fachbereich nutzbar oder die Zielsysteme sauber sind. Notieren Sie deshalb den tatsächlich getesteten Dienst, die Umgebung, den Sicherungsstand und die Grenzen der Beobachtung. BACS und CISA verlangen den Blick auf die Wiederherstellung und regelmässige Tests, nicht nur auf vorhandene Kopien. [1] [2]
+
+Erheben Sie für Heimnetz- und Homeoffice-Bezüge nur die für den Wiederherstellungsweg benötigten Angaben. Vermerken Sie, ob ein geschäftlich genutztes Gerät oder ein notwendiger Fernzugang betroffen sein könnte und wer die weitere Abklärung verantwortet. Eine Unsicherheit ist kein Infektionsnachweis. Nehmen Sie über diesen Selbstcheck keine eigenmächtigen Reparaturen, Löschungen oder Änderungen an privaten Geräten vor. Der Prüfpunkt dient der Abstimmung mit der zuständigen IT; bei Verdacht bleibt eine fachkundige Untersuchung erforderlich. [8] [9]
 
 **Bewertung je Kontrollpunkt:** ☐ Ja  ☐ Teilweise  ☐ Nein  ☐ Nicht bekannt  
 **Nachweis / Fundstelle:** ________________________________________________  
@@ -102,7 +111,7 @@ Letzte Prüfung der Konfiguration: ___________________________________________
 
 ## 5. Wiederherstellungsziele und Reihenfolge
 
-Der **Recovery Point Objective (RPO)** beschreibt den angestrebten Wiederherstellungspunkt und damit den tolerierten Datenverlust in Zeit. Der **Recovery Time Objective (RTO)** beschreibt die angestrebte Zeit bis zur Wiederherstellung.[3] [4]
+Der **Recovery Point Objective (RPO)** beschreibt den angestrebten Wiederherstellungspunkt und damit den tolerierten Datenverlust in Zeit. Der **Recovery Time Objective (RTO)** beschreibt die angestrebte Zeit bis zur Wiederherstellung. [3] [4]
 
 | Kontrollpunkt | Bewertung | Nachweis / Massnahme |
 |---|---|---|
@@ -129,6 +138,11 @@ Der **Recovery Point Objective (RPO)** beschreibt den angestrebten Wiederherstel
 | Der Test prüft Datenstand, Datenintegrität, technische Funktion, Benutzerzugriff und fachliche Nutzbarkeit. | ☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt | __________________________________ |
 | Start, Ende, verwendete Sicherung, erreichte Datenaktualität und Abweichungen werden dokumentiert. | ☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt | __________________________________ |
 | Offene Punkte haben eine verantwortliche Person, einen Termin und einen Nachtest. | ☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt | __________________________________ |
+| Relevante Homeoffice-/Heimnetz- und Fernzugangsabhängigkeiten sind benannt; offene Fragen zur Zielumgebung sind der zuständigen IT zur Abklärung zugewiesen. | ☐ Ja ☐ Teilweise ☐ Nein ☐ Nicht bekannt | __________________________________ |
+
+**Abgrenzung beim neuen Kontrollpunkt:** «Benannt» bedeutet nicht «forensisch untersucht» oder «freigegeben». Erfassen Sie nur, welche Abhängigkeit für den Dienst besteht, welche Erkenntnisse vorliegen und welche konkrete Frage noch offen ist. Das BACS beschreibt Heimnetzinfektionen und die mögliche Untersuchung weiterer Geräte; CISA warnt vor der erneuten Infektion sauberer Systeme während der Wiederherstellung. Diese Orientierungen ersetzen keine Beurteilung der tatsächlichen Umgebung. [9] [2]
+
+Besprechen Sie vor einem Test, wer die Eignung des Wiederherstellungsorts beurteilt und welche Systeme in das Szenario einbezogen werden. Das Testblatt darf dabei nicht als Erlaubnis verstanden werden, eine verdächtige Umgebung mit der letzten Sicherungskopie zu verbinden. Dokumentieren Sie eine offene Beurteilung als Einschränkung und vereinbaren Sie die zuständige Fachstelle. Ein erfolgreicher Dateirestore beweist nur das beobachtete Szenario. Er beweist weder, dass alle Geräte im selben Netz untersucht wurden, noch dass alle für den Geschäftsdienst erforderlichen Abhängigkeiten wieder funktionieren. Die Prüfung sauberer Systeme und die Priorität kritischer Dienste gehören laut CISA in den Wiederanlauf. [2]
 
 **Protokoll des letzten oder nächsten Restore-Tests**  
 Testszenario: ______________________________________________________________  
@@ -160,7 +174,7 @@ Offene Massnahmen / Eigentümer / Termin: ____________________________________
 
 Dieses Arbeitsmittel bildet keine vollständige Sicherheits-, Datenschutz-, Vertrags- oder Risikoanalyse ab. Die passende Lösung hängt insbesondere von Schutzbedarf, Datenarten, Geschäftsprozessen, Infrastruktur, Dienstleistermodell, Wiederherstellungszielen und anwendbaren Aufbewahrungs- oder Löschpflichten ab.
 
-**[FACHPRÜFUNG ERFORDERLICH]** Eine fachliche und bei rechtlichen Fragen fachjuristische Prüfung ist erforderlich, wenn Sie beurteilen müssen, ob Ihre konkrete Backup-Architektur, Aufbewahrungsfrist, Datenbearbeitung oder vertragliche Regelung den Anforderungen des DSG, der Datenschutzverordnung oder weiteren anwendbaren Vorgaben genügt.[5] [6] Der Selbstcheck ersetzt weder einen Restore-Test noch ein IT-Notfallkonzept. Das BACS ordnet Wiederanlauf, Verantwortlichkeiten und Nachbearbeitung in ein umfassendes Notfallkonzept ein.[7]
+**[FACHPRÜFUNG ERFORDERLICH]** Eine fachliche und bei rechtlichen Fragen fachjuristische Prüfung ist erforderlich, wenn Sie beurteilen müssen, ob Ihre konkrete Backup-Architektur, Aufbewahrungsfrist, Datenbearbeitung oder vertragliche Regelung den Anforderungen des DSG, der Datenschutzverordnung oder weiteren anwendbaren Vorgaben genügt. [5] [6] Der Selbstcheck ersetzt weder einen Restore-Test noch ein IT-Notfallkonzept. Das BACS ordnet Wiederanlauf, Verantwortlichkeiten und Nachbearbeitung in ein umfassendes Notfallkonzept ein. [7]
 
 ## Quellen
 
@@ -172,3 +186,4 @@ Dieses Arbeitsmittel bildet keine vollständige Sicherheits-, Datenschutz-, Vert
 [6]: https://www.fedlex.admin.ch/eli/cc/2022/568/de "Fedlex – Datenschutzverordnung (DSV), Art. 1 bis 3 Datensicherheit und Wiederherstellung"
 [7]: https://www.bacs.admin.ch/de/notfallkonzept "BACS – Das Notfallkonzept als Schlüssel zur Cyberresilienz"
 [8]: https://www.bacs.admin.ch/de/26w40-de "BACS – Woche 40: Mythen zu Schadsoftware und Massnahmen bei Verdacht auf eine Infektion, veröffentlicht am 6. Oktober 2026"
+[9]: https://www.bacs.admin.ch/de/26w44-de "BACS – Woche 44: Wenn das Heimnetzwerk zum Einfallstor für Cyberkriminelle wird, 3. November 2026"

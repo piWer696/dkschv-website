@@ -1,0 +1,326 @@
+{
+  "timestamp": "2026-11-15T09:20:58+01:00",
+  "scope": "Nur lokale Markdown-Linkziele; logische Slugs, SEO, Status, Quellenstand und Fachmarker erhalten; keine Live-Änderung",
+  "changes": [
+    {
+      "file": "articles/01-ransomware-erste-60-minuten.md",
+      "links": [
+        {
+          "before": "/resources/01-60-minuten-checkliste",
+          "after": "https://www.dkschv.ch/wissen/resources/01-60-minuten-checkliste.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/02-ceo-betrug-business-email-compromise.md",
+      "links": [
+        {
+          "before": "/resources/02-zahlungspruefprotokoll",
+          "after": "https://www.dkschv.ch/wissen/resources/02-zahlungspruefprotokoll.html",
+          "count": 2
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 2
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/03-datenpanne-melden-schweiz.md",
+      "links": [
+        {
+          "before": "/resources/03-datenpanne-entscheidungsbaum",
+          "after": "https://www.dkschv.ch/wissen/resources/03-datenpanne-entscheidungsbaum.html",
+          "count": 2
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 2
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/04-ransomware-resistente-backups.md",
+      "links": [
+        {
+          "before": "/resources/04-backup-selbstcheck",
+          "after": "https://www.dkschv.ch/wissen/resources/04-backup-selbstcheck.html",
+          "count": 2
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 2
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/05-microsoft-365-mfa-passkeys.md",
+      "links": [
+        {
+          "before": "/resources/05-passkey-rollout-checkliste",
+          "after": "https://www.dkschv.ch/wissen/resources/05-passkey-rollout-checkliste.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 2
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/06-microsoft-365-sicherheit-kmu.md",
+      "links": [
+        {
+          "before": "/resources/06-m365-tenant-pruefliste",
+          "after": "https://www.dkschv.ch/wissen/resources/06-m365-tenant-pruefliste.html",
+          "count": 2
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/07-backup-wiederherstellung-testen.md",
+      "links": [
+        {
+          "before": "/resources/07-restore-testprotokoll",
+          "after": "https://www.dkschv.ch/wissen/resources/07-restore-testprotokoll.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/08-it-sicherheitscheck-kmu.md",
+      "links": [
+        {
+          "before": "/resources/08-risikoregister-vorlage",
+          "after": "https://www.dkschv.ch/wissen/resources/08-risikoregister-vorlage.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/09-schatten-ki-kmu.md",
+      "links": [
+        {
+          "before": "/resources/09-ki-nutzungsregel",
+          "after": "https://www.dkschv.ch/wissen/resources/09-ki-nutzungsregel.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/10-cyberangriff-kommunikation.md",
+      "links": [
+        {
+          "before": "/resources/10-holding-statement-vorlage",
+          "after": "https://www.dkschv.ch/wissen/resources/10-holding-statement-vorlage.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/11-lieferantenrisiken-cybersecurity.md",
+      "links": [
+        {
+          "before": "/resources/11-lieferantenfragebogen",
+          "after": "https://www.dkschv.ch/wissen/resources/11-lieferantenfragebogen.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "articles/12-nis2-dora-schweiz.md",
+      "links": [
+        {
+          "before": "/resources/12-nis2-dora-relevanzmatrix",
+          "after": "https://www.dkschv.ch/wissen/resources/12-nis2-dora-relevanzmatrix.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "resources/08-risikoregister-vorlage.md",
+      "links": [
+        {
+          "before": "/unsere-dienstleistungen/sicherheitsanalyse",
+          "after": "https://www.dkschv.ch/sicherheitsanalyse.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        },
+        {
+          "before": "/unsere-dienstleistungen/notfallplanung",
+          "after": "https://www.dkschv.ch/notfallplanung.html",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "resources/09-ki-nutzungsregel.md",
+      "links": [
+        {
+          "before": "/unsere-dienstleistungen/risikomanagement",
+          "after": "https://www.dkschv.ch/risikomanagement.html",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

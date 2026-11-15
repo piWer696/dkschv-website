@@ -1,13 +1,13 @@
 ---
 arbeitsmittel: "KI-Nutzungsregel für Schweizer KMU"
 passender_artikel: /wissen/schatten-ki-kmu
-version: "1.3"
+version: "1.4"
 status: "Arbeitsvorlage – nicht freigegeben"
 slug: "/resources/09-ki-nutzungsregel"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
-stand: "1. November 2026"
-quellenpruefung_umfang: "15 verwendete Primärquellen – alle Quellenreferenzen dieses Arbeitsmittels und des zugehörigen Artikels direkt geprüft; ergänzt um CISA- und kanadische Behördenorientierungen zu KI-Tokenverbrauch und agentischen Kontrollen"
-quellenpruefung_status: "vollständig für 15/15 zitierte externe Originalquellen – am 1. November 2026 nach 09:00 Europe/Zurich erreichbar und inhaltlich abgeglichen; keine organisations-, anbieter- oder tenantbezogene Freigabe"
+stand: "15. November 2026"
+quellenpruefung_umfang: "17 unterschiedliche zitierte externe Primärquellen des Artikel-/Arbeitsmittel-Paars direkt geöffnet und auf verwendete Aussagen abgeglichen; zusätzlich 11 Fassungs-, Übersichts- und Kontextquellen, davon EDÖB-Newsübersicht ohne auslesbare Meldungsliste"
+quellenpruefung_status: "17/17 zitierte Originalquellen inhaltlich auslesbar; insgesamt 27/28 direkt geöffneten Quellen mit auswertbarem Inhalt am 15. November 2026 nach 09:00 Europe/Zurich; 1 Blocker: EDÖB-Newsübersicht zeigt nur 'werden geladen', Jahresübersicht separat lesbar; keine Fach-, Rechts-, Forensik-, Anbieter-, Produkt- oder Tenantfreigabe"
 ---
 
 # KI-Nutzungsregel für Schweizer KMU
@@ -16,7 +16,7 @@ quellenpruefung_status: "vollständig für 15/15 zitierte externe Originalquelle
 
 > **Druckhinweis:** Prüfen Sie vor dem Druck, ob Umfang und Layout für Ihre Verwendung geeignet sind. Legen Sie den Freigabestand zentral ab. Die Vorlage ist eine Orientierung, keine individuelle Rechtsberatung und keine Zusicherung von Datenschutz- oder Informationssicherheit.
 
-**Arbeitsmittelversion 1.3 · Stand: 1. November 2026 · Status: Arbeitsvorlage – nicht freigegeben**
+**Arbeitsmittelversion 1.4 · Stand: 15. November 2026 · Status: Arbeitsvorlage – nicht freigegeben**
 
 ## Zweck
 
@@ -79,6 +79,7 @@ Das BACS empfiehlt geschäftliche Business- oder Enterprise-Zugänge statt priva
 ☐ Datenort, Empfänger, Vertrag, Datenbearbeitung im Auftrag und Schutzmassnahmen müssen geprüft werden.  
 ☐ Für einen Agenten sind eigene Identität, zulässige Tools, minimale Rechte, Umfang und gegebenenfalls Laufzeit dokumentiert.  
 ☐ Für folgenreiche oder schwer rückgängig zu machende Aktionen ist ein menschlicher Freigabepunkt durch die zuständige Stelle bestimmt; der Agent entscheidet nicht selbst darüber. [11]  
+☐ Auftraggeber und zulässige Weiterdelegationen sind dokumentiert; Unteragenten erhalten nie mehr Rechte als der delegierende Agent. [12]  
 ☐ Die zuständige Stelle hat den Anwendungsfall schriftlich freigegeben.
 
 ### Untersagte Nutzung
@@ -104,6 +105,8 @@ Nutzen Sie diese Felder für jede freigabepflichtige Nutzung. Bei voraussichtlic
 | Datenfluss, bekannte Datenorte und Empfänger |  |
 | Konto- und Berechtigungsmodell |  |
 | Bei Agenten: eigene Identität, zulässige Tools, minimale Rechte, Umfang und Laufzeit |  |
+| Bei Agenten: Auftraggeber, Auftragsgrenzen und zulässige Weiterdelegationen ohne Rechteausweitung [12] |  |
+| Bei Agenten: unabhängige Zugriffskontrolle, kurzlebige Rechte, getesteter Widerruf und Umsetzungslücken [12] |  |
 | Vertrag / Auftragsbearbeitung / Unterauftragsbearbeitung geprüft durch |  |
 | Auslandbekanntgabe fachlich geprüft durch |  |
 | Notwendige technische Schutzmassnahmen |  |
@@ -119,6 +122,8 @@ Nutzen Sie diese Felder für jede freigabepflichtige Nutzung. Bei voraussichtlic
 
 Das NIST-Profil für generative KI ordnet Governance, Risikobewertung, Überwachung und Vorfallprozesse als zusammenhängende Aufgaben ein.[4]
 
+Die NIST-«Design Tenets for Agent Identity Management Systems» vom 27. Oktober 2026 sind ein anfänglicher Vorschlag und freiwillige Sicherheitsorientierung, keine Schweizer Norm. Sie ergänzen die bestehenden Kontrollen um begrenzte Delegation, vom Modell getrennte Zugriffsentscheide, kurzlebige und widerrufbare Rechte sowie unabhängige Nachweise. Laut NIST sind nicht alle Grundsätze mit dem heutigen Stand von Standards und Technik sofort erfüllbar. Dokumentieren Sie deshalb tatsächliche Umsetzung und Lücken; eine ausgefüllte Checkliste bestätigt keine Herstellerfunktion, Datensicherheit oder DSG-Konformität.[12]
+
 Die CISA-verlinkte Behördenorientierung vom 22. Oktober 2026 behandelt KI-Tokenverbrauch als Kosten- und Verfügbarkeitsrisiko. Sie empfiehlt unter anderem priorisierte Nutzung, effiziente Abläufe, Warnschwellen, Monitoring und Ausweichabläufe für wichtige Prozesse. Diese Kontrollen ersetzen nicht die Prüfung von Datenklasse, zulässigen Eingaben, Toolrechten oder Datenschutz.[9] [10]
 
 | Kontrollpunkt | Erledigt | Nachweis / Bemerkung |
@@ -128,6 +133,10 @@ Die CISA-verlinkte Behördenorientierung vom 22. Oktober 2026 behandelt KI-Token
 | Zugriffsrechte folgen dem Prinzip der geringsten Berechtigung. | ☐ |  |
 | Bei Agenten sind Identität, zugelassene Tools sowie minimale Rechte, Umfang und gegebenenfalls Laufzeit einzeln festgelegt. [11] | ☐ |  |
 | Menschliche Freigaben vor folgenreichen oder schwer rückgängig zu machenden Agentenaktionen sind festgelegt und getestet. [11] | ☐ |  |
+| Agentenauftrag und Weiterdelegationen sind nachvollziehbar; Unteragenten können keine zusätzlichen Rechte beanspruchen. [12] | ☐ |  |
+| Eine vom Modell getrennte technische Kontrolle entscheidet regelbasiert über jeden Toolzugriff anhand aktuell zulässiger Rechte; eine Prompt-Regel allein genügt nicht. [12] | ☐ |  |
+| Agentenrechte sind kurzlebig und widerrufbar, ohne dauerhafte Privilegien im Ruhezustand; der Entzug während laufender Aufgaben ist getestet oder als Lücke erfasst. [12] | ☐ |  |
+| Protokolle zu Identität, Auftrag, Delegation und Aktionen sind gegen unbemerkte Änderung geschützt und für den Agenten nicht veränderbar; Umfang und Aufbewahrung sind geprüft. [12] | ☐ |  |
 | Datenminimierung und gegebenenfalls Anonymisierung wurden geprüft. | ☐ |  |
 | Datenfluss, Empfänger, Datenorte und vertragliche Unterlagen wurden geprüft. | ☐ |  |
 | Trainings-/Weiterverwendungsoptionen und vorhandener Opt-out sind geprüft und dokumentiert. [7] | ☐ |  |
@@ -144,6 +153,8 @@ Die CISA-verlinkte Behördenorientierung vom 22. Oktober 2026 behandelt KI-Token
 **Sofort handeln, nicht beschönigen.** Frühzeitige Meldung dient dem Schutz von Personen und Unternehmen. Die Meldung einer Person ist keine Schuldzuweisung.
 
 Bei einem Datenabfluss empfiehlt das BACS, den Schaden zu begrenzen, die Sicherheitslücke zu finden und zu schliessen sowie weitere Abflüsse zu verhindern. Verschaffen Sie sich einen Überblick über potenziell abgeflossene Daten und das damit verbundene Risiko.[5]
+
+Technische Eindämmung ersetzt die Prüfung einer Betroffeneninformation nicht. Die EDÖB-Mitteilung vom 6. November 2026 bestätigt dies anhand eines konkreten Onlineshopfalls. Daraus folgt keine allgemeine Pflicht zur öffentlichen Bekanntmachung für jeden Prompt-Vorfall; Notwendigkeit, Adressaten und Form bleiben fachlich zu beurteilen.[13]
 
 1. ☐ Keine weiteren Eingaben, Uploads oder Freigaben vornehmen; betroffene Nutzung stoppen.
 2. ☐ Zugangsdaten, Token oder Schlüssel umgehend sperren oder ersetzen, falls diese offengelegt wurden.
@@ -169,6 +180,7 @@ Bei einem Datenabfluss empfiehlt das BACS, den Schaden zu begrenzen, die Sicherh
 | Sind Datenklassen und Freigabestufen verständlich und bekannt? | ☐ | ☐ |  |
 | Sind Konten, Berechtigungen und Protokolle überprüft? | ☐ | ☐ |  |
 | Sind bei Agenten Toolrechte, Laufzeiten und menschliche Freigabepunkte überprüft? [11] | ☐ | ☐ |  |
+| Sind Auftraggeber, Delegationsgrenzen, unabhängige Zugriffsentscheide, Rechteentzug und geschützte Protokolle für Agenten überprüft und Lücken nachgeführt? [12] | ☐ | ☐ |  |
 | Sind Verbrauchstrends, Budgets, Warnungen und Ausweichabläufe überprüft? [9] [10] | ☐ | ☐ |  |
 | Wurden Vorfälle, neue Datenflüsse oder Vertragsänderungen nachgeführt? | ☐ | ☐ |  |
 | Ist die nächste Schulung oder Information geplant? | ☐ | ☐ |  |
@@ -181,7 +193,7 @@ Bei einem Datenabfluss empfiehlt das BACS, den Schaden zu begrenzen, die Sicherh
 
 Diese Vorlage fasst organisatorische und technische Kontrollpunkte zusammen. Sie berücksichtigt weder branchenspezifische Geheimhaltungspflichten noch Verträge, kantonales Recht, EU-Recht oder den konkreten Funktionsumfang eines bestimmten KI-Produkts vollständig. Das Schweizer DSG ist auf KI-gestützte Bearbeitungen von Personendaten direkt anwendbar; bei hohem Risiko ist eine Datenschutz-Folgenabschätzung zu prüfen. Datenschutz- und Datensicherheitsmassnahmen müssen risikobasiert festgelegt und überprüft werden.[1] [2] [3]
 
-Weiterführender Artikel: [Schatten-KI im Schweizer KMU: Generative KI sicher nutzen](/wissen/schatten-ki-kmu). Für eine fachliche Begleitung bei Inventar, Datenflüssen und Risikoregeln: [DKSchV-Risikomanagement](/unsere-dienstleistungen/risikomanagement).
+Weiterführender Artikel: [Schatten-KI im Schweizer KMU: Generative KI sicher nutzen](/wissen/schatten-ki-kmu). Für eine fachliche Begleitung bei Inventar, Datenflüssen und Risikoregeln: [DKSchV-Risikomanagement](https://www.dkschv.ch/risikomanagement.html).
 
 ## Quellen
 
@@ -196,3 +208,5 @@ Weiterführender Artikel: [Schatten-KI im Schweizer KMU: Generative KI sicher nu
 [9]: https://www.cisa.gov/resources-tools/resources/managing-ai-token-consumption-operational-resilience "CISA – Managing AI Token Consumption for Operational Resilience, 22.10.2026"
 [10]: https://www.cyber.gc.ca/en/guidance/managing-ai-token-consumption-operational-resilience-itsm00125 "Canadian Centre for Cyber Security – Managing AI token consumption for operational resilience"
 [11]: https://www.cyber.gc.ca/en/guidance/careful-adoption-agentic-ai "Canadian Centre for Cyber Security – Careful adoption of agentic AI"
+[12]: https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems "NIST – Design Tenets for Agent Identity Management Systems, Vorschlag vom 27.10.2026"
+[13]: https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin "EDÖB – Datensicherheitsverletzung: Bundesverwaltungsgericht bestätigt Informationspflicht der Onlineshop-Betreiberin, 6.11.2026"

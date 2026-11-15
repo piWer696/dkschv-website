@@ -8,15 +8,15 @@ hauptkeyword: "IT-Sicherheitscheck KMU"
 zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
 autor: "DKSchV Redaktion"
 veröffentlichungsdatum: "19.11.2026"
-stand: "1. November 2026"
-quellenpruefung_umfang: "Alle 13 Quellenreferenzen dieses Artikels (12 eindeutige Original-URLs) und alle 8 Quellenreferenzen des zugehörigen Arbeitsmittels direkt geprüft; zusätzlich Fedlex-Chronologien und amtliche XML-Fassungen sowie einschlägige BACS- und CISA-Originalmeldungen bis 27. Oktober 2026 abgeglichen."
-quellenpruefung_status: "Vollständig für alle externen Quellenreferenzen und die dokumentierten einschlägigen Originalmeldungen; interne relative Paketlinks erhalten, nicht als künftige Live-URLs geprüft."
+stand: "15. November 2026"
+quellenpruefung_umfang: "22 Artikelreferenzen mit 21 eindeutigen Original-URLs und 17 Arbeitsmittelreferenzen direkt abgerufen und hinsichtlich der zitierten Aussagen gelesen; insgesamt 32 Original-URLs einschliesslich Fedlex-History/XML und gezieltem BACS-/KEV-/Herstellerabgleich seit 1. November sowie NIST-Vormerkung vom 27. Oktober. Tatsächliche Rückgaben am 15. November nach 09:00 CET."
+quellenpruefung_status: "21 zitierte Original-URLs inhaltlich auslesbar; von 11 ergänzenden Original-URLs 10 auslesbar, 1 BACS-KMU-DOCX nur als kodierter Binärtext, Inhalt nicht geprüft. Ausgabegrenzen bei langen Quellen dokumentiert. Keine Fach-, Rechts-, Forensik-, Produkt- oder Einzelfallfreigabe; interne Paketziele nicht live und kein CMS geprüft."
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
 
 # IT-Sicherheitscheck für Schweizer KMU: So wird aus Befunden ein priorisiertes Cyber-Risikoregister
 
-**Stand:** 1. November 2026 (Quellenprüfung; keine Fach- oder Rechtsfreigabe)
+**Stand:** 15. November 2026 (Quellenprüfung; keine Fach- oder Rechtsfreigabe)
 
 > **[FACHPRÜFUNG ERFORDERLICH]** Die datenschutzrechtliche Einordnung, sektorale Vorgaben und die organisationsspezifische Risikotoleranz müssen vor Veröffentlichung durch zuständige Fachpersonen geprüft werden.
 
@@ -44,13 +44,21 @@ Ordnen Sie jedem wichtigen Objekt einen **fachlichen Eigentümer** zu. Das ist d
 
 Das BACS empfiehlt in seiner Methode, Prozesse zu analysieren, zugehörige Informatikmittel zu Schutzobjekten zusammenzufassen und deren Schutzbedarf zu bestimmen. Es lässt ausdrücklich ein prioritätsgesteuertes, iteratives Vorgehen zu, wenn zunächst die wichtigsten Prozesse und Schutzobjekte behandelt werden.[1] Für ein KMU ist das ein praktikabler Einstieg: Kritische Abhängigkeiten werden sichtbar, ohne dass die Arbeit auf ein perfektes Inventar warten muss.
 
+Die CSRM ist dabei nicht mit einer vollständigen Risikoanalyse gleichzusetzen. Das amtliche Methodendokument vom 24. November 2025 verzichtet ausdrücklich auf eine vollständige Risikoanalyse und Quantifizierung; es verbindet einen erweiterten Grundschutz mit qualitativer Schutzbedarfsbewertung und zusätzlichen Massnahmen.[14] Das hier vorgeschlagene Register ergänzt diese Prozesssicht um dokumentierte Geschäftsentscheide. Seine Bewertungsskala ist weder ein offizieller CSRM-Prüfkatalog noch ein Nachweis, dass alle Anforderungen erfüllt sind. Auch bei einem schrittweisen Einstieg müssen Abhängigkeiten zwischen zunächst behandelten und zurückgestellten Schutzobjekten sichtbar bleiben.[1]
+
 Berücksichtigen Sie dabei auch externe Abhängigkeiten. Ein Cloud-Dienst, eine Fernwartung, eine Zahlungsplattform oder ein Softwarepartner kann für den Geschäftsprozess genauso kritisch sein wie ein eigener Server. Halten Sie fest, wer administrativen Zugriff hat, welche Daten betroffen sind, ob es Alternativen gibt und wie ein Ausfall gemeldet wird.
+
+Zum Geschäftskontext gehört auch das Homeoffice, soweit dort geschäftliche Geräte oder Zugänge genutzt werden. Das BACS berichtete am 3. November 2026 über kompromittierte private Heimnetze und die gefährliche Kombination aus erreichbaren Diensten und nicht geschlossenen Sicherheitslücken.[15] Erfassen Sie den geschäftlichen Zugangspfad, zuständige Betreiber und bekannte Grenzen der Netztrennung. Port-Weiterleitungen exponieren einzelne Dienste, nicht automatisch das ganze Heimnetz. Die BACS-Empfehlungen zu getrennten Netzsegmenten, beschränktem Zugriff, VPN und möglichst einem zweiten Faktor sind Prüfpunkte, keine Garantie eines sicheren Fernzugangs. Prüfen Sie geschäftliche Abhängigkeiten mit der zuständigen IT, ohne daraus eine uneingeschränkte Prüfung privater Heimgeräte abzuleiten. Die Meldung liefert weder eine konkrete Plex-Fixversion noch einen Befund zu Ihrem KMU.[15]
+
+Vergessen Sie betriebliche Steuerungen nicht. Die BACS-Warnung vom 10. November 2026 zu Kühl- und Kältesteuerungen zeigt, dass auch direkt oder indirekt erreichbare, durch Dienstleister betreute Managementschnittstellen in das Inventar gehören. Eine Manipulation kann etwa Warenverderb und Betriebsunterbrüche verursachen.[16] Halten Sie bei solchen OT-Systemen die fachliche Prozessverantwortung, Fernwartungswege, Supportstatus und nachgewiesene Schutzmassnahmen fest. Das Beispiel begründet keine Betroffenheit eines bestimmten Modells in Ihrer Organisation; konkrete Firmware, Konfiguration und sichere Änderungen sind separat mit Betreiber und Hersteller zu prüfen.
 
 Berücksichtigen Sie bei Sicherheitswarnungen auch Komponenten, die in Produkten oder Diensten eingebettet sind. Eine Laufzeitumgebung wie PHP kann beispielsweise Teil einer Verwaltungsoberfläche, Fachanwendung, Hosting-Plattform, eines Containers oder einer Appliance sein, ohne dass sie im üblichen Inventar sichtbar ist. Erfassen Sie deshalb Produkt, Komponente, tatsächlich laufenden Stand, Erreichbarkeit und zuständigen Betreiber. Bei extern betriebenen Lösungen braucht es eine auf die konkrete Instanz bezogene Fixbestätigung des Herstellers, Hosters oder Dienstleisters sowie einen überprüfbaren Nachweis des tatsächlich behobenen Stands. Eine angezeigte Hauptversion allein kann bei zurückportierten Sicherheitskorrekturen unzureichend sein.[10]
 
 Wenn ein Geschäftsprozess einen KI-Dienst nutzt, kann auch dessen Verbrauch ein Risikoszenario sein. Halten Sie den Anbieter, die für den Prozess verfügbare Kapazität oder Quote, Budget- und Warnschwellen, verantwortliche Personen sowie einen manuellen oder anderen Ausweichablauf fest. Unkontrollierter Verbrauch kann Kosten, Leistung und Verfügbarkeit beeinträchtigen; die CISA verweist hierzu auf Orientierung für die Priorisierung kritischer Funktionen, Monitoring und Planung bei eingeschränkter Dienstverfügbarkeit.[11] [12] Ob und in welcher Form solche Schwellen angemessen sind, hängt vom konkreten Dienst, Vertrag, Prozess und Risiko der Organisation ab.
 
 Für einen eingesetzten KI-Agenten genügt es nicht, nur das Modell zu erfassen. Dokumentieren Sie den vorgesehenen Auftrag, die zugehörige Identität, angebundene Daten und Werkzeuge, erlaubte Netzwerkverbindungen sowie mögliche externe Wirkungen. Legen Sie für folgenschwere oder schwer rückgängig zu machende Handlungen menschliche Freigabepunkte, Protokollierung und einen eng begrenzten Berechtigungsumfang fest. Die kanadische Behördenorientierung empfiehlt eigenständige Agentenidentitäten, auf die genehmigte Aufgabe beschränkte Rechte und menschliche Kontrolle bei Handlungen mit hohem Schadenspotenzial.[13] Das sind mögliche risikobasierte Prüfpunkte, keine Aussage über einen konkreten Agenten, eine Schwachstelle oder einen Patchstand.
+
+Die vorgemerkten NIST-Gestaltungsgrundsätze vom 27. Oktober 2026 präzisieren diese Kontrollen: Berechtigungsregeln sollen architektonisch vom Modellschlussfolgern getrennt sein; tatsächliche Zugriffsentscheide sollen primär deterministisch erfolgen. Erfassen Sie deshalb, welche unabhängige Stelle Zugriffe durchsetzt, wie Rechte widerrufen werden und ob der Agent seine eigenen Nachweise verändern kann.[22] NIST stellt ein vorgeschlagenes anfängliches Set von Grundsätzen vor, keinen finalen verbindlichen Standard. Die kanadische Orientierung empfiehlt zudem eine vorsichtige Einführung für nicht sensible Aufgaben mit niedrigem Risiko; ein menschlicher Freigabepunkt allein legitimiert keinen Hochrisikoeinsatz.[13]
 
 ## Den Befund in ein belastbares Szenario übersetzen
 
@@ -61,6 +69,8 @@ Verwenden Sie pro Risiko einen klaren Satz nach diesem Muster:
 Ein Szenario darf mehrere zusammenhängende Befunde zusammenführen, wenn sie dieselbe Ursache oder Folge haben. Mehrere fehlende Sicherheitsupdates auf vergleichbaren öffentlich erreichbaren Systemen können etwa ein Patch-Management-Risiko bilden. Verschiedene Befunde mit unterschiedlichen Geschäftsfolgen gehören dagegen getrennt: Ein nicht gesicherter Lager-PC und ein ungeschütztes Finanzkonto sind nicht dasselbe Risiko.
 
 Dokumentieren Sie neben dem Szenario die **Evidenz**. Das kann die Befund-ID des Checks, ein Konfigurationsauszug, eine Testbeobachtung oder die Rückmeldung eines Systemeigentümers sein. Evidenz macht später überprüfbar, ob die Massnahme die Ursache wirklich adressiert hat. Vermeiden Sie Formulierungen wie «System unsicher» oder «Sicherheit verbessern». Sie benennen weder den Auslöser noch die Entscheidung.
+
+Machen Sie diese Nachweise zeitlich und sachlich zuordenbar: Beobachtungsdatum, geprüftes Schutzobjekt, tatsächlicher Lauf- oder Paketstand, Zugangspfad, Prüfumfang und zuständige Person gehören zur Befundbeschreibung. Trennen Sie die datierte öffentliche Warnung, die mögliche Produktbetroffenheit und den bestätigten lokalen Befund. Eine Herstellerseite oder ein KEV-Eintrag ist kein Nachweis der tatsächlich installierten Version. Eine Betreiberbestätigung ist nur so belastbar wie ihr Bezug zur konkreten Instanz und zum überprüften laufenden Stand.[10] Wenn Exposition oder Kontrollwirkung noch unbekannt sind, dokumentieren Sie die Lücke samt Klärungsauftrag; behandeln Sie «nicht geprüft» nicht als «nicht betroffen».
 
 Bei Verdacht auf Schadsoftware trennen Sie ein Anzeichen von einem bestätigten Befund: Ein einzelnes Anzeichen ist noch kein Infektionsbeweis. Mehrere ungewöhnliche Beobachtungen sollten dagegen genauer untersucht werden. Das BACS empfiehlt bei Verdacht die Untersuchung durch eine Fachperson sowie bei geschäftlich genutzten Geräten die Information der zuständigen IT-Stelle.[9] Halten Sie im Register deshalb fest, ob ein Befund nur vermutet, untersucht oder bestätigt ist.
 
@@ -91,6 +101,8 @@ Eine einfache Matrix aus Auswirkung und Wahrscheinlichkeit kann die Reihenfolge 
 3. **Abhängigkeit:** Würde eine Massnahme mehrere Risiken gleichzeitig senken, etwa getrennte Administrationskonten oder ein belastbarer Wiederherstellungstest?
 4. **Frist und Verpflichtung:** Gibt es eine realistische zeitliche Dringlichkeit durch bekannte Schwachstellen, Vertragsvorgaben oder gesetzliche Pflichten?
 
+**Datierter Prüfkontext, 15. November 2026:** Der beim Abruf aktuelle CISA-KEV-Katalog führt SonicWall CVE-2026-19868 seit 6. November, Apple CVE-2024-27834 seit 4. November und WordPress CVE-2026-119977 seit 3. November 2026.[17] Das sind Anlässe für den Inventar- und Prioritätenabgleich, kein eigener Kompromittierungsbefund und keine Schweizer gesetzliche Frist. Die konkrete Prüfung bleibt getrennt: Bei SonicWall sind Gerätegeneration, Build sowie SAML und alternative Authentisierung am SSLVPN-Zugang massgebend; die Revision vom 9. November ergänzt einen Workaround, dessen betriebliche Eignung fachlich zu beurteilen ist.[18] Bei WordPress sind Versionslinie, Backport und tatsächliche Hoster-Auslieferung zu prüfen; «alles unter 7.1.4 verwundbar» wäre zu pauschal.[19] Apples KEV-Aufnahme betrifft einen bereits 2024 behobenen Fehler und ist nicht als neuer November-Patch zu lesen.[20] Den heute passenden Sicherheitsstand bestimmt der aktuelle Herstellerüberblick zusammen mit dem tatsächlichen Gerät, nicht ein historischer Mindestfix allein.[21] Keine dieser Quellen ersetzt eine Modell-, Versions-, Konfigurations- oder Vorfallprüfung in der eigenen Umgebung.
+
 Leiten Sie daraus eine kleine, erklärbare Prioritätenfolge ab: sofort zu entscheiden, in der nächsten Umsetzungsphase zu behandeln oder bewusst zu beobachten. Das ist keine Norm, sondern eine Führungsentscheidung auf Basis der eigenen Risikotoleranz. Der CSF 2.0 betont, dass Prioritäten aus Organisationszielen, Bedrohungslage und Geschäftsanforderungen abgeleitet werden sollen; seine Ergebnisse sind keine starre Checkliste.[3]
 
 ## Eigentümer, Massnahmen und Restrisiko verbindlich machen
@@ -103,9 +115,9 @@ Das **Restrisiko** ist nicht «kein Risiko». Es ist die verbleibende Möglichke
 
 ## Top-Risiken in Notfallplanung und Steuerung überführen
 
-Die wichtigsten offenen Szenarien gehören in die [IT-Notfallplanung](/unsere-dienstleistungen/notfallplanung). Für jedes Top-Risiko sollte klar sein, wer einen Vorfall führt, welche Systeme zuerst wiederhergestellt werden, welche Kontakte offline verfügbar sind und welche Kommunikation oder Meldung geprüft werden muss. Das BACS ordnet Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung als vier Phasen eines Notfallkonzepts ein und hebt klar zugeordnete Verantwortlichkeiten hervor.[8]
+Die wichtigsten offenen Szenarien gehören in die [IT-Notfallplanung](https://www.dkschv.ch/notfallplanung.html). Für jedes Top-Risiko sollte klar sein, wer einen Vorfall führt, welche Systeme zuerst wiederhergestellt werden, welche Kontakte offline verfügbar sind und welche Kommunikation oder Meldung geprüft werden muss. Das BACS ordnet Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung als vier Phasen eines Notfallkonzepts ein und hebt klar zugeordnete Verantwortlichkeiten hervor.[8]
 
-Nutzen Sie das Register zudem als Verbindung zwischen [Risikomanagement](/unsere-dienstleistungen/risikomanagement), Budgetplanung und Betrieb. Berichten Sie der Geschäftsleitung regelmässig knapp: die wichtigsten Risiken, Veränderungen seit dem letzten Bericht, überfällige Massnahmen, Entscheidungen zum Restrisiko und neue Abhängigkeiten. Ein Register ist lebendig. Aktualisieren Sie es nach Sicherheitsvorfällen, grösseren System- oder Lieferantenänderungen, neuen Geschäftsprozessen sowie nach einem erneuten Sicherheitscheck.
+Nutzen Sie das Register zudem als Verbindung zwischen [Risikomanagement](https://www.dkschv.ch/risikomanagement.html), Budgetplanung und Betrieb. Berichten Sie der Geschäftsleitung regelmässig knapp: die wichtigsten Risiken, Veränderungen seit dem letzten Bericht, überfällige Massnahmen, Entscheidungen zum Restrisiko und neue Abhängigkeiten. Ein Register ist lebendig. Aktualisieren Sie es nach Sicherheitsvorfällen, grösseren System- oder Lieferantenänderungen, neuen Geschäftsprozessen sowie nach einem erneuten Sicherheitscheck.
 
 Passende Vertiefungen finden Sie in den Beiträgen zu [ransomware-resistenten Backups](/wissen/ransomware-resistente-backups), [Wiederherstellungstests](/wissen/backup-wiederherstellung-testen) und [Microsoft-365-Sicherheit](/wissen/microsoft-365-sicherheit-kmu). Redaktionelle Rückmeldungen können über den [Kontakt](/kontakt) eingereicht werden.
 
@@ -130,7 +142,7 @@ Passende Vertiefungen finden Sie in den Beiträgen zu [ransomware-resistenten Ba
 5. **Bewertung kalibrieren:** Bewerten Sie Auswirkung und Wahrscheinlichkeit gemeinsam mit Fachseite und IT. Dokumentieren Sie bestehende Kontrollen und deren Nachweise.
 6. **Massnahmen planen:** Legen Sie Massnahmen-Eigentümer, Termin, Ressourcen, Abnahmekriterium und erwartete Restbewertung fest.
 7. **Entscheiden und berichten:** Lassen Sie Top-Risiken und Restrisikobehandlungen vom zuständigen Führungsgremium entscheiden. Überführen Sie relevante Szenarien in den Notfallplan.
-8. **Überprüfen:** Kontrollieren Sie die Wirksamkeit nach Umsetzung und planen Sie den nächsten Review. Verwenden Sie dafür die druckbare [Risikoregister-Vorlage](/resources/08-risikoregister-vorlage).
+8. **Überprüfen:** Kontrollieren Sie die Wirksamkeit nach Umsetzung und planen Sie den nächsten Review. Verwenden Sie dafür die druckbare [Risikoregister-Vorlage](https://www.dkschv.ch/wissen/resources/08-risikoregister-vorlage.html).
 
 ## Sicherheitsstatus in einen priorisierten Massnahmenplan überführen
 
@@ -151,3 +163,12 @@ Passende Vertiefungen finden Sie in den Beiträgen zu [ransomware-resistenten Ba
 [11]: https://www.cisa.gov/resources-tools/resources/managing-ai-token-consumption-operational-resilience "CISA – Managing AI Token Consumption for Operational Resilience"
 [12]: https://www.cyber.gc.ca/en/guidance/managing-ai-token-consumption-operational-resilience-itsm00125 "Canadian Centre for Cyber Security – Managing AI Token Consumption for Operational Resilience"
 [13]: https://www.cyber.gc.ca/en/guidance/careful-adoption-agentic-ai "Canadian Centre for Cyber Security – Careful adoption of agentic AI"
+[14]: https://www.bacs.admin.ch/dam/de/sd-web/KKDLbrGSAwdL/methode-csrm-2025-de.pdf "BACS – CSRM-Methodendokument vom 24. November 2025"
+[15]: https://www.bacs.admin.ch/de/26w44-de "BACS – Woche 44: Heimnetzwerke, 3. November 2026"
+[16]: https://www.bacs.admin.ch/de/warnung-kuehlanlagen-de "BACS – Kühl- und Kältesteuerungen, 10. November 2026"
+[17]: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json "CISA – KEV-Katalog, abgerufen am 15. November 2026"
+[18]: https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0014 "SonicWall – SNWLID-2026-0014, Revision vom 9. November 2026"
+[19]: https://wordpress.org/documentation/wordpress-version/version-7-1-4/ "WordPress – Version 7.1.4 und ältere Sicherheitsreleases"
+[20]: https://support.apple.com/en-us/120896 "Apple – Sicherheitsinhalt von Safari 17.5, historischer CVE-Fix"
+[21]: https://support.apple.com/en-us/100100 "Apple – Aktueller Sicherheitsrelease-Überblick, Abruf 15. November 2026"
+[22]: https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems "NIST – Vorgeschlagene Grundsätze für Agentenidentität, 27. Oktober 2026"

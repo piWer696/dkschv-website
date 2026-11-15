@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyber-Security Branchennews KW 45 (08.11.2026) | DKSchV Schweiz</title>
-  <meta name="description" content="Wöchentliche Lagebeurteilung für Schweizer KMU: SonicWall SAML-Bypass, Microsoft Secret-Hunting, EHRA-Phishing und EDÖB-Urteil.">
+  <title>Cyber-Security Branchennews KW 46 (15.11.2026) | DKSchV Schweiz</title>
+  <meta name="description" content="Wöchentliche Lagebeurteilung für Schweizer KMU: Outlook- &amp; Chromium-Zero-Days, BACS-Warnung Kühlsteuerungen, ScreenConnect-SCKit und KI-Fakeshops vor Black Friday.">
   <link rel="icon" type="image/png" href="../../assets/images/dkschv_icon.png">
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
@@ -65,13 +65,13 @@
         <span class="sep">/</span>
         <a href="../../wissen.html">Wissen &amp; Ratgeber</a>
         <span class="sep">/</span>
-        <span style="color:#ffffff;">Wochenausgabe KW 45</span>
+        <span style="color:#ffffff;">Wochenausgabe KW 46</span>
       </nav>
 
-      <span class="news-badge"><span class="news-pulse-dot"></span> Sonntagsausgabe · ISO-KW 45</span>
+      <span class="news-badge"><span class="news-pulse-dot"></span> Sonntagsausgabe · ISO-KW 46</span>
       <h1 class="article-page-title">DKSchV-Branchennews: Wöchentliche Lage für Schweizer KMU</h1>
       <div class="article-page-meta">
-        <span class="article-meta-item">📅 Ausgabedatum: <strong>08.11.2026</strong></span>
+        <span class="article-meta-item">📅 Ausgabedatum: <strong>15.11.2026</strong></span>
         <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweiz, BACS, EDÖB &amp; KMU-Prüfpunkte</strong></span>
         <span class="article-meta-item">⏱️ Lesezeit: <strong>5 Min.</strong></span>
       </div>
@@ -81,23 +81,28 @@
   <main class="container">
     <div class="article-container" style="grid-template-columns: 1fr;">
       <article class="article-content" style="max-width: 860px; margin: 0 auto;">
-        <p>Alle Quellenabrufe erfolgten nach Redaktionsschluss; ein minutengenauer historischer Seitenstand ist nicht belegt. Die Auswahl beruht ausschliesslich auf den vorliegenden geprüften Befunden.</p>
-<h2 id="sonicwall-saml-geschuetzter-fernzugang-kann-verwundbar-sein">SonicWall: SAML-geschützter Fernzugang kann verwundbar sein</h2>
-<p><strong>6. November:</strong> CISA nahm CVE-2026-19868 in den Katalog bekannter ausgenutzter Schwachstellen auf.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Die SSLVPN-Lücke betrifft aktivierte SAML-Anmeldung: Gültige Zugangsdaten einer alternativen Authentifizierungsmethode können SAML-Kontrollen und möglicherweise darüber erzwungene MFA umgehen. Für die aufgeführten Gen7-/Gen8-Plattformen nennt SonicWall 7.3.4-7013 beziehungsweise 8.2.3-8015 als Mindestfixstände.<sup class="ref-link"><a href="#ref-2">[2]</a></sup> <strong>KMU-Prüfpunkt:</strong> Modell, Build, Erreichbarkeit und SAML-Konfiguration mit dem IT-Dienstleister abgleichen; verdächtige Zugänge zusätzlich untersuchen. MFA allein schliesst Betroffenheit nicht aus.</p>
-<h2 id="ki-gestuetzte-secret-suche-bedroht-anwendungsidentitaeten">KI-gestützte Secret-Suche bedroht Anwendungsidentitäten</h2>
-<p><strong>5. November:</strong> Microsoft beschreibt ARTEX-gestützte Suchen nach Secrets in öffentlichen GitHub-Repositories und Folgeangriffe auf Entra, Azure und Microsoft 365. Auch kompromittierte Multitenant-App-Credentials von Anbietern ermöglichten Zugriffe auf nachgelagerte Kundentenants; die Angriffe begannen vor dieser Ausgabewoche.<sup class="ref-link"><a href="#ref-3">[3]</a></sup> <strong>KMU-Prüfpunkt:</strong> Exponierte Secrets widerrufen oder rotieren und historische Nutzung sowie App-Berechtigungen untersuchen. Repository-Dateien zu löschen genügt nicht; bereits ausgestellte Tokens bleiben laut Quelle bis zum Ablauf gültig. Keine Schweizer Organisation ist als betroffen belegt.</p>
-<h2 id="ehra-imitation-datenaktualisierung-als-phishing-koeder">EHRA-Imitation: Datenaktualisierung als Phishing-Köder</h2>
-<p><strong>6. November:</strong> Das BACS warnt vor angeblich notwendigen Handelsregister-Datenaktualisierungen im Namen des EHRA und empfiehlt, die Phishing-Nachrichten zu löschen.<sup class="ref-link"><a href="#ref-4">[4]</a></sup> Für KMU-Administration ist dies ein konkretes Sensibilisierungsbeispiel. <strong>KMU-Prüfpunkt:</strong> Unerwartete Behördenanfragen über selbst recherchierte offizielle Kontaktwege verifizieren, nicht über Links oder Kontaktdaten aus der Nachricht.</p>
-<h2 id="erkannte-phishing-mails-koennen-durch-ausnahmen-zugestellt-werden">Erkannte Phishing-Mails können durch Ausnahmen zugestellt werden</h2>
-<p><strong>5. November:</strong> Microsofts neue Q3-Auswertung zeigt: Im September bestanden Overrides bei 63 Prozent der Nachrichten mit erfasstem Sicherheitsresultat im untersuchten Geschäftsservice-Spoofing-Bestand – nicht bei allen E-Mails. Die Zahlen belegen weder Öffnungen noch kompromittierte Konten.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> <strong>KMU-Prüfpunkt:</strong> Breite Absenderfreigaben und Sicherheitsausnahmen fachlich prüfen, nicht unkontrolliert entfernen. Zahlungs- und Kontoänderungen unabhängig bestätigen. Die Daten sind keine gemessene Schweizer KMU-Inzidenz.</p>
-<h2 id="datenpanne-technische-behebung-ersetzt-information-nicht-automatisch">Datenpanne: Technische Behebung ersetzt Information nicht automatisch</h2>
-<p><strong>6. November:</strong> Der EDÖB publizierte zum Fall SkySale/apfelkiste.ch: Das Bundesverwaltungsgericht bestätigte die angeordnete Betroffeneninformation; das Urteil vom 8. April 2026 ist laut Behörde rechtskräftig. Neu ist die Mitteilung, nicht der Vorfall oder das DSG.<sup class="ref-link"><a href="#ref-6">[6]</a></sup> Das Urteil begründet keine allgemeine Pflicht zur öffentlichen Bekanntmachung; diese wird als mögliche Ersatzform im konkreten Fall behandelt.<sup class="ref-link"><a href="#ref-7">[7]</a></sup> <strong>KMU-Prüfpunkt:</strong> Technische Eindämmung und Informationsbedarf getrennt beurteilen; Adressaten und Informationsform rechtlich prüfen lassen.</p>
-<h2 id="wordpress-kev-aufnahme-fuer-upgrade-schwachstelle">WordPress: KEV-Aufnahme für Upgrade-Schwachstelle</h2>
-<p><strong>3. November:</strong> Neu im KEV ist CVE-2026-119977, eine nicht authentifizierte Codeausführung während vollständiger Core-Upgrades.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Der Fix 7.1.4 stammt bereits vom 28. Oktober; liniengenaue Backports sind dokumentiert.<sup class="ref-link"><a href="#ref-8">[8]</a></sup> <strong>KMU-Prüfpunkt:</strong> Mit dem Hoster die tatsächlich installierte Linie und ihren Fixstand bestätigen. Nicht pauschal jede Version unter 7.1.4 als verwundbar behandeln. Bei Auffälligkeiten frühere Upgradefenster untersuchen: Ein Update beseitigt nicht automatisch eine bereits erfolgte Kompromittierung.</p>
-<h2 id="vormerkung-fuer-15-november-kw-46">Vormerkung für 15. November · KW 46</h2>
-<p>Keine zusätzliche eigenständige KI- oder EU-Regelwerksneuigkeit ist im begrenzten Lauf belegt. Die nächste Turnusprüfung umfasst Herstellerstände und KEV-Revisionen, App-Identitäten und Sicherheitsausnahmen sowie die getrennte Rechtsprüfung zur Betroffeneninformation. Artikel zu Schatten-KI bleiben ohne neue Freigabe.</p>
-<p><strong>Betriebsstatus:</strong> Der lokale KW44-Metadatenabgleich ist nachgeholt; der Paketvalidator meldet 0 Fehler und 0 Warnungen. Webador zeigt weiterhin den Login. Der heutige HTTP-Linkchecker erhielt 403, nicht einen neuen 404-Nachweis. Keine Live-Änderung, kein geschützter Import und keine Veröffentlichung. Die genauen Sperren stehen im Laufstatus.</p>
-<p>## References</p>
+        <p>Sechs priorisierte neue Meldungen für Schweizer KMU. Die dokumentierten Originalabrufe erfolgten <strong>nach 09:00 CET</strong> und sind Befundzeiten, kein Nachweis des historischen Seitenwortlauts zum Redaktionsschluss. Die Auswahl ist begrenzt; Quellenlektüre ersetzt keine Einzelfallprüfung oder Fachfreigabe.</p>
+<h2 id="1-outlook-und-chromium-aktiv-ausgenutzte-luecken-beheben">1. Outlook und Chromium: aktiv ausgenutzte Lücken beheben</h2>
+<p><strong>Neu am 9./10. November:</strong> Microsoft bestätigt Ausnutzung von Outlook CVE-2026-124194; eine präparierte Datei muss geöffnet werden, die Vorschau ist kein Angriffsvektor. Möglich ist die Offenlegung eines NTLMv2-Hashes. Sicherheitsupdates erschienen am 10. November. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup> Google bestätigt aktive Ausnutzung von Chromium CVE-2026-125350 und veröffentlichte am 9. November Chrome-Fixes; belegt ist Codeausführung innerhalb der Sandbox, kein Sandbox-Ausbruch. <sup class="ref-link"><a href="#ref-3">[3]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup> Beide CVEs kamen am 10. November in KEV. <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p><strong>KMU-Prüfpunkt:</strong> Office-Linie, Kanal und Build sowie Browserprodukt, Plattform und laufende Version mit der IT abgleichen; Edge hat eigene Fixstände. <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup> <strong>Unsicherheit:</strong> Kein Schweizer Gerät wurde untersucht. Ein Update beweist keine Bereinigung; US-KEV-Fristen sind keine Schweizer Fristen.</p>
+<h2 id="2-kuehlsteuerungen-bacs-warnt-vor-angriffen">2. Kühlsteuerungen: BACS warnt vor Angriffen</h2>
+<p><strong>10. November:</strong> Das BACS meldet Angriffe auch in der Schweiz und warnt vor internetexponierten Kühlsteuerungen, veralteter Firmware und nicht mehr unterstützten Systemen. Neu ist die Warnung, nicht ein belegter Angriffsbeginn oder Firmwarefix. <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<p><strong>KMU-Prüfpunkt:</strong> Modell, Firmware, Wartungszugänge und Ersatzplanung mit Anlagenfachpersonen und Dienstleister prüfen. <strong>Unsicherheit:</strong> Das belgische CCB meldete am 12. November sechs weitere Danfoss-Lücken bis einschliesslich 5.3.2, damals ohne Patch. <sup class="ref-link"><a href="#ref-8">[8]</a></sup> Danfoss-Softwareseite und verlinkte Readme nennen abweichende Paketstände; eine aktuell sichere Buildversion ist nicht bestätigt. <sup class="ref-link"><a href="#ref-9">[9]</a></sup> <sup class="ref-link"><a href="#ref-10">[10]</a></sup> Ein älteres Update erlaubt keine pauschale Entwarnung.</p>
+<h2 id="3-screenconnect-auch-technikerzugaenge-betrachten">3. ScreenConnect: auch Technikerzugänge betrachten</h2>
+<p><strong>13. November:</strong> Microsoft beschreibt SCKit-Missbrauch von ScreenConnect zur Installation weiterer Fernzugangsclients und Angriffe auf authentifizierte Technikersitzungen. <sup class="ref-link"><a href="#ref-11">[11]</a></sup> ConnectWise ergänzte vorbeugende Erweiterungshinweise; der relevante Clientfix 26.6.5 stammt bereits vom September, nicht aus dieser Woche. <sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
+<p><strong>KMU-Prüfpunkt:</strong> Beim IT-Dienstleister Instanzen, Erweiterungen, Technikerclients und verwaltete Geräte getrennt erfassen lassen; einen unabhängigen Vorfallkanal vorsehen. <strong>Unsicherheit:</strong> Einstieg und Gesamtscope bleiben in Untersuchung. Rund 400 Erweiterungsinstallationen sind nicht 400 bestätigte Kompromittierungen; Toolkitfähigkeiten belegen keine vollständige Ausbreitungskette. <sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
+<h2 id="4-coding-agenten-vergiftete-modelle-koennen-werkzeuge-missbrauchen">4. Coding-Agenten: vergiftete Modelle können Werkzeuge missbrauchen</h2>
+<p><strong>12. November:</strong> Microsoft zeigt experimentell, wie vergiftete Nachtrainingsdaten oder manipulierte Modell-Checkpoints versteckte schädliche Werkzeugaufrufe auslösen können. <sup class="ref-link"><a href="#ref-13">[13]</a></sup></p>
+<p><strong>KMU-Prüfpunkt:</strong> Herkunft und Integrität fremder Modellartefakte dokumentieren, Secrets und Werkzeugrechte begrenzen, Ausführung isolieren und folgenreiche Aktionen kontrollieren lassen. <strong>Unsicherheit:</strong> Laborforschung ist keine gemessene KMU-Inzidenz oder nachgewiesene Schwäche normaler Standardkonfigurationen. Ein universeller Fixbuild ist nicht belegt; Filter allein bestätigen keine Modellintegrität. <sup class="ref-link"><a href="#ref-13">[13]</a></sup></p>
+<h2 id="5-enisacert-eu-ki-codepruefung-braucht-menschliche-validierung">5. ENISA/CERT-EU: KI-Codeprüfung braucht menschliche Validierung</h2>
+<p><strong>12. November:</strong> Der neue Bericht beschreibt 27 Codebasen und 220 potenzielle KI-Befunde. Von 88 bereits beurteilten Befunden wurden 95 Prozent bestätigt. <sup class="ref-link"><a href="#ref-14">[14]</a></sup> <sup class="ref-link"><a href="#ref-15">[15]</a></sup></p>
+<p><strong>KMU-Prüfpunkt:</strong> KI-Codeprüfungen isolieren; Dienstleister sollen potenzielle Hinweise, reproduzierte Schwachstellen und bestätigte Behebungen unterscheiden. Vorgeschlagene Patches fachlich prüfen lassen. <strong>Unsicherheit:</strong> Die Quote gilt nur für die beurteilte Teilmenge. Produktionskontext und Live-Tests fehlten; genannte CVE-IDs belegen keine neue Patchveröffentlichung. <sup class="ref-link"><a href="#ref-15">[15]</a></sup></p>
+<h2 id="6-ki-fakeshops-und-paket-phishing-vor-black-friday">6. KI-Fakeshops und Paket-Phishing vor Black Friday</h2>
+<p><strong>10. November:</strong> Das BACS berichtet über mehr Meldungen zu Fakeshops und Logistik-Phishing sowie zunehmend KI-generierte Shoptexte, Bilder und Rezensionen. <sup class="ref-link"><a href="#ref-16">[16]</a></sup></p>
+<p><strong>KMU-Prüfpunkt:</strong> Einkauf und Empfang sensibilisieren; Lieferstatus über selbst aufgerufene offizielle Transportseiten prüfen. Rezensionen allein sind kein Vertrauensnachweis. <strong>Unsicherheit:</strong> Der Anstieg und KI-Anteil sind nicht quantifiziert; eine Schweizer KMU-Schadenquote ist nicht belegt. Neu ist der Wochenbericht, nicht die Betrugsmasche. <sup class="ref-link"><a href="#ref-16">[16]</a></sup></p>
+<p><strong>Nächste News:</strong> 22. November 2026, KW 47. Die nachrangige DSA-Konsultation bleibt im Einzelbericht; alte EDÖB-, NIST-, Entra-GA- und Rechtsmeldungen werden nicht neu datiert. Keine Veröffentlichung oder technische Betriebsfreigabe.</p>
+<p><strong>Pflegestatus:</strong> Zwölf Artikel samt Arbeitsmitteln sind lokal aktualisiert; CMS-Metadaten und Linkziele sind abgeglichen, der Paketvalidator meldet 0 Fehler. Keine Live-Änderung. Webador-Zugang, Fachfreigaben und wirksamer Kundenzugriffsschutz bleiben offen: Der Wiederherstellungsartikel liefert trotz Login-Hinweis umfangreichen Text ohne Anmeldung. Die genauen Blocker stehen im <a href="../reviews/2026-11-15/DKSchV_Pflegebericht_KW46.md">Pflegebericht</a>. Nächste Vollpflege: <strong>29. November, KW48</strong>.</p>
+<h2 id="references">References</h2>
         
       <div class="references-section">
         <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
@@ -111,56 +116,56 @@
         <li class="ref-item" id="ref-1">
           <span class="ref-num">[1]</span>
           <div>
-            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
-            <a href="https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json" target="_blank" rel="noopener noreferrer">CISA: Known Exploited Vulnerabilities Catalog</a>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-124194" target="_blank" rel="noopener noreferrer">Microsoft MSRC: Outlook CVE-2026-124194, 10. November 2026</a>
           </div>
         </li>
       
         <li class="ref-item" id="ref-2">
           <span class="ref-num">[2]</span>
           <div>
-            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
-            <a href="https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0014" target="_blank" rel="noopener noreferrer">SonicWall: Advisory SNWLID-2026-0014</a>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/officeupdates/microsoft365-apps-security-updates" target="_blank" rel="noopener noreferrer">Microsoft Learn: Office-Sicherheitsupdates und kanalgenaue Builds</a>
           </div>
         </li>
       
         <li class="ref-item" id="ref-3">
           <span class="ref-num">[3]</span>
           <div>
-            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
-            <a href="https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/" target="_blank" rel="noopener noreferrer">Microsoft: Threat actors use agentic AI tooling to find and abuse exposed secrets</a>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html" target="_blank" rel="noopener noreferrer">Google: Chrome Desktop Stable, 9. November 2026</a>
           </div>
         </li>
       
         <li class="ref-item" id="ref-4">
           <span class="ref-num">[4]</span>
           <div>
-            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
-            <a href="https://www.bacs.admin.ch/de/warnung-ehra-de" target="_blank" rel="noopener noreferrer">BACS: Warnung vor Phishing mit angeblicher EHRA-Datenaktualisierung</a>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://www.cve.org/CVERecord?id=CVE-2026-125350" target="_blank" rel="noopener noreferrer">Chrome-CNA: CVE-2026-125350, Codeausführung innerhalb der Sandbox</a>
           </div>
         </li>
       
         <li class="ref-item" id="ref-5">
           <span class="ref-num">[5]</span>
           <div>
-            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
-            <a href="https://www.microsoft.com/en-us/security/blog/2026/11/05/email-threat-landscape-q3-2026-trends-and-insights/" target="_blank" rel="noopener noreferrer">Microsoft: Email threat landscape Q3 2026 – trends and insights</a>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json" target="_blank" rel="noopener noreferrer">CISA: Vollständiger offizieller KEV-Katalog, Stand 13. November 2026</a>
           </div>
         </li>
       
         <li class="ref-item" id="ref-6">
           <span class="ref-num">[6]</span>
           <div>
-            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
-            <a href="https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin" target="_blank" rel="noopener noreferrer">EDÖB: Bundesverwaltungsgericht bestätigt Informationspflicht der Onlineshop-Betreiberin</a>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnotes-security" target="_blank" rel="noopener noreferrer">Microsoft Learn: Edge-Sicherheitsreleases und produktspezifische Fixstände</a>
           </div>
         </li>
       
         <li class="ref-item" id="ref-7">
           <span class="ref-num">[7]</span>
           <div>
-            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
-            <a href="https://www.edoeb.admin.ch/dam/de/sd-web/ZjhZ9UBOprVL/Urteil%20BVGer%20A_3790_2024%20vom%208.%20April%202026%20betreffend%20Verf%C3%BCgung%20vom%2028.%20Mai%202024.pdf" target="_blank" rel="noopener noreferrer">Bundesverwaltungsgericht: Urteil A-3790/2024 vom 8. April 2026</a>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/warnung-kuehlanlagen-de" target="_blank" rel="noopener noreferrer">BACS: Warnung zu Kühl- und Kältesteuerungen, 10. November 2026</a>
           </div>
         </li>
       
@@ -168,7 +173,71 @@
           <span class="ref-num">[8]</span>
           <div>
             <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
-            <a href="https://wordpress.org/documentation/wordpress-version/version-7-1-4/" target="_blank" rel="noopener noreferrer">WordPress: Version 7.1.4 und Backports</a>
+            <a href="https://ccb.belgium.be/advisories/warning-six-new-danfoss-vulnerabilities-refrigeration-controllers-risk-immediate-action" target="_blank" rel="noopener noreferrer">CCB: Sechs weitere Danfoss-Lücken, 12. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://www.danfoss.com/en-us/service-and-support/downloads/dcs/adap-kool-software/ak-sm-800a/" target="_blank" rel="noopener noreferrer">Danfoss: AK-SM 800A Softwareseite, Paketbezeichnung 5.3.x</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://www.danfoss.com/en/service-and-support/downloads/dcs/adap-kool-software/ak-sm-800a/license-agreement/" target="_blank" rel="noopener noreferrer">Danfoss: Verlinkte Readme mit abweichendem Downloadstand 5.1.1</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-11">
+          <span class="ref-num">[11]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://www.microsoft.com/en-us/security/blog/2026/11/13/sckit-abuses-screenconnect-deploy-remote-access-target-technician-sessions/" target="_blank" rel="noopener noreferrer">Microsoft: SCKit, ScreenConnect und Technikersitzungen, 13. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-12">
+          <span class="ref-num">[12]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://www.connectwise.com/company/trust/advisories" target="_blank" rel="noopener noreferrer">ConnectWise: ScreenConnect-Untersuchung, Stand 13. November 2026, 21:15 UTC</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-13">
+          <span class="ref-num">[13]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/" target="_blank" rel="noopener noreferrer">Microsoft: Vergiftetes Nachtraining und Coding-Agenten, 12. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-14">
+          <span class="ref-num">[14]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://www.enisa.europa.eu/publications/joint-advisory-on-the-use-of-frontier-ai-models-for-code-review" target="_blank" rel="noopener noreferrer">ENISA: Publikation zur KI-Codeprüfung, 12. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-15">
+          <span class="ref-num">[15]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://www.enisa.europa.eu/sites/default/files/2026-11/ENISA_CERTEU_JOINTREPORT_Final.pdf" target="_blank" rel="noopener noreferrer">ENISA/CERT-EU: Originalbericht zur KI-gestützten Codeprüfung</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-16">
+          <span class="ref-num">[16]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/26w45-de" target="_blank" rel="noopener noreferrer">BACS: KI-Fakeshops und Paket-Phishing, 10. November 2026</a>
           </div>
         </li>
       

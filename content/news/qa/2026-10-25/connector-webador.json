@@ -1,0 +1,9 @@
+Config loaded for non-project session.
+Config file: /home/ubuntu/.manus/config/config.json
+Baseline file: /home/ubuntu/.manus/config/baseline/config.json
+
+Search results for "webador" in config.json:
+No matches for "webador"
+Note: config.json contains editable connector and session selections only.
+      Use connector commands to inspect connector details.
+Next step: edit config.json and run `manus-config config save`

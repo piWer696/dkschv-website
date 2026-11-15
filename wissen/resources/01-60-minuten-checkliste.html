@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="gated-content" id="gatedArticleContent">
+    <div class="gated-content is-locked" id="gatedArticleContent">
       <div class="resource-sheet">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px;">
           <div>
@@ -69,14 +69,15 @@
               60-Minuten-Checkliste bei Ransomware-Verdacht
             </h1>
             <p style="font-size: 13.5px; color: var(--text-muted); margin: 0;">
-              Stand 1. November 2026 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
+              Stand 15. November 2026 · Zielgruppe: Schweizer KMU Geschäftsleitungen &amp; IT
             </p>
           </div>
           <img src="../../assets/images/dkschv_logo.svg" alt="DKSchV Schweiz" style="height: 34px;">
         </div>
 
         <div class="article-content" style="font-size: 15px;">
-          <h2 id="zweck">Zweck</h2>
+          <p><strong>Version: Stand 15. November 2026</strong></p>
+<h2 id="zweck">Zweck</h2>
 <p>Diese Checkliste unterstützt Geschäftsleitung und IT dabei, in der ersten Stunde nach einem Ransomware-Verdacht strukturiert zu handeln. Sie hilft, Eindämmung, Beweissicherung, Backup-Schutz und die erste Einordnung von BACS-, Polizei- und EDÖB-Meldungen zu dokumentieren. Sie ist für den Ausdruck und die handschriftliche Verwendung gedacht.</p>
 <p>Sie ersetzt weder eine forensische Untersuchung noch einen organisationsspezifischen Notfallplan. Eine korrekte Abarbeitung verhindert nicht automatisch Datenverlust, Betriebsunterbruch, Datenabfluss oder rechtliche Folgen.</p>
 <h2 id="anwendung">Anwendung</h2>
@@ -103,6 +104,7 @@
 <li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Betroffene Systeme nicht neu gestartet und nicht mit Bereinigungstools verändert.</span></li>
 <li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Falls Ausschalten unvermeidbar war: Grund und Zeitpunkt dokumentiert.</span></li>
 <li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Kritische Prozessverantwortliche über bestätigte Einschränkungen informiert.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Bei geschäftlicher Nutzung im Homeoffice: Arbeitsort und bekannte Verbindungen zu Heimnetz-Diensten erfasst; zuständige IT informiert, keine unkoordinierten Änderungen an privaten Geräten ausgelöst.</span></li>
 </ul>
 <p><strong>Betroffene oder verdächtige Systeme / Freigaben:</strong></p>
 <div class="table-responsive"><table class="kb-table"><thead><tr><th>System, Dienst oder Freigabe</th><th>Benutzer / Standort</th><th>Symptom</th><th>Isoliert um</th><th>Durch</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
@@ -110,6 +112,7 @@
 <p>____________________________________________________________________________</p>
 <p>____________________________________________________________________________</p>
 <p>Ein einzelnes unspezifisches Zeichen wie ein langsames Gerät ist noch kein Infektionsbeweis. Dokumentieren Sie mehrere ungewöhnliche Beobachtungen oder Sicherheitswarnungen für die technische Untersuchung und informieren Sie bei Geschäftsgeräten die zuständige IT. <sup class="ref-link"><a href="#ref-8">[8]</a></sup></p>
+<p>Das BACS warnt seit dem 3. November 2026 vor verwundbaren, aus dem Internet erreichbaren Heimnetz-Diensten und empfiehlt bei Infektion eine fachkundige Untersuchung weiterer Geräte im selben Netz. Dies ist kein Beleg für die Betroffenheit Ihres Homeoffice-Geräts oder Unternehmensnetzes und keine Router- oder Produktfreigabe. <sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
 <h2 id="c-minute-1530-lagebild-und-beweissicherung">C. Minute 15–30: Lagebild und Beweissicherung</h2>
 <p><strong>Zeitfenster begonnen um:</strong> __________  <strong>abgeschlossen um:</strong> __________</p>
 <ul style="list-style: none; padding-left: 0;">
@@ -153,13 +156,15 @@
 <li class="task-item"><input type="checkbox"  onclick="return false;"> <span>EDÖB-Risikobeurteilung begonnen: Sind Personendaten betroffen, und ist ein voraussichtlich hohes Risiko für Persönlichkeit oder Grundrechte möglich?</span></li>
 <li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Für EDÖB-/BACS-Beurteilung zuständige Datenschutz-, Rechts- oder Fachperson benannt.</span></li>
 <li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Bei möglicher EDÖB-Meldung: soweit verfügbare Angaben zu Art, Zeitpunkt, Dauer, betroffenen Daten und Personen, Folgen, Massnahmen sowie Ansprechperson für die fachliche Prüfung zusammengestellt.</span></li>
-<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Betroffene Personen nicht vorschnell informiert; Informationsbedarf fachlich geprüft.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Informationsbedarf betroffener Personen getrennt von der technischen Behebung fachlich geprüft; zuständige Person und nächster Termin bestimmt, notwendige Information nicht wegen der Behebung als erledigt betrachtet.</span></li>
+<li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Bei genutzter BACS-Weiterleitung: Empfänger, übermittelte Angaben und Bestätigung separat dokumentiert; EDÖB-Pflicht nicht automatisch als erfüllt markiert.</span></li>
 <li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Lageupdate für Geschäftsleitung mit bestätigten Fakten, Geschäftsauswirkung und offenen Entscheiden erstellt.</span></li>
 <li class="task-item"><input type="checkbox"  onclick="return false;"> <span>Nächster Entscheid, verantwortliche Person und Zeitpunkt verbindlich festgelegt.</span></li>
 </ul>
-<p>Für Betreiber kritischer Infrastrukturen gilt bei meldepflichtigen Cyberangriffen eine Meldung an das BACS innert 24 Stunden nach Entdeckung. Die Voraussetzungen ergeben sich aus dem Informationssicherheitsgesetz und der Cybersicherheitsverordnung; die konkrete Einordnung ist fachlich zu prüfen. <sup class="ref-link"><a href="#ref-3">[3]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Für Betreiber kritischer Infrastrukturen gilt bei meldepflichtigen Cyberangriffen eine Meldung an das BACS innert 24 Stunden nach Entdeckung. Die Voraussetzungen ergeben sich aus dem Informationssicherheitsgesetz und der Cybersicherheitsverordnung; die konkrete Einordnung ist fachlich zu prüfen. <sup class="ref-link"><a href="#ref-3">[3]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup> <sup class="ref-link"><a href="#ref-14">[14]</a></sup></p>
 <p>Nach Art. 24 DSG meldet der Verantwortliche dem EDÖB eine Datensicherheitsverletzung so rasch als möglich, wenn sie voraussichtlich zu einem hohen Risiko für Persönlichkeit oder Grundrechte natürlicher Personen führt. <strong>Dies ist keine individuelle Rechtsberatung; lassen Sie die konkrete Bewertung durch eine Datenschutz- oder Rechtsfachperson prüfen.</strong> <sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
 <p>Der EDÖB stellt für Meldungen von Verantwortlichen ein sicheres Online-Formular bereit. Art. 15 DSV nennt die Angaben, die soweit möglich in der Meldung stehen müssen, und verlangt, fehlende Angaben so rasch als möglich nachzureichen. Er verlangt zudem eine Dokumentation der Tatsachen, Auswirkungen und Massnahmen. <sup class="ref-link"><a href="#ref-10">[10]</a></sup> <sup class="ref-link"><a href="#ref-11">[11]</a></sup></p>
+<p>Das BACS bietet im Cyber Security Hub eine Weiterleitung an weitere Behörden auf Wunsch an. Eine BACS-Meldung ist damit nicht automatisch ein Nachweis der erfüllten EDÖB-Meldung. <sup class="ref-link"><a href="#ref-15">[15]</a></sup> Die EDÖB-Mitteilung vom 6. November 2026 bestätigt im dortigen Fall, dass nachträgliche technische Massnahmen die erforderliche Betroffeneninformation nicht aufheben. Empfänger, Informationsform und Ausnahmen bleiben konkret zu prüfen; eine öffentliche Bekanntmachung ist keine allgemeine KMU-Pflicht. <sup class="ref-link"><a href="#ref-13">[13]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup> <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
 <div class="table-responsive"><table class="kb-table"><thead><tr><th>Entscheidung / Meldung</th><th>Pflicht oder Option nach Prüfung</th><th>Verantwortlich</th><th>Frist / nächster Termin</th><th>Status</th></tr></thead><tbody><tr><td>BACS</td><td></td><td></td><td></td><td></td></tr><tr><td>Kantonspolizei</td><td></td><td></td><td></td><td></td></tr><tr><td>EDÖB</td><td></td><td></td><td></td><td></td></tr><tr><td>Versicherer / Vertragspartner</td><td></td><td></td><td></td><td></td></tr><tr><td>Interne Kommunikation</td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
 <h2 id="f-entscheidungslog-und-uebergabe">F. Entscheidungslog und Übergabe</h2>
 <div class="table-responsive"><table class="kb-table"><thead><tr><th>Uhrzeit</th><th>Neue Tatsache oder Massnahme</th><th>Entscheidung / Begründung</th><th>Verantwortlich</th><th>Offener Punkt / Termin</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
@@ -168,7 +173,7 @@
 <p>____________________________________________________________________________</p>
 <p><strong>Nächste verbindliche Entscheidung um:</strong> __________  <strong>durch:</strong> ______________________________</p>
 <h2 id="grenzen-und-fachliche-pruefung">Grenzen und fachliche Prüfung</h2>
-<p>Diese Checkliste ist ein allgemeines Arbeitsmittel für die erste Reaktion auf dem Stand der Quellenprüfung vom 1. November 2026; dieser Stand ist keine Fachfreigabe. Sie ersetzt keine organisationsspezifische Notfallplanung, technische Forensik, Meldung oder Rechtsberatung. Sie erlaubt keine Aussage darüber, ob Systeme frei von Angreifern sind, ob ein Backup sicher wiederherstellbar ist oder ob keine Daten abgeflossen sind. Ein nachträglich eingespieltes Sicherheitsupdate beseitigt keine bereits erfolgte Kompromittierung. <sup class="ref-link"><a href="#ref-9">[9]</a></sup> Bei möglicher Personendatenverletzung, kritischer Infrastruktur, Strafanzeige, Lösegeldforderung oder grossem Betriebsunterbruch ist <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>; ziehen Sie unverzüglich eine geeignete Fachperson bei.</p>
+<p>Diese Checkliste ist ein allgemeines Arbeitsmittel für die erste Reaktion auf dem Stand der Quellenprüfung vom 15. November 2026; dieser Stand ist keine Fachfreigabe. Erreichbare Quellen und allgemeine Empfehlungen belegen keine tatsächliche Einzelfallprüfung. Sie ersetzt keine organisationsspezifische Notfallplanung, technische Forensik, Meldung oder Rechtsberatung. Sie erlaubt keine Aussage darüber, ob Systeme frei von Angreifern sind, ob ein Backup sicher wiederherstellbar ist oder ob keine Daten abgeflossen sind. Ein nachträglich eingespieltes Sicherheitsupdate beseitigt keine bereits erfolgte Kompromittierung. <sup class="ref-link"><a href="#ref-9">[9]</a></sup> Bei möglicher Personendatenverletzung, kritischer Infrastruktur, Strafanzeige, Lösegeldforderung oder grossem Betriebsunterbruch ist <strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong>; ziehen Sie unverzüglich eine geeignete Fachperson bei.</p>
 <p>Das BACS beschreibt Notfallkonzepte als Zusammenspiel von Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung. Pflegen und testen Sie Rollen, Kontakte, Backup-Wiederherstellung und Entscheidungswege daher ausserhalb des akuten Vorfalls. <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
 <h2 id="quellen">Quellen</h2>
         </div>

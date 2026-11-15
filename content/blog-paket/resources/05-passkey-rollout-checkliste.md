@@ -6,9 +6,10 @@ meta_title: "Passkey-Rollout-Checkliste für Microsoft 365 | DKSchV"
 meta_description: "Arbeitsvorlage für Inventar, Pilot, Conditional Access, Wiederherstellung und Kommunikation beim Entra-Passkey-Rollout."
 suchintention: "Arbeitsmittel – Passkey-Rollout in Microsoft Entra ID planen"
 zielgruppe: "IT-Verantwortliche und Geschäftsleitungen Schweizer KMU"
-version: "Stand 1. November 2026"
-quellenpruefung_umfang: "16/16 eindeutige, in Artikel und Arbeitsmittel zitierte externe Quellenreferenzen stateless im Original abgerufen; zusätzlich Fedlex-Chronologie und amtliche XML-Fassung sowie die BACS-Vormerkung vom 20. Oktober 2026 geprüft"
-quellenpruefung_status: "16/16 zitierte Referenzen am 1. November 2026, 09:05–09:07 CET im Original abgeglichen. Fedlex Art. 8 über amtliche Chronologie und XML-Fassung Stand 7. Juli 2025 bestätigt; Microsoft dokumentiert CYOT seit 30. Oktober 2026 als allgemein verfügbar für Entra-ID-Workforce-Tenants in global Azure. Keine Fach-, Rechts-, Tenant-, Lizenz-, Provider-, Verfügbarkeits- oder Publikationsfreigabe."
+stand: "15. November 2026"
+version: "Stand 15. November 2026"
+quellenpruefung_umfang: "19/19 eindeutige, nach der Pflege in Artikel und Arbeitsmittel zitierte externe Quellen direkt mit fetch gelesen; zusätzlich bisherige Setup-URL, Fedlex-History/XML, Registrierungskampagne, FAQ-Commitliste und zwei Herstellerpatches sowie Roadmap 568076 abgerufen."
+quellenpruefung_status: "Originalabrufe am 15. November 2026, 09:06:01–09:08:37 CET, nach 09:00. 19/19 zitierte Quellen relevant lesbar; 1 Zusatzblocker: Roadmap 568076 liefert nur allgemeine Seite, konkreter Eintrag nicht auslesbar. FAQ-Patches belegen PIM-Präzisierung vom 2. November und GCC-Ergänzung vom 4. November; keine neuen Hauptfristen. CYOT-GA nur Workforce/global Azure; Schweiz-, Provider- und Tenant-Eignung offen. Fedlex Stand 7. Juli 2025 per History/XML bestätigt. Keine Fach-, Rechts-, Forensik-, Tenant-, Lizenz-, Provider-, Produkt- oder Publikationsfreigabe."
 bezug: "/wissen/microsoft-365-mfa-passkeys"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
@@ -16,7 +17,7 @@ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 # Passkey-Rollout-Checkliste für Microsoft 365 / Entra ID
 
 **Arbeitsmittel zum Artikel:** [Microsoft 365 MFA und Passkeys für Schweizer KMU: Rollout zu den Microsoft-Terminen 2027](/wissen/microsoft-365-mfa-passkeys)  
-**Version:** 1. November 2026  
+**Version:** 15. November 2026  
 **Status:** Arbeitsvorlage – nicht freigegeben; vor produktiver Durchsetzung **[FACHPRÜFUNG ERFORDERLICH]**
 
 ---
@@ -25,7 +26,9 @@ fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 
 Diese Checkliste unterstützt Schweizer KMU dabei, die Ablösung von Microsoft-bereitgestellter SMS- und Sprachanruf-MFA in Microsoft Entra ID planbar vorzubereiten. Sie verbindet Inventar, Pilot, Conditional Access, Wiederherstellung und Benutzerkommunikation. Sie hilft, Auslassungen sichtbar zu machen, ersetzt aber weder die Prüfung des konkreten Entra-Tenants noch Herstellerdokumentation, Lizenzprüfung oder eine allfällig erforderliche rechtliche Fachprüfung.
 
-Die Microsoft-Termine gelten nach Herstellerangaben für Entra ID in der Public Cloud: Seit 1. September 2026 werden Benutzer, die für SMS oder Voice aktiviert sind, für Passkeys automatisch aktiviert und können durch eine Registrierungskampagne angesprochen werden. Ab 1. Februar 2027 stellt Microsoft die bereitgestellte SMS-/Sprachübermittlung für alle Benutzer ausser globalen Administratoren und externen Benutzern ein; interne Gastbenutzer bleiben in dieser Februar-Gruppe. Für globale Administratoren und externe Benutzer gilt der 1. Juli 2027. Für einen belegten betrieblichen, regulatorischen oder technischen Bedarf an SMS oder Sprache dokumentiert Microsoft CYOT seit 30. Oktober 2026 als allgemein verfügbar für Workforce-Tenants in global Azure. Soprano, Telesign und Infobip nennt Microsoft als Anbieter. Das bestätigt weder die Berechtigung eines bestimmten Tenants noch regionale Zustellung in der Schweiz, ein verfügbares Angebot, Lizenzvoraussetzungen oder eine funktionierende Integration. **[FACHPRÜFUNG ERFORDERLICH]** Prüfen Sie Geltungsbereich, Termine, Lizenzen, Anbieterabdeckung, Azure-Voraussetzungen und Tenant-Konfiguration vor jeder produktiven Änderung erneut gegen die aktuelle Microsoft-Dokumentation. [1] [2] [8] [9] [10]
+Die Microsoft-Termine gelten nach Herstellerangaben für Entra ID in der Public Cloud einschliesslich GCC: Seit 1. September 2026 werden Benutzer, die für SMS oder Voice aktiviert sind, für Passkeys automatisch aktiviert und können durch eine Registrierungskampagne angesprochen werden. Ab 1. Februar 2027 stellt Microsoft die bereitgestellte SMS-/Sprachübermittlung für alle Benutzer ausser aktiven globalen Administratoren und externen Benutzern ein; interne Gastbenutzer ohne aktive Global-Administrator-Rolle bleiben in dieser Februar-Gruppe. Für Global Administrators gilt der 1. Juli 2027 nur bei aktiver Rolle; externe Benutzer folgen ebenfalls dem Juli-Termin. Wer via rollenzuweisbare Gruppe in PIM nur berechtigt («eligible») ist, aber die Rolle nicht aktiviert hat, folgt dem Februar-Termin. Der Rückzug betrifft auch die Self-Service-Passwortzurücksetzung (SSPR). Der temporäre Opt-out verzögert nur Aktivierung und Kampagne bis Februar, nicht die Durchsetzung für die jeweilige Gruppe. Eine blockierende Passkey-Registrierung betrifft Benutzer, deren einzige verfügbare MFA-Methode Microsoft-bereitgestellte SMS oder Sprache ist und die nicht rechtzeitig zu einem eigenen Provider migriert wurden. Bereits registrierte und genutzte TOTP-Codes bleiben unterstützt, sind aber nicht phishing-resistent. Passkey-Unterstützung für B2B- und interne Gastbenutzer plant Microsoft bis Ende 2026; tatsächliche Verfügbarkeit ist im Pilot zu prüfen. [1] [2]
+
+Für einen belegten betrieblichen, regulatorischen oder technischen Bedarf an SMS oder Sprache dokumentiert Microsoft CYOT seit 30. Oktober 2026 als allgemein verfügbar für Workforce-Tenants in global Azure. Die am 11. November aktualisierten CYOT-Unterlagen nennen Soprano, Telesign und Infobip und beschreiben den Anbieterweg mit Azure Function und SMS-/Voice-Profilen im Entra admin center. Das bestätigt weder die Berechtigung eines bestimmten Tenants noch regionale Zustellung in der Schweiz, ein verfügbares Angebot, Lizenzvoraussetzungen oder eine funktionierende Integration. **[FACHPRÜFUNG ERFORDERLICH]** Prüfen Sie Geltungsbereich, Termine, Lizenzen, Anbieterabdeckung, Azure-Voraussetzungen und Tenant-Konfiguration vor jeder produktiven Änderung erneut gegen die aktuelle Microsoft-Dokumentation. [8] [9] [10]
 
 ## Anwendung
 
@@ -47,8 +50,9 @@ Füllen Sie die Vorlage vor dem Pilot aus. Verwenden Sie je eine Ausgabe pro Ten
 |---|---|---|---|---|
 | Die Public-Cloud-Anwendbarkeit und die für unsere Benutzer geltende Microsoft-Frist sind geprüft. | ☐ |  |  |  |
 | Benutzer mit SMS oder Sprachanruf sind mit dem Microsoft-Auswertungsweg identifiziert. | ☐ |  |  |  |
+| SMS-/Voice-Richtlinienzuordnung, registrierte Methoden und tatsächliche Nutzung sind unterschieden; SSPR ist mit erfasst. [1] [2] | ☐ |  |  |  |
 | Die betroffenen Benutzer sind nach Rollen, Gerätetypen und kritischen Anwendungen gruppiert. | ☐ |  |  |  |
-| Privilegierte Rollen, IT-Provider, Finanz- und Personalrollen sowie interne und externe Gäste sind separat markiert. | ☐ |  |  |  |
+| Aktive Global Administrators, nur eligible PIM-Zuweisungen, weitere privilegierte Rollen, IT-Provider, Finanz-/Personalrollen sowie interne und externe Gäste sind separat markiert und ihrer Februar- oder Juli-Frist zugeordnet. [2] | ☐ |  |  |  |
 | Legacy- oder Altanwendungen ohne moderne Anmeldung/MFA-Unterstützung sind erfasst. | ☐ |  |  |  |
 | Für jede Ausnahme bestehen Begründung, Risiko, Eigentümer, Ablaufdatum und Entscheid. | ☐ |  |  |  |
 | Für eine SMS-/Voice-Ausnahme ist dokumentiert, weshalb keine phishing-resistente Methode genügt. | ☐ |  |  |  |
@@ -66,6 +70,8 @@ Füllen Sie die Vorlage vor dem Pilot aus. Verwenden Sie je eine Ausgabe pro Ten
 
 Ein Passkey ist ein FIDO2-basierter Anmeldenachweis, bei dem der private Schlüssel beim Authenticator bleibt. Synchronisierte Passkeys können über einen Plattform-Schlüsselbund auf den berechtigten Geräten einer Person verfügbar sein; gerätegebundene Passkeys bleiben auf einem bestimmten Gerät, etwa einem FIDO2-Sicherheitsschlüssel. Die Auswahl muss zu Rolle, Gerät, Wiederherstellung und Risiko passen. [3]
 
+Die Novembermeldung nennt die Erstregistrierung eines Passkeys als erste MFA-Methode als GA, aber mit weiterlaufendem Rollout bis Februar 2027. Die verlinkte Anleitung verlangt im gelesenen Stand weiterhin kürzlich abgeschlossene MFA. Prüfen Sie deshalb die tatsächliche Registrierung im Tenant und sichern Sie den Bootstrap-Pfad ab; aus einer GA-Meldung folgt keine vollständige Bereitstellung für jede Pilotperson. Passkeys selbst benötigen laut Anleitung keine zusätzliche Lizenz, auch in Entra ID Free. Conditional Access und weitere Funktionen sind getrennt zu prüfen. [6] [11] [13]
+
 | Kontrollpunkt | Status (☐ / ☑ / n. a.) | Nachweis / Bemerkung | Eigentümer | Termin |
 |---|---|---|---|---|
 | Für jede Benutzergruppe ist die vorgesehene Passkey-Variante festgelegt. | ☐ |  |  |  |
@@ -73,6 +79,7 @@ Ein Passkey ist ein FIDO2-basierter Anmeldenachweis, bei dem der private Schlüs
 | Der Pilot umfasst repräsentative Benutzerprofile und tatsächlich eingesetzte Windows-, macOS-, iOS- und/oder Android-Geräte. | ☐ |  |  |  |
 | Eine eigene Entra-Gruppe begrenzt Methoden- und Richtlinienumfang im Pilot. | ☐ |  |  |  |
 | Pilotpersonen können Passkeys registrieren und sich an Microsoft 365 sowie an kritischen Anwendungen erneut anmelden. | ☐ |  |  |  |
+| Erstregistrierung ohne bisherige MFA, Gastunterstützung und ein geprüfter TAP-/Bootstrap-Ersatzweg sind konkret getestet; Rolloutankündigungen gelten nicht als Testnachweis. [2] [6] [11] [13] | ☐ |  |  |  |
 | Der Einsatz von Passkeys auf gemeinsam genutzten Geräten ist ausdrücklich getestet oder ausgeschlossen. | ☐ |  |  |  |
 | Pilotfeedback, Registrierungsquote, Fehlerfälle und daraus abgeleitete Anpassungen sind festgehalten. | ☐ |  |  |  |
 | Die Pilotabnahme ist durch IT und verantwortliche Fachseite freigegeben. | ☐ |  |  |  |
@@ -110,14 +117,18 @@ Conditional Access steuert den Zugriff nach Bedingungen wie Benutzergruppe und A
 
 Ein verlorenes oder defektes Gerät darf nicht zu improvisierter Identitätsprüfung führen. Microsoft beschreibt den Temporary Access Pass (TAP) als zeitlich begrenzten Code, mit dem Benutzer einen Passkey einrichten und nach Verlust einer starken Methode wieder in einen geordneten Zustand zurückkehren können. Der TAP-Wert ist nach dem Anzeigen nicht erneut abrufbar. [6]
 
+TAP kann für interne Gäste eingerichtet werden, nicht für externe Gäste im Ressourcentenant. Für einen TAP aus dem Heimtenant sind dortige Anforderungen und Cross-Tenant-MFA-Vertrauen zu prüfen. Die Authenticator-Transferanleitung beschreibt bei Arbeits-/Schulkonten nur die Wiederherstellung des Kontonamens mit erneuter Anmeldung; Passkeys sind separat zu behandeln. Die Novembermeldung kündigt verbessertes Android-Passkey-Backup mit Rollout ab Januar 2027 und nur für persönliche Profile an. Kein Backup ersetzt den konkreten Gerätewechseltest. [6] [11] [12]
+
 | Kontrollpunkt | Status (☐ / ☑ / n. a.) | Nachweis / Bemerkung | Eigentümer | Termin |
 |---|---|---|---|---|
 | Der Identitätsprüfprozess vor einer Wiederherstellung ist schriftlich festgelegt und geübt. | ☐ |  |  |  |
 | Die TAP-Richtlinie, berechtigte Gruppen, Lebensdauer und Ausgabeberechtigungen sind festgelegt. | ☐ |  |  |  |
 | Sichere Übergabe und Dokumentation eines TAP sind definiert. | ☐ |  |  |  |
 | Der Ablauf «Gerät verloren», «Sicherheitsschlüssel verloren» und «Gerätewechsel» ist im Pilot getestet. | ☐ |  |  |  |
+| Interne und externe Gäste haben einen getrennt geprüften Recovery-Pfad; Authenticator-Backup und tatsächliche Passkey-Wiederherstellung sind nicht gleichgesetzt. [6] [12] | ☐ |  |  |  |
 | Alte oder verlorene Authentisierungsmethoden werden nach erfolgreicher Wiederherstellung bereinigt. | ☐ |  |  |  |
 | Mindestens zwei cloud-only Notfallzugangskonten bestehen und verwenden eine vom normalen Adminweg unabhängige phishing-resistente Methode. | ☐ |  |  |  |
+| Notfallkonten haben eine permanent aktive, nicht nur eligible Global-Administrator-Rolle; Zugriff und Überwachung sind getestet. [14] | ☐ |  |  |  |
 | Notfallzugänge sind sicher, getrennt und für mehrere berechtigte Personen verfügbar verwahrt. | ☐ |  |  |  |
 | Jede Nutzung von Notfallzugängen löst eine Überwachung aus; die Konten sind regelmässig getestet. | ☐ |  |  |  |
 | Bei geplanter CYOT-Nutzung ist der Ausfall der SMS-/Voice-Zustellung im Wiederherstellungs- und Notfallablauf behandelt. | ☐ |  |  |  |
@@ -140,6 +151,7 @@ Kommunizieren Sie in Wellen: zuerst das «Warum» und den Zeitrahmen, danach die
 | Die Erstaussendung erklärt Änderung, Termin, Nutzen, Handlung und verlässlichen Supportweg. | ☐ |  |  |  |
 | Es bestehen geprüfte Kurzanleitungen für die tatsächlich unterstützten Gerätetypen. | ☐ |  |  |  |
 | Die Kommunikation enthält eine Phishing-Warnung und keinen unerwarteten Anmeldelink. | ☐ |  |  |  |
+| Nach Registrierung und erfolgreichem Ersatzmethodentest sind nicht mehr benötigte SMS-/Voice-Zuordnungen bereinigt, damit aufschiebbare Kampagnenaufforderungen nicht unnötig weiterlaufen. [2] | ☐ |  |  |  |
 | Der Support kennt Wiederherstellungsprozess, Eskalationsweg und Grenzen der Identitätsprüfung. | ☐ |  |  |  |
 | Erinnerungen richten sich nur an Benutzer mit fehlender Registrierung oder fehlgeschlagenem Pilot. | ☐ |  |  |  |
 | Supportfälle, wiederkehrende Fragen und Kommunikationsanpassungen sind ausgewertet. | ☐ |  |  |  |
@@ -161,7 +173,8 @@ Kommunizieren Sie in Wellen: zuerst das «Warum» und den Zeitrahmen, danach die
 | Notfallzugänge sind funktionsfähig, überwacht und getestet. | ☐ |  |  |  |
 | Benutzerkommunikation und Supportbereitschaft sind bestätigt. | ☐ |  |  |  |
 | SMS-/Voice-Restbestand und Ausnahmen sind vor der relevanten Microsoft-Frist aktiv entschieden. | ☐ |  |  |  |
-| CYOT-Ausnahmen sind nur nach dokumentiertem Evaluations- und Produktionstest mit stufenweiser Verkehrsverlagerung freigegeben; bestehende SMS-/Voice-Zielgruppen wurden dabei nicht unbeabsichtigt geändert. | ☐ |  |  |  |
+| CYOT-Ausnahmen sind nur nach dokumentiertem Evaluationstest mit weiterhin Microsoft-bereitgestellter Codezustellung und separatem Providerzustellungstest im Produktionsmodus freigegeben; Verkehr wird stufenweise erhöht und nach jeder Stufe getestet. Bestehende SMS-/Voice-Include- und Exclude-Zielgruppen bleiben erhalten. [9] [10] | ☐ |  |  |  |
+| Bei CYOT sind Schutz vor Telefoniebetrug, Provider- und Azure-Kosten, Erneuerung der Integrationsnachweise und Supportzuständigkeiten dokumentiert; Mehrregionen-/Zweitproviderbeispiele gelten nicht als getestetes Failover. [8] [9] | ☐ |  |  |  |
 | Nachkontrolle von Registrierung, Anmeldung und Support ist terminiert. | ☐ |  |  |  |
 
 **Rolloutentscheid:**  
@@ -177,7 +190,7 @@ Kommunizieren Sie in Wellen: zuerst das «Warum» und den Zeitrahmen, danach die
 
 Diese Checkliste ist eine organisatorische Arbeitsvorlage. Sie garantiert weder eine unterbruchsfreie Anmeldung noch vollständigen Schutz vor Kontoübernahmen oder Phishing. Passkeys reduzieren bestimmte Phishing-Risiken, ersetzen aber nicht sichere Endgeräte, Berechtigungsmanagement, Protokollierung, Benutzeraufmerksamkeit und Incident Response. Herstellerfunktionen, Lizenzvoraussetzungen, unterstützte Geräte sowie Microsoft-Termine können sich ändern; prüfen Sie vor jedem produktiven Schritt die aktuelle Herstellerdokumentation.
 
-Art. 8 DSG verlangt geeignete technische und organisatorische Massnahmen für eine dem Risiko angemessene Datensicherheit. Der Wortlaut wurde am 1. November 2026 anhand der amtlichen Fedlex-XML-Fassung und Chronologie geprüft; die jüngste dort ausgewiesene Fassung hat den Stand 7. Juli 2025. **[FACHPRÜFUNG ERFORDERLICH]** Ob die konkreten Einstellungen, Verfahren und allfälligen Branchenvorgaben Ihres Unternehmens genügen, muss fachlich und bei Bedarf rechtlich geprüft werden. Dieses Arbeitsmittel und die Quellenprüfung erteilen keine individuelle Rechtsfreigabe. [7]
+Art. 8 DSG verlangt geeignete technische und organisatorische Massnahmen für eine dem Risiko angemessene Datensicherheit. Der Wortlaut wurde am 15. November 2026 anhand der amtlichen Fedlex-XML-Fassung und Chronologie geprüft; die jüngste dort ausgewiesene Fassung hat den Stand 7. Juli 2025. **[FACHPRÜFUNG ERFORDERLICH]** Ob die konkreten Einstellungen, Verfahren und allfälligen Branchenvorgaben Ihres Unternehmens genügen, muss fachlich und bei Bedarf rechtlich geprüft werden. Dieses Arbeitsmittel und die Quellenprüfung erteilen keine individuelle Rechtsfreigabe. [7]
 
 ## Quellen
 
@@ -190,4 +203,8 @@ Art. 8 DSG verlangt geeignete technische und organisatorische Massnahmen für ei
 [7]: https://www.fedlex.admin.ch/eli/cc/2022/491/de "Fedlex – Bundesgesetz über den Datenschutz (DSG), Art. 8 Datensicherheit"
 [8]: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers "Microsoft Learn – Choose a telephony provider for SMS and voice authentication"
 [9]: https://learn.microsoft.com/en-us/entra/identity/authentication/phone-providers-faq "Microsoft Learn – Frequently asked questions about Choose Your Own Telephony Provider"
-[10]: https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-set-up-sms-voice-api "Microsoft Learn – Set up SMS and voice with Choose Your Own Telephony Provider"
+[10]: https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up "Microsoft Learn – Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center"
+[11]: https://techcommunity.microsoft.com/blog/microsoft-entra-blog/what%E2%80%99s-new-in-microsoft-entra-november-2026/4556457 "Microsoft Entra Blog – What’s new in Microsoft Entra: November 2026, 6. November 2026"
+[12]: https://learn.microsoft.com/entra/identity/authentication/how-to-transfer-authenticator-new-phone "Microsoft Learn – Transfer Microsoft Authenticator account entries to a new phone"
+[13]: https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkeys-fido2 "Microsoft Learn – Enable passkeys FIDO2 in Microsoft Entra ID"
+[14]: https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access "Microsoft Learn – Manage emergency access accounts in Microsoft Entra ID"

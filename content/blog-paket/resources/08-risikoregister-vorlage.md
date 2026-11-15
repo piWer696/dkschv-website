@@ -1,13 +1,13 @@
 ---
 arbeitsmittel: "Risikoregister-Vorlage für Cyberrisiken im KMU"
 passender_artikel: /wissen/it-sicherheitscheck-kmu
-version: "1.3"
+version: "1.4"
 status: "Arbeitsvorlage – nicht freigegeben"
 slug: "/resources/08-risikoregister-vorlage"
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
-stand: "1. November 2026"
-quellenpruefung_umfang: "Alle 8 Quellenreferenzen dieser Vorlage direkt geprüft; zusätzlich Fedlex-Chronologien und amtliche XML-Fassungen sowie einschlägige BACS- und CISA-Originalmeldungen bis 27. Oktober 2026 abgeglichen."
-quellenpruefung_status: "Vollständig für alle externen Quellenreferenzen und die dokumentierten einschlägigen Originalmeldungen; interne relative Paketlinks erhalten, nicht als künftige Live-URLs geprüft."
+stand: "15. November 2026"
+quellenpruefung_umfang: "Alle 17 Original-URLs dieser Vorlage direkt abgerufen und hinsichtlich der zitierten Aussagen gelesen; im Artikelpaar insgesamt 21 zitierte und 11 ergänzende Original-URLs einschliesslich Fedlex-History/XML und gezieltem BACS-/KEV-/Herstellerabgleich seit 1. November sowie NIST-Vormerkung vom 27. Oktober. Tatsächliche Rückgaben am 15. November nach 09:00 CET."
+quellenpruefung_status: "17 Vorlagenquellen inhaltlich auslesbar; im ergänzenden Artikelpaar-Abgleich 1 BACS-KMU-DOCX nur als kodierter Binärtext, Inhalt nicht geprüft. Ausgabegrenzen bei langen Quellen dokumentiert. Keine Fach-, Rechts-, Forensik-, Produkt- oder Einzelfallfreigabe; interne Paketziele nicht live und kein CMS geprüft."
 ---
 
 # Risikoregister-Vorlage für Cyberrisiken im KMU
@@ -15,7 +15,7 @@ quellenpruefung_status: "Vollständig für alle externen Quellenreferenzen und d
 > **[FACHPRÜFUNG ERFORDERLICH]** Datenschutz-, Vertrags- und sektorale Anforderungen sowie die Risikokriterien müssen vor Verwendung durch zuständige Fachpersonen geprüft werden.
 
 **Arbeitsmittel zu:** [IT-Sicherheitscheck für Schweizer KMU: So wird aus Befunden ein priorisiertes Cyber-Risikoregister](/wissen/it-sicherheitscheck-kmu)  
-**Version:** 1.3 | **Quellenstand:** 1. November 2026 (Quellenprüfung; keine Fach- oder Rechtsfreigabe)  
+**Version:** 1.4 | **Quellenstand:** 15. November 2026 (Quellenprüfung; keine Fach- oder Rechtsfreigabe)  
 **Organisation:** ________________________________  
 **Register-Verantwortung:** ________________________________  
 **Letzte Überprüfung:** ________________________________
@@ -36,6 +36,12 @@ Die Vorlage ist für eine risikobasierte Arbeitsweise bestimmt. Der NIST-Leitfad
 5. Benennen Sie Risiko- und Massnahmen-Eigentümer. Schliessen Sie eine Zeile erst, wenn das Abnahmekriterium erfüllt und die Restbewertung geprüft ist.
 6. Legen Sie Top-Risiken dem zuständigen Führungsgremium zur Entscheidung vor und überführen Sie relevante Ausfallszenarien in die Notfallplanung.
 
+**Methodengrenze:** Die CSRM nutzt einen erweiterten Grundschutz und eine qualitative Schutzbedarfsbewertung; das amtliche Dokument vom 24. November 2025 verzichtet ausdrücklich auf eine vollständige Risikoanalyse und Quantifizierung.[9] Dieses Register ergänzt die Prozesssicht um Geschäftsentscheide. Seine Skala ist kein offizieller CSRM-Prüfkatalog, keine Zertifizierung und keine Bestätigung erfüllter Anforderungen. Dokumentieren Sie auch Abhängigkeiten zu vorläufig zurückgestellten Schutzobjekten.[1]
+
+**Nachweise zuordnen:** Notieren Sie Beobachtungsdatum, Schutzobjekt, tatsächlichen Lauf- oder Paketstand, Zugangspfad, Prüfumfang und zuständige Person. Trennen Sie öffentliche Warnung, mögliche Produktbetroffenheit und bestätigten lokalen Befund. Ein Warnungs- oder KEV-Eintrag ersetzt weder die Prüfung der konkreten Instanz noch einen Nachweis ihrer Kompromittierung.[5] [12] Fehlende Nachweise erhalten einen Klärungsauftrag mit Eigentümer und Termin; «nicht geprüft» bedeutet nicht «nicht betroffen».
+
+**Homeoffice und OT einbeziehen:** Erfassen Sie geschäftliche Zugangspfade und bekannte Grenzen der Netztrennung, wenn private Heimnetze für die Arbeit genutzt werden. Das BACS nennt bei exponierten Heimdiensten Segmentierung, beschränkte Zugriffe, VPN und möglichst einen zweiten Faktor als Schutzpunkte; es liefert keine konkrete Plex-Fixversion.[10] Prüfen Sie ausserdem betriebliche Steuerungen samt direkten, indirekten und dienstleisterbetriebenen Fernwartungswegen. Die Warnung zu Kühlanlagen vom 10. November 2026 ist ein Beispiel für mögliche Waren- und Betriebsfolgen, keine Bestätigung der eigenen Gerätebetroffenheit.[11] Private Geräte dürfen daraus nicht pauschal als geprüft oder für uneingeschränkte Prüfungen freigegeben gelten.
+
 ### Zusätzliche Kontrollpunkte bei Komponenten und KI
 
 Ergibt ein Befund eine möglicherweise betroffene eingebettete oder extern betriebene Komponente, erfassen Sie zusätzlich Produkt, Komponente, tatsächlichen Lauf- oder Paketstand, Erreichbarkeit und Betreiber. Verlangen Sie vom Hersteller, Hoster oder Dienstleister eine Fixbestätigung für die konkrete Instanz und prüfen Sie den Nachweis des tatsächlich laufenden, behobenen Stands. Eine reine Hauptversionsangabe genügt bei zurückportierten Sicherheitskorrekturen nicht zwingend.[5]
@@ -43,6 +49,10 @@ Ergibt ein Befund eine möglicherweise betroffene eingebettete oder extern betri
 Bei einem KI-gestützten Prozess dokumentieren Sie, welche Funktion von dem Dienst abhängt, welche Kapazitäts-, Budget- oder Quotenannahme gilt, ab welchen Schwellen gewarnt wird und wer bei eingeschränkter Verfügbarkeit entscheidet. Ergänzen Sie einen manuellen oder anderen Ausweichablauf, soweit der Prozess kritisch ist. Die Orientierung zu KI-Tokenverbrauch nennt risikobasierte Priorisierung, Monitoring, Warnschwellen sowie Kapazitäts- und Ausweichplanung als mögliche organisatorische Massnahmen.[6] [7]
 
 Bei KI-Agenten erfassen Sie zudem die eigene Identität, den konkreten Auftrag, angebundene Daten und Werkzeuge, zulässige Netzwerkverbindungen und mögliche externe Wirkungen. Für Handlungen mit hohem Schadenspotenzial oder geringer Rückgängigkeitsmöglichkeit sind menschliche Freigabe, Protokollierung und ein auf die Aufgabe begrenzter Berechtigungsumfang als mögliche Kontrollen zu beurteilen.[8] Diese Punkte sind keine Freigabe eines Agenten und begründen keine Aussage über eine konkrete Schwachstelle oder einen Patchstand.
+
+Prüfen Sie zusätzlich, welche vom Modell getrennte Stelle Berechtigungsregeln durchsetzt, wie Zugriffe deterministisch entschieden und Rechte widerrufen werden sowie ob der Agent seine eigenen Nachweise verändern kann. Diese Punkte greifen die vorgeschlagenen NIST-Gestaltungsgrundsätze vom 27. Oktober 2026 auf, keinen finalen verbindlichen Standard.[17] Die kanadische Orientierung empfiehlt eine vorsichtige Einführung für nicht sensible Aufgaben mit niedrigem Risiko. Eine menschliche Freigabe allein ist keine Legitimation eines Hochrisikoeinsatzes.[8]
+
+**Datierter Prüfkontext, 15. November 2026:** KEV führt SonicWall CVE-2026-19868 seit 6. November, Apple CVE-2024-27834 seit 4. November und WordPress CVE-2026-119977 seit 3. November 2026.[12] Erfassen Sie dies bei passenden Produkten als Prüfauftrag, nicht als bestätigten Befund. Bei SonicWall sind Modellgeneration, Build, SAML und alternative Authentisierung zu prüfen; die Revision vom 9. November ergänzt einen Workaround, dessen Eignung separat fachlich zu beurteilen ist.[13] Bei WordPress zählen Versionslinie, Backport und tatsächlich ausgelieferter Hosterstand.[14] Bei Apple sind historische CVE-Fixes von aktuellen, gerätespezifischen Sicherheitsreleases zu trennen.[15] [16] KEV-Fristen sind hier keine Schweizer gesetzlichen Fristen. Keine Produkt-, Patch-, Konfigurations- oder Vorfallfreigabe folgt aus diesem Kontext.
 
 ## Registerrahmen und Bewertungsskala
 
@@ -85,6 +95,19 @@ Bei KI-Agenten erfassen Sie zudem die eigene Identität, den konkreten Auftrag, 
 **Technischer oder organisatorischer Befund:** _________________________________________  
 **Evidenz / Quelle / Befund-ID:** ___________________________________________________
 
+**Beobachtungsdatum / Prüfumfang / prüfende Stelle / bekannte Nachweisgrenzen:**  
+__________________________________________________________________________________
+
+**Exposition:** ☐ direkt aus dem Internet ☐ indirekter Fernzugriff ☐ intern ☐ unbekannt  
+**Zugangspfad / Netzsegment / Authentisierung / Nachweisdatum:**  
+__________________________________________________________________________________
+
+**Geschäftlicher Homeoffice- oder OT-Bezug / Betreiber / noch zu klärende Abhängigkeiten:**  
+__________________________________________________________________________________
+
+**Öffentliche Warnung / Herstellerrevision / CVE und getrenntes Ergebnis der lokalen Modell-, Versions- und Konfigurationsprüfung:**  
+__________________________________________________________________________________
+
 **Bei eingebetteter oder externer Komponente: Produkt / Komponente / Lauf- oder Paketstand / Betreiber:**  
 __________________________________________________________________________________
 
@@ -106,6 +129,9 @@ ________________________________________________________________________________
 __________________________________________________________________________________
 
 **Bei KI-Agent (falls einschlägig): Identität / Auftrag / Daten und Werkzeuge / zulässige Netzwerkverbindungen / mögliche externe Wirkung:**  
+__________________________________________________________________________________
+
+**Unabhängige Berechtigungsdurchsetzung / Widerruf / Schutz der Nachweise vor Agentenänderung, soweit einschlägig:**  
 __________________________________________________________________________________
 
 ### 3. Bewertung vor der Massnahme
@@ -147,6 +173,9 @@ ________________________________________________________________________________
 
 - ☐ Das Szenario nennt Ursache, Ereignis und geschäftliche Folge; es ist mehr als eine technische Befundbezeichnung.
 - ☐ Der betroffene Prozess, die Schutzobjekte und die Evidenz sind dokumentiert.
+- ☐ Befunddatum, Prüfumfang, Exposition und Nachweisgrenzen sind dokumentiert; offene Klärungsaufträge haben Eigentümer und Termin.
+- ☐ Warnung oder KEV-Kontext sind von lokaler Modell-, Versions-, Konfigurations- und Vorfallprüfung getrennt.
+- ☐ Geschäftliche Homeoffice- und OT-Abhängigkeiten samt Fernwartungswegen sind beurteilt, soweit einschlägig.
 - ☐ Auswirkung und Wahrscheinlichkeit sind nach der festgelegten Skala begründet.
 - ☐ Bestehende Kontrollen sind nachweisbar; ihre Grenzen sind bekannt.
 - ☐ Risiko-Eigentümer und Massnahmen-Eigentümer sind benannt.
@@ -155,7 +184,8 @@ ________________________________________________________________________________
 - ☐ Bei einer eingebetteten oder extern betriebenen Komponente sind Betreiber, konkreter Fixnachweis und tatsächlich laufender Stand festgehalten, soweit einschlägig.
 - ☐ Bei einem KI-gestützten kritischen Prozess sind Kapazitäts- oder Budgetannahmen, Warnschwellen und Ausweichablauf beurteilt, soweit einschlägig.
 - ☐ Bei einem KI-Agenten sind Identität, Werkzeug- und Netzwerkzugriffe, mögliche externe Wirkungen sowie notwendige menschliche Freigaben beurteilt, soweit einschlägig.
-- ☐ Ein kritisches Ausfallszenario ist in der [IT-Notfallplanung](/unsere-dienstleistungen/notfallplanung) berücksichtigt.
+- ☐ Bei einem KI-Agenten sind unabhängige Berechtigungsdurchsetzung, Widerruf und Nachweisschutz beurteilt, soweit einschlägig.
+- ☐ Ein kritisches Ausfallszenario ist in der [IT-Notfallplanung](https://www.dkschv.ch/notfallplanung.html) berücksichtigt.
 - ☐ Relevante Datenschutz-, Vertrags- oder sektorale Anforderungen wurden fachlich geprüft.
 
 ## Grenzen und fachliche Prüfung
@@ -164,7 +194,7 @@ Die Vorlage schafft Transparenz, garantiert aber weder die Vollständigkeit alle
 
 Bei Personendaten verlangt das DSG eine dem Risiko angemessene Datensicherheit. Die DSV nennt für die Beurteilung unter anderem Schutzbedarf, Ursache und Gefahr, vorhandene oder vorgesehene Massnahmen sowie Wahrscheinlichkeit und Schwere einer Datensicherheitsverletzung.[2] **[FACHPRÜFUNG ERFORDERLICH]** Ob eine konkrete Datenbearbeitung, ein Vertrag oder eine mögliche Meldung rechtliche Pflichten auslöst, ist durch qualifizierte Datenschutz- oder Rechtsfachpersonen zu beurteilen. Dieses Arbeitsmittel ist keine individuelle Rechtsberatung.
 
-Für eine methodische Einordnung können Sie die [Sicherheitsanalyse](/unsere-dienstleistungen/sicherheitsanalyse) und das [Risikomanagement](/unsere-dienstleistungen/risikomanagement) von DKSchV konsultieren.
+Für eine methodische Einordnung können Sie die [Sicherheitsanalyse](https://www.dkschv.ch/sicherheitsanalyse.html) und das [Risikomanagement](https://www.dkschv.ch/risikomanagement.html) von DKSchV konsultieren.
 
 ## Quellen
 
@@ -176,3 +206,12 @@ Für eine methodische Einordnung können Sie die [Sicherheitsanalyse](/unsere-di
 [6]: https://www.cisa.gov/resources-tools/resources/managing-ai-token-consumption-operational-resilience "CISA – Managing AI Token Consumption for Operational Resilience"
 [7]: https://www.cyber.gc.ca/en/guidance/managing-ai-token-consumption-operational-resilience-itsm00125 "Canadian Centre for Cyber Security – Managing AI Token Consumption for Operational Resilience"
 [8]: https://www.cyber.gc.ca/en/guidance/careful-adoption-agentic-ai "Canadian Centre for Cyber Security – Careful adoption of agentic AI"
+[9]: https://www.bacs.admin.ch/dam/de/sd-web/KKDLbrGSAwdL/methode-csrm-2025-de.pdf "BACS – CSRM-Methodendokument vom 24. November 2025"
+[10]: https://www.bacs.admin.ch/de/26w44-de "BACS – Woche 44: Heimnetzwerke, 3. November 2026"
+[11]: https://www.bacs.admin.ch/de/warnung-kuehlanlagen-de "BACS – Kühl- und Kältesteuerungen, 10. November 2026"
+[12]: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json "CISA – KEV-Katalog, abgerufen am 15. November 2026"
+[13]: https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0014 "SonicWall – SNWLID-2026-0014, Revision vom 9. November 2026"
+[14]: https://wordpress.org/documentation/wordpress-version/version-7-1-4/ "WordPress – Version 7.1.4 und ältere Sicherheitsreleases"
+[15]: https://support.apple.com/en-us/120896 "Apple – Sicherheitsinhalt von Safari 17.5, historischer CVE-Fix"
+[16]: https://support.apple.com/en-us/100100 "Apple – Aktueller Sicherheitsrelease-Überblick, Abruf 15. November 2026"
+[17]: https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems "NIST – Vorgeschlagene Grundsätze für Agentenidentität, 27. Oktober 2026"

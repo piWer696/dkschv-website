@@ -1050,7 +1050,7 @@ function generateCatalogHtml(relativeRoot = '.') {
       <div class="news-highlight-card">
         <div class="news-badge">
           <span class="news-pulse-dot"></span>
-          <span>Wochenlage Sonntagsausgabe · KW 45 (${latestNewsDate})</span>
+          <span>Wochenlage Sonntagsausgabe · ${latestNewsKW} (${latestNewsDate})</span>
         </div>
         <h2 class="news-title">Aktuelle Schweizer Cyber-Security Branchennews</h2>
         <p style="font-size: 14.5px; color: #cbd5e1; max-width: 820px; line-height: 1.6; margin-bottom: 16px;">
@@ -1060,23 +1060,27 @@ function generateCatalogHtml(relativeRoot = '.') {
         <div class="news-points">
           <div class="news-point-item">
             <span>🛡️</span>
-            <div><strong>SonicWall VPN:</strong> CISA KEV Aufnahme für SAML-Bypass; Modell- und Patchstände prüfen.</div>
+            <div><strong>Outlook &amp; Chromium:</strong> CISA KEV Zero-Days (CVE-2026-124194 &amp; CVE-2026-125350); sofortige Build- und Patchprüfung.</div>
+          </div>
+          <div class="news-point-item">
+            <span>❄️</span>
+            <div><strong>BACS Kühlsteuerungen:</strong> Warnung vor exponierten Kälteanlagen und Danfoss-Schwachstellen in Schweizer Betrieben.</div>
           </div>
           <div class="news-point-item">
             <span>🔍</span>
-            <div><strong>Schatten-Secrets:</strong> KI-gestützte Secret-Jagd bedroht Azure/M365 Tokens &amp; Repositories.</div>
+            <div><strong>ScreenConnect SCKit:</strong> Gezielte Angriffe auf authentifizierte Techniker-Sessions und Fernwartungszugänge.</div>
           </div>
           <div class="news-point-item">
-            <span>⚠️</span>
-            <div><strong>EHRA-Phishing:</strong> BACS warnt vor gefälschten Handelsregister-Aktualisierungsmails.</div>
+            <span>🤖</span>
+            <div><strong>Coding-Agenten:</strong> Vergiftete Nachtrainingsdaten manipulieren Modellwerkzeuge und Entwickler-Workflows.</div>
           </div>
           <div class="news-point-item">
-            <span>⚖️</span>
-            <div><strong>EDÖB / SkySale:</strong> Bundesverwaltungsgericht bestätigt Betroffenen-Informationspflicht.</div>
+            <span>🛒</span>
+            <div><strong>BACS Phishing-Warnung:</strong> Zunahme KI-generierter Fake-Shops und Paket-Phishing vor Black Friday.</div>
           </div>
         </div>
 
-        <a href="${relativeRoot === '.' ? 'wissen/news/2026-11-08-branchennews.html' : './news/2026-11-08-branchennews.html'}" class="btn btn-primary" style="background: var(--teal-accent); display: inline-flex; align-items: center; gap: 8px;">
+        <a href="${relativeRoot === '.' ? `wissen/news/${latestNewsFilename}` : `./news/${latestNewsFilename}`}" class="btn btn-primary" style="background: var(--teal-accent); display: inline-flex; align-items: center; gap: 8px;">
           <span>Vollständige Sonntagsausgabe lesen</span>
           <span>&rarr;</span>
         </a>

@@ -1,31 +1,25 @@
-# DKSchV-Blogautomation – aktueller Status
+# DKSchV-Blogautomation – Stand 15. November 2026, KW46
 
-**Stand:** 8. November 2026, ISO-KW45. Website: [dkschv.ch](https://www.dkschv.ch/). CMS: Webador/JouwWeb, Projekt **DKSchV Pro**.
+**Lokal erledigt:** Zwölf Artikel und zwölf Arbeitsmittel auf den tatsächlichen Quellenprüfstand 15. November 2026 gepflegt, Einzelberichte geschrieben, Metadaten und CMS-Importmanifest synchronisiert, alte Markdown-Linkziele in 14 Dateien auf verifizierte Live-Adressen korrigiert. [Paketvalidator](../reviews/2026-11-15/validator-ergebnis.txt): **0 Fehler, 0 Warnungen**. SEO-Felder, Slugs, Termine, ursprüngliche Fachmarker und historische Fach-/Rechtsfelder bleiben erhalten; materielle Arbeitsmittelrevisionen sind sichtbar abgeglichen.
 
-## Lokal erledigt
+Die [Sonntagsnews](../news/2026-11-15_DKSchV_Branchennews.md) priorisieren sechs aktuelle Themen: Outlook/Chromium, Kühlsteuerungen, ScreenConnect, vergiftetes Modellnachtraining, KI-Codeprüfung und KI-Fakeshops. Quellenzeit, Änderungen und sämtliche zwölf artikelweisen Blocker stehen im [Pflegebericht KW46](../reviews/2026-11-15/DKSchV_Pflegebericht_KW46.md).
 
-Die [Sonntagsnews vom 08.11.](../news/2026-11-08_DKSchV_Branchennews.md) sind als nicht veröffentlichter redaktioneller Entwurf erstellt. KW45 ist ungerade; keine neue reguläre Vollpflege der zwölf Artikelpaare. Der vollständige Quellenprüfstand bleibt **01.11.2026**. Die [artikelweisen KW44-Nachweise](../reviews/2026-11-01/DKSchV_Pflegebericht_KW44.md) bilden die Arbeitsgrundlage.
+## Aktuelle Live- und Schutzblocker
 
-Der unterbrochene KW44-Abschluss hinterliess zwölf veraltete Quellenstand-Einträge in der lokalen Import-CSV. Sie wurden am 08.11. abgeglichen; Artikel 12 und Matrix erhielten die bereits belegte aktuelle ISG-Referenz. Die [Abschlussvalidierung](../news/qa/2026-11-08/validator-ergebnis.txt) meldet **0 Fehler und 0 Warnungen**. SEO-Importfelder, Termine, Entwurfsstatus und Fachmarker bleiben unverändert. Einzelheiten und klare Veröffentlichungssperren stehen im [Laufstatus](../news/2026-11-08_DKSchV_Laufstatus.md).
+**CMS-Zugang nicht authentifiziert:** Der [Webador-Test](../reviews/2026-11-15/cms-zugangsstatus.md) vom 15.11. gegen 09:05 CET leitete auf den Login um. Gespeicherte Anmeldereferenzen sind in dieser Umgebung nicht zugreifbar. Die My-Browser-Einstellung ist aktiviert, aber keine verbundene Webador-Sitzung wurde genutzt. Aktuelles Hosting/CMS und die Zuordnung der neuen öffentlichen `.html`-Darstellung zum historischen Projekt DKSchV Pro sind nicht verifiziert.
 
-## Aktuell blockiert
+**Öffentliche Bereitstellung entdeckt, nicht von diesem Lauf ausgeführt:** Alle zwölf Artikeladressen sind HTTP200. Der ursprüngliche Paket-Linktest liefert15×404 für alte Ressourcen-/Servicepfade; die [verlinkten neuen Ziele](../reviews/2026-11-15/public-target-map.csv) liefern200. Die tatsächlichen Zieladressen sind im lokalen Importmanifest getrennt erfasst. Ressourcen-Slugs bleiben logische Paket-IDs.
 
-Der [Webador-Zugriff vom 08.11.](../news/qa/2026-11-08/cms-zugangsstatus.md) zeigt die Anmeldeseite statt eines authentifizierten Projektzugangs. Gespeicherte Anmeldereferenzen sind in dieser Umgebung nicht zugreifbar. My Browser ist als Einstellung aktiviert, in diesem Lauf aber nicht als verbundene Webador-Sitzung verwendet. **Kein geschützter Import gestartet, kein öffentlicher Beitrag geändert oder veröffentlicht.**
+**Serverseitiger Schutz nicht nachgewiesen:** Der Wiederherstellungsartikel liefert trotz «Kunden-Login erforderlich» rund 22.200 Zeichen Text ohne Credentials. Der [strukturierte Abrufbefund](../reviews/2026-11-15/public-article-exposure.json) bestätigt umfangreiche Fachabschnitte in der Antwort. Die öffentliche Darstellung enthält weiterhin eine Fachprüfungswarnung. Artikel 08–12 sind bereits HTTP200, obwohl ihre geplanten Termine noch nicht erreicht sind. Eine Freigabe oder Herkunft dieser Bereitstellung wird nicht behauptet.
 
-Der [HTTP-Linkchecker](../news/qa/2026-11-08/public-link-check.csv) erhielt 28 × HTTP 403, auch für bestehende Service-/Kontaktseiten. Der separate Inhaltsabruf der Kontaktseite war lesbar. Es ist keine erfolgreiche öffentliche Artikel-/Arbeitsmittelprüfung und kein heutiger 404-Nachweis. Die Ursache des verweigerten HTTP-Zugriffs bleibt offen.
+**Fach- und Quellenblocker:** Alle Einzelfall-Fachmarker bleiben offen. Nicht auslesbare Zusatzansichten und der kanadische generische HTTP403-Abruf bleiben artikelbezogen dokumentiert. Lokale Validierung, allgemeine Behördenempfehlungen, ein200-Status und ein verstrichener Termin ersetzen keine tatsächliche Fachfreigabe.
 
-Alle Fachprüfungsmarker bleiben ungelöst. Quellenpflege und Validierung sind keine Einzelfall-Fachfreigabe. Bei Artikel 11 ist die am 01.11. lesbare, beim generischen HTTP-Abruf aber 403 liefernde kanadische KI-Quelle vor Go-live zusätzlich zu klären.
+**Live-Synchronisierung BLOCKIERT:** Kein Editor geändert, kein geschützter Import gestartet, kein Beitrag veröffentlicht. Normale Webador-Änderungen würden sofort live gehen. Für spätere Änderungen sind der passende CMS-/Hostingzugang, Quellen- und Linkprüfung, alle zuständigen Fachfreigaben und die gewünschte serverseitige Zugangspolitik erforderlich.
 
-## Historische Einrichtung
+## Aktiver Takt
 
-Am 20.09. wurden ein interaktiver Webador-Projektzugang und eine ausgeblendete, passwortgeschützte Testseite mit Blog-Modul bestätigt. Die eingebettete Oberfläche war damals nicht zuverlässig genug bedienbar für einen unbeaufsichtigten Import. Beim Anmeldeversuch vom 25.10. meldete der Benutzer ein nicht ladendes Manus-Übernahmefenster; kein späterer Importerfolg ist dokumentiert. Diese historischen Befunde beweisen keine aktuelle Authentifizierung oder fortbestehende Schutzkonfiguration.
+Der am 15.11. rein lesend geprüfte Zeitplan **«DKSchV News und Blogpflege»** ist aktiv: sonntags 09:00, Zeitzone Europe/Zurich. Branchennews wöchentlich, zusätzliche Vollpflege in jeder geraden ISO-Woche. **Nächste News:** 22.11.2026, KW47. **Nächste Vollpflege:** 29.11.2026, KW48. Kein neuer Zeitplan und keine Änderung der Konfiguration.
 
-Normale Webador-Editoränderungen gehen sofort live. Deshalb darf ohne nachgewiesenen Zugang, Fachstatus, Quellen- und Linkprüfung keine Änderung ausgeführt werden. Eine separate API-fähige Publikationslösung oder dauerhafte Browserautomation wurde nicht neu eingerichtet oder genehmigt.
+Historisch wurden am 20.09. ein interaktiver Webador-Login und eine passwortgeschützte Testseite bestätigt. Der spätere Übernahmeversuch vom 25.10. war vom Benutzer als nicht ladend gemeldet worden. Diese Befunde beweisen weder einen heutigen Login noch eine wirksame Schutzkonfiguration der inzwischen anders dargestellten öffentlichen Inhalte.
 
-## Takt und Sicherheitsregeln
-
-Der bestehende Sonntagslauf erstellt Branchennews und zusätzlich in jeder geraden ISO-Woche die vollständige Blogpflege. Zeitzone **Europe/Zurich**, vorgesehener Start sonntags 09:00. **Nächster Lauf: 15.11.2026, KW46**, News und Vollpflege. Es wurde kein zusätzlicher Zeitplan angelegt oder der bestehende geändert.
-
-Neue Beiträge dürfen nur an oder nach ihrem ursprünglichen Datum veröffentlicht werden, wenn alle Quellen erreichbar, Fakten widerspruchsfrei, Links geprüft, sämtliche zuständigen Fachmarker tatsächlich aufgelöst und der CMS-Zugang authentifiziert sind. Bereits öffentliche freigegebene Beiträge sind nur innerhalb dieser Berechtigung automatisch zu aktualisieren. Eine Quellenprüfung darf keine juristische, datenschutzrechtliche, forensische oder Tenant-Freigabe simulieren.
-
-**Live-Änderungsprotokoll dieses Laufs:** Keine Einträge. Die lokale Recherche und Abgleicharbeit ist dokumentiert; Live-Synchronisierung bleibt blockiert.
+**Live-Änderungsprotokoll dieses Laufs:** Keine Einträge. Entwürfe, Quellenjournal, Linkzuordnung und lokale QA sind aktualisiert; die öffentliche Bereitstellung wurde weder freigegeben noch verändert.

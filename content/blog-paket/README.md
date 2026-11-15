@@ -1,29 +1,29 @@
-# DKSchV-Blogpaket – Stand und Übergabe
+# DKSchV-Blogpaket – Stand 15. November 2026
 
-**12 vollständige Artikel und 12 Arbeitsmittel; sämtliche Inhalte bleiben nicht freigegebene Entwürfe beziehungsweise Arbeitsvorlagen.** Recherche, lokale Validierung und ein geplanter Termin sind keine Fach-, Rechts-, Tenant- oder Publikationsfreigabe.
+**12 Artikel und 12 Arbeitsmittel lokal gepflegt; sämtliche Inhalte bleiben nicht freigegeben.** Der Quellenprüfstand lautet 15. November 2026. Ein recherchierter Quellenstand, der erreichte Veröffentlichungstermin und ein erfolgreicher Validator sind keine Einzelfall-Fachfreigabe.
 
-Letzte vollständige Referenzpflege: **01.11.2026, KW44**. Der unterbrochene Abschluss wurde am **08.11.2026, KW45** nachgeholt: zwölf abweichende Quellenstand-Einträge im CMS-Manifest korrigiert; ISG-Referenz in Artikel 12 und Matrix auf die schon am 01.11. geprüfte aktuelle Oktober-2025-Fassung berichtigt. Die übrigen 22 Inhaltsdateien wurden am 08.11. nicht geändert. Quellenstand, ursprüngliche SEO-Importfelder, Slugs, Termine und Fachmarker wurden nicht zu einer neuen Freigabe umgedeutet.
+## Inhalt und Nachweise
 
-## Dateien und Nachweise
+Die Artikel liegen unter `articles/`, die gleich nummerierten Checklisten und Vorlagen unter `resources/`. Das [Wartungsmanifest](maintenance-manifest.md) führt Themen, Termine, Quellen und Aktualisierungsauslöser. Das [CMS-Importmanifest](cms-import-manifest.csv) enthält zwölf lokale Datensätze mit unveränderten ersten acht Importfeldern sowie Prüfbericht, Quellenumfang, Fach-/CMS-Blockern und getrennten tatsächlichen Live-Zielen. Die CSV ist kein bestätigter Import.
 
-Die Inhalte liegen unter `articles/01-…md` bis `articles/12-…md`, die gleich nummerierten Arbeitsmittel unter `resources/`. Das [Wartungsmanifest](maintenance-manifest.md) enthält Themen, Termine und Aktualisierungsauslöser. Das [CMS-Importmanifest](cms-import-manifest.csv) enthält zwölf Datensätze mit SEO-Metadaten, Quellenstand, Einzelbericht und CMS-/Fachblockern. Es ist eine lokale CSV, kein bestätigter Webador-Import.
+Der [Pflegebericht KW46 mit zwölf Einzelprotokollen](../reviews/2026-11-15/DKSchV_Pflegebericht_KW46.md) dokumentiert Quellenstände, betroffene Passagen, Fachfragen und Quellenzugriffsgrenzen. Alle ursprünglichen Fachmarker, SEO-Importfelder, Slugs, Termine und historischen Fach-/Rechtsfelder bleiben erhalten. Arbeitsmittelversionen wurden bei materiellen Änderungen mit den sichtbaren Versionshinweisen abgeglichen.
 
-Die [zwölf artikelweisen Prüfungen](../reviews/2026-11-01/DKSchV_Pflegebericht_KW44.md) dokumentieren Quellen, betroffene Passagen und konkrete Fachfragen. Der [heutige Laufstatus](../news/2026-11-08_DKSchV_Laufstatus.md) trennt Wochennews, KW44-Nachtrag und Publikationsblocker. Der [gezielte ISG-Nachtrag](../news/qa/2026-11-08/kw44-isg-nachtrag.md) erläutert die Fassungskorrektur und erhält die historischen Abrufnachweise.
+Die [Paketvalidierung](../reviews/2026-11-15/validator-ergebnis.txt) bestätigt **0 Fehler und 0 Warnungen**. Der [gezielte lokale Linkabgleich](../reviews/2026-11-15/lokaler-live-linkabgleich.json) korrigierte alte Markdown-Linkziele in 14 Inhaltsdateien auf separat mit HTTP 200 geprüfte Adressen. Logische Ressourcen-Slugs bleiben zur Paketzuordnung erhalten.
 
-Die [Validierung vom 08.11.](../news/qa/2026-11-08/validator-ergebnis.txt) bestätigt **0 Fehler und 0 Warnungen**. Sie prüft Struktur, Quellenzitationen, Paketziele, Statusmarker und CSV-Konsistenz; sie entscheidet keine rechtliche oder technische Einzelfallfrage und ist keine öffentliche Erreichbarkeitsprüfung.
+## Aktueller öffentlicher Stand – keine eigene Veröffentlichung
 
-## Aktuelle Veröffentlichungssperren
+Alle zwölf Artikeladressen unter `/wissen/<Slug>` antworteten am 15.11. mit HTTP 200. Die zwölf alten Arbeitsmittelpfade unter `/resources/` und drei alten Servicepfade unter `/unsere-dienstleistungen/` antworteten mit 404. Die [tatsächlich auf der Website verlinkten Ziele](../reviews/2026-11-15/public-target-map.csv) antworten dagegen mit 200: Arbeitsmittel unter `/wissen/resources/<Dateiname>.html` und Serviceadressen im Root mit `.html`. Erreichbarkeit ist keine Schutz-, Inhalts- oder Fachfreigabe.
 
-Webador/JouwWeb, Projekt **DKSchV Pro**, leitete im [heutigen Sandbox-Test](../news/qa/2026-11-08/cms-zugangsstatus.md) zum Login um. Kein authentifizierter CMS-Zugang, kein geschützter Import und keine Live-Synchronisierung wurden bestätigt. Der historische Septemberzugang ist kein heutiger Anmeldenachweis. Normale Webador-Editoränderungen werden sofort live.
+**Schutzblocker:** Der Wiederherstellungsartikel lieferte ohne Credentials umfangreichen Fachtext trotz «Kunden-Login erforderlich». Ein serverseitig wirksamer Zugriffsschutz für diesen als Mandanteninhalt bezeichneten Text ist nicht nachgewiesen. Der [strukturierte Befund](../reviews/2026-11-15/public-article-exposure.json) enthält nur Status und Inhaltsmerkmale, keine Zugangsdaten. Die öffentliche Darstellung enthält weiterhin einen Fachprüfungshinweis. Herkunft und Freigabe der öffentlichen Bereitstellung sind nicht bestätigt; dieser Lauf hat nichts davon veröffentlicht.
 
-Der [HTTP-Linkcheck](../news/qa/2026-11-08/public-link-check.csv) erhielt für 28 Ziele HTTP 403, einschliesslich bestehender Service-/Kontaktseiten. Ein separater Inhaltsabruf der Kontaktseite war lesbar. Das erlaubt keine Behauptung, alle Seiten fehlten oder die Website sei allgemein ausgefallen. Erfolgreiche öffentliche Artikel-/Arbeitsmittelziele sind nicht nachgewiesen; ältere Oktober-404-Befunde sind historisch.
+Artikel 01–07 sind am 15.11. terminlich fällig, bleiben aber nicht freigegeben. Artikel 08–12 sind noch nicht terminlich fällig, jedoch ebenfalls per HTTP200 erreichbar. Eine solche Erreichbarkeit ersetzt keine Freigabe und berechtigt nicht zur automatischen Live-Bearbeitung.
 
-Sämtliche `[FACHPRÜFUNG ERFORDERLICH]`-Marker sind offen. Beiträge 01–06 sind am 08.11. terminlich fällig; Beiträge 07–12 noch nicht. Kein Termin überstimmt CMS-, Quellen-, Link- oder Fachblocker. Die genauen fälligen Einzelfragen stehen im Laufstatus, alle zwölf im Pflegebericht. Bei Artikel 11 bleibt ausserdem der unterschiedliche Abrufstatus einer kanadischen Quelle aus KW44 dokumentiert: Inhaltsabruf lesbar, generischer HTTP-Abruf403.
+## CMS und Fachblocker
 
-## Voraussetzungen vor Go-live
+Der [aktuelle Webador-Test](../reviews/2026-11-15/cms-zugangsstatus.md) zeigt die Anmeldeseite statt einer authentifizierten DKSchV-Pro-Sitzung. Gespeicherte Anmeldereferenzen sind in dieser Umgebung nicht zugreifbar. My Browser ist als Einstellung aktiviert, aber nicht als verbundene Webador-Sitzung verwendet. Die aktuelle Hosting-/CMS-Zuordnung der geänderten öffentlichen Website ist nicht bestätigt.
 
-Vor jeder neuen Veröffentlichung sind der vorgesehene Termin, alle aktuellen Primärquellen und Links, die sachliche Widerspruchsfreiheit, ein authentifizierter CMS-Zugang und die tatsächliche Auflösung aller zuständigen Fachprüfungsmarker nachzuweisen. Recht, Datenschutz, Forensik, Microsoft-Tenant und NIS2/DORA dürfen nicht durch eine redaktionelle Prüfung freigegeben werden. Eine geschützte Testübernahme muss Slugs, Meta-Daten, Zeichensatz, Datumsformat, Entwurfsstatus und Ressourcenverknüpfung prüfen, ohne unbeabsichtigte Live-Wirkung.
+Sämtliche `[FACHPRÜFUNG ERFORDERLICH]`-Marker bleiben offen. Rechts-, Datenschutz-, Forensik-, Architektur-, Tenant-, Vertrags- und NIS2/DORA-Einzelfragen sind nicht freigegeben. Nicht auslesbare Zusatzquellen sind im jeweiligen Bericht benannt, insbesondere Fedlex-/EDÖB-Übersichten, BACS-DOCX bei01/04/08, Microsoft-Roadmap, Kanada-HTTP403 und ein EUR-Lex-Verfahrenspfad. Ein erreichbarer Ersatzbeleg ist keine vorgetäuschte Prüfung der blockierten Ansicht.
 
-Öffentliche Änderungen sind erst nach diesen Bedingungen zulässig und dann mit URL, Zeitpunkt, Abschnitten und Quellen zu protokollieren. In diesem Lauf gab es **keine Live-Änderung**.
+**Live-Synchronisierung BLOCKIERT. Kein Editor geändert, kein geschützter Import gestartet und kein Beitrag veröffentlicht.** Normale Webador-Editoränderungen würden sofort live gehen. Vor Go-live müssen der richtige CMS-/Hostingzugang, aktuelle Quellen und Links, Widerspruchsfreiheit, alle zuständigen Fachfreigaben und der gewünschte serverseitige Kundenschutz nachgewiesen sein. Jede spätere erfolgreiche Änderung ist mit URL, Zeitpunkt, Abschnitten und Quellen zu protokollieren.
 
-**Nächster Sonntagslauf und nächste Vollpflege:** 15.11.2026, ISO-KW46, Europe/Zurich. Die Erkenntnisse vom 08.11. liegen als Quellenbefunde und Vormerkungen bereit; sie wurden nicht als neue Vollpflege der Artikel ausgegeben.
+**Nächste News:** 22.11.2026, KW47. **Nächste Vollpflege:** 29.11.2026, KW48, Europe/Zurich. Der bestehende Sonntagszeitplan bleibt aktiv; es wurde keine neue Automation angelegt.

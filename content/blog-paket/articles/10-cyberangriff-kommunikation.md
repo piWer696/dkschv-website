@@ -8,9 +8,9 @@ hauptkeyword: "Ransomware Notfallkommunikation"
 zielgruppe: "Geschäftsleitungen und IT-Verantwortliche Schweizer KMU"
 autor: "DKSchV Redaktion"
 veröffentlichungsdatum: "03.12.2026"
-stand: "1. November 2026"
-quellenpruefung_umfang: "Alle zehn einzigartigen externen Quellenreferenzen in Artikel und Arbeitsmittel sowie zusätzlich dreizehn amtliche Fedlex-, BACS- und EDÖB-Originalzugänge geprüft. Eingeschlossen sind Fedlex-Chronologie, Änderungen und amtliche XML-Fassung zu Artikel 24 DSG sowie einschlägige BACS-/EDÖB-Originalmeldungen vom 18. Oktober bis 1. November 2026; interne Paketlinks nur auf Erhalt geprüft, nicht als künftige Live-URLs."
-quellenpruefung_status: "Alle zehn einzigartigen externen Quellenreferenzen und die dreizehn ergänzenden Originalzugänge geprüft. BACS-Studie vom 22. Oktober und hängige EDÖB-Abklärung vom 23. Oktober 2026 begründen begrenzte Kontextpräzisierungen; keine neue allgemeine Meldefrist oder Fachfreigabe. Rechts- und Fachprüfung bleiben offen."
+stand: "15. November 2026"
+quellenpruefung_umfang: "Zwölf einzigartige externe Quellenreferenzen des Paars direkt abgerufen, darunter EDÖB-Mitteilung vom 6. November und Originalurteil A-3790/2024; elf ergänzende Originalzugänge zu Fedlex, BACS und EDÖB für den Zeitraum 1.–15. November 2026. Insgesamt 23 Original-URLs; interne Paketziele lokal abgeglichen, keine Liveprüfung."
+quellenpruefung_status: "Alle zwölf Referenzen inhaltlich auslesbar; von elf ergänzenden Zugängen neun auslesbar, Fedlex-Änderungsübersicht nur JavaScript-Hinweis und EDÖB-Newsübersicht nur Ladeanzeige. DSG-History und vorhandenes amtliches XML lesbar; BACS-DOCX nach nicht lesbarer Fetch-Anzeige im Speicher dekodiert. Informationsbedarf trotz technischer Behebung präzisiert; keine neue allgemeine Meldefrist, keine pauschale öffentliche Bekanntmachung, keine Fachfreigabe. Einzelfall-, Rechts- und Fachprüfung offen."
 fachprüfung_status: "[FACHPRÜFUNG ERFORDERLICH]"
 ---
 
@@ -28,7 +28,7 @@ Das Bundesamt für Cybersicherheit (BACS) empfiehlt deshalb eine zeitnahe, koord
 
 Ein **Cybervorfall** ist ein Ereignis, das Vertraulichkeit, Integrität oder Verfügbarkeit von Systemen oder Daten beeinträchtigen kann. Eine **Krise** entsteht, wenn der Vorfall bedeutende Auswirkungen hat, rasch eskaliert oder das Vertrauen wichtiger Anspruchsgruppen berührt. Die technische Untersuchung und die Kommunikation müssen dann eng zusammenarbeiten, dürfen sich aber nicht gegenseitig ersetzen.
 
-Das BACS ordnet ein Krisenkommunikationskonzept ausdrücklich dem Notfallkonzept zu. Dieses umfasst auch Krisenorganisation, zentrale Notfallkontakte und konkrete Massnahmen. Bei schwerwiegenden Auswirkungen koordiniert die Notfallorganisation beziehungsweise der Krisenstab die interne und externe Kommunikation.[2] Verankern Sie die Kommunikationsarbeit daher in Ihrer [IT-Notfallplanung](/unsere-dienstleistungen/notfallplanung), nicht in einem isolierten Medienordner.
+Das BACS ordnet ein Krisenkommunikationskonzept ausdrücklich dem Notfallkonzept zu. Dieses umfasst auch Krisenorganisation, zentrale Notfallkontakte und konkrete Massnahmen. Bei schwerwiegenden Auswirkungen koordiniert die Notfallorganisation beziehungsweise der Krisenstab die interne und externe Kommunikation.[2] Verankern Sie die Kommunikationsarbeit daher in Ihrer [IT-Notfallplanung](https://www.dkschv.ch/notfallplanung.html), nicht in einem isolierten Medienordner.
 
 Die organisatorische Vorbereitung ist dabei keine Nebenaufgabe. Das BACS hält in seiner am 22. Oktober 2026 veröffentlichten Mitteilung zur Studie «KMU Cybersicherheit 2026» fest, dass neben technischen Schutzmassnahmen gerade klare Verantwortlichkeiten, Mitarbeiterschulungen und Notfallkonzepte wichtig sind und bei organisatorischen Massnahmen weiterhin Lücken bestehen. Die Mitteilung begründet keine neue rechtliche Pflicht. Sie unterstreicht aber, weshalb Rollen, Vertretungen und Notfallkommunikation vor einem Vorfall geübt werden sollten.[10]
 
@@ -50,7 +50,7 @@ Die Interessen einer polizeilichen Ermittlung und der Forensik gehören ausdrüc
 
 Die erste interne Nachricht beantwortet nur das Nötigste: Was ist bekannt? Was sollen Mitarbeitende jetzt tun oder unterlassen? An wen gehen Beobachtungen oder Medienanfragen? Wann folgt das nächste Update? Fordern Sie insbesondere dazu auf, keine Vermutungen intern weiterzuleiten und keine Auskünfte nach aussen zu geben. Das ist keine Einschüchterung, sondern schützt Kolleginnen und Kollegen vor widersprüchlichen Aussagen.
 
-Für externe Gruppen braucht es getrennte, zielgruppengerechte Texte. Kundinnen und Kunden benötigen vor allem konkrete Handlungsanweisungen und einen erreichbaren Kontaktweg. Lieferanten und IT-Provider müssen technische oder operative Massnahmen kennen. Bei Medienanfragen spricht eine festgelegte Person. Bereiten Sie eine [Sicherheitsanalyse](/unsere-dienstleistungen/sicherheitsanalyse) nicht als Kommunikationsersatz vor, sondern nutzen Sie Erkenntnisse daraus, um kritische Systeme, Datenflüsse und Abhängigkeiten schon im Vorfeld zu kennen. Diese Übersicht verbessert die Geschwindigkeit und Qualität der Lagekommunikation.
+Für externe Gruppen braucht es getrennte, zielgruppengerechte Texte. Kundinnen und Kunden benötigen vor allem konkrete Handlungsanweisungen und einen erreichbaren Kontaktweg. Lieferanten und IT-Provider müssen technische oder operative Massnahmen kennen. Bei Medienanfragen spricht eine festgelegte Person. Bereiten Sie eine [Sicherheitsanalyse](https://www.dkschv.ch/sicherheitsanalyse.html) nicht als Kommunikationsersatz vor, sondern nutzen Sie Erkenntnisse daraus, um kritische Systeme, Datenflüsse und Abhängigkeiten schon im Vorfeld zu kennen. Diese Übersicht verbessert die Geschwindigkeit und Qualität der Lagekommunikation.
 
 ## Die drei BACS-Phasen: stabil informieren statt einmalig senden
 
@@ -74,11 +74,13 @@ Die dritte Phase beginnt erst, wenn die Bewältigung abgeschlossen ist. Informie
 
 Ein Abschlussbericht für interne Führung und zuständige Stellen kann detaillierter sein als eine öffentliche Mitteilung. Der öffentliche Text bleibt bei überprüfbaren Aussagen, relevanten Auswirkungen und nächsten Kontaktmöglichkeiten.
 
+Auch die technische Behebung einer Datensicherheitsverletzung bedeutet nicht automatisch, dass keine Information an betroffene Personen mehr nötig ist. Im Urteil A-3790/2024 blieb der Schutzbedarf bestehen, weil zuvor offengelegte Daten bereits gespeichert oder weiterverarbeitet worden sein konnten. Halten Sie deshalb den Betriebsabschluss und den Entscheid zur Betroffeneninformation getrennt fest; erforderliche Schutzinformationen dürfen nicht durch eine pauschale Entwarnung ersetzt werden.[11] [12]
+
 ## Holding Statement und Fragen-Antworten-Dokument vorbereiten
 
 Ein **Holding Statement** ist eine kurze, vorläufige Erstmitteilung. Es hält die Kommunikation handlungsfähig, während die technische und rechtliche Abklärung läuft. Es ist kein Freipass für eine verfrühte Entwarnung und ersetzt keine individuelle Information von Betroffenen, wenn diese erforderlich wird.
 
-Erstellen Sie das Statement nicht erst im Stress. Die druckbare [Holding-Statement-Vorlage](/resources/10-holding-statement-vorlage) (Version 1.2, Stand 1. November 2026) führt durch bestätigte Fakten, Auswirkungen, ergriffene Massnahmen, Kontakt und nächsten Updatezeitpunkt. Füllen Sie nur Felder aus, die der Freigabeweg bestätigt hat. Ein «wir» ohne konkrete Verantwortung ist ebenso wenig hilfreich wie das Nennen eines Angreifernamens ohne Beleg.
+Erstellen Sie das Statement nicht erst im Stress. Die druckbare [Holding-Statement-Vorlage](https://www.dkschv.ch/wissen/resources/10-holding-statement-vorlage.html) (Version 1.3, Stand 15. November 2026) führt durch bestätigte Fakten, Auswirkungen, ergriffene Massnahmen, Kontakt und nächsten Updatezeitpunkt. Sie trennt zusätzlich technische Behebung, Schutzbedarf und Informationsform. Füllen Sie nur Felder aus, die der Freigabeweg bestätigt hat. Ein «wir» ohne konkrete Verantwortung ist ebenso wenig hilfreich wie das Nennen eines Angreifernamens ohne Beleg.
 
 Ergänzen Sie die Vorlage durch ein internes **Q&A**. Darin stehen zu jeder wahrscheinlichen Frage eine abgestimmte Kurzantwort, der Freigabestatus und die verantwortliche Fachperson. Typische Fragen sind: «Sind Personendaten betroffen?», «Muss ich mein Passwort ändern?», «Kann ich bestellen?», «Wurde Lösegeld bezahlt?» und «Wann ist der Betrieb wieder vollständig verfügbar?» Wenn die Antwort offen ist, lautet die freigegebene Antwort nicht «kein Kommentar», sondern etwa: «Das prüfen wir derzeit. Wir informieren über unseren offiziellen Kanal, sobald eine verifizierte Erkenntnis vorliegt.» Das BACS stellt selbst Vorlagen für Medienanfragen und für Phasenmitteilungen bereit.[1]
 
@@ -90,7 +92,15 @@ Betreiber kritischer Infrastrukturen unterstehen unter den gesetzlichen Vorausse
 
 > **[FACHPRÜFUNG ERFORDERLICH]** Ob eine konkrete Datensicherheitsverletzung ein voraussichtlich hohes Risiko nach Artikel 24 DSG darstellt, ob Personen zu informieren sind und ob eine BACS-Meldepflicht besteht, ist im Einzelfall durch Datenschutz- und Rechtsfachpersonen zu beurteilen. Dieser Artikel ist keine individuelle Rechtsberatung.
 
-Binden Sie diese Prüfung in den Freigabeweg ein. Warten Sie nicht auf einen fertigen öffentlichen Text, bevor Sie mögliche Fristen intern eskalieren. Der [Wissensartikel zur Datenpanne](/wissen/datenpanne-melden-schweiz) hilft bei der operativen Einordnung; die [ersten 60 Minuten bei Ransomware](/wissen/ransomware-erste-60-minuten) zeigen die technische Sofortreaktion. Ein [Cyber-Risikomanagement](/unsere-dienstleistungen/risikomanagement) sorgt dafür, dass Verantwortlichkeiten und Risiken vor dem Ereignis sichtbar werden.
+Binden Sie diese Prüfung in den Freigabeweg ein. Warten Sie nicht auf einen fertigen öffentlichen Text, bevor Sie mögliche Fristen intern eskalieren. Der [Wissensartikel zur Datenpanne](/wissen/datenpanne-melden-schweiz) hilft bei der operativen Einordnung; die [ersten 60 Minuten bei Ransomware](/wissen/ransomware-erste-60-minuten) zeigen die technische Sofortreaktion. Ein [Cyber-Risikomanagement](https://www.dkschv.ch/risikomanagement.html) sorgt dafür, dass Verantwortlichkeiten und Risiken vor dem Ereignis sichtbar werden.
+
+### Aktueller Kontext: Technische Behebung und Betroffeneninformation
+
+Der EDÖB veröffentlichte am 6. November 2026 eine Mitteilung zum Fall SkySale Schweiz GmbH, Betreiberin von apfelkiste.ch. Nach seiner Mitteilung bestätigte das Bundesverwaltungsgericht mit Urteil vom 8. April 2026 die angeordnete Betroffeneninformation; das Urteil ist laut EDÖB rechtskräftig. Neu ist die Mitteilung, nicht die Datensicherheitsverletzung aus dem Jahr 2024 oder das DSG. Der Fall betraf über Suchmaschinen zugänglich gewordene Supportdaten und ist kein Beleg für einen Cyberangriff auf das eigene KMU.[11] [12]
+
+Das Originalurteil hält fest, dass nachträgliche Zugriffsbeschränkungen eine bereits erfolgte unbefugte Offenlegung nicht rückwirkend beseitigen. Im konkreten Fall konnten Betroffene weiterhin Schutzmassnahmen ergreifen, etwa Kontoauszüge und verdächtige Nachrichten kritisch prüfen. Technische Massnahmen waren dennoch geboten und nicht zu beanstanden. Daraus folgt für die Kommunikationsvorbereitung: Halten Sie fest, welche Risiken trotz Behebung verbleiben und welche sinnvollen Schutzhandlungen für die betroffene Zielgruppe fachlich bestätigt sind. Eine fehlende Schadensmeldung oder der Zeitablauf allein belegen keine Entwarnung.[12]
+
+Bei SkySale war eine individuelle Information nach den getroffenen Massnahmen nicht mehr möglich; das Gericht erachtete eine öffentliche Bekanntmachung als geeignete und verhältnismässige Ersatzform. Es hält aber ausdrücklich fest, dass das DSG für solche Konstellationen keine allgemeine ausdrückliche Pflicht zur öffentlichen Bekanntmachung vorsieht. Ob eine Ersatzinformation vergleichbar wirksam ist, welche Adressaten sie erreichen muss und ob Einschränkung, Aufschub oder Verzicht nach Artikel 24 Absatz 5 DSG zulässig sind, bleibt fallbezogen zu prüfen. Die in der EDÖB-Mitteilung genannte Frist von zehn Tagen ab Rechtskraft gehört zur individuellen Verfügung und ist keine neue allgemeine Meldefrist. Ein allgemeines Holding Statement erfüllt nicht automatisch eine erforderliche Betroffeneninformation.[3] [11] [12]
 
 ### Aktueller Kontext: Datenbearbeiter, Faktenlage und Softech
 
@@ -142,3 +152,5 @@ Eine gute Cyberkommunikation entsteht nicht aus einem Textbaustein, sondern aus 
 [8]: https://www.cisa.gov/resources-tools/services/cisa-tabletop-exercise-packages "CISA – Tabletop Exercise Packages"
 [9]: https://www.edoeb.admin.ch/de/edoeb-leitete-nach-cyberangriff-auf-softwarelieferant-abklaerungen-ein "EDÖB – Abklärungen nach Cyberangriff auf Softwarelieferant, 23. Oktober 2026"
 [10]: https://www.bacs.admin.ch/de/26-kmustudie-de "BACS – KMU Cybersicherheit 2026: Cyberkriminalität wird zum Geschäftsrisiko für Schweizer KMU, 22. Oktober 2026"
+[11]: https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin "EDÖB – Bundesverwaltungsgericht bestätigt Informationspflicht der Onlineshop-Betreiberin, 6. November 2026"
+[12]: https://www.edoeb.admin.ch/dam/de/sd-web/ZjhZ9UBOprVL/Urteil%20BVGer%20A_3790_2024%20vom%208.%20April%202026%20betreffend%20Verf%C3%BCgung%20vom%2028.%20Mai%202024.pdf "Bundesverwaltungsgericht – Urteil A-3790/2024 vom 8. April 2026, insbesondere E. 5.3.2, 5.3.4 und 6.1–6.5"

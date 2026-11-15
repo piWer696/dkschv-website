@@ -40,7 +40,7 @@
       }
     },
     "datePublished": "12.11.2026",
-    "dateModified": "1. November 2026"
+    "dateModified": "15. November 2026"
   }
   </script>
 </head>
@@ -110,8 +110,8 @@
       <h1 class="article-page-title">Backup-Wiederherstellung testen: KMU-Leitfaden</h1>
 
       <div class="article-page-meta">
-        <span class="article-meta-item">📅 Stand: <strong>1. November 2026</strong></span>
-        <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 14 Min.</strong></span>
+        <span class="article-meta-item">📅 Stand: <strong>15. November 2026</strong></span>
+        <span class="article-meta-item">⏱️ Lesezeit: <strong>ca. 17 Min.</strong></span>
         <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweizer KMU (nDSG / BACS)</strong></span>
         <span class="article-meta-item">🔒 Status: <strong>Mandanten-Bereich</strong></span>
       </div>
@@ -122,10 +122,10 @@
   <main class="container">
     <div class="article-container">
       <article class="article-content">
-        <p><em>Quellenstand: 1. November 2026. Die Standangabe bezeichnet die Quellenpflege und keine Fach-, Rechts- oder Veröffentlichungsfreigabe.</em></p>
+        <p><em>Quellenstand: 15. November 2026. Die Standangabe bezeichnet die Quellenpflege und keine Fach-, Rechts- oder Veröffentlichungsfreigabe. Die ergänzende Fedlex-Änderungsseite war nicht inhaltlich auslesbar; der amtliche DSG-XML-Wortlaut war lesbar.</em></p>
 <div class="callout callout-warning"><div class="callout-icon">⚖️</div><div class="callout-body"><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Die technischen Wiederanlaufannahmen sowie die rechtlichen Hinweise zu einem tatsächlichen Vorfall müssen vor Veröffentlichung durch zuständige Fachpersonen geprüft werden.</div></div>
 <div class="article-lead"><strong>Kurzantwort:</strong> Ein Wiederherstellungstest zeigt nicht bloss, ob sich einzelne Dateien zurückspielen lassen. Er zeigt, ob Ihr Unternehmen nach einem Ransomware-Vorfall einen kritischen Geschäftsprozess mit sauberen Systemen, nutzbaren Daten, klaren Rollen und innerhalb der vereinbarten Zeit wieder aufnehmen kann. Beginnen Sie deshalb bei den Geschäftsprozessen und deren Abhängigkeiten. Legen Sie für jeden kritischen Prozess ein <strong>RTO</strong> (zulässige Wiederanlaufzeit) und ein <strong>RPO</strong> (vertretbarer Datenverlust in Zeit) fest. Üben Sie anschliessend ein abgegrenztes, realitätsnahes Szenario in einer isolierten Umgebung, messen Sie Soll gegen Ist und behandeln Sie Abweichungen als konkrete Verbesserungsaufträge. Ein Debriefing und ein Nachtest schliessen den Kreislauf.</div>
-<p>Ein Backup ist erst dann ein belastbarer Teil der Cyberresilienz, wenn seine Wiederherstellung unter realistischen Bedingungen funktioniert. Das Bundesamt für Cybersicherheit (BACS) ordnet das Notfallkonzept in die vier Phasen Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung ein. Für Schweizer KMU steht seit dem 18. Mai 2026 zudem eine angepasste Vorlage für einen IT-Notfall- und Krisenplan bereit.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Ein Restore-Test macht diese Phasen für den Wiederanlauf überprüfbar.</p>
+<p>Ein Backup ist erst dann ein belastbarer Teil der Cyberresilienz, wenn seine Wiederherstellung unter realistischen Bedingungen funktioniert. Das Bundesamt für Cybersicherheit (BACS) ordnet das Notfallkonzept in die vier Phasen Vorbereitung, Eintritt des Vorfalls, Vorfallsbewältigung und Nachbearbeitung ein. Die dort angebotene KMU-Vorlage für den IT-Notfall- und Krisenplan ist beim heutigen Abruf mit <strong>11. November 2026</strong> datiert.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Das Download-Datum ist keine organisationsbezogene Genehmigung des Plans. Ein Restore-Test macht diese Phasen für den Wiederanlauf überprüfbar.</p>
 <p>Der Test ist kein Nachweis dafür, dass jeder künftige Angriff folgenlos bleibt. Er beantwortet eine engere, aber geschäftskritische Frage: <strong>Können Sie einen fest definierten Prozess nach einem angenommenen Ransomware-Ereignis mit der vorgesehenen Qualität und in der vereinbarten Zeit wieder betreiben?</strong></p>
 
         <!-- Client Portal Login Gate (Visible when not logged in) -->
@@ -154,7 +154,7 @@
         </div>
 
         <!-- Gated Content: Full Guide, Resources, Tables & References -->
-        <div class="gated-content" id="gatedArticleContent">
+        <div class="gated-content is-locked" id="gatedArticleContent">
           
       <div class="article-resource-box">
         <div class="resource-box-content">
@@ -188,6 +188,7 @@
 <p>Bewahren Sie Kontaktlisten, Rollenübersicht, Wiederanlaufreihenfolge und die nötigen Freigabewege auch offline oder über einen vom Test betroffenen Mandanten unabhängigen Zugang auf. CISA empfiehlt eine Hardcopy und eine Offline-Version des Incident-Response- und Kommunikationsplans.<sup class="ref-link"><a href="#ref-3">[3]</a></sup> Ergänzen Sie für jedes externe Produkt oder jeden Provider die Informationen, die im Ernstfall tatsächlich gebraucht werden: Vertrags- oder Kundennummer, Eskalationsweg, technische Zuständigkeit sowie Zugang zu Lizenzen und Installationsmedien.</p>
 <h2 id="der-saubere-wiederanlauf-erst-vertrauen-schaffen-dann-daten-freigeben">Der saubere Wiederanlauf: erst vertrauen schaffen, dann Daten freigeben</h2>
 <p>Bei einem echten Ransomware-Fall sind Wiederherstellung und Bereinigung nicht dasselbe. Das BACS empfiehlt, den Infektionsweg zu suchen, Neuinfektionen zu verhindern, betroffene Systeme neu aufzusetzen und erst danach Daten aus vorhandenen Backups wiederherzustellen. Vor Reparaturversuchen oder Neustarts können forensische Sicherungen von Zwischenspeicher und Festplatten wichtig sein; dies ist frühzeitig mit Fachpersonen und gegebenenfalls Strafverfolgungsbehörden abzustimmen.<sup class="ref-link"><a href="#ref-2">[2]</a></sup></p>
+<p>Die aktuell angebotene BACS-KMU-Vorlage verlangt, dass Experten die Beseitigung der Gefahr bestätigen, bevor der Wiederanlauf betroffener Systeme und Dienste beginnt.<sup class="ref-link"><a href="#ref-11">[11]</a></sup> Im Test wird dieser Entscheidungspunkt mit benannter Rolle, Kriterien und Nachweis simuliert. Bei einem echten Vorfall bleibt er ein gesonderter Fachentscheid. Halten Sie zudem den vorgesehenen Erhalt relevanter Logs, die zuständige Fachstelle und den Entscheid über Beweissicherung vor verändernden Eingriffen fest. BACS und CISA weisen auf den Erhalt von Logdateien und flüchtigen Beweisen hin.<sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-3">[3]</a></sup> Das Testprotokoll hält Zuständigkeit und Übergabe fest, führt aber selbst keine forensische Sicherung aus und bestätigt keine Beweiskette.</p>
 <p>Die BACS-Meldung vom 6. Oktober 2026 präzisiert den Umgang mit Malware-Verdacht: Ein einzelnes Anzeichen beweist keine Infektion; mehrere ungewöhnliche Beobachtungen begründen aber eine genauere Untersuchung. Bei einer bestätigten Infektion empfiehlt das BACS, das System neu aufzusetzen und anschliessend die Passwörter zu ändern.<sup class="ref-link"><a href="#ref-8">[8]</a></sup> Ein Restore-Test ersetzt diese Untersuchung in einem echten Vorfall nicht.</p>
 <p>Für den Test leiten Sie daraus eine kontrollierte Reihenfolge ab:</p>
 <ol>
@@ -198,14 +199,19 @@
 <li><strong>Fachlich validieren.</strong> Die Prozessverantwortung führt vorab definierte Testfälle aus: anmelden, eine zulässige Transaktion erfassen, Daten wiederfinden, eine Schnittstelle oder Ausgabe prüfen und den Behelfsprozess beenden. Dokumentieren Sie Resultat und Einschränkungen.</li>
 <li><strong>Kontrolliert in den Betrieb überführen.</strong> Definieren Sie eine ausdrückliche Freigabe, Überwachung nach dem Start und einen Rückfallweg. In einem realen Vorfall darf nur eine bereinigte Umgebung wieder verbunden werden; CISA warnt vor einer erneuten Infektion sauberer Systeme während der Wiederherstellung.<sup class="ref-link"><a href="#ref-3">[3]</a></sup></li>
 </ol>
+<h3 id="rueckfallszenarien-vor-der-uebergabe-ueben">Rückfallszenarien vor der Übergabe üben</h3>
+<p>Machen Sie den bisherigen Rückfallweg konkret: Was geschieht, wenn der Sicherungssatz nicht nutzbar ist, der Datenstand das RPO verfehlt, der Fachtest scheitert oder nach dem Start ein verdächtiger Zugriff auftritt? Legen Sie im Testauftrag Auslöser, stoppberechtigte Rolle, Trennung der Testumgebung, freigegebenen Behelfsprozess und den Nachtest fest. Ein älterer Sicherungsstand ist nicht automatisch akzeptabel; eine zusätzliche Datenlücke benötigt einen dokumentierten Entscheid der Prozessverantwortung. Diese Szenarien sind eine Testkonkretisierung, keine neu eingeführte BACS-Pflicht. Sie setzen die bestehenden Anforderungen an Backup-Prüfung, fachliche Validierung und Schutz vor Reinfektion um.<sup class="ref-link"><a href="#ref-3">[3]</a></sup> <sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<p>Ein Rückfall bedeutet insbesondere nicht, zur als kompromittiert angenommenen Produktion oder zu einem unkontrollierten Heimgerät zurückzukehren. Die BACS-Meldung vom <strong>3. November 2026</strong> warnt im Privatnetzkontext vor exponierten, ungepatchten Diensten und empfiehlt aktuelle Geräte und Dienste, getrennte Netzsegmente sowie einen geschützten VPN-Zugang und wenn möglich einen zweiten Faktor.<sup class="ref-link"><a href="#ref-10">[10]</a></sup> Falls Homeoffice-Zugänge oder private NAS eine tatsächlich zugelassene Abhängigkeit des Geschäftsprozesses sind, erfassen Sie deren Betreiber, Exposition, Aktualisierungsnachweis und Zugang im Test. Das ist keine Bestätigung der Sicherheit eines konkreten Heimnetzes und keine Erlaubnis, Geschäftsdaten dorthin auszulagern.</p>
 <h3 id="komponenten-und-patchnachweise-vom-vorfallsbefund-trennen">Komponenten- und Patchnachweise vom Vorfallsbefund trennen</h3>
 <p>Dokumentieren Sie für die Komponenten, die in der Wiederanlaufumgebung tatsächlich verwendet werden, getrennt vom fachlichen Test die vertrauenswürdige Systemvorlage, Produkt- oder Paketversion, Konfigurationsstand, zuständige Betreiberin oder zuständigen Betreiber und den vorliegenden Fixnachweis. Die BACS-Warnung vom 21. Oktober 2026 empfiehlt dies für PHP ausdrücklich auch bei integrierten Komponenten, Anwendungen, Containern, Appliances und extern betriebenen Angeboten: Massgebend sind die tatsächlich laufende korrigierte Version oder das vom Anbieter als behoben bestätigte Paket, nicht bloss eine Hauptversionsnummer.<sup class="ref-link"><a href="#ref-9">[9]</a></sup> Für einen Restore-Test ist dieser Nachweis ein prüfbarer Bestandteil der sauberen Wiederanlaufumgebung; er ist kein künstlicher wöchentlicher CVE-Check und kein Nachweis, dass die Produktionsumgebung zuvor nicht kompromittiert war.</p>
 <p>Ein eingespieltes Update beseitigt laut BACS keine bereits erfolgte Kompromittierung.<sup class="ref-link"><a href="#ref-9">[9]</a></sup> Halten Sie deshalb die im Test verwendeten Komponenten- und Patchnachweise von der Untersuchung eines früheren Daten- oder Kontenkompromisses getrennt. Umfang, Zeitpunkt und Folgen eines Verdachts auf unbefugten Zugriff ergeben sich nicht aus einem erfolgreichen Restore-Test. Sie verlangen bei einem echten Vorfall eine gesonderte, fachlich gesteuerte Behandlung von Beweisen, Logs und betroffenen Systemen. Der Test ersetzt keine Forensik und trifft weder einen Befund noch eine Freigabe dazu.</p>
+<p>Dasselbe gilt für eine Aufnahme in den CISA-Katalog bekannter ausgenutzter Schwachstellen (KEV): Der Katalog ist ein Priorisierungshinweis, kein Nachweis einer Kompromittierung Ihrer Organisation und keine Restorefreigabe.<sup class="ref-link"><a href="#ref-13">[13]</a></sup> Seine US-Behördenvorgaben werden nicht automatisch zu Schweizer KMU-Fristen.<sup class="ref-link"><a href="#ref-14">[14]</a></sup> Weder ein KEV-Eintrag noch ein Update, eine Herstellerbestätigung oder ein bestandener Funktionstest erlaubt für sich allein die produktive Wiederverbindung.</p>
+<p>Beziehen Sie auch betriebliche Steuerungen ein, wenn sie zum priorisierten Prozess gehören. Die BACS-Warnung vom <strong>10. November 2026</strong> nennt Kühl- und Kältesteuerungen, externe Betreiber, Firmware und Fernzugriff; manipulierte Temperaturen oder Alarme können reale Schäden verursachen.<sup class="ref-link"><a href="#ref-12">[12]</a></sup> Ein lesbarer Backup-Datenstand genügt bei solchen Abhängigkeiten nicht. Die zuständigen Betriebs- und Sicherheitsfachpersonen müssen Sollwerte, Alarme und sichere Wiederaufnahme bestimmen. Dieser Leitfaden gibt keine Anlage, Firmware oder Schalthandlung frei.</p>
 <p>Die Wiederanlaufreihenfolge gehört in den IT-Notfallplan, nicht nur in das Wissen einzelner Administratoren. Für die technische Vorsorge und die Trennung von Sicherungszugängen ist auch der Beitrag <a href="./ransomware-resistente-backups.html">Ransomware-resistente Backups</a> eine sinnvolle Ergänzung. Was in der Akutphase vor dem Wiederanlauf zu tun ist, behandelt <a href="./ransomware-erste-60-minuten.html">Ransomware im KMU: Die ersten 60 Minuten</a>.</p>
 <h2 id="zeit-datenstand-und-qualitaet-messen">Zeit, Datenstand und Qualität messen</h2>
 <p>Starten und stoppen Sie die Messung nicht erst bei der technischen Wiederherstellung. Messen Sie ab dem im Szenario definierten Alarmzeitpunkt bis zur fachlichen Abnahme der Mindestfunktion. Erfassen Sie zusätzlich Teilzeiten: Entscheid zur Aktivierung, Bereitstellung der sauberen Umgebung, Wiederherstellung von Anwendung und Daten, Fachtest und Freigabe.</p>
 <p>Vergleichen Sie beim RPO den Zeitstempel des wiederhergestellten Datenstands mit dem im Szenario vereinbarten Referenzzeitpunkt. Prüfen Sie die Daten nicht nur auf Lesbarkeit. Stimmen Kernobjekte, Berechtigungen, Transaktionen, Anhänge, Schnittstellen und das Ergebnis des Fachtests? Eine Prüfsumme kann Datenintegrität unterstützen, ersetzt aber keine fachliche Prüfung des Prozesses.</p>
-<p>Das beigefügte <a href="./resources/07-restore-testprotokoll.html">Restore-Testprotokoll</a> hält Zielsysteme, Soll- und Istzeiten, Datenstand, Befunde, Verantwortlichkeiten und den Nachtesttermin strukturiert fest. Nutzen Sie es auch dann, wenn ein Test früh abgebrochen wird: Gerade der Abbruch ist eine wichtige Erkenntnis.</p>
+<p>Das beigefügte <a href="https://www.dkschv.ch/wissen/resources/07-restore-testprotokoll.html" target="_blank" rel="noopener noreferrer">Restore-Testprotokoll</a> hält Zielsysteme, Soll- und Istzeiten, Datenstand, Befunde, Verantwortlichkeiten und den Nachtesttermin strukturiert fest. Nutzen Sie es auch dann, wenn ein Test früh abgebrochen wird: Gerade der Abbruch ist eine wichtige Erkenntnis.</p>
 <h2 id="debriefing-und-nachtest-machen-aus-dem-test-eine-verbesserung">Debriefing und Nachtest machen aus dem Test eine Verbesserung</h2>
 <p>Beenden Sie den Test mit einem zeitnahen Debriefing. Das BACS sieht in der Nachbearbeitung die Analyse von Vorfall und Bewältigung vor; ein strukturiertes Debriefing soll die Planung laufend verbessern.<sup class="ref-link"><a href="#ref-1">[1]</a></sup> Trennen Sie dabei Beobachtung und Schuldzuweisung. Fragen Sie: Was hat den Wiederanlauf verzögert? Welche Annahme war falsch? Welche Information, Berechtigung, Abhängigkeit oder Entscheidung fehlte? Was hat besonders gut funktioniert?</p>
 <p>Ordnen Sie jeden Befund einer verantwortlichen Person, einer Priorität und einem Termin zu. Beispiele sind eine fehlende Offline-Kontaktliste, ein unklarer Freigabepunkt, eine nicht erreichbare Sicherung, fehlende Kapazität oder ein Datenvalidierungsschritt ohne fachliche Abnahme. Aktualisieren Sie danach den Notfallplan, die Systemdokumentation, die Rollenvertretungen und die Wiederanlauf-Runbooks. Planen Sie einen <strong>Nachtest</strong>, der genau die kritische Abweichung erneut prüft. Ein behobener Befund ist erst nach diesem Nachweis geschlossen.</p>
@@ -219,6 +225,7 @@
 <h2 id="melde-und-datenschutzfragen-vom-technischen-test-trennen">Melde- und Datenschutzfragen vom technischen Test trennen</h2>
 <p>Ein geplanter Test ersetzt weder die Behandlung eines echten Vorfalls noch die rechtliche Beurteilung seiner Meldepflichten. Betreiberinnen und Betreiber kritischer Infrastrukturen müssen Cyberangriffe seit dem 1. April 2025 innerhalb von 24 Stunden nach Entdeckung dem BACS melden; fehlende Angaben der Erstmeldung sind innerhalb von 14 Tagen zu ergänzen.<sup class="ref-link"><a href="#ref-5">[5]</a></sup> Für andere Unternehmen kann eine Meldung freiwillig sinnvoll sein, die gesetzliche Pflicht ist jedoch anhand des konkreten Geltungsbereichs zu prüfen.</p>
 <p>Bei einer Verletzung der Datensicherheit meldet der Verantwortliche dem EDÖB nach Art. 24 DSG so rasch als möglich, wenn voraussichtlich ein hohes Risiko für Persönlichkeit oder Grundrechte betroffener Personen besteht. Die Meldung muss mindestens Art der Verletzung, Folgen sowie ergriffene oder vorgesehene Massnahmen enthalten.<sup class="ref-link"><a href="#ref-6">[6]</a></sup> Der EDÖB erläutert die Begriffe Datensicherheitsverletzung und «voraussichtlich hohes Risiko» in seinem Leitfaden.<sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<p>Betroffeneninformation ist gesondert zu beurteilen. Im konkreten Fall SkySale hält die EDÖB-Mitteilung vom <strong>6. November 2026</strong> fest, dass nachträgliche technische Massnahmen die bestätigte Informationspflicht nicht beseitigten.<sup class="ref-link"><a href="#ref-15">[15]</a></sup> Ein erfolgreicher Restore oder ein Update entscheidet diese Frage deshalb nicht. Art. 24 Abs. 4 DSG verlangt Information, wenn sie zum Schutz der betroffenen Person erforderlich ist oder der EDÖB sie verlangt; daraus folgt keine allgemeine Pflicht jedes KMU zur öffentlichen Bekanntmachung.<sup class="ref-link"><a href="#ref-6">[6]</a></sup> <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
 <p><strong><span class="badge-warning-pill">⚖️ Fachprüfung erforderlich</span></strong> Diese Hinweise sind keine individuelle Rechtsberatung. Wenn ein Test Hinweise auf einen tatsächlichen Datenabfluss, eine unbefugte Offenlegung oder eine reale Kompromittierung ergibt, müssen Melde- und Informationspflichten anhand der konkreten Tatsachen durch Datenschutz- und Rechtsfachpersonen geprüft werden. Die Dokumentation kann die Sachverhaltsklärung unterstützen, ersetzt diese Prüfung aber nicht.</p>
 <div class="callout callout-note"><div class="callout-icon">ℹ️</div><div class="callout-body">Für eine organisationsspezifische Einordnung Ihres Wiederherstellungstests können Sie <a href="../kontakt.html">DKSchV kontaktieren</a>. Eine Kontaktaufnahme ersetzt keine technische, rechtliche oder forensische Fachprüfung.</div></div>
 <h2 id="quellen">Quellen</h2>
@@ -301,6 +308,54 @@
           <div>
             <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
             <a href="https://www.bacs.admin.ch/de/warnung-php-de" target="_blank" rel="noopener noreferrer">BACS – Kritische Schwachstellen in PHP: Sicherheitsupdates sofort einspielen, 21. Oktober 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/26w44-de" target="_blank" rel="noopener noreferrer">BACS – Woche 44: Wenn das Heimnetzwerk zum Einfallstor für Cyberkriminelle wird, 3. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-11">
+          <span class="ref-num">[11]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/dam/de/sd-web/AU4cjn0YWqWM/Notfallplan_Template_KMU_DE.docx" target="_blank" rel="noopener noreferrer">BACS – Template IT-Notfall- und Krisenplan für KMU, Download-Datum 11. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-12">
+          <span class="ref-num">[12]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/warnung-kuehlanlagen-de" target="_blank" rel="noopener noreferrer">BACS – Kühl- und Kältesteuerungen: Systeme identifizieren, aktualisieren und schützen, 10. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-13">
+          <span class="ref-num">[13]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json" target="_blank" rel="noopener noreferrer">CISA – Known Exploited Vulnerabilities Catalog, abgerufen am 15. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-14">
+          <span class="ref-num">[14]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk" target="_blank" rel="noopener noreferrer">CISA – BOD 26-04: Prioritizing Security Updates Based on Risk, US-Geltungsbereich</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-15">
+          <span class="ref-num">[15]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 EDÖB Datenschutz</span>
+            <a href="https://www.edoeb.admin.ch/de/datensicherheitsverletzung-bundesverwaltungsgericht-bestaetigt-informationspflicht-der-onlineshop-betreiberin" target="_blank" rel="noopener noreferrer">EDÖB – Bundesverwaltungsgericht bestätigt Informationspflicht der Onlineshop-Betreiberin, 6. November 2026</a>
           </div>
         </li>
       
