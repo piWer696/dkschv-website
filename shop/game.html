@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚔️ QUESTBUDGET: LEGENDS OF WEALTH (RPG)</title>
+    <title>⚔️ QUESTBUDGET: LEGENDS OF WEALTH (ULTIMATE RPG)</title>
     <style>
         :root {
-            --bg-deep: #07080d;
-            --bg-panel: #11131f;
-            --bg-card: #181b2b;
-            --border: #282d47;
+            --bg-deep: #06070a;
+            --bg-panel: #0f111a;
+            --bg-card: #161926;
+            --border: #23283e;
             --gold: #ffd166;
             --green: #06d6a0;
             --red: #ef476f;
             --blue: #118ab2;
             --purple: #b5179e;
             --cyan: #4cc9f0;
+            --orange: #f77f00;
             --text-main: #f8f9fa;
             --text-muted: #8d99ae;
         }
@@ -37,6 +38,19 @@
             align-items: flex-start;
             padding: 20px 10px;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* CRT Arcade Scanline Effect */
+        body.crt::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 99999;
+            background-size: 100% 3px, 3px 100%;
+            pointer-events: none;
         }
 
         /* Shake Effect */
@@ -45,40 +59,40 @@
         }
 
         @keyframes screenShake {
-            10%, 90% { transform: translate3d(-4px, -2px, 0); }
-            20%, 80% { transform: translate3d(6px, 4px, 0); }
-            30%, 50%, 70% { transform: translate3d(-8px, -4px, 0); }
-            40%, 60% { transform: translate3d(8px, 4px, 0); }
+            10%, 90% { transform: translate3d(-5px, -3px, 0); }
+            20%, 80% { transform: translate3d(7px, 5px, 0); }
+            30%, 50%, 70% { transform: translate3d(-10px, -5px, 0); }
+            40%, 60% { transform: translate3d(10px, 5px, 0); }
         }
 
         .game-shell {
-            max-width: 1120px;
+            max-width: 1140px;
             width: 100%;
             position: relative;
         }
 
-        /* Particle Canvas Overlay */
-        #particleCanvas {
+        /* Particle Canvas */
+        #fxCanvas {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
             pointer-events: none;
-            z-index: 9999;
+            z-index: 999;
         }
 
         /* Top HUD */
         .hud-top {
-            background: linear-gradient(180deg, #181c2e, #10121e);
-            border: 2px solid #2d334e;
-            border-radius: 18px;
-            padding: 16px 24px;
+            background: linear-gradient(180deg, #16192a, #0d0f1a);
+            border: 2px solid #282e46;
+            border-radius: 20px;
+            padding: 16px 26px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(255, 209, 102, 0.08);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.8), 0 0 25px rgba(255, 209, 102, 0.1);
         }
 
         .hero-banner {
@@ -89,25 +103,25 @@
 
         .avatar-box {
             font-size: 46px;
-            background: #20253b;
+            background: #1e2338;
             border: 2px solid var(--gold);
-            width: 74px;
-            height: 74px;
+            width: 76px;
+            height: 76px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 16px;
-            box-shadow: 0 0 20px rgba(255, 209, 102, 0.35);
+            border-radius: 18px;
+            box-shadow: 0 0 25px rgba(255, 209, 102, 0.4);
             cursor: pointer;
             transition: transform 0.15s;
         }
 
         .avatar-box:hover {
-            transform: scale(1.08) rotate(4deg);
+            transform: scale(1.08) rotate(5deg);
         }
 
         .hero-meta h2 {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             color: #fff;
             display: flex;
             align-items: center;
@@ -119,14 +133,14 @@
             color: #07080d;
             font-size: 0.75rem;
             font-weight: 900;
-            padding: 2px 10px;
+            padding: 3px 12px;
             border-radius: 999px;
             letter-spacing: 0.5px;
         }
 
         .hero-bars {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             margin-top: 6px;
         }
 
@@ -140,11 +154,11 @@
         }
 
         .mini-bar-bg {
-            background: #0b0d14;
+            background: #090a10;
             height: 8px;
             border-radius: 4px;
             overflow: hidden;
-            border: 1px solid #2d334e;
+            border: 1px solid #282e46;
         }
 
         .mini-bar-fill {
@@ -154,12 +168,12 @@
 
         .top-currencies {
             display: flex;
-            gap: 15px;
+            gap: 14px;
             align-items: center;
         }
 
         .curr-box {
-            background: #171b2b;
+            background: #141724;
             border: 1px solid var(--border);
             padding: 10px 18px;
             border-radius: 14px;
@@ -167,44 +181,45 @@
             align-items: center;
             gap: 10px;
             font-weight: 900;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
 
         .curr-box.gold {
             border-color: var(--gold);
             color: var(--gold);
-            box-shadow: 0 0 15px rgba(255, 209, 102, 0.2);
+            box-shadow: 0 0 15px rgba(255, 209, 102, 0.25);
         }
 
-        .music-btn {
-            background: #20253b;
+        .btn-toggle {
+            background: #1a1e30;
             color: var(--gold);
             border: 1px solid var(--border);
             padding: 10px 14px;
             border-radius: 12px;
             cursor: pointer;
             font-weight: 800;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.2s;
         }
 
-        .music-btn:hover {
+        .btn-toggle:hover {
             border-color: var(--gold);
             transform: scale(1.05);
         }
 
-        /* Navigation Bar */
+        /* Navigation Dock */
         .nav-dock {
             display: flex;
             gap: 10px;
             margin-bottom: 22px;
             overflow-x: auto;
+            padding-bottom: 4px;
         }
 
         .nav-btn {
-            background: #131624;
+            background: #111422;
             color: var(--text-muted);
-            border: 1px solid #242940;
+            border: 1px solid #23283e;
             padding: 14px 22px;
             border-radius: 14px;
             font-weight: 800;
@@ -218,17 +233,17 @@
         }
 
         .nav-btn:hover, .nav-btn.active {
-            background: #1c2238;
+            background: #1a2035;
             color: #fff;
             border-color: var(--gold);
-            box-shadow: 0 4px 20px rgba(255, 209, 102, 0.25);
+            box-shadow: 0 4px 20px rgba(255, 209, 102, 0.3);
             transform: translateY(-2px);
         }
 
         /* Battle Arena View */
         .arena-box {
-            background: radial-gradient(circle at center, #1b2038 0%, #0d0f1a 100%);
-            border: 2px solid #2d334e;
+            background: radial-gradient(circle at center, #171d33 0%, #0a0c16 100%);
+            border: 2px solid #282e46;
             border-radius: 24px;
             padding: 30px;
             margin-bottom: 25px;
@@ -245,8 +260,8 @@
         }
 
         .stage-badge {
-            background: #111422;
-            border: 1px solid #2d334e;
+            background: #0f121e;
+            border: 1px solid #282e46;
             color: var(--text-muted);
             padding: 6px 16px;
             border-radius: 999px;
@@ -260,13 +275,14 @@
             background: var(--gold);
             color: #07080d;
             border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(255, 209, 102, 0.4);
         }
 
         .battle-stage {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            min-height: 280px;
+            min-height: 290px;
             position: relative;
         }
 
@@ -285,37 +301,47 @@
             filter: brightness(2.2) drop-shadow(0 0 25px var(--red));
         }
 
+        .combatant.rage {
+            filter: drop-shadow(0 0 30px #ff0055) saturate(2);
+            animation: ragePulse 1s infinite alternate;
+        }
+
+        @keyframes ragePulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.12); }
+        }
+
         @keyframes lungeAnim {
             0% { transform: translateX(0); }
-            50% { transform: translateX(45px) scale(1.15); }
+            50% { transform: translateX(50px) scale(1.15); }
             100% { transform: translateX(0); }
         }
 
         @keyframes hitShake {
             0%, 100% { transform: translateX(0); }
-            20% { transform: translateX(-14px); }
-            40% { transform: translateX(14px); }
-            60% { transform: translateX(-8px); }
-            80% { transform: translateX(8px); }
+            20% { transform: translateX(-16px); }
+            40% { transform: translateX(16px); }
+            60% { transform: translateX(-10px); }
+            80% { transform: translateX(10px); }
         }
 
         .sprite-wrap {
-            font-size: 95px;
+            font-size: 100px;
             margin-bottom: 12px;
             display: inline-block;
-            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.7));
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.8));
             animation: idleBounce 2s infinite ease-in-out;
         }
 
         @keyframes idleBounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            50% { transform: translateY(-10px); }
         }
 
         .hp-capsule {
-            width: 220px;
+            width: 230px;
             background: #090a10;
-            border: 2px solid #2d334e;
+            border: 2px solid #282e46;
             border-radius: 12px;
             padding: 5px;
             box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
@@ -332,33 +358,34 @@
 
         .combat-log-banner {
             background: #111422;
-            border: 1px solid #252a42;
-            border-radius: 12px;
-            padding: 10px 18px;
+            border: 1px solid #23283e;
+            border-radius: 14px;
+            padding: 12px 20px;
             text-align: center;
             font-size: 0.95rem;
             font-weight: 700;
             color: var(--gold);
-            margin: 20px auto 0;
-            max-width: 650px;
-            min-height: 42px;
+            margin: 22px auto 0;
+            max-width: 700px;
+            min-height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
         /* Controls */
         .controls-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 14px;
             margin-top: 25px;
         }
 
         .btn-action {
-            background: linear-gradient(180deg, #22273d, #181c2c);
+            background: linear-gradient(180deg, #1e2338, #131726);
             color: #fff;
-            border: 2px solid #333a57;
+            border: 2px solid #2e3552;
             padding: 16px 20px;
             border-radius: 16px;
             font-weight: 900;
@@ -413,9 +440,9 @@
 
         @keyframes floatDamage {
             0% { transform: translateY(0) scale(0.6); opacity: 0; }
-            20% { transform: translateY(-25px) scale(1.3); opacity: 1; }
-            80% { transform: translateY(-70px) scale(1); opacity: 1; }
-            100% { transform: translateY(-100px) scale(0.8); opacity: 0; }
+            20% { transform: translateY(-30px) scale(1.3); opacity: 1; }
+            80% { transform: translateY(-75px) scale(1); opacity: 1; }
+            100% { transform: translateY(-110px) scale(0.8); opacity: 0; }
         }
 
         /* Content Views */
@@ -438,10 +465,11 @@
             border-radius: 20px;
             padding: 26px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
         }
 
         .panel-header {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 900;
             color: var(--gold);
             margin-bottom: 20px;
@@ -457,8 +485,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #171a29;
-            border: 1px solid #282e46;
+            background: #141724;
+            border: 1px solid #23283e;
             padding: 16px 20px;
             border-radius: 14px;
             margin-bottom: 14px;
@@ -507,7 +535,7 @@
 
         /* Talent Tree */
         .talent-card {
-            background: #171b2b;
+            background: #141724;
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 16px;
@@ -545,11 +573,102 @@
             transform: scale(1.05);
         }
 
+        /* Companion Cards */
+        .pet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .pet-card {
+            background: #141724;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pet-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-3px);
+        }
+
+        .pet-card.active-pet {
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(255, 209, 102, 0.3);
+            background: #1a1e30;
+        }
+
+        .pet-avatar {
+            font-size: 45px;
+            background: #0d0f18;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+        }
+
+        .pet-details h4 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .pet-details p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        .pet-status-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 900;
+            padding: 2px 10px;
+            border-radius: 6px;
+        }
+
+        /* Arcade Slash Canvas Mini-Game */
+        .slash-arena-box {
+            position: relative;
+            background: #090a10;
+            border: 2px solid #282e46;
+            border-radius: 20px;
+            height: 400px;
+            overflow: hidden;
+            cursor: crosshair;
+            margin-bottom: 15px;
+        }
+
+        #slashCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .slash-hud {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
         /* Loot Chest */
         .chest-stage {
             text-align: center;
             padding: 40px 20px;
-            background: radial-gradient(circle, #20263d, #141724);
+            background: radial-gradient(circle, #1e243a, #10121d);
             border: 2px dashed var(--gold);
             border-radius: 20px;
             cursor: pointer;
@@ -558,11 +677,11 @@
 
         .chest-stage:hover {
             transform: scale(1.02);
-            box-shadow: 0 0 30px rgba(255, 209, 102, 0.3);
+            box-shadow: 0 0 30px rgba(255, 209, 102, 0.35);
         }
 
         .chest-art {
-            font-size: 80px;
+            font-size: 85px;
             display: inline-block;
             margin-bottom: 15px;
             animation: chestFloat 2.5s infinite ease-in-out;
@@ -581,8 +700,8 @@
         }
 
         .slot {
-            background: #111422;
-            border: 2px solid #282e46;
+            background: #0e101a;
+            border: 2px solid #23283e;
             border-radius: 14px;
             height: 85px;
             display: flex;
@@ -612,6 +731,45 @@
             font-weight: 700;
         }
 
+        /* Daily Habit Checklist */
+        .habit-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #141724;
+            border: 1px solid var(--border);
+            padding: 14px 18px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .habit-item:hover {
+            border-color: var(--gold);
+        }
+
+        .habit-check {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #07080d;
+        }
+
+        .habit-item.done .habit-check {
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .habit-item.done {
+            opacity: 0.6;
+        }
+
         /* Inputs */
         .form-row {
             margin-bottom: 16px;
@@ -627,8 +785,8 @@
 
         .form-row input {
             width: 100%;
-            background: #111422;
-            border: 1px solid #282e46;
+            background: #0e101a;
+            border: 1px solid #23283e;
             color: #fff;
             padding: 12px 16px;
             border-radius: 12px;
@@ -644,7 +802,7 @@
 </head>
 <body>
 
-<canvas id="particleCanvas"></canvas>
+<canvas id="fxCanvas"></canvas>
 
 <div class="game-shell">
     <!-- Top HUD -->
@@ -678,16 +836,20 @@
                 <span>🪙</span>
                 <span id="goldText">500</span> CHF
             </div>
-            <button class="music-btn" onclick="toggleBgm()">🎵 Chiptune: <span id="musicStateText">AUS</span></button>
+            <button class="btn-toggle" onclick="toggleBgm()">🎵 BGM: <span id="musicStateText">AUS</span></button>
+            <button class="btn-toggle" onclick="toggleCrt()">📺 CRT Arcade</button>
         </div>
     </div>
 
     <!-- Navigation Dock -->
     <div class="nav-dock">
         <button class="nav-btn active" onclick="showTab('battle')">⚔️ Boss-Arena</button>
-        <button class="nav-btn" onclick="showTab('hydra')">🪦 Abo-Hydra (Dungeon)</button>
+        <button class="nav-btn" onclick="showTab('slash')">🗡️ Abo-Slash (Arcade)</button>
+        <button class="nav-btn" onclick="showTab('hydra')">🪦 Abo-Hydra</button>
+        <button class="nav-btn" onclick="showTab('pets')">🐾 Haustiere & Gefährten</button>
         <button class="nav-btn" onclick="showTab('talents')">⚡ Talentbaum</button>
         <button class="nav-btn" onclick="showTab('loot')">💎 Beute & Schmiede</button>
+        <button class="nav-btn" onclick="showTab('habits')">📜 Tägliche Quests</button>
         <button class="nav-btn" onclick="showTab('real')">⚙️ Echte Finanzen</button>
     </div>
 
@@ -713,11 +875,11 @@
                         <div class="hp-fill hero-hp-color" id="heroHpFill" style="width: 100%;"></div>
                     </div>
                     <div style="font-size: 0.85rem; color: var(--green); margin-top: 4px; font-weight: 800;">
-                        HP (Notgroschen): <span id="heroHpText">5'000 / 5'000</span> CHF
+                        HP: <span id="heroHpText">5'000 / 5'000</span> CHF
                     </div>
                 </div>
 
-                <div style="font-size: 2.2rem; font-weight: 900; color: var(--gold); text-shadow: 0 0 25px rgba(255, 209, 102, 0.7);">
+                <div style="font-size: 2.4rem; font-weight: 900; color: var(--gold); text-shadow: 0 0 25px rgba(255, 209, 102, 0.7);">
                     VS
                 </div>
 
@@ -743,7 +905,7 @@
             <div class="controls-grid">
                 <button class="btn-action primary" onclick="castHeroAttack()">
                     ⚔️ Budget-Hieb
-                    <span class="desc">Verursacht Basis-Schaden (+25 FP)</span>
+                    <span class="desc">Basis-Hieb (+25 FP)</span>
                 </button>
                 <button class="btn-action special" onclick="castHeroUlti()">
                     ⚡ Kündigungs-Ulti
@@ -761,7 +923,29 @@
         </div>
     </div>
 
-    <!-- TAB 2: HYDRA DUNGEON -->
+    <!-- TAB 2: ABO-SLASH (Arcade Mini-Game) -->
+    <div id="tab-slash" class="tab-view">
+        <div class="panel-card">
+            <div class="panel-header">
+                <span>🗡️ ABO-SLASH: ZERO-EXPENSE REFLEX ARCADE</span>
+                <button class="btn-action primary" style="padding: 6px 16px; font-size: 0.85rem;" onclick="startSlashGame()">🎮 Spiel Starten</button>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">
+                Fiese monatliche Rechnungen fliegen durchs Bild! Wische/Schneide mit der Maus über die Rechnungen, um sie in Gold zu zerschmettern, bevor sie dein Portemonnaie treffen!
+            </p>
+
+            <div class="slash-arena-box" id="slashBox">
+                <div class="slash-hud">
+                    <span style="color: var(--gold);">Punkte: <span id="slashScore">0</span></span>
+                    <span style="color: var(--green);">Gerettetes Geld: <span id="slashMoney">0</span> CHF</span>
+                    <span style="color: var(--red);">Leben: <span id="slashLives">❤️❤️❤️</span></span>
+                </div>
+                <canvas id="slashCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 3: HYDRA DUNGEON -->
     <div id="tab-hydra" class="tab-view">
         <div class="panel-card">
             <div class="panel-header">
@@ -816,7 +1000,49 @@
         </div>
     </div>
 
-    <!-- TAB 3: TALENT TREE -->
+    <!-- TAB 4: PETS & COMPANIONS -->
+    <div id="tab-pets" class="tab-view">
+        <div class="panel-card">
+            <div class="panel-header">
+                <span>🐾 HAUSTIERE & FINANZ-GEFÄHRTEN</span>
+                <span style="color: var(--cyan); font-size: 0.9rem;">Wähle deinen Begleiter</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+                Gefährten kämpfen automatisch an deiner Seite und gewähren permanente Boni in jedem Kampf!
+            </p>
+
+            <div class="pet-grid">
+                <div class="pet-card active-pet" onclick="selectPet(this, 'dog')">
+                    <div class="pet-avatar">🐕</div>
+                    <div class="pet-details">
+                        <h4>Spar-Dackel Bello</h4>
+                        <p>Gräbt nach jedem geglückten Zug <strong>+20 Gold</strong> für dich aus.</p>
+                        <span class="pet-status-badge" style="background: var(--gold); color: #000;">AKTIV</span>
+                    </div>
+                </div>
+
+                <div class="pet-card" onclick="selectPet(this, 'owl')">
+                    <div class="pet-avatar">🦉</div>
+                    <div class="pet-details">
+                        <h4>Steuer-Eule Hedwig</h4>
+                        <p>Analysiert Boss-Schwachstellen: <strong>+35% Krit-Schaden</strong> auf alle Attacken.</p>
+                        <span class="pet-status-badge" style="background: #252a3d; color: #fff;">WÄHLEN</span>
+                    </div>
+                </div>
+
+                <div class="pet-card" onclick="selectPet(this, 'bot')">
+                    <div class="pet-avatar">🤖</div>
+                    <div class="pet-details">
+                        <h4>Robo-Advisor 3000</h4>
+                        <p>Aktiviert automatisch ein Schutzschild, wenn deine HP unter 25% fallen.</p>
+                        <span class="pet-status-badge" style="background: #252a3d; color: #fff;">WÄHLEN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 5: TALENTBAUM -->
     <div id="tab-talents" class="tab-view">
         <div class="panel-card">
             <div class="panel-header">
@@ -850,7 +1076,7 @@
         </div>
     </div>
 
-    <!-- TAB 4: LOOT & SCHMIEDE -->
+    <!-- TAB 6: LOOT & SCHMIEDE -->
     <div id="tab-loot" class="tab-view">
         <div class="grid-cards">
             <div class="panel-card">
@@ -888,7 +1114,44 @@
         </div>
     </div>
 
-    <!-- TAB 5: ECHTE FINANZEN -->
+    <!-- TAB 7: TÄGLICHE QUESTS -->
+    <div id="tab-habits" class="tab-view">
+        <div class="panel-card">
+            <div class="panel-header">
+                <span>📜 TÄGLICHE SPAR-HABITS & QUESTS</span>
+                <span style="color: var(--green); font-size: 0.9rem;" id="habitStreak">🔥 4 Tage Streak!</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+                Klicke die Quests an, die du heute im echten Leben gemeistert hast, um sofort Gold & XP zu kassieren!
+            </p>
+
+            <div class="habit-item" onclick="toggleHabit(this, 50, 100)">
+                <div class="habit-check">✔</div>
+                <div>
+                    <strong style="color: #fff;">☕ Kein Coffee-to-Go gekauft</strong>
+                    <div style="color: var(--text-muted); font-size: 0.8rem;">Zu Hause Kaffee gekocht (+50 Gold, +100 XP)</div>
+                </div>
+            </div>
+
+            <div class="habit-item" onclick="toggleHabit(this, 80, 150)">
+                <div class="habit-check">✔</div>
+                <div>
+                    <strong style="color: #fff;">🥗 Mittagessen von zu Hause mitgenommen</strong>
+                    <div style="color: var(--text-muted); font-size: 0.8rem;">Kein teures Take-Away Restaurant (+80 Gold, +150 XP)</div>
+                </div>
+            </div>
+
+            <div class="habit-item" onclick="toggleHabit(this, 120, 250)">
+                <div class="habit-check">✔</div>
+                <div>
+                    <strong style="color: #fff;">🚫 24h Impulskauf-Regel angewendet</strong>
+                    <div style="color: var(--text-muted); font-size: 0.8rem;">Einen Spontankauf um 24 Stunden verschoben (+120 Gold, +250 XP)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 8: ECHTE FINANZEN -->
     <div id="tab-real" class="tab-view">
         <div class="panel-card" style="max-width: 650px; margin: 0 auto;">
             <div class="panel-header">⚙️ DEINE REALE FINANZ-SYNCHRONISATION</div>
@@ -960,7 +1223,6 @@
         }
     };
 
-    // Chiptune Battle BGM Generator
     function toggleBgm() {
         if (isBgmPlaying) {
             clearInterval(bgmInterval);
@@ -982,10 +1244,15 @@
         }
     }
 
+    function toggleCrt() {
+        document.body.classList.toggle('crt');
+        sfx.coin();
+    }
+
     // ==========================================
     // 2. PARTICLE & COIN PHYSICS CANVAS
     // ==========================================
-    const canvas = document.getElementById('particleCanvas');
+    const canvas = document.getElementById('fxCanvas');
     const cctx = canvas.getContext('2d');
     let particles = [];
 
@@ -1048,7 +1315,8 @@
         bonusAtk: 50,
         perkZinsen: 1,
         perkPanzer: 1,
-        perkReflex: 1
+        perkReflex: 1,
+        activePet: 'dog'
     };
 
     const stages = [
@@ -1068,6 +1336,7 @@
         document.querySelectorAll('.stage-badge').forEach((b, i) => b.classList.toggle('active', i === idx));
         document.getElementById('bossSprite').innerText = s.sprite;
         document.getElementById('bossDisplayLabel').innerText = s.name;
+        document.getElementById('bossFighter').classList.remove('rage');
         document.getElementById('combatLog').innerText = `Stage ${idx + 1}: ${s.name} erscheint! «${s.quote}»`;
         updateBars();
         sfx.shield();
@@ -1123,6 +1392,8 @@
 
             let isCrit = Math.random() < (0.2 + hero.perkReflex * 0.05);
             let totalAtk = hero.baseAtk + hero.bonusAtk;
+            if (hero.activePet === 'owl' && isCrit) totalAtk *= 1.35; // Owl Perk!
+
             let dmg = Math.round(isCrit ? totalAtk * 1.8 : totalAtk + Math.random() * 40);
 
             boss.hp = Math.max(0, boss.hp - dmg);
@@ -1135,8 +1406,21 @@
                 spawnFloatDmg('-' + dmg + ' CHF', '#ef476f', bossElem);
             }
 
+            // Pet Bonus (Dog digs gold!)
+            if (hero.activePet === 'dog') {
+                addGold(20);
+                sfx.coin();
+            }
+
             hero.fp = Math.min(hero.maxFp, hero.fp + 25);
             addXP(25);
+
+            // Boss Rage Phase Check
+            if (boss.hp < boss.maxHp * 0.4 && boss.hp > 0) {
+                bossElem.classList.add('rage');
+                document.getElementById('combatLog').innerText = `⚠️ ${boss.name} gerät in WUT! Phase 2 aktiviert!`;
+            }
+
             updateBars();
 
             if (boss.hp === 0) {
@@ -1205,9 +1489,17 @@
                 setTimeout(() => heroElem.classList.remove('damaged'), 300);
 
                 let rawDmg = boss.atk + Math.floor(Math.random() * 30);
+                if (boss.hp < boss.maxHp * 0.4) rawDmg = Math.round(rawDmg * 1.3); // Rage dmg!
                 if (isShielded) rawDmg = Math.round(rawDmg * 0.4);
                 // Apply Panzer Perk
                 rawDmg = Math.round(rawDmg * (1 - hero.perkPanzer * 0.05));
+
+                // Robot Pet auto-shield emergency!
+                if (hero.activePet === 'bot' && hero.hp - rawDmg < hero.maxHp * 0.25) {
+                    rawDmg = Math.round(rawDmg * 0.2);
+                    sfx.shield();
+                    spawnFloatDmg('🤖 ROBO-SCHUTZ AKTIVIERT!', '#4cc9f0', heroElem);
+                }
 
                 hero.hp = Math.max(0, hero.hp - rawDmg);
                 sfx.hurt();
@@ -1268,17 +1560,14 @@
     }
 
     function updateBars() {
-        // Hero HP
         const hPct = Math.max(0, (hero.hp / hero.maxHp) * 100);
         document.getElementById('heroHpFill').style.width = hPct + '%';
         document.getElementById('heroHpText').innerText = `${hero.hp} / ${hero.maxHp}`;
 
-        // Boss HP
         const bPct = Math.max(0, (boss.hp / boss.maxHp) * 100);
         document.getElementById('bossHpFill').style.width = bPct + '%';
         document.getElementById('bossHpText').innerText = `${boss.hp} / ${boss.maxHp}`;
 
-        // Mini HUD bars
         document.getElementById('xpCur').innerText = hero.xp;
         document.getElementById('xpTarget').innerText = hero.xpTarget;
         document.getElementById('xpMiniFill').style.width = Math.min(100, (hero.xp / hero.xpTarget) * 100) + '%';
@@ -1290,8 +1579,185 @@
     }
 
     // ==========================================
-    // 6. HYDRA, TALENTS, LOOT & REAL STATS
+    // 6. ARCADE ABO-SLASH MINI-GAME
     // ==========================================
+    const sCanvas = document.getElementById('slashCanvas');
+    const sctx = sCanvas.getContext('2d');
+    let slashItems = [];
+    let slashScore = 0;
+    let slashSaved = 0;
+    let slashLives = 3;
+    let isSlashRunning = false;
+    let slashTrail = [];
+
+    const billTypes = [
+        { label: "Netflix 24.90", price: 24.9, icon: "📺", color: "#e50914" },
+        { label: "Gym 99.00", price: 99.0, icon: "🏋️‍♂️", color: "#ff9f1c" },
+        { label: "Starbucks 8.50", price: 8.5, icon: "☕", color: "#06d6a0" },
+        { label: "Spontankauf 120.-", price: 120.0, icon: "🛍️", color: "#ef476f" },
+        { label: "Lieferdienst 45.-", price: 45.0, icon: "🍔", color: "#ffd166" }
+    ];
+
+    function resizeSlashCanvas() {
+        sCanvas.width = document.getElementById('slashBox').clientWidth;
+        sCanvas.height = 400;
+    }
+    window.addEventListener('resize', resizeSlashCanvas);
+    setTimeout(resizeSlashCanvas, 100);
+
+    function startSlashGame() {
+        resizeSlashCanvas();
+        slashItems = [];
+        slashScore = 0;
+        slashSaved = 0;
+        slashLives = 3;
+        isSlashRunning = true;
+        document.getElementById('slashScore').innerText = "0";
+        document.getElementById('slashMoney').innerText = "0";
+        document.getElementById('slashLives').innerText = "❤️❤️❤️";
+        sfx.levelUp();
+        requestAnimationFrame(slashLoop);
+    }
+
+    sCanvas.addEventListener('mousemove', (e) => {
+        if (!isSlashRunning) return;
+        const rect = sCanvas.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        slashTrail.push({ x: mouseX, y: mouseY, life: 1 });
+
+        // Check Hit Collision
+        slashItems.forEach((item, idx) => {
+            if (!item.sliced) {
+                const dist = Math.hypot(item.x - mouseX, item.y - mouseY);
+                if (dist < 40) {
+                    item.sliced = true;
+                    sfx.slash();
+                    slashScore += 100;
+                    slashSaved += item.price;
+                    addGold(Math.round(item.price / 4));
+                    document.getElementById('slashScore').innerText = slashScore;
+                    document.getElementById('slashMoney').innerText = slashSaved.toFixed(0);
+                    spawnCoinExplosion(e.clientX, e.clientY, 15);
+                }
+            }
+        });
+    });
+
+    let frameCount = 0;
+    function slashLoop() {
+        if (!isSlashRunning) return;
+        frameCount++;
+        sctx.clearRect(0, 0, sCanvas.width, sCanvas.height);
+
+        // Spawn items
+        if (frameCount % 45 === 0) {
+            const b = billTypes[Math.floor(Math.random() * billTypes.length)];
+            slashItems.push({
+                x: Math.random() * (sCanvas.width - 100) + 50,
+                y: -30,
+                vy: Math.random() * 2 + 2.5,
+                vx: (Math.random() - 0.5) * 1.5,
+                rot: 0,
+                rotSpeed: (Math.random() - 0.5) * 0.05,
+                sliced: false,
+                ...b
+            });
+        }
+
+        // Draw slash trail
+        sctx.strokeStyle = '#4cc9f0';
+        sctx.lineWidth = 4;
+        sctx.lineCap = 'round';
+        for (let i = 1; i < slashTrail.length; i++) {
+            sctx.beginPath();
+            sctx.moveTo(slashTrail[i - 1].x, slashTrail[i - 1].y);
+            sctx.lineTo(slashTrail[i].x, slashTrail[i].y);
+            sctx.globalAlpha = slashTrail[i].life;
+            sctx.stroke();
+            slashTrail[i].life -= 0.1;
+        }
+        slashTrail = slashTrail.filter(t => t.life > 0);
+        sctx.globalAlpha = 1;
+
+        // Render Items
+        slashItems.forEach((item, i) => {
+            item.y += item.vy;
+            item.x += item.vx;
+            item.rot += item.rotSpeed;
+
+            if (!item.sliced) {
+                sctx.save();
+                sctx.translate(item.x, item.y);
+                sctx.rotate(item.rot);
+                sctx.fillStyle = item.color;
+                sctx.beginPath();
+                sctx.roundRect(-45, -20, 90, 40, 10);
+                sctx.fill();
+                sctx.strokeStyle = '#fff';
+                sctx.lineWidth = 2;
+                sctx.stroke();
+
+                sctx.fillStyle = '#fff';
+                sctx.font = 'bold 12px sans-serif';
+                sctx.textAlign = 'center';
+                sctx.fillText(item.icon + ' ' + item.label, 0, 4);
+                sctx.restore();
+
+                // Hit Bottom (Missed!)
+                if (item.y > sCanvas.height + 30) {
+                    slashItems.splice(i, 1);
+                    slashLives--;
+                    sfx.hurt();
+                    triggerScreenShake();
+                    document.getElementById('slashLives').innerText = "❤️".repeat(Math.max(0, slashLives));
+                    if (slashLives <= 0) {
+                        isSlashRunning = false;
+                        alert(`💥 SPIEL VORBEI!\nDu hast ${slashSaved.toFixed(0)} CHF vor dem Verfall gerettet und ${slashScore} Punkte erzielt!`);
+                    }
+                }
+            } else {
+                // Sliced particle fade out
+                sctx.font = '24px sans-serif';
+                sctx.fillText('✨' + item.icon, item.x, item.y);
+                slashItems.splice(i, 1);
+            }
+        });
+
+        requestAnimationFrame(slashLoop);
+    }
+
+    // ==========================================
+    // 7. COMPANIONS, HABITS, LOOT & REAL STATS
+    // ==========================================
+    function selectPet(cardElem, petType) {
+        sfx.coin();
+        document.querySelectorAll('.pet-card').forEach(c => {
+            c.classList.remove('active-pet');
+            c.querySelector('.pet-status-badge').innerText = "WÄHLEN";
+            c.querySelector('.pet-status-badge').style.background = "#252a3d";
+            c.querySelector('.pet-status-badge').style.color = "#fff";
+        });
+        cardElem.classList.add('active-pet');
+        cardElem.querySelector('.pet-status-badge').innerText = "AKTIV";
+        cardElem.querySelector('.pet-status-badge').style.background = "var(--gold)";
+        cardElem.querySelector('.pet-status-badge').style.color = "#000";
+        hero.activePet = petType;
+        sfx.levelUp();
+    }
+
+    function toggleHabit(elem, goldGain, xpGain) {
+        if (!elem.classList.contains('done')) {
+            elem.classList.add('done');
+            sfx.coin();
+            sfx.levelUp();
+            addGold(goldGain);
+            addXP(xpGain);
+            const rect = elem.getBoundingClientRect();
+            spawnCoinExplosion(rect.left + 50, rect.top + 20, 20);
+        }
+    }
+
     let slainHydras = 1;
     function beheadHydra(elemId, monthly, name) {
         sfx.slash();
@@ -1311,7 +1777,6 @@
         addGold(150);
         addXP(250);
 
-        // Instant chunk damage to active arena boss
         boss.hp = Math.max(0, boss.hp - (monthly * 4));
         updateBars();
         triggerScreenShake();
@@ -1368,7 +1833,6 @@
                 <span style="color: var(--gold); font-size: 1.15rem;">Gefunden: ${item.icon} ${item.name} (+${item.stat} ATK)!</span>
             `;
 
-            // Add slot
             const grid = document.getElementById('slotsGrid');
             const slot = document.createElement('div');
             slot.className = 'slot';
@@ -1397,14 +1861,13 @@
 
         hero.maxHp = sav;
         hero.hp = sav;
-        stages[4].hp = exp; // Final boss reflects true monthly costs
+        stages[4].hp = exp;
         sfx.levelUp();
         updateBars();
         alert('✅ Deine realen Finanzwerte wurden synchronisiert!\nDein Held startet jetzt mit ' + sav + ' HP Notgroschen.');
         showTab('battle');
     }
 
-    // Initialize
     updateBars();
 </script>
 
