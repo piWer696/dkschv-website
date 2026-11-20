@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚔️ QUESTBUDGET: LEGENDS OF WEALTH (ULTIMATE RPG)</title>
+    <title>⚔️ QUESTBUDGET: MASTER OF WEALTH (ULTIMATE RPG)</title>
     <style>
         :root {
-            --bg-deep: #06070a;
-            --bg-panel: #0f111a;
-            --bg-card: #161926;
-            --border: #23283e;
+            --bg-deep: #050608;
+            --bg-panel: #0d0f17;
+            --bg-card: #131622;
+            --border: #202538;
             --gold: #ffd166;
             --green: #06d6a0;
             --red: #ef476f;
@@ -41,7 +41,7 @@
             position: relative;
         }
 
-        /* CRT Arcade Scanline Effect */
+        /* CRT Arcade Filter */
         body.crt::after {
             content: " ";
             display: block;
@@ -53,7 +53,6 @@
             pointer-events: none;
         }
 
-        /* Shake Effect */
         body.shaking {
             animation: screenShake 0.25s cubic-bezier(.36,.07,.19,.97) both;
         }
@@ -66,12 +65,12 @@
         }
 
         .game-shell {
-            max-width: 1140px;
+            max-width: 1160px;
             width: 100%;
             position: relative;
         }
 
-        /* Particle Canvas */
+        /* Particle Overlay */
         #fxCanvas {
             position: fixed;
             top: 0;
@@ -84,8 +83,8 @@
 
         /* Top HUD */
         .hud-top {
-            background: linear-gradient(180deg, #16192a, #0d0f1a);
-            border: 2px solid #282e46;
+            background: linear-gradient(180deg, #151828, #0a0c14);
+            border: 2px solid #252a3d;
             border-radius: 20px;
             padding: 16px 26px;
             display: flex;
@@ -103,7 +102,7 @@
 
         .avatar-box {
             font-size: 46px;
-            background: #1e2338;
+            background: #1c2033;
             border: 2px solid var(--gold);
             width: 76px;
             height: 76px;
@@ -173,7 +172,7 @@
         }
 
         .curr-box {
-            background: #141724;
+            background: #121520;
             border: 1px solid var(--border);
             padding: 10px 18px;
             border-radius: 14px;
@@ -190,8 +189,14 @@
             box-shadow: 0 0 15px rgba(255, 209, 102, 0.25);
         }
 
+        .passive-income-badge {
+            font-size: 0.8rem;
+            color: var(--green);
+            margin-left: 4px;
+        }
+
         .btn-toggle {
-            background: #1a1e30;
+            background: #171b2b;
             color: var(--gold);
             border: 1px solid var(--border);
             padding: 10px 14px;
@@ -217,10 +222,10 @@
         }
 
         .nav-btn {
-            background: #111422;
+            background: #0f121d;
             color: var(--text-muted);
-            border: 1px solid #23283e;
-            padding: 14px 22px;
+            border: 1px solid #1e2335;
+            padding: 14px 20px;
             border-radius: 14px;
             font-weight: 800;
             font-size: 0.95rem;
@@ -228,12 +233,12 @@
             transition: all 0.2s;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             white-space: nowrap;
         }
 
         .nav-btn:hover, .nav-btn.active {
-            background: #1a2035;
+            background: #181d2e;
             color: #fff;
             border-color: var(--gold);
             box-shadow: 0 4px 20px rgba(255, 209, 102, 0.3);
@@ -242,8 +247,8 @@
 
         /* Battle Arena View */
         .arena-box {
-            background: radial-gradient(circle at center, #171d33 0%, #0a0c16 100%);
-            border: 2px solid #282e46;
+            background: radial-gradient(circle at center, #151a2e 0%, #090b12 100%);
+            border: 2px solid #24293d;
             border-radius: 24px;
             padding: 30px;
             margin-bottom: 25px;
@@ -260,8 +265,8 @@
         }
 
         .stage-badge {
-            background: #0f121e;
-            border: 1px solid #282e46;
+            background: #0e101a;
+            border: 1px solid #24293d;
             color: var(--text-muted);
             padding: 6px 16px;
             border-radius: 999px;
@@ -326,7 +331,7 @@
         }
 
         .sprite-wrap {
-            font-size: 100px;
+            font-size: 105px;
             margin-bottom: 12px;
             display: inline-block;
             filter: drop-shadow(0 15px 25px rgba(0,0,0,0.8));
@@ -341,7 +346,7 @@
         .hp-capsule {
             width: 230px;
             background: #090a10;
-            border: 2px solid #282e46;
+            border: 2px solid #24293d;
             border-radius: 12px;
             padding: 5px;
             box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
@@ -357,8 +362,8 @@
         .boss-hp-color { background: linear-gradient(90deg, #ff0055, #ef476f); }
 
         .combat-log-banner {
-            background: #111422;
-            border: 1px solid #23283e;
+            background: #0e111c;
+            border: 1px solid #1e2438;
             border-radius: 14px;
             padding: 12px 20px;
             text-align: center;
@@ -366,7 +371,7 @@
             font-weight: 700;
             color: var(--gold);
             margin: 22px auto 0;
-            max-width: 700px;
+            max-width: 720px;
             min-height: 44px;
             display: flex;
             align-items: center;
@@ -383,9 +388,9 @@
         }
 
         .btn-action {
-            background: linear-gradient(180deg, #1e2338, #131726);
+            background: linear-gradient(180deg, #1b1f32, #101320);
             color: #fff;
-            border: 2px solid #2e3552;
+            border: 2px solid #282f49;
             padding: 16px 20px;
             border-radius: 16px;
             font-weight: 900;
@@ -480,13 +485,102 @@
             padding-bottom: 12px;
         }
 
+        /* Slay-the-Spire Style Dungeon Map */
+        .dungeon-map-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 20px 0;
+            align-items: center;
+        }
+
+        .map-floor {
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+
+        .map-node {
+            background: #161926;
+            border: 2px solid var(--border);
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .map-node:hover {
+            transform: scale(1.1);
+            border-color: var(--gold);
+        }
+
+        .map-node.active-node {
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(255, 209, 102, 0.5);
+            background: #20263d;
+        }
+
+        .map-node.cleared {
+            opacity: 0.4;
+            border-color: var(--green);
+        }
+
+        .map-node span.node-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+            font-weight: 700;
+        }
+
+        /* Zinseszins-Brunnen (Idle Generator) */
+        .invest-card {
+            background: #131622;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            transition: border-color 0.2s;
+        }
+
+        .invest-card:hover {
+            border-color: var(--green);
+        }
+
+        .invest-info h4 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 3px;
+        }
+
+        .invest-info p {
+            color: var(--green);
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+
+        .invest-info span.owned {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
         /* Hydra Monster Rows */
         .hydra-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #141724;
-            border: 1px solid #23283e;
+            background: #131622;
+            border: 1px solid #202538;
             padding: 16px 20px;
             border-radius: 14px;
             margin-bottom: 14px;
@@ -535,7 +629,7 @@
 
         /* Talent Tree */
         .talent-card {
-            background: #141724;
+            background: #131622;
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 16px;
@@ -581,7 +675,7 @@
         }
 
         .pet-card {
-            background: #141724;
+            background: #131622;
             border: 2px solid var(--border);
             border-radius: 16px;
             padding: 20px;
@@ -638,7 +732,7 @@
         .slash-arena-box {
             position: relative;
             background: #090a10;
-            border: 2px solid #282e46;
+            border: 2px solid #202538;
             border-radius: 20px;
             height: 400px;
             overflow: hidden;
@@ -668,7 +762,7 @@
         .chest-stage {
             text-align: center;
             padding: 40px 20px;
-            background: radial-gradient(circle, #1e243a, #10121d);
+            background: radial-gradient(circle, #1a1e33, #0e101a);
             border: 2px dashed var(--gold);
             border-radius: 20px;
             cursor: pointer;
@@ -700,8 +794,8 @@
         }
 
         .slot {
-            background: #0e101a;
-            border: 2px solid #23283e;
+            background: #0d0f18;
+            border: 2px solid #202538;
             border-radius: 14px;
             height: 85px;
             display: flex;
@@ -736,7 +830,7 @@
             display: flex;
             align-items: center;
             gap: 14px;
-            background: #141724;
+            background: #131622;
             border: 1px solid var(--border);
             padding: 14px 18px;
             border-radius: 12px;
@@ -785,8 +879,8 @@
 
         .form-row input {
             width: 100%;
-            background: #0e101a;
-            border: 1px solid #23283e;
+            background: #0d0f18;
+            border: 1px solid #202538;
             color: #fff;
             padding: 12px 16px;
             border-radius: 12px;
@@ -822,7 +916,7 @@
                         </div>
                     </div>
                     <div class="mini-bar-wrap">
-                        <span style="color: var(--cyan);">FP (Fokus): <span id="fpCur">100</span>/100</span>
+                        <span style="color: var(--cyan);">FP: <span id="fpCur">100</span>/100</span>
                         <div class="mini-bar-bg">
                             <div class="mini-bar-fill" id="fpMiniFill" style="background: var(--cyan); width: 100%;"></div>
                         </div>
@@ -835,22 +929,26 @@
             <div class="curr-box gold">
                 <span>🪙</span>
                 <span id="goldText">500</span> CHF
+                <span class="passive-income-badge" id="passiveRateText">(+0/s)</span>
             </div>
             <button class="btn-toggle" onclick="toggleBgm()">🎵 BGM: <span id="musicStateText">AUS</span></button>
-            <button class="btn-toggle" onclick="toggleCrt()">📺 CRT Arcade</button>
+            <button class="btn-toggle" onclick="toggleVoice()">🗣️ Voice: <span id="voiceStateText">AN</span></button>
+            <button class="btn-toggle" onclick="toggleCrt()">📺 CRT</button>
         </div>
     </div>
 
     <!-- Navigation Dock -->
     <div class="nav-dock">
         <button class="nav-btn active" onclick="showTab('battle')">⚔️ Boss-Arena</button>
-        <button class="nav-btn" onclick="showTab('slash')">🗡️ Abo-Slash (Arcade)</button>
+        <button class="nav-btn" onclick="showTab('dungeon')">🗺️ Dungeon-Pfad</button>
+        <button class="nav-btn" onclick="showTab('passive')">📈 Zinseszins-Brunnen</button>
+        <button class="nav-btn" onclick="showTab('slash')">🗡️ Abo-Slash</button>
         <button class="nav-btn" onclick="showTab('hydra')">🪦 Abo-Hydra</button>
-        <button class="nav-btn" onclick="showTab('pets')">🐾 Haustiere & Gefährten</button>
+        <button class="nav-btn" onclick="showTab('pets')">🐾 Gefährten</button>
         <button class="nav-btn" onclick="showTab('talents')">⚡ Talentbaum</button>
-        <button class="nav-btn" onclick="showTab('loot')">💎 Beute & Schmiede</button>
-        <button class="nav-btn" onclick="showTab('habits')">📜 Tägliche Quests</button>
-        <button class="nav-btn" onclick="showTab('real')">⚙️ Echte Finanzen</button>
+        <button class="nav-btn" onclick="showTab('loot')">💎 Schmiede</button>
+        <button class="nav-btn" onclick="showTab('habits')">📜 Quests</button>
+        <button class="nav-btn" onclick="showTab('real')">⚙️ Finanzen</button>
     </div>
 
     <!-- TAB 1: BATTLE ARENA -->
@@ -923,7 +1021,108 @@
         </div>
     </div>
 
-    <!-- TAB 2: ABO-SLASH (Arcade Mini-Game) -->
+    <!-- TAB 2: DUNGEON PATH (Roguelike Exploration) -->
+    <div id="tab-dungeon" class="tab-view">
+        <div class="panel-card">
+            <div class="panel-header">
+                <span>🗺️ DAS FINANZ-LABYRINTH (DUNGEON PFAD)</span>
+                <span style="color: var(--gold); font-size: 0.9rem;" id="dungeonProgress">Ebene 1 von 5</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+                Wähle deinen Weg durch den Dungeon. Jede Kreuzung birgt Schätze, Finanz-Dilemmas oder überraschende Belohnungen!
+            </p>
+
+            <div class="dungeon-map-container" id="dungeonMap">
+                <div class="map-floor">
+                    <div class="map-node active-node" onclick="triggerDungeonEvent('fight')">
+                        ⚔️
+                        <span class="node-label">Kampf</span>
+                    </div>
+                    <div class="map-node" onclick="triggerDungeonEvent('mystery')">
+                        ❓
+                        <span class="node-label">Ereignis</span>
+                    </div>
+                    <div class="map-node" onclick="triggerDungeonEvent('chest')">
+                        🎁
+                        <span class="node-label">Schatz</span>
+                    </div>
+                </div>
+
+                <div style="font-size: 20px; color: var(--gold);">⬇️</div>
+
+                <div class="map-floor">
+                    <div class="map-node" onclick="triggerDungeonEvent('trader')">
+                        🛒
+                        <span class="node-label">Treuhänder</span>
+                    </div>
+                    <div class="map-node" onclick="triggerDungeonEvent('rest')">
+                        🏕️
+                        <span class="node-label">Rastplatz</span>
+                    </div>
+                </div>
+
+                <div style="font-size: 20px; color: var(--gold);">⬇️</div>
+
+                <div class="map-floor">
+                    <div class="map-node" onclick="triggerDungeonEvent('boss')">
+                        👑
+                        <span class="node-label">Dungeon Boss</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 3: ZINSESZINS-BRUNNEN (Idle Passive Wealth Engine) -->
+    <div id="tab-passive" class="tab-view">
+        <div class="panel-card">
+            <div class="panel-header">
+                <span>📈 DER ZINSESZINS-BRUNNEN: PASSIVES EINKOMMEN</span>
+                <span style="color: var(--green); font-size: 0.95rem;" id="passiveRateHeader">+0 CHF pro Sekunde</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+                «Der Zinseszins ist das achte Weltwunder. Wer ihn versteht, verdient daran; wer ihn nicht versteht, bezahlt ihn.» — Kaufe Anlagen, die dir rund um die Uhr passiv Gold generieren!
+            </p>
+
+            <div class="invest-card">
+                <div class="invest-info">
+                    <h4>🏦 Schweizer Sparkonto (1.25% Zins)</h4>
+                    <p>+2 Gold / Sekunde</p>
+                    <span class="owned">Im Besitz: <strong id="cntSavings">0</strong></span>
+                </div>
+                <button class="btn-upgrade" onclick="buyAsset('savings', 100, 2)">Kaufen (100 🪙)</button>
+            </div>
+
+            <div class="invest-card">
+                <div class="invest-info">
+                    <h4>📊 Weltweiter ETF-Sparplan (MSCI World)</h4>
+                    <p>+10 Gold / Sekunde</p>
+                    <span class="owned">Im Besitz: <strong id="cntEtf">0</strong></span>
+                </div>
+                <button class="btn-upgrade" onclick="buyAsset('etf', 350, 10)">Kaufen (350 🪙)</button>
+            </div>
+
+            <div class="invest-card">
+                <div class="invest-info">
+                    <h4>🏢 Schweizer Dividenden-Aktien (SMI)</h4>
+                    <p>+45 Gold / Sekunde</p>
+                    <span class="owned">Im Besitz: <strong id="cntDividends">0</strong></span>
+                </div>
+                <button class="btn-upgrade" onclick="buyAsset('dividends', 1200, 45)">Kaufen (1'200 🪙)</button>
+            </div>
+
+            <div class="invest-card">
+                <div class="invest-info">
+                    <h4>🏘️ Mehrfamilienhaus & Mieteinnahmen</h4>
+                    <p>+200 Gold / Sekunde</p>
+                    <span class="owned">Im Besitz: <strong id="cntRealEstate">0</strong></span>
+                </div>
+                <button class="btn-upgrade" onclick="buyAsset('realestate', 4000, 200)">Kaufen (4'000 🪙)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 4: ABO-SLASH (Arcade Mini-Game) -->
     <div id="tab-slash" class="tab-view">
         <div class="panel-card">
             <div class="panel-header">
@@ -931,7 +1130,7 @@
                 <button class="btn-action primary" style="padding: 6px 16px; font-size: 0.85rem;" onclick="startSlashGame()">🎮 Spiel Starten</button>
             </div>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">
-                Fiese monatliche Rechnungen fliegen durchs Bild! Wische/Schneide mit der Maus über die Rechnungen, um sie in Gold zu zerschmettern, bevor sie dein Portemonnaie treffen!
+                Fiese monatliche Rechnungen fliegen durchs Bild! Wische/Schneide mit der Maus über die Rechnungen, um sie in Gold zu zerschmettern!
             </p>
 
             <div class="slash-arena-box" id="slashBox">
@@ -945,7 +1144,7 @@
         </div>
     </div>
 
-    <!-- TAB 3: HYDRA DUNGEON -->
+    <!-- TAB 5: HYDRA DUNGEON -->
     <div id="tab-hydra" class="tab-view">
         <div class="panel-card">
             <div class="panel-header">
@@ -953,7 +1152,7 @@
                 <span style="color: var(--green); font-size: 0.9rem;" id="hydraCounter">1 / 5 Köpfe beerdigt</span>
             </div>
             <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
-                Jeder Kopf saugt monatlich an deinem hart erarbeiteten Geld. Enthaupte sie, um dauerhaft deine Sparquote zu steigern und Gold-Regen auszulösen!
+                Enthaupte die Abos, um dauerhaft deine Sparquote zu steigern und Gold-Regen auszulösen!
             </p>
 
             <div id="hydraList">
@@ -1000,7 +1199,7 @@
         </div>
     </div>
 
-    <!-- TAB 4: PETS & COMPANIONS -->
+    <!-- TAB 6: PETS & COMPANIONS -->
     <div id="tab-pets" class="tab-view">
         <div class="panel-card">
             <div class="panel-header">
@@ -1008,7 +1207,7 @@
                 <span style="color: var(--cyan); font-size: 0.9rem;">Wähle deinen Begleiter</span>
             </div>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
-                Gefährten kämpfen automatisch an deiner Seite und gewähren permanente Boni in jedem Kampf!
+                Gefährten kämpfen automatisch an deiner Seite und gewähren permanente Boni!
             </p>
 
             <div class="pet-grid">
@@ -1042,7 +1241,7 @@
         </div>
     </div>
 
-    <!-- TAB 5: TALENTBAUM -->
+    <!-- TAB 7: TALENTBAUM -->
     <div id="tab-talents" class="tab-view">
         <div class="panel-card">
             <div class="panel-header">
@@ -1076,7 +1275,7 @@
         </div>
     </div>
 
-    <!-- TAB 6: LOOT & SCHMIEDE -->
+    <!-- TAB 8: LOOT & SCHMIEDE -->
     <div id="tab-loot" class="tab-view">
         <div class="grid-cards">
             <div class="panel-card">
@@ -1114,7 +1313,7 @@
         </div>
     </div>
 
-    <!-- TAB 7: TÄGLICHE QUESTS -->
+    <!-- TAB 9: TÄGLICHE QUESTS -->
     <div id="tab-habits" class="tab-view">
         <div class="panel-card">
             <div class="panel-header">
@@ -1151,7 +1350,7 @@
         </div>
     </div>
 
-    <!-- TAB 8: ECHTE FINANZEN -->
+    <!-- TAB 10: ECHTE FINANZEN -->
     <div id="tab-real" class="tab-view">
         <div class="panel-card" style="max-width: 650px; margin: 0 auto;">
             <div class="panel-header">⚙️ DEINE REALE FINANZ-SYNCHRONISATION</div>
@@ -1188,6 +1387,7 @@
     const audio = new (window.AudioContext || window.webkitAudioContext)();
     let bgmInterval = null;
     let isBgmPlaying = false;
+    let isVoiceEnabled = true;
 
     function playTone(freq, type, dur, endFreq = null, vol = 0.1) {
         try {
@@ -1222,6 +1422,24 @@
             notes.forEach((n, i) => setTimeout(() => playTone(n, 'triangle', 0.14, null, 0.2), i * 80));
         }
     };
+
+    function speakVoice(text) {
+        if (!isVoiceEnabled || !('speechSynthesis' in window)) return;
+        try {
+            window.speechSynthesis.cancel();
+            const utt = new SpeechSynthesisUtterance(text);
+            utt.lang = 'de-DE';
+            utt.pitch = 0.8;
+            utt.rate = 1.05;
+            window.speechSynthesis.speak(utt);
+        } catch(e) {}
+    }
+
+    function toggleVoice() {
+        isVoiceEnabled = !isVoiceEnabled;
+        document.getElementById('voiceStateText').innerText = isVoiceEnabled ? "AN" : "AUS";
+        sfx.coin();
+    }
 
     function toggleBgm() {
         if (isBgmPlaying) {
@@ -1316,7 +1534,14 @@
         perkZinsen: 1,
         perkPanzer: 1,
         perkReflex: 1,
-        activePet: 'dog'
+        activePet: 'dog',
+        passiveRate: 0,
+        assets: {
+            savings: 0,
+            etf: 0,
+            dividends: 0,
+            realestate: 0
+        }
     };
 
     const stages = [
@@ -1338,6 +1563,7 @@
         document.getElementById('bossDisplayLabel').innerText = s.name;
         document.getElementById('bossFighter').classList.remove('rage');
         document.getElementById('combatLog').innerText = `Stage ${idx + 1}: ${s.name} erscheint! «${s.quote}»`;
+        speakVoice(`${s.name} fordert dich heraus! ${s.quote}`);
         updateBars();
         sfx.shield();
     }
@@ -1392,7 +1618,7 @@
 
             let isCrit = Math.random() < (0.2 + hero.perkReflex * 0.05);
             let totalAtk = hero.baseAtk + hero.bonusAtk;
-            if (hero.activePet === 'owl' && isCrit) totalAtk *= 1.35; // Owl Perk!
+            if (hero.activePet === 'owl' && isCrit) totalAtk *= 1.35; // Owl perk!
 
             let dmg = Math.round(isCrit ? totalAtk * 1.8 : totalAtk + Math.random() * 40);
 
@@ -1401,6 +1627,7 @@
                 sfx.crit();
                 triggerScreenShake();
                 spawnFloatDmg('💥 KRITISCH! -' + dmg + ' CHF', '#ffd166', bossElem);
+                speakVoice("Kritischer Treffer!");
             } else {
                 sfx.hurt();
                 spawnFloatDmg('-' + dmg + ' CHF', '#ef476f', bossElem);
@@ -1416,9 +1643,10 @@
             addXP(25);
 
             // Boss Rage Phase Check
-            if (boss.hp < boss.maxHp * 0.4 && boss.hp > 0) {
+            if (boss.hp < boss.maxHp * 0.4 && boss.hp > 0 && !bossElem.classList.contains('rage')) {
                 bossElem.classList.add('rage');
                 document.getElementById('combatLog').innerText = `⚠️ ${boss.name} gerät in WUT! Phase 2 aktiviert!`;
+                speakVoice("Wut-Modus aktiviert!");
             }
 
             updateBars();
@@ -1447,6 +1675,7 @@
         let dmg = Math.round((hero.baseAtk + hero.bonusAtk) * 2.8);
         boss.hp = Math.max(0, boss.hp - dmg);
         spawnFloatDmg('⚡ ULTRA-KÜNDIGUNG! -' + dmg + ' CHF', '#ffd166', bossElem);
+        speakVoice("Ultra Kündigung!");
         addXP(60);
         updateBars();
 
@@ -1508,6 +1737,7 @@
                 updateBars();
 
                 if (hero.hp <= 0) {
+                    speakVoice("Finanzkrise! Dein Notgroschen ist leer.");
                     alert('💀 FINANZKRISE! Dein Notgroschen ist aufgebraucht. Erhole dich und starte die Stage neu!');
                     hero.hp = hero.maxHp;
                     loadStage(curStageIdx);
@@ -1525,6 +1755,7 @@
         addGold(boss.reward);
         addXP(200);
         document.getElementById('combatLog').innerText = `🏆 SIEG! ${boss.name} besiegt! +${boss.reward} Gold & +200 XP eingesackt!`;
+        speakVoice(`Glückwunsch! ${boss.name} wurde besiegt!`);
 
         setTimeout(() => {
             if (curStageIdx < stages.length - 1) {
@@ -1532,6 +1763,7 @@
                     loadStage(curStageIdx + 1);
                 }
             } else {
+                speakVoice("Unfassbar! Du hast die finanzielle Freiheit erreicht!");
                 alert('👑 DU BIST DER UNANGEFOCHTENE FINANZ-GROSSMEISTER! Alle 5 Boss-Ausgaben wurden vernichtet!');
             }
         }, 800);
@@ -1550,6 +1782,7 @@
             sfx.levelUp();
             triggerScreenShake();
             spawnFloatDmg('⭐ LEVEL UP! LVL ' + hero.level, '#ffd166', document.getElementById('heroFighter'));
+            speakVoice(`Level Up! Du erreichst Level ${hero.level}`);
         }
         updateBars();
     }
@@ -1579,7 +1812,81 @@
     }
 
     // ==========================================
-    // 6. ARCADE ABO-SLASH MINI-GAME
+    // 6. ROGUELIKE DUNGEON EXPLORATION EVENTS
+    // ==========================================
+    function triggerDungeonEvent(type) {
+        sfx.shield();
+        if (type === 'fight') {
+            showTab('battle');
+            loadStage(Math.floor(Math.random() * 3));
+            alert('⚔️ Überraschungsangriff! Ein Monster lauert im Dungeon.');
+        } else if (type === 'mystery') {
+            const events = [
+                { q: "📜 Du findest eine alte Steuererklärung mit Rückerstattung!", g: 250, xp: 150 },
+                { q: "☕ Versuchung widerstanden: Du hast den Coffeeshop links liegen lassen!", g: 40, xp: 80 },
+                { q: "🎁 Ein Verwandter schenkt dir etwas Geld zum Geburtstag!", g: 150, xp: 100 }
+            ];
+            const ev = events[Math.floor(Math.random() * events.length)];
+            addGold(ev.g);
+            addXP(ev.xp);
+            sfx.coin();
+            sfx.levelUp();
+            alert(`${ev.q}\nBelohnung: +${ev.g} Gold & +${ev.xp} XP!`);
+        } else if (type === 'chest') {
+            showTab('loot');
+            alert('🎁 Du erreichst eine Schatzkammer! Öffne deine Beute.');
+        } else if (type === 'trader') {
+            alert('🛒 Gigi der Treuhänder bietet dir ein Geheimnis:\n«Spare jeden Monat 15%, und du wirst unbesiegbar!»\nEr heilt deine Lebenspunkte voll auf!');
+            hero.hp = hero.maxHp;
+            sfx.shield();
+            updateBars();
+        } else if (type === 'rest') {
+            sfx.shield();
+            hero.hp = hero.maxHp;
+            hero.fp = hero.maxFp;
+            updateBars();
+            alert('🏕️ Du rastest an einer warmen Oase. HP und FP sind komplett regeneriert!');
+        } else if (type === 'boss') {
+            showTab('battle');
+            loadStage(4);
+            alert('👑 FINALER BOSS-RAUM! Der Inflations-Titan erwacht!');
+        }
+    }
+
+    // ==========================================
+    // 7. ZINSESZINS-BRUNNEN (PASSIVE INCOME ENGINE)
+    // ==========================================
+    function buyAsset(key, cost, rateBonus) {
+        if (hero.gold < cost) {
+            sfx.hurt();
+            alert('Nicht genug Gold! Verdiene Gold im Kampf oder beim Abo-Slash.');
+            return;
+        }
+        hero.gold -= cost;
+        hero.assets[key]++;
+        hero.passiveRate += rateBonus;
+        addGold(0);
+        sfx.coin();
+        sfx.levelUp();
+
+        if (key === 'savings') document.getElementById('cntSavings').innerText = hero.assets.savings;
+        if (key === 'etf') document.getElementById('cntEtf').innerText = hero.assets.etf;
+        if (key === 'dividends') document.getElementById('cntDividends').innerText = hero.assets.dividends;
+        if (key === 'realestate') document.getElementById('cntRealEstate').innerText = hero.assets.realestate;
+
+        document.getElementById('passiveRateText').innerText = `(+${hero.passiveRate}/s)`;
+        document.getElementById('passiveRateHeader').innerText = `+${hero.passiveRate} CHF pro Sekunde`;
+    }
+
+    // Ticking Passive Income Loop
+    setInterval(() => {
+        if (hero.passiveRate > 0) {
+            addGold(hero.passiveRate);
+        }
+    }, 1000);
+
+    // ==========================================
+    // 8. ARCADE ABO-SLASH MINI-GAME
     // ==========================================
     const sCanvas = document.getElementById('slashCanvas');
     const sctx = sCanvas.getContext('2d');
@@ -1713,11 +2020,10 @@
                     document.getElementById('slashLives').innerText = "❤️".repeat(Math.max(0, slashLives));
                     if (slashLives <= 0) {
                         isSlashRunning = false;
-                        alert(`💥 SPIEL VORBEI!\nDu hast ${slashSaved.toFixed(0)} CHF vor dem Verfall gerettet und ${slashScore} Punkte erzielt!`);
+                        alert(`💥 SPIEL VORBEI!\nDu hast ${slashSaved.toFixed(0)} CHF gerettet und ${slashScore} Punkte erzielt!`);
                     }
                 }
             } else {
-                // Sliced particle fade out
                 sctx.font = '24px sans-serif';
                 sctx.fillText('✨' + item.icon, item.x, item.y);
                 slashItems.splice(i, 1);
@@ -1728,7 +2034,7 @@
     }
 
     // ==========================================
-    // 7. COMPANIONS, HABITS, LOOT & REAL STATS
+    // 9. COMPANIONS, HABITS, LOOT & REAL STATS
     // ==========================================
     function selectPet(cardElem, petType) {
         sfx.coin();
@@ -1787,7 +2093,7 @@
     function upgradeTalent(type, cost) {
         if (hero.gold < cost) {
             sfx.hurt();
-            alert('Nicht genug Gold! Gewinne Kämpfe in der Arena.');
+            alert('Nicht genug Gold! Verdiene Gold im Kampf oder durch den Zinseszins-Brunnen.');
             return;
         }
         hero.gold -= cost;
@@ -1816,7 +2122,7 @@
     function buyChest() {
         if (hero.gold < 120) {
             sfx.hurt();
-            alert('Eine Kiste kostet 120 Gold! Besiege Monster in der Arena.');
+            alert('Eine Kiste kostet 120 Gold! Besiege Monster oder nutze den Zinseszins-Brunnen.');
             return;
         }
         hero.gold -= 120;
