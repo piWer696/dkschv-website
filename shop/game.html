@@ -858,8 +858,36 @@
     scene.add(enemyPlatform);
 
     // ==========================================
-    // 3D HIGH-FIDELITY PROCEDURAL CHARACTER ENGINE
+    // 3D HIGH-FIDELITY PROCEDURAL CHARACTER ENGINE & GAME STATE
     // ==========================================
+    let curStageIdx = 0;
+    let isBattling = false;
+    let currentHeroType = 'paladin';
+    let animHero = {};
+    let animBoss = {};
+
+    let hero = {
+        name: "Finanz-Paladin",
+        level: 1,
+        xp: 0,
+        xpTarget: 400,
+        hp: 5000,
+        maxHp: 5000,
+        fp: 100,
+        gold: 500,
+        atk: 220,
+        passiveRate: 0
+    };
+
+    const stages = [
+        { name: "3D Kaffee-Goblin", lvl: "Lv. 12", hp: 650, atk: 120, quote: "Haha! 6.50 CHF jeden Tag summiert sich zu Tausenden!" },
+        { name: "3D Streaming-Vampir", lvl: "Lv. 24", hp: 1400, atk: 180, quote: "Du nutzt mich kaum, aber ich sauge dein Konto leer!" },
+        { name: "3D Sale-Dämon", lvl: "Lv. 38", hp: 2500, atk: 280, quote: "Du hast nicht gespart, du hast Geld ausgegeben!" },
+        { name: "3D Klarna-Drache", lvl: "Lv. 50", hp: 3800, atk: 380, quote: "Zahle später... mit Zinsen aus der Hölle!" },
+        { name: "3D Inflations-Titan", lvl: "Lv. 80", hp: 6000, atk: 520, quote: "Dein Bargeld schmilzt dahin!" }
+    ];
+    let boss = { ...stages[0], maxHp: stages[0].hp };
+
     const hero3D = new THREE.Group();
     hero3D.position.set(-2.6, 0.2, 2.5);
     scene.add(hero3D);
@@ -867,10 +895,6 @@
     const boss3D = new THREE.Group();
     boss3D.position.set(2.8, 0.2, -2.5);
     scene.add(boss3D);
-
-    let animHero = {};
-    let animBoss = {};
-    let currentHeroType = 'paladin';
 
     function clearGroup(grp) {
         while (grp.children.length > 0) {
@@ -1807,35 +1831,10 @@
 
         renderer.render(scene, camera);
     }
-    animate3D();
 
     // ==========================================
     // 3. POKÉMON STATE & MOVES WITH 3D ACTIONS
     // ==========================================
-    let hero = {
-        name: "Finanz-Paladin",
-        level: 1,
-        xp: 0,
-        xpTarget: 400,
-        hp: 5000,
-        maxHp: 5000,
-        fp: 100,
-        gold: 500,
-        atk: 220,
-        passiveRate: 0
-    };
-
-    const stages = [
-        { name: "3D Kaffee-Goblin", lvl: "Lv. 12", hp: 650, atk: 120, quote: "Haha! 6.50 CHF jeden Tag summiert sich zu Tausenden!" },
-        { name: "3D Streaming-Vampir", lvl: "Lv. 24", hp: 1400, atk: 180, quote: "Du nutzt mich kaum, aber ich sauge dein Konto leer!" },
-        { name: "3D Sale-Dämon", lvl: "Lv. 38", hp: 2500, atk: 280, quote: "Du hast nicht gespart, du hast Geld ausgegeben!" },
-        { name: "3D Klarna-Drache", lvl: "Lv. 50", hp: 3800, atk: 380, quote: "Zahle später... mit Zinsen aus der Hölle!" },
-        { name: "3D Inflations-Titan", lvl: "Lv. 80", hp: 6000, atk: 520, quote: "Dein Bargeld schmilzt dahin!" }
-    ];
-    let curStageIdx = 0;
-    let boss = { ...stages[0], maxHp: stages[0].hp };
-    let isBattling = false;
-
     function showTab(id) {
         document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab-view').forEach(v => v.classList.remove('active'));
@@ -2110,8 +2109,10 @@
         document.getElementById('lootText').innerText = "Gefunden: 🗡️ 3D Zinseszins-Klinge (+40 ATK)!";
     }
 
-    // Init
+    // Init Game & Start 3D Engine
+    buildPaladinHero(hero3D);
     loadStage(0);
+    animate3D();
 </script>
 
 </body>
