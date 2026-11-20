@@ -244,6 +244,37 @@
             box-shadow: 0 0 15px rgba(255, 209, 102, 0.5);
         }
 
+        /* Hero Character Switcher Bar */
+        .hero-selector-3d {
+            position: absolute;
+            top: 55px;
+            right: 30px;
+            display: flex;
+            gap: 6px;
+            z-index: 20;
+        }
+
+        .hero-pick-badge {
+            background: rgba(14, 16, 26, 0.9);
+            backdrop-filter: blur(8px);
+            border: 1px solid #333d61;
+            color: var(--text-muted);
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .hero-pick-badge:hover, .hero-pick-badge.active {
+            background: var(--cyan);
+            color: #07080d;
+            border-color: var(--cyan);
+            box-shadow: 0 0 15px rgba(76, 201, 240, 0.5);
+            transform: scale(1.05);
+        }
+
         /* Pokémon Status HUD Cards (Overlaid on 3D Space) */
         .pokemon-status-card {
             background: rgba(20, 24, 41, 0.88);
@@ -520,6 +551,13 @@
                 <span class="stage-badge" onclick="loadStage(2)">Stage 3: 3D Sale-Dämon</span>
                 <span class="stage-badge" onclick="loadStage(3)">Stage 4: 3D Klarna-Drache</span>
                 <span class="stage-badge" onclick="loadStage(4)">Stage 5: 3D Inflations-Titan</span>
+            </div>
+
+            <!-- Hero Selector Overlaid on 3D Scene -->
+            <div class="hero-selector-3d">
+                <span class="hero-pick-badge active" id="heroBadge-paladin" onclick="setHeroType('paladin')">🛡️ Paladin</span>
+                <span class="hero-pick-badge" id="heroBadge-sparky" onclick="setHeroType('sparky')">⚡ Pika-Sparer</span>
+                <span class="hero-pick-badge" id="heroBadge-mecha" onclick="setHeroType('mecha')">🤖 Cyber-Robo</span>
             </div>
 
             <!-- ENEMY 3D STATUS CARD (Top-Left) -->
@@ -820,124 +858,847 @@
     scene.add(enemyPlatform);
 
     // ==========================================
-    // 3D PROCEDURAL CHARACTER MODELS
+    // 3D HIGH-FIDELITY PROCEDURAL CHARACTER ENGINE
     // ==========================================
-    // 1. 3D HERO GROUP (Finanz-Paladin)
     const hero3D = new THREE.Group();
     hero3D.position.set(-2.6, 0.2, 2.5);
     scene.add(hero3D);
 
-    // Hero Body
-    const hBodyMat = new THREE.MeshStandardMaterial({ color: 0x243254, metalness: 0.6, roughness: 0.3 });
-    const hBody = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.35, 1.3, 12), hBodyMat);
-    hBody.position.y = 0.85;
-    hBody.castShadow = true;
-    hero3D.add(hBody);
-
-    // Hero Helmet
-    const hHelm = new THREE.Mesh(new THREE.SphereGeometry(0.38, 16, 16), new THREE.MeshStandardMaterial({ color: 0xffd166, metalness: 0.8, roughness: 0.2 }));
-    hHelm.position.y = 1.7;
-    hHelm.castShadow = true;
-    hero3D.add(hHelm);
-
-    // Hero Golden Sword
-    const swordGroup = new THREE.Group();
-    const blade = new THREE.Mesh(new THREE.BoxGeometry(0.1, 1.4, 0.2), new THREE.MeshStandardMaterial({ color: 0xe0eaff, metalness: 0.9, roughness: 0.1 }));
-    blade.position.y = 0.7;
-    swordGroup.add(blade);
-    const hilt = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.35, 8), new THREE.MeshStandardMaterial({ color: 0xffd166 }));
-    hilt.position.y = -0.05;
-    swordGroup.add(hilt);
-    swordGroup.position.set(0.65, 0.8, 0.2);
-    swordGroup.rotation.z = -0.3;
-    hero3D.add(swordGroup);
-
-    // Hero 3D Shield (with Swiss Cross)
-    const shield = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.9, 0.6), new THREE.MeshStandardMaterial({ color: 0xef476f, metalness: 0.5, roughness: 0.4 }));
-    shield.position.set(-0.65, 0.9, 0.1);
-    hero3D.add(shield);
-
-    // Face towards enemy
-    hero3D.lookAt(2.8, 0.8, -2.5);
-
-    // 2. 3D ENEMY BOSS GROUP
     const boss3D = new THREE.Group();
     boss3D.position.set(2.8, 0.2, -2.5);
     scene.add(boss3D);
 
-    // Boss Body Meshes
-    let bossBodyMesh, bossHeadMesh, bossSpecialMesh;
-    const bMat = new THREE.MeshStandardMaterial({ color: 0xef476f, metalness: 0.3, roughness: 0.5 });
+    let animHero = {};
+    let animBoss = {};
+    let currentHeroType = 'paladin';
+
+    function clearGroup(grp) {
+        while (grp.children.length > 0) {
+            const obj = grp.children[0];
+            grp.remove(obj);
+            if (obj.geometry) obj.geometry.dispose();
+        }
+    }
+
+    // 1. FINANZ-PALADIN (High-Poly Knight)
+    function buildPaladinHero(group) {
+        clearGroup(group);
+        animHero = {};
+
+        const armorMat = new THREE.MeshStandardMaterial({ color: 0x243254, metalness: 0.8, roughness: 0.25 });
+        const goldMat = new THREE.MeshStandardMaterial({ color: 0xffd166, metalness: 0.9, roughness: 0.2 });
+        const visorMat = new THREE.MeshBasicMaterial({ color: 0x4cc9f0 });
+        const capeMat = new THREE.MeshStandardMaterial({ color: 0xd90429, roughness: 0.5, side: THREE.DoubleSide });
+        const bladeMat = new THREE.MeshStandardMaterial({ color: 0xf0f4f8, metalness: 0.95, roughness: 0.1 });
+        const leatherMat = new THREE.MeshStandardMaterial({ color: 0x3d2618, roughness: 0.7 });
+        const redMat = new THREE.MeshStandardMaterial({ color: 0xef476f, roughness: 0.3 });
+        const whiteMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.4 });
+
+        // Torso & Armor
+        const torso = new THREE.Mesh(new THREE.BoxGeometry(0.75, 0.75, 0.45), armorMat);
+        torso.position.y = 1.05;
+        group.add(torso);
+
+        const chestTrim = new THREE.Mesh(new THREE.BoxGeometry(0.78, 0.12, 0.48), goldMat);
+        chestTrim.position.y = 1.25;
+        group.add(chestTrim);
+
+        const belt = new THREE.Mesh(new THREE.BoxGeometry(0.72, 0.16, 0.46), leatherMat);
+        belt.position.y = 0.72;
+        group.add(belt);
+
+        const buckle = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 0.49), goldMat);
+        buckle.position.y = 0.72;
+        group.add(buckle);
+
+        // Legs & Armored Sabatons
+        const legGeo = new THREE.BoxGeometry(0.22, 0.55, 0.24);
+        const bootGeo = new THREE.BoxGeometry(0.24, 0.2, 0.38);
+
+        const leftLeg = new THREE.Mesh(legGeo, armorMat);
+        leftLeg.position.set(-0.22, 0.38, 0);
+        group.add(leftLeg);
+
+        const leftBoot = new THREE.Mesh(bootGeo, goldMat);
+        leftBoot.position.set(-0.22, 0.1, 0.06);
+        group.add(leftBoot);
+
+        const rightLeg = new THREE.Mesh(legGeo, armorMat);
+        rightLeg.position.set(0.22, 0.38, 0);
+        group.add(rightLeg);
+
+        const rightBoot = new THREE.Mesh(bootGeo, goldMat);
+        rightBoot.position.set(0.22, 0.1, 0.06);
+        group.add(rightBoot);
+
+        // Head & Helmet
+        const headGroup = new THREE.Group();
+        headGroup.position.set(0, 1.62, 0);
+
+        const helmet = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.52, 0.5), armorMat);
+        headGroup.add(helmet);
+
+        const visor = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.09, 0.12), visorMat);
+        visor.position.set(0, 0.02, 0.25);
+        headGroup.add(visor);
+
+        const crest = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.28, 0.46), goldMat);
+        crest.position.set(0, 0.34, -0.02);
+        headGroup.add(crest);
+
+        const plume = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.12, 0.35, 8), redMat);
+        plume.position.set(0, 0.48, -0.2);
+        plume.rotation.x = -0.5;
+        headGroup.add(plume);
+
+        group.add(headGroup);
+        animHero.head = headGroup;
+
+        // Cape
+        const cape = new THREE.Mesh(new THREE.BoxGeometry(0.72, 1.25, 0.04), capeMat);
+        cape.position.set(0, 0.95, -0.26);
+        cape.rotation.x = 0.15;
+        group.add(cape);
+        animHero.cape = cape;
+
+        // Left Arm & Swiss Shield
+        const leftArmGroup = new THREE.Group();
+        leftArmGroup.position.set(-0.52, 1.25, 0);
+
+        const lPaul = new THREE.Mesh(new THREE.SphereGeometry(0.22, 8, 8), goldMat);
+        leftArmGroup.add(lPaul);
+
+        const lForearm = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.45, 0.18), armorMat);
+        lForearm.position.set(-0.05, -0.25, 0.05);
+        leftArmGroup.add(lForearm);
+
+        const shieldGroup = new THREE.Group();
+        shieldGroup.position.set(-0.15, -0.25, 0.2);
+
+        const shieldPlate = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.95, 0.65), redMat);
+        shieldGroup.add(shieldPlate);
+
+        const shieldRim = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.98, 0.06), goldMat);
+        shieldRim.position.z = 0.32;
+        shieldGroup.add(shieldRim);
+
+        const crossV = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.55, 0.16), whiteMat);
+        shieldGroup.add(crossV);
+        const crossH = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.16, 0.5), whiteMat);
+        shieldGroup.add(crossH);
+
+        leftArmGroup.add(shieldGroup);
+        group.add(leftArmGroup);
+        animHero.shieldGroup = leftArmGroup;
+
+        // Right Arm & Greatsword
+        const rightArmGroup = new THREE.Group();
+        rightArmGroup.position.set(0.52, 1.25, 0);
+
+        const rPaul = new THREE.Mesh(new THREE.SphereGeometry(0.22, 8, 8), goldMat);
+        rightArmGroup.add(rPaul);
+
+        const rForearm = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.45, 0.18), armorMat);
+        rForearm.position.set(0.05, -0.25, 0.05);
+        rightArmGroup.add(rForearm);
+
+        const sword = new THREE.Group();
+        sword.position.set(0.15, -0.3, 0.1);
+        sword.rotation.z = -0.4;
+        sword.rotation.x = -0.2;
+
+        const blade = new THREE.Mesh(new THREE.BoxGeometry(0.06, 1.5, 0.22), bladeMat);
+        blade.position.y = 0.75;
+        sword.add(blade);
+
+        const guard = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.08, 0.65), goldMat);
+        sword.add(guard);
+
+        const gem = new THREE.Mesh(new THREE.SphereGeometry(0.07, 8, 8), redMat);
+        gem.position.set(0.06, 0, 0);
+        sword.add(gem);
+
+        const hilt = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.35, 8), leatherMat);
+        hilt.position.y = -0.2;
+        sword.add(hilt);
+
+        const pommel = new THREE.Mesh(new THREE.SphereGeometry(0.09, 8, 8), goldMat);
+        pommel.position.y = -0.4;
+        sword.add(pommel);
+
+        rightArmGroup.add(sword);
+        group.add(rightArmGroup);
+        animHero.swordGroup = rightArmGroup;
+
+        group.lookAt(2.8, 0.8, -2.5);
+    }
+
+    // 2. SPARKY-MÜNZLING (POKÉMON STYLE)
+    function buildSparkyHero(group) {
+        clearGroup(group);
+        animHero = {};
+
+        const yellowMat = new THREE.MeshStandardMaterial({ color: 0xffd166, roughness: 0.35 });
+        const redMat = new THREE.MeshStandardMaterial({ color: 0xef476f, roughness: 0.3 });
+        const blackMat = new THREE.MeshBasicMaterial({ color: 0x111111 });
+        const whiteMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+        const silverCoinMat = new THREE.MeshStandardMaterial({ color: 0xe0eaff, metalness: 0.9, roughness: 0.15 });
+
+        const body = new THREE.Mesh(new THREE.SphereGeometry(0.65, 16, 16), yellowMat);
+        body.scale.set(1.0, 1.15, 0.9);
+        body.position.y = 0.75;
+        group.add(body);
+
+        const head = new THREE.Mesh(new THREE.SphereGeometry(0.55, 16, 16), yellowMat);
+        head.position.set(0, 1.35, 0.05);
+        group.add(head);
+
+        const leftCheek = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 0.04, 12), redMat);
+        leftCheek.position.set(-0.35, 1.25, 0.45);
+        leftCheek.rotation.x = Math.PI / 2;
+        leftCheek.rotation.y = -0.3;
+        group.add(leftCheek);
+
+        const rightCheek = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 0.04, 12), redMat);
+        rightCheek.position.set(0.35, 1.25, 0.45);
+        rightCheek.rotation.x = Math.PI / 2;
+        rightCheek.rotation.y = 0.3;
+        group.add(rightCheek);
+
+        const lEye = new THREE.Mesh(new THREE.SphereGeometry(0.09, 8, 8), blackMat);
+        lEye.position.set(-0.22, 1.45, 0.48);
+        group.add(lEye);
+        const lDot = new THREE.Mesh(new THREE.SphereGeometry(0.035, 6, 6), whiteMat);
+        lDot.position.set(-0.20, 1.48, 0.55);
+        group.add(lDot);
+
+        const rEye = new THREE.Mesh(new THREE.SphereGeometry(0.09, 8, 8), blackMat);
+        rEye.position.set(0.22, 1.45, 0.48);
+        group.add(rEye);
+        const rDot = new THREE.Mesh(new THREE.SphereGeometry(0.035, 6, 6), whiteMat);
+        rDot.position.set(0.24, 1.48, 0.55);
+        group.add(rDot);
+
+        const nose = new THREE.Mesh(new THREE.SphereGeometry(0.04, 6, 6), blackMat);
+        nose.position.set(0, 1.35, 0.58);
+        group.add(nose);
+
+        const earGeo = new THREE.ConeGeometry(0.14, 0.75, 8);
+        const tipMat = new THREE.MeshStandardMaterial({ color: 0x1d1e2c });
+
+        const lEarGroup = new THREE.Group();
+        lEarGroup.position.set(-0.35, 1.75, 0);
+        lEarGroup.rotation.z = 0.4;
+        const lEar = new THREE.Mesh(earGeo, yellowMat);
+        lEar.position.y = 0.35;
+        lEarGroup.add(lEar);
+        const lTip = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.28, 8), tipMat);
+        lTip.position.y = 0.6;
+        lEarGroup.add(lTip);
+        group.add(lEarGroup);
+        animHero.leftEar = lEarGroup;
+
+        const rEarGroup = new THREE.Group();
+        rEarGroup.position.set(0.35, 1.75, 0);
+        rEarGroup.rotation.z = -0.4;
+        const rEar = new THREE.Mesh(earGeo, yellowMat);
+        rEar.position.y = 0.35;
+        rEarGroup.add(rEar);
+        const rTip = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.28, 8), tipMat);
+        rTip.position.y = 0.6;
+        rEarGroup.add(rTip);
+        group.add(rEarGroup);
+        animHero.rightEar = rEarGroup;
+
+        const coin = new THREE.Mesh(new THREE.CylinderGeometry(0.48, 0.48, 0.08, 24), silverCoinMat);
+        coin.position.set(0, 0.85, 0.55);
+        coin.rotation.x = Math.PI / 2;
+        group.add(coin);
+        animHero.coin = coin;
+
+        const coinCrossV = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.38, 0.1), redMat);
+        coin.add(coinCrossV);
+        const coinCrossH = new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.08, 0.1), redMat);
+        coin.add(coinCrossH);
+
+        const pawGeo = new THREE.SphereGeometry(0.12, 8, 8);
+        const lPaw = new THREE.Mesh(pawGeo, yellowMat);
+        lPaw.position.set(-0.3, 0.85, 0.55);
+        group.add(lPaw);
+        const rPaw = new THREE.Mesh(pawGeo, yellowMat);
+        rPaw.position.set(0.3, 0.85, 0.55);
+        group.add(rPaw);
+
+        const footGeo = new THREE.BoxGeometry(0.24, 0.15, 0.4);
+        const lFoot = new THREE.Mesh(footGeo, yellowMat);
+        lFoot.position.set(-0.28, 0.1, 0.1);
+        group.add(lFoot);
+        const rFoot = new THREE.Mesh(footGeo, yellowMat);
+        rFoot.position.set(0.28, 0.1, 0.1);
+        group.add(rFoot);
+
+        const tailGroup = new THREE.Group();
+        tailGroup.position.set(0, 0.45, -0.55);
+        const seg1 = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.45, 0.06), yellowMat);
+        seg1.rotation.z = -0.5;
+        tailGroup.add(seg1);
+        const seg2 = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.55, 0.06), yellowMat);
+        seg2.position.set(0.2, 0.35, 0);
+        seg2.rotation.z = 0.5;
+        tailGroup.add(seg2);
+        const seg3 = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.5, 0.06), yellowMat);
+        seg3.position.set(0.05, 0.7, 0);
+        tailGroup.add(seg3);
+        group.add(tailGroup);
+        animHero.tail = tailGroup;
+
+        group.lookAt(2.8, 0.8, -2.5);
+    }
+
+    // 3. CYBER-ROBO-ADVISOR
+    function buildMechaHero(group) {
+        clearGroup(group);
+        animHero = {};
+
+        const whiteMat = new THREE.MeshStandardMaterial({ color: 0xe2e8f0, metalness: 0.7, roughness: 0.2 });
+        const blueMat = new THREE.MeshStandardMaterial({ color: 0x1d4ed8, metalness: 0.6, roughness: 0.3 });
+        const darkMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, metalness: 0.8, roughness: 0.4 });
+        const greenVisorMat = new THREE.MeshBasicMaterial({ color: 0x06d6a0 });
+        const flameMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
+
+        const chest = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.75, 0.55), whiteMat);
+        chest.position.y = 1.1;
+        group.add(chest);
+
+        const core = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 0.12, 16), greenVisorMat);
+        core.rotation.x = Math.PI / 2;
+        core.position.set(0, 1.15, 0.28);
+        group.add(core);
+
+        const head = new THREE.Mesh(new THREE.BoxGeometry(0.48, 0.42, 0.45), darkMat);
+        head.position.set(0, 1.68, 0);
+        group.add(head);
+
+        const visor = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.1, 0.1), greenVisorMat);
+        visor.position.set(0, 1.68, 0.24);
+        group.add(visor);
+
+        const finL = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.45, 0.06), blueMat);
+        finL.position.set(-0.2, 1.95, 0.1);
+        finL.rotation.z = -0.5;
+        group.add(finL);
+
+        const finR = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.45, 0.06), blueMat);
+        finR.position.set(0.2, 1.95, 0.1);
+        finR.rotation.z = 0.5;
+        group.add(finR);
+
+        const cannonGroup = new THREE.Group();
+        cannonGroup.position.set(0.6, 1.15, 0.1);
+        const rPaul = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.35, 0.35), blueMat);
+        cannonGroup.add(rPaul);
+        const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.11, 0.9, 12), darkMat);
+        barrel.rotation.x = Math.PI / 2;
+        barrel.position.set(0, -0.15, 0.45);
+        cannonGroup.add(barrel);
+        const muzzle = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.15, 12), greenVisorMat);
+        muzzle.rotation.x = Math.PI / 2;
+        muzzle.position.set(0, -0.15, 0.92);
+        cannonGroup.add(muzzle);
+        group.add(cannonGroup);
+        animHero.cannon = cannonGroup;
+
+        const podGroup = new THREE.Group();
+        podGroup.position.set(-0.6, 1.15, 0.1);
+        const lPaul = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.35, 0.35), blueMat);
+        podGroup.add(lPaul);
+        const podBox = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.45, 0.35), whiteMat);
+        podBox.position.set(0, 0.25, 0);
+        podGroup.add(podBox);
+        group.add(podGroup);
+
+        const lLeg = new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.65, 0.28), whiteMat);
+        lLeg.position.set(-0.25, 0.35, 0);
+        group.add(lLeg);
+        const rLeg = new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.65, 0.28), whiteMat);
+        rLeg.position.set(0.25, 0.35, 0);
+        group.add(rLeg);
+
+        const thrusterGroup = new THREE.Group();
+        thrusterGroup.position.set(0, 1.1, -0.32);
+        const tL = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.1, 0.4, 12), darkMat);
+        tL.position.x = -0.22;
+        thrusterGroup.add(tL);
+        const tR = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.1, 0.4, 12), darkMat);
+        tR.position.x = 0.22;
+        thrusterGroup.add(tR);
+
+        const fL = new THREE.Mesh(new THREE.ConeGeometry(0.1, 0.35, 8), flameMat);
+        fL.position.set(-0.22, -0.3, 0);
+        fL.rotation.x = Math.PI;
+        thrusterGroup.add(fL);
+        const fR = new THREE.Mesh(new THREE.ConeGeometry(0.1, 0.35, 8), flameMat);
+        fR.position.set(0.22, -0.3, 0);
+        fR.rotation.x = Math.PI;
+        thrusterGroup.add(fR);
+        group.add(thrusterGroup);
+        animHero.thrusters = [fL, fR];
+
+        group.lookAt(2.8, 0.8, -2.5);
+    }
+
+    function setHeroType(type) {
+        currentHeroType = type;
+        if (type === 'paladin') {
+            hero.name = "Finanz-Paladin";
+            buildPaladinHero(hero3D);
+            document.getElementById('playerName').innerText = "Finanz-Paladin";
+            document.getElementById('heroNameText').innerText = "Finanz-Paladin 3D";
+            document.getElementById('avatarBox').innerText = "🛡️";
+            setDialog("Finanz-Paladin ausgerüstet! Bereit zum Kampf!");
+        } else if (type === 'sparky') {
+            hero.name = "Pika-Sparer";
+            buildSparkyHero(hero3D);
+            document.getElementById('playerName').innerText = "Pika-Sparer";
+            document.getElementById('heroNameText').innerText = "Pika-Sparer 3D";
+            document.getElementById('avatarBox').innerText = "⚡";
+            setDialog("Pika-Sparer hüpft in die Arena! Pika-Pika Spar!");
+        } else if (type === 'mecha') {
+            hero.name = "Cyber-Robo";
+            buildMechaHero(hero3D);
+            document.getElementById('playerName').innerText = "Cyber-Robo";
+            document.getElementById('heroNameText').innerText = "Cyber-Robo 3D";
+            document.getElementById('avatarBox').innerText = "🤖";
+            setDialog("Cyber-Robo initialisiert! Reaktor online!");
+        }
+        document.querySelectorAll('.hero-pick-badge').forEach(b => b.classList.remove('active'));
+        const activeBtn = document.getElementById('heroBadge-' + type);
+        if (activeBtn) activeBtn.classList.add('active');
+        sfx.coin();
+    }
+
+    // ==========================================
+    // 3D ENEMY BOSS GENERATORS
+    // ==========================================
+    // Stage 0: 3D KAFFEE-GOBLIN (Level 12)
+    function buildKaffeeGoblin3D(group) {
+        clearGroup(group);
+        animBoss = {};
+
+        const skinMat = new THREE.MeshStandardMaterial({ color: 0x2d6a4f, roughness: 0.65 });
+        const vestMat = new THREE.MeshStandardMaterial({ color: 0x5c4033, roughness: 0.85 });
+        const eyeMat = new THREE.MeshBasicMaterial({ color: 0xffe600 });
+        const cupMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.3 });
+        const lidMat = new THREE.MeshStandardMaterial({ color: 0x3d2618, roughness: 0.5 });
+        const goldMat = new THREE.MeshStandardMaterial({ color: 0xffd166, metalness: 0.8 });
+        const whiteMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+
+        const torso = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.85, 0.5), vestMat);
+        torso.position.y = 0.9;
+        torso.rotation.x = 0.2;
+        group.add(torso);
+
+        const headGroup = new THREE.Group();
+        headGroup.position.set(0, 1.45, 0.15);
+
+        const head = new THREE.Mesh(new THREE.SphereGeometry(0.42, 14, 14), skinMat);
+        headGroup.add(head);
+
+        const nose = new THREE.Mesh(new THREE.ConeGeometry(0.1, 0.35, 8), skinMat);
+        nose.position.set(0, -0.05, 0.45);
+        nose.rotation.x = Math.PI / 2;
+        headGroup.add(nose);
+
+        const earGeo = new THREE.ConeGeometry(0.12, 0.55, 6);
+        const lEar = new THREE.Mesh(earGeo, skinMat);
+        lEar.position.set(-0.45, 0.1, 0);
+        lEar.rotation.z = 1.3;
+        lEar.rotation.y = -0.3;
+        headGroup.add(lEar);
+        animBoss.leftEar = lEar;
+
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(0.08, 0.02, 6, 12), goldMat);
+        ring.position.set(-0.55, 0.1, 0);
+        headGroup.add(ring);
+
+        const rEar = new THREE.Mesh(earGeo, skinMat);
+        rEar.position.set(0.45, 0.1, 0);
+        rEar.rotation.z = -1.3;
+        rEar.rotation.y = 0.3;
+        headGroup.add(rEar);
+        animBoss.rightEar = rEar;
+
+        const lEye = new THREE.Mesh(new THREE.SphereGeometry(0.08, 8, 8), eyeMat);
+        lEye.position.set(-0.16, 0.08, 0.36);
+        headGroup.add(lEye);
+        const rEye = new THREE.Mesh(new THREE.SphereGeometry(0.08, 8, 8), eyeMat);
+        rEye.position.set(0.16, 0.08, 0.36);
+        headGroup.add(rEye);
+
+        const tusk1 = new THREE.Mesh(new THREE.ConeGeometry(0.04, 0.14, 6), whiteMat);
+        tusk1.position.set(-0.12, -0.2, 0.38);
+        tusk1.rotation.x = -Math.PI / 2;
+        headGroup.add(tusk1);
+        const tusk2 = new THREE.Mesh(new THREE.ConeGeometry(0.04, 0.14, 6), whiteMat);
+        tusk2.position.set(0.12, -0.2, 0.38);
+        tusk2.rotation.x = -Math.PI / 2;
+        headGroup.add(tusk2);
+
+        group.add(headGroup);
+        animBoss.head = headGroup;
+
+        const cupGroup = new THREE.Group();
+        cupGroup.position.set(0.55, 0.85, 0.4);
+
+        const cup = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.18, 0.55, 16), cupMat);
+        cupGroup.add(cup);
+
+        const lid = new THREE.Mesh(new THREE.CylinderGeometry(0.26, 0.26, 0.08, 16), lidMat);
+        lid.position.y = 0.3;
+        cupGroup.add(lid);
+
+        const steamGroup = new THREE.Group();
+        steamGroup.position.y = 0.4;
+        const steamMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.45 });
+        const steamPuffs = [];
+        for (let i = 0; i < 4; i++) {
+            const p = new THREE.Mesh(new THREE.SphereGeometry(0.06 + i * 0.02, 6, 6), steamMat);
+            p.position.set((Math.random() - 0.5) * 0.1, i * 0.18, (Math.random() - 0.5) * 0.1);
+            steamGroup.add(p);
+            steamPuffs.push(p);
+        }
+        cupGroup.add(steamGroup);
+        animBoss.steamPuffs = steamPuffs;
+
+        group.add(cupGroup);
+
+        const daggerGroup = new THREE.Group();
+        daggerGroup.position.set(-0.55, 0.85, 0.3);
+        const receipt = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.7, 0.2), whiteMat);
+        receipt.rotation.z = 0.4;
+        daggerGroup.add(receipt);
+        group.add(daggerGroup);
+
+        const lLeg = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.45, 0.3), skinMat);
+        lLeg.position.set(-0.25, 0.28, 0);
+        group.add(lLeg);
+        const rLeg = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.45, 0.3), skinMat);
+        rLeg.position.set(0.25, 0.28, 0);
+        group.add(rLeg);
+
+        group.lookAt(-2.6, 0.8, 2.5);
+    }
+
+    // Stage 1: 3D STREAMING-VAMPIR (Level 24)
+    function buildStreamingVampir3D(group) {
+        clearGroup(group);
+        animBoss = {};
+
+        const skinMat = new THREE.MeshStandardMaterial({ color: 0xedf2f4, roughness: 0.3 });
+        const tuxMat = new THREE.MeshStandardMaterial({ color: 0x0f1016, roughness: 0.25 });
+        const redMat = new THREE.MeshStandardMaterial({ color: 0x9b2226, roughness: 0.4, side: THREE.DoubleSide });
+        const eyeMat = new THREE.MeshBasicMaterial({ color: 0xff0054 });
+        const hairMat = new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.2 });
+
+        const body = new THREE.Mesh(new THREE.BoxGeometry(0.65, 1.3, 0.38), tuxMat);
+        body.position.y = 1.25;
+        group.add(body);
+
+        const headGroup = new THREE.Group();
+        headGroup.position.set(0, 2.05, 0);
+
+        const head = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.48, 0.38), skinMat);
+        headGroup.add(head);
+
+        const hair = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.22, 0.4), hairMat);
+        hair.position.y = 0.25;
+        headGroup.add(hair);
+
+        const lEye = new THREE.Mesh(new THREE.SphereGeometry(0.06, 6, 6), eyeMat);
+        lEye.position.set(-0.12, 0.05, 0.21);
+        headGroup.add(lEye);
+        const rEye = new THREE.Mesh(new THREE.SphereGeometry(0.06, 6, 6), eyeMat);
+        rEye.position.set(0.12, 0.05, 0.21);
+        headGroup.add(rEye);
+
+        group.add(headGroup);
+
+        const collar = new THREE.Mesh(new THREE.BoxGeometry(0.75, 0.65, 0.05), redMat);
+        collar.position.set(0, 1.85, -0.22);
+        collar.rotation.x = -0.25;
+        group.add(collar);
+
+        const cape = new THREE.Mesh(new THREE.BoxGeometry(0.9, 1.8, 0.05), redMat);
+        cape.position.set(0, 1.0, -0.25);
+        cape.rotation.x = 0.15;
+        group.add(cape);
+        animBoss.cape = cape;
+
+        const cube = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.3, 0.3), eyeMat);
+        cube.position.set(0.55, 1.3, 0.45);
+        group.add(cube);
+        animBoss.cube = cube;
+
+        const batMat = new THREE.MeshStandardMaterial({ color: 0x161a1d, roughness: 0.8 });
+        const bats = [];
+        for (let i = 0; i < 3; i++) {
+            const bGroup = new THREE.Group();
+            const bBody = new THREE.Mesh(new THREE.SphereGeometry(0.08, 6, 6), batMat);
+            bGroup.add(bBody);
+            const lWing = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.02, 0.12), batMat);
+            lWing.position.x = -0.12;
+            bGroup.add(lWing);
+            const rWing = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.02, 0.12), batMat);
+            rWing.position.x = 0.12;
+            bGroup.add(rWing);
+            group.add(bGroup);
+            bats.push({ group: bGroup, lWing: lWing, rWing: rWing, angle: i * (Math.PI * 2 / 3) });
+        }
+        animBoss.bats = bats;
+
+        group.lookAt(-2.6, 0.8, 2.5);
+    }
+
+    // Stage 2: 3D SALE-DÄMON (Level 38)
+    function buildSaleDaemon3D(group) {
+        clearGroup(group);
+        animBoss = {};
+
+        const demonMat = new THREE.MeshStandardMaterial({ color: 0xb7094c, roughness: 0.4 });
+        const hornMat = new THREE.MeshStandardMaterial({ color: 0x1a1a24, roughness: 0.3, metalness: 0.6 });
+        const fireMat = new THREE.MeshBasicMaterial({ color: 0xffb703 });
+        const tagMat = new THREE.MeshStandardMaterial({ color: 0xd90429, roughness: 0.3 });
+
+        const torso = new THREE.Mesh(new THREE.BoxGeometry(0.95, 1.1, 0.6), demonMat);
+        torso.position.y = 1.1;
+        group.add(torso);
+
+        const headGroup = new THREE.Group();
+        headGroup.position.set(0, 1.85, 0);
+
+        const head = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.55, 0.55), demonMat);
+        headGroup.add(head);
+
+        const lHorn = new THREE.Mesh(new THREE.TorusGeometry(0.28, 0.09, 8, 16, Math.PI * 1.2), hornMat);
+        lHorn.position.set(-0.35, 0.2, 0);
+        lHorn.rotation.y = Math.PI / 2;
+        lHorn.rotation.z = 0.5;
+        headGroup.add(lHorn);
+
+        const rHorn = new THREE.Mesh(new THREE.TorusGeometry(0.28, 0.09, 8, 16, Math.PI * 1.2), hornMat);
+        rHorn.position.set(0.35, 0.2, 0);
+        rHorn.rotation.y = -Math.PI / 2;
+        rHorn.rotation.z = -0.5;
+        headGroup.add(rHorn);
+
+        const lEye = new THREE.Mesh(new THREE.SphereGeometry(0.08, 6, 6), fireMat);
+        lEye.position.set(-0.16, 0.05, 0.3);
+        headGroup.add(lEye);
+        const rEye = new THREE.Mesh(new THREE.SphereGeometry(0.08, 6, 6), fireMat);
+        rEye.position.set(0.16, 0.05, 0.3);
+        headGroup.add(rEye);
+
+        const flameCrown = new THREE.Group();
+        flameCrown.position.y = 0.45;
+        for (let i = 0; i < 5; i++) {
+            const f = new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.3, 6), fireMat);
+            f.position.set(Math.cos(i * 1.25) * 0.22, 0, Math.sin(i * 1.25) * 0.22);
+            flameCrown.add(f);
+        }
+        headGroup.add(flameCrown);
+        animBoss.flameCrown = flameCrown;
+
+        group.add(headGroup);
+
+        const trident = new THREE.Group();
+        trident.position.set(0.7, 1.2, 0.3);
+        const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 2.2, 8), hornMat);
+        trident.add(shaft);
+        const prongMid = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.45, 6), fireMat);
+        prongMid.position.y = 1.25;
+        trident.add(prongMid);
+        const prongL = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.35, 6), fireMat);
+        prongL.position.set(-0.25, 1.15, 0);
+        trident.add(prongL);
+        const prongR = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.35, 6), fireMat);
+        prongR.position.set(0.25, 1.15, 0);
+        trident.add(prongR);
+        group.add(trident);
+
+        const tag1 = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.32, 0.02), tagMat);
+        tag1.position.set(-0.35, 0.6, 0.32);
+        tag1.rotation.z = 0.2;
+        group.add(tag1);
+        const tag2 = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.32, 0.02), tagMat);
+        tag2.position.set(0.35, 0.6, 0.32);
+        tag2.rotation.z = -0.2;
+        group.add(tag2);
+
+        const lLeg = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.65, 0.35), demonMat);
+        lLeg.position.set(-0.3, 0.3, 0);
+        group.add(lLeg);
+        const rLeg = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.65, 0.35), demonMat);
+        rLeg.position.set(0.3, 0.3, 0);
+        group.add(rLeg);
+
+        group.lookAt(-2.6, 0.8, 2.5);
+    }
+
+    // Stage 3: 3D KLARNA-DRACHE (Level 50)
+    function buildKlarnaDrache3D(group) {
+        clearGroup(group);
+        animBoss = {};
+
+        const scaleMat = new THREE.MeshStandardMaterial({ color: 0x7209b7, metalness: 0.6, roughness: 0.3 });
+        const bellyMat = new THREE.MeshStandardMaterial({ color: 0xf72585, roughness: 0.4 });
+        const wingMat = new THREE.MeshStandardMaterial({ color: 0xb5179e, roughness: 0.4, side: THREE.DoubleSide });
+        const eyeMat = new THREE.MeshBasicMaterial({ color: 0x4cc9f0 });
+        const hornMat = new THREE.MeshStandardMaterial({ color: 0xffd166, metalness: 0.8 });
+
+        const body = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.6, 1.4, 12), scaleMat);
+        body.position.set(0, 0.9, -0.2);
+        body.rotation.x = Math.PI / 4;
+        group.add(body);
+
+        const belly = new THREE.Mesh(new THREE.BoxGeometry(0.48, 1.1, 0.15), bellyMat);
+        belly.position.set(0, 0.85, 0.2);
+        belly.rotation.x = Math.PI / 4;
+        group.add(belly);
+
+        const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.38, 0.9, 10), scaleMat);
+        neck.position.set(0, 1.6, 0.25);
+        neck.rotation.x = -Math.PI / 6;
+        group.add(neck);
+
+        const headGroup = new THREE.Group();
+        headGroup.position.set(0, 2.05, 0.45);
+
+        const head = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.38, 0.75), scaleMat);
+        headGroup.add(head);
+
+        const lHorn = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.6, 6), hornMat);
+        lHorn.position.set(-0.2, 0.3, -0.2);
+        lHorn.rotation.x = -0.5;
+        headGroup.add(lHorn);
+
+        const rHorn = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.6, 6), hornMat);
+        rHorn.position.set(0.2, 0.3, -0.2);
+        rHorn.rotation.x = -0.5;
+        headGroup.add(rHorn);
+
+        const lEye = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.08, 0.15), eyeMat);
+        lEye.position.set(-0.24, 0.08, 0.1);
+        headGroup.add(lEye);
+        const rEye = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.08, 0.15), eyeMat);
+        rEye.position.set(0.24, 0.08, 0.1);
+        headGroup.add(rEye);
+
+        const jaw = new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.18, 0.55), bellyMat);
+        jaw.position.set(0, -0.18, 0.1);
+        headGroup.add(jaw);
+
+        group.add(headGroup);
+        animBoss.head = headGroup;
+
+        const lWingGroup = new THREE.Group();
+        lWingGroup.position.set(-0.4, 1.25, -0.15);
+        const lWing = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.9, 0.04), wingMat);
+        lWing.position.set(-0.8, 0.2, 0);
+        lWingGroup.add(lWing);
+        group.add(lWingGroup);
+        animBoss.leftWing = lWingGroup;
+
+        const rWingGroup = new THREE.Group();
+        rWingGroup.position.set(0.4, 1.25, -0.15);
+        const rWing = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.9, 0.04), wingMat);
+        rWing.position.set(0.8, 0.2, 0);
+        rWingGroup.add(rWing);
+        group.add(rWingGroup);
+        animBoss.rightWing = rWingGroup;
+
+        const tailGroup = new THREE.Group();
+        tailGroup.position.set(0, 0.45, -0.85);
+        const tailMesh = new THREE.Mesh(new THREE.ConeGeometry(0.22, 1.6, 8), scaleMat);
+        tailMesh.rotation.x = -Math.PI / 2.3;
+        tailMesh.position.z = -0.7;
+        tailGroup.add(tailMesh);
+        group.add(tailGroup);
+        animBoss.tail = tailGroup;
+
+        const lClaw = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.5, 0.35), scaleMat);
+        lClaw.position.set(-0.45, 0.25, 0.1);
+        group.add(lClaw);
+        const rClaw = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.5, 0.35), scaleMat);
+        rClaw.position.set(0.45, 0.25, 0.1);
+        group.add(rClaw);
+
+        group.lookAt(-2.6, 0.8, 2.5);
+    }
+
+    // Stage 4: 3D INFLATIONS-TITAN (Level 80)
+    function buildInflationsTitan3D(group) {
+        clearGroup(group);
+        animBoss = {};
+
+        const stoneMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, metalness: 0.5, roughness: 0.6 });
+        const goldMat = new THREE.MeshStandardMaterial({ color: 0xffd166, metalness: 0.95, roughness: 0.15 });
+        const coreMat = new THREE.MeshBasicMaterial({ color: 0xffa200 });
+
+        const torso = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1.4, 0.8), stoneMat);
+        torso.position.y = 1.35;
+        group.add(torso);
+
+        const chestInlay = new THREE.Mesh(new THREE.BoxGeometry(1.25, 0.3, 0.85), goldMat);
+        chestInlay.position.y = 1.65;
+        group.add(chestInlay);
+
+        const core = new THREE.Mesh(new THREE.SphereGeometry(0.25, 16, 16), coreMat);
+        core.position.set(0, 1.35, 0.42);
+        group.add(core);
+        animBoss.core = core;
+
+        const head = new THREE.Mesh(new THREE.BoxGeometry(0.65, 0.55, 0.6), stoneMat);
+        head.position.set(0, 2.35, 0);
+        group.add(head);
+
+        const visor = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.1, 0.1), coreMat);
+        visor.position.set(0, 2.35, 0.32);
+        group.add(visor);
+
+        const fistGeo = new THREE.BoxGeometry(0.55, 0.65, 0.55);
+        const lFist = new THREE.Mesh(fistGeo, stoneMat);
+        lFist.position.set(-1.15, 1.2, 0.3);
+        group.add(lFist);
+        animBoss.leftFist = lFist;
+
+        const rFist = new THREE.Mesh(fistGeo, stoneMat);
+        rFist.position.set(1.15, 1.2, 0.3);
+        group.add(rFist);
+        animBoss.rightFist = rFist;
+
+        const ring1 = new THREE.Mesh(new THREE.TorusGeometry(1.4, 0.05, 8, 32), goldMat);
+        ring1.position.y = 1.6;
+        group.add(ring1);
+
+        const ring2 = new THREE.Mesh(new THREE.TorusGeometry(1.65, 0.04, 8, 32), goldMat);
+        ring2.position.y = 1.6;
+        ring2.rotation.x = Math.PI / 3;
+        group.add(ring2);
+        animBoss.rings = [ring1, ring2];
+
+        group.lookAt(-2.6, 0.8, 2.5);
+    }
 
     function rebuildBoss3D(stageIdx) {
-        // Clear previous meshes
-        while (boss3D.children.length > 0) boss3D.remove(boss3D.children[0]);
-
-        if (stageIdx === 0) {
-            // Stage 1: Kaffee-Goblin (Spiky green-red creature)
-            bMat.color.setHex(0x2a9d8f);
-            bossBodyMesh = new THREE.Mesh(new THREE.ConeGeometry(0.7, 1.4, 8), bMat);
-            bossBodyMesh.position.y = 0.8;
-            boss3D.add(bossBodyMesh);
-
-            bossHeadMesh = new THREE.Mesh(new THREE.SphereGeometry(0.45, 12, 12), new THREE.MeshStandardMaterial({ color: 0xe76f51 }));
-            bossHeadMesh.position.y = 1.6;
-            boss3D.add(bossHeadMesh);
-
-            // Coffee Cup in hand!
-            const cup = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.15, 0.4, 12), new THREE.MeshStandardMaterial({ color: 0xffffff }));
-            cup.position.set(0.6, 0.9, 0.3);
-            boss3D.add(cup);
-
-        } else if (stageIdx === 1) {
-            // Stage 2: Streaming-Vampir (Dark cape, bat wings)
-            bMat.color.setHex(0x1d1e2c);
-            bossBodyMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.6, 1.8, 8), bMat);
-            bossBodyMesh.position.y = 1.0;
-            boss3D.add(bossBodyMesh);
-
-            bossHeadMesh = new THREE.Mesh(new THREE.DodecahedronGeometry(0.45), new THREE.MeshStandardMaterial({ color: 0x7209b7, emissive: 0x3a0ca3 }));
-            bossHeadMesh.position.y = 2.0;
-            boss3D.add(bossHeadMesh);
-
-        } else if (stageIdx === 2) {
-            // Stage 3: Sale-Dämon (Fiery horns)
-            bMat.color.setHex(0xd90429);
-            bossBodyMesh = new THREE.Mesh(new THREE.BoxGeometry(1.0, 1.4, 0.8), bMat);
-            bossBodyMesh.position.y = 0.9;
-            boss3D.add(bossBodyMesh);
-
-            bossHeadMesh = new THREE.Mesh(new THREE.ConeGeometry(0.5, 0.8, 6), new THREE.MeshStandardMaterial({ color: 0xffb703 }));
-            bossHeadMesh.position.y = 1.9;
-            boss3D.add(bossHeadMesh);
-
-        } else if (stageIdx === 3) {
-            // Stage 4: Klarna-Drache (Wings & Spikes)
-            bMat.color.setHex(0x7209b7);
-            bossBodyMesh = new THREE.Mesh(new THREE.TorusGeometry(0.7, 0.35, 8, 20), bMat);
-            bossBodyMesh.position.y = 1.1;
-            boss3D.add(bossBodyMesh);
-
-            bossHeadMesh = new THREE.Mesh(new THREE.OctahedronGeometry(0.6), new THREE.MeshStandardMaterial({ color: 0xef476f, emissive: 0x800f2f }));
-            bossHeadMesh.position.y = 2.0;
-            boss3D.add(bossHeadMesh);
-
-        } else {
-            // Stage 5: Inflations-Titan (Giant Golden Geometric Colossus)
-            bMat.color.setHex(0xffd166);
-            bMat.metalness = 0.9;
-            bossBodyMesh = new THREE.Mesh(new THREE.IcosahedronGeometry(1.2, 1), bMat);
-            bossBodyMesh.position.y = 1.4;
-            boss3D.add(bossBodyMesh);
-
-            bossHeadMesh = new THREE.Mesh(new THREE.TorusGeometry(1.5, 0.08, 8, 32), new THREE.MeshBasicMaterial({ color: 0xffeedd }));
-            bossHeadMesh.position.y = 1.4;
-            bossHeadMesh.rotation.x = Math.PI / 3;
-            boss3D.add(bossHeadMesh);
-        }
-
-        boss3D.lookAt(-2.6, 0.8, 2.5);
+        if (stageIdx === 0) buildKaffeeGoblin3D(boss3D);
+        else if (stageIdx === 1) buildStreamingVampir3D(boss3D);
+        else if (stageIdx === 2) buildSaleDaemon3D(boss3D);
+        else if (stageIdx === 3) buildKlarnaDrache3D(boss3D);
+        else if (stageIdx === 4) buildInflationsTitan3D(boss3D);
     }
+
+    // Init Hero & Boss
+    buildPaladinHero(hero3D);
     rebuildBoss3D(0);
 
     // 3D Flying Projectiles Layer
@@ -966,12 +1727,69 @@
         requestAnimationFrame(animate3D);
         const t = clock.getElapsedTime();
 
-        // Idle 3D Bobbing & Rotations
-        hero3D.position.y = 0.2 + Math.sin(t * 3.5) * 0.06;
-        swordGroup.rotation.x = Math.sin(t * 3.0) * 0.15;
+        // Hero Idle Animations
+        if (currentHeroType === 'paladin') {
+            hero3D.position.y = 0.2 + Math.sin(t * 3.5) * 0.05;
+            if (animHero.cape) animHero.cape.rotation.x = 0.15 + Math.sin(t * 4.0) * 0.1;
+            if (animHero.swordGroup) animHero.swordGroup.rotation.x = -0.2 + Math.sin(t * 3.0) * 0.08;
+            if (animHero.shieldGroup) animHero.shieldGroup.rotation.z = Math.cos(t * 2.5) * 0.05;
+        } else if (currentHeroType === 'sparky') {
+            hero3D.position.y = 0.2 + Math.abs(Math.sin(t * 6.0)) * 0.1;
+            if (animHero.tail) animHero.tail.rotation.z = Math.sin(t * 10.0) * 0.35;
+            if (animHero.leftEar) animHero.leftEar.rotation.z = 0.4 + Math.sin(t * 6.0) * 0.15;
+            if (animHero.rightEar) animHero.rightEar.rotation.z = -0.4 - Math.sin(t * 6.0) * 0.15;
+            if (animHero.coin) animHero.coin.rotation.z += 0.03;
+        } else if (currentHeroType === 'mecha') {
+            hero3D.position.y = 0.35 + Math.sin(t * 2.5) * 0.08;
+            if (animHero.thrusters) {
+                const s = 0.8 + Math.sin(t * 25.0) * 0.25;
+                animHero.thrusters[0].scale.set(s, s, s);
+                animHero.thrusters[1].scale.set(s, s, s);
+            }
+        }
 
-        boss3D.position.y = 0.2 + Math.cos(t * 3.0) * 0.08;
-        if (bossHeadMesh) bossHeadMesh.rotation.y = t * 1.5;
+        // Boss Idle Animations
+        if (curStageIdx === 0) {
+            boss3D.position.y = 0.2 + Math.abs(Math.sin(t * 7.0)) * 0.08;
+            if (animBoss.leftEar) animBoss.leftEar.rotation.z = 1.3 + Math.sin(t * 9.0) * 0.2;
+            if (animBoss.rightEar) animBoss.rightEar.rotation.z = -1.3 - Math.sin(t * 9.0) * 0.2;
+            if (animBoss.steamPuffs) {
+                animBoss.steamPuffs.forEach((p, i) => {
+                    p.position.y = 0.1 + ((t * 0.6 + i * 0.25) % 0.8);
+                    p.scale.setScalar(0.8 + p.position.y * 1.5);
+                });
+            }
+        } else if (curStageIdx === 1) {
+            boss3D.position.y = 0.45 + Math.sin(t * 2.2) * 0.12;
+            if (animBoss.cape) animBoss.cape.rotation.x = 0.15 + Math.sin(t * 3.0) * 0.08;
+            if (animBoss.cube) animBoss.cube.rotation.y += 0.04;
+            if (animBoss.bats) {
+                animBoss.bats.forEach(b => {
+                    const ang = t * 2.5 + b.angle;
+                    b.group.position.set(Math.cos(ang) * 1.4, 2.0 + Math.sin(t * 4.0 + b.angle) * 0.25, Math.sin(ang) * 1.4);
+                    b.lWing.rotation.z = Math.sin(t * 18.0) * 0.6;
+                    b.rWing.rotation.z = -Math.sin(t * 18.0) * 0.6;
+                });
+            }
+        } else if (curStageIdx === 2) {
+            boss3D.position.y = 0.2 + Math.sin(t * 3.0) * 0.05;
+            if (animBoss.flameCrown) animBoss.flameCrown.rotation.y += 0.05;
+        } else if (curStageIdx === 3) {
+            boss3D.position.y = 0.2 + Math.sin(t * 4.0) * 0.06;
+            if (animBoss.leftWing) animBoss.leftWing.rotation.z = Math.sin(t * 6.0) * 0.45;
+            if (animBoss.rightWing) animBoss.rightWing.rotation.z = -Math.sin(t * 6.0) * 0.45;
+            if (animBoss.tail) animBoss.tail.rotation.y = Math.sin(t * 4.0) * 0.35;
+        } else if (curStageIdx === 4) {
+            boss3D.position.y = 0.35 + Math.sin(t * 1.8) * 0.1;
+            if (animBoss.leftFist) animBoss.leftFist.position.y = 1.2 + Math.sin(t * 2.5) * 0.2;
+            if (animBoss.rightFist) animBoss.rightFist.position.y = 1.2 + Math.cos(t * 2.5) * 0.2;
+            if (animBoss.rings) {
+                animBoss.rings[0].rotation.x += 0.015;
+                animBoss.rings[0].rotation.y += 0.02;
+                animBoss.rings[1].rotation.z += 0.02;
+                animBoss.rings[1].rotation.x -= 0.015;
+            }
+        }
 
         // Animate 3D Projectiles
         for (let i = active3DProjectiles.length - 1; i >= 0; i--) {
@@ -1027,10 +1845,9 @@
     }
 
     function switch3DAvatar() {
-        const colors = [0x243254, 0xef476f, 0x06d6a0, 0x7209b7, 0xffd166];
-        const c = colors[Math.floor(Math.random() * colors.length)];
-        hBodyMat.color.setHex(c);
-        sfx.coin();
+        const order = ['paladin', 'sparky', 'mecha'];
+        const nextIdx = (order.indexOf(currentHeroType) + 1) % order.length;
+        setHeroType(order[nextIdx]);
     }
 
     function loadStage(idx) {
@@ -1087,18 +1904,24 @@
         const boss3DPos = boss3D.position.clone().add(new THREE.Vector3(0, 1.2, 0));
 
         if (moveType === 'tackle') {
-            // 3D Budget-Hieb: Lunge + Sword slash particle
-            setDialog(`Finanz-Paladin stürmt vor und führt 3D BUDGET-HIEB aus!`);
+            setDialog(`${hero.name} stürmt vor und führt 3D BUDGET-HIEB aus!`);
             sfx.tackle();
 
-            // 3D Lunge animation
             hero3D.position.x += 1.2;
             hero3D.position.z -= 1.0;
+            if (animHero.swordGroup) animHero.swordGroup.rotation.x = 1.2;
+            if (animHero.cannon) animHero.cannon.rotation.x = -0.4;
+            if (animHero.sparkyTail) animHero.sparkyTail.rotation.z = -1.2;
+
             setTimeout(() => {
                 hero3D.position.set(-2.6, 0.2, 2.5);
+                if (animHero.swordGroup) animHero.swordGroup.rotation.x = -0.2;
+                if (animHero.cannon) animHero.cannon.rotation.x = 0;
+                if (animHero.sparkyTail) animHero.sparkyTail.rotation.z = 0;
             }, 300);
 
-            spawn3DProjectile(hero3DPos, boss3DPos, 0x06d6a0, 0.35, 'bolt', () => {
+            const projColor = currentHeroType === 'sparky' ? 0xffd166 : (currentHeroType === 'mecha' ? 0x06d6a0 : 0x4cc9f0);
+            spawn3DProjectile(hero3DPos, boss3DPos, projColor, 0.35, 'bolt', () => {
                 sfx.hit();
                 triggerScreenShake();
                 enemyPointLight.intensity = 8.0;
@@ -1112,16 +1935,16 @@
             });
 
         } else if (moveType === 'cancel') {
-            // 3D Kündigungs-Blitz: Sky lightning bolt strike
-            setDialog(`Finanz-Paladin beschwört einen 3D KÜNDIGUNGS-BLITZ!`);
+            setDialog(`${hero.name} entfesselt mächtigen 3D KÜNDIGUNGS-BLITZ!`);
             sfx.electric();
             speakVoice("Kündigungs-Blitz!");
 
             const skyPos = boss3DPos.clone().add(new THREE.Vector3(0, 6, 0));
-            spawn3DProjectile(skyPos, boss3DPos, 0xffd166, 0.5, 'bolt', () => {
+            const projColor = currentHeroType === 'sparky' ? 0xffea00 : (currentHeroType === 'mecha' ? 0x38bdf8 : 0xffd166);
+            spawn3DProjectile(skyPos, boss3DPos, projColor, 0.55, 'bolt', () => {
                 triggerScreenShake();
                 sfx.hit();
-                enemyPointLight.color.setHex(0xffd166);
+                enemyPointLight.color.setHex(projColor);
                 enemyPointLight.intensity = 10.0;
                 setTimeout(() => {
                     enemyPointLight.color.setHex(0xef476f);
@@ -1136,8 +1959,7 @@
             });
 
         } else if (moveType === 'shield') {
-            // 3D Notgroschen-Schild: Glowing energy sphere
-            setDialog(`Finanz-Paladin errichtet ein 3D NOTGROSCHEN-SCHILD!`);
+            setDialog(`${hero.name} errichtet ein 3D NOTGROSCHEN-SCHILD!`);
             sfx.shield();
 
             const shieldMesh = new THREE.Mesh(
@@ -1153,11 +1975,10 @@
             setTimeout(enemy3DTurn, 800);
 
         } else if (moveType === 'cashback') {
-            // 3D Cashback-Raub: Golden coins fly from boss to hero
-            setDialog(`Finanz-Paladin nutzt 3D CASHBACK-RAUB!`);
+            setDialog(`${hero.name} nutzt 3D CASHBACK-RAUB!`);
             sfx.coin();
 
-            spawn3DProjectile(boss3DPos, hero3DPos, 0xffd166, 0.25, 'coin', () => {
+            spawn3DProjectile(boss3DPos, hero3DPos, 0xffd166, 0.28, 'coin', () => {
                 hero.gold += 65;
                 updatePokemonUI();
                 setDialog(`+65 Gold direkt in dein Portemonnaie gesaugt!`);
@@ -1173,15 +1994,14 @@
                 setDialog(`Der ${boss.name} bricht zusammen!`);
                 speakVoice(`${boss.name} wurde besiegt!`);
 
-                // 3D Boss Faint sink into floor
                 const sinkInterval = setInterval(() => {
                     boss3D.position.y -= 0.08;
                     if (boss3D.position.y < -3.0) {
                         clearInterval(sinkInterval);
                         sfx.victory();
-                        hero.gold += boss.reward;
+                        hero.gold += 150;
                         addXP(250);
-                        setDialog(`Sieg! Du erhältst +${boss.reward} Gold & +250 XP!`);
+                        setDialog(`Sieg! Du erhältst +150 Gold & +250 XP!`);
                         isBattling = false;
                     }
                 }, 30);
@@ -1196,7 +2016,16 @@
         const hero3DPos = hero3D.position.clone().add(new THREE.Vector3(0, 1.0, 0));
         const boss3DPos = boss3D.position.clone().add(new THREE.Vector3(0, 1.2, 0));
 
-        setDialog(`${boss.name} feuert Ausgaben-Angriff ab!`);
+        const bossAttacks = [
+            { text: "Kaffee-Goblin schleudert siedend heissen Espresso!", color: 0x6f4e37 },
+            { text: "Streaming-Vampir entfesselt Monatsgebühr-Fluch!", color: 0x7209b7 },
+            { text: "Sale-Dämon rammt brennenden Barcode-Dreizack!", color: 0xd90429 },
+            { text: "Klarna-Drache speit Zins-Höllenfeuer!", color: 0xf72585 },
+            { text: "Inflations-Titan entfesselt Entwertungs-Schockwelle!", color: 0xffd166 }
+        ];
+        const atk = bossAttacks[curStageIdx] || bossAttacks[0];
+
+        setDialog(atk.text);
         sfx.tackle();
 
         // Boss lunges forward
@@ -1206,7 +2035,7 @@
             boss3D.position.set(2.8, 0.2, -2.5);
         }, 300);
 
-        spawn3DProjectile(boss3DPos, hero3DPos, 0xef476f, 0.45, 'sphere', () => {
+        spawn3DProjectile(boss3DPos, hero3DPos, atk.color, 0.45, 'sphere', () => {
             sfx.hit();
             triggerScreenShake();
             heroPointLight.intensity = 8.0;
@@ -1214,13 +2043,13 @@
 
             const dmg = Math.round(boss.atk * (1 + Math.random() * 0.4));
             hero.hp = Math.max(0, hero.hp - dmg);
-            setDialog(`Es ist sehr effektiv! Du verlierst ${dmg} HP!`);
+            setDialog(`Es ist sehr effektiv! ${hero.name} verliert ${dmg} HP!`);
             updatePokemonUI();
 
             if (hero.hp <= 0) {
                 sfx.faint();
                 speakVoice("Finanzkrise! Du bist ohnmächtig geworden.");
-                setDialog(`Finanz-Paladin ist ohnmächtig geworden! Notgroschen aufgebraucht.`);
+                setDialog(`${hero.name} ist ohnmächtig geworden! Notgroschen aufgebraucht.`);
                 setTimeout(() => {
                     alert('💀 Finanzkrise! Deine Ersparnisse werden wiederhergestellt.');
                     hero.hp = hero.maxHp;
@@ -1228,7 +2057,7 @@
                     isBattling = false;
                 }, 1200);
             } else {
-                setDialog(`Was wird Finanz-Paladin tun?`);
+                setDialog(`Was wird ${hero.name} tun?`);
                 isBattling = false;
             }
         });
