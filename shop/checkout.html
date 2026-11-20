@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <script src="https://js.stripe.com/dahlia/stripe.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0F172A;
+      color: #F8FAFC;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      margin: 0;
+    }
+    .checkout-container {
+      max-width: 520px;
+      width: 100%;
+      background: #1E293B;
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid #334155;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    h2 {
+      margin-top: 0;
+      color: #F8FAFC;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <h2>Sichere Bezahlung</h2>
+    <div id="checkout-form"></div>
+  </div>
+
+  <script>
+    async function initCheckout() {
+      const stripe = Stripe('<your-publishable-key>');
+
+      const appearance = {
+        "theme": "stripe",
+        "labels": "auto",
+        "inputs": "spaced",
+        "variables": {
+          "borderRadius": "4px",
+          "colorBackground": "#ffffff",
+          "colorDanger": "#df1b41",
+          "colorPrimary": "#0570de",
+          "colorSuccess": "#00c853",
+          "colorText": "#30313d",
+          "fontFamily": "default",
+          "fontSizeBase": "16px",
+          "spacingUnit": "4px"
+        }
+      };
+
+      const clientSecret = fetch('/api/create-checkout-session', {method: 'POST'})
+        .then((response) => response.json())
+        .then((json) => json.client_secret);
+      const checkout = stripe.initCheckoutFormSdk({clientSecret, appearance});
+
+      const form = checkout.createForm({layout: 'expanded'});
+      form.mount('#checkout-form');
+
+      const loadActionsResult = await checkout.loadActions();
+      if (loadActionsResult.type === 'success') {
+        form.on('confirm', async (event) => {
+          try {
+            await loadActionsResult.actions.confirm({formConfirmEvent: event});
+          } catch (error) {
+            console.error('Payment confirmation error:', error);
+          }
+        });
+      }
+    }
+
+    initCheckout();
+  </script>
+</body>
+</html>
