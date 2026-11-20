@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚔️ QuestBudget: The Financial RPG Battle</title>
+    <title>⚔️ QUESTBUDGET: LEGENDS OF WEALTH (RPG)</title>
     <style>
         :root {
-            --bg-deep: #0a0b10;
-            --bg-panel: #13151f;
-            --bg-card: #1c1f2e;
-            --border-glow: #ffb703;
+            --bg-deep: #07080d;
+            --bg-panel: #11131f;
+            --bg-card: #181b2b;
+            --border: #282d47;
             --gold: #ffd166;
             --green: #06d6a0;
             --red: #ef476f;
             --blue: #118ab2;
-            --purple: #9d4edd;
+            --purple: #b5179e;
+            --cyan: #4cc9f0;
             --text-main: #f8f9fa;
             --text-muted: #8d99ae;
         }
@@ -30,421 +31,612 @@
         body {
             background-color: var(--bg-deep);
             color: var(--text-main);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
             padding: 20px 10px;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        .game-container {
-            max-width: 1080px;
+        /* Shake Effect */
+        body.shaking {
+            animation: screenShake 0.25s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes screenShake {
+            10%, 90% { transform: translate3d(-4px, -2px, 0); }
+            20%, 80% { transform: translate3d(6px, 4px, 0); }
+            30%, 50%, 70% { transform: translate3d(-8px, -4px, 0); }
+            40%, 60% { transform: translate3d(8px, 4px, 0); }
+        }
+
+        .game-shell {
+            max-width: 1120px;
             width: 100%;
+            position: relative;
+        }
+
+        /* Particle Canvas Overlay */
+        #particleCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
         }
 
         /* Top HUD */
-        .hud-bar {
-            background: linear-gradient(180deg, #1f2335, #141624);
-            border: 2px solid #2d324d;
-            border-radius: 16px;
+        .hud-top {
+            background: linear-gradient(180deg, #181c2e, #10121e);
+            border: 2px solid #2d334e;
+            border-radius: 18px;
             padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(255, 209, 102, 0.08);
         }
 
-        .player-hud {
+        .hero-banner {
             display: flex;
             align-items: center;
             gap: 16px;
         }
 
-        .avatar-frame {
-            font-size: 42px;
-            background: #252a40;
+        .avatar-box {
+            font-size: 46px;
+            background: #20253b;
             border: 2px solid var(--gold);
-            width: 70px;
-            height: 70px;
+            width: 74px;
+            height: 74px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 14px;
-            box-shadow: 0 0 15px rgba(255, 209, 102, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(255, 209, 102, 0.35);
             cursor: pointer;
+            transition: transform 0.15s;
         }
 
-        .hud-details h3 {
-            font-size: 1.25rem;
+        .avatar-box:hover {
+            transform: scale(1.08) rotate(4deg);
+        }
+
+        .hero-meta h2 {
+            font-size: 1.3rem;
             color: #fff;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .hud-details .lvl-badge {
-            background: var(--gold);
-            color: #0a0b10;
+        .hero-badge {
+            background: linear-gradient(135deg, var(--gold), #f77f00);
+            color: #07080d;
             font-size: 0.75rem;
             font-weight: 900;
-            padding: 2px 8px;
-            border-radius: 6px;
+            padding: 2px 10px;
+            border-radius: 999px;
+            letter-spacing: 0.5px;
         }
 
-        .stats-row {
+        .hero-bars {
             display: flex;
-            gap: 20px;
+            gap: 14px;
             margin-top: 6px;
-            font-size: 0.85rem;
         }
 
-        .wallet-gold {
-            background: #222638;
-            border: 1px solid var(--border-glow);
-            padding: 8px 18px;
-            border-radius: 12px;
-            font-size: 1.1rem;
+        .mini-bar-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            width: 140px;
+            font-size: 0.75rem;
             font-weight: 800;
-            color: var(--gold);
+        }
+
+        .mini-bar-bg {
+            background: #0b0d14;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #2d334e;
+        }
+
+        .mini-bar-fill {
+            height: 100%;
+            transition: width 0.3s;
+        }
+
+        .top-currencies {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .curr-box {
+            background: #171b2b;
+            border: 1px solid var(--border);
+            padding: 10px 18px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            font-weight: 900;
+            font-size: 1.1rem;
         }
 
-        /* Navigation */
-        .nav-tabs {
+        .curr-box.gold {
+            border-color: var(--gold);
+            color: var(--gold);
+            box-shadow: 0 0 15px rgba(255, 209, 102, 0.2);
+        }
+
+        .music-btn {
+            background: #20253b;
+            color: var(--gold);
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .music-btn:hover {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        /* Navigation Bar */
+        .nav-dock {
             display: flex;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            overflow-x: auto;
         }
 
-        .tab-btn {
-            background: #161926;
+        .nav-btn {
+            background: #131624;
             color: var(--text-muted);
-            border: 1px solid #2d324d;
-            padding: 12px 20px;
-            border-radius: 12px;
+            border: 1px solid #242940;
+            padding: 14px 22px;
+            border-radius: 14px;
             font-weight: 800;
             font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.2s;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            white-space: nowrap;
         }
 
-        .tab-btn:hover, .tab-btn.active {
-            background: #22273d;
+        .nav-btn:hover, .nav-btn.active {
+            background: #1c2238;
             color: #fff;
             border-color: var(--gold);
-            box-shadow: 0 4px 15px rgba(255, 209, 102, 0.2);
+            box-shadow: 0 4px 20px rgba(255, 209, 102, 0.25);
+            transform: translateY(-2px);
         }
 
-        /* Arena Stage */
-        .arena-card {
-            background: radial-gradient(circle at center, #1e2238 0%, #111320 100%);
-            border: 2px solid #2d324d;
-            border-radius: 20px;
+        /* Battle Arena View */
+        .arena-box {
+            background: radial-gradient(circle at center, #1b2038 0%, #0d0f1a 100%);
+            border: 2px solid #2d334e;
+            border-radius: 24px;
             padding: 30px;
-            margin-bottom: 24px;
+            margin-bottom: 25px;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.8);
         }
 
-        .battleground {
+        .stage-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .stage-badge {
+            background: #111422;
+            border: 1px solid #2d334e;
+            color: var(--text-muted);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .stage-badge.active {
+            background: var(--gold);
+            color: #07080d;
+            border-color: var(--gold);
+        }
+
+        .battle-stage {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            min-height: 240px;
+            min-height: 280px;
             position: relative;
         }
 
-        .fighter {
+        .combatant {
             text-align: center;
             position: relative;
             transition: transform 0.15s ease-out;
         }
 
-        .fighter.hit {
-            animation: shake 0.3s;
-            filter: brightness(2) drop-shadow(0 0 20px var(--red));
+        .combatant.attacking {
+            animation: lungeAnim 0.25s;
         }
 
-        .fighter.attack {
-            animation: lunge 0.25s;
+        .combatant.damaged {
+            animation: hitShake 0.3s;
+            filter: brightness(2.2) drop-shadow(0 0 25px var(--red));
         }
 
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-12px); }
-            75% { transform: translateX(12px); }
-        }
-
-        @keyframes lunge {
+        @keyframes lungeAnim {
             0% { transform: translateX(0); }
-            50% { transform: translateX(40px) scale(1.1); }
+            50% { transform: translateX(45px) scale(1.15); }
             100% { transform: translateX(0); }
         }
 
-        .fighter-sprite {
-            font-size: 85px;
-            margin-bottom: 10px;
+        @keyframes hitShake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-14px); }
+            40% { transform: translateX(14px); }
+            60% { transform: translateX(-8px); }
+            80% { transform: translateX(8px); }
+        }
+
+        .sprite-wrap {
+            font-size: 95px;
+            margin-bottom: 12px;
             display: inline-block;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.7));
+            animation: idleBounce 2s infinite ease-in-out;
         }
 
-        .hp-gauge-box {
-            width: 200px;
-            background: #0f111a;
-            border: 2px solid #333852;
-            border-radius: 10px;
-            padding: 4px;
+        @keyframes idleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
-        .hp-bar-fill {
-            height: 16px;
-            border-radius: 6px;
-            transition: width 0.3s ease-out, background-color 0.3s;
+        .hp-capsule {
+            width: 220px;
+            background: #090a10;
+            border: 2px solid #2d334e;
+            border-radius: 12px;
+            padding: 5px;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
         }
 
-        .hero-hp { background: linear-gradient(90deg, #06d6a0, #118ab2); width: 85%; }
-        .boss-hp { background: linear-gradient(90deg, #ff0055, #ef476f); width: 100%; }
+        .hp-fill {
+            height: 18px;
+            border-radius: 8px;
+            transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-        .vs-badge {
-            font-size: 2rem;
-            font-weight: 900;
+        .hero-hp-color { background: linear-gradient(90deg, #06d6a0, #118ab2); }
+        .boss-hp-color { background: linear-gradient(90deg, #ff0055, #ef476f); }
+
+        .combat-log-banner {
+            background: #111422;
+            border: 1px solid #252a42;
+            border-radius: 12px;
+            padding: 10px 18px;
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 700;
             color: var(--gold);
-            text-shadow: 0 0 20px rgba(255, 209, 102, 0.6);
-            letter-spacing: 2px;
-        }
-
-        /* Action Buttons */
-        .actions-bar {
+            margin: 20px auto 0;
+            max-width: 650px;
+            min-height: 42px;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-            flex-wrap: wrap;
         }
 
-        .action-btn {
-            background: #222638;
+        /* Controls */
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-top: 25px;
+        }
+
+        .btn-action {
+            background: linear-gradient(180deg, #22273d, #181c2c);
             color: #fff;
-            border: 2px solid #383f5e;
-            padding: 14px 24px;
-            border-radius: 14px;
+            border: 2px solid #333a57;
+            padding: 16px 20px;
+            border-radius: 16px;
+            font-weight: 900;
             font-size: 1rem;
-            font-weight: 800;
             cursor: pointer;
             transition: all 0.15s;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            gap: 4px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
-        .action-btn:hover {
+        .btn-action span.desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .btn-action:hover {
             transform: translateY(-3px);
             border-color: var(--gold);
-            background: #2b3149;
+            box-shadow: 0 8px 25px rgba(255, 209, 102, 0.25);
         }
 
-        .action-btn.attack {
-            background: linear-gradient(135deg, #ef476f, #d90429);
+        .btn-action.primary {
+            background: linear-gradient(135deg, #ef476f, #b5179e);
             border-color: #ff758f;
         }
 
-        .action-btn.special {
-            background: linear-gradient(135deg, #9d4edd, #7b2cbf);
-            border-color: #c77dff;
+        .btn-action.special {
+            background: linear-gradient(135deg, #ffd166, #f77f00);
+            color: #07080d;
+            border-color: #ffe6a7;
         }
 
-        .action-btn.heal {
-            background: linear-gradient(135deg, #06d6a0, #05a079);
-            border-color: #52b788;
+        .btn-action.heal {
+            background: linear-gradient(135deg, #06d6a0, #118ab2);
+            border-color: #70e000;
         }
 
-        /* Damage Numbers */
-        .floating-dmg {
+        /* Floating Damage */
+        .dmg-float {
             position: absolute;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 900;
-            animation: floatUp 0.8s ease-out forwards;
+            animation: floatDamage 0.9s ease-out forwards;
             pointer-events: none;
-            z-index: 100;
+            z-index: 1000;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.9);
         }
 
-        @keyframes floatUp {
-            0% { transform: translateY(0) scale(0.7); opacity: 0; }
-            30% { transform: translateY(-20px) scale(1.2); opacity: 1; }
-            100% { transform: translateY(-70px) scale(0.9); opacity: 0; }
+        @keyframes floatDamage {
+            0% { transform: translateY(0) scale(0.6); opacity: 0; }
+            20% { transform: translateY(-25px) scale(1.3); opacity: 1; }
+            80% { transform: translateY(-70px) scale(1); opacity: 1; }
+            100% { transform: translateY(-100px) scale(0.8); opacity: 0; }
         }
 
-        /* Content Panels */
-        .panel-section {
+        /* Content Views */
+        .tab-view {
             display: none;
         }
-        .panel-section.active {
+        .tab-view.active {
             display: block;
         }
 
-        .grid-2 {
+        .grid-cards {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
         }
 
-        .card {
+        .panel-card {
             background: var(--bg-panel);
-            border: 1px solid #2d324d;
-            border-radius: 18px;
-            padding: 24px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 26px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
         }
 
-        .card-title {
-            font-size: 1.15rem;
-            font-weight: 800;
+        .panel-header {
+            font-size: 1.2rem;
+            font-weight: 900;
             color: var(--gold);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid #2d324d;
-            padding-bottom: 10px;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
         }
 
-        /* Monster Cards / Subs */
-        .monster-row {
+        /* Hydra Monster Rows */
+        .hydra-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #1a1d2e;
-            border: 1px solid #2d324d;
-            padding: 14px 18px;
-            border-radius: 12px;
-            margin-bottom: 12px;
+            background: #171a29;
+            border: 1px solid #282e46;
+            padding: 16px 20px;
+            border-radius: 14px;
+            margin-bottom: 14px;
             transition: all 0.2s;
         }
 
-        .monster-row:hover {
-            border-color: #4a527c;
+        .hydra-row:hover {
+            border-color: #4a547a;
+            transform: translateX(4px);
         }
 
-        .monster-row.dead {
-            opacity: 0.5;
-            background: rgba(6, 214, 160, 0.05);
+        .hydra-row.slain {
+            background: rgba(6, 214, 160, 0.04);
             border-color: var(--green);
+            opacity: 0.6;
         }
 
-        .monster-info strong {
+        .hydra-info strong {
             display: block;
             color: #fff;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            margin-bottom: 3px;
         }
 
-        .monster-info span {
+        .hydra-info span {
             color: var(--text-muted);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
-        .kill-sub-btn {
-            background: linear-gradient(135deg, #ef476f, #c1121f);
+        .btn-slay {
+            background: linear-gradient(135deg, #ef476f, #d90429);
             color: #fff;
             border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-weight: 800;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: 900;
             font-size: 0.85rem;
             cursor: pointer;
             transition: transform 0.1s;
         }
 
-        .kill-sub-btn:hover {
+        .btn-slay:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(239, 71, 111, 0.5);
+        }
+
+        /* Talent Tree */
+        .talent-card {
+            background: #171b2b;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .talent-info h4 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+
+        .talent-info p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .btn-upgrade {
+            background: var(--gold);
+            color: #07080d;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-weight: 900;
+            font-size: 0.85rem;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-upgrade:hover {
             transform: scale(1.05);
         }
 
-        /* Loot Chest Section */
-        .chest-box {
+        /* Loot Chest */
+        .chest-stage {
             text-align: center;
-            padding: 30px;
-            background: #171926;
+            padding: 40px 20px;
+            background: radial-gradient(circle, #20263d, #141724);
             border: 2px dashed var(--gold);
-            border-radius: 18px;
+            border-radius: 20px;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: all 0.2s;
         }
 
-        .chest-box:hover {
+        .chest-stage:hover {
             transform: scale(1.02);
-            background: #1d2030;
+            box-shadow: 0 0 30px rgba(255, 209, 102, 0.3);
         }
 
-        .chest-icon {
-            font-size: 70px;
-            margin-bottom: 12px;
+        .chest-art {
+            font-size: 80px;
             display: inline-block;
+            margin-bottom: 15px;
+            animation: chestFloat 2.5s infinite ease-in-out;
         }
 
-        /* Inventory Grid */
-        .inventory-grid {
+        @keyframes chestFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+
+        .inventory-slots {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
             gap: 12px;
             margin-top: 15px;
         }
 
-        .inv-slot {
-            background: #111320;
-            border: 1px solid #2d324d;
-            border-radius: 12px;
-            height: 80px;
+        .slot {
+            background: #111422;
+            border: 2px solid #282e46;
+            border-radius: 14px;
+            height: 85px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 26px;
+            font-size: 32px;
             cursor: pointer;
             position: relative;
+            transition: all 0.15s;
         }
 
-        .inv-slot span.name {
+        .slot:hover {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        .slot.active-eq {
+            border-color: var(--cyan);
+            box-shadow: 0 0 15px rgba(76, 201, 240, 0.4);
+        }
+
+        .slot span.subtext {
             font-size: 0.65rem;
             color: var(--text-muted);
             margin-top: 4px;
-            text-align: center;
-        }
-
-        .inv-slot.equipped {
-            border: 2px solid var(--gold);
-            box-shadow: 0 0 10px rgba(255, 209, 102, 0.3);
-        }
-
-        /* Real Budget Inputs */
-        .input-group {
-            margin-bottom: 14px;
-        }
-
-        .input-group label {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }
-
-        .input-group input {
-            width: 100%;
-            background: #111320;
-            border: 1px solid #2d324d;
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 8px;
-            font-size: 1rem;
             font-weight: 700;
         }
 
-        .input-group input:focus {
+        /* Inputs */
+        .form-row {
+            margin-bottom: 16px;
+        }
+
+        .form-row label {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .form-row input {
+            width: 100%;
+            background: #111422;
+            border: 1px solid #282e46;
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .form-row input:focus {
             outline: none;
             border-color: var(--gold);
         }
@@ -452,479 +644,768 @@
 </head>
 <body>
 
-<div class="game-container">
+<canvas id="particleCanvas"></canvas>
+
+<div class="game-shell">
     <!-- Top HUD -->
-    <div class="hud-bar">
-        <div class="player-hud">
-            <div class="avatar-frame" id="heroAvatar" onclick="cycleAvatar()">🛡️</div>
-            <div class="hud-details">
-                <h3><span id="heroTitle">Finanz-Paladin</span> <span class="lvl-badge">LVL <span id="heroLevel">1</span></span></h3>
-                <div class="stats-row">
-                    <span>XP: <strong style="color: var(--gold);" id="heroXP">0</strong> / <span id="nextLevelXP">500</span></span>
-                    <span>Sparquote: <strong style="color: var(--green);" id="heroSavingRate">35%</strong></span>
-                    <span>ATK: <strong style="color: #ff758f;" id="heroATK">120</strong></span>
+    <div class="hud-top">
+        <div class="hero-banner">
+            <div class="avatar-box" id="avatarBox" onclick="switchAvatar()">🧙‍♂️</div>
+            <div class="hero-meta">
+                <h2>
+                    <span id="heroNameText">Finanz-Paladin</span>
+                    <span class="hero-badge">LVL <span id="heroLvlNum">1</span></span>
+                </h2>
+                <div class="hero-bars">
+                    <div class="mini-bar-wrap">
+                        <span style="color: var(--gold);">XP: <span id="xpCur">0</span>/<span id="xpTarget">400</span></span>
+                        <div class="mini-bar-bg">
+                            <div class="mini-bar-fill" id="xpMiniFill" style="background: var(--gold); width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="mini-bar-wrap">
+                        <span style="color: var(--cyan);">FP (Fokus): <span id="fpCur">100</span>/100</span>
+                        <div class="mini-bar-bg">
+                            <div class="mini-bar-fill" id="fpMiniFill" style="background: var(--cyan); width: 100%;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="wallet-gold">
-            <span>🪙</span>
-            <span id="goldCounter">450</span> CHF Gold
+        <div class="top-currencies">
+            <div class="curr-box gold">
+                <span>🪙</span>
+                <span id="goldText">500</span> CHF
+            </div>
+            <button class="music-btn" onclick="toggleBgm()">🎵 Chiptune: <span id="musicStateText">AUS</span></button>
         </div>
     </div>
 
-    <!-- Navigation Tabs -->
-    <div class="nav-tabs">
-        <button class="tab-btn active" onclick="setTab('battle')">⚔️ Boss-Kampf</button>
-        <button class="tab-btn" onclick="setTab('subs')">🪦 Abo-Hydra</button>
-        <button class="tab-btn" onclick="setTab('loot')">💎 Beute & Ausrüstung</button>
-        <button class="tab-btn" onclick="setTab('config')">⚙️ Echte Finanzen</button>
+    <!-- Navigation Dock -->
+    <div class="nav-dock">
+        <button class="nav-btn active" onclick="showTab('battle')">⚔️ Boss-Arena</button>
+        <button class="nav-btn" onclick="showTab('hydra')">🪦 Abo-Hydra (Dungeon)</button>
+        <button class="nav-btn" onclick="showTab('talents')">⚡ Talentbaum</button>
+        <button class="nav-btn" onclick="showTab('loot')">💎 Beute & Schmiede</button>
+        <button class="nav-btn" onclick="showTab('real')">⚙️ Echte Finanzen</button>
     </div>
 
     <!-- TAB 1: BATTLE ARENA -->
-    <div id="tab-battle" class="panel-section active">
-        <div class="arena-card">
-            <div class="battleground" id="battleground">
+    <div id="tab-battle" class="tab-view active">
+        <div class="arena-box">
+            <!-- Stage Selector -->
+            <div class="stage-selector">
+                <span class="stage-badge active" onclick="loadStage(0)">Stage 1: Kaffee-Goblin</span>
+                <span class="stage-badge" onclick="loadStage(1)">Stage 2: Streaming-Vampir</span>
+                <span class="stage-badge" onclick="loadStage(2)">Stage 3: Sale-Dämon</span>
+                <span class="stage-badge" onclick="loadStage(3)">Stage 4: Klarna-Chimäre</span>
+                <span class="stage-badge" onclick="loadStage(4)">Stage 5: Inflations-Titan</span>
+            </div>
+
+            <!-- Stage Visuals -->
+            <div class="battle-stage" id="battleStage">
                 <!-- HERO -->
-                <div class="fighter" id="heroFighter">
-                    <div class="fighter-sprite" id="heroSprite">🧙‍♂️</div>
-                    <h4>Held (Du)</h4>
-                    <div class="hp-gauge-box">
-                        <div class="hp-bar-fill hero-hp" id="heroHpBar"></div>
+                <div class="combatant" id="heroFighter">
+                    <div class="sprite-wrap" id="heroSprite">🧙‍♂️</div>
+                    <h3 id="heroDisplayLabel" style="font-size: 1.1rem; color: #fff;">Held (Du)</h3>
+                    <div class="hp-capsule">
+                        <div class="hp-fill hero-hp-color" id="heroHpFill" style="width: 100%;"></div>
                     </div>
-                    <div style="font-size: 0.8rem; margin-top: 4px; color: var(--green);">
+                    <div style="font-size: 0.85rem; color: var(--green); margin-top: 4px; font-weight: 800;">
                         HP (Notgroschen): <span id="heroHpText">5'000 / 5'000</span> CHF
                     </div>
                 </div>
 
-                <div class="vs-badge">VS</div>
+                <div style="font-size: 2.2rem; font-weight: 900; color: var(--gold); text-shadow: 0 0 25px rgba(255, 209, 102, 0.7);">
+                    VS
+                </div>
 
                 <!-- BOSS -->
-                <div class="fighter" id="bossFighter">
-                    <div class="fighter-sprite" id="bossSprite">🐲</div>
-                    <h4 id="bossName">Der Ausgaben-Drache</h4>
-                    <div class="hp-gauge-box">
-                        <div class="hp-bar-fill boss-hp" id="bossHpBar"></div>
+                <div class="combatant" id="bossFighter">
+                    <div class="sprite-wrap" id="bossSprite">👺</div>
+                    <h3 id="bossDisplayLabel" style="font-size: 1.1rem; color: var(--red);">Kaffee-To-Go Goblin</h3>
+                    <div class="hp-capsule">
+                        <div class="hp-fill boss-hp-color" id="bossHpFill" style="width: 100%;"></div>
                     </div>
-                    <div style="font-size: 0.8rem; margin-top: 4px; color: var(--red);">
-                        Kosten-HP: <span id="bossHpText">3'500 / 3'500</span> CHF
+                    <div style="font-size: 0.85rem; color: var(--red); margin-top: 4px; font-weight: 800;">
+                        Kosten-HP: <span id="bossHpText">650 / 650</span> CHF
                     </div>
                 </div>
             </div>
 
-            <!-- Action Controls -->
-            <div class="actions-bar">
-                <button class="action-btn attack" onclick="heroAttack()">
-                    ⚔️ Budget-Hieb (-150 CHF)
+            <!-- Combat Narrative -->
+            <div class="combat-log-banner" id="combatLog">
+                Du betrittst die Arena! Wähle deinen Zug mit Bedacht.
+            </div>
+
+            <!-- Controls Grid -->
+            <div class="controls-grid">
+                <button class="btn-action primary" onclick="castHeroAttack()">
+                    ⚔️ Budget-Hieb
+                    <span class="desc">Verursacht Basis-Schaden (+25 FP)</span>
                 </button>
-                <button class="action-btn special" onclick="heroSpecial()">
-                    ⚡ Kündigungs-Finisher (Kritisch!)
+                <button class="btn-action special" onclick="castHeroUlti()">
+                    ⚡ Kündigungs-Ulti
+                    <span class="desc">Kritischer Schlag (Kosten: 50 FP)</span>
                 </button>
-                <button class="action-btn heal" onclick="heroHeal()">
-                    🛡️ Notgroschen-Schild (+500 HP)
+                <button class="btn-action heal" onclick="castHeroShield()">
+                    🛡️ Notgroschen-Schild
+                    <span class="desc">Heilt +600 HP & blockt Schaden</span>
+                </button>
+                <button class="btn-action" onclick="castHeroCashback()">
+                    🪙 Cashback-Trank
+                    <span class="desc">Plündert +50 Gold direkt ein</span>
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- TAB 2: ABO-HYDRA (Subscription Graveyard) -->
-    <div id="tab-subs" class="panel-section">
-        <div class="card">
-            <div class="card-title">
-                <span>🪦 DIE ABO-HYDRA BESIEGEN</span>
-                <span style="font-size: 0.85rem; color: var(--green);" id="slainSummary">2 / 5 Köpfe beerdigt</span>
+    <!-- TAB 2: HYDRA DUNGEON -->
+    <div id="tab-hydra" class="tab-view">
+        <div class="panel-card">
+            <div class="panel-header">
+                <span>🪦 DER ABO-FRIEDHOF: HYDRA-KÖPFE</span>
+                <span style="color: var(--green); font-size: 0.9rem;" id="hydraCounter">1 / 5 Köpfe beerdigt</span>
             </div>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
-                Jedes Abo ist ein Monsterkopf, der monatlich an deinem Gold nagt. Schlage sie ab, um dauerhafte Gold-Ersparnis und dicke XP zu kassieren!
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+                Jeder Kopf saugt monatlich an deinem hart erarbeiteten Geld. Enthaupte sie, um dauerhaft deine Sparquote zu steigern und Gold-Regen auszulösen!
             </p>
 
-            <div id="monsterList">
-                <div class="monster-row" id="m-gym">
-                    <div class="monster-info">
+            <div id="hydraList">
+                <div class="hydra-row" id="h-gym">
+                    <div class="hydra-info">
                         <strong>🏋️‍♂️ Fitness-Ghul (Gym Abo)</strong>
-                        <span>Schläft seit 3 Monaten · 99.00 CHF / Mt. · 5'940 CHF 5-Jahres-Schaden</span>
+                        <span>99.00 CHF / Monat · 5-Jahres-Grabstein: 5'940 CHF</span>
                     </div>
-                    <button class="kill-sub-btn" onclick="slayHydraHead('m-gym', 99, 'Fitness-Ghul')">🪓 Kopf abhacken!</button>
+                    <button class="btn-slay" onclick="beheadHydra('h-gym', 99, 'Fitness-Ghul')">🪓 Kopf abhacken!</button>
                 </div>
 
-                <div class="monster-row" id="m-streaming">
-                    <div class="monster-info">
-                        <strong>📺 Doppel-Streaming Geist (Netflix & Disney)</strong>
-                        <span>Zwei Abos gleichzeitig · 38.00 CHF / Mt. · 2'280 CHF 5-Jahres-Schaden</span>
+                <div class="hydra-row" id="h-stream">
+                    <div class="hydra-info">
+                        <strong>📺 Doppel-Streaming Vampir (Netflix & Co.)</strong>
+                        <span>38.90 CHF / Monat · 5-Jahres-Grabstein: 2'334 CHF</span>
                     </div>
-                    <button class="kill-sub-btn" onclick="slayHydraHead('m-streaming', 38, 'Streaming-Geist')">🪓 Kopf abhacken!</button>
+                    <button class="btn-slay" onclick="beheadHydra('h-stream', 38.90, 'Streaming-Vampir')">🪓 Kopf abhacken!</button>
                 </div>
 
-                <div class="monster-row" id="m-food">
-                    <div class="monster-info">
-                        <strong>🍔 Lieferdienst-Oger (Überteuerte Snacks)</strong>
-                        <span>Bequemlichkeits-Falle · 180.00 CHF / Mt. · 10'800 CHF 5-Jahres-Schaden</span>
+                <div class="hydra-row" id="h-food">
+                    <div class="hydra-info">
+                        <strong>🍔 Lieferdienst-Oger (Faulheits-Falle)</strong>
+                        <span>160.00 CHF / Monat · 5-Jahres-Grabstein: 9'600 CHF</span>
                     </div>
-                    <button class="kill-sub-btn" onclick="slayHydraHead('m-food', 180, 'Lieferdienst-Oger')">🪓 Kopf abhacken!</button>
+                    <button class="btn-slay" onclick="beheadHydra('h-food', 160, 'Lieferdienst-Oger')">🪓 Kopf abhacken!</button>
                 </div>
 
-                <div class="monster-row dead" id="m-cloud">
-                    <div class="monster-info">
-                        <strong>☁️ Cloud-Zombie (Ungenutzter Speicher)</strong>
-                        <span>🪦 BEERDIGT · Spart 120.- CHF / Jahr</span>
+                <div class="hydra-row" id="h-cloud">
+                    <div class="hydra-info">
+                        <strong>☁️ Cloud-Zombie (Ungenutzte Speicher-Abos)</strong>
+                        <span>12.00 CHF / Monat · 5-Jahres-Grabstein: 720 CHF</span>
                     </div>
-                    <span style="color: var(--green); font-weight: 800; font-size: 0.85rem;">🏆 BESIEGT</span>
+                    <button class="btn-slay" onclick="beheadHydra('h-cloud', 12, 'Cloud-Zombie')">🪓 Kopf abhacken!</button>
+                </div>
+
+                <div class="hydra-row slain" id="h-dead1">
+                    <div class="hydra-info">
+                        <strong>💀 Adobe-Schreck</strong>
+                        <span>🪦 BEERDIGT · Spart 780.- CHF jedes Jahr!</span>
+                    </div>
+                    <span style="color: var(--green); font-weight: 900;">🏆 BESIEGT</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- TAB 3: LOOT & INVENTORY -->
-    <div id="tab-loot" class="panel-section">
-        <div class="grid-2">
-            <div class="card">
-                <div class="card-title">🎁 MYSTERY LOOT-CHEST ÖFFNEN</div>
-                <div class="chest-box" onclick="openLootChest()">
-                    <div class="chest-icon" id="chestAnim">📦</div>
-                    <h3 style="color: var(--gold); margin-bottom: 6px;">Kiste öffnen (Kosten: 100 🪙 Gold)</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Erhalte seltene Ausrüstung, die deine Spar-ATK verstärkt!</p>
-                </div>
-                <div id="lootResult" style="margin-top: 15px; text-align: center; font-weight: bold; min-height: 24px;"></div>
+    <!-- TAB 3: TALENT TREE -->
+    <div id="tab-talents" class="tab-view">
+        <div class="panel-card">
+            <div class="panel-header">
+                <span>⚡ TALENTBAUM: PERMANENTE PERKS</span>
+                <span style="color: var(--gold); font-size: 0.9rem;">Verstärke deinen Helden</span>
             </div>
 
-            <div class="card">
-                <div class="card-title">🎒 DEIN AUSRÜSTUNGS-INVENTAR</div>
-                <p style="color: var(--text-muted); font-size: 0.85rem;">Klicke auf Items, um sie anzulegen:</p>
-                <div class="inventory-grid" id="invGrid">
-                    <div class="inv-slot equipped" onclick="equipItem(this, 30)">
+            <div class="talent-card">
+                <div class="talent-info">
+                    <h4>📈 Zinseszins-Magie (Rang <span id="rkZinsen">1</span>/5)</h4>
+                    <p>Verursacht nach jedem Zug +15% passiven Schaden am Ausgaben-Boss.</p>
+                </div>
+                <button class="btn-upgrade" onclick="upgradeTalent('zinsen', 150)">Upgrade (150 🪙)</button>
+            </div>
+
+            <div class="talent-card">
+                <div class="talent-info">
+                    <h4>🛡️ Sparfuchs-Panzer (Rang <span id="rkPanzer">1</span>/5)</h4>
+                    <p>Reduziert alle gegnerischen Angriffe um dauerhafte 20%.</p>
+                </div>
+                <button class="btn-upgrade" onclick="upgradeTalent('panzer', 200)">Upgrade (200 🪙)</button>
+            </div>
+
+            <div class="talent-card">
+                <div class="talent-info">
+                    <h4>⚡ Kündigungs-Reflex (Rang <span id="rkReflex">1</span>/5)</h4>
+                    <p>Erhöht die Chance auf kritische Treffer um +25%.</p>
+                </div>
+                <button class="btn-upgrade" onclick="upgradeTalent('reflex', 250)">Upgrade (250 🪙)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 4: LOOT & SCHMIEDE -->
+    <div id="tab-loot" class="tab-view">
+        <div class="grid-cards">
+            <div class="panel-card">
+                <div class="panel-header">🎁 MYSTERY LOOT-CHEST</div>
+                <div class="chest-stage" onclick="buyChest()">
+                    <div class="chest-art" id="chestIcon">📦</div>
+                    <h3 style="color: var(--gold); margin-bottom: 6px;">Kiste öffnen (Kosten: 120 🪙 Gold)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Finde legendäre Relikte, um deine Stats massiv zu boosten!</p>
+                </div>
+                <div id="chestDropText" style="text-align: center; margin-top: 15px; font-weight: 800; min-height: 24px;"></div>
+            </div>
+
+            <div class="panel-card">
+                <div class="panel-header">🎒 DEIN AUSRÜSTUNGS-GÜRTEL</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Klicke auf ein Relikt, um es anzulegen:</p>
+                <div class="inventory-slots" id="slotsGrid">
+                    <div class="slot active-eq" onclick="equipSlot(this, 50)">
                         🗡️
-                        <span class="name">Kündigungs-Axt (+30 ATK)</span>
+                        <span class="subtext">+50 ATK</span>
                     </div>
-                    <div class="inv-slot" onclick="equipItem(this, 50)">
+                    <div class="slot" onclick="equipSlot(this, 80)">
                         🛡️
-                        <span class="name">Spar-Schild (+50 DEF)</span>
+                        <span class="subtext">+80 DEF</span>
                     </div>
-                    <div class="inv-slot" onclick="equipItem(this, 80)">
+                    <div class="slot" onclick="equipSlot(this, 120)">
                         💍
-                        <span class="name">Zinseszins-Ring (+80 ATK)</span>
+                        <span class="subtext">+120 ATK</span>
                     </div>
-                    <div class="inv-slot">
-                        🔒
-                        <span class="name">Gesperrt</span>
+                    <div class="slot" onclick="equipSlot(this, 200)">
+                        👑
+                        <span class="subtext">+200 ALL</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- TAB 4: ECHTE FINANZEN KONFIGURIEREN -->
-    <div id="tab-config" class="panel-section">
-        <div class="card" style="max-width: 600px; margin: 0 auto;">
-            <div class="card-title">⚙️ DEINE ECHTEN MONATS-WERTE</div>
+    <!-- TAB 5: ECHTE FINANZEN -->
+    <div id="tab-real" class="tab-view">
+        <div class="panel-card" style="max-width: 650px; margin: 0 auto;">
+            <div class="panel-header">⚙️ DEINE REALE FINANZ-SYNCHRONISATION</div>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
-                Trage hier deine echten Zahlen ein – sie bestimmen automatisch die Lebenspunkte von Held & Boss!
+                Passe die Werte an dein echtes Leben an. Deine Notgroschen-Reserven und Monatsausgaben bestimmen die Spielwerte in der Boss-Arena!
             </p>
 
-            <div class="input-group">
-                <label>Dein Netto-Monatseinkommen (CHF):</label>
-                <input type="number" id="inpIncome" value="6200" onchange="updateRealStats()">
+            <div class="form-row">
+                <label>Dein Netto-Monatslohn (CHF):</label>
+                <input type="number" id="realIncome" value="6250">
             </div>
 
-            <div class="input-group">
-                <label>Deine Monats-Ausgaben (Boss HP):</label>
-                <input type="number" id="inpExpenses" value="3500" onchange="updateRealStats()">
+            <div class="form-row">
+                <label>Deine Monats-Ausgaben (Boss Max-HP):</label>
+                <input type="number" id="realExpenses" value="3850">
             </div>
 
-            <div class="input-group">
-                <label>Dein Notgroschen (Held HP):</label>
-                <input type="number" id="inpSavings" value="7500" onchange="updateRealStats()">
+            <div class="form-row">
+                <label>Dein Notgroschen auf dem Sparkonto (Hero Max-HP):</label>
+                <input type="number" id="realSavings" value="7500">
             </div>
 
-            <button class="action-btn" style="width: 100%; justify-content: center; margin-top: 10px;" onclick="saveStatsFeedback()">
-                💾 Zahlen im Spiel anwenden
+            <button class="btn-action primary" style="width: 100%;" onclick="syncRealData()">
+                💾 Live im Spiel anwenden & speichern
             </button>
         </div>
     </div>
 </div>
 
 <script>
-    // --- 8-Bit Web Audio Synthesizer ---
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    // ==========================================
+    // 1. PROCEDURAL 8-BIT AUDIO SYNTHESIZER
+    // ==========================================
+    const audio = new (window.AudioContext || window.webkitAudioContext)();
+    let bgmInterval = null;
+    let isBgmPlaying = false;
 
-    function sfx(freq, type, duration, endFreq = null) {
+    function playTone(freq, type, dur, endFreq = null, vol = 0.1) {
         try {
-            const osc = ctx.createOscillator();
-            const gain = ctx.createGain();
+            const osc = audio.createOscillator();
+            const gain = audio.createGain();
             osc.type = type;
-            osc.frequency.setValueAtTime(freq, ctx.currentTime);
-            if (endFreq) {
-                osc.frequency.exponentialRampToValueAtTime(endFreq, ctx.currentTime + duration);
-            }
-            gain.gain.setValueAtTime(0.12, ctx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+            osc.frequency.setValueAtTime(freq, audio.currentTime);
+            if (endFreq) osc.frequency.exponentialRampToValueAtTime(endFreq, audio.currentTime + dur);
+            gain.gain.setValueAtTime(vol, audio.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audio.currentTime + dur);
             osc.connect(gain);
-            gain.connect(ctx.destination);
+            gain.connect(audio.destination);
             osc.start();
-            osc.stop(ctx.currentTime + duration);
+            osc.stop(audio.currentTime + dur);
         } catch(e) {}
     }
 
-    function sfxSlash() {
-        sfx(800, 'sawtooth', 0.15, 100);
+    const sfx = {
+        slash: () => playTone(950, 'sawtooth', 0.15, 120, 0.15),
+        crit: () => {
+            playTone(1200, 'square', 0.1, 300, 0.2);
+            setTimeout(() => playTone(800, 'sawtooth', 0.2, 80, 0.25), 60);
+        },
+        coin: () => {
+            playTone(987, 'square', 0.08, null, 0.15);
+            setTimeout(() => playTone(1318, 'square', 0.16, null, 0.15), 70);
+        },
+        shield: () => playTone(300, 'sine', 0.25, 700, 0.2),
+        hurt: () => playTone(160, 'square', 0.22, 40, 0.2),
+        levelUp: () => {
+            const notes = [440, 554, 659, 880, 1108];
+            notes.forEach((n, i) => setTimeout(() => playTone(n, 'triangle', 0.14, null, 0.2), i * 80));
+        }
+    };
+
+    // Chiptune Battle BGM Generator
+    function toggleBgm() {
+        if (isBgmPlaying) {
+            clearInterval(bgmInterval);
+            isBgmPlaying = false;
+            document.getElementById('musicStateText').innerText = "AUS";
+        } else {
+            isBgmPlaying = true;
+            document.getElementById('musicStateText').innerText = "AN 🎶";
+            let step = 0;
+            const bass = [110, 110, 146, 110, 164, 110, 146, 123];
+            const lead = [440, 0, 554, 0, 659, 880, 659, 554];
+            bgmInterval = setInterval(() => {
+                const b = bass[step % bass.length];
+                const l = lead[step % lead.length];
+                playTone(b, 'triangle', 0.12, null, 0.04);
+                if (l > 0) playTone(l, 'square', 0.08, null, 0.03);
+                step++;
+            }, 160);
+        }
     }
 
-    function sfxCoin() {
-        sfx(987, 'square', 0.08);
-        setTimeout(() => sfx(1318, 'square', 0.15), 80);
+    // ==========================================
+    // 2. PARTICLE & COIN PHYSICS CANVAS
+    // ==========================================
+    const canvas = document.getElementById('particleCanvas');
+    const cctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function spawnCoinExplosion(x, y, count = 25) {
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x: x,
+                y: y,
+                vx: (Math.random() - 0.5) * 16,
+                vy: (Math.random() - 0.8) * 16,
+                size: Math.random() * 8 + 6,
+                color: Math.random() > 0.3 ? '#ffd166' : '#fff',
+                gravity: 0.6,
+                life: 1,
+                decay: Math.random() * 0.02 + 0.015,
+                char: '🪙'
+            });
+        }
     }
 
-    function sfxLevelUp() {
-        sfx(440, 'triangle', 0.1);
-        setTimeout(() => sfx(554, 'triangle', 0.1), 100);
-        setTimeout(() => sfx(659, 'triangle', 0.1), 200);
-        setTimeout(() => sfx(880, 'square', 0.3), 300);
-    }
+    function renderParticles() {
+        cctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p, idx) => {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += p.gravity;
+            p.life -= p.decay;
 
-    function sfxBossHit() {
-        sfx(120, 'square', 0.2, 40);
-    }
+            cctx.font = `${p.size * 2}px sans-serif`;
+            cctx.globalAlpha = Math.max(0, p.life);
+            cctx.fillText(p.char, p.x, p.y);
 
-    // --- State ---
+            if (p.life <= 0) particles.splice(idx, 1);
+        });
+        requestAnimationFrame(renderParticles);
+    }
+    renderParticles();
+
+    // ==========================================
+    // 3. GAME STATE & MECHANICS
+    // ==========================================
     let hero = {
         name: "Finanz-Paladin",
         level: 1,
-        xp: 120,
-        nextXp: 500,
+        xp: 0,
+        xpTarget: 400,
         hp: 5000,
         maxHp: 5000,
-        gold: 450,
-        atk: 150
+        fp: 100,
+        maxFp: 100,
+        gold: 500,
+        baseAtk: 180,
+        bonusAtk: 50,
+        perkZinsen: 1,
+        perkPanzer: 1,
+        perkReflex: 1
     };
 
-    let boss = {
-        name: "Der Ausgaben-Drache",
-        hp: 3500,
-        maxHp: 3500
-    };
+    const stages = [
+        { name: "Kaffee-To-Go Goblin", sprite: "👺", hp: 650, atk: 90, reward: 80, quote: "Haha! 6.50 CHF jeden Tag summiert sich zu Tausenden!" },
+        { name: "Streaming-Vampir", sprite: "🧛‍♂️", hp: 1400, atk: 140, reward: 160, quote: "Du nutzt mich kaum, aber ich sauge dein Konto leer!" },
+        { name: "Sale-Dämon (-50% Rabatt)", sprite: "👹", hp: 2500, atk: 220, reward: 300, quote: "Du hast nicht gespart, du hast Geld ausgegeben!" },
+        { name: "Klarna-Chimäre (Buy Now Pay Later)", sprite: "🐉", hp: 3800, atk: 310, reward: 480, quote: "Zahle später... mit Zinsen aus der Hölle!" },
+        { name: "Inflations-Titan", sprite: "👑", hp: 6000, atk: 450, reward: 1000, quote: "Dein Bargeld schmilzt dahin, wenn du es nicht investierst!" }
+    ];
+    let curStageIdx = 0;
+    let boss = { ...stages[0], maxHp: stages[0].hp };
 
-    const avatars = ["🧙‍♂️", "⚔️", "🛡️", "🐉", "🪙", "👑"];
-    let avIdx = 0;
-    function cycleAvatar() {
-        avIdx = (avIdx + 1) % avatars.length;
-        document.getElementById('heroAvatar').innerText = avatars[avIdx];
-        document.getElementById('heroSprite').innerText = avatars[avIdx];
-        sfxCoin();
+    function loadStage(idx) {
+        curStageIdx = idx;
+        const s = stages[idx];
+        boss = { ...s, maxHp: s.hp };
+        document.querySelectorAll('.stage-badge').forEach((b, i) => b.classList.toggle('active', i === idx));
+        document.getElementById('bossSprite').innerText = s.sprite;
+        document.getElementById('bossDisplayLabel').innerText = s.name;
+        document.getElementById('combatLog').innerText = `Stage ${idx + 1}: ${s.name} erscheint! «${s.quote}»`;
+        updateBars();
+        sfx.shield();
     }
 
-    // --- Navigation Tabs ---
-    function setTab(tabName) {
-        sfx(400, 'triangle', 0.05);
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.panel-section').forEach(p => p.classList.remove('active'));
+    function switchAvatar() {
+        const icons = ["🧙‍♂️", "⚔️", "🛡️", "🐉", "👑", "🪙"];
+        const cur = document.getElementById('avatarBox').innerText;
+        const next = icons[(icons.indexOf(cur) + 1) % icons.length];
+        document.getElementById('avatarBox').innerText = next;
+        document.getElementById('heroSprite').innerText = next;
+        sfx.coin();
+    }
+
+    function showTab(id) {
+        sfx.slash();
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-view').forEach(v => v.classList.remove('active'));
         event.currentTarget.classList.add('active');
-        document.getElementById('tab-' + tabName).classList.add('active');
+        document.getElementById('tab-' + id).classList.add('active');
     }
 
-    // --- Battle Actions ---
-    function spawnDmg(text, color, targetElem) {
-        const dmg = document.createElement('div');
-        dmg.className = 'floating-dmg';
-        dmg.innerText = text;
-        dmg.style.color = color;
+    function triggerScreenShake() {
+        document.body.classList.add('shaking');
+        setTimeout(() => document.body.classList.remove('shaking'), 250);
+    }
+
+    function spawnFloatDmg(text, color, targetElem) {
+        const float = document.createElement('div');
+        float.className = 'dmg-float';
+        float.innerText = text;
+        float.style.color = color;
         const rect = targetElem.getBoundingClientRect();
-        dmg.style.left = (rect.left + rect.width / 2) + 'px';
-        dmg.style.top = (rect.top + 20) + 'px';
-        document.body.appendChild(dmg);
-        setTimeout(() => dmg.remove(), 800);
+        float.style.left = (rect.left + rect.width / 2 - 40) + 'px';
+        float.style.top = (rect.top + 10) + 'px';
+        document.body.appendChild(float);
+        setTimeout(() => float.remove(), 900);
     }
 
-    function heroAttack() {
-        sfxSlash();
+    // ==========================================
+    // 4. COMBAT SYSTEM & ENEMY TURN
+    // ==========================================
+    function castHeroAttack() {
+        sfx.slash();
         const heroElem = document.getElementById('heroFighter');
         const bossElem = document.getElementById('bossFighter');
-        heroElem.classList.add('attack');
-        setTimeout(() => heroElem.classList.remove('attack'), 250);
+        heroElem.classList.add('attacking');
+        setTimeout(() => heroElem.classList.remove('attacking'), 250);
 
         setTimeout(() => {
-            sfxBossHit();
-            bossElem.classList.add('hit');
-            setTimeout(() => bossElem.classList.remove('hit'), 300);
+            bossElem.classList.add('damaged');
+            setTimeout(() => bossElem.classList.remove('damaged'), 300);
 
-            const dmg = hero.atk + Math.floor(Math.random() * 40);
+            let isCrit = Math.random() < (0.2 + hero.perkReflex * 0.05);
+            let totalAtk = hero.baseAtk + hero.bonusAtk;
+            let dmg = Math.round(isCrit ? totalAtk * 1.8 : totalAtk + Math.random() * 40);
+
             boss.hp = Math.max(0, boss.hp - dmg);
-            spawnDmg('-' + dmg + ' CHF', '#ff0055', bossElem);
-            addXP(45);
-            addGold(15);
-            updateBattleUI();
+            if (isCrit) {
+                sfx.crit();
+                triggerScreenShake();
+                spawnFloatDmg('💥 KRITISCH! -' + dmg + ' CHF', '#ffd166', bossElem);
+            } else {
+                sfx.hurt();
+                spawnFloatDmg('-' + dmg + ' CHF', '#ef476f', bossElem);
+            }
+
+            hero.fp = Math.min(hero.maxFp, hero.fp + 25);
+            addXP(25);
+            updateBars();
 
             if (boss.hp === 0) {
-                bossDefeated();
+                defeatBoss();
+            } else {
+                bossTurn();
             }
         }, 150);
     }
 
-    function heroSpecial() {
-        sfxSlash();
-        setTimeout(sfxSlash, 80);
-        const heroElem = document.getElementById('heroFighter');
+    function castHeroUlti() {
+        if (hero.fp < 50) {
+            document.getElementById('combatLog').innerText = "⚠️ Nicht genug Fokus (FP)! Nutze den Budget-Hieb, um FP aufzubauen.";
+            sfx.hurt();
+            return;
+        }
+        hero.fp -= 50;
+        sfx.crit();
+        triggerScreenShake();
         const bossElem = document.getElementById('bossFighter');
-        heroElem.classList.add('attack');
-        setTimeout(() => heroElem.classList.remove('attack'), 250);
+        bossElem.classList.add('damaged');
+        setTimeout(() => bossElem.classList.remove('damaged'), 400);
+
+        let dmg = Math.round((hero.baseAtk + hero.bonusAtk) * 2.8);
+        boss.hp = Math.max(0, boss.hp - dmg);
+        spawnFloatDmg('⚡ ULTRA-KÜNDIGUNG! -' + dmg + ' CHF', '#ffd166', bossElem);
+        addXP(60);
+        updateBars();
+
+        if (boss.hp === 0) {
+            defeatBoss();
+        } else {
+            bossTurn();
+        }
+    }
+
+    function castHeroShield() {
+        sfx.shield();
+        hero.hp = Math.min(hero.maxHp, hero.hp + 600);
+        spawnFloatDmg('+600 HP (Notgroschen)', '#06d6a0', document.getElementById('heroFighter'));
+        document.getElementById('combatLog').innerText = "🛡️ Schild aktiviert! Du stärkst deine Notgroschen-Reserve.";
+        updateBars();
+        bossTurn(true);
+    }
+
+    function castHeroCashback() {
+        sfx.coin();
+        addGold(50);
+        const rect = document.getElementById('heroFighter').getBoundingClientRect();
+        spawnCoinExplosion(rect.left + rect.width / 2, rect.top + 50, 15);
+        document.getElementById('combatLog').innerText = "🪙 Cashback geplündert! +50 Gold direkt aufs Sparkonto.";
+        bossTurn();
+    }
+
+    function bossTurn(isShielded = false) {
+        setTimeout(() => {
+            if (boss.hp <= 0) return;
+            const heroElem = document.getElementById('heroFighter');
+            const bossElem = document.getElementById('bossFighter');
+
+            bossElem.classList.add('attacking');
+            setTimeout(() => bossElem.classList.remove('attacking'), 250);
+
+            setTimeout(() => {
+                heroElem.classList.add('damaged');
+                setTimeout(() => heroElem.classList.remove('damaged'), 300);
+
+                let rawDmg = boss.atk + Math.floor(Math.random() * 30);
+                if (isShielded) rawDmg = Math.round(rawDmg * 0.4);
+                // Apply Panzer Perk
+                rawDmg = Math.round(rawDmg * (1 - hero.perkPanzer * 0.05));
+
+                hero.hp = Math.max(0, hero.hp - rawDmg);
+                sfx.hurt();
+                spawnFloatDmg('-' + rawDmg + ' HP!', '#ef476f', heroElem);
+                document.getElementById('combatLog').innerText = `${boss.name} greift mit Spontanausgaben an: -${rawDmg} HP Notgroschen-Verlust!`;
+                updateBars();
+
+                if (hero.hp <= 0) {
+                    alert('💀 FINANZKRISE! Dein Notgroschen ist aufgebraucht. Erhole dich und starte die Stage neu!');
+                    hero.hp = hero.maxHp;
+                    loadStage(curStageIdx);
+                }
+            }, 150);
+        }, 500);
+    }
+
+    function defeatBoss() {
+        sfx.levelUp();
+        triggerScreenShake();
+        const rect = document.getElementById('bossFighter').getBoundingClientRect();
+        spawnCoinExplosion(rect.left + rect.width / 2, rect.top + 80, 40);
+
+        addGold(boss.reward);
+        addXP(200);
+        document.getElementById('combatLog').innerText = `🏆 SIEG! ${boss.name} besiegt! +${boss.reward} Gold & +200 XP eingesackt!`;
 
         setTimeout(() => {
-            sfxBossHit();
-            bossElem.classList.add('hit');
-            setTimeout(() => bossElem.classList.remove('hit'), 300);
-
-            const critDmg = (hero.atk * 2.5) + Math.floor(Math.random() * 80);
-            boss.hp = Math.max(0, boss.hp - critDmg);
-            spawnDmg('💥 KRITISCH! -' + Math.floor(critDmg) + ' CHF', '#ffd166', bossElem);
-            addXP(100);
-            addGold(40);
-            updateBattleUI();
-
-            if (boss.hp === 0) {
-                bossDefeated();
+            if (curStageIdx < stages.length - 1) {
+                if (confirm(`🎉 STAGE ${curStageIdx + 1} GEMEISTERT! Möchtest du zur nächsten Stage vorrücken?`)) {
+                    loadStage(curStageIdx + 1);
+                }
+            } else {
+                alert('👑 DU BIST DER UNANGEFOCHTENE FINANZ-GROSSMEISTER! Alle 5 Boss-Ausgaben wurden vernichtet!');
             }
-        }, 150);
+        }, 800);
     }
 
-    function heroHeal() {
-        sfxCoin();
-        hero.hp = Math.min(hero.maxHp, hero.hp + 500);
-        spawnDmg('+500 HP', '#06d6a0', document.getElementById('heroFighter'));
-        updateBattleUI();
-    }
-
-    function bossDefeated() {
-        sfxLevelUp();
-        alert('🎉 BOSS BESIEGT! Du hast die Monats-Ausgaben niedergerungen!\n+500 XP & 200 Gold kassiert!');
-        addXP(500);
-        addGold(200);
-        boss.hp = boss.maxHp;
-        updateBattleUI();
-    }
-
+    // ==========================================
+    // 5. XP, GOLD & UI SYNC
+    // ==========================================
     function addXP(amount) {
         hero.xp += amount;
-        if (hero.xp >= hero.nextXp) {
+        if (hero.xp >= hero.xpTarget) {
             hero.level++;
-            hero.xp -= hero.nextXp;
-            hero.nextXp = Math.floor(hero.nextXp * 1.5);
-            hero.atk += 35;
-            sfxLevelUp();
-            spawnDmg('⭐ LEVEL UP! LVL ' + hero.level, '#ffd166', document.getElementById('heroFighter'));
+            hero.xp -= hero.xpTarget;
+            hero.xpTarget = Math.round(hero.xpTarget * 1.45);
+            hero.baseAtk += 30;
+            sfx.levelUp();
+            triggerScreenShake();
+            spawnFloatDmg('⭐ LEVEL UP! LVL ' + hero.level, '#ffd166', document.getElementById('heroFighter'));
         }
-        document.getElementById('heroXP').innerText = hero.xp;
-        document.getElementById('nextLevelXP').innerText = hero.nextXp;
-        document.getElementById('heroLevel').innerText = hero.level;
-        document.getElementById('heroATK').innerText = hero.atk;
+        updateBars();
     }
 
     function addGold(amount) {
         hero.gold += amount;
-        document.getElementById('goldCounter').innerText = hero.gold;
+        document.getElementById('goldText').innerText = hero.gold;
     }
 
-    function updateBattleUI() {
-        const heroPct = Math.max(0, (hero.hp / hero.maxHp) * 100);
-        const bossPct = Math.max(0, (boss.hp / boss.maxHp) * 100);
-        document.getElementById('heroHpBar').style.width = heroPct + '%';
-        document.getElementById('bossHpBar').style.width = bossPct + '%';
-        document.getElementById('heroHpText').innerText = hero.hp + ' / ' + hero.maxHp;
-        document.getElementById('bossHpText').innerText = boss.hp + ' / ' + boss.maxHp;
+    function updateBars() {
+        // Hero HP
+        const hPct = Math.max(0, (hero.hp / hero.maxHp) * 100);
+        document.getElementById('heroHpFill').style.width = hPct + '%';
+        document.getElementById('heroHpText').innerText = `${hero.hp} / ${hero.maxHp}`;
+
+        // Boss HP
+        const bPct = Math.max(0, (boss.hp / boss.maxHp) * 100);
+        document.getElementById('bossHpFill').style.width = bPct + '%';
+        document.getElementById('bossHpText').innerText = `${boss.hp} / ${boss.maxHp}`;
+
+        // Mini HUD bars
+        document.getElementById('xpCur').innerText = hero.xp;
+        document.getElementById('xpTarget').innerText = hero.xpTarget;
+        document.getElementById('xpMiniFill').style.width = Math.min(100, (hero.xp / hero.xpTarget) * 100) + '%';
+
+        document.getElementById('fpCur').innerText = hero.fp;
+        document.getElementById('fpMiniFill').style.width = (hero.fp / hero.maxFp) * 100 + '%';
+
+        document.getElementById('heroLvlNum').innerText = hero.level;
     }
 
-    // --- Subscription Hydra Slaying ---
-    let slainCount = 1;
-    function slayHydraHead(rowId, monthlyCost, name) {
-        sfxSlash();
-        const row = document.getElementById(rowId);
-        row.classList.add('dead');
-        const savedYear = monthlyCost * 12;
-        row.innerHTML = `
-            <div class="monster-info">
+    // ==========================================
+    // 6. HYDRA, TALENTS, LOOT & REAL STATS
+    // ==========================================
+    let slainHydras = 1;
+    function beheadHydra(elemId, monthly, name) {
+        sfx.slash();
+        setTimeout(sfx.crit, 80);
+        const el = document.getElementById(elemId);
+        el.classList.add('slain');
+        const yearly = monthly * 12;
+        el.innerHTML = `
+            <div class="hydra-info">
                 <strong>🪦 ${name} BEERDIGT!</strong>
-                <span>+ ${savedYear.toFixed(0)}.- CHF/Jahr gerettet!</span>
+                <span>+ ${yearly.toFixed(0)} CHF / Jahr gerettet!</span>
             </div>
-            <span style="color: var(--green); font-weight: 800; font-size: 0.85rem;">🏆 BESIEGT</span>
+            <span style="color: var(--green); font-weight: 900;">🏆 BESIEGT</span>
         `;
-        slainCount++;
-        document.getElementById('slainSummary').innerText = `${slainCount} / 4 Köpfe beerdigt`;
-        sfxLevelUp();
-        addXP(300);
+        slainHydras++;
+        document.getElementById('hydraCounter').innerText = `${slainHydras} / 5 Köpfe beerdigt`;
         addGold(150);
-        // Deal damage to the main boss too!
-        boss.hp = Math.max(0, boss.hp - (monthlyCost * 3));
-        updateBattleUI();
+        addXP(250);
+
+        // Instant chunk damage to active arena boss
+        boss.hp = Math.max(0, boss.hp - (monthly * 4));
+        updateBars();
+        triggerScreenShake();
+        const rect = el.getBoundingClientRect();
+        spawnCoinExplosion(rect.left + 150, rect.top + 20, 20);
     }
 
-    // --- Loot Chests ---
-    const lootTable = [
-        { name: "Kündigungs-Axt des Zorns", icon: "🪓", atk: 45 },
-        { name: "Gold-Amulett der Zinsen", icon: "📿", atk: 30 },
-        { name: "Helm der eisernen Disziplin", icon: "🪖", atk: 60 },
-        { name: "Zinseszins-Schwert +5", icon: "⚔️", atk: 90 },
-    ];
-
-    function openLootChest() {
-        if (hero.gold < 100) {
-            sfx(150, 'sawtooth', 0.2);
-            alert('Nicht genug Gold! Besiege Abos oder Ausgaben im Boss-Kampf, um Gold zu verdienen.');
+    function upgradeTalent(type, cost) {
+        if (hero.gold < cost) {
+            sfx.hurt();
+            alert('Nicht genug Gold! Gewinne Kämpfe in der Arena.');
             return;
         }
-        hero.gold -= 100;
-        document.getElementById('goldCounter').innerText = hero.gold;
+        hero.gold -= cost;
+        sfx.levelUp();
+        if (type === 'zinsen') {
+            hero.perkZinsen++;
+            document.getElementById('rkZinsen').innerText = hero.perkZinsen;
+        } else if (type === 'panzer') {
+            hero.perkPanzer++;
+            document.getElementById('rkPanzer').innerText = hero.perkPanzer;
+        } else if (type === 'reflex') {
+            hero.perkReflex++;
+            document.getElementById('rkReflex').innerText = hero.perkReflex;
+        }
+        addGold(0);
+        alert('⚡ Talent erfolgreich verbessert!');
+    }
 
-        sfx(440, 'triangle', 0.1);
-        const chest = document.getElementById('chestAnim');
-        chest.innerText = "✨📦✨";
+    const relics = [
+        { name: "Kündigungs-Axt des Zorns", icon: "🪓", stat: 70 },
+        { name: "Schild des Schweizer Franken", icon: "🛡️", stat: 90 },
+        { name: "Ring des Zinseszins", icon: "💍", stat: 140 },
+        { name: "Krone des Grossmeisters", icon: "👑", stat: 250 },
+    ];
+
+    function buyChest() {
+        if (hero.gold < 120) {
+            sfx.hurt();
+            alert('Eine Kiste kostet 120 Gold! Besiege Monster in der Arena.');
+            return;
+        }
+        hero.gold -= 120;
+        addGold(0);
+        sfx.slash();
+        const icon = document.getElementById('chestIcon');
+        icon.innerText = "✨📦✨";
+
         setTimeout(() => {
-            sfxLevelUp();
-            chest.innerText = "🎁";
-            const item = lootTable[Math.floor(Math.random() * lootTable.length)];
-            document.getElementById('lootResult').innerHTML = `
-                <span style="color: var(--gold); font-size: 1.1rem;">Gefunden: ${item.icon} ${item.name} (+${item.atk} ATK)!</span>
+            sfx.levelUp();
+            icon.innerText = "🎁";
+            const item = relics[Math.floor(Math.random() * relics.length)];
+            document.getElementById('chestDropText').innerHTML = `
+                <span style="color: var(--gold); font-size: 1.15rem;">Gefunden: ${item.icon} ${item.name} (+${item.stat} ATK)!</span>
             `;
 
-            // Add to inventory
-            const grid = document.getElementById('invGrid');
+            // Add slot
+            const grid = document.getElementById('slotsGrid');
             const slot = document.createElement('div');
-            slot.className = 'inv-slot';
-            slot.innerHTML = `${item.icon}<span class="name">${item.name}</span>`;
-            slot.onclick = () => equipItem(slot, item.atk);
+            slot.className = 'slot';
+            slot.innerHTML = `${item.icon}<span class="subtext">+${item.stat} ATK</span>`;
+            slot.onclick = () => equipSlot(slot, item.stat);
             grid.appendChild(slot);
-        }, 400);
+
+            const rect = icon.getBoundingClientRect();
+            spawnCoinExplosion(rect.left + 50, rect.top + 30, 20);
+        }, 350);
     }
 
-    function equipItem(elem, atkBonus) {
-        sfxCoin();
-        document.querySelectorAll('.inv-slot').forEach(s => s.classList.remove('equipped'));
-        elem.classList.add('equipped');
-        hero.atk += atkBonus;
-        document.getElementById('heroATK').innerText = hero.atk;
-        spawnDmg('EQUIPPED! +' + atkBonus + ' ATK', '#ffd166', elem);
+    function equipSlot(elem, atkVal) {
+        sfx.coin();
+        document.querySelectorAll('.slot').forEach(s => s.classList.remove('active-eq'));
+        elem.classList.add('active-eq');
+        hero.bonusAtk = atkVal;
+        spawnFloatDmg('ANGELEGT! +' + atkVal + ' ATK', '#4cc9f0', elem);
+        document.getElementById('combatLog').innerText = `🎒 Ausrüstung gewechselt! Dein Angriffs-Bonus beträgt jetzt +${atkVal} ATK.`;
     }
 
-    // --- Real Stats Sync ---
-    function updateRealStats() {
-        const inc = parseFloat(document.getElementById('inpIncome').value) || 6000;
-        const exp = parseFloat(document.getElementById('inpExpenses').value) || 3500;
-        const sav = parseFloat(document.getElementById('inpSavings').value) || 5000;
+    function syncRealData() {
+        const inc = parseFloat(document.getElementById('realIncome').value) || 6000;
+        const exp = parseFloat(document.getElementById('realExpenses').value) || 3500;
+        const sav = parseFloat(document.getElementById('realSavings').value) || 5000;
 
         hero.maxHp = sav;
         hero.hp = sav;
-        boss.maxHp = exp;
-        boss.hp = exp;
-
-        const rate = Math.round(((inc - exp) / inc) * 100);
-        document.getElementById('heroSavingRate').innerText = rate + '%';
-        updateBattleUI();
+        stages[4].hp = exp; // Final boss reflects true monthly costs
+        sfx.levelUp();
+        updateBars();
+        alert('✅ Deine realen Finanzwerte wurden synchronisiert!\nDein Held startet jetzt mit ' + sav + ' HP Notgroschen.');
+        showTab('battle');
     }
 
-    function saveStatsFeedback() {
-        sfxLevelUp();
-        updateRealStats();
-        alert('✅ Deine echten Werte wurden übernommen!\nDer Boss hat jetzt ' + boss.maxHp + ' HP.');
-        setTab('battle');
-    }
-
-    updateBattleUI();
+    // Initialize
+    updateBars();
 </script>
 
 </body>
