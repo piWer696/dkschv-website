@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <title>02 Schweizer nDSG Datenschutz Paket TOM VdT // DKSchV Schweiz</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 15mm 20mm 15mm;
+      @bottom-right {
+        content: "Seite " counter(page) " von " counter(pages);
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.55;
+      font-size: 10pt;
+      background: #f8fafc;
+      padding: 2rem 0;
+    }
+    .document-page {
+      background: #ffffff;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 25mm 20mm;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      box-sizing: border-box;
+      position: relative;
+    }
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .brand-title {
+      font-size: 16pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .brand-accent { color: #dc2626; }
+    .brand-sub {
+      font-size: 8pt;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header-meta {
+      text-align: right;
+      font-size: 8pt;
+      color: #475569;
+    }
+    .badge-swiss {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    h1 { font-size: 16pt; color: #0f172a; margin-top: 1.5rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.4rem; }
+    h2 { font-size: 13pt; color: #1e293b; margin-top: 1.3rem; margin-bottom: 0.6rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.3rem; }
+    h3 { font-size: 11pt; color: #334155; margin-top: 1rem; margin-bottom: 0.4rem; }
+    p, ul, ol { margin-bottom: 0.8rem; }
+    ul, ol { padding-left: 1.5rem; }
+    li { margin-bottom: 0.3rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 9pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    tr:nth-child(even) { background-color: #f8fafc; }
+    .alert-box {
+      background: #fff1f2;
+      border-left: 4px solid #e11d48;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      margin: 1rem 0;
+      font-size: 9.5pt;
+    }
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #cbd5e1;
+    }
+    .sig-line {
+      border-bottom: 1px solid #475569;
+      height: 40px;
+      margin-bottom: 6px;
+    }
+    .sig-label { font-size: 8pt; color: #64748b; text-transform: uppercase; }
+    .print-bar {
+      max-width: 210mm;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+    }
+    .btn-print {
+      background: #10b981;
+      color: #042f2e;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 9pt;
+    }
+    @media print {
+      body { background: none; padding: 0; }
+      .print-bar { display: none; }
+      .document-page {
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <div><strong>DKSchV Schweiz</strong> // Druck- & Exportansicht für KMU</div>
+    <button class="btn-print" onclick="window.print()">🖨️ Jetzt als PDF speichern / Drucken</button>
+  </div>
+
+  <div class="document-page">
+    <div class="doc-header">
+      <div>
+        <div class="brand-title">DKSchV<span class="brand-accent">.CH</span></div>
+        <div class="brand-sub">Dini Cyber-Security & Datenschutz Schweiz</div>
+      </div>
+      <div class="header-meta">
+        <div class="badge-swiss">🇨🇭 Schweizer KMU Standard</div>
+        <div>Dokumenten-Nr.: CH-SEC-2026</div>
+        <div>DKSchV Dini // Naters (Wallis)</div>
+      </div>
+    </div>
+
+    <div class="doc-body">
+      <h1>DKSchV Schweiz // nDSG-Compliance-Paket für Schweizer KMU</h1>
+<strong>Dokumenten-Klassifikation:</strong> Offizielles Vorlagenpaket  
+<strong>Geltungsbereich:</strong> Neues Schweizer Datenschutzgesetz (nDSG) & Datenschutzverordnung (DSV)  
+<strong>Herausgeber:</strong> DKSchV Datenschutz & IT-Sicherheit Schweiz (dkschv.ch)
+<p>---</p>
+<h2>1. VERZEICHNIS DER BEARBEITUNGSTÄTIGKEITEN (VdT) GEMÄSS ART. 12 nDSG</h2>
+<div class="alert-box" style="background:#eff6ff; border-color:#3b82f6;"><strong>HINWEIS:</strong> Schweizer KMU (unter 250 Mitarbeitende) sind nach Art. 24 DSV zwar von der VdT-Pflicht ausgenommen, <strong>es sei denn</strong>, sie bearbeiten besonders schützenswerte Personendaten in grossem Umfang oder führen ein Profiling mit hohem Risiko durch.  </div>> <strong>Praxis-Empfehlung von DKSchV:</strong> Jedes seriöse Schweizer KMU sollte dieses Verzeichnis führen, um bei Auskunftsbegehren (Art. 25 nDSG) und Haftungsfragen sofort rechenschaftsfähig zu sein.
+<h3>Muster-Eintragstabelle (Kernbereiche):</h3>
+<table><thead><tr><th>Bereich / Prozess</th><th>Zweck der Datenbearbeitung</th><th>Kategorien von Personen</th><th>Kategorien bearbeiteter Daten</th><th>Empfänger / Auftragsbearbeiter</th><th>Aufbewahrungsfrist</th><th>Speicherort & Schutz</th></tr></thead><tbody><tr><td><strong>Personalwesen / HR</strong></td><td>Arbeitsvertrag, Lohnabrechnung, Sozialversicherungen</td><td>Mitarbeitende, Bewerber</td><td>Stammdaten, AHV-Nr., Bankdaten, Lohndaten, Krankheitsmeldungen</td><td>Ausgleichskasse, Pensionskasse, Treuhänder, SUVA</td><td>10 Jahre (OR 962) / Bewerber 3 Monate</td><td>HR-Server Schweiz, Zugriff nur GF/HR, 2FA</td></tr><tr><td><strong>Kundenverwaltung & CRM</strong></td><td>Angebotserstellung, Vertragsabwicklung, Support</td><td>B2B/B2C-Kunden, Ansprechpartner</td><td>Name, E-Mail, Telefon, Bestelldaten, Zahlungsinformationen</td><td>ERP/CRM-Provider, Zahlungsdienstleister (z.B. Stripe)</td><td>10 Jahre (Handelsrechtliche Aufbewahrung)</td><td>Cloud-Hosting (CH/EU), Verschlüsselt</td></tr><tr><td><strong>Website & E-Commerce</strong></td><td>Bestellabwicklung, Web-Analytics, Kontaktformular</td><td>Website-Besucher, Shop-Käufer</td><td>IP-Adresse, Cookie-IDs, Lieferanschrift, Zahlungsstatus</td><td>Webhosting-Provider (CH), Stripe Payments</td><td>Sitzungsdauer bzw. Kaufbelege 10 Jahre</td><td>TLS 1.3, Cookie-Banner, Serverstandort CH</td></tr><tr><td><strong>Videoüberwachung / Zutritt</strong></td><td>Objektschutz, Diebstahlprävention</td><td>Besucher, Mitarbeitende</td><td>Videobildaufnahmen, Zutritts-Logs</td><td>Interner Sicherheitsverantwortlicher, ggf. Polizei</td><td>Automatische Löschung nach 72 Stunden</td><td>Lokaler NVR-Rekorder, gesicherter Serverraum</td></tr></tbody></table>
+<p>---</p>
+<h2>2. KATALOG DER TECHNISCHEN & ORGANISATORISCHEN MASSNAHMEN (TOM)</h2>
+<em>Erfüllung der Datensicherheitsanforderungen nach Art. 8 nDSG i.V.m. Art. 1–4 DSV</em>
+<h3>A. Vertraulichkeit (Zutritts-, Zugangs- und Zugriffskontrolle)</h3>
+1. <strong>Physische Sicherheit:</strong> Serverraum alarmgesichert, Zutritt nur für autorisierte IT-Mitarbeiter per Badge/Schlüssel. Clean-Desk-Policy in allen Büros.
+2. <strong>Authentifizierung:</strong>
+   - [x] Obligatorische <strong>Zwei-Faktor-Authentifizierung (2FA / MFA)</strong> für alle Cloud-Dienste (M365, Mail, CRM, Admin-Panels).
+   - [x] Mindestpasswortlänge: 14 Zeichen, Verwendung eines zentralen Passwort-Managers (z.B. Bitwarden/1Password).
+3. <strong>Rollen- & Rechtekonzept:</strong> Least-Privilege-Prinzip. Mitarbeitende haben nur Zugriff auf Daten, die sie für ihre tägliche Arbeit zwingend benötigen. Keine dauerhaften Domain-Admin-Rechte auf Arbeitsplatz-PCs.
+<h3>B. Integrität (Weitergabe- und Eingabekontrolle)</h3>
+1. <strong>Verschlüsselung:</strong>
+   - <strong>Data at Rest:</strong> Vollverschlüsselung aller Laptops und Mobilgeräte (BitLocker / FileVault / LUKS). Datenbanken verschlüsselt (AES-256).
+   - <strong>Data in Transit:</strong> Sämtlicher externer Datenverkehr über TLS 1.3 / HTTPS. Remote-Zugriff nur via verschlüsseltes VPN mit Zertifikaten und MFA.
+2. <strong>Protokollierung:</strong> Automatisierte Erfassung von Login-Versuchen, Systemänderungen und Datei-Exporten (Syslog-Server).
+<h3>C. Verfügbarkeit & Belastbarkeit (Wiederherstellbarkeit)</h3>
+1. <strong>3-2-1-1-0 Backup-Regel:</strong>
+   - 3 Kopien aller kritischen Geschäftsdaten.
+   - 2 unterschiedliche Medienarten (z.B. NAS + Cloud).
+   - 1 Kopie an einem externen Schweizer Standort.
+   - 1 Kopie <strong>vollständig offline / air-gapped oder unlöschbar (Immutable Backup)</strong> gegen Ransomware.
+   - 0 Fehler: Vierteljährliche, dokumentierte Restore-Tests.
+2. <strong>USV (Unterbrechungsfreie Stromversorgung):</strong> Pufferung für Server und Netzwerk-Switches bei Stromausfall.
+<p>---</p>
+<h2>3. MUSTER: AUFTRAGSBEARBEITUNGSVERTRAG (ADV) NACH ART. 9 nDSG</h2>
+<em>(Dieser Vertrag wird zwischen Ihrem Unternehmen als Auftraggeber und externen Dienstleistern wie IT-Betreuern, Cloud-Providern oder Marketingagenturen geschlossen)</em>
+<strong>Vereinbarung über die Auftragsbearbeitung von Personendaten</strong>
+<p>Zwischen  
+<strong>[Name Ihres Unternehmens, Adresse, Schweiz]</strong> (nachfolgend „Auftraggeber“)  
+und  
+<strong>[Name des Dienstleisters, Adresse]</strong> (nachfolgend „Auftragsbearbeiter“)</p>
+<h3>§ 1 Gegenstand und Dauer</h3>
+Der Auftragsbearbeiter erbringt für den Auftraggeber Dienstleistungen im Bereich [z.B. IT-Wartung / Webhosting / CRM]. Im Rahmen dieser Tätigkeit erhält der Auftragsbearbeiter Zugriff auf Personendaten des Auftraggebers.
+<h3>§ 2 Pflichten des Auftragsbearbeiters (Art. 9 Abs. 1 nDSG)</h3>
+1. Der Auftragsbearbeiter verpflichtet sich, Personendaten ausschließlich so zu bearbeiten, wie es der Auftraggeber selbst tun dürfte, und nur nach dokumentierter Weisung des Auftraggebers.
+2. Eine Bearbeitung zu eigenen Zwecken oder Weitergabe an Dritte ist untersagt.
+3. Der Auftragsbearbeiter garantiert die Einhaltung angemessener technischer und organisatorischer Massnahmen gemäss Art. 8 nDSG (Anhang 1 dieser Vereinbarung).
+<h3>§ 3 Hinzuziehung von Unterauftragsbearbeitern (Subunternehmern)</h3>
+Die Beauftragung von weiteren Dienstleistern ist nur mit vorheriger schriftlicher Genehmigung des Auftraggebers gestattet.
+<h3>§ 4 Meldepflicht bei Sicherheitsverletzungen</h3>
+Erlangt der Auftragsbearbeiter Kenntnis von einer Verletzung der Datensicherheit (z.B. Hackerangriff, Datenabfluss, Fehlversand), ist er verpflichtet, den Auftraggeber <strong>unverzüglich, spätestens jedoch innert 24 Stunden</strong>, schriftlich zu benachrichtigen.
+<h3>§ 5 Löschung und Rückgabe nach Vertragsende</h3>
+Nach Beendigung der vertraglichen Arbeiten hat der Auftragsbearbeiter sämtliche Personendaten nach Wahl des Auftraggebers entweder vollständig und datenschutzkonform zu vernichten oder an diesen zurückzugeben.
+<strong>Ort, Datum:</strong> ________________________  
+<strong>Unterschrift Auftraggeber:</strong> ________________________  
+<strong>Unterschrift Auftragsbearbeiter:</strong> ________________________
+<p>---</p>
+<h2>4. MUSTER: ANTWORT AUF AUSKUNFTSBEGEHREN (Art. 25 nDSG)</h2>
+<p>> <strong>Frist:</strong> Das Auskunftsbegehren muss innert <strong>30 Tagen</strong> kostenlos beantwortet werden!  
+> <strong>Identitätsprüfung:</strong> Vor Erteilung der Auskunft muss die Identität des Anfragenden (z.B. durch Kopie der ID/Pass) zweifelsfrei geprüft werden.</p>
+<h3>Vorlage Antwortschreiben:</h3>
+Sehr geehrte/r [Name],  
+Bezug nehmend auf Ihr Auskunftsbegehren vom [Datum] teilen wir Ihnen hiermit gemäss Art. 25 des Bundesgesetzes über den Datenschutz (nDSG) mit:  
+1. <strong>Verarbeitete Personendaten:</strong> Wir haben zu Ihrer Person folgende Stammdaten gespeichert: [Auflistung: Vorname, Name, Adresse, E-Mail, Bestellhistorie].
+2. <strong>Bearbeitungszweck:</strong> Die Daten wurden ausschließlich zur Abwicklung unseres Kaufvertrags vom [Datum] erhoben und verwendet.
+3. <strong>Aufbewahrungsdauer:</strong> Wir bewahren Ihre Rechnungsdaten gemäss den gesetzlichen handels- und steuerrechtlichen Pflichten (Art. 958f OR) für 10 Jahre auf.
+4. <strong>Empfänger:</strong> Ihre Daten wurden ausschließlich an unseren Versanddienstleister [z.B. Schweizerische Post] zur Zustellung weitergegeben. Eine Übermittlung ins Ausland findet nicht statt.
+<p>Mit freundlichen Grüßen,  
+[Name / Datenschutzverantwortlicher]</p>
+        <div class="signature-grid">
+          <div>
+            <div class="sig-line"></div>
+            <div class="sig-label">Ort, Datum & Unterschrift Geschäftsleitung</div>
+          </div>
+          <div>
+            <div class="sig-line"></div>
+            <div class="sig-label">Ort, Datum & Unterschrift IT- / Datenschutzverantwortlicher</div>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+
+</body>
+</html>

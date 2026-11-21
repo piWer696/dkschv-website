@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <title>03 KMU IT Sicherheits Audit Checkliste // DKSchV Schweiz</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 15mm 20mm 15mm;
+      @bottom-right {
+        content: "Seite " counter(page) " von " counter(pages);
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.55;
+      font-size: 10pt;
+      background: #f8fafc;
+      padding: 2rem 0;
+    }
+    .document-page {
+      background: #ffffff;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 25mm 20mm;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      box-sizing: border-box;
+      position: relative;
+    }
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .brand-title {
+      font-size: 16pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .brand-accent { color: #dc2626; }
+    .brand-sub {
+      font-size: 8pt;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header-meta {
+      text-align: right;
+      font-size: 8pt;
+      color: #475569;
+    }
+    .badge-swiss {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    h1 { font-size: 16pt; color: #0f172a; margin-top: 1.5rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.4rem; }
+    h2 { font-size: 13pt; color: #1e293b; margin-top: 1.3rem; margin-bottom: 0.6rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.3rem; }
+    h3 { font-size: 11pt; color: #334155; margin-top: 1rem; margin-bottom: 0.4rem; }
+    p, ul, ol { margin-bottom: 0.8rem; }
+    ul, ol { padding-left: 1.5rem; }
+    li { margin-bottom: 0.3rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 9pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    tr:nth-child(even) { background-color: #f8fafc; }
+    .alert-box {
+      background: #fff1f2;
+      border-left: 4px solid #e11d48;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      margin: 1rem 0;
+      font-size: 9.5pt;
+    }
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #cbd5e1;
+    }
+    .sig-line {
+      border-bottom: 1px solid #475569;
+      height: 40px;
+      margin-bottom: 6px;
+    }
+    .sig-label { font-size: 8pt; color: #64748b; text-transform: uppercase; }
+    .print-bar {
+      max-width: 210mm;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+    }
+    .btn-print {
+      background: #10b981;
+      color: #042f2e;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 9pt;
+    }
+    @media print {
+      body { background: none; padding: 0; }
+      .print-bar { display: none; }
+      .document-page {
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <div><strong>DKSchV Schweiz</strong> // Druck- & Exportansicht für KMU</div>
+    <button class="btn-print" onclick="window.print()">🖨️ Jetzt als PDF speichern / Drucken</button>
+  </div>
+
+  <div class="document-page">
+    <div class="doc-header">
+      <div>
+        <div class="brand-title">DKSchV<span class="brand-accent">.CH</span></div>
+        <div class="brand-sub">Dini Cyber-Security & Datenschutz Schweiz</div>
+      </div>
+      <div class="header-meta">
+        <div class="badge-swiss">🇨🇭 Schweizer KMU Standard</div>
+        <div>Dokumenten-Nr.: CH-SEC-2026</div>
+        <div>DKSchV Dini // Naters (Wallis)</div>
+      </div>
+    </div>
+
+    <div class="doc-body">
+      <h1>DKSchV Schweiz // KMU IT-Sicherheits-Audit & Baseline-Prüfprotokoll</h1>
+<strong>Dokumenten-Klassifikation:</strong> Prüf- und Auditvorlage  
+<strong>Prüfstandard:</strong> BACS IT-Grundschutz Schweiz / CIS Critical Security Controls v8  
+<strong>Herausgeber:</strong> DKSchV Cyber-Security Schweiz (dkschv.ch)
+<p>---</p>
+<h2>1. MANAGEMENT SUMMARY (Management-Zusammenfassung)</h2>
+<em>Diese Übersicht dient der Geschäftsleitung als Entscheidungsgrundlage für IT-Budgets und Risikominimierung.</em>
+<p>* <strong>Unternehmen:</strong> __________________________________
+* <strong>Audit-Datum:</strong> __________________________________
+* <strong>Prüfer / Auditor:</strong> __________________________________
+* <strong>Gesamt-Sicherheitsbewertung:</strong>
+  - [ ] <strong>GRÜN (Geringes Risiko):</strong> Solide Sicherheitsstandards, Baseline erfüllt (>85% Konformität).
+  - [ ] <strong>GELB (Mittleres Risiko):</strong> Sicherheitslücken vorhanden, sofortige Maßnahmen empfohlen (60-84%).
+  - [ ] <strong>ROT (Kritisches Risiko):</strong> Akute Gefahr durch Ransomware/Einbruch (<60% Konformität).</p>
+<p>---</p>
+<h2>2. AUDIT-PRÜFKATALOG (75+ KONTROLLPUNKTE)</h2>
+<h3>Modul 1: Identitäts- & Zugriffsmanagement (IAM)</h3>
+<table><thead><tr><th>Nr.</th><th>Prüfkriterium</th><th>Soll-Zustand</th><th>Ist-Zustand</th><th>Status (OK / Mangel / Kritisch)</th><th>Handlungsbedarf / Notiz</th></tr></thead><tbody><tr><td><strong>1.1</strong></td><td><strong>Multi-Faktor-Authentifizierung (MFA)</strong></td><td>Verpflichtend für alle Benutzer bei Cloud-Diensten, Mail & VPN</td><td>Aktiviert für alle / nur Admins / Keine</td><td>[ ] OK [ ] Mangel [ ] Kritisch</td><td></td></tr><tr><td><strong>1.2</strong></td><td><strong>Passwort-Richtlinien</strong></td><td>Min. 14 Zeichen, keine schwachen Passwörter, Passwort-Manager</td><td>Mindestanforderung:</td><td>[ ] OK [ ] Mangel [ ] Kritisch</td><td></td></tr><tr><td><strong>1.3</strong></td><td><strong>Privilegierte Konten (Admins)</strong></td><td>Strikte Trennung von Admin- und Standard-Benutzerkonten</td><td>Getrennte Konten vorhanden?</td><td>[ ] OK [ ] Mangel [ ] Kritisch</td><td></td></tr><tr><td><strong>1.4</strong></td><td><strong>Offboarding-Prozess</strong></td><td>Sofortiger Entzug aller Berechtigungen bei Austritt innert 24h</td><td>Dokumentiert und eingehalten?</td><td>[ ] OK [ ] Mangel [ ] Kritisch</td><td></td></tr><tr><td><strong>1.5</strong></td><td><strong>Inaktive Benutzerkonten</strong></td><td>Automatische Deaktivierung nach 60 Tagen Inaktivität</td><td>Bereinigung erfolgt regelmäßig?</td><td>[ ] OK [ ] Mangel [ ] Kritisch</td><td></td></tr></tbody></table>
+<p>---</p>
+<h3>Modul 2: Netzwerk, Perimeter & Fernzugriff</h3>
+<table><thead><tr><th>Nr.</th><th>Prüfkriterium</th><th>Soll-Zustand</th><th>Ist-Zustand</th><th>Status</th><th>Handlungsbedarf</th></tr></thead><tbody><tr><td><strong>2.1</strong></td><td><strong>Offene Ports (Firewall)</strong></td><td>Keine ungesicherten Ports (RDP 3389, SMB 445) ins Internet</td><td>Port-Scan von extern durchgeführt?</td><td>[ ] OK [ ] Kritisch</td><td></td></tr><tr><td><strong>2.2</strong></td><td><strong>Netzwerk-Segmentierung (VLANs)</strong></td><td>Trennung: Büro-PCs, Server, Gäste-WLAN, IoT/Kameras</td><td>Segmentierung vorhanden?</td><td>[ ] OK [ ] Mangel</td><td></td></tr><tr><td><strong>2.3</strong></td><td><strong>VPN-Sicherheit</strong></td><td>Nur verschlüsseltes VPN (WireGuard/OpenVPN/IPsec) mit MFA</td><td>Remote-Zugriff geprüft?</td><td>[ ] OK [ ] Mangel</td><td></td></tr><tr><td><strong>2.4</strong></td><td><strong>Gäste-Netzwerk</strong></td><td>Gäste-WLAN vollständig isoliert vom internen Firmennetz</td><td>Kein Zugriff auf Firmen-Ressourcen?</td><td>[ ] OK [ ] Mangel</td><td></td></tr></tbody></table>
+<p>---</p>
+<h3>Modul 3: Endgeräte, Härtung & Patch-Management</h3>
+<table><thead><tr><th>Nr.</th><th>Prüfkriterium</th><th>Soll-Zustand</th><th>Ist-Zustand</th><th>Status</th><th>Handlungsbedarf</th></tr></thead><tbody><tr><td><strong>3.1</strong></td><td><strong>Laufwerksverschlüsselung</strong></td><td>100% aller mobilen Geräte (Laptops) vollverschlüsselt</td><td>BitLocker / FileVault aktiv?</td><td>[ ] OK [ ] Kritisch</td><td></td></tr><tr><td><strong>3.2</strong></td><td><strong>Endpoint Protection (EDR/AV)</strong></td><td>Zentral gemanagter Viren- & Ransomware-Schutz auf allen Clients</td><td>EDR-Lösung installiert und aktuell?</td><td>[ ] OK [ ] Kritisch</td><td></td></tr><tr><td><strong>3.3</strong></td><td><strong>Betriebssystem-Updates</strong></td><td>Automatische Installation von Sicherheits-Patches innert 7 Tagen</td><td>Patch-Status überprüft?</td><td>[ ] OK [ ] Mangel</td><td></td></tr><tr><td><strong>3.4</strong></td><td><strong>Lokale Administratorrechte</strong></td><td>Anwender haben <strong>keine</strong> lokalen Admin-Rechte auf ihren PCs</td><td>Rechte eingeschränkt?</td><td>[ ] OK [ ] Mangel</td><td></td></tr><tr><td><strong>3.5</strong></td><td><strong>USB-Port-Sicherheit</strong></td><td>Richtlinie oder technische Sperre gegen unbefugte USB-Datenträger</td><td>Richtlinie kommuniziert?</td><td>[ ] OK [ ] Mangel</td><td></td></tr></tbody></table>
+<p>---</p>
+<h3>Modul 4: Backup, Notfall-Wiederherstellung & Resilienz</h3>
+<table><thead><tr><th>Nr.</th><th>Prüfkriterium</th><th>Soll-Zustand</th><th>Ist-Zustand</th><th>Status</th><th>Handlungsbedarf</th></tr></thead><tbody><tr><td><strong>4.1</strong></td><td><strong>Unveränderbare Backups (Immutability)</strong></td><td>Backups können nicht durch Ransomware überschrieben/gelöscht werden</td><td>Immutable Storage / WORM aktiv?</td><td>[ ] OK [ ] Kritisch</td><td></td></tr><tr><td><strong>4.2</strong></td><td><strong>Offline / Air-Gapped Kopie</strong></td><td>Mindestens 1 monatliche/wöchentliche Offline-Sicherung</td><td>Getrenntes Medium vorhanden?</td><td>[ ] OK [ ] Kritisch</td><td></td></tr><tr><td><strong>4.3</strong></td><td><strong>Dokumentierter Restore-Test</strong></td><td>Mindestens halbjährlicher realer Wiederherstellungstest</td><td>Datum des letzten Tests:</td><td>[ ] OK [ ] Mangel</td><td></td></tr><tr><td><strong>4.4</strong></td><td><strong>RPO / RTO definiert</strong></td><td>Maximaler tolerierbarer Datenverlust & Ausfallzeit festgelegt</td><td>RPO: _____ Std. / RTO: _____ Std.</td><td>[ ] OK [ ] Mangel</td><td></td></tr></tbody></table>
+<p>---</p>
+<h3>Modul 5: Mensch, Phishing & Schulung (Awareness)</h3>
+<table><thead><tr><th>Nr.</th><th>Prüfkriterium</th><th>Soll-Zustand</th><th>Ist-Zustand</th><th>Status</th><th>Handlungsbedarf</th></tr></thead><tbody><tr><td><strong>5.1</strong></td><td><strong>Sicherheits-Schulung</strong></td><td>Jährliche Awareness-Schulung für alle Angestellten</td><td>Letzte Schulung:</td><td>[ ] OK [ ] Mangel</td><td></td></tr><tr><td><strong>5.2</strong></td><td><strong>Phishing-Simulationen</strong></td><td>Regelmäßige simulierte Phishing-Tests zur Sensibilisierung</td><td>Werden Tests durchgeführt?</td><td>[ ] OK [ ] Mangel</td><td></td></tr><tr><td><strong>5.3</strong></td><td><strong>Meldebutton / Meldeweg</strong></td><td>Einfacher Meldeweg für verdächtige Mails an IT/DKSchV</td><td>Wissen Mitarbeiter, wo melden?</td><td>[ ] OK [ ] Mangel</td><td></td></tr><tr><td><strong>5.4</strong></td><td><strong>Vier-Augen-Prinzip Finanzen</strong></td><td>CEO-Fraud Schutz: Telefonische Verifikation bei Kontoänderungen</td><td>Prozess verbindlich etabliert?</td><td>[ ] OK [ ] Kritisch</td><td></td></tr></tbody></table>
+<p>---</p>
+<h2>3. MASSNAHMENPLAN & PRIORITÄTEN (Roadmap)</h2>
+<table><thead><tr><th>Priorität</th><th>Maßnahme</th><th>Verantwortlich</th><th>Frist</th><th>Budget / Aufwand</th></tr></thead><tbody><tr><td><strong>Prio 1 (Sofort)</strong></td><td>2FA für alle M365-Konten erzwingen</td><td>IT-Lead / DKSchV</td><td>48 Stunden</td><td>Gering</td></tr><tr><td><strong>Prio 1 (Sofort)</strong></td><td>Lokale Admin-Rechte der Mitarbeiter entziehen</td><td>IT-Lead</td><td>5 Tage</td><td>Gering</td></tr><tr><td><strong>Prio 2 (30 Tage)</strong></td><td>Immutable Cloud-Backup (S3 WORM) einrichten</td><td>IT-Lead</td><td>3 Wochen</td><td>Mittel</td></tr><tr><td><strong>Prio 3 (90 Tage)</strong></td><td>Phishing-Awareness Schulung & Notfallübung</td><td>GF / DKSchV</td><td>8 Wochen</td><td>Mittel</td></tr></tbody></table>
+<p>---
+<em>(c) DKSchV Schweiz – Dini Cyber-Security & Datenschutz Partner im Wallis</em></p>
+        <div class="signature-grid">
+          <div>
+            <div class="sig-line"></div>
+            <div class="sig-label">Ort, Datum & Unterschrift Geschäftsleitung</div>
+          </div>
+          <div>
+            <div class="sig-line"></div>
+            <div class="sig-label">Ort, Datum & Unterschrift IT- / Datenschutzverantwortlicher</div>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+
+</body>
+</html>

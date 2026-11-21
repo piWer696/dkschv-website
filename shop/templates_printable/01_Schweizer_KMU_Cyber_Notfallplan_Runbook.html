@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <title>01 Schweizer KMU Cyber Notfallplan Runbook // DKSchV Schweiz</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 15mm 20mm 15mm;
+      @bottom-right {
+        content: "Seite " counter(page) " von " counter(pages);
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.55;
+      font-size: 10pt;
+      background: #f8fafc;
+      padding: 2rem 0;
+    }
+    .document-page {
+      background: #ffffff;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 25mm 20mm;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      box-sizing: border-box;
+      position: relative;
+    }
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .brand-title {
+      font-size: 16pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .brand-accent { color: #dc2626; }
+    .brand-sub {
+      font-size: 8pt;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header-meta {
+      text-align: right;
+      font-size: 8pt;
+      color: #475569;
+    }
+    .badge-swiss {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    h1 { font-size: 16pt; color: #0f172a; margin-top: 1.5rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.4rem; }
+    h2 { font-size: 13pt; color: #1e293b; margin-top: 1.3rem; margin-bottom: 0.6rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.3rem; }
+    h3 { font-size: 11pt; color: #334155; margin-top: 1rem; margin-bottom: 0.4rem; }
+    p, ul, ol { margin-bottom: 0.8rem; }
+    ul, ol { padding-left: 1.5rem; }
+    li { margin-bottom: 0.3rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 9pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    tr:nth-child(even) { background-color: #f8fafc; }
+    .alert-box {
+      background: #fff1f2;
+      border-left: 4px solid #e11d48;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      margin: 1rem 0;
+      font-size: 9.5pt;
+    }
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #cbd5e1;
+    }
+    .sig-line {
+      border-bottom: 1px solid #475569;
+      height: 40px;
+      margin-bottom: 6px;
+    }
+    .sig-label { font-size: 8pt; color: #64748b; text-transform: uppercase; }
+    .print-bar {
+      max-width: 210mm;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+    }
+    .btn-print {
+      background: #10b981;
+      color: #042f2e;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 9pt;
+    }
+    @media print {
+      body { background: none; padding: 0; }
+      .print-bar { display: none; }
+      .document-page {
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <div><strong>DKSchV Schweiz</strong> // Druck- & Exportansicht für KMU</div>
+    <button class="btn-print" onclick="window.print()">🖨️ Jetzt als PDF speichern / Drucken</button>
+  </div>
+
+  <div class="document-page">
+    <div class="doc-header">
+      <div>
+        <div class="brand-title">DKSchV<span class="brand-accent">.CH</span></div>
+        <div class="brand-sub">Dini Cyber-Security & Datenschutz Schweiz</div>
+      </div>
+      <div class="header-meta">
+        <div class="badge-swiss">🇨🇭 Schweizer KMU Standard</div>
+        <div>Dokumenten-Nr.: CH-SEC-2026</div>
+        <div>DKSchV Dini // Naters (Wallis)</div>
+      </div>
+    </div>
+
+    <div class="doc-body">
+      <h1>DKSchV Schweiz // Cyber-Security Notfall-Runbook & Incident-Response-Plan</h1>
+<strong>Dokumenten-Klassifikation:</strong> Vertraulich / Intern  
+<strong>Zielgruppe:</strong> Geschäftsleitung, IT-Verantwortliche, externe IT-Dienstleister von Schweizer KMU  
+<strong>Herausgeber:</strong> DKSchV Cyber-Security Schweiz (dkschv.ch)  
+<strong>Rechtlicher Rahmen:</strong> nDSG (Schweiz), BACS Meldewesen
+<p>---</p>
+<h2>1. SOFORTMASSNAHMEN (Die ersten 15 Minuten)</h2>
+<div class="alert-box"><strong>ACHTUNG:</strong> <strong>OBERSTE REGEL BEI RANSOMWARE / HACK:</strong>  </div>> <strong>GERÄTE NICHT NEUSTARTEN ODER AUSSCHALTEN!</strong>  
+> Beim Ausschalten geht der Arbeitsspeicher (RAM) mit flüchtigen Beweisen, Verschlüsselungs-Keys und laufenden Prozessen verloren.
+<h3>Checkliste Sofort-Isolierung:</h3>
+1. <strong>Netzwerk sofort physisch trennen:</strong>
+   - [ ] LAN-Kabel an betroffenen Servern, PCs und NAS sofort herausziehen.
+   - [ ] WLAN an allen Geräten deaktivieren (Hardware-Schalter oder Flugmodus).
+   - [ ] Hypervisor/Virtuelle Maschinen: Virtuelle Netzwerkkarten trennen (Disconnect vNIC), Maschinen <strong>eingeschaltet lassen</strong>.
+2. <strong>Backups sofort sichern:</strong>
+   - [ ] Alle physisch verbundenen Backup-Festplatten / USB-Laufwerke sofort abziehen.
+   - [ ] Cloud-Backup-Zugänge (z.B. Immutable Backups, S3 Object Lock) prüfen und Schreibrechte temporär einfrieren.
+3. <strong>Zentrale Zugänge sperren:</strong>
+   - [ ] Microsoft 365 / Google Workspace Admin-Konsole aufrufen (von einem sauberen, separaten Gerät!).
+   - [ ] Alle aktiven Benutzersitzungen widerrufen ("Revoke all sessions").
+   - [ ] Passwörter für Domain-Admins, VPN-Gateways und Cloud-Admins sofort ändern.
+   - [ ] VPN-Zugänge und RDP-Ports an der Firewall komplett deaktivieren.
+<p>---</p>
+<h2>2. NOTFALL-ORGANISATION & ESKALATIONSMATRIX</h2>
+<p>Im Ernstfall übernimmt der <strong>Krisenstab</strong> die alleinige Führung.</p>
+<table><thead><tr><th>Rolle</th><th>Funktion im Notfall</th><th>Name / Stellvertreter</th><th>Telefon (privat/mobil)</th></tr></thead><tbody><tr><td><strong>Krisenstabsleiter</strong></td><td>Geschäftsleitung (trifft Finanz- & Betriebsentscheide)</td><td>____________________</td><td>____________________</td></tr><tr><td><strong>Technischer Lead</strong></td><td>IT-Leiter / DKSchV Security-Experte</td><td>DKSchV Notfall-Hotline</td><td>+41 79 844 66 69</td></tr><tr><td><strong>Recht & Compliance</strong></td><td>Datenschutzberater / Jurist (nDSG / Haftung)</td><td>____________________</td><td>____________________</td></tr><tr><td><strong>Kommunikation</strong></td><td>Einzige Person, die mit Kunden/Presse spricht</td><td>____________________</td><td>____________________</td></tr></tbody></table>
+<p>---</p>
+<h2>3. SCHWEIZER MELDEPFLICHTEN & BEHÖRDEN-KONTAKTE</h2>
+<p>In der Schweiz gelten strenge rechtliche Meldefristen:</p>
+<h3>A. Bundesamt für Cybersicherheit (BACS - ehemals NCSC)</h3>
+* <strong>Wann:</strong> Bei jedem schwerwiegenden Cyber-Angriff (Ransomware, Erpressung, DDoS).
+* <strong>Meldeweg:</strong> Meldeformular auf `https://www.bacs.admin.ch` oder via BACS-Notfallnummer.
+* <strong>Nutzen:</strong> Das BACS liefert direkte Lageberichte, technische IoCs (Indicators of Compromise) und Hilfestellungen.
+<h3>B. Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter (EDÖB)</h3>
+* <strong>Pflicht nach Art. 24 nDSG:</strong> Verletzungen der Datensicherheit, die voraussichtlich zu einem hohen Risiko für die Persönlichkeit oder die Grundrechte der betroffenen Personen führen.
+* <strong>Frist:</strong> <strong>So rasch als möglich</strong> (in der Praxis innert Stunden bis maximal 72 Stunden nach gesicherter Kenntnis).
+* <strong>Meldeweg:</strong> Online-Meldeportal des EDÖB (`https://www.edoeb.admin.ch`).
+<h3>C. Kantonspolizei (Kantonales Cybercrime-Dezernat)</h3>
+* <strong>Kantonspolizei Wallis / Fachstelle Cybercrime:</strong> Tel. 117 / Notruf oder lokale Dienststelle.
+* <strong>Hinweis für Strafanzeige:</strong> Keine eigenmächtigen Löschungen vornehmen, damit digitale Spuren gerichtlich verwertbar bleiben.
+<p>---</p>
+<h2>4. MUSTER-VORLAGEN FÜR DIE KRISENKOMMUNIKATION</h2>
+<h3>Vorlage 1: Interne Rundmail an alle Mitarbeitenden</h3>
+> <strong>Betreff:</strong> DRINGEND: Sicherheitsvorfall – Verhaltensanweisungen für alle Mitarbeitenden  
+> <strong>Text:</strong>  
+> Sehr geehrte Kolleginnen und Kollegen,  
+> unser Unternehmen verzeichnet aktuell eine technische Sicherheitsstörung unserer IT-Systeme. Unser internes IT-Team arbeitet gemeinsam mit externen Sicherheitsanalysten von DKSchV Schweiz mit Hochdruck an der Analyse und Isolierung des Vorfalls.  
+>  
+> <strong>Ab sofort gelten folgende verbindliche Verhaltensregeln:</strong>  
+> 1. Schalten Sie Ihre Arbeitsstationen nicht aus, sondern ziehen Sie lediglich das Netzwerkkabel ab und deaktivieren Sie das WLAN.  
+> 2. Versuchen Sie keinesfalls, verdächtige Dateien zu öffnen oder Systemänderungen vorzunehmen.  
+> 3. Nutzen Sie für dringende Abstimmungen ausschließlich private Mobiltelefone / Messenger, nicht das Unternehmensnetzwerk.  
+> 4. Jegliche Kommunikation nach außen (Kunden, Medien, Social Media) ist untersagt. Auskünfte erteilt ausschließlich die Geschäftsleitung.  
+>  
+> Wir informieren Sie regelmäßig über den Status der Wiederherstellung.  
+> Mit freundlichen Grüßen,  
+> Die Geschäftsleitung
+<p>---</p>
+<h3>Vorlage 2: Transparente Kunden- & Partnerinformation</h3>
+> <strong>Betreff:</strong> Wichtige Information zu vorübergehenden Störungen unserer IT-Erreichbarkeit  
+> <strong>Text:</strong>  
+> Sehr geehrte Damen und Herren,  
+> Vertrauen und Transparenz sind das Fundament unserer Zusammenarbeit. Wir möchten Sie proaktiv darüber informieren, dass unsere IT-Infrastruktur Ziel eines Cyber-Angriffs wurde.  
+>  
+> Durch das sofortige Greifen unserer Notfallpläne konnten wir die betroffenen Systeme isolieren. Wir arbeiten eng mit spezialisierten Schweizer Cybersicherheits-Experten und den zuständigen Behörden zusammen.  
+>  
+> Aktuell prüfen wir mit höchster Priorität, ob und in welchem Umfang Daten betroffen sind. Unsere operativen Tätigkeiten führen wir über Ausweichkanäle bestmöglich fort. Wir halten Sie über alle weiteren Entwicklungen transparent auf dem Laufenden.  
+>  
+> Bei dringenden Rückfragen erreichen Sie unseren Krisenstab unter: [Telefonnummer / Notfall-E-Mail].
+<p>---</p>
+<h2>5. FORENSISCHE SICHERUNG & WIEDERHERSTELLUNG (Recovery)</h2>
+<p>```
+[Isolierung] ---> [Forensisches Abbild] ---> [Root-Cause-Analyse] ---> [Härtung] ---> [Clean Recovery]
+```</p>
+<p>1. <strong>Beweissicherung (Forensic Readiness):</strong>
+   - Vor jedem Wiederherstellungsversuch Speicherabbilder (RAM-Dumps) und Festplatten-Images (Bitstream-Images via `dd` oder FTK Imager) erstellen.
+   - Firewall-Logs, DNS-Query-Logs, DHCP-Leases und Active Directory Event-Logs sichern und schreibgeschützt archivieren.
+2. <strong>Root-Cause Identifikation:</strong>
+   - Wie kam der Angreifer ins Netz? (Phishing-Mail, ungepatchte VPN-Schwachstelle, kompromittierte Zugangsdaten, offener RDP-Port).
+   - Die gefundene Einbruchs-Schwachstelle muss behoben sein, <strong>bevor</strong> das erste Backup wieder ans Netz geht!
+3. <strong>Schrittweiser Wiederanlauf:</strong>
+   - 1. Core-Infrastruktur (Firewall, sauberes AD, DNS, NTP).
+   - 2. Datenspeicher & Datenbanken aus verifiziertem, virenfreiem Backup.
+   - 3. Kritische Kernapplikationen (ERP, Buchhaltung, Mail).
+   - 4. Benutzer-Clients nach vollständigem Neuaufsetzen (Re-Imaging) freigeben.</p>
+<p>---
+<em>(c) DKSchV Schweiz – Dini Cyber-Security & Datenschutz Partner im Wallis</em></p>
+        <div class="signature-grid">
+          <div>
+            <div class="sig-line"></div>
+            <div class="sig-label">Ort, Datum & Unterschrift Geschäftsleitung</div>
+          </div>
+          <div>
+            <div class="sig-line"></div>
+            <div class="sig-label">Ort, Datum & Unterschrift IT- / Datenschutzverantwortlicher</div>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+
+</body>
+</html>

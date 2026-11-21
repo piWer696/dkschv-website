@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <title>04 Mitarbeiter IT Sicherheitsrichtlinie KI Policy // DKSchV Schweiz</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 15mm 20mm 15mm;
+      @bottom-right {
+        content: "Seite " counter(page) " von " counter(pages);
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.55;
+      font-size: 10pt;
+      background: #f8fafc;
+      padding: 2rem 0;
+    }
+    .document-page {
+      background: #ffffff;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 25mm 20mm;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      box-sizing: border-box;
+      position: relative;
+    }
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .brand-title {
+      font-size: 16pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .brand-accent { color: #dc2626; }
+    .brand-sub {
+      font-size: 8pt;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header-meta {
+      text-align: right;
+      font-size: 8pt;
+      color: #475569;
+    }
+    .badge-swiss {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    h1 { font-size: 16pt; color: #0f172a; margin-top: 1.5rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.4rem; }
+    h2 { font-size: 13pt; color: #1e293b; margin-top: 1.3rem; margin-bottom: 0.6rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.3rem; }
+    h3 { font-size: 11pt; color: #334155; margin-top: 1rem; margin-bottom: 0.4rem; }
+    p, ul, ol { margin-bottom: 0.8rem; }
+    ul, ol { padding-left: 1.5rem; }
+    li { margin-bottom: 0.3rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 9pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    tr:nth-child(even) { background-color: #f8fafc; }
+    .alert-box {
+      background: #fff1f2;
+      border-left: 4px solid #e11d48;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      margin: 1rem 0;
+      font-size: 9.5pt;
+    }
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #cbd5e1;
+    }
+    .sig-line {
+      border-bottom: 1px solid #475569;
+      height: 40px;
+      margin-bottom: 6px;
+    }
+    .sig-label { font-size: 8pt; color: #64748b; text-transform: uppercase; }
+    .print-bar {
+      max-width: 210mm;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+    }
+    .btn-print {
+      background: #10b981;
+      color: #042f2e;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 9pt;
+    }
+    @media print {
+      body { background: none; padding: 0; }
+      .print-bar { display: none; }
+      .document-page {
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <div><strong>DKSchV Schweiz</strong> // Druck- & Exportansicht für KMU</div>
+    <button class="btn-print" onclick="window.print()">🖨️ Jetzt als PDF speichern / Drucken</button>
+  </div>
+
+  <div class="document-page">
+    <div class="doc-header">
+      <div>
+        <div class="brand-title">DKSchV<span class="brand-accent">.CH</span></div>
+        <div class="brand-sub">Dini Cyber-Security & Datenschutz Schweiz</div>
+      </div>
+      <div class="header-meta">
+        <div class="badge-swiss">🇨🇭 Schweizer KMU Standard</div>
+        <div>Dokumenten-Nr.: CH-SEC-2026</div>
+        <div>DKSchV Dini // Naters (Wallis)</div>
+      </div>
+    </div>
+
+    <div class="doc-body">
+      <h1>DKSchV Schweiz // IT-Sicherheits- & KI-Nutzungsrichtlinie für Mitarbeitende</h1>
+<strong>Dokumenten-Klassifikation:</strong> Verbindliche Betriebsrichtlinie  
+<strong>Geltungsbereich:</strong> Alle Mitarbeitenden, Auszubildenden, Freelancer und Führungskräfte  
+<strong>Herausgeber:</strong> DKSchV Cyber-Security Schweiz (dkschv.ch)
+<p>---</p>
+<h2>1. ZIEL & GELTUNGSBEREICH</h2>
+Diese Richtlinie legt verbindliche Sicherheitsregeln für die Nutzung von Computern, Smartphones, Firmennetzwerken, E-Mail-Diensten und KI-Werkzeugen fest. Sie dient dem Schutz von Kunden-, Finanz- und Unternehmensdaten vor Cyber-Angriffen, Datenverlust und rechtlichen Konsequenzen (insbesondere nach dem Schweizer Datenschutzgesetz nDSG).
+<p>---</p>
+<h2>2. PASSWÖRTER & ZWEI-FAKTOR-AUTHENTIFIZIERUNG (2FA)</h2>
+1. <strong>Passwort-Grundsätze:</strong>
+   - Passwörter müssen mindestens <strong>14 Zeichen</strong> lang sein oder aus einer sicheren Passphrase (z.B. 4 zufällige Wörter: <em>sonne-berge-rhone-velo</em>) bestehen.
+   - Die Weitergabe von Passwörtern an Kolleginnen, Vorgesetzte oder Dritte ist <strong>strengstens untersagt</strong>.
+   - Für jedes System ist ein <strong>eigenes, eindeutiges Passwort</strong> zu verwenden.
+2. <strong>Passwort-Manager:</strong> Die Verwendung des freigegebenen Unternehmens-Passwort-Managers ist obligatorisch. Private Passwörter dürfen nicht in Unternehmens-Safes gespeichert werden.
+3. <strong>Zwei-Faktor-Authentifizierung:</strong> Push-Benachrichtigungen oder Authenticator-Codes dürfen <strong>nur dann bestätigt werden</strong>, wenn der Anmeldevorgang gerade selbst aktiv am Bildschirm durchgeführt wird (Schutz vor "MFA-Fatigue"-Angriffen).
+<p>---</p>
+<h2>3. UMGANG MIT GENERATIVER KÜNSTLICHER INTELLIGENZ (KI / ChatGPT POLICY)</h2>
+<div class="alert-box"><strong>ACHTUNG:</strong> Öffentliche KI-Systeme (wie kostenloses ChatGPT, DeepL, Claude, Google Gemini) lernen mit eingegebenen Daten und speichern diese auf Servern außerhalb der Schweiz.</div>
+1. <strong>Verbot von schützenswerten Daten:</strong>
+   - Es ist <strong>ausnahmslos untersagt</strong>, Personendaten von Kunden oder Mitarbeitenden (Namen, Anschriften, Kontodaten, Gesundheitsdaten, Rechnungen) in öffentliche KI-Tools einzugeben.
+   - Betriebsgeheimnisse, Quellcode, Passwörter, Finanzdaten und interne Verträge dürfen <strong>nicht</strong> in unverschlüsselte Online-Tools hochgeladen werden.
+2. <strong>Erlaubte Nutzung:</strong>
+   - Formulierungshilfen, Übersetzungen, Brainstorming und allgemeine Recherchen sind gestattet, sofern alle betriebsinternen Details vorab vollständig anonymisiert wurden.
+3. <strong>Ergebnisprüfung:</strong> KI-generierte Inhalte müssen stets auf Richtigkeit, Plagiate und Halluzinationen gegenprüft werden.
+<p>---</p>
+<h2>4. E-MAIL-SICHERHEIT & PHISHING-ABWEHR</h2>
+1. <strong>Verdächtige E-Mails:</strong>
+   - E-Mails mit Aufforderungen zu schnellen Zahlungen, Passwort-Rücksetzungen oder Verifizierungen mit höchster Skepsis behandeln.
+   - <strong>Prüfe die Absender-Adresse genau:</strong> Ein angezeigter Name kann gefälscht sein (z.B. `chef@firma-schweiz-support.com` statt `chef@firma.ch`).
+   - Links in E-Mails nicht unüberlegt anklicken. Fahre mit dem Mauszeiger über den Link (Hover), um das wahre Ziel zu prüfen.
+2. <strong>Dateianhänge:</strong>
+   - Anhänge mit Dateiendungen wie `.exe`, `.scr`, `.iso`, `.zip` oder Makro-Dateien (`.docm`, `.xlsm`) von externen Absendern niemals ohne Rücksprache mit der IT öffnen.
+3. <strong>Meldepflicht:</strong>
+   - Verdächtige E-Mails sofort über den Phishing-Meldebutton melden bzw. an das IT-Sicherheitsteam weiterleiten.
+   - <strong>Wichtig:</strong> Solltest du versehentlich auf einen bösartigen Link geklickt oder ein Passwort eingegeben haben, <strong>melde dich sofort bei der IT!</strong> Dir drohen keine Sanktionen – schnelles Handeln verhindert Schlimmeres.
+<p>---</p>
+<h2>5. HOME-OFFICE, MOBILE GERÄTE & CLEAN DESK</h2>
+1. <strong>Clean-Desk & Clean-Screen:</strong>
+   - Beim Verlassen des Arbeitsplatzes ist der Bildschirm <strong>immer sofort zu sperren</strong> (`Windows-Taste + L` bzw. `Control + Command + Q`).
+   - Vertrauliche Dokumente dürfen nach Feierabend nicht offen auf Schreibtischen liegen bleiben.
+2. <strong>Nutzung öffentlicher Netzwerke:</strong>
+   - In Zügen (SBB Free WiFi), Hotels oder Cafés darf nur über das Firmen-VPN gearbeitet werden.
+   - Achte auf neugierige Blicke Dritter auf deinen Bildschirm (ggf. Blickschutzfilter verwenden).
+3. <strong>Fremdnutzung untersagt:</strong>
+   - Firmen-Laptops und Firmen-Smartphones dürfen <strong>nicht</strong> an Familienmitglieder, Kinder oder Freunde überlassen werden.
+<p>---</p>
+<h2>6. VERPFLICHTUNGSERKLÄRUNG DER/DES MITARBEITENDEN</h2>
+<em>(Wird von der/dem Mitarbeitenden unterschrieben und zur Personalakte genommen)</em>
+<p>Ich bestätige hiermit, dass ich die vorliegende IT-Sicherheits- und KI-Nutzungsrichtlinie von DKSchV Schweiz erhalten, aufmerksam gelesen und verstanden habe. Ich verpflichte mich, die darin enthaltenen Sicherheitsbestimmungen in meiner täglichen Arbeit strikt einzuhalten.</p>
+<p>Mir ist bewusst, dass vorsätzliche oder grob fahrlässige Verstöße gegen diese Richtlinie arbeitsrechtliche Konsequenzen sowie haftungsrechtliche Schritte nach sich ziehen können.</p>
+<strong>Name, Vorname (in Druckbuchstaben):</strong> ____________________________________________  
+<strong>Abteilung / Funktion:</strong> ____________________________________________  
+<strong>Ort, Datum:</strong> ____________________________________________  
+<strong>Unterschrift der/des Mitarbeitenden:</strong> ____________________________________________
+        <div class="signature-grid">
+          <div>
+            <div class="sig-line"></div>
+            <div class="sig-label">Ort, Datum & Unterschrift Geschäftsleitung</div>
+          </div>
+          <div>
+            <div class="sig-line"></div>
+            <div class="sig-label">Ort, Datum & Unterschrift IT- / Datenschutzverantwortlicher</div>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+
+</body>
+</html>
