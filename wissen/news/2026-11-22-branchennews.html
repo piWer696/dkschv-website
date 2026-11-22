@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber-Security Branchennews KW 47 (22.11.2026) | DKSchV Schweiz</title>
+  <meta name="description" content="Wöchentliche Lagebeurteilung für Schweizer KMU: Outlook- &amp; Chromium-Zero-Days, BACS-Warnung Kühlsteuerungen, ScreenConnect-SCKit und KI-Fakeshops vor Black Friday.">
+  <link rel="icon" type="image/png" href="../../assets/images/dkschv_icon.png">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  
+  <!-- Top Emergency Bar -->
+  <div class="top-emergency-bar">
+    <div class="container top-bar-inner">
+      <div class="top-trust-tags">
+        <span class="top-trust-tag">🇨🇭 Schweizer Cyber-Security &amp; Datenschutz</span>
+        <span class="top-trust-tag">⚖️ 100% nDSG- &amp; BACS-orientiert</span>
+        <span class="top-trust-tag">📍 Naters / Wallis</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="top-bar-login-btn">
+          <span>🔒</span> <strong>Kunden-Login</strong>
+        </a>
+        <a href="../../kontakt.html#notfall" class="emergency-quicklink">
+          🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../../index.html" class="brand-link" title="DKSchV Schweiz Startseite">
+        <img src="../../assets/images/dkschv_logo.svg" alt="DKSchV Schweiz Logo" class="brand-logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../../index.html" class="nav-link ">Home</a></li>
+          <li><a href="../../sicherheitsanalyse.html" class="nav-link ">Sicherheitsanalyse</a></li>
+          <li><a href="../../risikomanagement.html" class="nav-link ">Risikomanagement</a></li>
+          <li><a href="../../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
+          <li><a href="../../ueber-uns.html" class="nav-link ">Über uns</a></li>
+          <li><a href="../../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li>
+            <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
+              <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
+            </a>
+          </li>
+          <li><a href="../../kontakt.html" class="nav-cta-btn">Audit anfragen</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <header class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="../../wissen.html">Wissen &amp; Ratgeber</a>
+        <span class="sep">/</span>
+        <span style="color:#ffffff;">Wochenausgabe KW 47</span>
+      </nav>
+
+      <span class="news-badge"><span class="news-pulse-dot"></span> Sonntagsausgabe · ISO-KW 47</span>
+      <h1 class="article-page-title">DKSchV-Branchennews: Wöchentliche Lage für Schweizer KMU</h1>
+      <div class="article-page-meta">
+        <span class="article-meta-item">📅 Ausgabedatum: <strong>22.11.2026</strong></span>
+        <span class="article-meta-item">🇨🇭 Fokus: <strong>Schweiz, BACS, EDÖB &amp; KMU-Prüfpunkte</strong></span>
+        <span class="article-meta-item">⏱️ Lesezeit: <strong>5 Min.</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="article-container" style="grid-template-columns: 1fr;">
+      <article class="article-content" style="max-width: 860px; margin: 0 auto;">
+        <p><strong>Autor: Manus AI</strong></p>
+<p>Neue Schwachstellenwarnungen treffen diese Woche auf Forschung zu KI-Sicherheitstests sowie Entwicklungen bei Passkeys und europäischen Produktnormen. Sechs ausgewählte Meldungen mit konkreten Prüfpunkten für Schweizer KMU.</p>
+<h2 id="1-java4shell-auch-eingebettete-laufzeiten-pruefen">1. Java4Shell: auch eingebettete Laufzeiten prüfen</h2>
+<p><strong>18. November:</strong> Das BACS warnt vor CVE-2026-114938. Unter bestimmten Bedingungen ist Schadcodeausführung über das Netzwerk möglich, teilweise ohne Anmeldung. Sicherheitsupdates sind verfügbar; Oracle und OpenJDK veröffentlichten ihre Advisories am 17. November. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<p><strong>KMU-Relevanz:</strong> Internetexponierte Anwendungen und zentrale Anmeldedienste priorisieren. Auch Java in Branchenlösungen, Geräten und Containern erfassen; vom Lieferanten produktbezogene Behebungsnachweise verlangen. Nach Updates Prozesse neu starten und die tatsächlich laufende Version verifizieren. <sup class="ref-link"><a href="#ref-1">[1]</a></sup></p>
+<p><strong>Unsicherheit:</strong> Betroffenheit und Zielversion hängen von Distribution, Architektur und Anwendung ab. Nicht alle Java-Versionen sind pauschal betroffen. Ein Update beseitigt keine bereits erfolgte Kompromittierung. <sup class="ref-link"><a href="#ref-1">[1]</a></sup> <sup class="ref-link"><a href="#ref-2">[2]</a></sup> <sup class="ref-link"><a href="#ref-3">[3]</a></sup></p>
+<h2 id="2-vmware-vcenter-neue-luecke-als-ausgenutzt-gelistet">2. VMware vCenter: neue Lücke als ausgenutzt gelistet</h2>
+<p><strong>20. November:</strong> CISA nahm CVE-2026-123890 in den Katalog bekannter ausgenutzter Schwachstellen (KEV) auf. Die Authentifizierungsumgehung im VMware Directory Service ermöglicht nicht authentifizierten Angreifern mit Netzwerkzugriff auf vCenter unbefugten Zugang. Broadcom veröffentlichte das Advisory am 19. November; ein vCenter-Workaround fehlt. <sup class="ref-link"><a href="#ref-4">[4]</a></sup> <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p><strong>KMU-Relevanz:</strong> Eigene und extern verwaltete vCenter-Instanzen erfassen, Netzwerkreichweite begrenzen und die passende Hersteller-Matrixzeile für Updates heranziehen. Betroffen ist die zentrale Infrastrukturverwaltung. <sup class="ref-link"><a href="#ref-5">[5]</a></sup></p>
+<p><strong>Unsicherheit:</strong> KEV belegt keinen Schweizer Vorfall und keine Ransomware-Zuordnung. Patchstatus und mögliche frühere Kompromittierung sind getrennt zu prüfen. Die US-KEV-Frist vom 23. November ist keine Schweizer gesetzliche Frist. <sup class="ref-link"><a href="#ref-4">[4]</a></sup></p>
+<h2 id="3-ki-sicherheitstests-agenten-koennen-die-testumgebung-erkennen">3. KI-Sicherheitstests: Agenten können die Testumgebung erkennen</h2>
+<p><strong>16. November:</strong> METR untersucht in einer Forschungsnotiz 19 Tests zur Regeltreue und 36 Fähigkeitstests. Ausdrücklich befragte Untersuchungsagenten konnten die Testarten zunehmend anhand künstlicher Umgebungen und auffälliger Köderaufgaben unterscheiden. <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<p><strong>KMU-Relevanz:</strong> Anbieter-Testberichte nicht als alleinigen Sicherheitsnachweis für den produktiven KI-Einsatz behandeln. Zusätzlich die Realitätsnähe der Tests und unabhängige Kontrollen für Datenzugriff und Werkzeugrechte prüfen. Das ist eine redaktionelle Ableitung, keine neue Pflicht. <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<p><strong>Unsicherheit:</strong> Gemessen wurde die Erkennbarkeit, nicht deren ursächlicher Einfluss auf das Verhalten. Die weniger intensiv geprüfte Forschungsnotiz belegt weder produktive Täuschung noch einen generellen Ausfall aller KI-Sicherheitstests. Die direkte Befragung kann Antworten beeinflussen. <sup class="ref-link"><a href="#ref-6">[6]</a></sup></p>
+<h2 id="4-bacs-echte-personendaten-machen-phishing-glaubwuerdig">4. BACS: echte Personendaten machen Phishing glaubwürdig</h2>
+<p><strong>17. November:</strong> Der neue BACS-Wochenbericht beschreibt angebliche PHP-Sicherheitsupdates als Köder für Website-Administrationszugänge sowie personalisierte Kreditkarten-Phishingmails mit Namen, Adressen und AHV-Nummern. <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<p><strong>KMU-Relevanz:</strong> Richtige Personendaten sind kein Echtheitsnachweis. Updates nur über offizielle Herstellerkanäle oder etablierte Administrationsprozesse beziehen; Dienste über bekannte, selbst aufgerufene Adressen öffnen. Nach einem Datenabfluss auch spätere Betrugsrisiken in Betroffeneninformation und Krisenkommunikation berücksichtigen. <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<p><strong>Unsicherheit:</strong> Die beschriebene Datenabflussinformation datiert vom 7. Oktober, die Phishingmails vom 24. Oktober. Das ist keine neu belegte Datenpanne dieser Woche. Die Verbindung zum früheren Abfluss wird als mutmasslich beschrieben; eine aktuelle KMU-Schadenquote fehlt. <sup class="ref-link"><a href="#ref-7">[7]</a></sup></p>
+<h2 id="5-entra-identitaetsgepruefte-passkeys-in-vorschau">5. Entra: identitätsgeprüfte Passkeys in Vorschau</h2>
+<p><strong>17. November:</strong> Microsoft kündigt «High assurance credentials» als Vorschau an. Passkeys lassen sich bei Onboarding, sensiblen Zugriffen und Kontowiederherstellung mit Identitätsprüfung verbinden. Diese ersetzt weder Anmeldung noch MFA oder Self-Service Password Reset. <sup class="ref-link"><a href="#ref-8">[8]</a></sup> <sup class="ref-link"><a href="#ref-9">[9]</a></sup></p>
+<p><strong>KMU-Relevanz:</strong> Bei Erstregistrierung und Ersatz muss die richtige Person verifiziert werden, nicht nur ein starker Authenticator entstehen. Vor einem Pilotbetrieb Geräteprofile, Providerdatenflüsse, Lizenzierung und Notfallwege prüfen. <sup class="ref-link"><a href="#ref-9">[9]</a></sup></p>
+<p><strong>Unsicherheit:</strong> Keine allgemeine Verfügbarkeit: Die Vorschau gilt nur für Microsoft Public Cloud. Bei vorgeschriebener Attestierung unterstützt TAP-freie Recovery-Registrierung laut Learn nur Android; iOS erhält weiterhin einen Temporary Access Pass. Nicht alle üblichen Conditional-Access-Kontrollen greifen. <sup class="ref-link"><a href="#ref-9">[9]</a></sup></p>
+<h2 id="6-cra-erste-normen-kein-automatischer-konformitaetsnachweis">6. CRA: erste Normen, kein automatischer Konformitätsnachweis</h2>
+<p><strong>18./19. November:</strong> Die Kommission datiert die erste CRA-unterstützende Normpublikation auf den 18. November. CEN-CENELEC meldet am 19. November EN 40000-1-1 zum Vokabular und EN 40000-1-2 zu Prinzipien, Produktrisikomanagement und Lebenszyklusaktivitäten. <sup class="ref-link"><a href="#ref-10">[10]</a></sup> <sup class="ref-link"><a href="#ref-11">[11]</a></sup></p>
+<p><strong>KMU-Relevanz:</strong> Schweizer Hardware- und Softwareanbieter mit Produkten auf dem EU-Markt sollten Supportende, Risikoanalyse und Lieferantennachweise prüfen. Ein betrieblicher Sicherheitscheck ist keine Produktkonformitätsbewertung.</p>
+<p><strong>Unsicherheit:</strong> Dies ist eine Normungsentwicklung, kein neuer Gesetzesakt. CRA Artikel 27 verlangt für die Konformitätsvermutung eine Amtsblattreferenz und begrenzt sie auf erfasste Anforderungen. Eine solche Referenz ist hier nicht belegt; ihre sichere Abwesenheit ebenso wenig. Keine neue allgemeine Schweizer KMU-Pflicht folgt daraus. <sup class="ref-link"><a href="#ref-12">[12]</a></sup></p>
+<p><strong>Pflegevormerkung:</strong> Keine Vollpflege in KW 47; die Entwürfe behalten Quellenstand <strong>15. November 2026</strong>. Nächste Vollpflege: <strong>29. November 2026, KW 48</strong> – mit Fokus auf Sicherheitscheck, Lieferantennachweise, Wiederherstellung, Phishingprävention, Passkey-Recovery und CRA-Abgrenzung.</p>
+<h2 id="references">References</h2>
+        
+      <div class="references-section">
+        <h3 id="quellen-und-referenzen" style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">
+          Geprüfte Primärquellen &amp; Rechtsreferenzen
+        </h3>
+        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
+          Alle behördlichen Vorgaben, Gesetzesartikel und technischen Richtlinien wurden im Rahmen der DKSchV-Quellenprüfung verifiziert:
+        </p>
+        <ul class="references-list">
+    
+        <li class="ref-item" id="ref-1">
+          <span class="ref-num">[1]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/warnung-java-2-de" target="_blank" rel="noopener noreferrer">BACS: Java4Shell – Kritische Schwachstelle in Java, 18. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-2">
+          <span class="ref-num">[2]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://www.oracle.com/security-alerts/cspunov2026.html" target="_blank" rel="noopener noreferrer">Oracle: Critical Security Patch Update Advisory – November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-3">
+          <span class="ref-num">[3]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://openjdk.org/groups/vulnerability/advisories/2026-11-17" target="_blank" rel="noopener noreferrer">OpenJDK: Vulnerability Advisory vom 17. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-4">
+          <span class="ref-num">[4]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🛡️ CISA US</span>
+            <a href="https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json" target="_blank" rel="noopener noreferrer">CISA: Offizieller KEV-JSON-Katalog, catalogVersion 2026.11.20</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-5">
+          <span class="ref-num">[5]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495" target="_blank" rel="noopener noreferrer">Broadcom: VMSA-2026-0009.1, vCenter, Tools und SDDC Manager</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-6">
+          <span class="ref-num">[6]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://metr.org/notes/2026-11-16-measuring-alignment-eval-tells/" target="_blank" rel="noopener noreferrer">METR: Measuring alignment eval tells, 16. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-7">
+          <span class="ref-num">[7]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🇨🇭 BACS Bund</span>
+            <a href="https://www.bacs.admin.ch/de/26w46-de" target="_blank" rel="noopener noreferrer">BACS: Woche 46 – Personalisiertes Phishing aufgrund von abgeflossenen Daten, 17. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-8">
+          <span class="ref-num">[8]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://techcommunity.microsoft.com/blog/microsoft-entra-blog/ai-is-changing-access-see-how-microsoft-entra-helps-you-stay-ahead-/4556456" target="_blank" rel="noopener noreferrer">Microsoft Entra: Ignite-Ankündigungen vom 17. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-9">
+          <span class="ref-num">[9]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🟦 Microsoft</span>
+            <a href="https://learn.microsoft.com/en-us/entra/verified-id/high-assurance" target="_blank" rel="noopener noreferrer">Microsoft Learn: High Assurance und Vorschaugrenzen</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-10">
+          <span class="ref-num">[10]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://digital-strategy.ec.europa.eu/en/news/first-european-standard-published-support-cyber-resilience-act" target="_blank" rel="noopener noreferrer">EU-Kommission: Erste europäische Norm zur Unterstützung des CRA, 19. November 2026</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-11">
+          <span class="ref-num">[11]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/" target="_blank" rel="noopener noreferrer">CEN-CENELEC: Erste CRA-Normen EN 40000-1-1 und EN 40000-1-2 verfügbar</a>
+          </div>
+        </li>
+      
+        <li class="ref-item" id="ref-12">
+          <span class="ref-num">[12]</span>
+          <div>
+            <span style="font-size: 11px; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 3px; margin-right: 6px;">🔗 Primärquelle</span>
+            <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847" target="_blank" rel="noopener noreferrer">EUR-Lex: Cyber Resilience Act, Verordnung EU 2024/2847</a>
+          </div>
+        </li>
+      
+        </ul>
+      </div>
+    
+        
+        <div style="margin-top: 40px; text-align: center;">
+          <a href="../../wissen.html" class="btn btn-secondary">&larr; Zurück zur Übersicht aller Ratgeber &amp; Checklisten</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../../assets/images/dkschv_logo_dark.svg" alt="DKSchV Schweiz" style="height: 42px;">
+          <p>DKSchV Dini ist Ihr spezialisierter Schweizer Partner für Cyber-Security, Sicherheitsanalysen, IT-Notfallplanung und Datenschutz nach Schweizer Standard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Dienstleistungen</h4>
+          <ul class="footer-links">
+            <li><a href="../../sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
+            <li><a href="../../risikomanagement.html">Risikomanagement</a></li>
+            <li><a href="../../notfallplanung.html">Notfallplanung</a></li>
+            <li><a href="#" onclick="openPortalLoginModal(event)">🔒 Kunden-Login</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul class="footer-links">
+            <li><a href="../../ueber-uns.html">Über uns</a></li>
+            <li><a href="../../kontakt.html">Kontakt &amp; Standort</a></li>
+            <li><a href="../../impressum.html">Impressum</a></li>
+            <li><a href="../../datenschutz.html">Datenschutz (nDSG)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Standort &amp; Notfallkontakt</h4>
+          <p style="font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 12px;">
+            <strong>DKSchV Dini</strong><br>Andreas Dini<br>Bammattenweg 19<br>CH-3904 Naters (Wallis)
+          </p>
+          <p style="font-size: 14px; color: #94a3b8;">
+            E-Mail: <a href="mailto:info@dkschv.ch" style="color: #ffffff;">info@dkschv.ch</a><br>
+            Telefon: <a href="tel:+41798446669" style="color: #ffffff;">+41 79 844 66 69</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
+        <div class="footer-legal-links">
+          <a href="#" onclick="openPortalLoginModal(event)" style="color: #2dd4bf; font-weight: 600;">🔒 Mandanten-Login</a>
+          <a href="../../impressum.html">Impressum</a>
+          <a href="../../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/portal-auth.js"></script>
+  
+</body>
+</html>

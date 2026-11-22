@@ -1,0 +1,28 @@
+{
+  "schedules": [
+    {
+      "agentTaskMode": "max",
+      "connectorAccounts": {},
+      "createdAt": "2026-09-20T09:43:49.610Z",
+      "cronExpression": "0 0 9 * * 0",
+      "detail": "Erstelle jeden Sonntag eine kompakte Zusammenfassung relevanter Branchennews zu IT-Sicherheit und KI für DKSchV. Führe zusätzlich in jeder geraden ISO-Kalenderwoche die zweiwöchentliche Blogpflege aus. Verwende /home/ubuntu/dkschv-audit/blog-paket/maintenance-manifest.md und die 12 Artikel samt Arbeitsmitteln als verbindliche Arbeitsgrundlage. Prüfe vorrangig offizielle Primärquellen von BACS, EDÖB, Fedlex, Microsoft, NIST, CISA, EU-Kommission und EUR-Lex. Dokumentiere je Artikel Quellenstand, Änderungen und betroffene Passagen. Aktualisiere lokale Entwürfe sowie Metadaten, interne Links und CMS-Manifest; führe danach den Validator /home/ubuntu/dkschv-audit/blog-paket/qa/validate_package.py aus. Für die Website dkschv.ch im Webador-Projekt DKSchV Pro gilt: Normale Editoränderungen werden sofort live. Ändere daher nur bereits freigegebene öffentliche Beiträge automatisch. Veröffentliche einen neuen Beitrag nur an oder nach seinem vorgesehenen Datum und nur wenn alle Quellen erreichbar, Fakten widerspruchsfrei, Links geprüft, keine ungelösten Fachprüfungsmarker vorhanden und CMS-Zugang authentifiziert ist. Bei rechtlichen, datenschutzrechtlichen, forensischen, Microsoft-Tenant- oder NIS2/DORA-Einzelfragen niemals eine Fachfreigabe vortäuschen; bei Unsicherheit den Beitrag als Entwurf belassen, nichts live ändern und den Benutzer mit genauer Blocker-Liste informieren. Wenn der CMS-Zugang fehlt, lokale Entwürfe vollständig aktualisieren und die Live-Synchronisierung als blockiert melden. Jede erfolgreiche Live-Änderung mit URL, Zeitpunkt, geänderten Abschnitten und Quellen protokollieren.",
+      "isEnable": true,
+      "isRunModeSelected": true,
+      "locale": "de",
+      "name": "DKSchV News und Blogpflege",
+      "runAsNewTask": false,
+      "runMode": "full_auto",
+      "scheduleTime": {
+        "date": [
+          0
+        ],
+        "second": 32400,
+        "type": "SCHEDULE_TYPE_WEEKLY"
+      },
+      "status": "active",
+      "taskUid": "YG5huP2Z7TRFEXjibtJDsi",
+      "timezone": "Europe/Zurich"
+    }
+  ],
+  "total": 1
+}

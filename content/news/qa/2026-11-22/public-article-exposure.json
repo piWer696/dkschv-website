@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-22T09:04:49.482002+01:00",
+  "requested_url": "https://www.dkschv.ch/wissen/backup-wiederherstellung-testen",
+  "method": "GET ohne Cookies, Credentials oder Authorization; keine Schutzumgehung",
+  "status": 200,
+  "final_url": "https://www.dkschv.ch/wissen/backup-wiederherstellung-testen",
+  "safe_headers": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Server": "Apache",
+    "Last-Modified": "Sun, 15 Nov 2026 09:54:05 GMT",
+    "Cache-Control": null
+  },
+  "text_characters": 26806,
+  "flags": {
+    "kunden_login_hinweis": true,
+    "mandanten_bereich": true,
+    "fachpruefung": true,
+    "wiederherstellung": true,
+    "forensik": true,
+    "quellenstand_1_november": true,
+    "quellenstand_15_november": true
+  },
+  "section_headings_count": 16,
+  "external_source_links_count": 15,
+  "qualification": "Ein HTTP-Status allein beweist weder Zugriffsschutz noch Fachfreigabe. Nur Inhaltsmerkmale; keine Passwortwerte oder Secrets untersucht/gespeichert."
+}
