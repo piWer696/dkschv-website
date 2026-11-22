@@ -160,9 +160,11 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
 }
 
 .navbar {
@@ -270,14 +272,17 @@ a {
 }
 
 .btn-primary {
-  background: var(--teal-accent);
+  background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
   color: #ffffff;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  letter-spacing: -0.01em;
 }
 
 .btn-primary:hover {
-  background: #115e59;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.3);
+  background: linear-gradient(135deg, #0369a1 0%, #115e59 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .btn-secondary {
@@ -353,11 +358,26 @@ a {
    ========================================================================== */
 
 .hero-section {
-  background: radial-gradient(circle at 80% 20%, #1e293b 0%, #0a0f1d 70%);
+  background: 
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(14, 165, 233, 0.16), transparent 70%),
+    radial-gradient(circle at 85% 25%, rgba(45, 212, 191, 0.1), transparent 50%),
+    linear-gradient(180deg, #070c17 0%, #0d1527 100%);
   color: #ffffff;
-  padding: 80px 0 90px;
+  padding: 85px 0 95px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 35%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 35%, transparent 75%);
 }
 
 .hero-grid {
@@ -380,7 +400,10 @@ a {
 }
 
 .hero-highlight {
-  color: #2dd4bf;
+  background: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 .hero-desc {
@@ -416,12 +439,15 @@ a {
 
 /* Hero Card Preview */
 .hero-card-preview {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(13, 21, 39, 0.82);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-top: 2px solid #38bdf8;
   border-radius: var(--radius-lg);
   padding: 28px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
 }
 
 .hero-card-header {
@@ -463,9 +489,11 @@ a {
 }
 
 .metric-value {
-  font-size: 14px;
-  font-weight: 700;
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 13.5px;
+  font-weight: 600;
   color: #2dd4bf;
+  letter-spacing: 0.5px;
 }
 
 /* ==========================================================================
@@ -516,20 +544,38 @@ a {
 }
 
 .service-card {
+  position: relative;
+  overflow: hidden;
   background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
   padding: 32px;
-  transition: var(--transition);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s, border-color 0.25s;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0284c7, transparent);
+  opacity: 0;
+  transition: opacity 0.25s;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: #cbd5e1;
+  transform: translateY(-5px);
+  border-color: #94a3b8;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+.service-card:hover::before {
+  opacity: 1;
 }
 
 .service-icon-box {
