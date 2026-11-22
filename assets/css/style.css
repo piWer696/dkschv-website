@@ -103,7 +103,11 @@ a {
 .top-trust-tags {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: clamp(8px, 1.1vw, 14px);
+}
+
+.nav-menu li {
+  white-space: nowrap;
 }
 
 .top-trust-tag {
@@ -184,11 +188,16 @@ a {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 16px;
+  gap: clamp(8px, 1.1vw, 14px);
+}
+
+.nav-menu li {
+  white-space: nowrap;
 }
 
 .nav-link {
-  font-size: 14.5px;
+  white-space: nowrap;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text-muted);
   transition: var(--transition);
@@ -213,6 +222,7 @@ a {
 }
 
 .nav-cta-btn {
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -603,7 +613,11 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: clamp(8px, 1.1vw, 14px);
+}
+
+.nav-menu li {
+  white-space: nowrap;
 }
 
 .suite-title {
@@ -922,6 +936,7 @@ textarea.form-control {
 }
 
 .footer-links a {
+  white-space: nowrap;
   color: #94a3b8;
   transition: var(--transition);
 }
@@ -1020,6 +1035,7 @@ textarea.form-control {
 
 /* Nav Portal Button */
 .nav-portal-btn {
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 6px;

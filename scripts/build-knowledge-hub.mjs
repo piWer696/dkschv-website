@@ -493,7 +493,7 @@ function renderHeader(activeNav = 'wissen', relativeRoot = '.') {
           <li><a href="${relativeRoot}/sicherheitsanalyse.html" class="nav-link ${activeNav === 'sicherheitsanalyse' ? 'active' : ''}">Sicherheitsanalyse</a></li>
           <li><a href="${relativeRoot}/risikomanagement.html" class="nav-link ${activeNav === 'risikomanagement' ? 'active' : ''}">Risikomanagement</a></li>
           <li><a href="${relativeRoot}/notfallplanung.html" class="nav-link ${activeNav === 'notfallplanung' ? 'active' : ''}">Notfallplanung</a></li>
-          <li><a href="${relativeRoot}/ueber-uns.html" class="nav-link ${activeNav === 'ueber-uns' ? 'active' : ''}">Über uns</a></li>
+          <li><a href="${relativeRoot}/ueber-uns.html" class="nav-link ${activeNav === 'ueber-uns' ? 'active' : ''}">Über&nbsp;uns</a></li>
           <li><a href="${relativeRoot}/kontakt.html" class="nav-link ${activeNav === 'kontakt' ? 'active' : ''}">Kontakt</a></li>
           <li>
             <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
@@ -534,7 +534,7 @@ function renderFooter(relativeRoot = '.') {
         <div class="footer-col">
           <h4>Unternehmen</h4>
           <ul class="footer-links">
-            <li><a href="${relativeRoot}/ueber-uns.html">Über uns</a></li>
+            <li><a href="${relativeRoot}/ueber-uns.html">Über&nbsp;uns</a></li>
             <li><a href="${relativeRoot}/kontakt.html">Kontakt &amp; Standort</a></li>
             <li><a href="${relativeRoot}/impressum.html">Impressum</a></li>
             <li><a href="${relativeRoot}/datenschutz.html">Datenschutz (nDSG)</a></li>
