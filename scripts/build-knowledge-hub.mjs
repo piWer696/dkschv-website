@@ -909,8 +909,71 @@ Object.values(resourcesByPrefix).forEach(res => {
 console.log(`✅ ${Object.keys(resourcesByPrefix).length} druckbare Arbeitsvorlagen unter wissen/resources/<slug>.html generiert`);
 
 // 4. Generate Weekly News Page in /wissen/news/
+function extractNewsHighlights(markdownBody) {
+  const sections = markdownBody.split(/^##\s+/m).slice(1);
+  const items = [];
+  const iconMap = [
+    { match: /java|vulnerab|cve|schwachstelle|patch/i, icon: '🛡️' },
+    { match: /vmware|vcenter|cloud|server|infrastruktur|m365/i, icon: '🖥️' },
+    { match: /ki|agent|modell|metr/i, icon: '🤖' },
+    { match: /phishing|bacs|betrug|mail/i, icon: '🎣' },
+    { match: /passkey|entra|authenti|mfa/i, icon: '🔑' },
+    { match: /cra|norm|dora|nis2|gesetz|compliance/i, icon: '📋' },
+    { match: /kühl|iot|danfoss/i, icon: '❄️' },
+    { match: /screenconnect|fernwartung/i, icon: '🔍' },
+  ];
+
+  for (const sec of sections) {
+    const lines = sec.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+    if (!lines.length) continue;
+    const rawHeading = lines[0].replace(/^\d+\.\s*/, '').trim();
+    if (rawHeading.toLowerCase().includes('vormerkung') || rawHeading.toLowerCase().includes('reference')) continue;
+
+    let titlePart = rawHeading;
+    let descPart = '';
+    if (rawHeading.includes(':')) {
+      const parts = rawHeading.split(':');
+      titlePart = parts[0].trim();
+      descPart = parts.slice(1).join(':').trim();
+    }
+
+    const bodyLines = lines.slice(1).filter(l => !l.startsWith('#') && !l.startsWith('!'));
+    let summary = '';
+    if (bodyLines.length > 0) {
+      const detailLine = bodyLines.find(l => !l.startsWith('**KMU') && !l.startsWith('**Unsicherheit') && !l.startsWith('[')) || bodyLines[0];
+      summary = detailLine
+        .replace(/\[\d+\]/g, '')
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/^[0-9./]+\s*(?:November|Dezember|Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober)?:\s*/i, '')
+        .replace(/^Neu am [0-9./]+\s*(?:November|Dezember)?:\s*/i, '')
+        .trim();
+      if (summary.length > 120) {
+        summary = summary.slice(0, 117).trim() + '...';
+      }
+    }
+
+    let icon = '🛡️';
+    const textToMatch = `${titlePart} ${descPart} ${summary}`;
+    for (const mapping of iconMap) {
+      if (mapping.match.test(textToMatch)) {
+        icon = mapping.icon;
+        break;
+      }
+    }
+
+    items.push({
+      topic: titlePart,
+      summary: descPart ? `${descPart}; ${summary}` : summary,
+      icon
+    });
+    if (items.length >= 6) break;
+  }
+  return items;
+}
+
 const newsFiles = fs.readdirSync(NEWS_DIR).filter(f => f.endsWith('_DKSchV_Branchennews.md')).sort().reverse();
 let latestNewsPoints = [];
+let latestNewsHighlights = [];
 let latestNewsTitle = 'DKSchV-Branchennews: Sonntagsausgabe';
 let latestNewsDate = '15.11.2026';
 let latestNewsKW = 'KW 46';
@@ -933,6 +996,10 @@ if (newsFiles.length > 0) {
 
   // Extract quick highlights from H2s in news
   latestNewsPoints = headings.filter(h => h.level === 2 && !h.title.includes('Vormerkung') && !h.title.includes('References')).slice(0, 5);
+  latestNewsHighlights = extractNewsHighlights(body);
+
+  const newsMetaDesc = `Wöchentliche Cyber-Security Lagebeurteilung für Schweizer KMU (${latestNewsKW}, ${latestNewsDate}): ` +
+    (latestNewsHighlights.length > 0 ? latestNewsHighlights.slice(0, 4).map(h => h.topic).join(', ') : 'Aktuelle BACS- und KEV-Warnungen') + '.';
 
   const newsHtml = `<!DOCTYPE html>
 <html lang="de-CH">
@@ -940,7 +1007,7 @@ if (newsFiles.length > 0) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cyber-Security Branchennews ${latestNewsKW} (${latestNewsDate}) | DKSchV Schweiz</title>
-  <meta name="description" content="Wöchentliche Lagebeurteilung für Schweizer KMU: Outlook- &amp; Chromium-Zero-Days, BACS-Warnung Kühlsteuerungen, ScreenConnect-SCKit und KI-Fakeshops vor Black Friday.">
+  <meta name="description" content="${newsMetaDesc}">
   <link rel="icon" type="image/png" href="../../assets/images/dkschv_icon.png">
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
@@ -1058,26 +1125,11 @@ function generateCatalogHtml(relativeRoot = '.') {
         </p>
 
         <div class="news-points">
+          ${latestNewsHighlights.map(item => `
           <div class="news-point-item">
-            <span>🛡️</span>
-            <div><strong>Outlook &amp; Chromium:</strong> CISA KEV Zero-Days (CVE-2026-124194 &amp; CVE-2026-125350); sofortige Build- und Patchprüfung.</div>
-          </div>
-          <div class="news-point-item">
-            <span>❄️</span>
-            <div><strong>BACS Kühlsteuerungen:</strong> Warnung vor exponierten Kälteanlagen und Danfoss-Schwachstellen in Schweizer Betrieben.</div>
-          </div>
-          <div class="news-point-item">
-            <span>🔍</span>
-            <div><strong>ScreenConnect SCKit:</strong> Gezielte Angriffe auf authentifizierte Techniker-Sessions und Fernwartungszugänge.</div>
-          </div>
-          <div class="news-point-item">
-            <span>🤖</span>
-            <div><strong>Coding-Agenten:</strong> Vergiftete Nachtrainingsdaten manipulieren Modellwerkzeuge und Entwickler-Workflows.</div>
-          </div>
-          <div class="news-point-item">
-            <span>🛒</span>
-            <div><strong>BACS Phishing-Warnung:</strong> Zunahme KI-generierter Fake-Shops und Paket-Phishing vor Black Friday.</div>
-          </div>
+            <span>${item.icon}</span>
+            <div><strong>${item.topic}:</strong> ${item.summary}</div>
+          </div>`).join('')}
         </div>
 
         <a href="${relativeRoot === '.' ? `wissen/news/${latestNewsFilename}` : `./news/${latestNewsFilename}`}" class="btn btn-primary" style="background: var(--teal-accent); display: inline-flex; align-items: center; gap: 8px;">

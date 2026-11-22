@@ -101,10 +101,32 @@ except Exception as err:
 
 # 3. Live-Verifizierung über HTTPS
 print("\n🔍 Führe Live-Verifikation über HTTPS durch...")
+
+news_dir = ROOT_DIR / "content" / "news"
+news_files = sorted(list(news_dir.glob("*_DKSchV_Branchennews.md")), reverse=True)
+latest_date = "22.11.2026"
+latest_kw = "KW 47"
+latest_slug = "2026-11-22-branchennews.html"
+
+if news_files:
+    latest_file = news_files[0]
+    import re
+    m = re.match(r"^(\d{4}-\d{2}-\d{2})", latest_file.name)
+    if m:
+        latest_slug = f"{m.group(1)}-branchennews.html"
+    with open(latest_file, "r", encoding="utf-8") as f:
+        file_text = f.read()
+        m_date = re.search(r'datum:\s*["\']?([^"\'\r\n]+)', file_text)
+        if m_date:
+            latest_date = m_date.group(1).strip()
+        m_kw = re.search(r'kalenderwoche:\s*["\']?([^"\'\r\n]+)', file_text)
+        if m_kw:
+            latest_kw = m_kw.group(1).strip()
+
 urls_to_test = [
-    ("https://dkschv.ch/wissen/", ["Mandantenbereich", "KW 46", "15.11.2026"]),
-    ("https://dkschv.ch/wissen/news/", ["Branchennews KW 46", "15.11.2026"]),
-    ("https://dkschv.ch/wissen/news/2026-11-15-branchennews.html", ["Outlook und Chromium", "Kühlsteuerungen", "ScreenConnect"]),
+    ("https://dkschv.ch/wissen/", ["Mandantenbereich", latest_kw, latest_date]),
+    ("https://dkschv.ch/wissen/news/", [f"Branchennews {latest_kw}", latest_date]),
+    (f"https://dkschv.ch/wissen/news/{latest_slug}", [latest_kw, latest_date]),
     ("https://dkschv.ch/wissen/ransomware-erste-60-minuten.html", ["gated-content", "is-locked"]),
     ("https://dkschv.ch/wissen/resources/01-60-minuten-checkliste.html", ["gated-content", "is-locked"]),
 ]
