@@ -15,8 +15,14 @@ echo "=========================================================="
 echo "  DKSchV Schweiz · Sonntags-Blog Publikation"
 echo "=========================================================="
 
-# Führe Node Importer & Generator aus
-node scripts/import-sunday-package.mjs "$@"
+if [ -n "$1" ]; then
+  # Manuell vorgegebene ZIP-Datei
+  node scripts/import-sunday-package.mjs "$@"
+  python3 scripts/deploy-to-infomaniak.py
+else
+  # Automatischer Multi-Geräte Scanner (Handy, uConsole, Laptop, Kali-Tower)
+  python3 scripts/auto-sunday-scanner.py
+fi
 
 echo "=========================================================="
 echo "  Publikation erfolgreich abgeschlossen!"
