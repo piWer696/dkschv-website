@@ -1,176 +1,577 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
 <meta charset="UTF-8">
-<title>Sicherheits-Portfolio Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DKSchV Schweiz // Datensicherheits-Blueprints für Selbstständige, Praxen & Familien</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
+  :root {
+    --bg-main: #0b1120;
+    --bg-card: #131c31;
+    --border-color: #233252;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-blue: #38bdf8;
+    --accent-green: #10b981;
+    --accent-indigo: #6366f1;
+    --danger-red: #ef4444;
+  }
+
+  * { box-sizing: border-box; }
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #0f172a;
-    color: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
     margin: 0;
-    padding: 40px 20px;
+    padding: 0;
+  }
+
+  /* Navigation Bar */
+  .navbar {
+    background: #080d19;
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 24px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
   }
-  .container {
-    max-width: 1100px;
-    width: 100%;
-  }
-  h1 {
-    font-size: 28px;
+
+  .nav-brand {
+    font-size: 16px;
     font-weight: 800;
-    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
-  p.sub {
-    color: #94a3b8;
-    margin-top: 0;
-    margin-bottom: 32px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-  }
-  .card {
+
+  .nav-badge {
     background: #1e293b;
     border: 1px solid #334155;
+    color: var(--accent-blue);
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    margin-left: 20px;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: #ffffff; }
+
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-blue);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-title span {
+    color: var(--accent-blue);
+  }
+
+  .hero-lead {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 820px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+  }
+
+  /* Reality Check / Spiegel-Test Box */
+  .reality-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 40px 0 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .reality-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .reality-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+  }
+
+  .reality-header p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .reality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .reality-card {
+    background: #0d1527;
+    border: 1px solid #1a2744;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .reality-card-icon {
+    font-size: 20px;
+    color: #f59e0b;
+    margin-bottom: 12px;
+  }
+
+  .reality-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+
+  .reality-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Product Section */
+  .section-title-wrap {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+  }
+
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-bottom: 70px;
+  }
+
+  .product-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.2s, border-color 0.2s;
   }
-  .card:hover {
+
+  .product-card:hover {
     transform: translateY(-4px);
-    border-color: #38bdf8;
+    border-color: var(--accent-blue);
   }
+
+  .product-card.featured {
+    border-color: #0284c7;
+    box-shadow: 0 0 25px rgba(2, 132, 199, 0.2);
+  }
+
   .card-img {
     width: 100%;
-    height: 240px;
+    height: 220px;
     object-fit: cover;
     object-position: top;
-    background: #0f172a;
-    border-bottom: 1px solid #334155;
+    background: #0b1120;
+    border-bottom: 1px solid var(--border-color);
   }
+
   .card-body {
-    padding: 20px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
-  .badge {
+
+  .card-badge {
     display: inline-block;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 4px;
     margin-bottom: 12px;
     width: fit-content;
   }
-  .badge-freelance { background: #0284c7; color: #ffffff; }
+
+  .badge-freelance { background: #0369a1; color: #ffffff; }
   .badge-family { background: #059669; color: #ffffff; }
-  .badge-medical { background: #0ea5e9; color: #ffffff; }
+  .badge-medical { background: #4f46e5; color: #ffffff; }
+
   .card-title {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 700;
-    margin: 0 0 8px 0;
+    margin: 0 0 10px 0;
+    color: #ffffff;
   }
+
   .card-desc {
     font-size: 13.5px;
-    color: #94a3b8;
+    color: var(--text-secondary);
     line-height: 1.5;
-    margin: 0 0 18px 0;
+    margin: 0 0 16px 0;
+  }
+
+  .card-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
     flex-grow: 1;
   }
-  .price {
-    font-size: 22px;
-    font-weight: 800;
-    color: #38bdf8;
-    margin-bottom: 16px;
+
+  .card-highlights li {
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
   }
-  .actions {
+
+  .card-highlights li i {
+    color: var(--accent-green);
+    margin-top: 3px;
+    font-size: 11px;
+  }
+
+  .price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 18px;
+    border-top: 1px solid #1a2744;
+    padding-top: 16px;
+  }
+
+  .price-amount {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+
+  .price-note {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .card-actions {
     display: flex;
     gap: 10px;
   }
+
   .btn {
     flex: 1;
     text-align: center;
-    padding: 10px 14px;
+    padding: 11px 14px;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 600;
     text-decoration: none;
-    transition: background 0.15s;
+    transition: all 0.15s;
+    cursor: pointer;
   }
+
   .btn-pdf {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #ffffff;
+  }
+
+  .btn-pdf:hover {
     background: #334155;
+  }
+
+  .btn-buy {
+    background: var(--accent-blue);
+    color: #0b1120;
+    font-weight: 700;
+  }
+
+  .btn-buy:hover {
+    background: #7dd3fc;
+  }
+
+  /* No-Bullshit Guarantee */
+  .guarantee-box {
+    background: #0d1527;
+    border: 1px solid #1a2744;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .guarantee-box h3 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
     color: #ffffff;
   }
-  .btn-pdf:hover { background: #475569; }
-  .btn-stripe {
-    background: #6366f1;
-    color: #ffffff;
+
+  .guarantee-box p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
   }
-  .btn-stripe:hover { background: #4f46e5; }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+  }
+
+  footer a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .hero-title { font-size: 28px; }
+    .hero-lead { font-size: 16px; }
+    .card-actions { flex-direction: column; }
+  }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>Dein Sicherheits-Portfolio &amp; Checkout Hub</h1>
-  <p class="sub">Alle 3 digitalen Produkte im direkten Zugriff — Klicke auf PDF ansehen oder teste den Stripe Checkout.</p>
-
-  <div class="grid">
-    <!-- Card 1 -->
-    <div class="card">
-      <img src="preview-selbststaendige.png" alt="Selbstständige" class="card-img">
-      <div class="card-body">
-        <span class="badge badge-freelance">Selbstständige &amp; Freelancer</span>
-        <div class="card-title">Der Datensicherheits-Blueprint</div>
-        <div class="card-desc">Vollverschlüsselung, Cryptomator Zero-Knowledge Cloud, lautloses 3-2-1 Backup &amp; Bitwarden Send.</div>
-        <div class="price">39,00 €</div>
-        <div class="actions">
-          <a href="Datensicherheits-Blueprint-Selbststaendige.pdf" target="_blank" class="btn btn-pdf">PDF öffnen</a>
-          <a href="https://buy.stripe.com/test_8x24gyfStcT24u9dMDg7e03" target="_blank" class="btn btn-stripe">Stripe Checkout</a>
-        </div>
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+      <a href="https://dkschv.ch" class="nav-brand">
+        <span>🛡️ DKSchV Schweiz</span>
+        <span class="nav-badge">🇨🇭 nDSG &amp; IT-Sicherheit</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://dkschv.ch"><i class="fa-solid fa-arrow-left"></i> Zur Hauptseite</a>
+        <a href="https://dkschv.ch/ueber-uns.html">Über uns</a>
+        <a href="https://dkschv.ch/kontakt.html">Kontakt</a>
       </div>
     </div>
+  </header>
 
-    <!-- Card 2 -->
-    <div class="card">
-      <img src="preview-familie.png" alt="Familie" class="card-img">
-      <div class="card-body">
-        <span class="badge badge-family">Familie &amp; Zuhause</span>
-        <div class="card-title">Der Digitale Familien-Schutzbrief</div>
-        <div class="card-desc">Fotos dauerhaft sichern, gemeinsamer Familientresor, werbe- und jugendfreies Heimnetz via DNS &amp; Notfallblatt.</div>
-        <div class="price">29,00 €</div>
-        <div class="actions">
-          <a href="Digitaler-Familien-Schutzbrief.pdf" target="_blank" class="btn btn-pdf">PDF öffnen</a>
-          <a href="https://buy.stripe.com/test_00w3cudKlaKU8Kp6kbg7e04" target="_blank" class="btn btn-stripe">Stripe Checkout</a>
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-tag">Praxisorientierte Leitfäden &amp; Vorlagen</div>
+      <h1 class="hero-title">
+        „Warum sollte sich ein Hacker für <span>meine kleine Firma</span> interessieren?“
+      </h1>
+      <p class="hero-lead">
+        Die ehrliche Antwort: <strong>Einem Hacker ist völlig egal, wer du bist.</strong> Automatisierte Scanner suchen blind nach offenen Lücken. Doch noch viel häufiger ist der ganz normale Alltag: Der Laptop wird im Zug vergessen, die Festplatte gibt den Geist auf oder die Kaffeetasse kippt um.
+      </p>
+    </section>
+
+    <!-- Reality Check / 3-Fragen-Spiegel-Test -->
+    <section class="reality-box">
+      <div class="reality-header">
+        <h2>Der 60-Sekunden-Realitätscheck</h2>
+        <p>Kannst du diese 3 Fragen mit gutem Gewissen mit „Ja“ beantworten?</p>
+      </div>
+
+      <div class="reality-grid">
+        <div class="reality-card">
+          <div class="reality-card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>1. Der Diebstahl-Test</h3>
+          <p>
+            Wenn jemand heute Abend deinen Laptop mitnimmt: Braucht der Finder 2 Klicks, um deine Kundendaten zu lesen – oder ist die Festplatte so verschlüsselt, dass der Diebstahl nur ein einfacher Sachschaden bleibt?
+          </p>
+        </div>
+
+        <div class="reality-card">
+          <div class="reality-card-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+          <h3>2. Der Feuer- &amp; Wasserschaden-Test</h3>
+          <p>
+            Du machst Backups auf eine externe Festplatte? Liegt diese im selben Büro? Was nützt dir das Backup, wenn es zu einem Einbruch, Wasserschaden oder Brand vor Ort kommt?
+          </p>
+        </div>
+
+        <div class="reality-card">
+          <div class="reality-card-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <h3>3. Der Ernstfall-Test</h3>
+          <p>
+            Hast du jemals testweise eine gelöschte Datei aus deinem Backup wiederhergestellt? Ein Backup, das noch nie im Ernstfall getestet wurde, ist kein Backup, sondern ein Wunschgedanke.
+          </p>
         </div>
       </div>
+    </section>
+
+    <!-- Product Section -->
+    <div class="section-title-wrap">
+      <h2 class="section-title">Wähle deinen passenden Blueprint</h2>
+      <p class="section-subtitle">Einmal in unter 2 Stunden sauber einrichten — danach läuft das System lautlos im Hintergrund.</p>
     </div>
 
-    <!-- Card 3 -->
-    <div class="card">
-      <img src="preview-arztpraxis.png" alt="Arztpraxis" class="card-img">
-      <div class="card-body">
-        <span class="badge badge-medical">Healthcare &amp; Praxen</span>
-        <div class="card-title">Datensicherheits-Paket für Praxen</div>
-        <div class="card-desc">Rechtssicherer 2-Kanal Befundversand, PVS-Ransomware-Abwehr, Rezeptionsschutz &amp; fertige Schweigepflicht-Vorlagen.</div>
-        <div class="price">149,00 €</div>
-        <div class="actions">
-          <a href="Datensicherheits-Paket-Arztpraxen.pdf" target="_blank" class="btn btn-pdf">PDF öffnen</a>
-          <a href="https://buy.stripe.com/test_cNifZgay9dX6e4JbEvg7e05" target="_blank" class="btn btn-stripe">Stripe Checkout</a>
+    <section class="product-grid">
+
+      <!-- Card 1: Selbstständige -->
+      <article class="product-card">
+        <img src="preview-selbststaendige.png" alt="Selbstständige" class="card-img">
+        <div class="card-body">
+          <span class="card-badge badge-freelance">Selbstständige &amp; KMU</span>
+          <h3 class="card-title">Datensicherheits-Blueprint</h3>
+          <p class="card-desc">
+            Schluss mit Haftungsängsten und unverschlüsselten Clouds. Der 4-Schritte-Fahrplan für ein unknackbares, revisionssicheres Arbeitsgerät.
+          </p>
+          <ul class="card-highlights">
+            <li><i class="fa-solid fa-check"></i> BitLocker / FileVault Vollverschlüsselung</li>
+            <li><i class="fa-solid fa-check"></i> Zero-Knowledge Cloudtresor mit Cryptomator</li>
+            <li><i class="fa-solid fa-check"></i> Lautloses 3-2-1 Backup (automatisch im Hintergrund)</li>
+            <li><i class="fa-solid fa-check"></i> Sicheres Teilen von Passwörtern via Bitwarden Send</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Inkl. 1-Seiten-Notfallkarte zum Abheften</strong></li>
+          </ul>
+          <div class="price-wrap">
+            <span class="price-amount">39,00 €</span>
+            <span class="price-note">Einmalzahlung · Sofortiger PDF-Download</span>
+          </div>
+          <div class="card-actions">
+            <a href="Datensicherheits-Blueprint-Selbststaendige.pdf" target="_blank" class="btn btn-pdf"><i class="fa-regular fa-file-pdf"></i> PDF Vorschau</a>
+            <a href="https://buy.stripe.com/test_8x24gyfStcT24u9dMDg7e03" target="_blank" class="btn btn-buy"><i class="fa-solid fa-bolt"></i> Jetzt sichern</a>
+          </div>
         </div>
-      </div>
+      </article>
+
+      <!-- Card 2: Familie -->
+      <article class="product-card">
+        <img src="preview-familie.png" alt="Familien-Schutzbrief" class="card-img">
+        <div class="card-body">
+          <span class="card-badge badge-family">Familie &amp; Zuhause</span>
+          <h3 class="card-title">Digitaler Familien-Schutzbrief</h3>
+          <p class="card-desc">
+            Unersetzliche Erinnerungen dauerhaft retten, Kinder im Heim-WLAN ohne Spionage-Apps schützen und Vorsorge für den Ernstfall treffen.
+          </p>
+          <ul class="card-highlights">
+            <li><i class="fa-solid fa-check"></i> 2-Stufen Foto-Rettung (Schluss mit teuren Abofallen)</li>
+            <li><i class="fa-solid fa-check"></i> Gemeinsamer Familien-Passworttresor</li>
+            <li><i class="fa-solid fa-check"></i> 1-Klick-Router-DNS-Schutz (blockiert Scam &amp; Pornografie)</li>
+            <li><i class="fa-solid fa-check"></i> Nachlasskontakte in iOS &amp; Android richtig hinterlegen</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Inkl. Familien-Notfallblatt für den Notfallordner</strong></li>
+          </ul>
+          <div class="price-wrap">
+            <span class="price-amount">29,00 €</span>
+            <span class="price-note">Einmalzahlung · Sofortiger PDF-Download</span>
+          </div>
+          <div class="card-actions">
+            <a href="Digitaler-Familien-Schutzbrief.pdf" target="_blank" class="btn btn-pdf"><i class="fa-regular fa-file-pdf"></i> PDF Vorschau</a>
+            <a href="https://buy.stripe.com/test_00w3cudKlaKU8Kp6kbg7e04" target="_blank" class="btn btn-buy"><i class="fa-solid fa-bolt"></i> Jetzt sichern</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Arztpraxis (Featured) -->
+      <article class="product-card featured">
+        <img src="preview-arztpraxis.png" alt="Arztpraxen & Therapeuten" class="card-img">
+        <div class="card-body">
+          <span class="card-badge badge-medical">Healthcare &amp; Praxen</span>
+          <h3 class="card-title">Paket für Arztpraxen &amp; Therapeuten</h3>
+          <p class="card-desc">
+            Vermeide strafrechtliche Risiken (§ 203 StGB / Art. 321 StGB). Befundversand, Empfangsschutz und PVS-Ransomware-Abwehr mit fertigen Vorlagen.
+          </p>
+          <ul class="card-highlights">
+            <li><i class="fa-solid fa-check"></i> Rechtssicherer 2-Kanal Befundversand per Mail &amp; SMS</li>
+            <li><i class="fa-solid fa-check"></i> Rezeptionsschutz (Blickschutzfilter &amp; Autolock-Regeln)</li>
+            <li><i class="fa-solid fa-check"></i> Manipulation-sichere 3-Medien PVS-Datensicherung</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Vorlage A:</strong> Verpflichtung zum Patientengeheimnis</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Vorlage B:</strong> Praxis-Notfallplan bei Trojaner-Befall</li>
+          </ul>
+          <div class="price-wrap">
+            <span class="price-amount">149,00 €</span>
+            <span class="price-note">Einmalzahlung · Betriebsausgabe · Sofort-Download</span>
+          </div>
+          <div class="card-actions">
+            <a href="Datensicherheits-Paket-Arztpraxen.pdf" target="_blank" class="btn btn-pdf"><i class="fa-regular fa-file-pdf"></i> PDF Vorschau</a>
+            <a href="https://buy.stripe.com/test_cNifZgay9dX6e4JbEvg7e05" target="_blank" class="btn btn-buy"><i class="fa-solid fa-bolt"></i> Jetzt sichern</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- No-Bullshit Guarantee -->
+    <section class="guarantee-box">
+      <h3>Das DKSchV No-Bullshit-Versprechen</h3>
+      <p>
+        Keine monatlichen Abo-Fallen. Keine 50-seitigen juristischen Abhandlungen, die niemand versteht. Du erhältst praxiserprobte Klick-für-Klick-Anleitungen, die du oder deine Mitarbeiter sofort umsetzen können.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>
+        &copy; 2026 DKSchV Schweiz · Dini Cyber-Security &amp; Datenschutz · Naters (Wallis)
+      </p>
+      <p>
+        <a href="https://dkschv.ch">Hauptseite</a>
+        <a href="https://dkschv.ch/impressum.html">Impressum</a>
+        <a href="https://dkschv.ch/datenschutz.html">Datenschutz</a>
+        <a href="https://dkschv.ch/kontakt.html">Kontakt</a>
+      </p>
     </div>
-  </div>
-</div>
+  </footer>
 
 </body>
 </html>
