@@ -17,7 +17,30 @@ import urllib.parse
 
 PORT = 8089
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-SECRET_KEY = os.environ.get("DKSCHV_SECRET_KEY", "dkschv-swiss-security-token-key-2026")
+def _load_or_generate_secret():
+    env_secret = os.environ.get("DKSCHV_SECRET_KEY")
+    if env_secret:
+        return env_secret
+    secret_file = os.path.join(BASE_DIR, ".shop_secret")
+    if os.path.exists(secret_file):
+        try:
+            with open(secret_file, "r") as f:
+                s = f.read().strip()
+                if len(s) >= 32:
+                    return s
+        except Exception:
+            pass
+    import secrets
+    new_secret = secrets.token_hex(32)
+    try:
+        with open(secret_file, "w") as f:
+            f.write(new_secret)
+        os.chmod(secret_file, 0o600)
+    except Exception:
+        pass
+    return new_secret
+
+SECRET_KEY = _load_or_generate_secret()
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "")
 STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLISHABLE_KEY", "")
 
