@@ -33,7 +33,7 @@
 
 4. **24/7 Notfall-Triage & Incident Response**:
    - Sofortige Unterstützung bei Verdacht auf Ransomware, Phishing oder Datendiebstahl.
-   - Reaktionszeit-SLA für Erst-Triage: unter 30 Minuten.
+   - Reaktionszeit-SLA für Erst-Triage: 6–24 Stunden.
    - Physische Netzwerk-Isolation, Sicherung flüchtiger Beweise (RAM/Logs), Erpressungs-Verhandlungsstopp und Vorbereitung der gesetzlichen EDÖB-Meldung (Art. 24 revDSG).
    - Notfall-Hotline: +41 79 844 66 69 · E-Mail: info@dkschv.ch (Betreff: P1 Notfall).
 

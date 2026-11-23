@@ -152,11 +152,11 @@ if news_files:
             latest_kw = m_kw.group(1).strip()
 
 urls_to_test = [
-    ("https://dkschv.ch/llms.txt", ["DKSchV Dini", "Andreas Dini", "Naters", "info@dkschv.ch"]),
-    ("https://dkschv.ch/llms-full.txt", ["DKSchV Dini", "Bammattenweg 19", "CHF 1'490"]),
+    ("https://dkschv.ch/llms.txt", ["DKSchV Dini", "Andreas Dini", "Naters", "6–24 Stunden"]),
+    ("https://dkschv.ch/llms-full.txt", ["DKSchV Dini", "Bammattenweg 19", "CHF 1'490", "6–24 Stunden"]),
     ("https://dkschv.ch/robots.txt", ["GPTBot", "PerplexityBot", "sitemap.xml", "llms.txt"]),
     ("https://dkschv.ch/sitemap.xml", ["dkschv.ch", "sicherheitsanalyse.html", "llms.txt"]),
-    ("https://dkschv.ch/", ["Bammattenweg 19", "Naters", "FAQPage", "IT-Sicherheit &amp; revDSG-Audits in Naters"]),
+    ("https://dkschv.ch/", ["Bammattenweg 19", "Naters", "FAQPage", "IT-Sicherheit &amp; revDSG-Audits in Naters", "6–24"]),
     ("https://dkschv.ch/wissen/", ["Mandantenbereich", latest_kw, latest_date]),
     ("https://dkschv.ch/wissen/news/", [f"Branchennews {latest_kw}", latest_date]),
     (f"https://dkschv.ch/wissen/news/{latest_slug}", [latest_kw, latest_date]),

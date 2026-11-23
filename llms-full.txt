@@ -55,7 +55,7 @@ DKSchV Dini (Inhaber: Andreas Dini) ist eine Schweizer Fachberatung für Informa
   - Schutz von Praxisverwaltungssystemen (PVS) und Notfall-Ablaufplan bei Datenabfluss.
 
 ### D. 24/7 Notfall-Triage & Incident Response
-- **SLA**: Erstkontakt und Triage innert unter 30 Minuten bei P1-Vorfällen.
+- **SLA**: Erstkontakt und Triage innert 6–24 Stunden bei P1-Vorfällen.
 - **Notruf**: +41 79 844 66 69 oder E-Mail an info@dkschv.ch mit Betreff «P1 Notfall».
 - **Sofortmassnahmen**:
   - Triage und Isolation: Trennung des Netzwerks zur Verhinderung von Lateral Movement.
