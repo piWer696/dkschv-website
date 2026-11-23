@@ -1,6 +1,8 @@
 # Environment / Credentials
 *.env
 .env*
+.shop_secret
+*.secret
 
 # Deployment archives
 *.zip
