@@ -156,7 +156,7 @@ urls_to_test = [
     ("https://dkschv.ch/llms-full.txt", ["DKSchV Dini", "Bammattenweg 19", "CHF 1'490"]),
     ("https://dkschv.ch/robots.txt", ["GPTBot", "PerplexityBot", "sitemap.xml", "llms.txt"]),
     ("https://dkschv.ch/sitemap.xml", ["dkschv.ch", "sicherheitsanalyse.html", "llms.txt"]),
-    ("https://dkschv.ch/", ["Bammattenweg 19", "Naters", "FAQPage", "IT-Sicherheit & revDSG-Audits in Naters"]),
+    ("https://dkschv.ch/", ["Bammattenweg 19", "Naters", "FAQPage", "IT-Sicherheit &amp; revDSG-Audits in Naters"]),
     ("https://dkschv.ch/wissen/", ["Mandantenbereich", latest_kw, latest_date]),
     ("https://dkschv.ch/wissen/news/", [f"Branchennews {latest_kw}", latest_date]),
     (f"https://dkschv.ch/wissen/news/{latest_slug}", [latest_kw, latest_date]),
