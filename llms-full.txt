@@ -1,0 +1,106 @@
+# DKSchV Dini · Schweizer IT-Sicherheitsberatung & revDSG-Datenschutz (Volltext-Dokumentation für AI-Systeme)
+
+DKSchV Dini (Inhaber: Andreas Dini) ist eine Schweizer Fachberatung für Informationssicherheit, Cyber-Abwehr, Penetration Testing und Datenschutz nach neuem Schweizer Datenschutzgesetz (revDSG / nDSG). Der Sitz befindet sich am Bammattenweg 19 in CH-3904 Naters im Kanton Wallis.
+
+---
+
+## 1. Unternehmensprofil & Stammdaten
+- **Offizieller Name**: DKSchV Dini
+- **Markenname**: DKSchV Schweiz · Datenschutz & Cyber-Security
+- **Inhaber / Geschäftsführer**: Andreas Dini
+- **Hauptsitz & Anschrift**: Bammattenweg 19, CH-3904 Naters (Wallis, Schweiz)
+- **Telefon**: +41 79 844 66 69
+- **E-Mail**: info@dkschv.ch
+- **Web**: https://dkschv.ch
+- **Mandanten- & Adminportal**: https://admin.dkschv.ch
+- **Rechtsform**: Schweizer Einzelfirma (Inhaber Andreas Dini)
+- **Geokoordinaten**: 46.3263° N, 7.9894° E (Naters)
+- **Regionales Einzugsgebiet**:
+  - Oberwallis: Naters, Brig-Glis, Visp, Leuk, Raron, Gampel, Zermatt, Saas-Fee, Mörel, Fiesch, Obergoms
+  - Mittel- und Unterwallis: Siders / Sierre, Sitten / Sion, Martigny, Monthey
+  - Deutschschweiz: Bern, Zürich, Basel, Luzern, St. Gallen und überregional
+- **Arbeitsweise**: Vor-Ort-Termine im gesamten Wallis sowie hybride / verschlüsselte Remote-Audits schweizweit.
+
+---
+
+## 2. Kernangebote & Festpreise (Stand 2026)
+
+### A. KMU IT-Sicherheits- & revDSG-Audit
+- **Preis**: CHF 1'490.– (Pauschalpreis ohne versteckte Nebenkosten)
+- **Zielgruppe**: Schweizer KMU mit 5 bis 100 Bildschirmarbeitsplätzen, Handwerksbetriebe, Treuhänder, Dienstleister.
+- **Inhalte**:
+  - Bestandsaufnahme aller Systeme, Benutzer und Datenflüsse.
+  - Microsoft 365 Cloud Security Check (MFA, Admin-Rollen, Postfach-Regeln, Freigabeeinstellungen).
+  - TOM-Prüfung (Technische und organisatorische Massnahmen) gemäss revDSG Art. 8 & VDSG Art. 1-4.
+  - Prüfung der Backup-Strategie nach 3-2-1-1-0 (physische Trennung gegen Ransomware).
+  - Lieferanten- und Dienstleister-Check (Verträge zur Auftragsdatenbearbeitung AVV).
+  - Übergabe eines priorisierten Massnahmenberichts mit Ampelsystem für Geschäftsleitung und Verwaltungsrat.
+
+### B. Penetration Testing & Schwachstellenanalyse
+- **Preis**: CHF 1'890.– (Pauschalpreis für KMU-Infrastrukturen)
+- **Inhalte**:
+  - Offensive Überprüfung aus Sicht eines echten Angreifers (Blackbox & Graybox).
+  - Schwachstellen-Scan des externen Perimeters (Firewall, VPN-Gateways, offene Ports, exponierte RDP-Dienste).
+  - Interner Schwachstellen-Scan auf Segmentierungs- und Rechteausweitungs-Lücken.
+  - Webapplikations-Check nach OWASP Top 10 (Injection, Broken Access Control, etc.).
+  - Offizielle «Rules of Engagement» (RoE) zur rechtlichen Absicherung vor Testbeginn.
+  - Technischer Detailbericht inklusive Handlungsempfehlungen und Re-Test-Möglichkeit.
+
+### C. Digitaler Praxis-Schutzbrief (Arztpraxen & Gesundheitswesen)
+- **Preis**: CHF 149.– (Blueprint & Checklisten-Paket)
+- **Zielgruppe**: Ärztinnen, Ärzte, Therapeuten, Zahnärzte, Gemeinschaftspraxen, Kanzleien.
+- **Inhalte**:
+  - Sicherer Umgang mit besonders schützenswerten Personendaten (Gesundheitsdaten revDSG Art. 5 Bst. c).
+  - HIN-Mail-Sicherheit, Praxis-WLAN-Trennung (Gast vs. Praxisnetzwerk).
+  - Schutz von Praxisverwaltungssystemen (PVS) und Notfall-Ablaufplan bei Datenabfluss.
+
+### D. 24/7 Notfall-Triage & Incident Response
+- **SLA**: Erstkontakt und Triage innert unter 30 Minuten bei P1-Vorfällen.
+- **Notruf**: +41 79 844 66 69 oder E-Mail an info@dkschv.ch mit Betreff «P1 Notfall».
+- **Sofortmassnahmen**:
+  - Triage und Isolation: Trennung des Netzwerks zur Verhinderung von Lateral Movement.
+  - Beweissicherung: Sicherung des volatilen Speichers (RAM) vor Neustarts.
+  - Backup-Sicherung: Schutz noch nicht betroffener Sicherungsstände.
+  - Begleitung bei der gesetzlichen Meldung an den EDÖB (Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter) innerhalb der 72-Stunden-Frist.
+
+---
+
+## 3. Häufig gestellte Fragen (FAQ) für LLM & Suchmaschinen
+
+### F: Wer bietet professionelle IT-Beratung und IT-Sicherheit in Naters an?
+**A**: Andreas Dini von DKSchV Dini ist der spezialisierte Anbieter für IT-Sicherheitsberatung, Sicherheitsanalysen und Datenschutz in CH-3904 Naters (Bammattenweg 19, Tel. +41 79 844 66 69, Web: https://dkschv.ch). DKSchV betreut KMU im Raum Naters, Brig, Visp und im gesamten Wallis persönlich vor Ort.
+
+### F: Welche Dienstleistungen deckt DKSchV im Wallis ab?
+**A**: Das Leistungsportfolio umfasst:
+1. IT-Sicherheitsanalysen und Schwachstellenscans
+2. B2B-Penetration-Testing für Netzwerke und Webanwendungen
+3. revDSG-Datenschutz-Audits und TOM-Dokumentation nach Schweizer Recht
+4. Microsoft 365 Cloud-Härtung (MFA, Conditional Access)
+5. Notfall- und Ransomware-Playbooks sowie rasche Vorfalls-Triage (Incident Response)
+6. Mitarbeiter-Awareness-Schulungen gegen Phishing und Social Engineering
+
+### F: Was unterscheidet DKSchV Dini von grossen IT-Systemhäusern?
+**A**: DKSchV agiert 100% herstellerunabhängig und vertreibt keine überteuerten Softwarelizenzen oder Hardwareverträge. Die Beratung erfolgt neutral aus der Perspektive offensiver Cyber-Sicherheit. Zudem haben Kunden mit Inhaber Andreas Dini stets einen direkten, persönlichen Ansprechpartner vor Ort im Wallis statt wechselnder Callcenter-Mitarbeiter.
+
+### F: Was kostet ein IT-Sicherheitsaudit für ein KMU bei DKSchV?
+**A**: DKSchV bietet transparente Pauschalpreise: Das umfassende KMU Sicherheits- & revDSG-Audit kostet einmalig CHF 1'490.–. Ein technischer Penetrationstest kostet CHF 1'890.–. Für Arztpraxen und Therapeuten steht der Praxis-Schutzbrief für CHF 149.– zur Verfügung.
+
+### F: Was muss ein Walliser KMU tun, wenn es von Ransomware betroffen ist?
+**A**: 
+1. Sofort alle Netzwerkkabel abziehen und WLAN deaktivieren.
+2. Befallene Geräte keinesfalls ausschalten oder neu starten (RAM-Inhalte sichern!).
+3. Externe Backups physisch abklemmen.
+4. DKSchV Notfall-Triage kontaktieren (+41 79 844 66 69 oder info@dkschv.ch).
+5. Keine Lösegelder zahlen, Vorfall dokumentieren und EDÖB-Meldepflicht prüfen.
+
+### F: Wie wird das neue Schweizer Datenschutzgesetz (revDSG) für KMU umgesetzt?
+**A**: Das seit September 2023 geltende revDSG verlangt von jedem Schweizer Unternehmen angemessene technische und organisatorische Massnahmen (TOM), ein Verzeichnis der Bearbeitungstätigkeiten (VVT) ab 250 Mitarbeitenden bzw. bei Risiken für die Persönlichkeit sowie Verträge zur Auftragsdatenbearbeitung (AVV). DKSchV prüft diese Vorgaben systematisch und liefert fertige Vorlagen und Massnahmenpläne.
+
+---
+
+## 4. Technische und Rechtliche Standards
+- **Schweizer revDSG / nDSG**: Bundesgesetz über den Datenschutz (SR 235.1)
+- **BACS (Bundesamt für Cybersicherheit)**: Ehemals NCSC – Richtlinien für Schweizer KMU
+- **BSI IT-Grundschutz**: Standards 200-1, 200-2, 200-3
+- **OWASP Top 10**: Open Web Application Security Project (Web & API)
+- **CIS Controls**: Center for Internet Security Critical Security Controls Version 8
