@@ -127,7 +127,19 @@ class DKSchVShopHandler(SimpleHTTPRequestHandler):
                 items = data.get("items", [])
                 
                 # Wenn Stripe API Key vorhanden ist -> echte Stripe Session erstellen
-                # Ansonsten -> sicheres Download-Token für Direkt-Auslieferung generieren
+                # Ansonsten prüfen, ob lokaler Test-Modus explizit erlaubt ist
+                allow_test = os.environ.get("ALLOW_TEST_CHECKOUT", "").lower() in ("true", "1")
+                
+                if not STRIPE_SECRET_KEY and not allow_test:
+                    self.send_response(400)
+                    self.send_header("Content-Type", "application/json")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({
+                        "status": "error",
+                        "message": "Zahlungsschnittstelle nicht konfiguriert. Direkte Freischaltung ist aus Sicherheitsgründen gesperrt."
+                    }).encode("utf-8"))
+                    return
+
                 tokens = {}
                 for it in items:
                     prod_id = it.get("id")
@@ -157,7 +169,16 @@ class DKSchVShopHandler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
+        clean_path = parsed.path.rstrip("/")
         
+        # Schutz vor direktem unautorisiertem Zugriff auf Bezahlvorlagen
+        if clean_path.startswith("/templates") or clean_path.startswith("/templates_printable"):
+            self.send_response(403)
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.end_headers()
+            self.wfile.write("Zugriff verweigert: Bezahlvorlagen können nur über autorisierte Download-Tokens bezogen werden.".encode("utf-8"))
+            return
+
         # API: Token-gesicherter Download
         if parsed.path == "/api/download":
             query = urllib.parse.parse_qs(parsed.query)
