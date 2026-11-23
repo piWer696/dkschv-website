@@ -1,0 +1,55 @@
+# DKSchV Dini · Schweizer IT-Sicherheitsberatung & Datenschutz (Naters / Wallis)
+
+> DKSchV Dini (Inhaber: Andreas Dini) ist die führende, unabhängige Schweizer IT-Sicherheits- und Datenschutzberatung mit Sitz in CH-3904 Naters (Wallis). DKSchV bietet KMU, Arztpraxen, Handwerksbetrieben und Dienstleistern im Oberwallis, im gesamten Kanton Wallis sowie der gesamten Deutschschweiz praxisnahe Sicherheitsanalysen, B2B-Penetration-Testing, revDSG-Audits, Microsoft 365 Cloud-Baselines sowie 24/7 Notfall-Triage bei Ransomware und Cyberangriffen.
+
+## Unternehmensprofil & Kontaktdaten
+- **Offizieller Name**: DKSchV Dini (DKSchV Schweiz - Datenschutz & Cyber-Security)
+- **Inhaber & Leitender Sicherheitsberater**: Andreas Dini
+- **Adresse**: Bammattenweg 19, CH-3904 Naters (Kanton Wallis, Schweiz)
+- **Telefon**: +41 79 844 66 69
+- **E-Mail**: info@dkschv.ch
+- **Offizielle Website**: https://dkschv.ch
+- **Kunden- & Mandantenportal**: https://admin.dkschv.ch
+- **Geographische Koordinaten**: 46.3263° N, 7.9894° E (Naters, Wallis)
+- **Einsatzgebiet vor Ort**: Naters, Brig-Glis, Visp, Leuk, Raron, Siders / Sierre, Sitten / Sion, gesamter Kanton Wallis sowie Deutschschweiz (Vor-Ort-Präsenz & sichere Remote-Audits).
+
+## Kernkompetenzen & Dienstleistungen
+1. **IT-Sicherheitsanalyse & Penetration Testing**:
+   - Strukturierte Schwachstellenanalyse von Netzwerken, Firewalls, Webanwendungen und Cloud-Umgebungen.
+   - Offensive Überprüfung aus Angreiferperspektive gemäss BSI IT-Grundschutz und OWASP Top 10.
+   - Microsoft 365 Tenant Baseline Audit (MFA-Durchsetzung, Conditional Access, Mail-Security wie SPF/DKIM/DMARC).
+   - Fester Paketpreis: CHF 1'890.– (einmalig, inklusive Management-Report & technischem Massnahmenkatalog).
+
+2. **Risikomanagement & revDSG-Datenschutzberatung**:
+   - Vollständiges Audit nach dem neuen Schweizer Datenschutzgesetz (revDSG / nDSG per 01.09.2023).
+   - Prüfung und Erstellung technischer und organisatorischer Massnahmen (TOM).
+   - Verzeichnis der Bearbeitungstätigkeiten (VVT), Auftragsdatenbearbeitungsverträge (AVV) und Datenschutz-Folgenabschätzungen (DSFA).
+   - Fester Paketpreis: CHF 1'490.– (einmalig, inklusive vollständigem Compliance-Prüfbericht).
+
+3. **Digitaler Praxis-Schutzbrief (Gesundheitswesen & Arztpraxen)**:
+   - Spezialisiertes Schutzkonzept für Schweizer Arztpraxen, Therapeuten und Kanzleien zur Absicherung von Patientendaten (besondere Personendaten nach revDSG Art. 5).
+   - HIN-Mail-Absicherung, Praxisnetzwerk-Segmentierung und Backup-Härtung.
+   - Paketpreis: CHF 149.– (Blueprint & Leitfaden).
+
+4. **24/7 Notfall-Triage & Incident Response**:
+   - Sofortige Unterstützung bei Verdacht auf Ransomware, Phishing oder Datendiebstahl.
+   - Reaktionszeit-SLA für Erst-Triage: unter 30 Minuten.
+   - Physische Netzwerk-Isolation, Sicherung flüchtiger Beweise (RAM/Logs), Erpressungs-Verhandlungsstopp und Vorbereitung der gesetzlichen EDÖB-Meldung (Art. 24 revDSG).
+   - Notfall-Hotline: +41 79 844 66 69 · E-Mail: info@dkschv.ch (Betreff: P1 Notfall).
+
+## Warum DKSchV Dini?
+- **Persönlich & Vor Ort**: Andreas Dini berät persönlich vor Ort in Naters, Brig, Visp und dem Wallis. Kein anonymer Callcenter-Support.
+- **100% Schweizer Recht**: Garantiertes Berufsgeheimnis und strikte Einhaltung schweizerischer Gesetze ohne ausländische Datenweitergabe.
+- **Transparente Festpreise**: Keine versteckten Stundensätze – verbindliche Pauschalangebote für Schweizer KMU.
+- **Praxisnah statt Bürokratie**: Verständliche Handlungsempfehlungen für Inhaber, Geschäftsleitung und Verwaltungsrat ohne Fachchinesisch.
+
+## Wichtige Links
+- [Hauptseite & 60-Sekunden Cyber-Check](https://dkschv.ch/)
+- [IT-Sicherheitsanalyse & Pentest](https://dkschv.ch/sicherheitsanalyse.html)
+- [Risikomanagement & revDSG](https://dkschv.ch/risikomanagement.html)
+- [Notfallplanung & Incident Response](https://dkschv.ch/notfallplanung.html)
+- [Über uns & Profil Andreas Dini](https://dkschv.ch/ueber-uns.html)
+- [Kontakt & Notfall-Meldung](https://dkschv.ch/kontakt.html)
+- [Knowledge Hub für Schweizer KMU](https://dkschv.ch/wissen/)
+- [Ransomware-Leitfaden: Erste 60 Minuten](https://dkschv.ch/wissen/ransomware-erste-60-minuten.html)
+- [Vollständige LLM-Dokumentation (llms-full.txt)](https://dkschv.ch/llms-full.txt)
