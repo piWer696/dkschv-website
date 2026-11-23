@@ -15,7 +15,7 @@ import hashlib
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import urllib.parse
 
-PORT = 8089
+PORT = int(os.environ.get("PORT", 8089))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 def _load_or_generate_secret():
     env_secret = os.environ.get("DKSCHV_SECRET_KEY")
