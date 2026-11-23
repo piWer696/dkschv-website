@@ -88,22 +88,46 @@ try:
     ftp.login(FTP_USER, FTP_PASS)
     print("✅ FTP-Authentifizierung erfolgreich!")
 
-    # 1. wissen/ Verzeichnis synchronisieren
+    # 1. Haupt-HTML & SEO / GEO Dateien hochladen
+    print("\n📦 Lade Haupt-HTML, SEO- und GEO-Dateien hoch...")
+    core_files = [
+        "index.html",
+        "robots.txt",
+        "sitemap.xml",
+        "llms.txt",
+        "llms-full.txt",
+        "sicherheitsanalyse.html",
+        "risikomanagement.html",
+        "notfallplanung.html",
+        "ueber-uns.html",
+        "kontakt.html",
+    ]
+    for rel_f in core_files:
+        local_p = ROOT_DIR / rel_f
+        if local_p.exists():
+            upload_file(ftp, local_p, f"/{rel_f}")
+
+    # 2. Assets (CSS) synchronisieren
+    print("\n📦 Aktualisiere Stylesheet...")
+    if (ROOT_DIR / "assets" / "css" / "style.css").exists():
+        upload_file(ftp, ROOT_DIR / "assets" / "css" / "style.css", "/assets/css/style.css")
+
+    # 3. wissen/ Verzeichnis synchronisieren
     print("\n📦 Synchronisiere /wissen ...")
     sync_tree(ftp, ROOT_DIR / "wissen", "/wissen")
 
-    # 2. wissen.html Weiterleitung
+    # 4. wissen.html Weiterleitung
     print("\n📦 Aktualisiere wissen.html ...")
     upload_file(ftp, ROOT_DIR / "wissen.html", "/wissen.html")
 
     ftp.quit()
-    print("\n🎉 Alle Knowledge-Hub-Dateien erfolgreich übertragen!")
+    print("\n🎉 Alle Website-, SEO- und Knowledge-Hub-Dateien erfolgreich übertragen!")
 
 except Exception as err:
     print(f"❌ FTP-Fehler: {err}")
     sys.exit(1)
 
-# 3. Live-Verifizierung über HTTPS
+# 5. Live-Verifizierung über HTTPS
 print("\n🔍 Führe Live-Verifikation über HTTPS durch...")
 
 news_dir = ROOT_DIR / "content" / "news"
@@ -128,11 +152,14 @@ if news_files:
             latest_kw = m_kw.group(1).strip()
 
 urls_to_test = [
+    ("https://dkschv.ch/llms.txt", ["DKSchV Dini", "Andreas Dini", "Naters", "info@dkschv.ch"]),
+    ("https://dkschv.ch/llms-full.txt", ["DKSchV Dini", "Bammattenweg 19", "CHF 1'490"]),
+    ("https://dkschv.ch/robots.txt", ["GPTBot", "PerplexityBot", "sitemap.xml", "llms.txt"]),
+    ("https://dkschv.ch/sitemap.xml", ["dkschv.ch", "sicherheitsanalyse.html", "llms.txt"]),
+    ("https://dkschv.ch/", ["Bammattenweg 19", "Naters", "FAQPage", "IT-Sicherheit & revDSG-Audits in Naters"]),
     ("https://dkschv.ch/wissen/", ["Mandantenbereich", latest_kw, latest_date]),
     ("https://dkschv.ch/wissen/news/", [f"Branchennews {latest_kw}", latest_date]),
     (f"https://dkschv.ch/wissen/news/{latest_slug}", [latest_kw, latest_date]),
-    ("https://dkschv.ch/wissen/ransomware-erste-60-minuten.html", ["gated-content", "is-locked"]),
-    ("https://dkschv.ch/wissen/resources/01-60-minuten-checkliste.html", ["gated-content", "is-locked"]),
 ]
 
 ctx = ssl.create_default_context()
