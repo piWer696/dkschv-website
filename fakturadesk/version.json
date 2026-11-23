@@ -2,13 +2,13 @@
   "version": "1.0.5",
   "releaseDate": "2026-11-23",
   "title": "FakturaDesk ERP v1.0.5 Release (DKSchV Secured)",
-  "changelog": "v1.0.5: Prefix-Live-Suche (sofortiger Treffer bei H / HGM-Service), freie PDF-Layoutwahl, optimierte Fernwartung (RustDesk), Rechnungs-Schnellfunktionen (+1h Regie, +Anfahrt, -5% Rabatt), HGM-Service Einzelmandant-Modus ohne Fremdversionen.",
+  "changelog": "v1.0.5: Integrierte VESR & Payment Standards Maske (Banknummer/Bankkontonummer, Teilnehmernummer/Zusatz-TN, Belastungsanzeige, Payment Standards 2022, EZAG), Prefix-Live-Suche, freie PDF-Layoutwahl, optimierte Fernwartung (RustDesk), Rechnungs-Schnellfunktionen, HGM-Service Einzelmandant-Modus.",
   "downloadUrlWin": "https://dkschv.ch/fakturadesk/FakturaDesk_v1.0.5_HGM_Service_Vollversion_Win11.zip",
   "downloadUrlHgmWin": "https://dkschv.ch/fakturadesk/FakturaDesk_v1.0.5_HGM_Service_Vollversion_Win11.zip",
   "downloadUrlDkschvWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.5/FakturaDesk_v1.0.5_DKSchV_Enterprise_Win11.zip",
   "downloadUrlRenoGipsWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.5/FakturaDesk_v1.0.5_RenoGips_Handwerk_Win11.zip",
   "downloadUrlLinux": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.5/FakturaDesk_v1.0.5_Linux_x64.tar.gz",
   "downloadUrlMobile": "https://dkschv.ch/fakturadesk/FakturaDesk_v1.0.2_Mobile.apk",
-  "sha256HgmWin": "0210e0682344a49b5d6cd96dc1a102a9a72f2007deb40ca5fd0b646be322d812",
-  "sha256Win": "0210e0682344a49b5d6cd96dc1a102a9a72f2007deb40ca5fd0b646be322d812"
+  "sha256HgmWin": "ed0b198839f5de45d1a60e0b3f5d4790247ce1938f432cb6e1304f89fe7a71f3",
+  "sha256Win": "ed0b198839f5de45d1a60e0b3f5d4790247ce1938f432cb6e1304f89fe7a71f3"
 }
