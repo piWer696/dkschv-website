@@ -25,10 +25,14 @@ if env_file.exists():
             k, v = line.split("=", 1)
             config[k.strip()] = v.strip().strip("'\"")
 
-FTP_HOST = config.get("INFOMANIAK_FTP_HOST", "dkschv.ch")
-FTP_PORT = int(config.get("INFOMANIAK_FTP_PORT", 21))
-FTP_USER = config.get("INFOMANIAK_FTP_USER", "if1gui_iwer")
-FTP_PASS = config.get("INFOMANIAK_FTP_PASS", "dA_1986_1986_dA")
+FTP_HOST = config.get("INFOMANIAK_FTP_HOST") or os.environ.get("INFOMANIAK_FTP_HOST") or "dkschv.ch"
+FTP_PORT = int(config.get("INFOMANIAK_FTP_PORT") or os.environ.get("INFOMANIAK_FTP_PORT") or 21)
+FTP_USER = config.get("INFOMANIAK_FTP_USER") or os.environ.get("INFOMANIAK_FTP_USER")
+FTP_PASS = config.get("INFOMANIAK_FTP_PASS") or os.environ.get("INFOMANIAK_FTP_PASS")
+
+if not FTP_USER or not FTP_PASS:
+    print("❌ Fehler: FTP-Zugangsdaten nicht konfiguriert. Bitte in .infomaniak_deploy.env eintragen.")
+    sys.exit(1)
 
 print(f"🚀 Starte Shop-Deployment auf Infomaniak ({FTP_HOST})...")
 
