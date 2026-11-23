@@ -2348,3 +2348,118 @@ textarea.form-control {
     font-size: 26px;
   }
 }
+
+/* ==========================================================================
+   Local Authority & FAQ Section (GEO / Local SEO)
+   ========================================================================== */
+.local-authority-section {
+  padding: 80px 0;
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+}
+
+.local-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.local-highlight-card {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: var(--transition);
+}
+
+.local-highlight-card:hover {
+  border-color: var(--teal-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.local-card-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.local-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.local-card-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.faq-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-item[open] {
+  border-color: var(--teal-light);
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-summary::after {
+  content: "+";
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--teal-accent);
+  transition: transform 0.2s ease;
+  margin-left: 12px;
+}
+
+.faq-item[open] .faq-summary::after {
+  content: "−";
+}
+
+.faq-content {
+  padding: 0 22px 20px 22px;
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  border-top: 1px solid rgba(226, 232, 240, 0.6);
+  padding-top: 14px;
+}
+
+@media (max-width: 768px) {
+  .local-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

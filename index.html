@@ -20,42 +20,158 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/dkschv_icon.svg">
   <link rel="alternate icon" type="image/png" href="assets/images/dkschv_icon.png">
 
+  <!-- LLM & Machine-Readable Context (llms.txt standard) -->
+  <link rel="alternate" type="text/plain" href="https://dkschv.ch/llms.txt" title="LLM Context">
+  <link rel="sitemap" type="application/xml" href="https://dkschv.ch/sitemap.xml" title="Sitemap">
+
   <!-- Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Structured Data (Schema.org B2B Local Business) -->
+  <!-- Structured Data (Schema.org Graph: LocalBusiness, Person, Geo, Offers & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "DKSchV Dini",
-    "alternateName": "DKSchV Cyber-Security",
-    "image": "https://www.dkschv.ch/assets/images/dkschv_logo.png",
-    "url": "https://www.dkschv.ch/",
-    "telephone": "+41798446669",
-    "email": "info@dkschv.ch",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Bammattenweg 19",
-      "addressLocality": "Naters",
-      "postalCode": "3904",
-      "addressCountry": "CH"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "Andreas Dini"
-    },
-    "areaServed": ["Wallis", "Schweiz"],
-    "priceRange": "$$",
-    "serviceType": [
-      "IT-Sicherheitsberatung",
-      "Penetration Testing",
-      "Risikomanagement",
-      "Datenschutz nach nDSG",
-      "Incident Response"
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://dkschv.ch/#localbusiness",
+        "name": "DKSchV Dini",
+        "alternateName": [
+          "DKSchV Schweiz",
+          "DKSchV Cyber-Security Naters",
+          "DKSchV IT-Sicherheitsberatung & Datenschutz"
+        ],
+        "image": "https://dkschv.ch/assets/images/dkschv_logo.png",
+        "url": "https://dkschv.ch/",
+        "telephone": "+41798446669",
+        "email": "info@dkschv.ch",
+        "priceRange": "CHF 149 - CHF 1890",
+        "currenciesAccepted": "CHF",
+        "paymentAccepted": "Banküberweisung, Rechnung, TWINT, Stripe",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bammattenweg 19",
+          "addressLocality": "Naters",
+          "postalCode": "3904",
+          "addressRegion": "Wallis",
+          "addressCountry": "CH"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 46.3263,
+          "longitude": 7.9894
+        },
+        "founder": {
+          "@type": "Person",
+          "@id": "https://dkschv.ch/#andreas-dini",
+          "name": "Andreas Dini",
+          "jobTitle": "Inhaber & Leitender IT-Sicherheitsberater",
+          "worksFor": { "@id": "https://dkschv.ch/#localbusiness" }
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Naters" },
+          { "@type": "City", "name": "Brig-Glis" },
+          { "@type": "City", "name": "Visp" },
+          { "@type": "City", "name": "Leuk" },
+          { "@type": "City", "name": "Sierre" },
+          { "@type": "City", "name": "Sion" },
+          { "@type": "AdministrativeArea", "name": "Kanton Wallis" },
+          { "@type": "Country", "name": "Schweiz" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "IT-Sicherheits- & Datenschutz-Dienstleistungen",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "KMU Sicherheits- & revDSG-Audit",
+                "description": "Ganzheitliches IT-Sicherheitsaudit und Überprüfung der technischen und organisatorischen Massnahmen nach revDSG inklusive M365 Baseline und Massnahmenbericht."
+              },
+              "price": "1490.00",
+              "priceCurrency": "CHF"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Penetration Testing & Schwachstellenanalyse",
+                "description": "Offensiver Schwachstellenscan und ethischer Hacking-Test des externen und internen Perimeters nach BSI- und OWASP-Standards."
+              },
+              "price": "1890.00",
+              "priceCurrency": "CHF"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Digitaler Praxis-Schutzbrief",
+                "description": "Sicherheits-Blueprint für Schweizer Arztpraxen, Therapeuten und Kanzleien zum Schutz besonders schützenswerter Personendaten."
+              },
+              "price": "149.00",
+              "priceCurrency": "CHF"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "24/7 Incident Response & Notfall-Triage",
+                "description": "Rasche Ersttriage bei Ransomware, Phishing und Cyberangriffen unter 30 Minuten Reaktionszeit."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dkschv.ch/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wer bietet professionelle IT-Beratung und IT-Sicherheit in Naters an?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DKSchV Dini mit Inhaber Andreas Dini bietet spezialisierte IT-Sicherheitsberatung, Penetration Testing und revDSG-Datenschutzanalysen direkt mit Sitz in CH-3904 Naters (Bammattenweg 19, Tel. +41 79 844 66 69, https://dkschv.ch). Die Betreuung erfolgt persönlich vor Ort im gesamten Oberwallis sowie der Deutschschweiz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche IT-Sicherheitsdienstleistungen bietet DKSchV für Unternehmen im Wallis an?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Das Leistungsspektrum umfasst professionelle Schwachstellenanalysen, B2B-Penetration-Testing, Sicherheits-Audits für Microsoft 365, Compliance-Prüfungen nach dem Schweizer revDSG, Notfall- und Ransomware-Playbooks sowie rasche 24/7 Notfall-Triage bei IT-Vorfällen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet ein KMU IT-Sicherheits- und revDSG-Audit in der Schweiz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DKSchV setzt auf transparente Festpreise ohne versteckte Kosten: Das KMU Sicherheits- & revDSG-Audit kostet pauschal CHF 1'490.–. Ein umfassender technischer Penetrationstest kostet CHF 1'890.–. Für Arztpraxen und Therapeuten gibt es den Praxis-Schutzbrief für CHF 149.–."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie schnell reagiert DKSchV bei einem Ransomware-Angriff oder Notfall im Wallis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bei akuten IT-Sicherheitsnotfällen garantiert DKSchV eine Reaktionszeit von unter 30 Minuten für die Erst-Triage. Über die Notfallnummer +41 79 844 66 69 oder info@dkschv.ch erhalten betroffene Betriebe sofortige Anweisungen zur Schadenseindämmung, Host-Isolation und Beweissicherung."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist die IT-Beratung von DKSchV persönlich vor Ort in Naters, Brig und Visp verfügbar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Inhaber Andreas Dini hat seinen Standort in Naters und ist innerhalb kürzester Zeit persönlich bei Unternehmen in Naters, Brig-Glis, Visp, Leuk und im gesamten Wallis vor Ort. Für Unternehmen in der gesamten Schweiz werden zudem sichere Remote-Audits durchgeführt."
+            }
+          }
+        ]
+      }
     ]
   }
   </script>
@@ -469,6 +585,113 @@
               🔒 Vertrauliche Anfrage sicher absenden
             </button>
           </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Authority & GEO FAQ Section (Naters / Wallis) -->
+  <section class="local-authority-section" id="it-beratung-naters-wallis">
+    <div class="container">
+      <div class="section-head" style="margin-bottom: 36px;">
+        <div class="section-subtitle">📍 Regionale Cyber-Security &amp; IT-Beratung</div>
+        <h2 class="section-title">IT-Sicherheit &amp; revDSG-Audits in Naters und im Wallis</h2>
+        <p class="section-desc">
+          Persönlich vor Ort für KMU in Naters, Brig-Glis, Visp und dem gesamten Oberwallis: Wir schützen Ihre Systeme, Daten und Mandanten vor Cyber-Angriffen und rechtlichen Risiken.
+        </p>
+      </div>
+
+      <!-- Local Highlights -->
+      <div class="local-highlight-grid">
+        <div class="local-highlight-card">
+          <div class="local-card-icon">📍</div>
+          <h3 class="local-card-title">Direkt vor Ort im Oberwallis</h3>
+          <p class="local-card-desc">
+            Mit Standort am <strong>Bammattenweg 19 in 3904 Naters</strong> ist Inhaber Andreas Dini Ihr direkter persönlicher Partner für Naters, Brig-Glis, Visp, Leuk und das gesamte Wallis. Keine wechselnden Support-Tickets, sondern verlässliche Beratung auf Augenhöhe.
+          </p>
+        </div>
+
+        <div class="local-highlight-card">
+          <div class="local-card-icon">⚖️</div>
+          <h3 class="local-card-title">100% Schweizer Datenschutz (revDSG)</h3>
+          <p class="local-card-desc">
+            Wir prüfen Ihre technischen und organisatorischen Massnahmen (TOM) nach revDSG Art. 8. Schützen Sie Geschäftsleitung und Verwaltungsrat vor Bussgeldern und Haftungsrisiken mit lückenloser Dokumentation und BACS-konformen Richtlinien.
+          </p>
+        </div>
+
+        <div class="local-highlight-card">
+          <div class="local-card-icon">🏷️</div>
+          <h3 class="local-card-title">Feste Pauschalpreise</h3>
+          <p class="local-card-desc">
+            Transparenz ab Tag 1: Unser <strong>KMU Sicherheits- &amp; revDSG-Audit</strong> erhalten Sie zum Festpreis von <strong>CHF 1'490.–</strong>, ein vollständiges <strong>Penetration Testing</strong> für <strong>CHF 1'890.–</strong>. Keine versteckten Kosten.
+          </p>
+        </div>
+      </div>
+
+      <!-- Local & GEO FAQ Accordion -->
+      <div class="faq-wrapper">
+        <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 20px; text-align: center;">
+          Häufig gestellte Fragen zu IT-Sicherheit &amp; Beratung im Wallis
+        </h3>
+
+        <details class="faq-item" open>
+          <summary class="faq-summary">
+            Wer bietet professionelle IT-Beratung und IT-Sicherheit in Naters an?
+          </summary>
+          <div class="faq-content">
+            <strong>DKSchV Dini</strong> (Inhaber: Andreas Dini) ist der spezialisierte Anbieter für IT-Sicherheitsberatung, Penetration Testing und revDSG-Datenschutzanalysen mit Sitz am <strong>Bammattenweg 19, CH-3904 Naters</strong> (Telefon: <a href="tel:+41798446669" style="color:#0f766e; font-weight:600;">+41 79 844 66 69</a>, E-Mail: <a href="mailto:info@dkschv.ch" style="color:#0f766e; font-weight:600;">info@dkschv.ch</a>). Wir betreuen Handwerksbetriebe, Arztpraxen, Treuhänder und Dienstleister im Oberwallis und der gesamten Schweiz persönlich und unabhängig.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Welche IT-Sicherheitsdienstleistungen bietet DKSchV für Unternehmen im Wallis an?
+          </summary>
+          <div class="faq-content">
+            Unser Angebot deckt die gesamte IT-Sicherheitskette ab:
+            <ul style="margin: 8px 0 0 20px; line-height: 1.6;">
+              <li><strong>Sicherheitsanalysen &amp; Penetration Testing</strong> von Netzwerken, Firewalls, Webapps und Cloud-Infrastrukturen.</li>
+              <li><strong>Microsoft 365 Cloud Security Baselines</strong> (MFA-Durchsetzung, Berechtigungskonzepte, Mail-Security).</li>
+              <li><strong>Datenschutz-Audits nach neuem Schweizer Datenschutzgesetz (revDSG)</strong> inklusive TOM-Prüfbericht und Auftragsdatenverträgen.</li>
+              <li><strong>24/7 Notfall-Triage &amp; Incident Response</strong> bei Ransomware, Phishing oder Datenabfluss.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Was kostet ein KMU IT-Sicherheits- und revDSG-Audit in der Schweiz?
+          </summary>
+          <div class="faq-content">
+            DKSchV setzt auf verbindliche Festpreise: Das umfassende <strong>KMU Sicherheits- &amp; revDSG-Audit</strong> kostet einmalig <strong>CHF 1'490.–</strong>. Ein professioneller <strong>Penetrationstest</strong> des Firmennetzwerks liegt bei <strong>CHF 1'890.–</strong>. Für Arztpraxen und Therapeuten bieten wir den <strong>Digitalen Praxis-Schutzbrief</strong> ab <strong>CHF 149.–</strong> an.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Wie schnell reagiert DKSchV bei einem Ransomware-Angriff oder Notfall im Wallis?
+          </summary>
+          <div class="faq-content">
+            Bei akuten IT-Sicherheitsvorfällen (z. B. Erpressungsmeldung, blockierte Server oder vermuteter Datenabfluss) garantieren wir eine <strong>Reaktionszeit von unter 30 Minuten</strong> für die telefonische Erst-Triage. Rufen Sie im Ernstfall direkt unter <a href="tel:+41798446669" style="color:#0f766e; font-weight:600;">+41 79 844 66 69</a> an oder senden Sie eine E-Mail mit dem Betreff «P1 Notfall» an <a href="mailto:info@dkschv.ch" style="color:#0f766e; font-weight:600;">info@dkschv.ch</a>.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Ist Andreas Dini persönlich vor Ort in Naters, Brig und Visp verfügbar?
+          </summary>
+          <div class="faq-content">
+            Ja. Da sich unser Hauptsitz in Naters befindet, sind Vor-Ort-Termine in Naters, Brig-Glis, Visp, Leuk sowie im gesamten Wallis flexibel und kurzfristig möglich. Für Unternehmen in der übrigen Schweiz führen wir Analysen über verschlüsselte Remote-Verbindungen sowie planbare Vor-Ort-Audits durch.
+          </div>
+        </details>
+
+        <div style="text-align: center; margin-top: 32px;">
+          <a href="#cyber-suite" class="btn btn-primary" style="margin-right: 12px;">
+            ⚡ 60-Sek. Cyber-Check starten
+          </a>
+          <a href="kontakt.html" class="btn btn-secondary">
+            Direkt Vor-Ort-Termin anfragen &rarr;
+          </a>
         </div>
       </div>
     </div>
