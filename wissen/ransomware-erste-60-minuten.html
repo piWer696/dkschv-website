@@ -80,6 +80,7 @@
           <li><a href="../notfallplanung.html" class="nav-link ">Notfallplanung</a></li>
           <li><a href="../ueber-uns.html" class="nav-link ">Über&nbsp;uns</a></li>
           <li><a href="../kontakt.html" class="nav-link ">Kontakt</a></li>
+          <li><a href="../shop/" class="nav-link" style="color: #10b981; font-weight: 700;">🛒 Vorlagen-Shop</a></li>
           <li>
             <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
               <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
@@ -135,6 +136,9 @@
             <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
               <span>🔑 Als Mandant anmelden</span>
             </button>
+            <a href="../shop/" class="gate-btn-secondary" style="border-color: #10b981; color: #10b981; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+              <span>🛒 Direkt im Shop kaufen</span>
+            </a>
             <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
               <span>📋 Zugang anfordern</span>
             </button>
@@ -157,10 +161,15 @@
           <h4>📥 Passendes Arbeitsmittel: 60-Minuten-Checkliste bei Ransomware-Verdacht</h4>
           <p>Druckbare Arbeitsvorlage für die erste Stunde nach einem Ransomware-Verdacht: Eindämmung, Beweissicherung, Backups und Meldeprüfung.</p>
         </div>
-        <a href="./resources/01-60-minuten-checkliste.html" class="resource-btn">
-          <span>🖨️ Arbeitsvorlage öffnen</span>
-          <span>&rarr;</span>
-        </a>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <a href="./resources/01-60-minuten-checkliste.html" class="resource-btn">
+            <span>🖨️ Arbeitsvorlage öffnen</span>
+            <span>&rarr;</span>
+          </a>
+          <a href="../shop/" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <span>🛒 Vollversion im Shop</span>
+          </a>
+        </div>
       </div>
     
           <h2 id="warum-die-erste-stunde-ueber-den-weiteren-schaden-entscheidet">Warum die erste Stunde über den weiteren Schaden entscheidet</h2>
@@ -389,6 +398,30 @@ Bis 08.30 Uhr liegen eine Systemliste, Screenshots der Forderung und Exporte der
         </ul>
       </div>
     
+          
+  <!-- Targeted Shop Conversion Card -->
+  <div class="shop-conversion-card" style="margin-top: 40px; background: linear-gradient(135deg, #0b1528 0%, #172544 100%); border: 1px solid #1e3a5f; border-left: 5px solid #10b981; border-radius: var(--radius-md); padding: 28px; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+      <div style="max-width: 600px;">
+        <span style="font-size: 11px; font-weight: 800; background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 8px; border-radius: 4px; text-transform: uppercase;">🇨🇭 Schweizer Fachvorlage · Sofort-Download</span>
+        <h4 style="font-size: 20px; font-weight: 800; color: #ffffff; margin: 10px 0 6px 0;">KMU Cyber-Notfallplan & Runbook</h4>
+        <p style="font-size: 14px; color: #94a3b8; margin: 0; line-height: 1.6;">15-Minuten Sofortmassnahmen, Ransomware-Isolierung und BACS/EDÖB-Meldepflicht nach Schweizer Standard.</p>
+      </div>
+      <div style="text-align: right; min-width: 160px;">
+        <span style="display: block; font-size: 24px; font-weight: 800; color: #10b981;">CHF 89.–</span>
+        <span style="font-size: 11px; color: #64748b;">Einmalzahlung · Printfertig &amp; Word/Markdown</span>
+      </div>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <a href="https://buy.stripe.com/eVqeVd4Jq8fI24i5xqfMA0a" target="_blank" class="btn btn-primary" style="background: #10b981; color: #ffffff; font-weight: 700; padding: 10px 22px; text-decoration: none; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px;">
+        <span>⚡ Jetzt mit Stripe kaufen (CHF 89.–)</span>
+      </a>
+      <a href="../shop/" style="color: #38bdf8; font-size: 13.5px; text-decoration: none; font-weight: 600; margin-left: 8px;">
+        🛒 Zum DKSchV Shop (Alle 5 Vorlagen &amp; Komplett-Bundle) &rarr;
+      </a>
+    </div>
+  </div>
+  
         </div>
         
         <!-- Post-article consultation box -->
@@ -400,6 +433,7 @@ Bis 08.30 Uhr liegen eine Systemliste, Screenshots der Forderung und Exporte der
           </p>
           <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
             <a href="../kontakt.html" class="btn btn-primary" style="background: var(--teal-accent);">Kostenloses Erstgespräch anfragen &rarr;</a>
+            <a href="../shop/" class="btn btn-secondary" style="border-color: #10b981; color: #10b981;">🛒 Vorlagen im Shop kaufen &rarr;</a>
             <a href="../notfallplanung.html" class="btn btn-secondary" style="border-color: #334155; color: #ffffff;">Notfallplanung für KMU</a>
           </div>
         </div>
