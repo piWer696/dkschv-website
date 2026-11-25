@@ -159,23 +159,28 @@
         Keine versteckten Kosten, keine unvorhersehbaren Stundensätze. Volle Kostentransparenz von Beginn an:
       </p>
 
-      <!-- Weihnachts-Aktion Banner -->
-      <div style="background: linear-gradient(135deg, #1e293b 0%, #111827 50%, #7f1d1d 100%); border: 1px solid rgba(220, 38, 38, 0.4); border-left: 5px solid #dc2626; border-radius: var(--radius-md); padding: 22px 24px; margin-bottom: 32px; color: #ffffff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.15);">
-        <div style="display: flex; align-items: center; gap: 16px;">
+      <!-- Weihnachts-Aktion Banner (Wetter-adaptiv) -->
+      <div class="xmas-weather-banner" style="background: linear-gradient(135deg, #1e293b 0%, #111827 50%, #7f1d1d 100%); border: 1px solid rgba(220, 38, 38, 0.4); border-left: 5px solid #dc2626; border-radius: var(--radius-md); padding: 22px 24px; margin-bottom: 32px; color: #ffffff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.15); position: relative; overflow: hidden; transition: all 0.5s ease;">
+        <div style="display: flex; align-items: center; gap: 16px; z-index: 2;">
           <div style="font-size: 38px; line-height: 1;">🎄</div>
           <div>
-            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; color: #fca5a5;">
-              Weihnachts-Aktion · Gültig bis 24. Dezember 2026
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px;">
+              <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; color: #fca5a5;">
+                Weihnachts-Aktion · Bis 24. Dezember 2026
+              </span>
+              <span class="xmas-weather-pill" style="font-size: 11px; font-weight: 700; color: #ffffff; background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 9999px;">
+                📍 Naters / Wallis: Wetterdaten laden... ❄️
+              </span>
             </div>
-            <div style="font-size: 21px; font-weight: 800; letter-spacing: -0.01em; margin-top: 2px;">
+            <div class="xmas-dynamic-headline" style="font-size: 21px; font-weight: 800; letter-spacing: -0.01em; margin-top: 2px;">
               50 % Weihnachts-Rabatt auf alle Software- &amp; App-Entwicklungspakete
             </div>
-            <div style="font-size: 13.5px; color: #cbd5e1; margin-top: 4px;">
+            <div class="xmas-dynamic-subtext" style="font-size: 13.5px; color: #cbd5e1; margin-top: 4px;">
               Starten Sie mit massgeschneiderter Schweizer Software und mobilen Apps für Ihr KMU ins neue Jahr – zum halben Preis.
             </div>
           </div>
         </div>
-        <div>
+        <div style="z-index: 2;">
           <span style="background: #dc2626; color: #ffffff; font-size: 18px; font-weight: 900; padding: 8px 18px; border-radius: 9999px; display: inline-block; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4); letter-spacing: 0.5px;">
             🎁 -50 % AKTION
           </span>
@@ -370,5 +375,6 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/portal-auth.js"></script>
+  <script src="assets/js/xmas-weather.js"></script>
 </body>
 </html>

@@ -120,6 +120,8 @@ try:
         upload_file(ftp, ROOT_DIR / "assets" / "css" / "style.css", "/assets/css/style.css")
     if (ROOT_DIR / "assets" / "js" / "portal-auth.js").exists():
         upload_file(ftp, ROOT_DIR / "assets" / "js" / "portal-auth.js", "/assets/js/portal-auth.js")
+    if (ROOT_DIR / "assets" / "js" / "xmas-weather.js").exists():
+        upload_file(ftp, ROOT_DIR / "assets" / "js" / "xmas-weather.js", "/assets/js/xmas-weather.js")
 
     # 3. wissen/ Verzeichnis synchronisieren
     print("\n📦 Synchronisiere /wissen ...")
@@ -164,7 +166,8 @@ urls_to_test = [
     ("https://dkschv.ch/llms.txt", ["DKSchV Dini", "Andreas Dini", "Naters", "6–24 Stunden"]),
     ("https://dkschv.ch/llms-full.txt", ["DKSchV Dini", "Bammattenweg 19", "CHF 1'490", "6–24 Stunden"]),
     ("https://dkschv.ch/robots.txt", ["GPTBot", "PerplexityBot", "sitemap.xml", "llms.txt"]),
-    ("https://dkschv.ch/app-entwicklung.html", ["Individuelle Software- & App-Entwicklung", "14", "Offline-First", "exakt zu Ihrem Workflow passt"]),
+    ("https://dkschv.ch/app-entwicklung.html", ["Individuelle Software- & App-Entwicklung", "3&apos;425", "7&apos;400", "xmas-weather-banner"]),
+    ("https://dkschv.ch/assets/js/xmas-weather.js", ["decodeWmo", "fetchNatersWeather"]),
     ("https://dkschv.ch/sitemap.xml", ["dkschv.ch", "sicherheitsanalyse.html", "llms.txt"]),
     ("https://dkschv.ch/fakturadesk/version.json", ["1.0.8", "FakturaDesk ERP v1.0.8 Release"]),
     ("https://dkschv.ch/", ["Bammattenweg 19", "Naters", "FAQPage", "IT-Sicherheit &amp; revDSG-Audits in Naters", "exakt zu Ihrem Workflow passt"]),
