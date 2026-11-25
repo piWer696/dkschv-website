@@ -1,41 +1,80 @@
 # ==============================================================================
 # DKSchV Schweiz · Apache Web Server Configuration (Infomaniak Hosting)
+# Gehärtete Sicherheitskonfiguration (Schweizer nDSG & KMU Cyber-Resilienz)
 # ==============================================================================
 
-# 1. Enforce UTF-8
+# 1. Directory Indexing & Server Signatur deaktivieren
+Options -Indexes -ExecCGI
+ServerSignature Off
+
+# 2. Enforce UTF-8
 AddDefaultCharset UTF-8
 AddCharset UTF-8 .html .css .js .json .xml
 
-# 2. Clean URLs (Allow URLs without .html extension)
+# 3. URL-Rewriting & Direktsperren fuer sensible Pfade
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Strip .html extension if typed in browser
+  # Punkt-Dateien und versteckte Ordner sperren (ausser .well-known)
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteRule (^\.|/\.) - [F,L]
+
+  # Interne Ordner und digitale Vorlagen vor direktem Download sperren
+  RewriteRule ^content(/.*)?$ - [F,L]
+  RewriteRule ^scripts(/.*)?$ - [F,L]
+  RewriteRule ^shop/templates(/.*)?$ - [F,L]
+  RewriteRule ^shop/templates_printable(/.*)?$ - [F,L]
+  RewriteRule ^shop/tools(/.*)?$ - [F,L]
+  RewriteRule ^templates(/.*)?$ - [F,L]
+  RewriteRule ^templates_printable(/.*)?$ - [F,L]
+
+  # Saubere URLs (.html Endung im Browser entfernen)
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
   RewriteRule ^ %1 [R=301,L]
 
-  # Internally rewrite clean URL to .html file if it exists
+  # Saubere URLs intern auf .html abbilden falls vorhanden
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 
-# 3. Security Headers
+# 4. Zugriffsschutz fuer sensible Dateitypen & Credentials
+<FilesMatch "(?i)\.(env.*|secret|config|json|lock|md|sh|py|sql|db|sqlite|sqlite3|bak|swp|dist|git.*|zip|tar|gz|7z)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Oeffentliche Entdeckungs-Dateien explizit erlauben
+<FilesMatch "^(robots\.txt|sitemap\.xml|llms\.txt|llms-full\.txt)$">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+</FilesMatch>
+
+# 5. Maximale Sicherheits-Header
 <IfModule mod_headers.c>
-  Header set X-Content-Type-Options "nosniff"
-  Header set X-Frame-Options "SAMEORIGIN"
-  Header set X-XSS-Protection "1; mode=block"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
-  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(self 'https://js.stripe.com')"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://admin.dkschv.ch https://api.stripe.com; frame-src 'self' https://js.stripe.com https://checkout.stripe.com; object-src 'none'; base-uri 'self';"
 </IfModule>
 
-# 4. Gzip / Brotli Compression
+# 6. Gzip / Brotli Kompression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript application/json image/svg+xml
 </IfModule>
 
-# 5. Browser Caching
+# 7. Browser Caching
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"

@@ -104,6 +104,9 @@ def verify_download_token(token):
     return None
 
 class DKSchVShopHandler(SimpleHTTPRequestHandler):
+    server_version = "DKSchV-SecureServer"
+    sys_version = ""
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=BASE_DIR, **kwargs)
 
@@ -113,6 +116,8 @@ class DKSchVShopHandler(SimpleHTTPRequestHandler):
         self.send_header("X-Frame-Options", "SAMEORIGIN")
         self.send_header("X-XSS-Protection", "1; mode=block")
         self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
+        self.send_header("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+        self.send_header("Content-Security-Policy", "default-src 'self' https://js.stripe.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; frame-src 'self' https://js.stripe.com; connect-src 'self' https://api.stripe.com;")
         super().end_headers()
 
     def do_POST(self):
@@ -171,12 +176,28 @@ class DKSchVShopHandler(SimpleHTTPRequestHandler):
         parsed = urllib.parse.urlparse(self.path)
         clean_path = parsed.path.rstrip("/")
         
-        # Schutz vor direktem unautorisiertem Zugriff auf Bezahlvorlagen
-        if clean_path.startswith("/templates") or clean_path.startswith("/templates_printable"):
+        # Pfad-Validierung & Schutz vor Directory Traversal
+        if ".." in clean_path or "\0" in clean_path:
+            self.send_response(400)
+            self.end_headers()
+            return
+
+        lower_path = clean_path.lower()
+        # Schutz vor direktem unautorisiertem Zugriff auf Bezahlvorlagen & interne Dateien
+        if (
+            lower_path.startswith("/templates") or
+            lower_path.startswith("/templates_printable") or
+            lower_path.startswith("/tools") or
+            lower_path.startswith("/__pycache__") or
+            lower_path.startswith("/.") or
+            lower_path.endswith(".secret") or
+            lower_path.endswith(".py") or
+            lower_path.endswith(".env")
+        ):
             self.send_response(403)
             self.send_header("Content-Type", "text/plain; charset=utf-8")
             self.end_headers()
-            self.wfile.write("Zugriff verweigert: Bezahlvorlagen können nur über autorisierte Download-Tokens bezogen werden.".encode("utf-8"))
+            self.wfile.write("Zugriff verweigert: Bezahlvorlagen und interne Systemdateien sind geschützt.".encode("utf-8"))
             return
 
         # API: Token-gesicherter Download

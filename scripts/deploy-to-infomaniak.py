@@ -91,6 +91,7 @@ try:
     # 1. Haupt-HTML & SEO / GEO Dateien hochladen
     print("\n📦 Lade Haupt-HTML, SEO- und GEO-Dateien hoch...")
     core_files = [
+        ".htaccess",
         "index.html",
         "robots.txt",
         "sitemap.xml",
@@ -109,10 +110,12 @@ try:
         if local_p.exists():
             upload_file(ftp, local_p, f"/{rel_f}")
 
-    # 2. Assets (CSS) synchronisieren
-    print("\n📦 Aktualisiere Stylesheet...")
+    # 2. Assets (CSS & JS) synchronisieren
+    print("\n📦 Aktualisiere Stylesheet & Skripte...")
     if (ROOT_DIR / "assets" / "css" / "style.css").exists():
         upload_file(ftp, ROOT_DIR / "assets" / "css" / "style.css", "/assets/css/style.css")
+    if (ROOT_DIR / "assets" / "js" / "portal-auth.js").exists():
+        upload_file(ftp, ROOT_DIR / "assets" / "js" / "portal-auth.js", "/assets/js/portal-auth.js")
 
     # 3. wissen/ Verzeichnis synchronisieren
     print("\n📦 Synchronisiere /wissen ...")

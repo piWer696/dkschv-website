@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Chrüsimüsi · Premium Vorlagen & Tools</title>
+    <style>
+        :root {
+            --bg-base: #0F172A;
+            --bg-card: #1E293B;
+            --bg-card-hover: #273549;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --accent-gold: #F59E0B;
+            --accent-green: #10B981;
+            --accent-blue: #3B82F6;
+            --accent-purple: #8B5CF6;
+            --border-color: #334155;
+            --btn-gradient: linear-gradient(135deg, #F59E0B, #D97706);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 80px;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero */
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .badge-pill {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 9999px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #FFFFFF, #CBD5E1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.hero-sub {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 50px;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Grid */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Product Card */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #475569;
+        }
+
+        .card.featured {
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+        }
+
+        .featured-tag {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-gold);
+            color: #0F172A;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 9999px;
+            text-transform: uppercase;
+        }
+
+        .card-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .card p.desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .price-box {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+        }
+
+        .price-curr {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: #64748B;
+            font-size: 1.1rem;
+        }
+
+        /* Features */
+        .features-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .features-list li {
+            font-size: 0.9rem;
+            color: #CBD5E1;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list li span.check {
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        /* Buttons */
+        .btn-buy {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--btn-gradient);
+            color: #0F172A;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 14px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+            transition: opacity 0.2s, transform 0.1s;
+            border: none;
+        }
+
+        .btn-buy:hover {
+            opacity: 0.95;
+            transform: scale(1.01);
+        }
+
+        .btn-secondary {
+            background: #334155;
+            color: #FFFFFF;
+            box-shadow: none;
+        }
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 60px auto 0;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            padding: 40px;
+        }
+
+        .faq-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+
+        .faq-a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748B;
+            font-size: 13px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="badge-pill">⚡ SOFORT-DOWNLOAD & 100% PRIVATE DATEN</span>
+        <h1>Digitales Chrüsimüsi, das wirklich nützt.</h1>
+        <p class="hero-sub">Schluss mit frustrierenden Excel-Wüsten und teuren Software-Abos. Hol dir handgemachte Vorlagen mit Spassfaktor und Schweizer Präzision.</p>
+        
+        <div class="trust-bar">
+            <div class="trust-item">🔒 Keine Abo-Kosten (Einmalzahlung)</div>
+            <div class="trust-item">⚡ 1-Klick-Import in Google Sheets & Excel</div>
+            <div class="trust-item">🇨🇭 Schweizer Standards & CHF</div>
+            <div class="trust-item">🛡️ 100% lokal & privat (keine Cloud-Spionage)</div>
+        </div>
+    </header>
+
+    <div class="shop-grid">
+        <!-- PRODUKT 1: QUESTBUDGET -->
+        <div class="card featured">
+            <span class="featured-tag">🔥 Bestseller</span>
+            <div class="card-icon">🎮⚔️</div>
+            <h2>QuestBudget RPG Tracker</h2>
+            <p class="desc">Verwandle deine monatlichen Finanzen in ein Rollenspiel. Sammle XP mit jedem gesparten Franken, schalte 10 Trophäen frei und beerdige ungenutzte Abos auf dem Friedhof.</p>
+            
+            <div class="price-box">
+                <span class="price">14.90</span>
+                <span class="price-curr">CHF</span>
+                <span class="price-old">24.90 CHF</span>
+            </div>
+
+            <ul class="features-list">
+                <li><span class="check">✔</span> <strong>Character-Dashboard:</strong> Level up von Münz-Knappe bis Grossmeister</li>
+                <li><span class="check">✔</span> <strong>Abo-Friedhof:</strong> 5-Jahres-Verlustrechner & «Gerettetes Geld»</li>
+                <li><span class="check">✔</span> <strong>Ampelsystem:</strong> Schutz vor Overbudgeting</li>
+                <li><span class="check">✔</span> <strong>Inklusive:</strong> .xlsx Datei + 1-Klick Google Sheets Kopie</li>
+            </ul>
+
+            <!-- STRIPE / CHECKOUT BUTTON LINK -->
+            <a href="https://buy.stripe.com/7sYbJ1ek0eE6gZc8JCfMA03" class="btn-buy" target="_blank">
+                Jetzt für 14.90 CHF holen &rarr;
+            </a>
+        </div>
+
+        <!-- PRODUKT 2: FREELANCER KIT -->
+        <div class="card">
+            <div class="card-icon">🇨🇭📑</div>
+            <h2>Swiss Freelancer Starterkit</h2>
+            <p class="desc">Das All-in-One Werkzeug für Schweizer Selbstständige, Freelancer und Einzelfirmen. Spart dir monatlich 30–50 CHF für Bexio oder Klara.</p>
+            
+            <div class="price-box">
+                <span class="price">39.00</span>
+                <span class="price-curr">CHF</span>
+                <span class="price-old">59.00 CHF</span>
+            </div>
+
+            <ul class="features-list">
+                <li><span class="check">✔</span> <strong>Rechnungsvorlage:</strong> Schweizer MwSt 8.1% (ESTV konform)</li>
+                <li><span class="check">✔</span> <strong>Automatische Rundung:</strong> Exakte 5-Rappen-Rundung nach Gesetz</li>
+                <li><span class="check">✔</span> <strong>Stundenerfassung:</strong> Taggenaues Timesheet mit Abrechnungs-Status</li>
+                <li><span class="check">✔</span> <strong>MwSt-Rückstellung:</strong> Automatischer Rechner für die Quartalssteuer</li>
+            </ul>
+
+            <a href="https://buy.stripe.com/eVq7sLgs8anQ6ky6BufMA04" class="btn-buy btn-secondary" target="_blank">
+                Jetzt für 39.00 CHF holen &rarr;
+            </a>
+        </div>
+
+        <!-- PRODUKT 3: BUNDLE -->
+        <div class="card">
+            <div class="card-icon">💎📦</div>
+            <h2>Das Chrüsimüsi Master-Bundle</h2>
+            <p class="desc">Das Komplettpaket: Hol dir das QuestBudget RPG + das Swiss Freelancer Starterkit im Sparpaket und bring Ordnung in dein Privat- & Geschäftsleben.</p>
+            
+            <div class="price-box">
+                <span class="price">44.00</span>
+                <span class="price-curr">CHF</span>
+                <span class="price-old">83.90 CHF</span>
+            </div>
+
+            <ul class="features-list">
+                <li><span class="check">✔</span> <strong>Alle Vorlagen:</strong> QuestBudget RPG + Freelancer Kit</li>
+                <li><span class="check">✔</span> <strong>Lebenslange Updates:</strong> Kostenloser Zugriff auf neue Versionen</li>
+                <li><span class="check">✔</span> <strong>Kunden-Anleitungs-PDFs:</strong> Schritt-für-Schritt Einrichtung</li>
+                <li><span class="check">✔</span> <strong>Sofortiger Download:</strong> Sofort nach Kauf verfügbar</li>
+            </ul>
+
+            <a href="https://buy.stripe.com/7sY9AT3FmdA2aAO9NGfMA05" class="btn-buy btn-secondary" target="_blank">
+                Bundle für 44.00 CHF sichern &rarr;
+            </a>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+        <h3>Häufig gestellte Fragen (FAQ)</h3>
+
+        <div class="faq-item">
+            <div class="faq-q">Wie erhalte ich die Dateien nach dem Kauf?</div>
+            <div class="faq-a">Direkt nach dem Abschluss wirst du auf die Download-Seite weitergeleitet und erhältst zusätzlich eine Bestätigungs-E-Mail mit den Download-Links.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Brauche ich Microsoft Excel?</div>
+            <div class="faq-a">Nein! Du kannst die Dateien entweder in Microsoft Excel oder mit 1 Klick vollkommen kostenlos in Google Sheets (im Webbrowser auf Handy, Mac oder PC) nutzen.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Gibt es laufende Kosten oder Abos?</div>
+            <div class="faq-a">Nein. Du zahlst einmalig und besitzt die Vorlagen für immer. Keine versteckten Abos.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Welche Zahlungsmethoden werden akzeptiert?</div>
+            <div class="faq-a">TWINT, Kreditkarte (Visa, Mastercard, Amex), Apple Pay und Google Pay. Sicher verschlüsselt via Stripe.</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Digital Chrüsimüsi · Alle Rechte vorbehalten · Schweizer Qualität & Datenschutz</p>
+    </footer>
+</div>
+
+</body>
+</html>

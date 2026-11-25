@@ -7,6 +7,11 @@
 # Deployment archives
 *.zip
 
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
 # OS / Editor
 .DS_Store
 Thumbs.db

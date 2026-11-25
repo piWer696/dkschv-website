@@ -7,19 +7,43 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 });
 
 const app = express();
+app.disable("x-powered-by");
 
-app.use(express.static("."));
+// Sicherheits-Header Middleware
+app.use((req, res, next) => {
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("X-Frame-Options", "SAMEORIGIN");
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+  res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+  next();
+});
+
+// Zugriffsschutz gegen Pfad-Traversal und sensible Dateien (.env, .git, .secret, Skripte)
+app.use((req, res, next) => {
+  const p = req.path.toLowerCase();
+  if (
+    p.includes("/.") ||
+    p.includes("..") ||
+    p.endsWith(".env") ||
+    p.endsWith(".secret") ||
+    p.endsWith(".sh") ||
+    p.endsWith(".py") ||
+    p.startsWith("/shop/templates") ||
+    p.startsWith("/templates")
+  ) {
+    return res.status(403).type("text/plain").send("Zugriff verweigert: Geschützte Systemressource.");
+  }
+  next();
+});
+
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true, limit: "32kb" }));
+app.use(express.json({ limit: "32kb" }));
 
 app.post("/api/create-checkout-session", async (req, res) => {
-  // TODO: Set mode to "subscription" if selling recurring products.
   const mode = "payment";
 
-  // Use the fixed_by_ui parameters from the Field Intents section.
-  // line_items is sample_only — replace with real values, then list in TODO.
-  // Only include payment_method_collection when mode is "subscription".
   const sessionParams = {
     ui_mode: "form",
     mode,
@@ -32,7 +56,7 @@ app.post("/api/create-checkout-session", async (req, res) => {
     },
     submit_type: "auto",
     integration_identifier: "custom_embedded_web_0002",
-    line_items: [{ price: "price_...", quantity: 1 }],
+    line_items: [{ price: process.env.STRIPE_PRICE_ID || "price_...", quantity: 1 }],
   };
 
   if (mode === "subscription") {
@@ -43,8 +67,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
     const session = await stripe.checkout.sessions.create(sessionParams);
     res.json({ client_secret: session.client_secret });
   } catch (error) {
-    console.error("Error creating checkout session:", error);
-    res.status(500).json({ error: error.message });
+    console.error("Error creating checkout session:", error.message);
+    res.status(500).json({ error: "Fehler beim Erstellen der Bezahl-Sitzung." });
   }
 });
 
@@ -66,18 +90,14 @@ app.post("/api/webhook", express.raw({ type: "application/json" }), (req, res) =
     case "checkout.session.completed":
       const session = event.data.object;
       console.log("Checkout completed:", session.id);
-      // Fulfill the purchase, grant access, etc.
 
-      // Verify terms of service acceptance
       if (session.consent?.terms_of_service === "accepted") {
         console.log("Customer accepted terms of service");
       }
 
-      // Check promotional email consent (opt_in or opt_out)
       if (session.consent?.promotions === "opt_in") {
         const email = session.customer_details?.email;
         console.log("Customer opted in for promotional emails:", email);
-        // Add email to your marketing list
       }
       break;
     default:
@@ -88,4 +108,4 @@ app.post("/api/webhook", express.raw({ type: "application/json" }), (req, res) =
 });
 
 const PORT = process.env.PORT || 4242;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🔒 DKSchV Checkout Server running on port ${PORT}`));

@@ -1,0 +1,20 @@
+# DKSchV Shop Hardening · Infomaniak Apache
+Options -Indexes -ExecCGI
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Vorlagen vor Direktabruf sperren
+  RewriteRule ^templates(/.*)?$ - [F,L]
+  RewriteRule ^templates_printable(/.*)?$ - [F,L]
+  RewriteRule ^tools(/.*)?$ - [F,L]
+</IfModule>
+
+<FilesMatch "(?i)\.(secret|py|json|md|sh|env.*|bak)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+  </IfModule>
+</FilesMatch>

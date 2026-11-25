@@ -60,6 +60,8 @@ def upload_file(ftp, local_path, remote_path):
 
 def sync_tree(ftp, local_dir, remote_base):
     for root, dirs, files in os.walk(local_dir):
+        # Filter sensible Verzeichnisse (Cache, Git, etc.)
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d != "__pycache__"]
         rel_path = os.path.relpath(root, local_dir)
         if rel_path == ".":
             target_remote = remote_base
@@ -69,6 +71,9 @@ def sync_tree(ftp, local_dir, remote_base):
         ensure_remote_dir(ftp, target_remote)
         
         for file in files:
+            # Geheimnisse, Python-Bytecode und temporäre Dateien niemals hochladen
+            if file.startswith(".") or file.endswith(".pyc") or file.endswith(".secret") or file.endswith(".env"):
+                continue
             local_file = Path(root) / file
             remote_file = f"{target_remote}/{file}".replace("\\", "/")
             upload_file(ftp, local_file, remote_file)
