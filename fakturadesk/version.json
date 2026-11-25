@@ -1,14 +1,17 @@
 {
-  "version": "1.0.5",
-  "releaseDate": "2026-11-23",
-  "title": "FakturaDesk ERP v1.0.5 Release (DKSchV Secured)",
-  "changelog": "v1.0.5: Integrierte VESR & Payment Standards Maske (Banknummer/Bankkontonummer, Teilnehmernummer/Zusatz-TN, Belastungsanzeige, Payment Standards 2022, EZAG), Prefix-Live-Suche, freie PDF-Layoutwahl, optimierte Fernwartung (RustDesk), Rechnungs-Schnellfunktionen, HGM-Service Einzelmandant-Modus.",
-  "downloadUrlWin": "https://dkschv.ch/fakturadesk/FakturaDesk_v1.0.5_HGM_Service_Vollversion_Win11.zip",
-  "downloadUrlHgmWin": "https://dkschv.ch/fakturadesk/FakturaDesk_v1.0.5_HGM_Service_Vollversion_Win11.zip",
-  "downloadUrlDkschvWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.5/FakturaDesk_v1.0.5_DKSchV_Enterprise_Win11.zip",
-  "downloadUrlRenoGipsWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.5/FakturaDesk_v1.0.5_RenoGips_Handwerk_Win11.zip",
-  "downloadUrlLinux": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.5/FakturaDesk_v1.0.5_Linux_x64.tar.gz",
+  "version": "1.0.8",
+  "releaseDate": "2026-11-25",
+  "title": "FakturaDesk ERP v1.0.8 Release (Lieferschein erfassen & HGM-Service Drucklayout)",
+  "changelog": "• Lieferschein erfassen: Direkter Button & Tastenkürzel Strg+L\n• Lieferschein-Layout HGM-Service: 1:1 Druckvorlage nach Kundenwunsch (keine Preise/MwSt/Konto, sauberer Kasten mit Vertikallinien, Empfangsbestätigung)\n• Konfigurierbare Layout-Optionen und Live-Vorschau in den Einstellungen\n• Revisionssichere automatische Datenbankmigration ohne Datenverlust",
+  "downloadUrlWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_Windows_x64.zip",
+  "downloadUrlHgmWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_HGM_Service_Win11.zip",
+  "downloadUrlDkschvWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_DKSchV_Enterprise_Win11.zip",
+  "downloadUrlRenoGipsWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_RenoGips_Handwerk_Win11.zip",
+  "downloadUrlLinux": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_Linux_x64.tar.gz",
   "downloadUrlMobile": "https://dkschv.ch/fakturadesk/FakturaDesk_v1.0.2_Mobile.apk",
-  "sha256HgmWin": "ed0b198839f5de45d1a60e0b3f5d4790247ce1938f432cb6e1304f89fe7a71f3",
-  "sha256Win": "ed0b198839f5de45d1a60e0b3f5d4790247ce1938f432cb6e1304f89fe7a71f3"
+  "sha256Win": "e8a42b8e5585521af5b9cf4ccaef05a5fd010a8d4e192afacd9f33d89f810c83",
+  "sha256HgmWin": "fcc345c1139944eccd53d08267573dd95e330429bb65c3521954556a5620f6d9",
+  "sha256DkschvWin": "5cdaab31ad98a7466cf709a4abdd0f27fa41a6603ee1c1da060e76f0e1e3519b",
+  "sha256RenoGipsWin": "a101c997ba2196501ba1ad341f68ff6640879f99ba805859b54a60a86e5218bd",
+  "sha256Linux": "7149971fe243ff25dc818c7661119ac9b174c33d9b65d664c043acb9c88e8655"
 }

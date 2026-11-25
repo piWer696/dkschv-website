@@ -2,6 +2,13 @@
 Options -Indexes
 Header set X-Robots-Tag "noindex, nofollow, noarchive"
 <Files "version.json">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Allow from all
+    </IfModule>
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
     Header set Expires 0

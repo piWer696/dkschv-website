@@ -106,6 +106,8 @@ try:
         "datenschutz.html",
         "impressum.html",
         "blueprints/index.html",
+        "fakturadesk/.htaccess",
+        "fakturadesk/version.json",
     ]
     for rel_f in core_files:
         local_p = ROOT_DIR / rel_f
@@ -164,6 +166,7 @@ urls_to_test = [
     ("https://dkschv.ch/robots.txt", ["GPTBot", "PerplexityBot", "sitemap.xml", "llms.txt"]),
     ("https://dkschv.ch/app-entwicklung.html", ["Individuelle Software- & App-Entwicklung", "14", "Offline-First"]),
     ("https://dkschv.ch/sitemap.xml", ["dkschv.ch", "sicherheitsanalyse.html", "llms.txt"]),
+    ("https://dkschv.ch/fakturadesk/version.json", ["1.0.8", "FakturaDesk ERP v1.0.8 Release"]),
     ("https://dkschv.ch/", ["Bammattenweg 19", "Naters", "FAQPage", "IT-Sicherheit &amp; revDSG-Audits in Naters", "6–24"]),
     ("https://dkschv.ch/wissen/", ["Mandantenbereich", latest_kw, latest_date]),
     ("https://dkschv.ch/wissen/news/", [f"Branchennews {latest_kw}", latest_date]),

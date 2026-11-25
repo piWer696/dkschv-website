@@ -59,8 +59,8 @@ AddCharset UTF-8 .html .css .js .json .xml
   </IfModule>
 </FilesMatch>
 
-# Oeffentliche Entdeckungs-Dateien explizit erlauben
-<FilesMatch "^(robots\.txt|sitemap\.xml|llms\.txt|llms-full\.txt)$">
+# Oeffentliche Entdeckungs-Dateien und Manifeste explizit erlauben
+<FilesMatch "^(robots\.txt|sitemap\.xml|llms\.txt|llms-full\.txt|version\.json)$">
   <IfModule mod_authz_core.c>
     Require all granted
   </IfModule>
@@ -76,6 +76,11 @@ AddCharset UTF-8 .html .css .js .json .xml
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   Header always set X-Permitted-Cross-Domain-Policies "none"
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://admin.dkschv.ch https://api.stripe.com; frame-src 'self' https://js.stripe.com https://checkout.stripe.com; object-src 'none'; base-uri 'self';"
+
+  # HTML-Dateien immer frisch validieren (verhindert Veralten im Browser-Cache)
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
 </IfModule>
 
 # 6. Gzip / Brotli Kompression
