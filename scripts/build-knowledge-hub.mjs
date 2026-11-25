@@ -627,6 +627,56 @@ articleFiles.forEach(file => {
   });
 });
 
+// Helper: Targeted Shop Product Conversion Banner based on Article Category
+function getTargetedShopBanner(category, relativeRoot) {
+  let prodName = "KMU Cyber-Notfallplan & Runbook";
+  let prodDesc = "15-Minuten Sofortmassnahmen, Ransomware-Isolierung und BACS/EDÖB-Meldepflicht nach Schweizer Standard.";
+  let prodPrice = "CHF 89.–";
+  let stripeUrl = "https://buy.stripe.com/eVqeVd4Jq8fI24i5xqfMA0a";
+
+  if (category === 'datenschutz') {
+    prodName = "Schweizer nDSG-Compliance-Paket";
+    prodDesc = "Verzeichnis der Bearbeitungstätigkeiten (VdT Art. 12 revDSG), TOM-Katalog & Auftragsbearbeitungsvertrag (ADV).";
+    prodPrice = "CHF 149.–";
+    stripeUrl = "https://buy.stripe.com/fZucN53FmanQcIW7FyfMA0b";
+  } else if (category === 'governance') {
+    prodName = "KMU IT-Sicherheits-Audit Protokoll";
+    prodDesc = "75+ strukturierte Prüfpunkte für Cloud, M365, Active Directory & Backup-Resilienz für Schweizer KMU.";
+    prodPrice = "CHF 59.–";
+    stripeUrl = "https://buy.stripe.com/bJe4gz8ZGdA238m2lefMA0c";
+  } else if (category === 'ki' || category === 'cloud' || category === 'email') {
+    prodName = "Mitarbeiter IT- & KI-Richtlinie";
+    prodDesc = "Betriebsvereinbarung für Passwort-Hygiene, BYOD, Homeoffice und ChatGPT/KI-Nutzung im Unternehmen.";
+    prodPrice = "CHF 49.–";
+    stripeUrl = "https://buy.stripe.com/cNi5kD2BieE65guaRKfMA0d";
+  }
+
+  return `
+  <!-- Targeted Shop Conversion Card -->
+  <div class="shop-conversion-card" style="margin-top: 40px; background: linear-gradient(135deg, #0b1528 0%, #172544 100%); border: 1px solid #1e3a5f; border-left: 5px solid #10b981; border-radius: var(--radius-md); padding: 28px; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+      <div style="max-width: 600px;">
+        <span style="font-size: 11px; font-weight: 800; background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 8px; border-radius: 4px; text-transform: uppercase;">🇨🇭 Schweizer Fachvorlage · Sofort-Download</span>
+        <h4 style="font-size: 20px; font-weight: 800; color: #ffffff; margin: 10px 0 6px 0;">${prodName}</h4>
+        <p style="font-size: 14px; color: #94a3b8; margin: 0; line-height: 1.6;">${prodDesc}</p>
+      </div>
+      <div style="text-align: right; min-width: 160px;">
+        <span style="display: block; font-size: 24px; font-weight: 800; color: #10b981;">${prodPrice}</span>
+        <span style="font-size: 11px; color: #64748b;">Einmalzahlung · Printfertig &amp; Word/Markdown</span>
+      </div>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <a href="${stripeUrl}" target="_blank" class="btn btn-primary" style="background: #10b981; color: #ffffff; font-weight: 700; padding: 10px 22px; text-decoration: none; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px;">
+        <span>⚡ Jetzt mit Stripe kaufen (${prodPrice})</span>
+      </a>
+      <a href="${relativeRoot}/shop/" style="color: #38bdf8; font-size: 13.5px; text-decoration: none; font-weight: 600; margin-left: 8px;">
+        🛒 Zum DKSchV Shop (Alle 5 Vorlagen &amp; Komplett-Bundle) &rarr;
+      </a>
+    </div>
+  </div>
+  `;
+}
+
 // 2. Generate Article Pages in /wissen/<slug>.html
 articles.forEach(art => {
   const { contentHtml, leadHtml, restContentHtml, headings, referencesHtml } = formatMarkdown(art.body, {
@@ -659,10 +709,15 @@ articles.forEach(art => {
           <h4>📥 Passendes Arbeitsmittel: ${resTitle}</h4>
           <p>${resDesc}</p>
         </div>
-        <a href="./resources/${art.resource.slug}.html" class="resource-btn">
-          <span>🖨️ Arbeitsvorlage öffnen</span>
-          <span>&rarr;</span>
-        </a>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <a href="./resources/${art.resource.slug}.html" class="resource-btn">
+            <span>🖨️ Arbeitsvorlage öffnen</span>
+            <span>&rarr;</span>
+          </a>
+          <a href="../shop/" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <span>🛒 Vollversion im Shop</span>
+          </a>
+        </div>
       </div>
     `;
   }
@@ -757,6 +812,9 @@ articles.forEach(art => {
             <button type="button" class="gate-btn-primary" onclick="window.DKSchVPortal.openModal('login')">
               <span>🔑 Als Mandant anmelden</span>
             </button>
+            <a href="../shop/" class="gate-btn-secondary" style="border-color: #10b981; color: #10b981; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+              <span>🛒 Direkt im Shop kaufen</span>
+            </a>
             <button type="button" class="gate-btn-secondary" onclick="window.DKSchVPortal.openModal('request')">
               <span>📋 Zugang anfordern</span>
             </button>
@@ -776,6 +834,7 @@ articles.forEach(art => {
           ${resourceBoxHtml}
           ${restContentHtml}
           ${referencesHtml}
+          ${getTargetedShopBanner(art.category, '..')}
         </div>
         
         <!-- Post-article consultation box -->
@@ -787,6 +846,7 @@ articles.forEach(art => {
           </p>
           <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
             <a href="../kontakt.html" class="btn btn-primary" style="background: var(--teal-accent);">Kostenloses Erstgespräch anfragen &rarr;</a>
+            <a href="../shop/" class="btn btn-secondary" style="border-color: #10b981; color: #10b981;">🛒 Vorlagen im Shop kaufen &rarr;</a>
             <a href="../notfallplanung.html" class="btn btn-secondary" style="border-color: #334155; color: #ffffff;">Notfallplanung für KMU</a>
           </div>
         </div>
@@ -1230,6 +1290,24 @@ function generateCatalogHtml(relativeRoot = '.') {
             </a>
             `;
           }).join('\n')}
+        </div>
+      </div>
+
+      <!-- Shop Showcase Banner -->
+      <div style="margin-top: 56px; background: linear-gradient(135deg, #0b1528 0%, #152445 100%); border: 1px solid #1e3a5f; border-left: 6px solid #10b981; border-radius: var(--radius-xl); padding: 40px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; box-shadow: 0 15px 35px rgba(0,0,0,0.4);">
+        <div style="max-width: 620px;">
+          <span style="font-size: 11.5px; font-weight: 800; background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.35); padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">🇨🇭 DKSchV Digitaler Vorlagen-Shop</span>
+          <h3 style="font-size: 24px; font-weight: 800; color: #ffffff; margin: 12px 0 10px 0;">
+            Rechtssichere Schweizer Vorlagen &amp; Notfallpläne
+          </h3>
+          <p style="font-size: 15px; color: #94a3b8; line-height: 1.6; margin: 0;">
+            Sofortiger Download nach Kauf via Stripe in CHF: KMU Cyber-Notfallplan (CHF 89.–), nDSG-Compliance-Paket (CHF 149.–), IT-Audit Protokoll (CHF 59.–), KI- &amp; IT-Policy (CHF 49.–) oder das vergünstigte Komplett-Bundle.
+          </p>
+        </div>
+        <div>
+          <a href="${relativeRoot}/shop/" class="btn btn-primary" style="background: #10b981; font-size: 15px; font-weight: 700; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+            <span>🛒 Zum Vorlagen-Shop &rarr;</span>
+          </a>
         </div>
       </div>
 
