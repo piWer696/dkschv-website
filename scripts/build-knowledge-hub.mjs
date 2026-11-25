@@ -495,6 +495,7 @@ function renderHeader(activeNav = 'wissen', relativeRoot = '.') {
           <li><a href="${relativeRoot}/notfallplanung.html" class="nav-link ${activeNav === 'notfallplanung' ? 'active' : ''}">Notfallplanung</a></li>
           <li><a href="${relativeRoot}/ueber-uns.html" class="nav-link ${activeNav === 'ueber-uns' ? 'active' : ''}">Über&nbsp;uns</a></li>
           <li><a href="${relativeRoot}/kontakt.html" class="nav-link ${activeNav === 'kontakt' ? 'active' : ''}">Kontakt</a></li>
+          <li><a href="${relativeRoot}/shop/" class="nav-link" style="color: #10b981; font-weight: 700;">🛒 Vorlagen-Shop</a></li>
           <li>
             <a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)">
               <span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span>
