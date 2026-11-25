@@ -20,13 +20,22 @@ AddCharset UTF-8 .html .css .js .json .xml
   RewriteCond %{REQUEST_URI} !^/\.well-known/
   RewriteRule (^\.|/\.) - [F,L]
 
-  # Interne Ordner und digitale Vorlagen vor direktem Download sperren
+  # Interne Ordner und Skripte sperren
   RewriteRule ^content(/.*)?$ - [F,L]
   RewriteRule ^scripts(/.*)?$ - [F,L]
-  RewriteRule ^shop/templates(/.*)?$ - [F,L]
-  RewriteRule ^shop/templates_printable(/.*)?$ - [F,L]
   RewriteRule ^shop/tools(/.*)?$ - [F,L]
+
+  # Bezahlvorlagen schuetzen: Direkter Abruf gesperrt, ausser fuer Kunden auf der Danke-Seite
+  RewriteCond %{HTTP_REFERER} !dkschv\.ch/shop/danke\.html [NC]
+  RewriteRule ^shop/templates(/.*)?$ - [F,L]
+
+  RewriteCond %{HTTP_REFERER} !dkschv\.ch/shop/danke\.html [NC]
+  RewriteRule ^shop/templates_printable(/.*)?$ - [F,L]
+
+  RewriteCond %{HTTP_REFERER} !dkschv\.ch/shop/danke\.html [NC]
   RewriteRule ^templates(/.*)?$ - [F,L]
+
+  RewriteCond %{HTTP_REFERER} !dkschv\.ch/shop/danke\.html [NC]
   RewriteRule ^templates_printable(/.*)?$ - [F,L]
 
   # Saubere URLs (.html Endung im Browser entfernen)

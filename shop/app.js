@@ -323,6 +323,15 @@ function closeSuccessModal() {
   document.getElementById("modalBackdrop").style.display = "none";
 }
 
+// Offizielle Stripe Live Payment Links (CHF)
+const STRIPE_PAYMENT_LINKS = {
+  "notfallplan": "https://buy.stripe.com/eVqeVd4Jq8fI24i5xqfMA0a",
+  "ndsg": "https://buy.stripe.com/fZucN53FmanQcIW7FyfMA0b",
+  "audit": "https://buy.stripe.com/bJe4gz8ZGdA238m2lefMA0c",
+  "policy": "https://buy.stripe.com/cNi5kD2BieE65guaRKfMA0d",
+  "bundle": "https://buy.stripe.com/aFabJ1fo43ZscIWe3WfMA0e"
+};
+
 // Stripe Checkout Logik
 function startStripeCheckout() {
   if (cart.length === 0) return;
@@ -335,29 +344,17 @@ function startStripeCheckout() {
   
   const btn = document.getElementById("checkoutBtn");
   const originalText = btn.innerHTML;
-  btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Stripe Checkout wird vorbereitet...`;
+  btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Weiterleitung zu Stripe...`;
   btn.disabled = true;
 
-  // Anfrage an Backend senden
-  fetch("/api/create-checkout", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ items: cart })
-  })
-  .then(res => res.json())
-  .then(data => {
-    btn.innerHTML = originalText;
-    btn.disabled = false;
-    toggleCart();
-    showSuccessDownloadModal(data.tokens || {});
-  })
-  .catch(err => {
-    // Fallback bei statischem Hosting
-    btn.innerHTML = originalText;
-    btn.disabled = false;
-    toggleCart();
-    showSuccessDownloadModal({});
-  });
+  // Passenden Stripe Checkout Link ermitteln
+  let checkoutUrl = STRIPE_PAYMENT_LINKS["bundle"];
+  if (cart.length === 1 && STRIPE_PAYMENT_LINKS[cart[0].id]) {
+    checkoutUrl = STRIPE_PAYMENT_LINKS[cart[0].id];
+  }
+
+  // Direkte Weiterleitung zu Stripe Live Checkout
+  window.location.href = checkoutUrl;
 }
 
 function showSuccessDownloadModal(tokens = {}) {

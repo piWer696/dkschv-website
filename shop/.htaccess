@@ -3,9 +3,13 @@ Options -Indexes -ExecCGI
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # Vorlagen vor Direktabruf sperren
+  # Vorlagen vor Direktabruf sperren, ausser fuer Kunden auf der Danke-Seite
+  RewriteCond %{HTTP_REFERER} !dkschv\.ch/shop/danke\.html [NC]
   RewriteRule ^templates(/.*)?$ - [F,L]
+
+  RewriteCond %{HTTP_REFERER} !dkschv\.ch/shop/danke\.html [NC]
   RewriteRule ^templates_printable(/.*)?$ - [F,L]
+
   RewriteRule ^tools(/.*)?$ - [F,L]
 </IfModule>
 

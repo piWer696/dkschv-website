@@ -27,7 +27,7 @@
       min-height: 100vh;
     }
     .container {
-      max-width: 680px;
+      max-width: 720px;
       width: 100%;
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -93,22 +93,33 @@
       color: var(--text-muted);
       font-size: 0.82rem;
     }
+    .actions-wrap {
+      display: flex;
+      gap: 8px;
+    }
     .btn-download {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       background: var(--accent-emerald);
       color: #FFFFFF;
       font-weight: 600;
-      font-size: 13px;
-      padding: 10px 18px;
-      border-radius: 8px;
+      font-size: 12.5px;
+      padding: 8px 14px;
+      border-radius: 6px;
       text-decoration: none;
       transition: all 0.2s ease;
+      white-space: nowrap;
     }
     .btn-download:hover {
       background: #059669;
       transform: translateY(-1px);
+    }
+    .btn-pdf {
+      background: #0284C7;
+    }
+    .btn-pdf:hover {
+      background: #0369A1;
     }
     .support-note {
       background: rgba(6, 182, 212, 0.08);
@@ -137,46 +148,112 @@
 
 <div class="container">
   <div class="badge">
-    <i class="fa-solid fa-circle-check"></i> 🇨🇭 Zahlung erfolgreich verifiziert
+    <i class="fa-solid fa-circle-check"></i> 🇨🇭 Zahlung via Stripe erfolgreich abgeschlossen
   </div>
   <h1>Vielen Dank für Ihre Bestellung!</h1>
   <p class="sub">
-    Ihre Zahlung wurde über Stripe abgewickelt. Ihre Schweizer Fachvorlagen stehen Ihnen ab sofort 
-    über die gesicherten Download-Tokens zur Verfügung.
+    Ihre Transaktion wurde erfolgreich über Stripe verifiziert. Ihre Schweizer Fachvorlagen 
+    stehen Ihnen jetzt zum sofortigen Download und Ausdruck bereit.
   </p>
 
   <div class="download-box" id="downloadContainer">
-    <div class="download-item">
-      <div class="item-info">
-        <strong><i class="fa-solid fa-file-shield" style="color: #10B981;"></i> Schweizer Fachvorlagen-Paket</strong>
-        <span>Druckreifes PDF & bearbeitbare Markdown/DOCX-Vorlagendateien</span>
-      </div>
-      <div>
-        <a href="index.html" class="btn-download">
-          <i class="fa-solid fa-arrow-left"></i> Zur Vorlagenübersicht
-        </a>
-      </div>
-    </div>
+    <!-- Dynamisch befüllt via JavaScript je nach gekauftem Produkt -->
   </div>
 
   <div class="support-note">
     <strong><i class="fa-solid fa-headset"></i> DKSchV Schweizer Fach-Support:</strong>
-    Bei Fragen zur Anpassung der Vorlagen, zur nDSG-Auditierung oder bei akuten Cyber-Sicherheitsfragen 
+    Bei Fragen zur nDSG-Konformität, zur praktischen Umsetzung in Ihrem Unternehmen oder bei akuten Vorfällen 
     erreichen Sie unsere Analysten unter <a href="mailto:info@dkschv.ch" style="color: #38BDF8; font-weight: 600;">info@dkschv.ch</a>.
   </div>
 
   <div class="footer-links">
-    &copy; 2026 DKSchV Dini Naters · Datenschutz & Cyber-Sicherheit Schweiz · <a href="/datenschutz.html">Datenschutz</a> · <a href="/impressum.html">Impressum</a>
+    &copy; 2026 DKSchV Dini Naters · Datenschutz & Cyber-Sicherheit Schweiz · <a href="/shop/">Zurück zum Shop</a> · <a href="/datenschutz.html">Datenschutz</a> · <a href="/impressum.html">Impressum</a>
   </div>
 </div>
 
 <script>
-  // Automatische Token-Auswertung falls über Stripe Checkout zurückgekehrt
+  const PRODUCTS_MAP = {
+    "notfallplan": [
+      {
+        title: "KMU Cyber-Notfallplan & Runbook",
+        desc: "15-Minuten Sofortmassnahmen, Meldepflicht BACS/EDÖB",
+        html: "templates_printable/01_Schweizer_KMU_Cyber_Notfallplan_Runbook.html",
+        md: "templates/01_Schweizer_KMU_Cyber_Notfallplan_Runbook.md"
+      }
+    ],
+    "ndsg": [
+      {
+        title: "Schweizer nDSG-Compliance-Paket",
+        desc: "Verzeichnis der Bearbeitungstätigkeiten (VdT), TOM-Katalog & ADV",
+        html: "templates_printable/02_Schweizer_nDSG_Datenschutz_Paket_TOM_VdT.html",
+        md: "templates/02_Schweizer_nDSG_Datenschutz_Paket_TOM_VdT.md"
+      }
+    ],
+    "audit": [
+      {
+        title: "KMU IT-Sicherheits-Audit Protokoll",
+        desc: "75+ Prüfpunkte für Cloud, M365 & Backup-Resilienz",
+        html: "templates_printable/03_KMU_IT_Sicherheits_Audit_Checkliste.html",
+        md: "templates/03_KMU_IT_Sicherheits_Audit_Checkliste.md"
+      }
+    ],
+    "policy": [
+      {
+        title: "Mitarbeiter IT- & KI-Richtlinie",
+        desc: "Passwort-Hygiene, BYOD, Homeoffice & ChatGPT/KI-Regelung",
+        html: "templates_printable/04_Mitarbeiter_IT_Sicherheitsrichtlinie_KI_Policy.html",
+        md: "templates/04_Mitarbeiter_IT_Sicherheitsrichtlinie_KI_Policy.md"
+      }
+    ],
+    "bundle": [
+      {
+        title: "1. KMU Cyber-Notfallplan & Runbook",
+        desc: "15-Minuten Sofortmassnahmen & BACS/EDÖB-Meldepflicht",
+        html: "templates_printable/01_Schweizer_KMU_Cyber_Notfallplan_Runbook.html",
+        md: "templates/01_Schweizer_KMU_Cyber_Notfallplan_Runbook.md"
+      },
+      {
+        title: "2. Schweizer nDSG-Compliance-Paket",
+        desc: "VdT (Art. 12 nDSG), TOM (Art. 8 nDSG) & Auftragsbearbeitungsvertrag",
+        html: "templates_printable/02_Schweizer_nDSG_Datenschutz_Paket_TOM_VdT.html",
+        md: "templates/02_Schweizer_nDSG_Datenschutz_Paket_TOM_VdT.md"
+      },
+      {
+        title: "3. KMU IT-Sicherheits-Audit Protokoll",
+        desc: "Strukturierte Prüfliste für IT-Infrastruktur & Cloud",
+        html: "templates_printable/03_KMU_IT_Sicherheits_Audit_Checkliste.html",
+        md: "templates/03_KMU_IT_Sicherheits_Audit_Checkliste.md"
+      },
+      {
+        title: "4. Mitarbeiter IT- & KI-Richtlinie",
+        desc: "Mitarbeiter-Betriebsvereinbarung für IT-Sicherheit & KI-Tools",
+        html: "templates_printable/04_Mitarbeiter_IT_Sicherheitsrichtlinie_KI_Policy.html",
+        md: "templates/04_Mitarbeiter_IT_Sicherheitsrichtlinie_KI_Policy.md"
+      }
+    ]
+  };
+
   const params = new URLSearchParams(window.location.search);
-  const sessionId = params.get('session_id');
-  if (sessionId) {
-    console.log("Stripe Checkout Session:", sessionId);
-  }
+  const selectedProduct = params.get('product') || 'bundle';
+  const items = PRODUCTS_MAP[selectedProduct] || PRODUCTS_MAP['bundle'];
+
+  const container = document.getElementById('downloadContainer');
+  container.innerHTML = items.map(item => `
+    <div class="download-item">
+      <div class="item-info">
+        <strong><i class="fa-solid fa-file-shield text-emerald"></i> ${item.title}</strong>
+        <span>${item.desc}</span>
+      </div>
+      <div class="actions-wrap">
+        <a href="${item.html}" target="_blank" class="btn-download btn-pdf" title="Druckfertige A4-Ansicht öffnen">
+          <i class="fa-solid fa-print"></i> A4-PDF
+        </a>
+        <a href="${item.md}" download class="btn-download" title="Quelldatei herunterladen">
+          <i class="fa-solid fa-download"></i> .md / Word
+        </a>
+      </div>
+    </div>
+  `).join('');
 </script>
 </body>
 </html>
