@@ -1,151 +1,182 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vielen Dank für deinen Kauf! · Digital Chrüsimüsi</title>
-    <style>
-        :root {
-            --bg-base: #0F172A;
-            --bg-card: #1E293B;
-            --text-main: #F8FAFC;
-            --text-muted: #94A3B8;
-            --accent-gold: #F59E0B;
-            --accent-green: #10B981;
-            --border-color: #334155;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-base);
-            color: var(--text-main);
-            padding: 50px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            max-width: 680px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            text-align: center;
-        }
-        .success-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-        h1 {
-            color: #FFFFFF;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-        p.sub {
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            font-size: 1rem;
-        }
-        .download-box {
-            background: #0F172A;
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 24px;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-        .download-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 0;
-            border-bottom: 1px solid #1E293B;
-        }
-        .download-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        .item-info strong {
-            display: block;
-            color: #FFFFFF;
-            font-size: 1rem;
-        }
-        .item-info span {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-        .btn-action {
-            background: var(--accent-gold);
-            color: #0F172A;
-            font-weight: 700;
-            font-size: 14px;
-            padding: 10px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-green {
-            background: var(--accent-green);
-            color: #FFFFFF;
-        }
-        .instructions {
-            text-align: left;
-            background: rgba(16, 185, 129, 0.08);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 12px;
-            padding: 18px;
-            margin-top: 25px;
-            font-size: 0.9rem;
-            color: #CBD5E1;
-        }
-        .instructions h4 {
-            color: var(--accent-green);
-            margin-bottom: 8px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zahlung erfolgreich · DKSchV Schweizer Fachvorlagen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-base: #0B132B;
+      --bg-card: #1C2541;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --accent-emerald: #10B981;
+      --accent-cyan: #06B6D4;
+      --border-color: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #FFFFFF;
+    }
+    p.sub {
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .download-box {
+      background: #0B132B;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+    .download-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .download-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .download-item:first-child {
+      padding-top: 0;
+    }
+    .item-info strong {
+      display: block;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .item-info span {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-emerald);
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-download:hover {
+      background: #059669;
+      transform: translateY(-1px);
+    }
+    .support-note {
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 25px;
+      font-size: 0.88rem;
+      color: #CBD5E1;
+      text-align: left;
+    }
+    .support-note strong { color: var(--accent-cyan); }
+    .footer-links {
+      margin-top: 30px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+    .footer-links a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+    .footer-links a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="success-icon">🎉🪙</div>
-    <h1>Zahlung erfolgreich! Vielen Dank!</h1>
-    <p class="sub">Deine Bestellung ist abgeschlossen. Du kannst deine Vorlagen jetzt direkt herunterladen oder in Google Drive öffnen.</p>
+  <div class="badge">
+    <i class="fa-solid fa-circle-check"></i> 🇨🇭 Zahlung erfolgreich verifiziert
+  </div>
+  <h1>Vielen Dank für Ihre Bestellung!</h1>
+  <p class="sub">
+    Ihre Zahlung wurde über Stripe abgewickelt. Ihre Schweizer Fachvorlagen stehen Ihnen ab sofort 
+    über die gesicherten Download-Tokens zur Verfügung.
+  </p>
 
-    <div class="download-box">
-        <!-- DOWNLOAD 1 -->
-        <div class="download-item">
-            <div class="item-info">
-                <strong>🎮 QuestBudget RPG Finance Tracker</strong>
-                <span>Excel-Datei (.xlsx) & Google Sheets Kopie</span>
-            </div>
-            <div>
-                <a href="downloads/QuestBudget_RPG_Finance_Tracker.xlsx" download class="btn-action">Download .xlsx</a>
-            </div>
-        </div>
-
-        <!-- DOWNLOAD 2 -->
-        <div class="download-item">
-            <div class="item-info">
-                <strong>🇨🇭 Swiss Freelancer Starterkit</strong>
-                <span>Rechnung, Stundenerfassung & MwSt 8.1%</span>
-            </div>
-            <div>
-                <a href="downloads/Swiss_Freelancer_Starterkit_CHF.xlsx" download class="btn-action">Download .xlsx</a>
-            </div>
-        </div>
+  <div class="download-box" id="downloadContainer">
+    <div class="download-item">
+      <div class="item-info">
+        <strong><i class="fa-solid fa-file-shield" style="color: #10B981;"></i> Schweizer Fachvorlagen-Paket</strong>
+        <span>Druckreifes PDF & bearbeitbare Markdown/DOCX-Vorlagendateien</span>
+      </div>
+      <div>
+        <a href="index.html" class="btn-download">
+          <i class="fa-solid fa-arrow-left"></i> Zur Vorlagenübersicht
+        </a>
+      </div>
     </div>
+  </div>
 
-    <div class="instructions">
-        <h4>⚡ Lieber direkt in Google Sheets arbeiten?</h4>
-        <p>Nutze einfach diesen Link für eine 1-Klick-Kopie in dein eigenes Google Drive:</p>
-        <p style="margin-top: 10px;">
-            <a href="DEIN_GOOGLE_SHEETS_LINK_HIER" target="_blank" class="btn-action btn-green">👉 Als Google Sheet öffnen</a>
-        </p>
-    </div>
+  <div class="support-note">
+    <strong><i class="fa-solid fa-headset"></i> DKSchV Schweizer Fach-Support:</strong>
+    Bei Fragen zur Anpassung der Vorlagen, zur nDSG-Auditierung oder bei akuten Cyber-Sicherheitsfragen 
+    erreichen Sie unsere Analysten unter <a href="mailto:info@dkschv.ch" style="color: #38BDF8; font-weight: 600;">info@dkschv.ch</a>.
+  </div>
 
-    <p style="margin-top: 30px; font-size: 12px; color: #64748B;">
-        Bei Fragen oder Feedback erreichst du uns jederzeit unter kontakt@deinedomain.ch
-    </p>
+  <div class="footer-links">
+    &copy; 2026 DKSchV Dini Naters · Datenschutz & Cyber-Sicherheit Schweiz · <a href="/datenschutz.html">Datenschutz</a> · <a href="/impressum.html">Impressum</a>
+  </div>
 </div>
 
+<script>
+  // Automatische Token-Auswertung falls über Stripe Checkout zurückgekehrt
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get('session_id');
+  if (sessionId) {
+    console.log("Stripe Checkout Session:", sessionId);
+  }
+</script>
 </body>
 </html>
