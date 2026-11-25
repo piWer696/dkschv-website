@@ -71,8 +71,8 @@ def sync_tree(ftp, local_dir, remote_base):
         ensure_remote_dir(ftp, target_remote)
         
         for file in files:
-            # Geheimnisse, Python-Bytecode und temporäre Dateien niemals hochladen
-            if file.startswith(".") or file.endswith(".pyc") or file.endswith(".secret") or file.endswith(".env"):
+            # Geheimnisse, Python-Bytecode und temporäre Dateien niemals hochladen (.htaccess ausdrücklich erlauben)
+            if (file.startswith(".") and file != ".htaccess") or file.endswith(".pyc") or file.endswith(".secret") or file.endswith(".env"):
                 continue
             local_file = Path(root) / file
             remote_file = f"{target_remote}/{file}".replace("\\", "/")
