@@ -104,6 +104,7 @@ try:
         "kontakt.html",
         "datenschutz.html",
         "impressum.html",
+        "blueprints/index.html",
     ]
     for rel_f in core_files:
         local_p = ROOT_DIR / rel_f
