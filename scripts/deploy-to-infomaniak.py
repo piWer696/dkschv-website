@@ -108,6 +108,7 @@ try:
         "blueprints/index.html",
         "fakturadesk/.htaccess",
         "fakturadesk/version.json",
+        "fakturadesk/index.html",
     ]
     for rel_f in core_files:
         local_p = ROOT_DIR / rel_f
@@ -170,6 +171,7 @@ urls_to_test = [
     ("https://dkschv.ch/assets/js/xmas-weather.js", ["decodeWmo", "fetchNatersWeather"]),
     ("https://dkschv.ch/sitemap.xml", ["dkschv.ch", "sicherheitsanalyse.html", "llms.txt"]),
     ("https://dkschv.ch/fakturadesk/version.json", ["1.0.8", "FakturaDesk ERP v1.0.8 Release"]),
+    ("https://dkschv.ch/fakturadesk/", ["FakturaDesk v1.0.8 kostenlos", "6bc09a7915b5229160d384cc14761841ac164ddedaad144107266eb28af223fb"]),
     ("https://dkschv.ch/", ["Bammattenweg 19", "Naters", "FAQPage", "IT-Sicherheit &amp; revDSG-Audits in Naters", "exakt zu Ihrem Workflow passt"]),
     ("https://dkschv.ch/wissen/", ["Mandantenbereich", latest_kw, latest_date]),
     ("https://dkschv.ch/wissen/news/", [f"Branchennews {latest_kw}", latest_date]),
