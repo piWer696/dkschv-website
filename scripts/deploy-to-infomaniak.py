@@ -162,7 +162,7 @@ urls_to_test = [
     ("https://dkschv.ch/llms.txt", ["DKSchV Dini", "Andreas Dini", "Naters", "6–24 Stunden"]),
     ("https://dkschv.ch/llms-full.txt", ["DKSchV Dini", "Bammattenweg 19", "CHF 1'490", "6–24 Stunden"]),
     ("https://dkschv.ch/robots.txt", ["GPTBot", "PerplexityBot", "sitemap.xml", "llms.txt"]),
-    ("https://dkschv.ch/app-entwicklung.html", ["Individuelle Business-Apps für Schweizer KMU", "14", "Offline-First"]),
+    ("https://dkschv.ch/app-entwicklung.html", ["Individuelle Software- & App-Entwicklung", "14", "Offline-First"]),
     ("https://dkschv.ch/sitemap.xml", ["dkschv.ch", "sicherheitsanalyse.html", "llms.txt"]),
     ("https://dkschv.ch/", ["Bammattenweg 19", "Naters", "FAQPage", "IT-Sicherheit &amp; revDSG-Audits in Naters", "6–24"]),
     ("https://dkschv.ch/wissen/", ["Mandantenbereich", latest_kw, latest_date]),
