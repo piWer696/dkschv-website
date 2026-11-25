@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Individuelle App- & Softwareentwicklung für Schweizer KMU | DKSchV Schweiz</title>
+  <meta name="description" content="Professionelle Entwicklung mobiler Business-Apps für iOS & Android. Nativ, offlinefähig mit lokaler SQLite-Datenbank, 100% Schweizer nDSG-Datenschutz und nahtloser Schnittstellenanbindung.">
+  <link rel="canonical" href="https://www.dkschv.ch/app-entwicklung.html">
+  <link rel="icon" type="image/svg+xml" href="assets/images/dkschv_icon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/images/dkschv_icon.png">
+  <link rel="alternate" type="text/plain" href="https://dkschv.ch/llms.txt" title="LLM Context">
+  <link rel="sitemap" type="application/xml" href="https://dkschv.ch/sitemap.xml" title="Sitemap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Emergency Bar -->
+  <div class="top-emergency-bar">
+    <div class="container top-bar-inner">
+      <div class="top-trust-tags">
+        <span class="top-trust-tag">🇨🇭 Schweizer Software-Engineering &amp; Cyber-Security</span>
+        <span class="top-trust-tag">⚖️ 100% nDSG-konform</span>
+        <span class="top-trust-tag">📍 Naters / Wallis</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="#" onclick="openPortalLoginModal(event)" class="top-bar-login-btn"><span>🔒</span> <strong>Kunden-Login</strong></a>
+        <a href="kontakt.html#notfall" class="emergency-quicklink">
+          🚨 Akuter IT-Notfall? Sofortige Triage &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-link" title="DKSchV Schweiz Startseite">
+        <img src="assets/images/dkschv_logo.svg" alt="DKSchV Schweiz Logo" class="brand-logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="sicherheitsanalyse.html" class="nav-link">Sicherheitsanalyse</a></li>
+          <li><a href="risikomanagement.html" class="nav-link">Risikomanagement</a></li>
+          <li><a href="notfallplanung.html" class="nav-link">Notfallplanung</a></li>
+          <li><a href="app-entwicklung.html" class="nav-link active">App-Entwicklung</a></li>
+          <li><a href="blueprints/" class="nav-link" style="color: #0284c7; font-weight: 600;">Blueprints</a></li>
+          <li><a href="shop/" class="nav-link" style="color: #10b981; font-weight: 700;">🛒 Vorlagen-Shop</a></li>
+          <li><a href="ueber-uns.html" class="nav-link">Über&nbsp;uns</a></li>
+          <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+          <li><a href="#" class="nav-portal-btn" id="headerPortalBtn" onclick="openPortalLoginModal(event)"><span class="portal-btn-icon">🔒</span> <span class="portal-btn-text">Kunden-Login</span></a></li>
+          <li><a href="kontakt.html?thema=App-Entwicklung" class="nav-cta-btn">App anfragen</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header Hero -->
+  <section class="section" style="background: radial-gradient(circle at 80% 20%, #1e293b 0%, #0a0f1d 70%); color:#ffffff; padding: 64px 0;">
+    <div class="container">
+      <span class="badge badge-teal" style="margin-bottom: 16px;">🇨🇭 Software &amp; Mobile App Engineering</span>
+      <h1 style="font-size: 38px; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.01em;">
+        Individuelle Business-Apps für Schweizer KMU
+      </h1>
+      <p style="font-size: 17px; color: #cbd5e1; max-width: 720px; line-height: 1.6;">
+        Von der Idee zur marktreifen iOS- und Android-App: Hochperformant, offlinefähig für den Baustellen- und Vor-Ort-Einsatz, revisionssicher nach Schweizer Datenschutzgesetz (nDSG) und ohne monatliche Lizenzfallen von Drittanbietern.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="section">
+    <div class="container container-narrow">
+      <h2 style="font-size: 26px; font-weight: 700; margin-bottom: 16px; color: var(--text-dark);">
+        Maßgeschneiderte Software statt starrer Standard-Lösungen
+      </h2>
+      <p style="font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+        Standard-Apps aus den App Stores passen selten exakt zu den etablierten Betriebsabläufen eines Schweizer KMU. Sie scheitern oft an Funklöchern auf der Baustelle oder in Bergregionen, speichern sensible Firmendaten unkontrolliert auf US-Servern und binden Unternehmen an teure Monatsabos. <strong>DKSchV</strong> baut massgeschneiderte Apps, die exakt Ihre Workflows abbilden und Ihnen die volle Hoheit über Daten und Quellcode garantieren.
+      </p>
+
+      <!-- 4 Kernvorteile Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 40px;">
+        <div style="background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px;">
+          <div style="font-size: 24px; margin-bottom: 8px;">📶</div>
+          <h3 style="font-size: 17px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px;">100% Offline-First</h3>
+          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5;">
+            Funktioniert auch ohne Mobilfunk im Keller, Tunnel oder Gebirge. Daten werden lokal in einer verschlüsselten SQLite-Datenbank gehalten und bei Netzrückkehr synchronisiert.
+          </p>
+        </div>
+        <div style="background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px;">
+          <div style="font-size: 24px; margin-bottom: 8px;">📱</div>
+          <h3 style="font-size: 17px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px;">Apple iOS &amp; Android</h3>
+          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5;">
+            Cross-Platform Entwicklung mit nativer Leistung. Eine einheitliche Codebasis für iPhone, iPad und Android-Geräte halbiert die Entwicklungskosten und sichert identische Funktionen.
+          </p>
+        </div>
+        <div style="background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px;">
+          <div style="font-size: 24px; margin-bottom: 8px;">✍️</div>
+          <h3 style="font-size: 17px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px;">Hardware &amp; Touch-Visum</h3>
+          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5;">
+            Nahtlose Nutzung nativer Hardware-Funktionen: Touchscreen-Kundenunterschrift für Regierapporte, Barcode-/QR-Scanner, Fotoupload und Schweizer QR-Rechnungsgenerator.
+          </p>
+        </div>
+        <div style="background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px;">
+          <div style="font-size: 24px; margin-bottom: 8px;">🛡️</div>
+          <h3 style="font-size: 17px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px;">Schweizer nDSG &amp; Security</h3>
+          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5;">
+            Entwickelt von Cyber-Security-Experten: End-to-End-Verschlüsselung (TLS 1.3 / AES-256), strenge Mandantentrennung, Zero-Trust-Architektur und geprüfter Schweizer Datenschutz.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 Modulare Festpreis-Pakete -->
+      <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 12px; color: var(--text-dark);">
+        Transparente Festpreis-Pakete für Schweizer KMU
+      </h2>
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 24px;">
+        Keine versteckten Stundensätze oder unkontrollierbare Budgets. Wählen Sie die passende Ausbaustufe für Ihren Bedarf:
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+        
+        <!-- Paket 1: Starter / MVP -->
+        <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+            <div>
+              <span style="display: inline-block; background: #e0f2fe; color: #0284c7; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 6px;">Basis-Stufe</span>
+              <h3 style="font-size: 20px; font-weight: 800; color: var(--text-dark); margin: 0;">Paket 1: MVP / Starter-App</h3>
+              <p style="font-size: 14px; color: var(--text-muted); margin: 4px 0 0 0;">Ideal für interne Formulare, Checklisten, einfache Inventur und mobile Datenerfassung.</p>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 24px; font-weight: 800; color: #0284c7;">CHF 6&apos;850.–</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Pauschal · ca. 3–5 Wochen</div>
+            </div>
+          </div>
+          <ul style="font-size: 14px; color: var(--text-muted); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; list-style: none; padding: 0; margin-top: 14px; border-top: 1px solid var(--border); padding-top: 14px;">
+            <li>✔ Bis zu 5 strukturierte Erfassungsmasken</li>
+            <li>✔ Lokale, verschlüsselte SQLite-Datenbank</li>
+            <li>✔ PDF-Export mit Firmenlogo vor Ort</li>
+            <li>✔ Bereitstellung für Android oder iOS</li>
+          </ul>
+        </div>
+
+        <!-- Paket 2: Business App (Empfohlen) -->
+        <div style="background: radial-gradient(ellipse at top, #131c31 0%, #080d1a 100%); border: 1px solid rgba(56, 189, 248, 0.35); border-top: 4px solid #38bdf8; color: #ffffff; border-radius: var(--radius-lg); padding: 32px; box-shadow: 0 15px 35px -5px rgba(0,0,0,0.4);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+            <div>
+              <span style="display: inline-block; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 6px;">
+                ⭐ Meistgewählt · Vollständige KMU-Lösung
+              </span>
+              <h3 style="font-size: 22px; font-weight: 800; color: #ffffff; margin: 0;">Paket 2: Business App Komplettlösung</h3>
+              <p style="font-size: 14px; color: #94a3b8; margin: 4px 0 0 0;">
+                Schlüsselfertige App für iOS (App Store) &amp; Android (Google Play) mit Cloud-Synchronisation und Schnittstellen.
+              </p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 10px 16px; text-align: right;">
+              <div style="font-size: 26px; font-weight: 800; color: #38bdf8;">CHF 14&apos;800.–</div>
+              <div style="font-size: 11px; color: #94a3b8;">Festpreis · ca. 6–10 Wochen</div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 20px 0; font-size: 13.5px; color: #cbd5e1;">
+            <div style="display: flex; gap: 8px;">
+              <span style="color: #10b981; font-weight: bold;">✓</span>
+              <span><strong>Individuelles UI/UX-Design:</strong> Klickbarer Figma-Prototyp vorab.</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <span style="color: #10b981; font-weight: bold;">✓</span>
+              <span><strong>Cross-Platform:</strong> Native App für Apple iOS &amp; Google Android.</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <span style="color: #10b981; font-weight: bold;">✓</span>
+              <span><strong>Cloud &amp; REST-API:</strong> Schweizer Cloud-Synchronisation (JWT / MFA).</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <span style="color: #10b981; font-weight: bold;">✓</span>
+              <span><strong>Hardware-Scanner:</strong> Barcode-, QR-Code- &amp; Touch-Unterschrift.</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <span style="color: #10b981; font-weight: bold;">✓</span>
+              <span><strong>Cyber-Security Audit:</strong> OWASP Mobile Check &amp; Schweizer nDSG-Siegel.</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <span style="color: #10b981; font-weight: bold;">✓</span>
+              <span><strong>Store-Release:</strong> TestFlight Beta &amp; Begleitung bis zur App Store Freigabe.</span>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 18px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;">
+            <div style="font-size: 12.5px; color: #94a3b8;">
+              Zahlung in 3 Raten nach Meilenstein (30 % Start / 40 % Beta / 30 % Release).
+            </div>
+            <a href="kontakt.html?thema=Business-App-Paket" class="btn btn-primary" style="font-size: 14px; padding: 10px 22px;">
+              Business App unverbindlich anfragen &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Paket 3: Enterprise & High-Security -->
+        <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+            <div>
+              <span style="display: inline-block; background: #fef3c7; color: #b45309; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 6px;">Enterprise &amp; Compliance</span>
+              <h3 style="font-size: 20px; font-weight: 800; color: var(--text-dark); margin: 0;">Paket 3: Enterprise &amp; High-Security</h3>
+              <p style="font-size: 14px; color: var(--text-muted); margin: 4px 0 0 0;">Für anspruchsvolle Branchen (Medizin, Finanz, Logistik) mit höchsten Compliance-Anforderungen.</p>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 24px; font-weight: 800; color: var(--text-dark);">CHF 24&apos;500.–</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Pauschal · ca. 10–16 Wochen</div>
+            </div>
+          </div>
+          <ul style="font-size: 14px; color: var(--text-muted); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; list-style: none; padding: 0; margin-top: 14px; border-top: 1px solid var(--border); padding-top: 14px;">
+            <li>✔ E-Banking &amp; TWINT-Zahlungsanbindung</li>
+            <li>✔ Vollständige Mandanten- &amp; Rollenrechte</li>
+            <li>✔ Biometrische Authentifizierung (FaceID/Fingerprint)</li>
+            <li>✔ Eigener Penetrationstest &amp; nDSG-Zertifikat</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Referenz-Box: FakturaDesk -->
+      <div style="background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; margin-bottom: 40px;">
+        <h3 style="font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px;">
+          Praxisbewährt: Das FakturaDesk ERP &amp; Mobile Ökosystem
+        </h3>
+        <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px;">
+          Unsere Expertise ist keine Theorie: Mit <strong>FakturaDesk ERP</strong> und der mobilen Begleit-App haben wir eine vollwertige Schweizer Rechnungs-, Lieferschein- und Rapport-Plattform entwickelt, die täglich bei Handwerks- und Dienstleistungsbetrieben im Einsatz ist. 100 % offlinefähig, automatischer 2-Wege-Sync, Schweizer QR-Rechnung und revisionssicheres Archiv.
+        </p>
+        <a href="fakturadesk/" class="service-link" style="font-weight: 700;">
+          Mehr über FakturaDesk ERP erfahren &rarr;
+        </a>
+      </div>
+
+      <!-- Call to Action Box -->
+      <div style="background: linear-gradient(135deg, #0a0f1d 0%, #1e293b 100%); color: #ffffff; border-radius: var(--radius-lg); padding: 36px; text-align: center;">
+        <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Haben Sie eine Idee für eine betriebliche App?</h3>
+        <p style="font-size: 15px; color: #cbd5e1; max-width: 560px; margin: 0 auto 24px;">
+          Lassen Sie uns gemeinsam prüfen, wie wir Ihre Betriebsabläufe mobilisieren können. Wir erstellen Ihnen ein transparentes Konzept mit Festpreis-Garantie.
+        </p>
+        <a href="kontakt.html?thema=App-Entwicklung" class="btn btn-primary">
+          Jetzt unverbindliches Erstgespräch vereinbaren &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/dkschv_logo_dark.svg" alt="DKSchV Schweiz Logo" style="height: 42px;">
+          <p>DKSchV Dini ist Ihr spezialisierter Partner für Cyber-Security, Datenschutz nach Schweizer Standard und massgeschneiderte Business-Software.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Dienstleistungen</h4>
+          <ul class="footer-links">
+            <li><a href="sicherheitsanalyse.html">Sicherheitsanalyse</a></li>
+            <li><a href="risikomanagement.html">Risikomanagement</a></li>
+            <li><a href="notfallplanung.html">Notfallplanung</a></li>
+            <li><a href="app-entwicklung.html">App-Entwicklung</a></li>
+            <li><a href="fakturadesk/">FakturaDesk ERP</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul class="footer-links">
+            <li><a href="ueber-uns.html">Über&nbsp;uns</a></li>
+            <li><a href="kontakt.html">Kontakt &amp; Standort</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz (nDSG)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Standort &amp; Kontakt</h4>
+          <p style="font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 12px;">
+            <strong>DKSchV Dini</strong><br>Andreas Dini<br>Bammattenweg 19<br>CH-3904 Naters (Wallis)
+          </p>
+          <p style="font-size: 14px; color: #94a3b8;">
+            E-Mail: <a href="mailto:info@dkschv.ch" style="color: #ffffff;">info@dkschv.ch</a><br>
+            Telefon: <a href="tel:+41798446669" style="color: #ffffff;">+41 79 844 66 69</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 DKSchV Dini · Alle Rechte vorbehalten.</div>
+        <div class="footer-legal-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/portal-auth.js"></script>
+</body>
+</html>
