@@ -1,0 +1,27 @@
+{
+  "notfallplan": {
+    "prod_id": "prod_Vgy2XeF1aTBOco",
+    "price_id": "price_1Ufa6XFuctZ4rXB3K4ph4WFe",
+    "amount_chf": 89
+  },
+  "ndsg": {
+    "prod_id": "prod_Vgy4fERyzyW8jR",
+    "price_id": "price_1Ufa8mFuctZ4rXB33KF5HZQx",
+    "amount_chf": 149
+  },
+  "audit": {
+    "prod_id": "prod_Vgy44ar0Zl2DG0",
+    "price_id": "price_1Ufa8mFuctZ4rXB3WdHvsiBo",
+    "amount_chf": 59
+  },
+  "policy": {
+    "prod_id": "prod_Vgy49tKSwrNkg0",
+    "price_id": "price_1Ufa8nFuctZ4rXB3dWXjXc3p",
+    "amount_chf": 49
+  },
+  "bundle": {
+    "prod_id": "prod_Vgy46MisApguMX",
+    "price_id": "price_1Ufa8nFuctZ4rXB37gsLtEap",
+    "amount_chf": 249
+  }
+}
