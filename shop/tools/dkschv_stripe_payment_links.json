@@ -1,0 +1,27 @@
+{
+  "notfallplan": {
+    "price_id": "price_1Ufa6XFuctZ4rXB3K4ph4WFe",
+    "amount_chf": 89,
+    "url": "https://buy.stripe.com/eVqeVd4Jq8fI24i5xqfMA0a"
+  },
+  "ndsg": {
+    "price_id": "price_1Ufa8mFuctZ4rXB33KF5HZQx",
+    "amount_chf": 149,
+    "url": "https://buy.stripe.com/fZucN53FmanQcIW7FyfMA0b"
+  },
+  "audit": {
+    "price_id": "price_1Ufa8mFuctZ4rXB3WdHvsiBo",
+    "amount_chf": 59,
+    "url": "https://buy.stripe.com/bJe4gz8ZGdA238m2lefMA0c"
+  },
+  "policy": {
+    "price_id": "price_1Ufa8nFuctZ4rXB3dWXjXc3p",
+    "amount_chf": 49,
+    "url": "https://buy.stripe.com/cNi5kD2BieE65guaRKfMA0d"
+  },
+  "bundle": {
+    "price_id": "price_1Ufa8nFuctZ4rXB37gsLtEap",
+    "amount_chf": 249,
+    "url": "https://buy.stripe.com/aFabJ1fo43ZscIWe3WfMA0e"
+  }
+}
