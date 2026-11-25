@@ -10,7 +10,7 @@
 * **Ansprechpartner / Funktion:** ___________________________________
 * **E-Mail / Telefon:** _____________________________________________
 * **Anzahl PC-Arbeitsplätze / Mitarbeiter:** ________________________
-* **Haupt-Betriebssysteme:** [ ] Windows 10/11 &nbsp;&nbsp; [ ] macOS &nbsp;&nbsp; [ ] Linux
+* **Haupt-Betriebssysteme:** [ ] Windows 10/11  |  [ ] macOS  |  [ ] Linux
 
 ---
 
@@ -29,7 +29,7 @@
 
 3. **Tolerierbare Ausfallzeit (RTO – Recovery Time Objective):**
    * Wie lange kann Ihr Betrieb bei einem Totalausfall maximal stillstehen, bevor existenzbedrohender Schaden entsteht?  
-     [ ] Max. 4–8 Stunden &nbsp;&nbsp;&nbsp; [ ] 1–2 Tage &nbsp;&nbsp;&nbsp; [ ] Bis zu 1 Woche
+     [ ] Max. 4–8 Stunden  |  [ ] 1–2 Tage  |  [ ] Bis zu 1 Woche
 
 ---
 
@@ -37,11 +37,11 @@
 
 4. **Geräteverschlüsselung:**
    * Sind die Festplatten aller geschäftlich genutzten Laptops verschlüsselt (z. B. BitLocker oder FileVault)?  
-     [ ] Ja, alle &nbsp;&nbsp;&nbsp; [ ] Nur teilweise / unbekannt &nbsp;&nbsp;&nbsp; [ ] Nein
+     [ ] Ja, alle  |  [ ] Nur teilweise / unbekannt  |  [ ] Nein
 
 5. **Zwei-Faktor-Authentifizierung (2FA / MFA):**
    * Ist für den Login in E-Mails, Microsoft 365 oder Cloud-Speicher eine Bestätigung auf dem Smartphone zwingend vorgeschrieben?  
-     [ ] Ja, überall aktiv &nbsp;&nbsp;&nbsp; [ ] Nur für Admins &nbsp;&nbsp;&nbsp; [ ] Nein, nur Passwort
+     [ ] Ja, überall aktiv  |  [ ] Nur für Admins  |  [ ] Nein, nur Passwort
 
 6. **Passwort-Verwaltung:**
    * Wie speichern und teilen Mitarbeiter ihre Passwörter?  
@@ -58,7 +58,7 @@
 
 8. **Lösch- & Aufbewahrungskonzept:**
    * Gibt es einen definierten Prozess, um alte Bewerberdaten, ehemalige Kundendaten oder Personaldaten nach Ablauf der Frist sicher zu löschen?  
-     [ ] Ja &nbsp;&nbsp;&nbsp; [ ] In Planung &nbsp;&nbsp;&nbsp; [ ] Nein
+     [ ] Ja  |  [ ] In Planung  |  [ ] Nein
 
 ---
 
@@ -78,7 +78,7 @@
 
 11. **Auftragsbearbeitungsverträge (ABV / AVV):**
     * Haben Sie mit allen externen Dienstleistern, die Zugriff auf Ihre Daten haben (IT-Support, Cloud-Anbieter, Lohnbuchhalter), schriftliche nDSG-Verträge abgeschlossen?  
-      [ ] Ja, vollständig &nbsp;&nbsp;&nbsp; [ ] Teilweise &nbsp;&nbsp;&nbsp; [ ] Nein / Unbekannt
+      [ ] Ja, vollständig  |  [ ] Teilweise  |  [ ] Nein / Unbekannt
 
 ---
 
@@ -86,15 +86,15 @@
 
 12. **Schriftliche IT-Richtlinie:**
     * Haben alle Mitarbeitenden eine verständliche IT-Nutzungsrichtlinie (z. B. für Home-Office, private Gerätenutzung, Passwörter) unterzeichnet?  
-      [ ] Ja, Bestandteil des Arbeitsvertrags &nbsp;&nbsp;&nbsp; [ ] Nein
+      [ ] Ja, Bestandteil des Arbeitsvertrags  |  [ ] Nein
 
 13. **Schutz vor CEO-Fraud & Zahlungsbetrug:**
     * Gibt es eine strikte **4-Augen-Regel** bei Änderungen von Bankverbindungen (IBAN) oder dringenden Zahlungsanweisungen per Mail?  
-      [ ] Ja, telefonische Rückversicherung Pflicht &nbsp;&nbsp;&nbsp; [ ] Informell &nbsp;&nbsp;&nbsp; [ ] Nein
+      [ ] Ja, telefonische Rückversicherung Pflicht  |  [ ] Informell  |  [ ] Nein
 
 14. **Phishing & Schulungen:**
     * Wurden die Mitarbeitenden in den letzten 12 Monaten für Cyber-Gefahren sensibilisiert?  
-      [ ] Ja &nbsp;&nbsp;&nbsp; [ ] Nein
+      [ ] Ja  |  [ ] Nein
 
 ---
 
