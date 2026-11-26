@@ -2,16 +2,20 @@
   "version": "1.0.8",
   "releaseDate": "2026-11-25",
   "title": "FakturaDesk ERP v1.0.8 Release (Lieferschein erfassen & HGM-Service Drucklayout)",
-  "changelog": "• Lieferschein erfassen: Direkter Button & Tastenkürzel Strg+L\n• Lieferschein-Layout HGM-Service: 1:1 Druckvorlage nach Kundenwunsch (keine Preise/MwSt/Konto, sauberer Kasten mit Vertikallinien, Empfangsbestätigung)\n• Konfigurierbare Layout-Optionen und Live-Vorschau in den Einstellungen\n• Revisionssichere automatische Datenbankmigration ohne Datenverlust",
+  "changelog": "\u2022 Lieferschein erfassen: Direkter Button & Tastenk\u00fcrzel Strg+L\n\u2022 Lieferschein-Layout HGM-Service: 1:1 Druckvorlage nach Kundenwunsch (keine Preise/MwSt/Konto, sauberer Kasten mit Vertikallinien, Empfangsbest\u00e4tigung)\n\u2022 Konfigurierbare Layout-Optionen und Live-Vorschau in den Einstellungen\n\u2022 Revisionssichere automatische Datenbankmigration ohne Datenverlust",
   "downloadUrlWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_Windows_x64.zip",
   "downloadUrlHgmWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_HGM_Service_Win11.zip",
   "downloadUrlDkschvWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_DKSchV_Enterprise_Win11.zip",
   "downloadUrlRenoGipsWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_RenoGips_Handwerk_Win11.zip",
+  "downloadUrlNussbaumerWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_Nussbaumer_Schreinerei_Win11.zip",
   "downloadUrlLinux": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_Linux_x64.tar.gz",
   "downloadUrlMobile": "https://dkschv.ch/fakturadesk/FakturaDesk_v1.0.2_Mobile.apk",
   "sha256Win": "6bc09a7915b5229160d384cc14761841ac164ddedaad144107266eb28af223fb",
-  "sha256HgmWin": "fcc345c1139944eccd53d08267573dd95e330429bb65c3521954556a5620f6d9",
+  "sha256HgmWin": "becddeb1f3ca7203fa6a177b95d400a395a771e746f9c0ab72ac37e0f963aa04",
   "sha256DkschvWin": "5cdaab31ad98a7466cf709a4abdd0f27fa41a6603ee1c1da060e76f0e1e3519b",
   "sha256RenoGipsWin": "a101c997ba2196501ba1ad341f68ff6640879f99ba805859b54a60a86e5218bd",
-  "sha256Linux": "1c158df3b368d271df8fcdd7ec30b7d2e5318725e3699cf5c73daef722e38b7d"
+  "sha256NussbaumerWin": "c458dcaec46135bc29b77cbe426c2da67a3dee7aec58361453a843abe8a746da",
+  "sha256Linux": "871d2bf58bb8d4ed4f5ba816db200935a9d7936b6f6205fe344f5c06b1aa5cce",
+  "downloadUrlCfiHotelsWin": "https://github.com/piWer696/fakturadesk-releases/releases/download/v1.0.8/FakturaDesk_v1.0.8_CFI_Hotels_Gastro_Win11.zip",
+  "sha256CfiHotelsWin": "c576a5c62a878821f68b05bffc6caba2b44bbd7f43dbd4a751f986be06990189"
 }
